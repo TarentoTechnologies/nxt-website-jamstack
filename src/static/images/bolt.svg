@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="371px" height="325px" viewBox="0 0 371 325" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bolt</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="208" height="304"></rect>
+    </defs>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Customer-Experience" transform="translate(-130.000000, -4339.000000)">
+            <g id="bolt" transform="translate(130.000000, 4339.000000)">
+                <rect id="Rectangle-Copy-11" stroke-opacity="0.08" stroke="#000000" fill="#120033" x="0.5" y="0.5" width="370" height="324" rx="8"></rect>
+                <g id="Group-18" transform="translate(163.000000, 21.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Mask"></g>
+                    <g mask="url(#mask-2)">
+                        <g transform="translate(13.000000, 75.000000)">
+                            <g id="Group-17" transform="translate(0.000000, 113.472915)">
+                                <path d="M0,40.9558194 L226,40.9558194 L226,81.9116389 C226,104.530913 175.408177,122.867458 113,122.867458 C50.5918233,122.867458 0,104.530913 0,81.9116389 L0,81.9116389 L0,40.9558194 Z" id="Combined-Shape" fill="#241C5E"></path>
+                                <ellipse id="Oval" fill="#6756BE" cx="113" cy="40.9558194" rx="113" ry="40.9558194"></ellipse>
+                            </g>
+                            <g id="Group-17-Copy" transform="translate(23.700375, 83.213471)">
+                                <path d="M0,31.2398573 L179.304918,31.2398573 L179.304918,63.3985338 C179.304918,81.1592805 139.166145,95.5572104 89.6524588,95.5572104 C40.138773,95.5572104 0,81.1592805 0,63.3985338 L0,63.3985338 L0,31.2398573 Z" id="Combined-Shape" fill="#241C5E"></path>
+                                <ellipse id="Oval" fill="#6756BE" cx="89.6524588" cy="32.1586766" rx="89.6524588" ry="32.1586766"></ellipse>
+                            </g>
+                            <g id="Group-17-Copy-2" transform="translate(44.861423, 55.475647)">
+                                <path d="M0,24.1554691 L136.769618,24.1554691 L136.769618,49.2399947 C136.769618,63.0937956 106.152696,74.3245203 68.384809,74.3245203 C30.6169219,74.3245203 0,63.0937956 0,49.2399947 L0,49.2399947 L0,24.1554691 Z" id="Combined-Shape" fill="#241C5E"></path>
+                                <ellipse id="Oval" fill="#6756BE" cx="68.384809" cy="25.0845256" rx="68.384809" ry="25.0845256"></ellipse>
+                            </g>
+                            <g id="Group-17-Copy-3" transform="translate(44.861423, 27.737824)">
+                                <path d="M0,24.1554691 L136.769618,24.1554691 L136.769618,49.2399947 C136.769618,63.0937956 106.152696,74.3245203 68.384809,74.3245203 C30.6169219,74.3245203 0,63.0937956 0,49.2399947 L0,49.2399947 L0,24.1554691 Z" id="Combined-Shape" fill="#241C5E"></path>
+                                <ellipse id="Oval" fill="#6756BE" cx="68.384809" cy="25.0845256" rx="68.384809" ry="25.0845256"></ellipse>
+                            </g>
+                            <g id="Group-17-Copy-4" transform="translate(44.861423, 0.000000)">
+                                <path d="M0,24.1554691 L136.769618,24.1554691 L136.769618,49.2399947 C136.769618,63.0937956 106.152696,74.3245203 68.384809,74.3245203 C30.6169219,74.3245203 0,63.0937956 0,49.2399947 L0,49.2399947 L0,24.1554691 Z" id="Combined-Shape" fill="#241C5E"></path>
+                                <ellipse id="Oval" fill="#6756BE" cx="68.384809" cy="25.0845256" rx="68.384809" ry="25.0845256"></ellipse>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

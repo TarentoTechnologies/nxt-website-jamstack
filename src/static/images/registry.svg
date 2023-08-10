@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="371px" height="325px" viewBox="0 0 371 325" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>platforms/registry</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="246" height="219"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Gov-tech" transform="translate(-938.000000, -1677.000000)">
+            <g id="platforms/registry" transform="translate(938.000000, 1677.000000)">
+                <rect id="Rectangle-Copy-15" stroke-opacity="0.08" stroke="#000000" fill="#23BAF0" x="0.5" y="0.5" width="370" height="324"></rect>
+                <g id="Group-36-+-Group-36-Copy-Mask" transform="translate(125.000000, 11.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Mask"></g>
+                    <g id="Group-36" mask="url(#mask-2)">
+                        <g transform="translate(144.000000, 9.000000)">
+                            <g id="Group-35" transform="translate(0.000000, 76.000000)">
+                                <polygon id="Rectangle" fill="#23A3D1" points="-1.10188781e-12 23.9292035 37.2014599 51.4248825 37.2014599 103.88506 -1.10188781e-12 76.3893805"></polygon>
+                                <polygon id="Path-59" fill="#1F8BB1" points="37.2014599 51.4248825 83.3553061 27.495679 83.3553061 79.955856 37.2014599 103.88506"></polygon>
+                                <polygon id="Path-60" fill="#5BD1FB" points="-1.67906714e-12 23.9292035 46.1538462 0 83.3553061 27.495679 37.2014599 51.4248825"></polygon>
+                            </g>
+                            <g id="Group-35-Copy" transform="translate(83.000000, 79.000000)">
+                                <polygon id="Rectangle" fill="#23A3D1" points="-1.10188781e-12 23.9292035 37.2014599 51.4248825 37.2014599 103.88506 -1.10188781e-12 76.3893805"></polygon>
+                                <polygon id="Path-60" fill="#5BD1FB" points="-1.67906714e-12 23.9292035 46.1538462 0 83.3553061 27.495679 37.2014599 51.4248825"></polygon>
+                            </g>
+                            <g id="Group-35-Copy-2" transform="translate(46.000000, 0.000000)">
+                                <polygon id="Rectangle" fill="#23A3D1" points="-1.10188781e-12 23.9292035 37.2014599 51.4248825 37.2014599 103.88506 -1.10188781e-12 76.3893805"></polygon>
+                                <polygon id="Path-59" fill="#1F8BB1" points="37.2014599 51.4248825 83.3553061 27.495679 83.3553061 79.955856 37.2014599 103.88506"></polygon>
+                                <polygon id="Path-60" fill="#5BD1FB" points="-1.67906714e-12 23.9292035 46.1538462 0 83.3553061 27.495679 37.2014599 51.4248825"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Group-36-Copy" mask="url(#mask-2)">
+                        <g transform="translate(12.000000, 35.000000)">
+                            <g id="Group-35" transform="translate(0.000000, 76.000000)">
+                                <polygon id="Rectangle" fill="#23A3D1" points="-1.10188781e-12 23.9292035 37.2014599 51.4248825 37.2014599 103.88506 -1.10188781e-12 76.3893805"></polygon>
+                                <polygon id="Path-59" fill="#1F8BB1" points="37.2014599 51.4248825 83.3553061 27.495679 83.3553061 79.955856 37.2014599 103.88506"></polygon>
+                                <polygon id="Path-60" fill="#5BD1FB" points="-1.67906714e-12 23.9292035 46.1538462 0 83.3553061 27.495679 37.2014599 51.4248825"></polygon>
+                            </g>
+                            <g id="Group-35-Copy" transform="translate(83.000000, 79.000000)">
+                                <polygon id="Rectangle" fill="#23A3D1" points="-1.10188781e-12 23.9292035 37.2014599 51.4248825 37.2014599 103.88506 -1.10188781e-12 76.3893805"></polygon>
+                                <polygon id="Path-59" fill="#1F8BB1" points="37.2014599 51.4248825 83.3553061 27.495679 83.3553061 79.955856 37.2014599 103.88506"></polygon>
+                                <polygon id="Path-60" fill="#5BD1FB" points="-1.67906714e-12 23.9292035 46.1538462 0 83.3553061 27.495679 37.2014599 51.4248825"></polygon>
+                            </g>
+                            <g id="Group-35-Copy-2" transform="translate(46.000000, 0.000000)">
+                                <polygon id="Rectangle" fill="#23A3D1" points="-1.10188781e-12 23.9292035 37.2014599 51.4248825 37.2014599 103.88506 -1.10188781e-12 76.3893805"></polygon>
+                                <polygon id="Path-59" fill="#1F8BB1" points="37.2014599 51.4248825 83.3553061 27.495679 83.3553061 79.955856 37.2014599 103.88506"></polygon>
+                                <polygon id="Path-60" fill="#5BD1FB" points="-1.67906714e-12 23.9292035 46.1538462 0 83.3553061 27.495679 37.2014599 51.4248825"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

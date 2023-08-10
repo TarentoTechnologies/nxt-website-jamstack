@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>thor_avatars</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="thor_avatars">
+            <circle id="Oval" fill="#120033" fill-rule="nonzero" cx="35" cy="35" r="35"></circle>
+            <g id="Thor_1" transform="translate(12.777778, 12.777778)">
+                <rect id="size" x="0" y="0" width="44.4444444" height="44.4444444"></rect>
+                <path d="M22.2222655,3.33333333 C32.6542431,3.33333333 41.1111111,11.7902014 41.1111111,22.2222655 C41.1111111,32.6543296 32.6542431,41.1111111 22.2222655,41.1111111 C11.7902879,41.1111111 3.33333333,32.6542431 3.33333333,22.2222655 C3.33333333,11.7902879 11.7902014,3.33333333 22.2222655,3.33333333 Z" id="circle" fill="#FFFFFF" fill-rule="nonzero" opacity="0.2"></path>
+                <polygon id="wing_2" fill="#FFFFFF" fill-rule="nonzero" points="43.3333333 6.66666667 41.0308632 12.4413926 32.0184797 22.0149115 25.6139382 41.4992278 22.7777778 43.8888889 24.6992005 14.9382908"></polygon>
+                <polygon id="wing_1" fill="#FFFFFF" fill-rule="nonzero" points="1.11111111 6.66666667 3.41368666 12.4414194 12.4258012 22.0149828 18.8303964 41.4993897 21.6666667 43.8888889 19.7453139 14.9381563"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

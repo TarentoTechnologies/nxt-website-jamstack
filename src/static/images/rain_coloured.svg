@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Bolt/symbol/coloured</title>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-page" transform="translate(-187.000000, -2333.000000)">
+            <g id="Rain/symbol/coloured" transform="translate(187.000000, 2333.000000)">
+                <path d="M48.00011,0 C74.5096059,0 96,21.4903941 96,48.00011 C96,74.5098258 74.5096059,96 48.00011,96 C21.490614,96 0,74.5096059 0,48.00011 C0,21.490614 21.4903941,0 48.00011,0 Z" id="circle" fill="#120033" fill-rule="evenodd"></path>
+                <g id="Rain/symbol/dark" transform="translate(16.000000, 15.919441)">
+                    <path d="M32.0000611,5.33333333 C46.7275589,5.33333333 58.6666667,17.2724411 58.6666667,32.0000611 C58.6666667,46.727681 46.7275589,58.6666667 32.0000611,58.6666667 C17.2725633,58.6666667 5.33333333,46.7275589 5.33333333,32.0000611 C5.33333333,17.2725633 17.2724411,5.33333333 32.0000611,5.33333333 Z" id="circle" fill-opacity="0.2" fill="#FFFFFF" fill-rule="evenodd"></path>
+                    <rect id="size" x="0" y="0" width="63.9634077" height="63.9462937"></rect>
+                    <polygon id="Path-5" fill="#FFFFFF" fill-rule="evenodd" points="22.0450432 16.0278422 64 16.0278422 49.1622539 31.5368458 49.1622539 23.0654212 27.8819467 43.627418 32 24.8804925 0 58.6945089"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

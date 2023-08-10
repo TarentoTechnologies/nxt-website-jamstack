@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>rain</title>
+    <g id="Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pricing" transform="translate(-152.000000, -459.000000)">
+            <g id="Group-5-Copy-4" transform="translate(120.000000, 419.000000)">
+                <g id="Rain/symbol/coloured" transform="translate(32.000000, 40.000000)">
+                    <path d="M24.000055,0 C37.254803,0 48,10.745197 48,24.000055 C48,37.2549129 37.254803,48 24.000055,48 C10.745307,48 0,37.254803 0,24.000055 C0,10.745307 10.745197,0 24.000055,0 Z" id="circle" fill="#120033" fill-rule="evenodd"></path>
+                    <g id="Rain/symbol/dark" transform="translate(8.000000, 7.959720)">
+                        <path d="M16.0000305,2.66666667 C23.3637794,2.66666667 29.3333333,8.63622057 29.3333333,16.0000305 C29.3333333,23.3638405 23.3637794,29.3333333 16.0000305,29.3333333 C8.63628166,29.3333333 2.66666667,23.3637794 2.66666667,16.0000305 C2.66666667,8.63628166 8.63622057,2.66666667 16.0000305,2.66666667 Z" id="circle" fill-opacity="0.2" fill="#FFFFFF" fill-rule="evenodd"></path>
+                        <rect id="size" x="0" y="0" width="31.9817038" height="31.9731469"></rect>
+                        <polygon id="Path-5" fill="#FFFFFF" fill-rule="evenodd" points="11.0225216 8.0139211 32 8.0139211 24.581127 15.7684229 24.581127 11.5327106 13.9409734 21.813709 16 12.4402462 0 29.3472544"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="371px" height="325px" viewBox="0 0 371 325" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>platforms/translation</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="371" height="325"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Gov-tech" transform="translate(-130.000000, -965.000000)">
+            <g id="platforms/translation" transform="translate(130.000000, 965.000000)">
+                <g id="Group-Copy">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#1E1746" xlink:href="#path-1"></use>
+                </g>
+                <g id="Group-6" transform="translate(181.000000, 88.000000)">
+                    <rect id="Rectangle" fill="#371D8E" transform="translate(85.500000, 41.500000) rotate(14.000000) translate(-85.500000, -41.500000) " x="58" y="6" width="55" height="71" rx="8"></rect>
+                    <rect id="Rectangle" fill="#5541AC" opacity="0.745884487" x="75" y="69" width="65" height="71" rx="8"></rect>
+                    <rect id="Rectangle-Copy-4" fill="#6955BF" opacity="0.861839658" x="0" y="55" width="65" height="68" rx="8"></rect>
+                    <g id="Group-32" transform="translate(12.000000, 22.000000)" fill="#D8D8D8" opacity="0.300000012">
+                        <rect id="Rectangle" x="70" y="72" width="45" height="4" rx="2"></rect>
+                        <rect id="Rectangle-Copy-7" x="0" y="51" width="34" height="3" rx="1.5"></rect>
+                        <rect id="Rectangle-Copy-2" x="70" y="81" width="26" height="4" rx="2"></rect>
+                        <rect id="Rectangle-Copy-21" x="69" y="90" width="36" height="4" rx="2"></rect>
+                        <rect id="Rectangle-Copy-18" x="0" y="58" width="25" height="3" rx="1.5"></rect>
+                        <g id="Group-31" transform="translate(76.845739, 11.709985) rotate(-6.000000) translate(-76.845739, -11.709985) translate(64.284242, 2.150461)">
+                            <path d="M1.73217303,11.2955724 L23.3876035,11.3156771 C24.3477591,11.3165685 25.1258959,12.0947072 25.126785,13.0548627 C25.127672,14.0127196 24.3518947,14.789935 23.3940378,14.790822 C23.3929658,14.790823 23.3918937,14.790823 23.3908216,14.790822 L1.73539111,14.7707172 C0.775235572,14.7698258 -0.00290122925,13.9916872 -0.00379035855,13.0315317 C-0.00467735919,12.0736748 0.771099974,11.2964594 1.72895681,11.2955724 C1.73002888,11.2955714 1.73110096,11.2955714 1.73217303,11.2955724 Z" id="Rectangle-Copy-19" transform="translate(12.561497, 13.043197) rotate(18.000000) translate(-12.561497, -13.043197) "></path>
+                            <path d="M4.60840418,2.60284266 L14.9984044,2.61248867 C15.9585599,2.61338007 16.7366967,3.39151871 16.7375858,4.35167425 C16.7384728,5.30953108 15.9626955,6.08674653 15.0048387,6.08763353 C15.0037666,6.08763452 15.0026945,6.08763452 15.0016224,6.08763353 L4.61162225,6.07798752 C3.65146672,6.07709612 2.87332992,5.29895748 2.87244079,4.33880194 C2.87155379,3.38094511 3.64733112,2.60372966 4.60518796,2.60284266 C4.60626003,2.60284167 4.60733211,2.60284167 4.60840418,2.60284266 Z" id="Rectangle-Copy-20" transform="translate(9.805013, 4.345238) rotate(18.000000) translate(-9.805013, -4.345238) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
