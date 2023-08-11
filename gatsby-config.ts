@@ -18,7 +18,7 @@ const config: GatsbyConfig = {
         name: `NXT Website`,
         short_name: `NXT Website`,
         start_url: `/`,
-        icon: "src/static/images/android-chrome-192x192.png",
+        icon: "static/images/android-chrome-192x192.png",
       },
     },
     "gatsby-plugin-sharp",
