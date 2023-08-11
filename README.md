@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://nxt.tarento.com/">
-    <img alt="NXT website" src="src/static/images/nxt-logo.svg" width="60" />
+    <img alt="NXT website" src="src/static/images/android-chrome-192x192.png" width="60" />
   </a>
 </p>
 <h1 align="center">
