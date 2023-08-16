@@ -1,0 +1,11 @@
+.retailBtn {
+    width: 100%;
+    margin-top: 30px;
+    font-size: 1em;
+    max-width: 11em;
+    padding: 12px;
+    height: 3em;
+    background: #fff;
+    color: #000;
+    border-radius: 0.5em;
+}
