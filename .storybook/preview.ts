@@ -1,3 +1,7 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "@popperjs/core/dist/umd/popper.min.js";
+import "../src/styles/global/global.css"
 import type { Preview } from "@storybook/react";
 
 const preview: Preview = {

@@ -1,0 +1,54 @@
+@import url("../global/colors.css");
+
+.colorBox {
+  color: var(--white);
+  min-height: 5rem;
+}
+
+.bgWhite {
+  background-color: var(--white);
+}
+
+.white {
+  color: var(--white);
+}
+
+.bgBlack {
+  background-color: var(--black);
+}
+
+.black {
+  color: var(--black);
+}
+
+.bgBlack60 {
+  background-color: var(--black-60);
+}
+
+.black60 {
+  color: var(--black-60);
+}
+
+.bgBlack90 {
+  background-color: var(--black-90);
+}
+
+.black90 {
+  color: var(--black-90);
+}
+
+.bgBlack70 {
+  background-color: var(--black-70);
+}
+
+.black70 {
+  color: var(--black-70);
+}
+
+.bgBlack87 {
+  background-color: var(--black-87);
+}
+
+.black87 {
+  color: var(--black-87);
+}
