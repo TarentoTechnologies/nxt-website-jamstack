@@ -4,7 +4,7 @@ import { PrimaryCTA } from "../components/buttons/PrimaryCTA";
 
 const IndexPage: React.FC<PageProps> = () => {
   return <main className="">
-    <PrimaryCTA label={"Read more"} />
+    <PrimaryCTA label={"Read more"} variant="blue" />
   </main>;
 };
 

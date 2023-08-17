@@ -9,3 +9,15 @@
     color: #000;
     border-radius: 0.5em;
 }
+
+.cxButton {
+    border-radius: 0.5em;
+    background-color: #120033;
+    width: 11em;
+    height: 3em;
+    max-width: 11em;
+    max-height: 3em;
+    margin-left: 5em;
+    font-size: 1em;
+    padding-top: 0.8em;
+}
