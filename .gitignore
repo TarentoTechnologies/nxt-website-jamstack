@@ -117,3 +117,6 @@ attachments
 
 # Apple store
 .DS_Store
+
+#Storybook build files
+storybook-static/
