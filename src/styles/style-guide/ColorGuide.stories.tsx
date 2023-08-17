@@ -8,6 +8,6 @@ const meta: Meta<typeof ColorGuide> = {
 export default meta;
 type Story = StoryObj<typeof ColorGuide>;
 
-export const ColorPalette: Story = {
+export const Palette: Story = {
   render: () => <ColorGuide />,
 };

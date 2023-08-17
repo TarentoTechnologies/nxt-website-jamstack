@@ -1,3 +1,7 @@
+@import url("../global/colors.css");
+@import url("../global/fonts.css");
+@import url("../global/animate.css");
+
 * {
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
@@ -32,4 +36,8 @@ li {
 
 a:hover {
   text-decoration: none;
+}
+
+.paddingTop30 {
+  padding: 1.875rem;
 }
