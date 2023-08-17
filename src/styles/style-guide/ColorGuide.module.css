@@ -2,7 +2,7 @@
 
 .colorBox {
   color: var(--white);
-  min-height: 5rem;
+  min-height: 10rem;
 }
 
 .bgWhite {
@@ -51,4 +51,228 @@
 
 .black87 {
   color: var(--black-87);
+}
+
+.bgWhite87 {
+  background-color: var(--white-87);
+}
+
+.white87 {
+  color: var(--white-87);
+}
+
+.bgWhite70 {
+  background-color: var(--white-70);
+}
+
+.white70 {
+  color: var(--white-70);
+}
+
+.bgWhite85 {
+  background-color: var(--white-85);
+}
+
+.white85 {
+  color: var(--white-85);
+}
+
+.bgWhite75 {
+  background-color: var(--white-75);
+}
+
+.white75 {
+  color: var(--white-75);
+}
+
+.bgWhite16 {
+  background-color: var(--white-16);
+}
+
+.white16 {
+  color: var(--white-16);
+}
+
+.bgCarbon {
+  background-color: var(--carbon);
+}
+
+.carbon {
+  color: var(--carbon);
+}
+
+.bgOxideBlue {
+  background-color: var(--oxide-blue);
+}
+
+.oxideBlue {
+  color: var(--oxide-blue);
+}
+
+.bgViridianGreen {
+  background-color: var(--viridian-green);
+}
+
+.viridianGreen {
+  color: var(--viridian-green);
+}
+
+.bgSpectrumViolet {
+  background-color: var(--spectrum-violet);
+}
+
+.spectrumViolet {
+  color: var(--spectrum-violet);
+}
+
+.bgLeitchsBlue {
+  background-color: var(--leitchs-blue);
+}
+
+.leitchsBlue {
+  color: var(--leitchs-blue);
+}
+
+.bgDarkViridianGreen {
+  background-color: var(--dark-viridian-green);
+}
+
+.darkViridianGreen {
+  color: var(--dark-viridian-green);
+}
+
+.bgRoslynBlue {
+  background-color: var(--roslyn-blue);
+}
+
+.roslynBlue {
+  color: var(--roslyn-blue);
+}
+
+.bgRoodsLavender {
+  background-color: var(--roods-lavender);
+}
+
+.roodsLavender {
+  color: var(--roods-lavender);
+}
+
+.bgUraniaBlue {
+  background-color: var(--urania-blue);
+}
+
+.uraniaBlue {
+  color: var(--urania-blue);
+}
+
+.bgDuskyBlueViolet2 {
+  background-color: var(--dusky-blue-violet-2);
+}
+
+.duskyBlueViolet2 {
+  color: var(--dusky-blue-violet-2);
+}
+
+.bgVioletUltramarine {
+  background-color: var(--violet-ultramarine);
+}
+
+.violetUltramarine {
+  color: var(--violet-ultramarine);
+}
+
+.bgCadiumOrange {
+  background-color: var(--cadmium-orange);
+}
+
+.cadiumOrange {
+  color: var(--cadmium-orange);
+}
+
+.bgNeutralGray {
+  background-color: var(--neutral-gray);
+}
+
+.neutralGray {
+  color: var(--neutral-gray);
+}
+
+.bgPallidBlueViolet {
+  background-color: var(--pallid-blue-violet);
+}
+
+.pallidBlueViolet {
+  color: var(--pallid-blue-violet);
+}
+
+.bgGlaucousGreen {
+  background-color: var(--pale-glaucous-green);
+}
+
+.glaucousGreen {
+  color: var(--pale-glaucous-green);
+}
+
+.bgBenzolGreen {
+  background-color: var(--benzol-green);
+}
+
+.benzolGreen {
+  color: var(--benzol-green);
+}
+
+.bgHaysBlue {
+  background-color: var(--hays-blue);
+}
+
+.haysBlue {
+  color: var(--hays-blue);
+}
+
+.bgFogOfWar {
+  background-color: var(--fog-of-war);
+}
+
+.fogOfWar {
+  color: var(--fog-of-war);
+}
+
+.bgLightNeutralGray {
+  background-color: var(--light-neutral-gray);
+}
+
+.lightNeutralGray {
+  color: var(--light-neutral-gray);
+}
+
+.bgLightViolet {
+  background-color: var(--light-violet);
+}
+
+.lightViolet {
+  color: var(--light-violet);
+}
+
+.bgDarkAnthraceneViolet {
+  background-color: var(--dark-anthracene-violet);
+}
+
+.darkAnthraceneViolet{
+  color: var(--dark-anthracene-violet);
+}
+
+.bgCadiumYellow {
+  background-color: var(--cadmium-yellow);
+}
+
+.cadiumYellow {
+  color: var(--cadmium-yellow);
+}
+
+.bgPlumbagoGray {
+  background-color: var(--plumbago-gray);
+}
+
+.plumbagoGray {
+  color: var(--plumbago-gray);
 }

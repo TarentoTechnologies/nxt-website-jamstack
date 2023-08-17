@@ -3,11 +3,7 @@ import type { HeadFC, PageProps } from "gatsby";
 import { ColorGuide } from "../styles/style-guide/ColorGuide";
 
 const IndexPage: React.FC<PageProps> = () => {
-  return (
-    <main className="">
-      <ColorGuide />
-    </main>
-  );
+  return <main className=""></main>;
 };
 
 export default IndexPage;
