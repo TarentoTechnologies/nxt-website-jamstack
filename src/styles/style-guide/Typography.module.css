@@ -1,0 +1,23 @@
+@import url("../global/fonts.css");
+
+.infoSectionH2 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-size: 1.313rem;
+  font-weight: 400;
+}
+
+.h1One {
+  font-family: "RobotoSlab-Bold", serif;
+  font-size: 2rem;
+  line-height: 1.7;
+}
+
+.cardHeader {
+  font-family: "RobotoSlab-Regular", serif;
+  font-size: 1.3125rem;
+  font-weight: 400;
+}
+
+.footerHeading {
+  font-size: 1rem;
+}
