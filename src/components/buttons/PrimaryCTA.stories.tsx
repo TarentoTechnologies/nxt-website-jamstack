@@ -13,10 +13,14 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    variant: {
+    // backgroundColor: { control: 'color' },
+    size: {
       control: 'select',
-      options: ['white', 'black'],
-      required: true,
+      options: ['large', 'small'],
+      required: false,
+    },
+    customClasses: {
+      control: 'text',
     },
   },
 } satisfies Meta<typeof PrimaryCTA>;
@@ -25,16 +29,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Light: Story = {
+export const Primary: Story = {
   args: {
+    primary: true,
     label: 'Read more',
-    variant: 'white',
   },
 };
 
-export const Dark: Story = {
+export const Secondary: Story = {
   args: {
     label: 'Read more',
-    variant: 'blue',
   },
 };

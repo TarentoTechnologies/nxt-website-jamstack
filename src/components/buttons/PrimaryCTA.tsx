@@ -1,17 +1,34 @@
-import React from 'react';
-import { retailBtn, cxButton } from './PrimaryCTA.module.css';
+
+import {
+  primaryBtn,
+  secondaryBtn,
+  large,
+} from './PrimaryCTA.module.css';
 
 interface PrimaryCTAProps {
   label: string
-  variant?: string
+  primary?: boolean
+  size?: string
   clickHandler?: (event: any) => void
   customClasses?: any
 }
 
-export const PrimaryCTA = ({ label, variant, clickHandler, customClasses }: PrimaryCTAProps) => {
+export const PrimaryCTA = ({
+  label,
+  primary = false,
+  size,
+  clickHandler,
+  customClasses
+}: PrimaryCTAProps) => {
+  const mode = primary ? `${primaryBtn}` : `${secondaryBtn}`;
   return (
-    <div className={`btn btn-primary ${variant === 'white' ? `${retailBtn}` : `${cxButton}`} ${customClasses}`} onClick={clickHandler}>
-      {label}
+    <div
+      className={`text-center d-flex align-items-center justify-content-center 
+      ${mode} ${size === 'large' ? large : ''} ${customClasses}`}
+      onClick={clickHandler}>
+      <label className={``} style={{cursor: 'pointer'}}>
+        {label}
+      </label>
     </div>
   )
 };

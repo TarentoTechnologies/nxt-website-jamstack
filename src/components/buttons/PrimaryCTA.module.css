@@ -1,23 +1,37 @@
-.retailBtn {
-    width: 100%;
-    margin-top: 30px;
-    font-size: 1em;
-    max-width: 11em;
-    padding: 12px;
-    height: 3em;
-    background: #fff;
-    color: #000;
-    border-radius: 0.5em;
+@import url('../../styles/global/animate.css');
+@import url('../../styles/global/colors.css');
+@import url('../../styles/global/global.css');
+
+.primaryBtn {
+    height: 3rem;
+    min-width: 11rem;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 0.5rem;
+    border: 1px solid var(--black);
+    cursor: pointer;
 }
 
-.cxButton {
-    border-radius: 0.5em;
-    background-color: #120033;
-    width: 11em;
-    height: 3em;
-    max-width: 11em;
-    max-height: 3em;
-    margin-left: 5em;
-    font-size: 1em;
-    padding-top: 0.8em;
+.secondaryBtn {
+    height: 3rem;
+    min-width: 11rem;
+    font-size: 1rem;
+    background-color: var(--urania-blue);
+    color: var(--white);
+    border-radius: 0.5rem;
+    border: 1px solid var(--black);
+    cursor: pointer;
+}
+
+.large {
+    min-width: 22.375rem !important;
+}
+
+.secondaryBtn:hover {
+    background-color: var(--benzol-green);
+}
+
+.secondaryBtn::after {
+    background-color: var(--benzol-green);
 }
