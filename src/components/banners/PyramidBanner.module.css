@@ -1,0 +1,95 @@
+@import url("../../styles/global/animate.css");
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerStyles {
+  background: #120033;
+  padding: 90px 0;
+  overflow: hidden;
+}
+
+.retailInfo h3 {
+  color: #fff;
+  font-size: 2em;
+  line-height: 1.7;
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+}
+
+.retailInfo p {
+  color: #fff;
+  opacity: 70%;
+  font-size: 1em;
+  line-height: 1.7;
+  padding-right: 0px;
+}
+
+.img {
+  max-height: 510px;
+  /* display: block; */
+  width: 100%;
+}
+
+.retailBtn {
+  width: 100%;
+  margin-top: 30px;
+  font-size: 1em;
+  max-width: 11em;
+  padding: 12px;
+  height: 3em;
+  background: #fff;
+  color: #000;
+  border-radius: 0.5em;
+}
+
+.fadeInUp {
+  visibility: visible;
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeInUp.retailInfo {
+  visibility: visible;
+  -webkit-animation-delay: 0.9s;
+  -moz-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+.spaceTwo {
+  margin-top: 2em;
+}
+
+.imgSize {
+  width: 32.75em;
+  height: 20.6875em;
+}
+
+.marginBtm0 {
+  margin-bottom: 0.5em;
+}
+
+.customH1 {
+  color: #fff;
+  font-size: 2em;
+  line-height: 1.7;
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .img {
+    max-height: 300px;
+    /* display: block; */
+    width: 100%;
+  }
+  .retailInfo {
+    margin-top: 70px;
+  }
+  .retailInfo p {
+    padding: 0;
+  }
+  .retailInfo h2 {
+    font-size: 36px;
+  }
+}
