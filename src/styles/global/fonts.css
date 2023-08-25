@@ -1,0 +1,109 @@
+/* Lato fonts starts here */
+
+@font-face {
+  font-family: "Lato-Black";
+  src: local("Lato-Black"), url("../../../static/fonts/Lato/Lato-Black.ttf");
+}
+
+@font-face {
+  font-family: "Lato-BlackItalic";
+  src: local("Lato-BlackItalic"),
+    url("../../../static/fonts/Lato/Lato-BlackItalic.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: local("Lato-Bold"), url("../../../static/fonts/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Italic";
+  src: local("Lato-Italic"), url("../../../static/fonts/Lato/Lato-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Light";
+  src: local("Lato-Light"), url("../../../static/fonts/Lato/Lato-Light.ttf");
+}
+
+@font-face {
+  font-family: "Lato-LightItalic";
+  src: local("Lato-LightItalic"),
+    url("../../../static/fonts/Lato/Lato-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: local("Lato-Regular"), url("../../../static/fonts/Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Thin";
+  src: local("Lato-Thin"), url("../../../static/fonts/Lato/Lato-Thin.ttf");
+}
+
+@font-face {
+  font-family: "Lato-ThinItalic";
+  src: local("Lato-ThinItalic"),
+    url("../../../static/fonts/Lato/Lato-ThinItalic.ttf");
+}
+
+/* Lato fonts ends here */
+
+/* Roboto Slab fonts starts here */
+
+@font-face {
+  font-family: "RobotoSlab-Black";
+  src: local("RobotoSlab-Black"),
+    url("../../../static/fonts/Roboto_Slab/static/RobotoSlab-Black.ttf");
+}
+
+@font-face {
+  font-family: "RobotoSlab-Bold";
+  src: local("RobotoSlab-Bold"),
+    url("../../../static/fonts/Roboto_Slab/static/RobotoSlab-Bold.ttf");
+}
+
+@font-face {
+  font-family: "RobotoSlab-ExtraBold";
+  src: local("RobotoSlab-ExtraBold"),
+    url("../../../static/fonts/Roboto_Slab/static/RobotoSlab-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "RobotoSlab-ExtraLight";
+  src: local("RobotoSlab-ExtraLight"),
+    url("../../../static/fonts/Roboto_Slab/static/RobotoSlab-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "RobotoSlab-Light";
+  src: local("RobotoSlab-Light"),
+    url("../../../static/fonts/Roboto_Slab/static/RobotoSlab-Light.ttf");
+}
+
+@font-face {
+  font-family: "RobotoSlab-Medium";
+  src: local("RobotoSlab-Medium"),
+    url("../../../static/fonts/Roboto_Slab/static/RobotoSlab-Medium.ttf");
+}
+
+@font-face {
+  font-family: "RobotoSlab-Regular";
+  src: local("RobotoSlab-Regular"),
+    url("../../../static/fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf");
+}
+
+@font-face {
+  font-family: "RobotoSlab-SemiBold";
+  src: local("RobotoSlab-SemiBold"),
+    url("../../../static/fonts/Roboto_Slab/static/RobotoSlab-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "RobotoSlab-Thin";
+  src: local("RobotoSlab-Thin"),
+    url("../../../static/fonts/Roboto_Slab/static/RobotoSlab-Thin.ttf");
+}
+
+/* Roboto Slab fonts ends here */
