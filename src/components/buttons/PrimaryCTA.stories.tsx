@@ -1,26 +1,25 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { PrimaryCTA } from './PrimaryCTA';
+import type { Meta, StoryObj } from "@storybook/react";
+import { PrimaryCTA } from "./PrimaryCTA";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: 'UI Components/PrimaryCTA',
+  title: "UI Components/PrimaryCTA",
   component: PrimaryCTA,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'centered',
+    layout: "centered",
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    // backgroundColor: { control: 'color' },
     size: {
-      control: 'select',
-      options: ['large', 'small'],
+      control: "select",
+      options: ["large", "small"],
       required: false,
     },
     customClasses: {
-      control: 'text',
+      control: "text",
     },
   },
 } satisfies Meta<typeof PrimaryCTA>;
@@ -32,12 +31,12 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'Read more',
+    label: "Read more",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Read more',
+    label: "Read more",
   },
 };

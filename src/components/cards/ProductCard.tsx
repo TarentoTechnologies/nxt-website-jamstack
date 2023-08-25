@@ -1,8 +1,4 @@
-import { Link } from 'gatsby';
-
-import {
-  cardHeader,
-} from "../../styles/style-guide/Typography.module.css";
+import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 
 import {
   proCard,
@@ -13,11 +9,11 @@ import {
 } from "./ProductCard.module.css";
 
 interface ProductCardProps {
-  title: string
-  bgImg?: any
-  logo?: any
-  isSecondary?: boolean
-  secLogo?: any
+  title: string;
+  bgImg?: any;
+  logo?: any;
+  isSecondary?: boolean;
+  secLogo?: any;
 }
 
 export const ProductCard = ({
@@ -28,14 +24,20 @@ export const ProductCard = ({
   isSecondary,
 }: ProductCardProps) => {
   return (
-    <div className={`container-fluid ${isSecondary ? proCardSecondary : proCard }`}
-      style={{ backgroundImage: `url(${bgImg})` }}>
-      <div className={`${titleStyles} ${cardHeader} ${isSecondary ? secondaryFontsize : ''}`}>
+    <div
+      className={`container-fluid ${isSecondary ? proCardSecondary : proCard}`}
+      style={{ backgroundImage: `url(${bgImg})` }}
+    >
+      <div
+        className={`${titleStyles} ${cardHeader} ${
+          isSecondary ? secondaryFontsize : ""
+        }`}
+      >
         <span>{title}</span>
       </div>
       <div className={`${logoStyles}`}>
-        <img src={isSecondary ? secLogo : logo} alt="product-card-logo"/>
+        <img src={isSecondary ? secLogo : logo} alt="product-card-logo" />
       </div>
     </div>
-  )
+  );
 };

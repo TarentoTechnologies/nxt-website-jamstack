@@ -1,12 +1,10 @@
+import { PrimaryCTA } from "../buttons/PrimaryCTA";
+import { PrimaryTitle } from "../titles/PrimaryTitle";
 import {
   bannerStyles,
   retailInfo,
-  retailBtn,
-  fadeInUp,
-  spaceTwo,
-  imgSize,
-  marginBtm0,
-  customH1,
+  customPadding1,
+  customPadding2,
 } from "./PyramidBanner.module.css";
 
 interface PyramidBannerProps {
@@ -25,27 +23,21 @@ export const PyramidBanner = ({
   return (
     <div className={`container-fluid ${bannerStyles}`}>
       <div className={`row`}>
-        <div className={`col-md-5`}>
-          <div className={`wow animated ${fadeInUp}`}>
+        <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-4 offset-lg-2`}>
+          <div className={`d-flex justify-content-center align-items-center`}>
             <img
-              className={`${spaceTwo} ${imgSize}`}
+              className={`${customPadding1} img-fluid`}
               src={pyramidImg}
               alt="Data pyramid"
               title="Data pyramid"
             />
           </div>
         </div>
-        <div className={`col-md-5 order-md-1`}>
-          <div className={`wow animated ${fadeInUp} ${retailInfo}`}>
-            <h1 className={`${marginBtm0} ${customH1}`}>{title}</h1>
+        <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4`}>
+          <div className={`${customPadding2} ${retailInfo}`}>
+            <PrimaryTitle title={title} variant="banner" color="white" />
             <p>{description}</p>
-            <a
-              href="data-platform.html"
-              rel="canonical"
-              className={`btn btn-primary ${retailBtn}`}
-            >
-              {btnDescr}
-            </a>
+            <PrimaryCTA label={btnDescr} primary />
           </div>
         </div>
       </div>

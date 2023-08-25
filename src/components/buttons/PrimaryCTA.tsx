@@ -1,16 +1,11 @@
-
-import {
-  primaryBtn,
-  secondaryBtn,
-  large,
-} from './PrimaryCTA.module.css';
+import { primaryBtn, secondaryBtn, large } from "./PrimaryCTA.module.css";
 
 interface PrimaryCTAProps {
-  label: string
-  primary?: boolean
-  size?: string
-  clickHandler?: (event: any) => void
-  customClasses?: any
+  label: any;
+  primary?: boolean;
+  size?: string;
+  clickHandler?: (event: any) => void;
+  customClasses?: any;
 }
 
 export const PrimaryCTA = ({
@@ -18,17 +13,18 @@ export const PrimaryCTA = ({
   primary = false,
   size,
   clickHandler,
-  customClasses
+  customClasses,
 }: PrimaryCTAProps) => {
   const mode = primary ? `${primaryBtn}` : `${secondaryBtn}`;
   return (
     <div
       className={`text-center d-flex align-items-center justify-content-center 
-      ${mode} ${size === 'large' ? large : ''} ${customClasses}`}
-      onClick={clickHandler}>
-      <label className={``} style={{cursor: 'pointer'}}>
+      ${mode} ${size === "large" ? large : ""} ${customClasses}`}
+      onClick={clickHandler}
+    >
+      <label className={``} style={{ cursor: "pointer" }}>
         {label}
       </label>
     </div>
-  )
+  );
 };

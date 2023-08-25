@@ -1,43 +1,43 @@
-@import url('../../styles/global/animate.css');
-@import url('../../styles/global/colors.css');
-@import url('../../styles/global/global.css');
+@import url("../../styles/global/animate.css");
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
 
 .proCard {
-    min-height: 20.3125rem;
-    min-width: 23.1875rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    cursor: pointer;
-    border-radius: 5%;
-    position: relative;
+  min-height: 20.3125rem;
+  min-width: 23.1875rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 5%;
+  position: relative;
 }
 
 .proCardSecondary {
-    min-height: 13.125rem;
-    min-width: 16.375rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    cursor: pointer;
-    border-radius: 5%;
-    position: relative;
+  min-height: 13.125rem;
+  min-width: 16.375rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 5%;
+  position: relative;
 }
 
 .titleStyles {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    color: var(--white);
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: var(--white);
 }
 
 .logoStyles {
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
 }
 
 .secondaryFontsize {
-    font-size: 1rem;
-    line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }

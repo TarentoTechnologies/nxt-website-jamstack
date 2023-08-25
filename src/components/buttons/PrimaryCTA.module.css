@@ -1,37 +1,35 @@
-@import url('../../styles/global/animate.css');
-@import url('../../styles/global/colors.css');
-@import url('../../styles/global/global.css');
+@import url("../../styles/global/animate.css");
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
 
 .primaryBtn {
-    height: 3rem;
-    min-width: 11rem;
-    font-size: 1rem;
-    background-color: var(--white);
-    color: var(--black);
-    border-radius: 0.5rem;
-    border: 1px solid var(--black);
-    cursor: pointer;
+  height: 3rem;
+  width: 11rem;
+  font-size: 1rem;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .secondaryBtn {
-    height: 3rem;
-    min-width: 11rem;
-    font-size: 1rem;
-    background-color: var(--urania-blue);
-    color: var(--white);
-    border-radius: 0.5rem;
-    border: 1px solid var(--black);
-    cursor: pointer;
+  height: 3rem;
+  width: 11rem;
+  font-size: 1rem;
+  background-color: var(--urania-blue);
+  color: var(--white);
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .large {
-    min-width: 22.375rem !important;
+  width: 22.375rem !important;
 }
 
 .secondaryBtn:hover {
-    background-color: var(--benzol-green);
+  background-color: var(--benzol-green);
 }
 
 .secondaryBtn::after {
-    background-color: var(--benzol-green);
+  background-color: var(--benzol-green);
 }
