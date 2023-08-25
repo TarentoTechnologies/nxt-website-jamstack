@@ -32,10 +32,10 @@
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
-  .customPadding1 {
+  .imgPadding {
     padding: 0 2rem 0 2rem;
   }
-  .customPadding2 {
+  .infoSectionPadding {
     padding: 4.375rem 2rem 0 2rem;
   }
 }
@@ -54,49 +54,49 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .customPadding1 {
+  .imgPadding {
     padding: 0 2rem 0 2rem;
   }
-  .customPadding2 {
+  .infoSectionPadding {
     padding: 3.75rem 8rem 0 4rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .customPadding1 {
+  .imgPadding {
     padding: 0 2rem 0 2rem;
   }
-  .customPadding2 {
+  .infoSectionPadding {
     padding: 3.75rem 8rem 0 4rem;
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .customPadding1 {
+  .imgPadding {
     padding: 4rem 2rem 0 2rem;
   }
-  .customPadding2 {
+  .infoSectionPadding {
     padding: 2rem 2rem 0 2rem;
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .customPadding2 {
+  .infoSectionPadding {
     padding: 2rem 8rem 0 2rem;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  .customPadding1 {
+  .imgPadding {
     padding: 2rem 2rem 0 2rem;
   }
-  .customPadding2 {
+  .infoSectionPadding {
     padding: 2rem 2rem 0 2rem;
   }
 }
 
 @media only screen and (min-width: 1800px) {
-  .customPadding2 {
+  .infoSectionPadding {
     padding: 2rem 11rem 0 2rem;
   }
 }

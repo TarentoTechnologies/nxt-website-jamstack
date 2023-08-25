@@ -3,8 +3,8 @@ import { PrimaryTitle } from "../titles/PrimaryTitle";
 import {
   bannerStyles,
   retailInfo,
-  customPadding1,
-  customPadding2,
+  imgPadding,
+  infoSectionPadding,
 } from "./PyramidBanner.module.css";
 
 interface PyramidBannerProps {
@@ -26,7 +26,7 @@ export const PyramidBanner = ({
         <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-4 offset-lg-2`}>
           <div className={`d-flex justify-content-center align-items-center`}>
             <img
-              className={`${customPadding1} img-fluid`}
+              className={`${imgPadding} img-fluid`}
               src={pyramidImg}
               alt="Data pyramid"
               title="Data pyramid"
@@ -34,7 +34,7 @@ export const PyramidBanner = ({
           </div>
         </div>
         <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4`}>
-          <div className={`${customPadding2} ${retailInfo}`}>
+          <div className={`${infoSectionPadding} ${retailInfo}`}>
             <PrimaryTitle title={title} variant="banner" color="white" />
             <p>{description}</p>
             <PrimaryCTA label={btnDescr} primary />
