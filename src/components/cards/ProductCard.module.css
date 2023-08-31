@@ -41,3 +41,32 @@
   font-size: 1rem;
   line-height: 1.5rem;
 }
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+  .proCard {
+    min-height: 18.3125rem;
+    min-width: 18rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 5%;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */

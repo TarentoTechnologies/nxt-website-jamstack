@@ -28,5 +28,6 @@ export const ProductCardComponent: Story = {
     bgImg: boltImg,
     logo: boltLogo,
     secLogo: boltLogoSecondary,
+    // isSecondary: true,
   },
 };
