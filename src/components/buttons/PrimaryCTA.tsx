@@ -1,4 +1,9 @@
-import { primaryBtn, secondaryBtn, large } from "./PrimaryCTA.module.css";
+import {
+  primaryBtn,
+  secondaryBtn,
+  large,
+  labelStyles,
+} from "./PrimaryCTA.module.css";
 
 interface PrimaryCTAProps {
   label: any;
@@ -22,9 +27,7 @@ export const PrimaryCTA = ({
       ${mode} ${size === "large" ? large : ""} ${customClasses}`}
       onClick={clickHandler}
     >
-      <label className={``} style={{ cursor: "pointer" }}>
-        {label}
-      </label>
+      <label className={`${labelStyles}`}>{label}</label>
     </div>
   );
 };

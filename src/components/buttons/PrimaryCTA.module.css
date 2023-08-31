@@ -33,3 +33,7 @@
 .secondaryBtn::after {
   background-color: var(--benzol-green);
 }
+
+.labelStyles {
+  cursor: pointer;
+}
