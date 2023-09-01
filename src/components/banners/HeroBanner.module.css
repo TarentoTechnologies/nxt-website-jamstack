@@ -1,0 +1,47 @@
+@import url("../../styles/global/animate.css");
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.heroBannerStyles {
+  height: 100vh;
+  background-color: var(--black);
+  text-align: center;
+  position: relative;
+}
+
+.logoSection {
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.logoMainStyles {
+  margin-bottom: 2.5rem;
+}
+
+.logoHeadStyles {
+  min-height: 0.813rem;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+  .logoSection {
+    min-width: 18rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */

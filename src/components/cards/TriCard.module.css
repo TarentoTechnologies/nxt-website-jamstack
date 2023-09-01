@@ -1,0 +1,48 @@
+@import url("../../styles/global/animate.css");
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.triCardStyles {
+  text-align: center;
+  padding: 11%;
+  min-height: 30.25rem;
+  min-width: 30rem;
+  cursor: pointer;
+}
+
+.imgStyles {
+  height: 8.875rem;
+  margin-top: 4.375rem;
+}
+
+.titleStyles {
+  text-transform: uppercase;
+  padding-top: 1.875rem;
+  font-size: 1.313rem;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+  .triCardStyles {
+    text-align: center;
+    padding: 11%;
+    min-height: 30.25rem;
+    min-width: 18rem;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */
