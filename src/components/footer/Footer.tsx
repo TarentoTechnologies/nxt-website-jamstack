@@ -16,7 +16,7 @@ import {
 } from "./Footer.module.css";
 
 interface FooterProps {
-  data: any;
+  data?: any;
   nxtLogoImg?: any;
   companyLogoImg?: any;
 }
