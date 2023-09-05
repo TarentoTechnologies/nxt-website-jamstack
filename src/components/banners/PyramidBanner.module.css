@@ -1,0 +1,104 @@
+@import url("../../styles/global/animate.css");
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerStyles {
+  background: #120033;
+  padding: 5.625rem 0;
+  overflow: hidden;
+}
+
+.retailInfo h3 {
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1.7rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+}
+
+.retailInfo p {
+  color: #fff;
+  opacity: 70%;
+  font-size: 1rem;
+  line-height: 1.7rem;
+  padding-right: 0;
+}
+
+.img {
+  max-height: 31.875rem;
+  width: 100%;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+  .imgPadding {
+    padding: 0 2rem 0 2rem;
+  }
+  .infoSectionPadding {
+    padding: 4.375rem 2rem 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .img {
+    max-height: 18.75rem;
+    width: 100%;
+  }
+  .retailInfo p {
+    padding: 0;
+  }
+  .retailInfo h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .imgPadding {
+    padding: 0 2rem 0 2rem;
+  }
+  .infoSectionPadding {
+    padding: 3.75rem 8rem 0 4rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .imgPadding {
+    padding: 0 2rem 0 2rem;
+  }
+  .infoSectionPadding {
+    padding: 3.75rem 8rem 0 4rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .imgPadding {
+    padding: 4rem 2rem 0 2rem;
+  }
+  .infoSectionPadding {
+    padding: 2rem 2rem 0 2rem;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .infoSectionPadding {
+    padding: 2rem 8rem 0 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .imgPadding {
+    padding: 2rem 2rem 0 2rem;
+  }
+  .infoSectionPadding {
+    padding: 2rem 2rem 0 2rem;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .infoSectionPadding {
+    padding: 2rem 11rem 0 2rem;
+  }
+}
+
+/* Media queries ends here */

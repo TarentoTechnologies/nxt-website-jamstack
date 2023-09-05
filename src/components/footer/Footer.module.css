@@ -1,0 +1,262 @@
+@import url("../../styles/global/animate.css");
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.footer {
+  width: 100%;
+  clear: both;
+  background: #000000;
+  overflow: hidden;
+  padding: 1.875rem;
+}
+
+.footerLeft {
+  color: #fff;
+  padding: 0;
+}
+
+.footerLeft h5 {
+  font-size: 1rem;
+}
+
+.footerLeft p {
+  font-size: 0.875rem;
+}
+
+.footerRight {
+  padding-top: 0;
+}
+
+.footerRight li {
+  float: left;
+  padding: 0 2.5rem;
+  border-right: 1px solid #ddd;
+}
+
+.footerRight li:last-child {
+  border: none;
+  padding-top: 0.5rem;
+}
+
+.footerRight a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+a.company-logo > img {
+  height: 2rem;
+}
+
+.dlinkLeft {
+  padding: 0 0 0 2rem;
+}
+
+.dlinkRight {
+  padding: 0 0 0 2rem;
+}
+
+.areas {
+  float: left;
+}
+
+.areas {
+  margin-left: 6.25rem;
+}
+
+.directlink li a,
+.areas li a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+.directlink li a:hover,
+.areas li a:hover,
+.footerRight a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footerRight h5 {
+  color: #fff;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footerRight p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  padding-top: 0.625rem;
+  margin-bottom: 0;
+}
+
+.pullRight {
+  float: none !important;
+}
+
+.pullLeft {
+  float: left;
+}
+
+.footerDesc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75) !important;
+  line-height: 1.5rem;
+  padding: 0 2rem 0 2rem;
+}
+
+.footerHeading {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.topBar {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  height: 0.125rem;
+  margin-left: 1%;
+  margin-right: 5%;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.nxtLogo {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.tarentoLogo {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.footerEmail {
+  color: #f96a00;
+  font-size: 1rem;
+}
+
+.rights {
+  margin-left: 1rem;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 375px) {
+  .tarentoLogo {
+    margin-left: 1rem !important;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .tarentoLogo {
+    margin-left: 1.5rem !important;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .dlinkRight {
+    padding-left: 5rem !important;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .dlinkRight {
+    padding-left: 8rem !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    padding: 1.875rem 0.625rem 1.875rem 0.625rem;
+  }
+
+  .marginBtm {
+    margin-bottom: 0;
+  }
+
+  .marginBtm1 {
+    margin-bottom: 0;
+  }
+
+  .directlink {
+    padding: 0 0 0 2rem;
+  }
+
+  .rights {
+    margin-left: 1rem;
+    margin-top: 5rem;
+  }
+
+  .topBar {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .footerHeading {
+    margin-bottom: 0 !important;
+  }
+
+  .footerDesc {
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .marginBtm {
+    margin-bottom: 1rem;
+  }
+
+  .marginBtm1 {
+    margin-bottom: 5rem;
+  }
+
+  .footerHeading {
+    margin-bottom: 0 !important;
+  }
+
+  .dlinkRight {
+    padding-left: 12rem !important;
+  }
+
+  .footerDesc {
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+  .marginBtm {
+    margin-bottom: 5rem;
+  }
+
+  .footerHeading {
+    margin-bottom: 1rem !important;
+  }
+
+  .dlinkRight {
+    padding-left: 2rem !important;
+  }
+
+  .footerDesc {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1700px) {
+  .dlinkLeft {
+    padding: 0;
+  }
+
+  .dlinkRight {
+    padding: 0;
+  }
+}
+
+/* Media queries ends here */
