@@ -60,7 +60,17 @@
 @media only screen and (min-width: 600px) {
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .proCard {
+    min-height: 15.3125rem;
+    min-width: 15rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 5%;
+    position: relative;
+  }
 }
 
 @media only screen and (min-width: 992px) {

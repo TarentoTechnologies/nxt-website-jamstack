@@ -6,19 +6,33 @@ import {
 } from "./HeroBanner.module.css";
 
 interface HeroBannerProps {
-  logoMain: any;
-  logoHead: any;
+  data: {
+    logoMain: any;
+    logoHead: any;
+    logoMainTitle?: string;
+    logoHeadTitle?: string;
+  };
 }
 
-export const HeroBanner = ({ logoMain, logoHead }: HeroBannerProps) => {
+export const HeroBanner = ({ data }: HeroBannerProps) => {
   return (
     <div className={`container-fluid ${heroBannerStyles}`}>
       <div className={`${logoSection}`}>
         <div className={`${logoMainStyles}`}>
-          <img src={logoMain} alt="logoMain" className="img-fluid" />
+          <img
+            src={data.logoMain}
+            alt={data.logoMainTitle}
+            title={data.logoMainTitle}
+            className="img-fluid"
+          />
         </div>
         <div className={`${logoHeadStyles}`}>
-          <img src={logoHead} alt="logoHead" className="img-fluid" />
+          <img
+            src={data.logoHead}
+            alt={data.logoHeadTitle}
+            title={data.logoHeadTitle}
+            className="img-fluid"
+          />
         </div>
       </div>
     </div>

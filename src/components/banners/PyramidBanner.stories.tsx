@@ -22,10 +22,12 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const PyramidBannerComponent: Story = {
   args: {
-    title: "Data Pyramid",
-    pyramidImg: pyramidImage,
-    description:
-      "Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.",
-    btnDescr: "Read more",
+    data: {
+      title: "Data Pyramid",
+      pyramidImg: pyramidImage,
+      description:
+        "Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.",
+      btnDescr: "Read more",
+    },
   },
 };

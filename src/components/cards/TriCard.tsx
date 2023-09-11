@@ -61,7 +61,7 @@ export const TriCard = ({
       onMouseLeave={handleMouseLeave}
     >
       <div className={`${imgStyles}`}>
-        <img src={logo} alt="logo" />
+        <img src={logo} alt={title} title={title} />
       </div>
       <div className={`${titleStyles}`}>
         <PrimaryTitle title={title} variant="card" color="white" />
