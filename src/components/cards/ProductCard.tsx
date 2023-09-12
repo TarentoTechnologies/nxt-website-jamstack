@@ -16,7 +16,7 @@ interface ProductCardProps {
   isSecondary?: boolean;
   secLogo?: any;
   link?: string;
-  isLink: boolean;
+  isLink?: boolean;
 }
 
 export const ProductCard = ({
