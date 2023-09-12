@@ -1,4 +1,3 @@
-@import url("../../styles/global/animate.css");
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
@@ -10,15 +9,21 @@
   cursor: pointer;
 }
 
-.imgStyles {
+.imgStyles :global {
   height: 8.875rem;
   margin-top: 4.375rem;
+  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
 
-.titleStyles {
+.titleStyles :global {
   text-transform: uppercase;
   padding-top: 1.875rem;
   font-size: 1.313rem;
+  animation: fadeInUp 1s ease 0.1s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
 
 /* Media queries starts here */

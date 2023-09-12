@@ -1,7 +1,6 @@
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
-
 .heroBannerStyles {
   height: 100vh;
   background-color: var(--black);
@@ -22,12 +21,15 @@
 .logoMainStyles :global {
   margin-bottom: 2.5rem;
   animation: fadeInUp 1s ease 800ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
-
 
 .logoHeadStyles :global {
   min-height: 0.813rem;
   animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
 
 /* Media queries starts here */
