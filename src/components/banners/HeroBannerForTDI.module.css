@@ -1,4 +1,3 @@
-@import url("../../styles/global/animate.css");
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
@@ -7,23 +6,38 @@
   overflow: hidden;
 }
 
-.subtextStyles {
+.subtextStyles :global {
   color: rgba(255, 255, 255, 0.7);
   margin-left: 0;
+  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
 
-.border {
+.border :global {
   width: 3.5rem;
   height: 1.125rem;
   border-radius: 1.875rem;
   background: #f96a00;
   display: -webkit-box;
   margin: 1.875rem 0 1.25rem 0;
+  animation: fadeInUp 1s ease 0.9s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
 
-.titleStyles {
+.titleStyles :global {
   color: #fff;
   line-height: 1.1 !important;
+  animation: fadeInUp 1s ease 0.3s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.imgStyles :global {
+  animation: fadeIn 1s ease 1s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
 
 /* Media queries starts here */
