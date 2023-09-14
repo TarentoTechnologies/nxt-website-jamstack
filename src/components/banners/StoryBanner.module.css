@@ -7,9 +7,12 @@
   overflow: hidden;
 }
 
-.whiteBox {
+.whiteBox :global {
   background-color: #ffffff;
   padding: 3.125rem;
+  animation: fadeInUp 1s ease 0.6s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
 
 .whiteBox p {
@@ -28,9 +31,12 @@
   margin-bottom: 1rem;
 }
 
-.titleStyles {
+.titleStyles :global {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
 
 .subTitleStyles {
@@ -39,8 +45,11 @@
   margin-top: 1.25rem;
 }
 
-.imgStyles {
+.imgStyles :global {
   margin-bottom: 2rem;
+  animation: fadeInUp 1s ease 0.6s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
 }
 
 .buttonStyles {
