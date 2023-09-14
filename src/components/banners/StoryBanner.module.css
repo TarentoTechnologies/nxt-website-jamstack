@@ -1,0 +1,73 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerStyles {
+  background-color: #120033;
+  padding: 5.625rem 0;
+  overflow: hidden;
+}
+
+.whiteBox {
+  background-color: #ffffff;
+  padding: 3.125rem;
+}
+
+.whiteBox p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.whiteBox h3 {
+  font-size: 1.688rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.subFont {
+  font-size: 1.313rem;
+  margin-bottom: 1rem;
+}
+
+.titleStyles {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.subTitleStyles {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.imgStyles {
+  margin-bottom: 2rem;
+}
+
+.buttonStyles {
+  padding: 2rem 2rem 0 2rem;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+  .techSolution {
+    max-width: 28.625rem;
+  }
+  .innovationStory {
+    max-width: 34.688rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */
