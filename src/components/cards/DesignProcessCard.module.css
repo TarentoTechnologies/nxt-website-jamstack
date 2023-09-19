@@ -1,0 +1,47 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.cardStyles {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.imgStyles {
+  width: 7.5rem;
+  height: 7.5rem;
+  background: #120033;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.imgStyles img {
+  height: 3.875rem;
+  position: relative;
+  top: 1.875rem;
+}
+
+.titleStyles {
+  padding-top: 1.125rem;
+  font-size: 1.125rem;
+  margin: 0.625rem 0;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */
