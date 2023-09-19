@@ -69,7 +69,7 @@ export const StoryBanner = ({ data }: StoryBannerProps) => {
           />
         </div>
         <div
-          className={`${col2}  d-flex justify-content-center align-items-center`}
+          className={`${col2} d-flex justify-content-center align-items-center`}
         >
           <div
             className={`${whiteBox} 
