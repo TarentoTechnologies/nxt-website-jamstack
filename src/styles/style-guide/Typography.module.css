@@ -1,6 +1,12 @@
 @import url("../global/fonts.css");
 
 .infoSectionH2 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.infoSectionH3 {
   font-family: "RobotoSlab-Regular", serif;
   font-size: 1.313rem;
   font-weight: 400;
@@ -21,3 +27,33 @@
 .footerHeading {
   font-size: 1rem;
 }
+
+.heroTitle {
+  font-family: "RobotoSlab-Bold", serif;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (max-width: 768px) {
+  .heroTitle {
+    font-family: "RobotoSlab-Bold", serif;
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */
