@@ -22,7 +22,7 @@
 }
 
 .large {
-  width: 22.375rem !important;
+  width: auto;
 }
 
 .secondaryBtn:hover {
@@ -35,4 +35,9 @@
 
 .labelStyles {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

@@ -1,7 +1,9 @@
 import {
   h1One,
   infoSectionH2,
+  infoSectionH3,
   cardHeader,
+  heroTitle,
 } from "../../styles/style-guide/Typography.module.css";
 
 import { white, black87 } from "../../styles/style-guide/ColorGuide.module.css";
@@ -17,7 +19,9 @@ export const PrimaryTitle = ({ title, variant, color }: PrimaryTitleProps) => {
     <div
       className={`
         ${variant === "banner" ? h1One : ""}
-        ${variant === "infoSection" ? infoSectionH2 : ""}
+        ${variant === "heroTitle" ? heroTitle : ""}
+        ${variant === "infoSectionH2" ? infoSectionH2 : ""}
+        ${variant === "infoSectionH3" ? infoSectionH3 : ""}
         ${variant === "card" ? cardHeader : ""}
         ${color === "white" ? white : black87}`}
     >
