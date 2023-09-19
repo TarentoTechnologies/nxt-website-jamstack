@@ -44,6 +44,9 @@ html {
   --scarlet-red: #e53935;
   --cerulean-blue: #1e88e5;
   --italian-blue: #00acc1;
+  --spectrum-blue: #0238fc;
+  --vivid-green: #3fc553;
+  --rhodamine-purple: #c42c90;
 }
 
 html[data-theme="dark"] {
@@ -85,4 +88,7 @@ html[data-theme="dark"] {
   --scarlet-red: #e53935;
   --cerulean-blue: #1e88e5;
   --italian-blue: #00acc1;
+  --spectrum-blue: #0238fc;
+  --vivid-green: #3fc553;
+  --rhodamine-purple: #c42c90;
 }

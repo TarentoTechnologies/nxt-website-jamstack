@@ -21,7 +21,7 @@ export const KeyFeatureCard = ({
   bgColor,
   clickHandler,
 }: KeyFeatureCardProps) => {
-  const getHoverBgColor = () => {
+  const getBgColor = () => {
     switch (bgColor) {
       case "green":
         return bgPeacockGreen;
@@ -39,7 +39,7 @@ export const KeyFeatureCard = ({
         return "";
     }
   };
-  const bgColour = getHoverBgColor();
+  const bgColour = getBgColor();
   return (
     <div
       className={`container-fluid col-sm-12 col-md-4 ${cardStyles} ${bgColour}`}

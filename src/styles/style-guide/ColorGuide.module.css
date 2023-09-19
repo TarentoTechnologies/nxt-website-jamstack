@@ -308,3 +308,27 @@
 .italianBlue {
   color: var(--italian-blue);
 }
+
+.bgSpectrumBlue {
+  background-color: var(--spectrum-blue);
+}
+
+.spectrumBlue {
+  color: var(--spectrum-blue);
+}
+
+.bgVividGreen {
+  background-color: var(--vivid-green);
+}
+
+.vividGreen {
+  color: var(--vivid-green);
+}
+
+.bgRhodaminePurple {
+  background-color: var(--rhodamine-purple);
+}
+
+.rhodaminePurple {
+  color: var(--rhodamine-purple);
+}
