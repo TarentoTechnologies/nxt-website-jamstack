@@ -257,7 +257,7 @@
   background-color: var(--dark-anthracene-violet);
 }
 
-.darkAnthraceneViolet{
+.darkAnthraceneViolet {
   color: var(--dark-anthracene-violet);
 }
 
@@ -275,4 +275,36 @@
 
 .plumbagoGray {
   color: var(--plumbago-gray);
+}
+
+.bgPeacockGreen {
+  background-color: var(--peacock-green);
+}
+
+.peacockGreen {
+  color: var(--peacock-green);
+}
+
+.bgScarletRed {
+  background-color: var(--scarlet-red);
+}
+
+.scarletRed {
+  color: var(--scarlet-red);
+}
+
+.bgCeruleanBlue {
+  background-color: var(--cerulean-blue);
+}
+
+.ceruleanBlue {
+  color: var(--cerulean-blue);
+}
+
+.bgItalianBlue {
+  background-color: var(--italian-blue);
+}
+
+.italianBlue {
+  color: var(--italian-blue);
 }

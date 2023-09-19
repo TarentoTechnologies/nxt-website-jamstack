@@ -1,6 +1,27 @@
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
+.cardStyles {
+  padding: 2.5rem;
+  border: 1px solid RGBA(151, 151, 151, 0.14);
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.imgStyles {
+  width: 4.375rem;
+  height: 4.375rem;
+}
+
+.cardStyles p {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-left: 2rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
@@ -9,7 +30,10 @@
 @media only screen and (min-width: 600px) {
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .cardStyles {
+    padding: 2rem;
+  }
 }
 
 @media only screen and (min-width: 992px) {

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { KeyFeatureCard } from "./KeyFeatureCard";
-import techLogo from "../../../static/images/technology.svg";
+import keyLogo from "../../../static/images/tech-1.png";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     bgColor: {
       control: "select",
-      options: ["blue", "green", "violet"],
+      options: ["green", "red", "orange", "blue", "italianBlue", "violet"],
       required: true,
     },
   },
@@ -24,8 +24,8 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const KeyFeatureCardComponent: Story = {
   args: {
-    title: "Technology",
-    logo: techLogo,
-    bgColor: "blue",
+    title: "Built for scale",
+    logo: keyLogo,
+    bgColor: "green",
   },
 };

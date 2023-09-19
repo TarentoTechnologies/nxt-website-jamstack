@@ -1,12 +1,13 @@
 import {
-  bgOxideBlue,
-  bgViridianGreen,
+  bgCadiumOrange,
+  bgPeacockGreen,
   bgSpectrumViolet,
-  bgLeitchsBlue,
-  bgDarkViridianGreen,
-  bgRoslynBlue,
+  bgScarletRed,
+  bgCeruleanBlue,
+  bgItalianBlue,
 } from "../../styles/style-guide/ColorGuide.module.css";
 import { cardStyles, imgStyles } from "./KeyFeatureCard.module.css";
+
 interface KeyFeatureCardProps {
   title: string;
   logo: any;
@@ -23,11 +24,17 @@ export const KeyFeatureCard = ({
   const getHoverBgColor = () => {
     switch (bgColor) {
       case "green":
-        return bgDarkViridianGreen;
+        return bgPeacockGreen;
+      case "red":
+        return bgScarletRed;
+      case "orange":
+        return bgCadiumOrange;
       case "blue":
-        return bgLeitchsBlue;
+        return bgCeruleanBlue;
+      case "italianBlue":
+        return bgItalianBlue;
       case "violet":
-        return bgRoslynBlue;
+        return bgSpectrumViolet;
       default:
         return "";
     }
@@ -35,7 +42,7 @@ export const KeyFeatureCard = ({
   const bgColour = getHoverBgColor();
   return (
     <div
-      className={`container-fluid d-flex col-md-4 col-sm-4 col-xs-12 ${cardStyles} ${bgColour}`}
+      className={`container-fluid col-sm-12 col-md-4 ${cardStyles} ${bgColour}`}
       onClick={clickHandler}
     >
       <div className={`${imgStyles}`}>
