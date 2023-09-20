@@ -11,6 +11,7 @@ interface DesignProcessBannerProps {
     subHeading: string;
     levelOneDesc: string;
     levelTwoDesc: string;
+    levelThreeDesc?: string;
     img: any;
     bgGray?: boolean;
   };
@@ -36,7 +37,8 @@ export const DesignProcessBanner = ({ data }: DesignProcessBannerProps) => {
           <h3 className={`${infoSectionH2} pt-3`}>{data?.heading}</h3>
           <p className={`pt-3`}>{data?.levelOneDesc}</p>
           <h4 className={`${cardHeader} pt-3`}>{data?.subHeading}</h4>
-          <p className={`pt-3`}>{data?.levelTwoDesc}</p>
+          <p className={`pt-3 mb-0`}>{data?.levelTwoDesc}</p>
+          <p className={`pt-3`}>{data?.levelThreeDesc}</p>
         </div>
       </div>
     </div>
