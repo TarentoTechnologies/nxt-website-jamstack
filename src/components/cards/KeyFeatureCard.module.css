@@ -3,7 +3,7 @@
 
 .cardStyles {
   padding: 2.5rem;
-  border: 1px solid RGBA(151, 151, 151, 0.14);
+  border: 1px solid var(--plumbago-gray);
   display: flex;
   align-content: center;
   justify-content: flex-start;
