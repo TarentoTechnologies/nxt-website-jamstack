@@ -42,11 +42,11 @@ export const KeyFeatureCard = ({
   const bgColour = getBgColor();
   return (
     <div
-      className={`container-fluid col-sm-12 col-md-4 ${cardStyles} ${bgColour}`}
+      className={`container-fluid col-sm-12 col-md-6 col-lg-4 ${cardStyles} ${bgColour}`}
       onClick={clickHandler}
     >
       <div className={`${imgStyles}`}>
-        <img src={logo} alt={title} title={title} className={`img-fluid`} />
+        <img src={logo} alt={title} title={title} height="70px" width="70px" />
       </div>
       <p>{title}</p>
     </div>

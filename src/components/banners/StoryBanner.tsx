@@ -50,7 +50,7 @@ export const StoryBanner = ({ data }: StoryBannerProps) => {
       }
     >
       <div className={`row containerService paddingLeftRight15`}>
-        <div className={`col-12 ${titleStyles}`}>
+        <div className={`col-12 ${titleStyles} px-lg-0`}>
           <PrimaryTitle
             title={data?.title}
             variant="infoSectionH2"

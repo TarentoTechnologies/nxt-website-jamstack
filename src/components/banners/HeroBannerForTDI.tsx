@@ -25,7 +25,7 @@ export const HeroBannerForTDI = ({ data }: HeroBannerForTDIProps) => {
     >
       <div className={`row containerService paddingLeftRight15`}>
         <div
-          className={`col-sm-12 col-md-6 d-flex flex-column justify-content-center`}
+          className={`col-sm-12 col-md-6 d-flex flex-column justify-content-center px-md-0`}
         >
           <div className={`${headerInfo}`}>
             <div className={`${cardHeader} ${titleStyles}`}>{data?.title}</div>
