@@ -28,6 +28,7 @@
   top: 10%;
   left: 10%;
   color: var(--white);
+  padding-right: 10%;
 }
 
 .logoStyles {
@@ -63,6 +64,16 @@
   .proCard {
     min-height: 15.3125rem;
     min-width: 15rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 5%;
+    position: relative;
+  }
+  .proCardSecondary {
+    min-height: 13.125rem;
+    min-width: 13.313rem;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

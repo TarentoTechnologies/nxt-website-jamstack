@@ -1,0 +1,132 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.techPrinciples .titleStyles :global {
+  animation: fadeInUp 1s ease-in-out 300ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.techPrinciples .descStyles :global {
+  margin-top: 2rem;
+  animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.techPrinciples .subHeadingStyles :global {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.3125rem;
+  animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.techStack {
+  background-color: #f7f7f7;
+  padding-top: 5rem;
+  padding-bottom: 3.75rem;
+}
+
+.techStack .titleStyles :global {
+  animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.techStack .gridLayout {
+  display: grid;
+  gap: 0;
+  background-color: var(--white);
+  margin-top: 1.875rem;
+}
+
+.techStack .logoStyles :global {
+  border: 1px solid var(--plumbago-gray);
+  height: 7.5rem;
+  animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.techStack .logoStyles img {
+  max-height: 4.5rem;
+  object-fit: contain;
+}
+
+.acceleratorsLayout {
+  padding: 3.75rem 0;
+}
+
+.acceleratorsLayout .titleStyles :global {
+  margin-top: 1.25rem;
+  margin-bottom: 0.625rem;
+  animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.acceleratorsLayout .cardStyles :global {
+  padding: 2rem 0 0 0;
+  animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.contactUsLayout {
+  background-color: #f7f7f7;
+  padding-top: 5rem;
+  padding-bottom: 3.75rem;
+}
+
+.contactUsLayout .titleStyles :global {
+  padding-bottom: 2rem;
+  animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.contactUsLayout .btnStyles :global {
+  padding-top: 2.625rem;
+  animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+  .techStack .gridLayout {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3.75rem 1.875rem;
+  }
+  .techStack .logoStyles {
+    padding: 1.563rem 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .techStack .gridLayout {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3.75rem 1.875rem;
+  }
+  .techStack .logoStyles {
+    padding: 1.563rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+  .techStack .gridLayout {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 3.75rem 2.813rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */

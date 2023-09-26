@@ -57,19 +57,19 @@ a:hover {
 
 @media only screen and (min-width: 768px) {
   .containerService {
-    max-width: 46.875rem;
+    width: 46.875rem;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .containerService {
-    max-width: 60.625rem;
+    width: 60.625rem;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .containerService {
-    max-width: 73.125rem;
+    width: 73.125rem;
   }
 }
 
