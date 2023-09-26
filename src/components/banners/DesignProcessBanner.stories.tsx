@@ -18,15 +18,13 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const DesignProcessBannerComponent: Story = {
   args: {
-    data: {
-      heading: "Discover",
-      levelOneDesc:
-        "In the discovery stage, we work closely with the client to define our understanding of the problem.",
-      subHeading: "Primary and Secondary Research",
-      levelTwoDesc:
-        "To diverge and understand more about the problem area, we conduct user research and secondary research from any source available. We create personas to identify our users, map user journeys to find the pain points.",
-      img: discoverImg,
-      bgGray: true,
-    },
+    heading: "Discover",
+    levelOneDesc:
+      "In the discovery stage, we work closely with the client to define our understanding of the problem.",
+    subHeading: "Primary and Secondary Research",
+    levelTwoDesc:
+      "To diverge and understand more about the problem area, we conduct user research and secondary research from any source available. We create personas to identify our users, map user journeys to find the pain points.",
+    img: discoverImg,
+    bgGray: true,
   },
 };

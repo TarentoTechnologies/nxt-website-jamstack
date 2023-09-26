@@ -12,13 +12,11 @@ interface DesignProcessCardProps {
 
 export const DesignProcessCard = ({ title, icon }: DesignProcessCardProps) => {
   return (
-    <div className={`${cardStyles}`}>
-      <div className={`col-xs-6 col-sm-3 col-md-3`}>
-        <div className={`${imgStyles}`}>
-          <img src={icon} alt={title} title={title} className={`img-fluid`} />
-        </div>
-        <h4 className={`${titleStyles} ${cardHeader}`}>{title}</h4>
+    <div className={`col-6 col-md-3 ${cardStyles}`}>
+      <div className={`${imgStyles}`}>
+        <img src={icon} alt={title} title={title} className={`img-fluid`} />
       </div>
+      <h4 className={`${titleStyles} ${cardHeader}`}>{title}</h4>
     </div>
   );
 };
