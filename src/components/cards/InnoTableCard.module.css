@@ -25,9 +25,9 @@
 @media only screen and (min-width: 600px) {
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
   .cardStyles {
-    min-width: 20.188rem;
+    padding: 2rem 1rem;
   }
 }
 
