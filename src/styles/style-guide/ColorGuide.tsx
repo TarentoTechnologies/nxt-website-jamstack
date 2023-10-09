@@ -32,7 +32,8 @@ import {
   bgLightViolet,
   bgDarkAnthraceneViolet,
   bgCadiumYellow,
-  bgPlumbagoGray
+  bgPlumbagoGray,
+  bgNeutralGray2
 } from "./ColorGuide.module.css";
 
 export const ColorGuide = (): any => {
@@ -237,6 +238,12 @@ export const ColorGuide = (): any => {
         >
           <h5>bgPlumbagoGray</h5>
           <h6>RGBA(151, 151, 151, 0.14)</h6>
+        </div>
+        <div
+          className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgNeutralGray2} p-3`}
+        >
+          <h5>bgNeutralGray2</h5>
+          <h6>#f5f5f5</h6>
         </div>
       </div>
     </div>

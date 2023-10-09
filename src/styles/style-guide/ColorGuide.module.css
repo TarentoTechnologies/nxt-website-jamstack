@@ -332,3 +332,11 @@
 .rhodaminePurple {
   color: var(--rhodamine-purple);
 }
+
+.bgNeutralGray2 {
+  background-color: var(--neutral-gray-2);
+}
+
+.neutralGray2 {
+  color: var(--neutral-gray-2);
+}

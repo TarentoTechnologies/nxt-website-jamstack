@@ -47,6 +47,7 @@ html {
   --spectrum-blue: #0238fc;
   --vivid-green: #3fc553;
   --rhodamine-purple: #c42c90;
+  --neutral-gray-2: #f5f5f5;
 }
 
 html[data-theme="dark"] {
@@ -91,4 +92,5 @@ html[data-theme="dark"] {
   --spectrum-blue: #0238fc;
   --vivid-green: #3fc553;
   --rhodamine-purple: #c42c90;
+  --neutral-gray-2: #f5f5f5;
 }
