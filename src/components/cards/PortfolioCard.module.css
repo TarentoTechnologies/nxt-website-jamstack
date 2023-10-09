@@ -1,0 +1,18 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.heroImage {
+  height: 14.125rem;
+}
+
+.tagOrange {
+  border-radius: 0.875rem;
+  min-height: 1.75rem;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+.ctaIcon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
