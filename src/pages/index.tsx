@@ -127,7 +127,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const agencyPortfolioData = {
     title: "Agency Portfolio",
     ctaText: "View All",
-    ctaLink: "https://www.google.com",
+    ctaLink: "/design-portfolio",
     description:
       "Bihar Museum is a museum located in Patna. It was partially opened in August 2015. 'The children's museum', the main entrance area, and an orientation theatre were the only parts opened to the public in August 2015.",
     list: [
@@ -170,7 +170,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const designPortfolioData = {
     title: "Design Portfolio",
     ctaText: "View All",
-    ctaLink: "https://www.google.com",
+    ctaLink: "/design-portfolio",
     description:
       "Bihar Museum is a museum located in Patna. It was partially opened in August 2015. 'The children's museum', the main entrance area, and an orientation theatre were the only parts opened to the public in August 2015.",
     list: [

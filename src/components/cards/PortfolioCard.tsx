@@ -1,4 +1,9 @@
-import { heroImage, tagOrange, ctaIcon } from "./PortfolioCard.module.css";
+import {
+  heroImage,
+  customTag,
+  ctaIcon,
+  truncateDescription,
+} from "./PortfolioCard.module.css";
 import {
   tagLabel,
   heading700,
@@ -10,8 +15,10 @@ import {
   white87,
   bgGlaucousGreen,
   black87,
+  bgUraniaBlue,
 } from "../../styles/style-guide/ColorGuide.module.css";
 import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
+import { ctaIconPos } from "./ShowcaseCard.module.css";
 import { Link } from "gatsby";
 
 interface PortfolioCardProps {
@@ -22,6 +29,7 @@ interface PortfolioCardProps {
   description: string;
   ctaText: string;
   ctaLink: any;
+  tagVariant?: string;
 }
 
 export const PortfolioCard = ({
@@ -32,6 +40,7 @@ export const PortfolioCard = ({
   description,
   ctaText,
   ctaLink,
+  tagVariant,
 }: PortfolioCardProps) => {
   return (
     <div className="container-fluid">
@@ -45,7 +54,11 @@ export const PortfolioCard = ({
       />
 
       {/* Tag */}
-      <div className={`${tagOrange} ${bgCadiumOrange} mt-4`}>
+      <div
+        className={`${customTag} ${
+          tagVariant === "blue" ? bgUraniaBlue : bgCadiumOrange
+        }  mt-4`}
+      >
         <label className={`${tagLabel} ${white87} px-3`}>{tag}</label>
       </div>
 
@@ -55,14 +68,16 @@ export const PortfolioCard = ({
       </div>
 
       {/* Description */}
-      <div className={`${subText2} ${black87}`}>{description}</div>
+      <div className={`${subText2} ${black87} ${truncateDescription}`}>
+        {description}
+      </div>
 
       {/* CTA */}
       <div className="mt-4">
         <Link to={ctaLink}>
           <label className={`${cta1}`} role="button">
             {ctaText}
-            <span>
+            <span className={`${ctaIconPos}`}>
               <img
                 className={`${ctaIcon} ps-2`}
                 src={forwardArrow}

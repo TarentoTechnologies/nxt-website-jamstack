@@ -5,7 +5,7 @@
   height: 14.125rem;
 }
 
-.tagOrange {
+.customTag {
   border-radius: 0.875rem;
   min-height: 1.75rem;
   width: fit-content;
@@ -15,4 +15,15 @@
 .ctaIcon {
   width: 1.6rem;
   height: 1.6rem;
+}
+
+.truncateDescription {
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 3.75rem;
 }

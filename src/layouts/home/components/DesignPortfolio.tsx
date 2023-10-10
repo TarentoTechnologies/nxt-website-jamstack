@@ -1,4 +1,5 @@
 import { Link } from "gatsby";
+import { navigate } from "gatsby";
 import { PortfolioCard } from "../../../components";
 import { PrimaryCTA } from "../../../components/buttons/PrimaryCTA";
 import { h1One } from "../../../styles/style-guide/Typography.module.css";
@@ -19,6 +20,11 @@ export const DesignPortfolio = ({
   ctaLink,
   designPortfolioData,
 }: AgencyPortfolioProps) => {
+  const navigateTo = (e: any) => {
+    e.preventDefault();
+    navigate(ctaLink);
+  };
+
   return (
     <div className={`container-fluid ${productCardLayoutStyles}`}>
       {/* Header */}
@@ -27,9 +33,7 @@ export const DesignPortfolio = ({
           <h1 className={`${h1One}`}>{title}</h1>
         </div>
         <div className="float-end d-none d-sm-none d-md-block d-lg-block d-xl-block">
-          <Link to={ctaLink}>
-            <PrimaryCTA label={ctaText} />
-          </Link>
+          <PrimaryCTA label={ctaText} clickHandler={(e) => navigateTo(e)} />
         </div>
       </div>
 
