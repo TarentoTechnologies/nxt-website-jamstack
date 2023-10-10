@@ -1,18 +1,17 @@
-import { contactUsLayout, titleStyles, btnStyles } from "../Tech.module.css";
+import {
+  btnStyles,
+  contactUsLayout,
+  titleStyles,
+} from "../../tech/Tech.module.css";
 import { subText1 } from "../../../styles/style-guide/Typography.module.css";
 import { PrimaryCTA } from "../../../components/buttons/PrimaryCTA";
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 
-interface ContactUsLayoutProps {
-  data: {
-    heading: string;
-    desc: string;
-    CTAlabel?: string;
-    CTAlink?: any;
-  };
+interface AreYouInterestedProps {
+  data: any;
 }
 
-export const ContactUsLayout = ({ data }: ContactUsLayoutProps) => {
+export const AreYouInterested = ({ data }: AreYouInterestedProps) => {
   return (
     <div
       className={`container-fluid d-flex justify-content-center ${contactUsLayout}`}
