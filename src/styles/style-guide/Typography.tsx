@@ -6,7 +6,9 @@ import {
   tagLabel,
   heading700,
   subText2,
-  cta1
+  cta1,
+  subHeading1,
+  tagLabel2
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -51,6 +53,12 @@ export const Typography = (): any => {
             <td>tagLabel</td>
           </tr>
           <tr>
+            <th scope="row" className={tagLabel2}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>tagLabel2</td>
+          </tr>
+          <tr>
             <th scope="row" className={heading700}>
               Tellus in hac habitasse platea
             </th>
@@ -67,6 +75,12 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>cta1</td>
+          </tr>
+          <tr>
+            <th scope="row" className={subHeading1}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>subHeading1</td>
           </tr>
         </tbody>
       </table>

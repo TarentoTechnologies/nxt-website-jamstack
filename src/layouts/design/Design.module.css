@@ -6,26 +6,26 @@
   padding: 3.75rem 0;
 }
 
-.designProcess .titleStyles :global {
+.designProcess .titleStyles {
   margin-top: 1.25rem;
-  animation: fadeInUp 1s ease 800ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.designProcess .descStyles :global {
+.designProcess .descStyles {
   margin-top: 2rem;
   margin-bottom: 0;
   font-size: 1.125rem;
-  animation: fadeInUp 1s ease 800ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.designProcess .cardStyles :global {
-  animation: fadeInUp 1s ease 1s 1 normal forwards;
+.designProcess .cardStyles {
+  /* animation: fadeInUp 1s ease 1s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 /* Media queries starts here */

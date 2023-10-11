@@ -1,23 +1,38 @@
 import type { HeadFC, PageProps } from "gatsby";
 import * as React from "react";
+
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import techHero from "../../static/images/tech-hero.png";
+import { Footer } from "../components/footer/Footer";
 import {
   AllOtherClients,
   AreYouInterested,
   HeroBanner,
   Showcase,
 } from "../layouts/design-portfolio";
-import { Footer } from "../components/footer/Footer";
+import { About, Highlight, TagSection } from "../layouts/design-portfolio-detail";
 
 const DesignPortfolioDetail: React.FC<PageProps> = () => {
   const heroBannerData = {
-    title:
-      "Creativity is thinking up new things.  Innovation is doing new things.",
+    title: "Bihar Museum",
     img: techHero,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Maecenas sollicitudin porttitor gravida. Donec elementum tincidunt rutrum. Vivamus et ligula libero.",
+      "Bihar Museum is a museum located in Patna. It was partially opened in August 2015. 'The children's museum', the main entrance area, and an orientation theatre were the only parts opened to the public in August 2015. Later, in October 2017 remaining galleries were also opened.",
+  };
+
+  const aboutData = {
+    title: "About CIBoost",
+    description:
+      "Innovation is now more important than ever in today's world. To stand out in a crowded market, business leaders need to focus on different ways they can keep up with evolving demand. Innovation is now more important than ever in today's world. To stand out in a crowded market, business leaders need to focus on different ways they can keep up with evolving demand.",
+    columnOneTitle: "Industry",
+    columnOneValue: "Government",
+    columnTwoTitle: "Geography",
+    columnTwoValue: "India",
+    columnThreeTitle: "Platform",
+    columnThreeValue: "Web",
+    columnFourTitle: "Link",
+    columnFourValue: "https://www.biharmuseum.org/",
   };
 
   const showCaseData = {
@@ -220,6 +235,9 @@ const DesignPortfolioDetail: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBanner heroBannerData={heroBannerData} />
+      <About data={aboutData} />
+      <Highlight />
+      <TagSection />
       <Footer data={footerData} />
     </main>
   );

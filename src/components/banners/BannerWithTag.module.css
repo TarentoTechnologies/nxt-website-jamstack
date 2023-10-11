@@ -1,21 +1,24 @@
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
-.bannerStyles {
-  padding: 3.75rem 0;
+.bannerWithTag {
+  border-radius: 1.563rem;
+  min-height: 24.5rem;
 }
 
-.imgStyles :global {
-  padding-top: 2rem;
-  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
-  visibility: visible;
-  /* opacity: 0; */
+.tag {
+  border-radius: 1.281rem;
+  min-height: 2.563rem;
 }
 
-.textStyles :global {
-  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
-  visibility: visible;
-  /* opacity: 0; */
+.tagPos {
+  bottom: 4rem;
+}
+
+.bannerImg {
+  max-width: 26.813rem;
+  max-height: 19.5rem;
+  margin-right: -4rem;
 }
 
 /* Media queries starts here */

@@ -4,6 +4,7 @@ import {
   bgBlack60,
   bgBlack90,
   bgBlack70,
+  bgBlack75,
   bgBlack87,
   bgWhite87,
   bgWhite70,
@@ -24,6 +25,7 @@ import {
   bgCadiumOrange,
   bgNeutralGray,
   bgPallidBlueViolet,
+  bgPallidBlueViolet2,
   bgGlaucousGreen,
   bgBenzolGreen,
   bgHaysBlue,
@@ -58,6 +60,12 @@ export const ColorGuide = (): any => {
         >
           <h5>bgBlack70</h5>
           <h6>rgba(0, 0, 0, 0.7)</h6>
+        </div>
+        <div
+          className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgBlack75} p-3`}
+        >
+          <h5>bgBlack75</h5>
+          <h6>rgba(0, 0, 0, 0.75)</h6>
         </div>
         <div
           className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgBlack87} p-3`}
@@ -184,6 +192,12 @@ export const ColorGuide = (): any => {
         >
           <h5>bgPallidBlueViolet</h5>
           <h6>#ded5ff</h6>
+        </div>
+        <div
+          className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgPallidBlueViolet2} p-3`}
+        >
+          <h5>bgPallidBlueViolet2</h5>
+          <h6>#dee0ff</h6>
         </div>
         <div
           className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgGlaucousGreen} p-3`}
