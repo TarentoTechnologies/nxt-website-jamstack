@@ -13,6 +13,9 @@ import {
   rights,
   dlinkLeft,
   dlinkRight,
+  floatRight,
+  dLinkLeft,
+  dLinkRight,
 } from "./Footer.module.css";
 
 interface FooterProps {
@@ -40,9 +43,22 @@ export const Footer = ({ data }: FooterProps) => {
     <div className={`container-fluid ${footer}`}>
       <div className={`row`}>
         {/* Column one */}
-        <div className={`col-sm-12 col-md-12 col-lg-8`}>
-          <div className={`d-block d-lg-none ${topBar}`}></div>
-          <div className={`d-block d-lg-none ${tarentoLogo} ${footerRight}`}>
+        <div className={`col-sm-12 col-md-12 col-xl-8`}>
+          <div className={`d-block d-md-none ${topBar}`}></div>
+          <div className={`d-block d-md-none ${tarentoLogo} ${footerRight}`}>
+            <a href="https://www.tarento.com" rel="canonical" target="_blank">
+              <img
+                src={data.companyLogoImg}
+                alt={data.companyLogoImgTitle}
+                title={data.companyLogoImgTitle}
+                width="187"
+                height="43"
+              />
+            </a>
+          </div>
+          <div
+            className={`d-none d-md-block d-xl-none ${tarentoLogo} ${footerRight} ${floatRight}`}
+          >
             <a href="https://www.tarento.com" rel="canonical" target="_blank">
               <img
                 src={data.companyLogoImg}
@@ -64,11 +80,10 @@ export const Footer = ({ data }: FooterProps) => {
               />
             </a>
           </div>
-          <div className={`d-none d-lg-block ${topBar}`}></div>
+
+          <div className={`d-none d-md-block ${topBar}`}></div>
           <div className={`row ${marginBtm}`}>
-            <div
-              className={`col-xs-12 col-sm-12 col-md-8 col-lg-6 ${footerDesc}`}
-            >
+            <div className={`col-xs-12 col-sm-12 col-md-6 ${footerDesc}`}>
               <p>{data.description}</p>
               <p className={`${footerHeading}`}>
                 Reach us at{" "}
@@ -81,10 +96,10 @@ export const Footer = ({ data }: FooterProps) => {
                 </a>
               </p>
             </div>
-            <div
-              className={`col-xs-12 col-sm-12 col-md-12 col-lg-6 d-flex ps-0`}
-            >
-              <div className={`${directlink} ${dlinkLeft} offset-xl-2`}>
+            <div className="col-md-6 d-flex p-0">
+              <div
+                className={`${directlink} ${dlinkLeft} ${dLinkLeft} offset-xl-2`}
+              >
                 <p className={`${footerHeading}`}>{data?.levelOneHeading}</p>
                 <ul>
                   {data?.levelOneList?.map((item, index) => (
@@ -96,7 +111,9 @@ export const Footer = ({ data }: FooterProps) => {
                   ))}
                 </ul>
               </div>
-              <div className={`${directlink} ${dlinkRight} offset-xl-2`}>
+              <div
+                className={`${directlink} ${dlinkRight} ${dLinkRight} offset-xl-2`}
+              >
                 <p className={`${footerHeading}`}>{data?.levelTwoHeading}</p>
                 <ul>
                   {data?.levelTwoList?.map((item, index) => (
@@ -113,8 +130,8 @@ export const Footer = ({ data }: FooterProps) => {
         </div>
 
         {/* Column two */}
-        <div className={`col-sm-12 col-md-12 col-lg-4`}>
-          <div className={`d-none d-lg-block ${tarentoLogo} ${footerRight}`}>
+        <div className={`col-sm-12 col-md-12 col-xl-4`}>
+          <div className={`d-none d-xl-block ${tarentoLogo} ${footerRight}`}>
             <a href="https://www.tarento.com" rel="canonical" target="_blank">
               <img
                 src={data.companyLogoImg}
@@ -125,7 +142,7 @@ export const Footer = ({ data }: FooterProps) => {
               />
             </a>
           </div>
-          <div className={`${topBar}`}></div>
+          <div className={`${topBar} col-md-6 col-lg-12`}></div>
           <div className={`row`}>
             <div
               className={`col-xs-6 col-sm-12 col-md-12 col-lg-12 ${marginBtm1} d-flex ps-0`}
@@ -142,7 +159,9 @@ export const Footer = ({ data }: FooterProps) => {
                   ))}
                 </ul>
               </div>
-              <div className={`${directlink} ${dlinkRight} offset-xl-2`}>
+              <div
+                className={`${directlink} ${dlinkRight} offset-lg-1 offset-xl-2`}
+              >
                 <p className={`${footerHeading}`}>{data?.levelFourHeading}</p>
                 <ul>
                   {data?.levelFourList?.map((item, index) => (

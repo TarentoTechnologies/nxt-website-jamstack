@@ -33,7 +33,7 @@ export const InnoTableCard = ({
   const bgColour = getBgColor();
   return (
     <div
-      className={`col-lg-4 col-md-4 col-sm-12 ${bgColour} ${cardStyles}`}
+      className={`col-md-4 ${bgColour} ${cardStyles}`}
       onClick={clickHandler}
     >
       <h2 className={`${titleStyles}`}>{title}</h2>

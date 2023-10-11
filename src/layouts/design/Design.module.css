@@ -1,19 +1,29 @@
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
-.bannerStyles {
+.designProcess {
+  background-color: #f7f7f7;
   padding: 3.75rem 0;
 }
 
-.imgStyles :global {
-  padding-top: 2rem;
+.designProcess .titleStyles :global {
+  margin-top: 1.25rem;
   animation: fadeInUp 1s ease 800ms 1 normal forwards;
   visibility: visible;
   opacity: 0;
 }
 
-.textStyles :global {
+.designProcess .descStyles :global {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  font-size: 1.125rem;
   animation: fadeInUp 1s ease 800ms 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.designProcess .cardStyles :global {
+  animation: fadeInUp 1s ease 1s 1 normal forwards;
   visibility: visible;
   opacity: 0;
 }
