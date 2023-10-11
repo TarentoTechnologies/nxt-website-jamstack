@@ -126,34 +126,6 @@ export const Footer = ({ data }: FooterProps) => {
                 </ul>
               </div>
             </div>
-            <div
-              className={`d-none col-xs-12 col-sm-12 col-md-12 col-lg-6 d-flex ps-0`}
-            >
-              <div className={`${directlink} ${dlinkLeft} offset-xl-2`}>
-                <p className={`${footerHeading}`}>{data?.levelOneHeading}</p>
-                <ul>
-                  {data?.levelOneList?.map((item, index) => (
-                    <li key={index}>
-                      <a href={item.href} rel="canonical">
-                        {item.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={`${directlink} ${dlinkRight} offset-xl-2`}>
-                <p className={`${footerHeading}`}>{data?.levelTwoHeading}</p>
-                <ul>
-                  {data?.levelTwoList?.map((item, index) => (
-                    <li key={index}>
-                      <a href={item.href} rel="canonical">
-                        {item.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
 
