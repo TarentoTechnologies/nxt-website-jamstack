@@ -9,9 +9,9 @@
 .productCardStyles :global {
   padding-right: 1.25rem;
   margin-bottom: 5rem;
-  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .paddingTopDown100 {

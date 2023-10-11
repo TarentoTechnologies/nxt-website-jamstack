@@ -1,9 +1,9 @@
-import { Link } from "gatsby";
-import { navigate } from "gatsby";
 import { PortfolioCard } from "../../../components";
 import { PrimaryCTA } from "../../../components/buttons/PrimaryCTA";
 import { h1One } from "../../../styles/style-guide/Typography.module.css";
 import { productCardLayoutStyles } from "../Home.module.css";
+import { Link } from "gatsby";
+import { navigate } from "gatsby";
 
 interface AgencyPortfolioProps {
   title: string;
@@ -30,15 +30,37 @@ export const DesignPortfolio = ({
       {/* Header */}
       <div className="clearfix">
         <div className="float-start">
-          <h1 className={`${h1One}`}>{title}</h1>
+          <h1
+            className={`${h1One}`}
+            data-sal="slide-up"
+            data-sal-delay="200"
+            data-sal-duration="1000"
+            data-sal-easing="ease-in-back"
+          >
+            {title}
+          </h1>
         </div>
-        <div className="float-end d-none d-sm-none d-md-block d-lg-block d-xl-block">
+        <div
+          className="float-end d-none d-sm-none d-md-block d-lg-block d-xl-block"
+          data-sal="slide-up"
+          data-sal-delay="200"
+          data-sal-duration="1000"
+          data-sal-easing="ease-in-back"
+        >
           <PrimaryCTA label={ctaText} clickHandler={(e) => navigateTo(e)} />
         </div>
       </div>
 
       {/* Description */}
-      <p className="col-9">{description}</p>
+      <p
+        className="col-9"
+        data-sal="slide-up"
+        data-sal-delay="200"
+        data-sal-duration="1000"
+        data-sal-easing="ease-in-back"
+      >
+        {description}
+      </p>
 
       {/* Portfolio cards */}
       <div className={`row`}>
@@ -47,6 +69,10 @@ export const DesignPortfolio = ({
             <div
               className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0`}
               key={data.id}
+              data-sal="slide-up"
+              data-sal-delay="200"
+              data-sal-duration="1000"
+              data-sal-easing="ease-in-back"
             >
               <PortfolioCard
                 ctaLink={data.ctaLink}
@@ -65,7 +91,14 @@ export const DesignPortfolio = ({
       {/* For smaller screen CTA */}
       <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none">
         <div className="clearfix mt-3">
-          <Link to={ctaLink} className="float-end">
+          <Link
+            to={ctaLink}
+            className="float-end"
+            data-sal="slide-up"
+            data-sal-delay="200"
+            data-sal-duration="1000"
+            data-sal-easing="ease-in-back"
+          >
             <PrimaryCTA label={ctaText} />
           </Link>
         </div>
