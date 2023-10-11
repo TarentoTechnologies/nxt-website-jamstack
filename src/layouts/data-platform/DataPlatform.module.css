@@ -1,0 +1,42 @@
+@import url("../../styles//global//colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerStyles {
+  overflow: hidden;
+  /* height: 100vh; */
+  overflow: hidden;
+  padding-top: 80px;
+  margin-top: 9%;
+}
+.keyFeatureText {
+  font-size: 1.125rem;
+  margin-top: 0.938rem;
+  display: block;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .bannerStyles {
+    padding: 6.25rem 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bannerStyles {
+    padding: 5rem 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .bannerStyles {
+    padding: 5rem 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .bannerStyles {
+    padding: 5rem 0;
+  }
+}
+
+/* Media queries ends here */
