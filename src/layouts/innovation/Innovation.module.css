@@ -1,0 +1,55 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.forgingInnovation {
+  padding-top: 1.875rem;
+}
+
+.forgingInnovation .titleStyles :global {
+  padding-top: 1.25rem;
+  padding-bottom: 0.625rem;
+  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.forgingInnovation .descStyles :global {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.forgingInnovation .imgStyles :global {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+.forgingInnovation .cardStyles :global {
+  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  visibility: visible;
+  opacity: 0;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */
