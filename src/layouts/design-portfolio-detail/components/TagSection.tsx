@@ -1,11 +1,18 @@
-import { acceleratorsLayout, titleStyles } from "../../tech/Tech.module.css";
+import { BannerWithTag } from "../../../components";
+import { acceleratorsLayout } from "../../tech/Tech.module.css";
 
-export const TagSection = () => {
+interface TagSectionProps {
+  data: any;
+}
+
+export const TagSection = ({ data }: TagSectionProps) => {
   return (
     <div
       className={`container-fluid d-flex justify-content-center ${acceleratorsLayout}`}
     >
-      <div className=""></div>
+      <div className={`containerService paddingLeftRight15`}>
+        <BannerWithTag tagsList={data?.tagsList} title={data?.title} />
+      </div>
     </div>
   );
 };
