@@ -1,8 +1,8 @@
 import { black50, blue } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorDescription,
-  acceleratorTitle,
   acceleratorSubTitle,
+  acceleratorTitle,
 } from "../../styles/style-guide/Typography.module.css";
 import { bannerStyles } from "./HeroBannerForAccelerators.module.css";
 
@@ -40,11 +40,11 @@ export const HeroBannerForAccelerators = ({
               >
                 {data.title}
               </h1>
-              <h3
+              <div
                 className={`wow animated fadeInUp titleSubHeading ${blue} ${acceleratorSubTitle} mb-4`}
               >
                 {data.subText}
-              </h3>
+              </div>
 
               <p
                 className={`wow animated fadeInUp ${black50} ${acceleratorDescription}`}

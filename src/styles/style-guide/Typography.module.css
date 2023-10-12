@@ -40,8 +40,7 @@
   line-height: 1.5;
 }
 .acceleratorTitle {
-  font-family: "Roboto Slab", serif;
-  font-weight: 700;
+  font-family: "RobotoSlab-Bold", serif;
   font-size: 3.25rem;
 }
 .acceleratorSubTitle {
@@ -52,9 +51,9 @@
 }
 .h3Title,
 h3 {
-  font-family: "Roboto Slab", serif;
+  font-family: "RobotoSlab-SemiBold", serif;
   font-size: 2rem;
-  font-weight: 600;
+  line-height: 1.1;
 }
 /* Media queries starts here */
 

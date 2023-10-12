@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import techHero from "../../../static/images/tech-hero.png";
 import { HeroBannerForAccelerators } from "./HeroBannerForAccelerators";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

@@ -1,10 +1,10 @@
 import {
-  infoSectionH2,
-  h1One,
+  acceleratorTitle,
   cardHeader,
   footerHeading,
-  acceleratorTitle,
-  h3Title
+  h1One,
+  h3Title,
+  infoSectionH2,
 } from "./Typography.module.css";
 
 export const Typography = (): any => {

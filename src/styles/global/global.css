@@ -60,6 +60,9 @@ a:hover {
   gap: 30px;
   margin: 0;
 }
+.layoutBg {
+  background-color: #f7f7f7;
+}
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

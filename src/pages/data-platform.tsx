@@ -1,65 +1,15 @@
-import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
-import { TechPrinciplesLayout } from "../layouts/tech/components/TechPrinciplesLayout";
-import { StoryBanner } from "../components/banners/StoryBanner";
-import { TechStackLayout } from "../layouts/tech/components/TechStackLayout";
-import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
-import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
-import { Footer } from "../components/footer/Footer";
-import techHero from "../../static/images/tech-hero.png";
-import pCard1 from "../../static/images/tech-1.png";
-import pCard2 from "../../static/images/tech-2.png";
-import pCard3 from "../../static/images/tech-3.png";
-import pCard4 from "../../static/images/tech-4.png";
-import pCard5 from "../../static/images/tech-5.png";
-import pCard6 from "../../static/images/tech-6.png";
-import techStory from "../../static/images/tech-solution.png";
-import techStack1 from "../../static/images/technology/Bitmap.png";
-import techStack2 from "../../static/images/technology/s2.png";
-import techStack3 from "../../static/images/technology/3.png";
-import techStack4 from "../../static/images/technology/4.png";
-import techStack5 from "../../static/images/technology/5.png";
-import techStack6 from "../../static/images/technology/6.png";
-import techStack7 from "../../static/images/technology/7.png";
-import techStack8 from "../../static/images/technology/8.png";
-import techStack9 from "../../static/images/technology/9.png";
-import techStack10 from "../../static/images/technology/10.png";
-import techStack11 from "../../static/images/technology/11.svg";
-import techStack12 from "../../static/images/technology/12.png";
-import techStack13 from "../../static/images/technology/13.png";
-import techStack14 from "../../static/images/technology/14.png";
-import techStack15 from "../../static/images/technology/15.png";
-import techStack16 from "../../static/images/technology/16.png";
-import techStack17 from "../../static/images/technology/17.png";
-import techStack18 from "../../static/images/technology/18.png";
-import techStack19 from "../../static/images/technology/19.png";
-import techStack20 from "../../static/images/technology/20.png";
-import techStack21 from "../../static/images/technology/21.png";
-import techStack22 from "../../static/images/technology/22.png";
-import techStack24 from "../../static/images/technology/24.png";
-import techStack25 from "../../static/images/technology/25.png";
-import techStack26 from "../../static/images/technology/26.png";
-import techStack27 from "../../static/images/technology/27.png";
-import techStack28 from "../../static/images/technology/28.png";
-import techStack29 from "../../static/images/technology/29.png";
-import techStack30 from "../../static/images/technology/30.png";
-import techStack31 from "../../static/images/technology/31.png";
-import techStack32 from "../../static/images/technology/32.png";
-import techStack33 from "../../static/images/technology/33.png";
-import techStack34 from "../../static/images/technology/34.png";
-import techStack35 from "../../static/images/technology/35.png";
-import techStack36 from "../../static/images/technology/36.png";
-import techStack37 from "../../static/images/technology/37.svg";
-import boltLogoSecondary from "../../static/images/tech_bolt_dark.svg";
-import boltImg from "../../static/images/bolt_thumb.svg";
-import rainImg from "../../static/images/tech_rain_dark.svg";
-import thorImg from "../../static/images/tech_thor_dark.svg";
-import NXTlogo from "../../static/images/logo-inner.svg";
+import * as React from "react";
 import TarentoLogo from "../../static/images/company-logo.svg";
+import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForAccelerators } from "../components/banners/HeroBannerForAccelerators";
-import { KeyInsights } from "../layouts/data-platform";
-
+import { Footer } from "../components/footer/Footer";
+import {
+  Feature,
+  Form,
+  KeyInsights,
+  WorkingProcess,
+} from "../layouts/data-platform";
 const DataPlatformPage: React.FC<PageProps> = () => {
   const keyInsightsData = {
     title: "Key Insights",
@@ -90,13 +40,115 @@ const DataPlatformPage: React.FC<PageProps> = () => {
       },
     ],
   };
+  const FeatureData = {
+    title: "Feature",
+    list: [
+      {
+        logo: "https://nxt.tarento.com/img/featureImg-01.png",
+        title: "CXO Insights Platform",
+        bgColor: "white",
+      },
+      {
+        logo: "https://nxt.tarento.com/img/featureImg-01.png",
+        title: "CXO Insights Platform",
+        bgColor: "white",
+      },
+      {
+        logo: "https://nxt.tarento.com/img/featureImg-01.png",
+        title: "CXO Insights Platform",
+        bgColor: "white",
+      },
+      {
+        logo: "https://nxt.tarento.com/img/featureImg-01.png",
+        title: "CXO Insights Platform",
+        bgColor: "white",
+      },
+      {
+        logo: "https://nxt.tarento.com/img/featureImg-01.png",
+        title: "CXO Insights Platform",
+        bgColor: "white",
+      },
+      {
+        logo: "https://nxt.tarento.com/img/featureImg-01.png",
+        title: "CXO Insights Platform",
+        bgColor: "white",
+      },
+    ],
+  };
+  const HowItWorksData = {
+    title: "How it Works ",
+    imgSrc: "https://nxt.tarento.com/img/dataProcess.jpg",
+    imgCaption: "data process",
+    subTitleOne: "Ability to collect data from diverse sources.",
+    subTitleTwo:
+      "Data processing - Ingest, validate, transform, enrich, and store.",
+    subTitleThree:
+      "Build insights &amp; Intelligence, predict &amp; plan. Use the processed and enriched data for wide range of business use cases.",
+  };
+  const FormData = {
+    title: "Every business can benefit from the mastery of the data",
+    subTitle: `
+    <p>
+      Onboard and take your business to the next level.
+      <br /> Send a message to
+      <b>
+        <a href="mailto:hello@tarento.com?subject=Pulse Demo" >
+          hello@tarento.com
+        </a>
+      </b>
+      and we will contact you within one business day.
+    </p>
+  `,
+    buttonText: "Request a demo",
+    buttonLink: "mailto:hello@tarento.com?subject=Pulse Demo",
+    imgSrc: "https://nxt.tarento.com/img/data_QRCode.png",
+    imgCaption: "QR Code Scanner",
+  };
+
+  const footerData = {
+    nxtLogoImg: NXTlogo,
+    nxtLogoImgTitle: "NXT-logo",
+    companyLogoImg: TarentoLogo,
+    companyLogoImgTitle: "Tarento-logo",
+    description:
+      "NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento. We take pride in being unconventional with our approaches while retaining the passion with which we work.",
+    mailId: "hello@tarento.com",
+    levelOneHeading: "Direct Links",
+    levelOneList: [
+      { title: "Home", href: "nxt.html" },
+      { title: "Technology", href: "technology.html" },
+      { title: "Design", href: "design-process.html" },
+      { title: "Innovation", href: "nxt-innovation.html" },
+      { title: "Pricing", href: "pricing.html" },
+    ],
+    levelTwoHeading: "Tech & Innovations",
+    levelTwoList: [
+      { title: "Bolt - Data Platform", href: "data-platform.html" },
+      { title: "Rain - Analytics", href: "rain.html" },
+      { title: "Thor - Chatbot", href: "thor.html" },
+      { title: "GovTech", href: "govtech.html" },
+      { title: "Customer Experience", href: "customer-experience.html" },
+    ],
+    levelThreeHeading: "Direct Links",
+    levelThreeList: [
+      { title: "Home", href: "https://www.tarento.com/" },
+      { title: "About us", href: "https://www.tarento.com/about/" },
+      { title: "Services", href: "https://www.tarento.com/services/" },
+      { title: "Careers", href: "https://www.tarento.com/careers/" },
+    ],
+    levelFourHeading: "Programmes",
+    levelFourList: [
+      { title: "Lead", href: "https://www.tarento.com/lead/" },
+      { title: "Blixt", href: "https://www.tarento.com/blixt/" },
+    ],
+    rightsText: "All rights reserved © 2023 Tarento Technologies.",
+  };
 
   return (
     <main className="">
       <HeroBannerForAccelerators
         data={{
           title: "Data. Information. Insight.",
-
           img: "https://nxt.tarento.com/img/data-platform.jpg",
           imgAltText: "data-platform",
           subText: " Supercharge your business with the power of Data.",
@@ -105,7 +157,11 @@ const DataPlatformPage: React.FC<PageProps> = () => {
           logosrc: "https://nxt.tarento.com/img/bolt_light.svg",
         }}
       />
+      <WorkingProcess data={HowItWorksData} />
       <KeyInsights data={keyInsightsData} />
+      <Feature data={FeatureData} />
+      <Form data={FormData} />
+      <Footer data={footerData} />
     </main>
   );
 };

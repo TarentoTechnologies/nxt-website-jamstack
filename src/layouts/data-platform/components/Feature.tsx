@@ -1,61 +1,34 @@
-import { acceleratorTitle } from "../../../styles/style-guide/Typography.module.css";
-import { bannerStyles } from "../DataPlatform.module.css";
-
+import { AcceleratorFeatureCard } from "../../../components/cards/AcceleratorFeatureCard";
+import { h3Title } from "../../../styles/style-guide/Typography.module.css";
+import { bannerStyles, flexDirection } from "../DataPlatform.module.css";
 interface FeaturesProps {
   data: {
     title?: string;
-    img?: any;
-    imgAltText?: string;
-    subtext?: string;
-    description?: string;
-    logosrc?: string;
+    list: { title?: string; logo?: any; bgColor?: string }[];
   };
 }
 
 export const Feature = ({ data }: FeaturesProps) => {
   return (
-    <div className={`${bannerStyles} d-flex justify-content-center`}>
+    <div className={`${bannerStyles} ${flexDirection} layoutBg`}>
       <div className="containerService paddingLeftRight15">
-        <h1 className={`${acceleratorTitle} wow animated fadeInUp mt-4 mb-3`}>
+        <h1 className={`${h3Title} wow animated fadeInUp mt-4 mb-5`}>
           {data.title}
         </h1>
         <div className={`row containerRow`}>
-          <div className={`col-md-4  col-sm-6 col3`}>
-            <img
-              src="https://nxt.tarento.com/img/data-img01.jpg"
-              className="w-100"
-            />
-          </div>
-          <div className={`col-md-4 col3`}>
-            <img
-              src="https://nxt.tarento.com/img/data-img01.jpg"
-              className="w-100"
-            />
-          </div>{" "}
-          <div className={`col-md-4 col3`}>
-            <img
-              src="https://nxt.tarento.com/img/data-img01.jpg"
-              className="w-100"
-            />
-          </div>{" "}
-          <div className={`col-md-4 col3`}>
-            <img
-              src="https://nxt.tarento.com/img/data-img01.jpg"
-              className="w-100"
-            />
-          </div>{" "}
-          <div className={`col-md-4 col3`}>
-            <img
-              src="https://nxt.tarento.com/img/data-img01.jpg"
-              className="w-100"
-            />
-          </div>{" "}
-          <div className={`col-md-4 col3`}>
-            <img
-              src="https://nxt.tarento.com/img/data-img01.jpg"
-              className="w-100"
-            />
-          </div>
+          {data.list.map((item, index) => {
+            return (
+              <>
+                <div className={`col-md-4 col-sm-6 col3`}>
+                  <AcceleratorFeatureCard
+                    title={item.title}
+                    logo={item.logo}
+                    bgColor={item.bgColor}
+                  />
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
     </div>
