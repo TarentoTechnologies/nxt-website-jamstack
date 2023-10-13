@@ -28,8 +28,7 @@ export const PyramidBanner = ({ data }: PyramidBannerProps) => {
               alt={data.title}
               title={data.title}
               data-sal="slide-up"
-              data-sal-delay="200"
-              data-sal-duration="1000"
+              data-sal-duration="900"
               data-sal-easing="ease-in-back"
             />
           </div>
@@ -38,8 +37,7 @@ export const PyramidBanner = ({ data }: PyramidBannerProps) => {
           <div
             className={`${infoSectionPadding} ${retailInfo}`}
             data-sal="slide-up"
-            data-sal-delay="200"
-            data-sal-duration="1000"
+            data-sal-duration="900"
             data-sal-easing="ease-in-back"
           >
             <PrimaryTitle title={data.title} variant="banner" color="white" />

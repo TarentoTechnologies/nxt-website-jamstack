@@ -62,8 +62,7 @@ export const TriCard = ({
       <div
         className={`${imgStyles}`}
         data-sal="slide-up"
-        data-sal-delay="200"
-        data-sal-duration="1000"
+        data-sal-duration="900"
         data-sal-easing="ease-in-back"
       >
         <img src={logo} alt={title} title={title} />
@@ -71,8 +70,7 @@ export const TriCard = ({
       <div
         className={`${titleStyles}`}
         data-sal="slide-up"
-        data-sal-delay="200"
-        data-sal-duration="1000"
+        data-sal-duration="900"
         data-sal-easing="ease-in-back"
       >
         <PrimaryTitle title={title} variant="card" color="white" />

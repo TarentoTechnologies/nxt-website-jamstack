@@ -31,8 +31,7 @@ export const AgencyPortfolio = ({
           <h1
             className={`${h1One}`}
             data-sal="slide-up"
-            data-sal-delay="200"
-            data-sal-duration="1000"
+            data-sal-duration="900"
             data-sal-easing="ease-in-back"
           >
             {title}
@@ -41,8 +40,7 @@ export const AgencyPortfolio = ({
         <div
           className="float-end d-none d-sm-none d-md-block d-lg-block d-xl-block"
           data-sal="slide-up"
-          data-sal-delay="200"
-          data-sal-duration="1000"
+          data-sal-duration="900"
           data-sal-easing="ease-in-back"
         >
           <Link to={ctaLink}>
@@ -55,8 +53,7 @@ export const AgencyPortfolio = ({
       <p
         className="col-9"
         data-sal="slide-up"
-        data-sal-delay="200"
-        data-sal-duration="1000"
+        data-sal-duration="900"
         data-sal-easing="ease-in-back"
       >
         {description}
@@ -70,8 +67,7 @@ export const AgencyPortfolio = ({
               className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0`}
               key={data.id}
               data-sal="slide-up"
-              data-sal-delay="200"
-              data-sal-duration="1000"
+              data-sal-duration="900"
               data-sal-easing="ease-in-back"
             >
               <PortfolioCard
@@ -95,8 +91,7 @@ export const AgencyPortfolio = ({
             to={ctaLink}
             className="float-end"
             data-sal="slide-up"
-            data-sal-delay="200"
-            data-sal-duration="1000"
+            data-sal-duration="900"
             data-sal-easing="ease-in-back"
           >
             <PrimaryCTA label={ctaText} />

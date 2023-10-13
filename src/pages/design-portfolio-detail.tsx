@@ -90,7 +90,7 @@ const DesignPortfolioDetail: React.FC<PageProps> = () => {
         imgAlt: "CellMark",
         ctaLink: "https://www.google.com",
         ctaText: "Read More",
-      }
+      },
     ],
   };
 
@@ -137,7 +137,7 @@ const DesignPortfolioDetail: React.FC<PageProps> = () => {
     <main className="">
       <HeroBanner heroBannerData={heroBannerData} />
       <About data={aboutData} />
-      <Highlight />
+      {/* <Highlight /> */}
       <TagSection data={tagSectionData} />
       <RelatedPortfolio data={relatedPortfolioData} />
       <Footer data={footerData} />
