@@ -3,9 +3,9 @@
 
 .featureCard {
   text-align: center;
-  font-size: 21px;
+  font-size: 1.313rem;
   background: #fff;
-  padding: 50px;
+  padding: 3.125rem;
 }
 .featureCardImg {
   width: 5rem;

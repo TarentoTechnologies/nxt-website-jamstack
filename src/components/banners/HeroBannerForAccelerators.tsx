@@ -28,7 +28,7 @@ export const HeroBannerForAccelerators = ({
             <div className="header-info">
               <div className="wow fadeIn animated">
                 <img
-                  src="https://nxt.tarento.com/img/bolt_light.svg"
+                  src={data.logosrc}
                   width="217"
                   height="71"
                   alt={data.imgAltText}

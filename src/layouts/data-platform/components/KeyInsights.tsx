@@ -24,8 +24,7 @@ export const KeyInsights = ({ data }: KeyInsightsProps) => {
           {data.list.map((item, index) => {
             return (
               <>
-                {console.log(index)}
-                <div className={`col-md-4  col-sm-6 col3`}>
+                <div className={`col-md-4 col-sm-6 col3`}>
                   <img
                     src={item.imgSrc}
                     className="w-100"
