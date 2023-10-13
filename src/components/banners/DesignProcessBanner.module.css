@@ -7,15 +7,15 @@
 
 .imgStyles :global {
   padding-top: 2rem;
-  animation: fadeInUp 1s ease 800ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .textStyles :global {
-  animation: fadeInUp 1s ease 800ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 /* Media queries starts here */

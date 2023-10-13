@@ -1,11 +1,11 @@
-import { KeyFeatureCard } from "../../../components/cards/KeyFeatureCard";
-import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import {
   techPrinciples,
   titleStyles,
   descStyles,
   subHeadingStyles,
 } from "../Tech.module.css";
+import { KeyFeatureCard } from "../../../components/cards/KeyFeatureCard";
+import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 
 interface TechPrinciplesLayoutProps {
   data: {
