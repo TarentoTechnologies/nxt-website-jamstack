@@ -1,15 +1,16 @@
+import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
+  border,
   headerInfo,
   imgStyles,
-  border,
-  titleStyles,
   subtextStyles,
+  titleStyles,
 } from "./HeroBannerForTDI.module.css";
-import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 
 interface HeroBannerForTDIProps {
   data: {
+    mainTitle?: string;
     title: string;
     img: any;
     imgAltText?: string;
@@ -28,7 +29,16 @@ export const HeroBannerForTDI = ({ data }: HeroBannerForTDIProps) => {
           className={`col-sm-12 col-md-6 d-flex flex-column justify-content-center px-md-0`}
         >
           <div className={`${headerInfo}`}>
-            <div className={`${cardHeader} ${titleStyles}`}>{data?.title}</div>
+            <div className={`${cardHeader} ${titleStyles}`}>
+              {data.mainTitle && (
+                <b>
+                  {data.mainTitle}
+                  <br />
+                </b>
+              )}
+
+              {data?.title}
+            </div>
             <div className={`${subtextStyles}`}>
               <span className={`${border}`}></span>
               <p>{data?.subtext}</p>

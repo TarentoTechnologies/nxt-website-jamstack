@@ -39,6 +39,11 @@
   font-family: "RobotoSlab-Regular", serif;
   line-height: 1.5;
 }
+.caseStudyTitle {
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
 
 /* Media queries starts here */
 
