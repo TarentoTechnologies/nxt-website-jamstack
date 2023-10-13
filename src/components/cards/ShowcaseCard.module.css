@@ -1,0 +1,20 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.showCaseCard {
+  min-height: 21.563rem;
+}
+
+.showCaseImg {
+  height: 21.563rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.dummyImgArea {
+  height: 21.563rem;
+}
+
+.ctaIconPos {
+  vertical-align: 0.05rem;
+}

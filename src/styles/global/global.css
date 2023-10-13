@@ -63,6 +63,21 @@ a:hover {
 .layoutBg {
   background-color: #f7f7f7;
 }
+/* Swiper styles starts here */
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  top: 0rem !important;
+  color: var(--white) !important;
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  top: 0rem !important;
+  color: var(--white) !important;
+}
+
+/* Swiper styles ends here */
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

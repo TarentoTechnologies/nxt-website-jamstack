@@ -5,34 +5,34 @@
   padding-top: 1.875rem;
 }
 
-.forgingInnovation .titleStyles :global {
+.forgingInnovation .titleStyles {
   padding-top: 1.25rem;
   padding-bottom: 0.625rem;
-  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.forgingInnovation .descStyles :global {
+.forgingInnovation .descStyles {
   padding-top: 2rem;
   padding-bottom: 3rem;
-  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.forgingInnovation .imgStyles :global {
+.forgingInnovation .imgStyles {
   padding-top: 2rem;
   padding-bottom: 3rem;
-  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.forgingInnovation .cardStyles :global {
-  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+.forgingInnovation .cardStyles {
+  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 /* Media queries starts here */

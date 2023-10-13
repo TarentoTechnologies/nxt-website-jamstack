@@ -1,22 +1,20 @@
-import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
-import { TechPrinciplesLayout } from "../layouts/tech/components/TechPrinciplesLayout";
-import { StoryBanner } from "../components/banners/StoryBanner";
-import { TechStackLayout } from "../layouts/tech/components/TechStackLayout";
-import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
-import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
-import { Footer } from "../components/footer/Footer";
-import techHero from "../../static/images/tech-hero.png";
+import * as React from "react";
+
+import boltImg from "../../static/images/bolt_thumb.svg";
+import TarentoLogo from "../../static/images/company-logo.svg";
+import NXTlogo from "../../static/images/logo-inner.svg";
 import pCard1 from "../../static/images/tech-1.png";
 import pCard2 from "../../static/images/tech-2.png";
 import pCard3 from "../../static/images/tech-3.png";
 import pCard4 from "../../static/images/tech-4.png";
 import pCard5 from "../../static/images/tech-5.png";
 import pCard6 from "../../static/images/tech-6.png";
+import techHero from "../../static/images/tech-hero.png";
 import techStory from "../../static/images/tech-solution.png";
-import techStack1 from "../../static/images/technology/Bitmap.png";
-import techStack2 from "../../static/images/technology/s2.png";
+import boltLogoSecondary from "../../static/images/tech_bolt_dark.svg";
+import rainImg from "../../static/images/tech_rain_dark.svg";
+import thorImg from "../../static/images/tech_thor_dark.svg";
 import techStack3 from "../../static/images/technology/3.png";
 import techStack4 from "../../static/images/technology/4.png";
 import techStack5 from "../../static/images/technology/5.png";
@@ -51,12 +49,15 @@ import techStack34 from "../../static/images/technology/34.png";
 import techStack35 from "../../static/images/technology/35.png";
 import techStack36 from "../../static/images/technology/36.png";
 import techStack37 from "../../static/images/technology/37.svg";
-import boltLogoSecondary from "../../static/images/tech_bolt_dark.svg";
-import boltImg from "../../static/images/bolt_thumb.svg";
-import rainImg from "../../static/images/tech_rain_dark.svg";
-import thorImg from "../../static/images/tech_thor_dark.svg";
-import NXTlogo from "../../static/images/logo-inner.svg";
-import TarentoLogo from "../../static/images/company-logo.svg";
+import techStack1 from "../../static/images/technology/Bitmap.png";
+import techStack2 from "../../static/images/technology/s2.png";
+import { Footer } from "../components/footer/Footer";
+import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
+import { StoryBanner } from "../components/banners/StoryBanner";
+import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
+import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
+import { TechPrinciplesLayout } from "../layouts/tech/components/TechPrinciplesLayout";
+import { TechStackLayout } from "../layouts/tech/components/TechStackLayout";
 
 const TechnologyPage: React.FC<PageProps> = () => {
   const heroBannerData = {

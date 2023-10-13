@@ -27,11 +27,19 @@ export const PyramidBanner = ({ data }: PyramidBannerProps) => {
               src={data.pyramidImg}
               alt={data.title}
               title={data.title}
+              data-sal="slide-up"
+              data-sal-duration="900"
+              data-sal-easing="ease-in-back"
             />
           </div>
         </div>
         <div className={`col-md-12 col-lg-6 col-xl-4`}>
-          <div className={`${infoSectionPadding} ${retailInfo}`}>
+          <div
+            className={`${infoSectionPadding} ${retailInfo}`}
+            data-sal="slide-up"
+            data-sal-duration="900"
+            data-sal-easing="ease-in-back"
+          >
             <PrimaryTitle title={data.title} variant="banner" color="white" />
             <p>{data.description}</p>
             <PrimaryCTA label={data.btnDescr} primary />

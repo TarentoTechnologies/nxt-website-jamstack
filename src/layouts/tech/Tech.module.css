@@ -1,26 +1,26 @@
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
-.techPrinciples .titleStyles :global {
-  animation: fadeInUp 1s ease-in-out 300ms 1 normal forwards;
+.techPrinciples .titleStyles {
+  /* animation: fadeInUp 1s ease-in-out 300ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.techPrinciples .descStyles :global {
+.techPrinciples .descStyles {
   margin-top: 2rem;
-  animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.techPrinciples .subHeadingStyles :global {
+.techPrinciples .subHeadingStyles {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 1.3125rem;
-  animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .techStack {
@@ -29,10 +29,10 @@
   padding-bottom: 3.75rem;
 }
 
-.techStack .titleStyles :global {
-  animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards;
+.techStack .titleStyles {
+  /* animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .techStack .gridLayout {
@@ -42,12 +42,12 @@
   margin-top: 1.875rem;
 }
 
-.techStack .logoStyles :global {
+.techStack .logoStyles {
   border: 1px solid var(--plumbago-gray);
   height: 7.5rem;
-  animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .techStack .logoStyles img {
@@ -59,19 +59,19 @@
   padding: 3.75rem 0;
 }
 
-.acceleratorsLayout .titleStyles :global {
+.acceleratorsLayout .titleStyles {
   margin-top: 1.25rem;
   margin-bottom: 0.625rem;
-  animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.acceleratorsLayout .cardStyles :global {
+.acceleratorsLayout .cardStyles {
   padding: 2rem 0 0 0;
-  animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .contactUsLayout {
@@ -80,18 +80,18 @@
   padding-bottom: 3.75rem;
 }
 
-.contactUsLayout .titleStyles :global {
+.contactUsLayout .titleStyles {
   padding-bottom: 2rem;
-  animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.contactUsLayout .btnStyles :global {
+.contactUsLayout .btnStyles {
   padding-top: 2.625rem;
-  animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards;
+  /* animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 /* Media queries starts here */

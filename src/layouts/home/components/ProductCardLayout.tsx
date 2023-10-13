@@ -13,6 +13,9 @@ export const ProductCardLayout = ({ data }: ProductCardLayoutProps) => {
           <div
             key={index}
             className={`col-xs-12 col-sm-12 col-md-4 col-lg-4 ${productCardStyles}`}
+            data-sal="slide-up"
+            data-sal-duration="900"
+            data-sal-easing="ease-in-back"
           >
             <ProductCard
               title={item.title}

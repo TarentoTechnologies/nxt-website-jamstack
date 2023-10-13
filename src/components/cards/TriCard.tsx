@@ -1,4 +1,3 @@
-import { PrimaryTitle } from "../titles/PrimaryTitle";
 import {
   bgOxideBlue,
   bgViridianGreen,
@@ -7,7 +6,7 @@ import {
   bgDarkViridianGreen,
   bgRoslynBlue,
 } from "../../styles/style-guide/ColorGuide.module.css";
-
+import { PrimaryTitle } from "../titles/PrimaryTitle";
 import { triCardStyles, imgStyles, titleStyles } from "./TriCard.module.css";
 import { useState } from "react";
 
@@ -60,10 +59,20 @@ export const TriCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className={`${imgStyles}`}>
+      <div
+        className={`${imgStyles}`}
+        data-sal="slide-up"
+        data-sal-duration="900"
+        data-sal-easing="ease-in-back"
+      >
         <img src={logo} alt={title} title={title} />
       </div>
-      <div className={`${titleStyles}`}>
+      <div
+        className={`${titleStyles}`}
+        data-sal="slide-up"
+        data-sal-duration="900"
+        data-sal-easing="ease-in-back"
+      >
         <PrimaryTitle title={title} variant="card" color="white" />
       </div>
     </div>

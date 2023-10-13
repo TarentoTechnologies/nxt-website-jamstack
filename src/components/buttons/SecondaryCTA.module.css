@@ -1,0 +1,36 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.secondaryBtn {
+  background-color: var(--white);
+  border: 1px solid var(--urania-blue);
+  border-radius: 0.313rem;
+  color: var(--black-87);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  height: 2.5rem;
+}
+
+.secondaryBtn:hover {
+  background-color: var(--urania-blue);
+  color: var(--white);
+}
+
+.secondaryBtn:focus {
+  background-color: var(--urania-blue);
+  color: var(--white);
+}
+
+.large {
+  width: auto;
+}
+
+.labelStyles {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
