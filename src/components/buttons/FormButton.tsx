@@ -1,9 +1,5 @@
 import { bgHaysBlue } from "../../styles/style-guide/ColorGuide.module.css";
-import {
-  buttonClass,
-  primaryBtn,
-  secondaryBtn
-} from "./FormButton.module.css";
+import { buttonClass } from "./FormButton.module.css";
 interface FormButtonProps {
   label: any;
   primary?: boolean;
@@ -17,12 +13,11 @@ export const FormButton = ({
   clickHandler,
   btnLink,
 }: FormButtonProps) => {
-  const mode = primary ? `${primaryBtn}` : `${secondaryBtn}`;
   return (
     <a href={btnLink != null ? btnLink : ""}>
       <div
         className={`text-center d-flex align-items-center justify-content-center 
-      ${mode}  ${buttonClass} ${bgHaysBlue}`}
+      ${buttonClass} ${bgHaysBlue}`}
         onClick={clickHandler}
       >
         <label>{label}</label>
