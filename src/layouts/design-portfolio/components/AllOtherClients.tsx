@@ -1,6 +1,6 @@
-import { acceleratorsLayout, titleStyles } from "../../tech/Tech.module.css";
-import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { PortfolioCard, SecondaryCTA } from "../../../components";
+import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
+import { acceleratorsLayout, titleStyles } from "../../tech/Tech.module.css";
 
 interface AllOtherClientsProps {
   data: any;
@@ -38,13 +38,15 @@ export const AllOtherClients = ({ data }: AllOtherClientsProps) => {
             })}
           </div>
         </div>
-        <div className="my-5">
-          <div className="d-flex justify-content-center">
-            <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-2">
-              <SecondaryCTA label={data?.ctaText} />
+        {data?.list.length > 6 && (
+          <div className="my-5">
+            <div className="d-flex justify-content-center">
+              <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-2">
+                <SecondaryCTA label={data?.ctaText} />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
