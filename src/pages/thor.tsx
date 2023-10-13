@@ -5,13 +5,13 @@ import NXTlogo from "../../static/images/logo-inner.svg";
 import techHero from "../../static/images/tech-hero.png";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
-import { CaseStudies, Features } from "../layouts/thor";
+import { CaseStudies, Features, UseCases } from "../layouts/thor";
 
 const ThorPage: React.FC<PageProps> = () => {
   const heroBannerData = {
     mainTitle: "THOR",
     title: "AI Powered Assistant and Chatbot",
-    img: techHero,
+    img: "https://nxt.tarento.com/img/Thor_animation.svg",
     description:
       "THOR is highly scalable, extensible and allows deep integration to any domain. Multi channel capabilities of THOR enables businesses to engage their users over a wide range of channels",
   };
@@ -82,6 +82,7 @@ const ThorPage: React.FC<PageProps> = () => {
       <HeroBannerForTDI data={heroBannerData} />
       <Features data={FeaturesData} />
       <CaseStudies data={CaseStudyData} />
+      <UseCases data={CaseStudyData} />
       <Footer data={footerData} />
     </main>
   );
