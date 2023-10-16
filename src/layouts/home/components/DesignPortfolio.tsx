@@ -1,11 +1,12 @@
+import { Link } from "gatsby";
+import { navigate } from "gatsby";
+
 import { PortfolioCard } from "../../../components";
 import { PrimaryCTA } from "../../../components/buttons/PrimaryCTA";
 import { h1One } from "../../../styles/style-guide/Typography.module.css";
 import { productCardLayoutStyles } from "../Home.module.css";
-import { Link } from "gatsby";
-import { navigate } from "gatsby";
 
-interface AgencyPortfolioProps {
+interface DesignPortfolioProps {
   title: string;
   description: string;
   ctaText: string;
@@ -19,7 +20,7 @@ export const DesignPortfolio = ({
   ctaText,
   ctaLink,
   designPortfolioData,
-}: AgencyPortfolioProps) => {
+}: DesignPortfolioProps) => {
   const navigateTo = (e: any) => {
     e.preventDefault();
     navigate(ctaLink);
@@ -64,19 +65,19 @@ export const DesignPortfolio = ({
         {designPortfolioData?.map((data: any, index: number) => {
           return (
             <div
-              className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0`}
+              className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0 mb-3 mb-sm-3 mb-md-3 mb-lg-3 mb-xl-0`}
               key={data.id}
               data-sal="slide-up"
               data-sal-duration="900"
               data-sal-easing="ease-in-back"
             >
               <PortfolioCard
-                ctaLink={data.ctaLink}
-                ctaText={data.ctaText}
-                description={data.description}
-                tag={data.tag}
-                title={data.title}
-                imgSrc={data.imgSrc}
+                ctaLink={"/" + data.Slug}
+                ctaText={data.CTATextForDisplay}
+                description={data.HeroSection.Description}
+                tag={data.PortfolioTag}
+                title={data.HeroSection.Title}
+                imgSrc={data.HeroSection.Image.localFile}
                 imgAlt={data.imgAlt}
               />
             </div>

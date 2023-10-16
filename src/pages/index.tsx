@@ -1,60 +1,46 @@
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
-import type { HeadFC, PageProps } from "gatsby";
-import { HeroBanner } from "../components/banners/HeroBanner";
-import mainLogo from "../../static/images/logo-main.svg";
-import headLogo from "../../static/images/logo-head.svg";
-import { TriCardLayout } from "../layouts/home/components/TriCardLayout";
-import { PyramidBanner } from "../components/banners/PyramidBanner";
-import pyramidImage from "../../static/images/pyramid.svg";
-import { ProductCardLayout } from "../layouts/home/components/ProductCardLayout";
-import { Footer } from "../components/footer/Footer";
-import NXTlogo from "../../static/images/logo-inner.svg";
-import TarentoLogo from "../../static/images/company-logo.svg";
-import boltImg from "../../static/images/bolt_thumb.svg";
-import boltLogo from "../../static/images/bolt_dark.svg";
-import rainImg from "../../static/images/rain_thumb.svg";
-import rainLogo from "../../static/images/rain.svg";
-import thorImg from "../../static/images/thor_thumb.svg";
-import thorLogo from "../../static/images/thor_dark.svg";
-import govTechImg from "../../static/images/govtech_thumb.svg";
-import govTechLogo from "../../static/images/govTech_icon.svg";
-import techLogo from "../../static/images/technology.svg";
-import designLogo from "../../static/images/design.svg";
-import innovationLogo from "../../static/images/inovation.svg";
-import { AgencyPortfolio, DesignPortfolio } from "../layouts/home";
+import { useRecoilValue } from "recoil";
 
-const IndexPage: React.FC<PageProps> = () => {
+import boltLogo from "../../static/images/bolt_dark.svg";
+import boltImg from "../../static/images/bolt_thumb.svg";
+import TarentoLogo from "../../static/images/company-logo.svg";
+import designLogo from "../../static/images/design.svg";
+import govTechLogo from "../../static/images/govTech_icon.svg";
+import govTechImg from "../../static/images/govtech_thumb.svg";
+import innovationLogo from "../../static/images/inovation.svg";
+import headLogo from "../../static/images/logo-head.svg";
+import NXTlogo from "../../static/images/logo-inner.svg";
+import mainLogo from "../../static/images/logo-main.svg";
+import pyramidImage from "../../static/images/pyramid.svg";
+import rainLogo from "../../static/images/rain.svg";
+import rainImg from "../../static/images/rain_thumb.svg";
+import techLogo from "../../static/images/technology.svg";
+import thorLogo from "../../static/images/thor_dark.svg";
+import thorImg from "../../static/images/thor_thumb.svg";
+import { HeroBanner } from "../components/banners/HeroBanner";
+import { PyramidBanner } from "../components/banners/PyramidBanner";
+import { Footer } from "../components/footer/Footer";
+import { AgencyPortfolio, DesignPortfolio } from "../layouts/home";
+import { ProductCardLayout } from "../layouts/home/components/ProductCardLayout";
+import { TriCardLayout } from "../layouts/home/components/TriCardLayout";
+import { langSelected as langSelectedAtom } from "../states/atoms";
+
+interface IndexPageProps {
+  data: any;
+}
+
+const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+
+  const currentDesignPortfolio = currentLang + "DesignPortfolios";
+  const currentAgencyPortfolio = currentLang + "AgencyPortfolios";
+
   const heroBannerData = {
     logoMain: mainLogo,
     logoHead: headLogo,
     logoMainTitle: "NXT-main-logo",
     logoHeadTitle: "NXT-head-logo",
-  };
-
-  const triCardData = [
-    {
-      title: "TECHNOLOGY",
-      logo: techLogo,
-      bgColor: "blue",
-    },
-    {
-      title: "DESIGN",
-      logo: designLogo,
-      bgColor: "green",
-    },
-    {
-      title: "INNOVATION",
-      logo: innovationLogo,
-      bgColor: "violet",
-    },
-  ];
-
-  const pyramidBannerData = {
-    title: "Data Pyramid",
-    description:
-      "Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.",
-    pyramidImg: pyramidImage,
-    btnDescr: "Read more",
   };
 
   const productCardData = [
@@ -181,7 +167,7 @@ const IndexPage: React.FC<PageProps> = () => {
           "iGOT Karmayogi is an online solutioning platform, developed as an integral part of the Digital India stack for capacity building of all government employees.​",
         tag: "Public Administration",
         ctaText: "Read More",
-        ctaLink: "https://www.google.com",
+        ctaLink: "/design-portfolio-detail",
         imgSrc: "https://picsum.photos/seed/picsum/370/226",
         imgAlt: "iGOT - Karmayogi",
       },
@@ -213,27 +199,142 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBanner data={heroBannerData} />
-      <TriCardLayout data={triCardData} />
-      <PyramidBanner data={pyramidBannerData} />
-      <ProductCardLayout data={productCardData} />
+      <TriCardLayout data={data[currentLang]?.TriCards} />
+      <PyramidBanner
+        title={data[currentLang]?.PyramidTitle}
+        description={data[currentLang]?.PyramidDescription}
+        pyramidImg={data[currentLang]?.PyramidImage.localFile.url}
+        btnDescr={data[currentLang]?.PyramidCTAText}
+      />
+      <ProductCardLayout data={data[currentLang]?.AcceleratorCards} />
       <AgencyPortfolio
-        title={agencyPortfolioData.title}
-        description={agencyPortfolioData.description}
-        ctaText={agencyPortfolioData.ctaText}
-        ctaLink={agencyPortfolioData.ctaLink}
-        agencyPortfolioData={agencyPortfolioData.list}
+        title={data[currentLang]?.HighlighterOneTitle}
+        description={data[currentLang]?.HighlighterOneDescription}
+        ctaText={data[currentLang]?.HighlighterOneCTAText}
+        ctaLink={data[currentLang]?.HighlighterOneCTALink}
+        agencyPortfolioData={data[currentAgencyPortfolio]?.nodes}
       />
       <DesignPortfolio
-        title={designPortfolioData.title}
-        description={designPortfolioData.description}
-        ctaText={designPortfolioData.ctaText}
-        ctaLink={designPortfolioData.ctaLink}
-        designPortfolioData={designPortfolioData.list}
+        title={data[currentLang]?.HighlighterTwoTitle}
+        description={data[currentLang]?.HighlighterTwoDescription}
+        ctaText={data[currentLang]?.HighlighterTwoCTAText}
+        ctaLink={data[currentLang]?.HighlighterTwoCTALink}
+        designPortfolioData={data[currentDesignPortfolio]?.nodes}
       />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query HomePage {
+    en: strapiHome(locale: { eq: "en" }) {
+      TriCards {
+        id
+        Title
+        Icon {
+          localFile {
+            url
+          }
+        }
+        CTALink
+        BackgroundColor
+      }
+      PyramidTitle
+      PyramidDescription
+      PyramidImage {
+        localFile {
+          url
+        }
+      }
+      PyramidCTAText
+      PyramidCTALink
+      ProgrammeSectionTitle
+      AcceleratorCards {
+        id
+        Title
+        Logo {
+          localFile {
+            url
+          }
+        }
+        BackgroundImage {
+          localFile {
+            url
+          }
+        }
+      }
+      ProgrammeCards {
+        id
+        Title
+        Image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+        Description
+        CTAText
+        CTALink
+      }
+      HighlighterOneTitle
+      HighlighterOneDescription
+      HighlighterOneCTAText
+      HighlighterOneCTALink
+      HighlighterTwoTitle
+      HighlighterTwoDescription
+      HighlighterTwoCTAText
+      HighlighterTwoCTALink
+    }
+    enDesignPortfolios: allStrapiDesignPortfolio(
+      filter: { locale: { eq: "en" } }
+      sort: { updatedAt: DESC }
+    ) {
+      nodes {
+        PortfolioTag
+        HeroSection {
+          id
+          Title
+          Image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(formats: PNG)
+              }
+            }
+          }
+          Description
+        }
+        id
+        Slug
+        CTATextForDisplay
+      }
+    }
+    enAgencyPortfolios: allStrapiAgencyPortfolio(
+      filter: { locale: { eq: "en" } }
+      sort: { updatedAt: DESC }
+    ) {
+      nodes {
+        PortfolioTag
+        HeroSection {
+          id
+          Title
+          Image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(formats: PNG)
+              }
+            }
+          }
+          Description
+        }
+        id
+        Slug
+        CTATextForDisplay
+      }
+    }
+  }
+`;
 
 export default IndexPage;
 

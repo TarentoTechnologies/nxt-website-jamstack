@@ -5,18 +5,19 @@ interface TriCardLayoutProps {
 }
 
 export const TriCardLayout = ({ data }: TriCardLayoutProps) => {
+
   return (
     <div className={`container-fluid`}>
       <div className={`row`}>
         {data.map((item, index) => (
           <div
-            key={index}
+            key={item.id}
             className={`col-sm-12 col-md-12 col-lg-4 px-0`}
           >
             <TriCard
-              title={item.title}
-              logo={item.logo}
-              bgColor={item.bgColor}
+              title={item.Title}
+              logo={item.Icon.localFile.url}
+              bgColor={item.BackgroundColor}
             />
           </div>
         ))}

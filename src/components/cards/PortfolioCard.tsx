@@ -1,25 +1,27 @@
-import {
-  heroImage,
-  customTag,
-  ctaIcon,
-  truncateDescription,
-} from "./PortfolioCard.module.css";
-import {
-  tagLabel,
-  heading700,
-  subText2,
-  cta1,
-} from "../../styles/style-guide/Typography.module.css";
+import { Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
 import {
   bgCadiumOrange,
-  white87,
   bgGlaucousGreen,
-  black87,
   bgUraniaBlue,
+  black87,
+  white87,
 } from "../../styles/style-guide/ColorGuide.module.css";
-import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
+import {
+  cta1,
+  heading700,
+  subText2,
+  tagLabel,
+} from "../../styles/style-guide/Typography.module.css";
+import {
+  ctaIcon,
+  customTag,
+  heroImage,
+  truncateDescription,
+} from "./PortfolioCard.module.css";
 import { ctaIconPos } from "./ShowcaseCard.module.css";
-import { Link } from "gatsby";
 
 interface PortfolioCardProps {
   imgSrc?: any;
@@ -42,15 +44,17 @@ export const PortfolioCard = ({
   ctaLink,
   tagVariant,
 }: PortfolioCardProps) => {
+  const image: any = getImage(imgSrc);
+
   return (
     <div className="container-fluid">
       {/* Image */}
-      <img
+      <GatsbyImage
+        image={image}
+        alt={imgAlt ? imgAlt : ""}
         className={`${heroImage} ${bgGlaucousGreen} img-fluid ${
           !imgSrc ? "w-100" : ""
         }`}
-        src={imgSrc}
-        alt={imgAlt}
       />
 
       {/* Tag */}
