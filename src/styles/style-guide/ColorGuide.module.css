@@ -20,6 +20,13 @@
 .black {
   color: var(--black);
 }
+.bgBlack50 {
+  background-color: var(--black-50);
+}
+
+.black50 {
+  color: var(--black-50);
+}
 
 .bgBlack60 {
   background-color: var(--black-60);
@@ -349,6 +356,12 @@
   color: var(--rhodamine-purple);
 }
 
+.blue {
+  color: var(--blue);
+}
+.bgBlue {
+  background-color: var(--blue);
+}
 .bgNeutralGray2 {
   background-color: var(--neutral-gray-2);
 }

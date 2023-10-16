@@ -1,41 +1,44 @@
 import {
-  colorBox,
-  black,
+  bgBenzolGreen,
+  bgBlack50,
   bgBlack60,
-  bgBlack90,
   bgBlack70,
   bgBlack75,
   bgBlack87,
-  bgWhite87,
-  bgWhite70,
-  bgWhite85,
-  bgWhite75,
-  bgWhite16,
-  bgCarbon,
-  bgOxideBlue,
-  bgViridianGreen,
-  bgSpectrumViolet,
-  bgLeitchsBlue,
-  bgDarkViridianGreen,
-  bgRoslynBlue,
-  bgRoodsLavender,
-  bgUraniaBlue,
-  bgDuskyBlueViolet2,
-  bgVioletUltramarine,
+  bgBlack90,
+  bgBlue,
   bgCadiumOrange,
-  bgNeutralGray,
-  bgPallidBlueViolet,
-  bgPallidBlueViolet2,
-  bgGlaucousGreen,
-  bgBenzolGreen,
-  bgHaysBlue,
+  bgCadiumYellow,
+  bgCarbon,
+  bgDarkAnthraceneViolet,
+  bgDarkViridianGreen,
+  bgDuskyBlueViolet2,
   bgFogOfWar,
+  bgGlaucousGreen,
+  bgHaysBlue,
+  bgLeitchsBlue,
   bgLightNeutralGray,
   bgLightViolet,
-  bgDarkAnthraceneViolet,
-  bgCadiumYellow,
+  bgNeutralGray,
+  bgNeutralGray2,
+  bgOxideBlue,
+  bgPallidBlueViolet,
+  bgPallidBlueViolet2,
   bgPlumbagoGray,
-  bgNeutralGray2
+  bgRoodsLavender,
+  bgRoslynBlue,
+  bgSpectrumViolet,
+  bgUraniaBlue,
+  bgVioletUltramarine,
+  bgViridianGreen,
+  bgWhite,
+  bgWhite16,
+  bgWhite70,
+  bgWhite75,
+  bgWhite85,
+  bgWhite87,
+  black,
+  colorBox,
 } from "./ColorGuide.module.css";
 
 export const ColorGuide = (): any => {
@@ -43,6 +46,12 @@ export const ColorGuide = (): any => {
     <div className="container p-0 m-0">
       {/* First row */}
       <div className="row">
+        <div
+          className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgBlack50} p-3`}
+        >
+          <h5>bgBlack50</h5>
+          <h6>rgba(0, 0, 0, 0.5)</h6>
+        </div>
         <div
           className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgBlack60} p-3`}
         >
@@ -72,6 +81,12 @@ export const ColorGuide = (): any => {
         >
           <h5>bgBlack87</h5>
           <h6>rgba(0, 0, 0, 0.87)</h6>
+        </div>
+        <div
+          className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgWhite} p-3`}
+        >
+          <h5 className={black}>bgWhite</h5>
+          <h6 className={black}>#fff</h6>
         </div>
         <div
           className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgWhite87} p-3`}
@@ -252,6 +267,12 @@ export const ColorGuide = (): any => {
         >
           <h5>bgPlumbagoGray</h5>
           <h6>RGBA(151, 151, 151, 0.14)</h6>
+        </div>
+        <div
+          className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgBlue} p-3`}
+        >
+          <h5>bgBlue</h5>
+          <h6>RGBA(41, 1, 103, 1)</h6>
         </div>
         <div
           className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgNeutralGray2} p-3`}
