@@ -1,4 +1,3 @@
-@import url("../../styles/global/animate.css");
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
@@ -23,7 +22,7 @@
 }
 
 .large {
-  width: 22.375rem !important;
+  width: auto;
 }
 
 .secondaryBtn:hover {
@@ -36,4 +35,9 @@
 
 .labelStyles {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

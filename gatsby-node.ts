@@ -5,6 +5,7 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
   stage,
   loaders,
   actions,
+  getConfig,
 }) => {
   actions.setWebpackConfig({
     resolve: {
@@ -22,5 +23,21 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
         ],
       },
     });
+  }
+  
+  // Ignore mini css extract plugin CSS import order warnings
+  // Safe to ignore here since we are using CSS modules in the project
+  if (stage === 'build-javascript' || stage === 'develop') {
+    const config = getConfig();
+
+    const miniCss = config.plugins.find(
+      (plugin:any) => plugin.constructor.name === 'MiniCssExtractPlugin'
+    );
+
+    if (miniCss) {
+      miniCss.options.ignoreOrder = true;
+    }
+
+    actions.replaceWebpackConfig(config);
   }
 };

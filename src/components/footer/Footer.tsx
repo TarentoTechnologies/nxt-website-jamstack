@@ -13,27 +13,57 @@ import {
   rights,
   dlinkLeft,
   dlinkRight,
+  floatRight,
+  dLinkLeft,
+  dLinkRight,
 } from "./Footer.module.css";
 
 interface FooterProps {
-  data: any;
-  nxtLogoImg?: any;
-  companyLogoImg?: any;
+  data: {
+    nxtLogoImg: any;
+    nxtLogoImgTitle?: string;
+    companyLogoImg: any;
+    companyLogoImgTitle?: string;
+    description: string;
+    mailId: string;
+    levelOneHeading: string;
+    levelOneList: any[];
+    levelTwoHeading: string;
+    levelTwoList: any[];
+    levelThreeHeading: string;
+    levelThreeList: any[];
+    levelFourHeading: string;
+    levelFourList: any[];
+    rightsText: string;
+  };
 }
 
-export const Footer = ({ data, nxtLogoImg, companyLogoImg }: FooterProps) => {
+export const Footer = ({ data }: FooterProps) => {
   return (
     <div className={`container-fluid ${footer}`}>
       <div className={`row`}>
         {/* Column one */}
-        <div className={`col-sm-12 col-md-12 col-lg-8`}>
-          <div className={`d-block d-lg-none ${topBar}`}></div>
-          <div className={`d-block d-lg-none ${tarentoLogo} ${footerRight}`}>
+        <div className={`col-sm-12 col-md-12 col-xl-8`}>
+          <div className={`d-block d-md-none ${topBar}`}></div>
+          <div className={`d-block d-md-none ${tarentoLogo} ${footerRight}`}>
             <a href="https://www.tarento.com" rel="canonical" target="_blank">
               <img
-                src={companyLogoImg}
-                alt="Tarento"
-                title="Tarento"
+                src={data.companyLogoImg}
+                alt={data.companyLogoImgTitle}
+                title={data.companyLogoImgTitle}
+                width="187"
+                height="43"
+              />
+            </a>
+          </div>
+          <div
+            className={`d-none d-md-block d-xl-none ${tarentoLogo} ${footerRight} ${floatRight}`}
+          >
+            <a href="https://www.tarento.com" rel="canonical" target="_blank">
+              <img
+                src={data.companyLogoImg}
+                alt={data.companyLogoImgTitle}
+                title={data.companyLogoImgTitle}
                 width="187"
                 height="43"
               />
@@ -42,25 +72,19 @@ export const Footer = ({ data, nxtLogoImg, companyLogoImg }: FooterProps) => {
           <div className={`${nxtLogo}`}>
             <a href="nxt.html" rel="canonical" target="_blank" className="">
               <img
-                src={nxtLogoImg}
-                alt="NXT"
-                title="NXT"
+                src={data.nxtLogoImg}
+                alt={data.nxtLogoImgTitle}
+                title={data.nxtLogoImgTitle}
                 width="72"
                 height="72"
               />
             </a>
           </div>
-          <div className={`d-none d-lg-block ${topBar}`}></div>
+
+          <div className={`d-none d-md-block ${topBar}`}></div>
           <div className={`row ${marginBtm}`}>
-            <div
-              className={`col-xs-12 col-sm-12 col-md-8 col-lg-6 ${footerDesc}`}
-            >
-              <p>
-                NXT is the innovation wing of Tarento with primary focus on
-                bringing new technologies, new perspectives and new ways of
-                working into Tarento. We take pride in being unconventional with
-                our approaches while retaining the passion with which we work.
-              </p>
+            <div className={`col-xs-12 col-sm-12 col-md-6 ${footerDesc}`}>
+              <p>{data.description}</p>
               <p className={`${footerHeading}`}>
                 Reach us at{" "}
                 <a
@@ -68,67 +92,37 @@ export const Footer = ({ data, nxtLogoImg, companyLogoImg }: FooterProps) => {
                   className={`${footerEmail}`}
                   rel="canonical"
                 >
-                  hello@tarento.com
+                  {data?.mailId}
                 </a>
               </p>
             </div>
-            <div
-              className={`col-xs-12 col-sm-12 col-md-12 col-lg-6 d-flex ps-0`}
-            >
-              <div className={`${directlink} ${dlinkLeft} offset-xl-2`}>
-                <p className={`${footerHeading}`}>Direct Links</p>
+            <div className="col-md-6 d-flex p-0">
+              <div
+                className={`${directlink} ${dlinkLeft} ${dLinkLeft} offset-xl-2`}
+              >
+                <p className={`${footerHeading}`}>{data?.levelOneHeading}</p>
                 <ul>
-                  <li>
-                    <a href="nxt.html" rel="canonical">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="technology.html">Technology</a>
-                  </li>
-                  <li>
-                    <a href="design-process.html" rel="canonical">
-                      Design
-                    </a>
-                  </li>
-                  <li>
-                    <a href="nxt-innovation.html">Innovation</a>
-                  </li>
-                  <li>
-                    <a href="pricing.html" rel="canonical">
-                      Pricing
-                    </a>
-                  </li>
+                  {data?.levelOneList?.map((item, index) => (
+                    <li key={index}>
+                      <a href={item.href} rel="canonical">
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className={`${directlink} ${dlinkRight} offset-xl-2`}>
-                <p className={`${footerHeading}`}>Tech & Innovations</p>
+              <div
+                className={`${directlink} ${dlinkRight} ${dLinkRight} offset-xl-2`}
+              >
+                <p className={`${footerHeading}`}>{data?.levelTwoHeading}</p>
                 <ul>
-                  <li>
-                    <a href="data-platform.html" rel="canonical">
-                      Bolt - Data Platform
-                    </a>
-                  </li>
-                  <li>
-                    <a href="rain.html" rel="canonical">
-                      Rain - Analytics
-                    </a>
-                  </li>
-                  <li>
-                    <a href="thor.html" rel="canonical">
-                      Thor - Chatbot
-                    </a>
-                  </li>
-                  <li>
-                    <a href="govtech.html" rel="canonical">
-                      GovTech
-                    </a>
-                  </li>
-                  <li>
-                    <a href="customer-experience.html" rel="canonical">
-                      Customer Experience
-                    </a>
-                  </li>
+                  {data?.levelTwoList?.map((item, index) => (
+                    <li key={index}>
+                      <a href={item.href} rel="canonical">
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -136,94 +130,54 @@ export const Footer = ({ data, nxtLogoImg, companyLogoImg }: FooterProps) => {
         </div>
 
         {/* Column two */}
-        <div className={`col-sm-12 col-md-12 col-lg-4`}>
-          <div className={`d-none d-lg-block ${tarentoLogo} ${footerRight}`}>
+        <div className={`col-sm-12 col-md-12 col-xl-4`}>
+          <div className={`d-none d-xl-block ${tarentoLogo} ${footerRight}`}>
             <a href="https://www.tarento.com" rel="canonical" target="_blank">
               <img
-                src={companyLogoImg}
-                alt="Tarento"
-                title="Tarento"
+                src={data.companyLogoImg}
+                alt={data.companyLogoImgTitle}
+                title={data.companyLogoImgTitle}
                 width="187"
                 height="43"
               />
             </a>
           </div>
-          <div className={`${topBar}`}></div>
+          <div className={`${topBar} col-md-6 col-lg-12`}></div>
           <div className={`row`}>
             <div
               className={`col-xs-6 col-sm-12 col-md-12 col-lg-12 ${marginBtm1} d-flex ps-0`}
             >
               <div className={`${directlink} ${dlinkLeft} offset-xl-1`}>
-                <p className={`${footerHeading}`}>Direct Links</p>
+                <p className={`${footerHeading}`}>{data?.levelThreeHeading}</p>
                 <ul>
-                  <li>
-                    <a
-                      href="https://www.tarento.com/"
-                      rel="canonical"
-                      target="_blank"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.tarento.com/about/"
-                      rel="canonical"
-                      target="_blank"
-                    >
-                      About us
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.tarento.com/services/"
-                      rel="canonical"
-                      target="_blank"
-                    >
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.tarento.com/careers/"
-                      rel="canonical"
-                      target="_blank"
-                    >
-                      Careers
-                    </a>
-                  </li>
+                  {data?.levelThreeList?.map((item, index) => (
+                    <li key={index}>
+                      <a href={item.href} rel="canonical" target="_blank">
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className={`${directlink} ${dlinkRight} offset-xl-2`}>
-                <p className={`${footerHeading}`}>Programmes</p>
+              <div
+                className={`${directlink} ${dlinkRight} offset-lg-1 offset-xl-2`}
+              >
+                <p className={`${footerHeading}`}>{data?.levelFourHeading}</p>
                 <ul>
-                  <li>
-                    <a
-                      href="https://www.tarento.com/lead/"
-                      rel="canonical"
-                      target="_blank"
-                    >
-                      Lead
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.tarento.com/blixt/"
-                      rel="canonical"
-                      target="_blank"
-                    >
-                      Blixt
-                    </a>
-                  </li>
+                  {data?.levelFourList?.map((item, index) => (
+                    <li key={index}>
+                      <a href={item.href} rel="canonical" target="_blank">
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-12`}>
-          <p className={`${footerHeading} ${rights}`}>
-            All rights reserved © 2023 Tarento Technologies.
-          </p>
+          <p className={`${footerHeading} ${rights}`}>{data?.rightsText}</p>
         </div>
       </div>
     </div>

@@ -42,7 +42,50 @@ a:hover {
   padding: 1.875rem;
 }
 
-.paddingLeftRight330 {
-  padding-left: 20.625rem;
-  padding-right: 20.625rem;
+.paddingLeftRight15 {
+  padding-left: 0.938rem;
+  padding-right: 0.938rem;
 }
+
+/* Swiper styles starts here */
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  top: 0rem !important;
+  color: var(--white) !important;
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  top: 0rem !important;
+  color: var(--white) !important;
+}
+
+/* Swiper styles ends here */
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+  .containerService {
+    width: 46.875rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .containerService {
+    width: 60.625rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .containerService {
+    width: 73.125rem;
+  }
+}
+
+/* Media queries ends here */

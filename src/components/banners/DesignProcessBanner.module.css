@@ -1,0 +1,38 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerStyles {
+  padding: 3.75rem 0;
+}
+
+.imgStyles :global {
+  padding-top: 2rem;
+  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+
+.textStyles :global {
+  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */

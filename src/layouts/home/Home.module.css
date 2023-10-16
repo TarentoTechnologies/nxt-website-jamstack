@@ -1,0 +1,73 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.productCardLayoutStyles {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+
+.productCardStyles :global {
+  padding-right: 1.25rem;
+  margin-bottom: 5rem;
+  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+
+.paddingTopDown100 {
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+  .productCardLayoutStyles {
+    padding-left: 2rem;
+    padding-right: 10%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .productCardLayoutStyles {
+    padding-left: 4rem;
+    padding-right: 10rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .productCardLayoutStyles {
+    padding-left: 1.625rem;
+    padding-right: 1.625rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .productCardLayoutStyles {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .productCardLayoutStyles {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .productCardLayoutStyles {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .productCardLayoutStyles {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+/* Media queries ends here */

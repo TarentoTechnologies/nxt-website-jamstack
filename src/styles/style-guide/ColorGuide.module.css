@@ -45,6 +45,14 @@
   color: var(--black-70);
 }
 
+.bgBlack75 {
+  background-color: var(--black-75);
+}
+
+.black75 {
+  color: var(--black-75);
+}
+
 .bgBlack87 {
   background-color: var(--black-87);
 }
@@ -205,6 +213,14 @@
   color: var(--pallid-blue-violet);
 }
 
+.bgPallidBlueViolet2 {
+  background-color: var(--pallid-blue-violet-2);
+}
+
+.pallidBlueViolet2 {
+  color: var(--pallid-blue-violet-2);
+}
+
 .bgGlaucousGreen {
   background-color: var(--pale-glaucous-green);
 }
@@ -257,7 +273,7 @@
   background-color: var(--dark-anthracene-violet);
 }
 
-.darkAnthraceneViolet{
+.darkAnthraceneViolet {
   color: var(--dark-anthracene-violet);
 }
 
@@ -275,4 +291,76 @@
 
 .plumbagoGray {
   color: var(--plumbago-gray);
+}
+
+.bgPeacockGreen {
+  background-color: var(--peacock-green);
+}
+
+.peacockGreen {
+  color: var(--peacock-green);
+}
+
+.bgScarletRed {
+  background-color: var(--scarlet-red);
+}
+
+.scarletRed {
+  color: var(--scarlet-red);
+}
+
+.bgCeruleanBlue {
+  background-color: var(--cerulean-blue);
+}
+
+.ceruleanBlue {
+  color: var(--cerulean-blue);
+}
+
+.bgItalianBlue {
+  background-color: var(--italian-blue);
+}
+
+.italianBlue {
+  color: var(--italian-blue);
+}
+
+.bgSpectrumBlue {
+  background-color: var(--spectrum-blue);
+}
+
+.spectrumBlue {
+  color: var(--spectrum-blue);
+}
+
+.bgVividGreen {
+  background-color: var(--vivid-green);
+}
+
+.vividGreen {
+  color: var(--vivid-green);
+}
+
+.bgRhodaminePurple {
+  background-color: var(--rhodamine-purple);
+}
+
+.rhodaminePurple {
+  color: var(--rhodamine-purple);
+}
+
+.bgNeutralGray2 {
+  background-color: var(--neutral-gray-2);
+}
+
+.neutralGray2 {
+  color: var(--neutral-gray-2);
+}
+
+.bgLilacGray {
+  background-color: var(--lilac-gray);
+}
+
+.lilacGray {
+  color: var(--lilac-gray);
 }
