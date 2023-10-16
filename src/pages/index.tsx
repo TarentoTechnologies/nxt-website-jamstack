@@ -89,7 +89,7 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
     ],
     levelTwoHeading: "Tech & Innovations",
     levelTwoList: [
-      { title: "Bolt - Data Platform", href: "data-platform.html" },
+      { title: "Bolt - Data Platform", href: "/data-platform" },
       { title: "Rain - Analytics", href: "rain.html" },
       { title: "Thor - Chatbot", href: "thor.html" },
       { title: "GovTech", href: "govtech.html" },
