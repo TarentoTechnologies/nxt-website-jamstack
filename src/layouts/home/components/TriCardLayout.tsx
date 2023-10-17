@@ -9,7 +9,10 @@ export const TriCardLayout = ({ data }: TriCardLayoutProps) => {
     <div className={`container-fluid`}>
       <div className={`row`}>
         {data.map((item, index) => (
-          <div key={index} className={`col-sm-12 col-md-12 col-lg-4 px-0`}>
+          <div
+            key={index}
+            className={`col-sm-12 col-md-12 col-lg-4 px-0`}
+          >
             <TriCard
               title={item.title}
               logo={item.logo}

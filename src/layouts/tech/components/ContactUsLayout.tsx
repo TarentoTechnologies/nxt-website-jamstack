@@ -1,7 +1,7 @@
-import { PrimaryCTA } from "../../../components/buttons/PrimaryCTA";
-import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { contactUsLayout, titleStyles, btnStyles } from "../Tech.module.css";
 import { subText1 } from "../../../styles/style-guide/Typography.module.css";
+import { PrimaryCTA } from "../../../components/buttons/PrimaryCTA";
+import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 
 interface ContactUsLayoutProps {
   data: {

@@ -1,10 +1,10 @@
-import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import {
   techStack,
   titleStyles,
   gridLayout,
   logoStyles,
 } from "../Tech.module.css";
+import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 
 interface TechStackLayoutProps {
   data: {

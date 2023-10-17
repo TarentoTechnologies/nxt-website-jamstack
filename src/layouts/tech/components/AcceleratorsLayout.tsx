@@ -1,10 +1,10 @@
-import { ProductCard } from "../../../components/cards/ProductCard";
-import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import {
   titleStyles,
   acceleratorsLayout,
   cardStyles,
 } from "../Tech.module.css";
+import { ProductCard } from "../../../components/cards/ProductCard";
+import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 
 interface AcceleratorsLayoutProps {
   data: {

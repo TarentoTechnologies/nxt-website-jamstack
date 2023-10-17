@@ -1,0 +1,61 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerStyles {
+  overflow: hidden;
+  padding: 6.25rem 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .bannerStyles {
+    padding: 6.25rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+  .headerInfo {
+    padding: 1.25rem 1rem 1rem 0;
+  }
+  .titleStyles {
+    font-size: 2rem !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bannerStyles {
+    padding: 5rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+  .headerInfo {
+    padding: 3.75rem 1rem 1rem 0;
+  }
+  .titleStyles {
+    font-size: 3rem !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .bannerStyles {
+    padding: 5rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .bannerStyles {
+    padding: 5rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding-left: 2rem;
+  }
+}
+
+/* Media queries ends here */

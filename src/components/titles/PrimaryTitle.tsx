@@ -4,6 +4,7 @@ import {
   infoSectionH3,
   cardHeader,
   heroTitle,
+  acceleratorTitle,
 } from "../../styles/style-guide/Typography.module.css";
 
 import { white, black87 } from "../../styles/style-guide/ColorGuide.module.css";
@@ -23,6 +24,7 @@ export const PrimaryTitle = ({ title, variant, color }: PrimaryTitleProps) => {
         ${variant === "infoSectionH2" ? infoSectionH2 : ""}
         ${variant === "infoSectionH3" ? infoSectionH3 : ""}
         ${variant === "card" ? cardHeader : ""}
+        ${variant === "accelerator" ? acceleratorTitle : ""}
         ${color === "white" ? white : black87}`}
     >
       {title}

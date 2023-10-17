@@ -47,13 +47,38 @@ a:hover {
   padding-right: 0.938rem;
 }
 
-.layout {
-  padding: 3.75rem 0;
+.col3 {
+  width: unset;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+.containerRow {
+  display: grid;
+  grid-template-columns: repeat(3, calc(33.33% - 30px));
+  gap: 30px;
+  margin: 0;
+}
 .layoutBg {
   background-color: #f7f7f7;
 }
+/* Swiper styles starts here */
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  top: 0rem !important;
+  color: var(--white) !important;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  top: 0rem !important;
+  color: var(--white) !important;
+}
+
+/* Swiper styles ends here */
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
@@ -77,6 +102,16 @@ a:hover {
 @media only screen and (min-width: 1200px) {
   .containerService {
     width: 73.125rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .containerRow {
+    flex-direction: column;
+    grid-template-columns: repeat(1, calc(100%));
+  }
+
+  .col3 {
+    flex: 1;
   }
 }
 

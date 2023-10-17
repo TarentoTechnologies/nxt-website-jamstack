@@ -21,6 +21,7 @@ import govTechLogo from "../../static/images/govTech_icon.svg";
 import techLogo from "../../static/images/technology.svg";
 import designLogo from "../../static/images/design.svg";
 import innovationLogo from "../../static/images/inovation.svg";
+import { AgencyPortfolio, DesignPortfolio } from "../layouts/home";
 
 const IndexPage: React.FC<PageProps> = () => {
   const heroBannerData = {
@@ -102,7 +103,7 @@ const IndexPage: React.FC<PageProps> = () => {
     ],
     levelTwoHeading: "Tech & Innovations",
     levelTwoList: [
-      { title: "Bolt - Data Platform", href: "data-platform.html" },
+      { title: "Bolt - Data Platform", href: "/data-platform" },
       { title: "Rain - Analytics", href: "rain.html" },
       { title: "Thor - Chatbot", href: "thor.html" },
       { title: "GovTech", href: "govtech.html" },
@@ -123,12 +124,112 @@ const IndexPage: React.FC<PageProps> = () => {
     rightsText: "All rights reserved © 2023 Tarento Technologies.",
   };
 
+  const agencyPortfolioData = {
+    title: "Agency Portfolio",
+    ctaText: "View All",
+    ctaLink: "/agency-portfolio",
+    description:
+      "Bihar Museum is a museum located in Patna. It was partially opened in August 2015. 'The children's museum', the main entrance area, and an orientation theatre were the only parts opened to the public in August 2015.",
+    list: [
+      {
+        id: 0,
+        title: "Spinverse​",
+        description:
+          "Spinverse is the Nordic leader in innovation consulting, helping customers grow and solve global challenges with innovations. Our experts are committed to support customers to secure public funding, find partners for collaboration and make an impact with ground-breaking projects.",
+        tag: "Productivity",
+        ctaText: "Read More",
+        ctaLink: "https://www.google.com",
+        imgSrc: "https://picsum.photos/seed/picsum/370/226",
+        imgAlt: "Spinverse",
+      },
+      {
+        id: 1,
+        title: "CellMark",
+        description:
+          "CellMark is an employee-owned independent supply chain services company. We are here to make your business operations easier and support your trade. Whether it’s across the street or across the globe.",
+        tag: "Productivity",
+        ctaText: "Read More",
+        ctaLink: "https://www.google.com",
+        imgSrc: "https://picsum.photos/seed/picsum/370/226",
+        imgAlt: "CellMark",
+      },
+      {
+        id: 2,
+        title: "EV Services",
+        description:
+          "EV Services was founded in 2018 in Bergen, Norway. The EV capital of the world. Our strategic placed service hubs, experienced management/owner group and the fact we only service electric vehicles enables us to organise our workflow on a new level and thus save time and costs. We work to always exceed customer expectations.",
+        tag: "Productivity",
+        ctaText: "Read More",
+        ctaLink: "https://www.google.com",
+        imgSrc: "https://picsum.photos/seed/picsum/370/226",
+        imgAlt: "EV Services",
+      },
+    ],
+  };
+
+  const designPortfolioData = {
+    title: "Design Portfolio",
+    ctaText: "View All",
+    ctaLink: "/design-portfolio",
+    description:
+      "Bihar Museum is a museum located in Patna. It was partially opened in August 2015. 'The children's museum', the main entrance area, and an orientation theatre were the only parts opened to the public in August 2015.",
+    list: [
+      {
+        id: 0,
+        title: "iGOT - Karmayogi​",
+        description:
+          "iGOT Karmayogi is an online solutioning platform, developed as an integral part of the Digital India stack for capacity building of all government employees.​",
+        tag: "Public Administration",
+        ctaText: "Read More",
+        ctaLink: "https://www.google.com",
+        imgSrc: "https://picsum.photos/seed/picsum/370/226",
+        imgAlt: "iGOT - Karmayogi",
+      },
+      {
+        id: 1,
+        title: "mAadhaar​",
+        description:
+          "With the goal of reaching out to large numbers of smartphone users, the new mAadhaar is released by the Unique Identification Authority of India.",
+        tag: "Public Administration",
+        ctaText: "Read More",
+        ctaLink: "https://www.google.com",
+        imgSrc: "https://picsum.photos/seed/picsum/370/226",
+        imgAlt: "mAadhaar​",
+      },
+      {
+        id: 2,
+        title: "ASK Portal",
+        description:
+          "'Aadhaar Seva Kendra' or ASK is a single stop destination for all Aadhaar services for the residents. Managed directly by UIDAI, the ASK offer dedicated Aadhaar enrolment",
+        tag: "Public Administration",
+        ctaText: "Read More",
+        ctaLink: "https://www.google.com",
+        imgSrc: "https://picsum.photos/seed/picsum/370/226",
+        imgAlt: "ASK Portal",
+      },
+    ],
+  };
+
   return (
     <main className="">
       <HeroBanner data={heroBannerData} />
       <TriCardLayout data={triCardData} />
       <PyramidBanner data={pyramidBannerData} />
       <ProductCardLayout data={productCardData} />
+      <AgencyPortfolio
+        title={agencyPortfolioData.title}
+        description={agencyPortfolioData.description}
+        ctaText={agencyPortfolioData.ctaText}
+        ctaLink={agencyPortfolioData.ctaLink}
+        agencyPortfolioData={agencyPortfolioData.list}
+      />
+      <DesignPortfolio
+        title={designPortfolioData.title}
+        description={designPortfolioData.description}
+        ctaText={designPortfolioData.ctaText}
+        ctaLink={designPortfolioData.ctaLink}
+        designPortfolioData={designPortfolioData.list}
+      />
       <Footer data={footerData} />
     </main>
   );
