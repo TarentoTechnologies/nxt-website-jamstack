@@ -1,11 +1,6 @@
-import {
-  btnStyles,
-  contactUsLayout,
-  titleStyles,
-} from "../../tech/Tech.module.css";
-import { subText1 } from "../../../styles/style-guide/Typography.module.css";
-import { PrimaryCTA } from "../../../components/buttons/PrimaryCTA";
-import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
+import { PrimaryCTACard } from "../../../components";
+import { bgNeutralGray2 } from "../../../styles/style-guide/ColorGuide.module.css";
+import { paddingTopDown100, productCardLayoutStyles } from "../../home/Home.module.css";
 
 interface AreYouInterestedProps {
   data: any;
@@ -14,23 +9,14 @@ interface AreYouInterestedProps {
 export const AreYouInterested = ({ data }: AreYouInterestedProps) => {
   return (
     <div
-      className={`container-fluid d-flex justify-content-center ${contactUsLayout}`}
+      className={`container-fluid ${productCardLayoutStyles} ${bgNeutralGray2} ${paddingTopDown100} mb-0 mt-0`}
     >
-      <div className={`row containerService paddingLeftRight15`}>
-        <div className={`col-lg-6 px-0`}>
-          <div className={`${titleStyles}`}>
-            <PrimaryTitle title={data?.heading} variant="infoSectionH2" />
-          </div>
-          <p className={`${subText1}`}>{data?.desc}</p>
-          <div className={`${btnStyles}`}>
-            <PrimaryCTA
-              label={data?.CTAlabel}
-              btnLink={data?.CTAlink}
-              size="small"
-            />
-          </div>
-        </div>
-      </div>
+      <PrimaryCTACard
+        title={data?.Title}
+        description={data?.Description}
+        ctaLink={data?.CTALink}
+        ctaText={data?.CTAText}
+      />
     </div>
   );
 };

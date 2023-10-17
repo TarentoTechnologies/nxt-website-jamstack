@@ -35,6 +35,22 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "agency-portfolio-listing",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
+    {
+      singularName: "design-portfolio-listing",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
 };
 

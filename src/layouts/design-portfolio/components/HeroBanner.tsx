@@ -5,5 +5,11 @@ interface HeroBannerProps {
 }
 
 export const HeroBanner = ({ heroBannerData }: HeroBannerProps) => {
-  return <HeroBannerForTDI data={heroBannerData} />;
+  return (
+    <HeroBannerForTDI
+      title={heroBannerData?.Title}
+      description={heroBannerData?.Description}
+      img={heroBannerData?.Image?.localFile?.url}
+    />
+  );
 };

@@ -2,22 +2,10 @@ import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import { useRecoilValue } from "recoil";
 
-import boltLogo from "../../static/images/bolt_dark.svg";
-import boltImg from "../../static/images/bolt_thumb.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
-import designLogo from "../../static/images/design.svg";
-import govTechLogo from "../../static/images/govTech_icon.svg";
-import govTechImg from "../../static/images/govtech_thumb.svg";
-import innovationLogo from "../../static/images/inovation.svg";
 import headLogo from "../../static/images/logo-head.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import mainLogo from "../../static/images/logo-main.svg";
-import pyramidImage from "../../static/images/pyramid.svg";
-import rainLogo from "../../static/images/rain.svg";
-import rainImg from "../../static/images/rain_thumb.svg";
-import techLogo from "../../static/images/technology.svg";
-import thorLogo from "../../static/images/thor_dark.svg";
-import thorImg from "../../static/images/thor_thumb.svg";
 import { HeroBanner } from "../components/banners/HeroBanner";
 import { PyramidBanner } from "../components/banners/PyramidBanner";
 import { Footer } from "../components/footer/Footer";
@@ -193,6 +181,7 @@ export const query = graphql`
     enDesignPortfolios: allStrapiDesignPortfolio(
       filter: { locale: { eq: "en" } }
       sort: { updatedAt: DESC }
+      limit: 3
     ) {
       nodes {
         PortfolioTag
@@ -216,6 +205,7 @@ export const query = graphql`
     enAgencyPortfolios: allStrapiAgencyPortfolio(
       filter: { locale: { eq: "en" } }
       sort: { updatedAt: DESC }
+      limit: 3
     ) {
       nodes {
         PortfolioTag
