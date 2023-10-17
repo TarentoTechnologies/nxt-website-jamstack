@@ -1,9 +1,10 @@
 import {
-  infoSectionH2,
-  h1One,
   cardHeader,
-  footerHeading,
   caseStudyTitle,
+  footerHeading,
+  h1One,
+  h4subTitle,
+  infoSectionH2,
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -46,6 +47,12 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>caseStudyTitle</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h4subTitle}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h4subTitle</td>
           </tr>
         </tbody>
       </table>

@@ -12,3 +12,37 @@
   font-weight: 400;
   margin-left: 1rem;
 }
+
+.avatarContainer {
+  height: 34.375rem;
+  margin-bottom: 2rem;
+}
+.multiChannelPadding {
+  padding: 2rem 0 0 5.625rem;
+}
+.videoContainer {
+  height: 20.125rem;
+  width: 100%;
+  object-fit: unset;
+}
+.videoPosition {
+  bottom: 0;
+  position: absolute;
+}
+@media only screen and (max-width: 600px) {
+  .multiChannelPadding {
+    padding: 1.5rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .avatarContainer {
+    height: max-content;
+  }
+  .videoPosition {
+    position: unset !important;
+  }
+  .videoContainer {
+    height: 100%;
+    width: 100%;
+  }
+}

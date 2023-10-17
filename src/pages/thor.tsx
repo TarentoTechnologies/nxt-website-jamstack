@@ -1,11 +1,16 @@
-import type { HeadFC, PageProps } from "gatsby";
-import * as React from "react";
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
-import techHero from "../../static/images/tech-hero.png";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
-import { CaseStudies, Features, UseCases } from "../layouts/thor";
+import {
+  Avatars,
+  CaseStudies,
+  Features,
+  MultiChannel,
+  UseCases,
+} from "../layouts/thor";
+import type { HeadFC, PageProps } from "gatsby";
+import * as React from "react";
 
 const ThorPage: React.FC<PageProps> = () => {
   const heroBannerData = {
@@ -76,13 +81,104 @@ const ThorPage: React.FC<PageProps> = () => {
       },
     ],
   };
+  const UseCaseData = {
+    title: "Use cases",
+    list: [
+      { imgSrc: "https://nxt.tarento.com/img/FAQs.svg", imgText: "FAQs" },
+      {
+        imgSrc: "https://nxt.tarento.com/img/Customer%20Support.svg",
+        imgText: "Customer Support",
+      },
+      {
+        imgSrc: "https://nxt.tarento.com/img/recomendations.svg",
+        imgText: "Recommendations",
+      },
+      {
+        imgSrc: "https://nxt.tarento.com/img/Marketing.svg",
+        imgText: "Marketing",
+      },
+      {
+        imgSrc: "https://nxt.tarento.com/img/Reservations.svg",
+        imgText: "Reservations",
+      },
+      {
+        imgSrc: "https://nxt.tarento.com/img/helpdesk.svg",
+        imgText: "Help desk",
+      },
+      {
+        imgSrc: "https://nxt.tarento.com/img/Guided%20Selling.svg",
+        imgText: "Guided Selling",
+      },
+      {
+        imgSrc: "https://nxt.tarento.com/img/HR%20Support.svg",
+        imgText: "HR Support",
+      },
+      {
+        imgSrc: "https://nxt.tarento.com/img/Event%20Booking.svg",
+        imgText: "Event Booking",
+      },
+    ],
+    subText: "And many more..",
+  };
+  const AvatarData = {
+    title: "Two Avatars",
+
+    list: [
+      {
+        imgSrc: "https://nxt.tarento.com/img/thor_avatars_01.svg",
+        title: "AI Assistant",
+
+        description:
+          "THOR AI Assistant is highly personalized and deeply integrated to the business domain & IT systems. Core capabilities of the Assistant falls in 3 main categories: Answers, Alerts and Automation.",
+        videoSrc: "https://nxt.tarento.com/videos/thor_v5.mp4",
+      },
+      {
+        imgSrc: "https://nxt.tarento.com/img/chatbot.svg",
+        title: "Chatbot",
+
+        description:
+          "THOR bot is an AI powered chatbot that is very easy to integrate and simple to manage. Thor bot has multi channel integration capabilities and is available on wide variety of channels including web, mobile web, native mobile apps like Telegram & Whatsapp.",
+        videoSrc: "https://nxt.tarento.com/videos/Chatbot_Generic_v4.mp4",
+      },
+    ],
+    subText: (
+      <>
+        {" "}
+        THOR has two avatars - As an AI Assistant for business domain and <br />
+        as multi-channel chatbot.
+      </>
+    ),
+  };
+  const MutliChannelData = {
+    imgSrc: "https://nxt.tarento.com/img/multichannel.png",
+    title: "Multi channel engagement",
+    subTitle: "Engage your users across the spectrum.",
+
+    list: [
+      {
+        title: "Chat widget for Web and Mobile ",
+        description: "Chat widget that can be embedded in web and mobile web",
+      },
+      {
+        title: " Mobile Application",
+        description: "Simple integration with native mobile apps",
+      },
+      {
+        title: "Messaging applications",
+        description:
+          "Use Telegram and WhatsApp messengers to expand your reach",
+      },
+    ],
+  };
 
   return (
     <main className="">
       <HeroBannerForTDI data={heroBannerData} />
+      <Avatars data={AvatarData} />
       <Features data={FeaturesData} />
+      <MultiChannel data={MutliChannelData} />
       <CaseStudies data={CaseStudyData} />
-      <UseCases data={CaseStudyData} />
+      <UseCases data={UseCaseData} />
       <Footer data={footerData} />
     </main>
   );
@@ -93,12 +189,14 @@ export default ThorPage;
 export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
-    <title>::NXT Tarento - Technology design and Innovation::</title>
+    <title>::NXT Tarento - THOR - AI Powered Assistant and Chatbot::</title>
     <link rel="canonical" href="https://nxt.tarento.com/" />
     <meta name="title" content="NXT Tarento" />
     <meta
       name="description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="THOR is highly scalable, extensible and allows deep integration to any
+      domain. Multi channel capabilities of THOR enables businesses to engage
+      their users over a wide range of channels"
     />
     <meta
       name="viewport"

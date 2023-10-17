@@ -15,7 +15,7 @@ export const CaseStudies = ({ data }: CaseStudiesProps) => {
             <h1>{data.title}</h1>
             <div className="row mt-5">
               {data.list?.map((item, index) => (
-                <div className="col-md-6 mt-2">
+                <div className="col-md-6 mt-2" key={index}>
                   <div className="wow fadeInUp">
                     <center>
                       <img

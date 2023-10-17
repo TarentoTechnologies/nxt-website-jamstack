@@ -44,7 +44,18 @@
   font-weight: 500;
   line-height: 1.1;
 }
-
+.h4SubTitle {
+  font-size: 1.3125em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  font-family: "RobotoSlab-Regular", serif;
+}
+.revolutionHeading {
+  font-size: 2.676666693433344em;
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+}
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
