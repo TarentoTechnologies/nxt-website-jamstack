@@ -19,6 +19,7 @@ import {
   ctaIcon,
   customTag,
   heroImage,
+  heroProgrammerImage,
   truncateDescription,
 } from "./PortfolioCard.module.css";
 import { ctaIconPos } from "./ShowcaseCard.module.css";
@@ -26,12 +27,13 @@ import { ctaIconPos } from "./ShowcaseCard.module.css";
 interface PortfolioCardProps {
   imgSrc?: any;
   imgAlt?: string;
-  tag: string;
+  tag?: string;
   title: string;
   description: string;
   ctaText: string;
   ctaLink: any;
   tagVariant?: string;
+  isProgramme?: boolean;
 }
 
 export const PortfolioCard = ({
@@ -43,6 +45,7 @@ export const PortfolioCard = ({
   ctaText,
   ctaLink,
   tagVariant,
+  isProgramme,
 }: PortfolioCardProps) => {
   const image: any = getImage(imgSrc);
 
@@ -52,19 +55,21 @@ export const PortfolioCard = ({
       <GatsbyImage
         image={image}
         alt={imgAlt ? imgAlt : ""}
-        className={`${heroImage} ${bgGlaucousGreen} img-fluid ${
-          !imgSrc ? "w-100" : ""
-        }`}
+        className={`${
+          isProgramme ? heroProgrammerImage : heroImage
+        } ${bgGlaucousGreen} img-fluid ${!imgSrc ? "w-100" : ""}`}
       />
 
       {/* Tag */}
-      <div
-        className={`${customTag} ${
-          tagVariant === "blue" ? bgUraniaBlue : bgCadiumOrange
-        }  mt-4`}
-      >
-        <label className={`${tagLabel} ${white87} px-3`}>{tag}</label>
-      </div>
+      {tag && tag !== null && (
+        <div
+          className={`${customTag} ${
+            tagVariant === "blue" ? bgUraniaBlue : bgCadiumOrange
+          }  mt-4`}
+        >
+          <label className={`${tagLabel} ${white87} px-3`}>{tag}</label>
+        </div>
+      )}
 
       {/* Heading */}
       <div className="mt-3">

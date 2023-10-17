@@ -21,7 +21,12 @@ import thorImg from "../../static/images/thor_thumb.svg";
 import { HeroBanner } from "../components/banners/HeroBanner";
 import { PyramidBanner } from "../components/banners/PyramidBanner";
 import { Footer } from "../components/footer/Footer";
-import { AgencyPortfolio, CTALayout, DesignPortfolio } from "../layouts/home";
+import {
+  AgencyPortfolio,
+  CTALayout,
+  DesignPortfolio,
+  OurProgramme,
+} from "../layouts/home";
 import { ProductCardLayout } from "../layouts/home/components/ProductCardLayout";
 import { TriCardLayout } from "../layouts/home/components/TriCardLayout";
 import { langSelected as langSelectedAtom } from "../states/atoms";
@@ -93,6 +98,10 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
         btnDescr={data[currentLang]?.PyramidCTAText}
       />
       <ProductCardLayout data={data[currentLang]?.AcceleratorCards} />
+      <OurProgramme
+        sectionTitle={data[currentLang]?.ProgrammeSectionTitle}
+        cards={data[currentLang]?.ProgrammeCards}
+      />
       <AgencyPortfolio
         title={data[currentLang]?.HighlighterOneTitle}
         description={data[currentLang]?.HighlighterOneDescription}
