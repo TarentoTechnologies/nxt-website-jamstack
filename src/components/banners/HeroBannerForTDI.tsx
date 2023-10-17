@@ -1,3 +1,5 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
@@ -14,6 +16,7 @@ interface HeroBannerForTDIProps {
   imgAltText?: string;
   subText?: string;
   description: string;
+  isImage?: boolean;
 }
 
 export const HeroBannerForTDI = ({
@@ -22,7 +25,10 @@ export const HeroBannerForTDI = ({
   imgAltText,
   subText,
   description,
+  isImage,
 }: HeroBannerForTDIProps) => {
+  const image: any = getImage(img)
+
   return (
     <div
       className={`container-fluid ${bannerStyles} d-flex justify-content-center`}
@@ -41,12 +47,20 @@ export const HeroBannerForTDI = ({
           </div>
         </div>
         <div className={`col-sm-12 col-md-6 d-flex align-items-center`}>
-          <img
-            className={`${imgStyles} img-fluid`}
-            src={img}
-            alt={imgAltText}
-            title={imgAltText}
-          />
+          {isImage ? (
+            <GatsbyImage
+              image={image}
+              alt={imgAltText ? imgAltText : ""}
+              className={`${imgStyles} img-fluid`}
+            />
+          ) : (
+            <img
+              className={`${imgStyles} img-fluid`}
+              src={img}
+              alt={imgAltText}
+              title={imgAltText}
+            />
+          )}
         </div>
       </div>
     </div>

@@ -6,12 +6,14 @@ interface AllOtherClientsProps {
   sectionTitle: string;
   data: any;
   ctaBtnText?: any;
+  portfolioPath: string;
 }
 
 export const AllOtherClients = ({
   sectionTitle,
   data,
   ctaBtnText,
+  portfolioPath
 }: AllOtherClientsProps) => {
 
   return (
@@ -32,7 +34,7 @@ export const AllOtherClients = ({
                 >
                   <PortfolioCard
                     title={listData?.HeroSection?.Title}
-                    ctaLink={"/" + listData?.Slug}
+                    ctaLink={`${portfolioPath}${listData?.Slug}`}
                     ctaText={listData?.CTATextForDisplay}
                     description={listData?.HeroSection?.Description}
                     tag={listData?.PortfolioTag}

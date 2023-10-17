@@ -94,6 +94,7 @@ const DesignPortfolio: React.FC<PageProps> = ({
         sectionTitle={data[currentLang]?.SectionTwoTitle}
         data={data[currentDesignPortfolioList]?.nodes}
         ctaBtnText={data[currentLang]?.DynamicButtonText}
+        portfolioPath="/design-portfolio/"
       />
       <AreYouInterested data={data[currentLang]?.CTA} />
       <Footer data={footerData} />

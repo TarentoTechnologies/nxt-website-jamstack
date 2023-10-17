@@ -72,7 +72,7 @@ export const AgencyPortfolio = ({
               data-sal-easing="ease-in-back"
             >
               <PortfolioCard
-                ctaLink={"/" + data.Slug}
+                ctaLink={`/agency-portfolio/${data.Slug}`}
                 ctaText={data.CTATextForDisplay}
                 description={data.HeroSection.Description}
                 tag={data.PortfolioTag}
