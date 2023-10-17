@@ -1,4 +1,5 @@
-import { useCasesSubTitle } from "../Thor.module.css";
+import { h3Title } from "../../../styles/style-guide/Typography.module.css";
+import { topBottomPadding, useCasesSubTitle } from "../Thor.module.css";
 
 interface CaseStudiesProps {
   data: {
@@ -10,10 +11,10 @@ interface CaseStudiesProps {
 
 export const UseCases = ({ data }: CaseStudiesProps) => {
   return (
-    <div className="layout layoutBg">
+    <div className={`layout layoutBg ${topBottomPadding}`}>
       <div className={`container-fluid d-flex justify-content-center`}>
         <div className={`containerService paddingLeftRight15`}>
-          <h1 className="pb-5">{data.title}</h1>
+          <h1 className={`pb-5 ${h3Title}`}>{data.title}</h1>
           <div className="row layoutDetails d-feature useCases">
             {data.list?.map((item, index) => (
               <div

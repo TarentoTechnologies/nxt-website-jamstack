@@ -1,4 +1,9 @@
-import { caseStudyTitle } from "../../../styles/style-guide/Typography.module.css";
+import {
+  caseStudyTitle,
+  h3Title,
+} from "../../../styles/style-guide/Typography.module.css";
+import { topBottomPadding } from "../Thor.module.css";
+
 interface CaseStudiesProps {
   data: {
     title?: string;
@@ -8,11 +13,11 @@ interface CaseStudiesProps {
 
 export const CaseStudies = ({ data }: CaseStudiesProps) => {
   return (
-    <div className="layout">
+    <div className={topBottomPadding}>
       <div className={`container-fluid d-flex justify-content-center`}>
         <div className={`containerService paddingLeftRight15`}>
           <div className="">
-            <h1>{data.title}</h1>
+            <h1 className={`${h3Title}`}>{data.title}</h1>
             <div className="row mt-5">
               {data.list?.map((item, index) => (
                 <div className="col-md-6 mt-2" key={index}>

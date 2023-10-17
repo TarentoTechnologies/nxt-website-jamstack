@@ -41,7 +41,7 @@ const ThorPage: React.FC<PageProps> = () => {
     levelTwoList: [
       { title: "Bolt - Data Platform", href: "data-platform.html" },
       { title: "Rain - Analytics", href: "rain.html" },
-      { title: "Thor - Chatbot", href: "thor.html" },
+      { title: "Thor - Chatbot", href: "/thor" },
       { title: "GovTech", href: "govtech.html" },
       { title: "Customer Experience", href: "customer-experience.html" },
     ],

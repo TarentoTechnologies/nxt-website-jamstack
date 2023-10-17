@@ -1,7 +1,11 @@
 import { bgNeutralGray } from "../../../styles/style-guide/ColorGuide.module.css";
-import { revolutionHeading } from "../../../styles/style-guide/Typography.module.css";
+import {
+  h3Title,
+  revolutionHeading,
+} from "../../../styles/style-guide/Typography.module.css";
 import {
   avatarContainer,
+  topBottomPadding,
   videoContainer,
   videoPosition,
 } from "../Thor.module.css";
@@ -21,10 +25,10 @@ interface AvatarProps {
 
 export const Avatars = ({ data }: AvatarProps) => {
   return (
-    <div className={`layout ${bgNeutralGray}`}>
+    <div className={`layout ${bgNeutralGray} ${topBottomPadding}`}>
       <div className={`container-fluid d-flex justify-content-center`}>
         <div className={`containerService paddingLeftRight15`}>
-          <h1 className="">{data?.title}</h1>
+          <h1 className={`${h3Title}`}>{data?.title}</h1>
           <p className="mb-5 mt-3">{data?.subText}</p>
           <div className={`row ms-lg-5`}>
             {data?.list?.map((item, index) => (
