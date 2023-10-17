@@ -12,8 +12,12 @@ import {
   HeroBanner,
   Showcase,
 } from "../layouts/design-portfolio";
+import {
+  About,
+  RelatedPortfolio,
+  TagSection,
+} from "../layouts/design-portfolio-detail";
 import { langSelected as langSelectedAtom } from "../states/atoms";
-import { About } from "../layouts/design-portfolio-detail";
 
 interface DesignPortfolioDetailProps {
   data: any;
@@ -23,7 +27,6 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
   data,
 }: DesignPortfolioDetailProps) => {
   const currentLang = useRecoilValue(langSelectedAtom);
-
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -68,6 +71,12 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
     <main className="">
       <HeroBanner heroBannerData={data[currentLang]?.HeroSection} isImage />
       <About data={data[currentLang]?.AboutSection} />
+      <TagSection data={data[currentLang]?.BannerWithTagSection} />
+      <RelatedPortfolio
+        data={data[currentLang]?.RelatedPortfolios}
+        sectionTitle={data[currentLang]?.SectionFourTitle}
+        portfolioPath="/design-portfolio/"
+      />
       <Footer data={footerData} />
     </main>
   );
@@ -119,7 +128,12 @@ export const query = graphql`
             }
           }
         }
+        Tags {
+          id
+          Label
+        }
       }
+      SectionFourTitle
       RelatedPortfolios {
         id
         Title

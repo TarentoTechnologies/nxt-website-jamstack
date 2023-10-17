@@ -4,9 +4,16 @@ import { contactUsLayout, titleStyles } from "../../tech/Tech.module.css";
 
 interface RelatedPortfolioProps {
   data: any;
+  sectionTitle: string;
+  portfolioPath: string
 }
 
-export const RelatedPortfolio = ({ data }: RelatedPortfolioProps) => {
+export const RelatedPortfolio = ({
+  data,
+  sectionTitle,
+  portfolioPath
+}: RelatedPortfolioProps) => {
+
   return (
     <div
       className={`container-fluid d-flex justify-content-center ${contactUsLayout}`}
@@ -15,23 +22,24 @@ export const RelatedPortfolio = ({ data }: RelatedPortfolioProps) => {
         <div
           className={`${titleStyles} col-sm-12 col-md-12 col-lg-12 col-xl-7`}
         >
-          <PrimaryTitle title={data?.title} variant="infoSectionH2" />
+          <PrimaryTitle title={sectionTitle} variant="infoSectionH2" />
         </div>
         <div className="row">
-          {data?.list.map((listData: any, index: number) => {
+          {data?.map((listData: any, index: number) => {
             return (
               <div
                 className="col-sm-12 col-md-6 col-lg-6 col-xl-6 p-0 m-0 mb-4"
                 key={listData.id}
               >
                 <PortfolioCard
-                  ctaLink={listData.ctaLink}
-                  ctaText={listData.ctaText}
-                  description={listData.description}
-                  tag={listData.tag}
-                  title={listData.title}
-                  imgAlt={listData.imgAlt}
-                  imgSrc={listData.imgSrc}
+                  title={listData?.Title}
+                  ctaLink={`${portfolioPath}${listData?.CTALink}`}
+                  ctaText={listData?.CTAText}
+                  description={listData?.Description}
+                  tag={listData?.Tag}
+                  imgSrc={listData?.Image?.localFile}
+                  imgAlt={listData?.CTALink}
+                  tagVariant={"orange"}
                 />
               </div>
             );
