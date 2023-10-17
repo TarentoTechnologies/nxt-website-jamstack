@@ -21,7 +21,7 @@ import thorImg from "../../static/images/thor_thumb.svg";
 import { HeroBanner } from "../components/banners/HeroBanner";
 import { PyramidBanner } from "../components/banners/PyramidBanner";
 import { Footer } from "../components/footer/Footer";
-import { AgencyPortfolio, DesignPortfolio } from "../layouts/home";
+import { AgencyPortfolio, CTALayout, DesignPortfolio } from "../layouts/home";
 import { ProductCardLayout } from "../layouts/home/components/ProductCardLayout";
 import { TriCardLayout } from "../layouts/home/components/TriCardLayout";
 import { langSelected as langSelectedAtom } from "../states/atoms";
@@ -42,34 +42,6 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
     logoMainTitle: "NXT-main-logo",
     logoHeadTitle: "NXT-head-logo",
   };
-
-  const productCardData = [
-    {
-      title: "BOLT - Data platform",
-      bgImg: boltImg,
-      logo: boltLogo,
-    },
-    {
-      title: "RAIN - Analytics",
-      bgImg: rainImg,
-      logo: rainLogo,
-    },
-    {
-      title: "THOR - AI Assistant & Chatbots",
-      bgImg: thorImg,
-      logo: thorLogo,
-    },
-    {
-      title: "Gov Tech",
-      bgImg: govTechImg,
-      logo: govTechLogo,
-    },
-    {
-      title: "Customer Experience Pack",
-      bgImg: govTechImg,
-      logo: govTechLogo,
-    },
-  ];
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -110,92 +82,6 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
     rightsText: "All rights reserved © 2023 Tarento Technologies.",
   };
 
-  const agencyPortfolioData = {
-    title: "Agency Portfolio",
-    ctaText: "View All",
-    ctaLink: "/agency-portfolio",
-    description:
-      "Bihar Museum is a museum located in Patna. It was partially opened in August 2015. 'The children's museum', the main entrance area, and an orientation theatre were the only parts opened to the public in August 2015.",
-    list: [
-      {
-        id: 0,
-        title: "Spinverse​",
-        description:
-          "Spinverse is the Nordic leader in innovation consulting, helping customers grow and solve global challenges with innovations. Our experts are committed to support customers to secure public funding, find partners for collaboration and make an impact with ground-breaking projects.",
-        tag: "Productivity",
-        ctaText: "Read More",
-        ctaLink: "https://www.google.com",
-        imgSrc: "https://picsum.photos/seed/picsum/370/226",
-        imgAlt: "Spinverse",
-      },
-      {
-        id: 1,
-        title: "CellMark",
-        description:
-          "CellMark is an employee-owned independent supply chain services company. We are here to make your business operations easier and support your trade. Whether it’s across the street or across the globe.",
-        tag: "Productivity",
-        ctaText: "Read More",
-        ctaLink: "https://www.google.com",
-        imgSrc: "https://picsum.photos/seed/picsum/370/226",
-        imgAlt: "CellMark",
-      },
-      {
-        id: 2,
-        title: "EV Services",
-        description:
-          "EV Services was founded in 2018 in Bergen, Norway. The EV capital of the world. Our strategic placed service hubs, experienced management/owner group and the fact we only service electric vehicles enables us to organise our workflow on a new level and thus save time and costs. We work to always exceed customer expectations.",
-        tag: "Productivity",
-        ctaText: "Read More",
-        ctaLink: "https://www.google.com",
-        imgSrc: "https://picsum.photos/seed/picsum/370/226",
-        imgAlt: "EV Services",
-      },
-    ],
-  };
-
-  const designPortfolioData = {
-    title: "Design Portfolio",
-    ctaText: "View All",
-    ctaLink: "/design-portfolio",
-    description:
-      "Bihar Museum is a museum located in Patna. It was partially opened in August 2015. 'The children's museum', the main entrance area, and an orientation theatre were the only parts opened to the public in August 2015.",
-    list: [
-      {
-        id: 0,
-        title: "iGOT - Karmayogi​",
-        description:
-          "iGOT Karmayogi is an online solutioning platform, developed as an integral part of the Digital India stack for capacity building of all government employees.​",
-        tag: "Public Administration",
-        ctaText: "Read More",
-        ctaLink: "/design-portfolio-detail",
-        imgSrc: "https://picsum.photos/seed/picsum/370/226",
-        imgAlt: "iGOT - Karmayogi",
-      },
-      {
-        id: 1,
-        title: "mAadhaar​",
-        description:
-          "With the goal of reaching out to large numbers of smartphone users, the new mAadhaar is released by the Unique Identification Authority of India.",
-        tag: "Public Administration",
-        ctaText: "Read More",
-        ctaLink: "https://www.google.com",
-        imgSrc: "https://picsum.photos/seed/picsum/370/226",
-        imgAlt: "mAadhaar​",
-      },
-      {
-        id: 2,
-        title: "ASK Portal",
-        description:
-          "'Aadhaar Seva Kendra' or ASK is a single stop destination for all Aadhaar services for the residents. Managed directly by UIDAI, the ASK offer dedicated Aadhaar enrolment",
-        tag: "Public Administration",
-        ctaText: "Read More",
-        ctaLink: "https://www.google.com",
-        imgSrc: "https://picsum.photos/seed/picsum/370/226",
-        imgAlt: "ASK Portal",
-      },
-    ],
-  };
-
   return (
     <main className="">
       <HeroBanner data={heroBannerData} />
@@ -221,6 +107,7 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
         ctaLink={data[currentLang]?.HighlighterTwoCTALink}
         designPortfolioData={data[currentDesignPortfolio]?.nodes}
       />
+      <CTALayout data={data[currentLang]?.CTA} />
       <Footer data={footerData} />
     </main>
   );
@@ -286,6 +173,13 @@ export const query = graphql`
       HighlighterTwoDescription
       HighlighterTwoCTAText
       HighlighterTwoCTALink
+      CTA {
+        id
+        Title
+        Description
+        CTAText
+        CTALink
+      }
     }
     enDesignPortfolios: allStrapiDesignPortfolio(
       filter: { locale: { eq: "en" } }
