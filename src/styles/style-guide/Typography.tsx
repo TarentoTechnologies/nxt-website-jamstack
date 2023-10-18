@@ -1,14 +1,18 @@
 import {
-  infoSectionH2,
-  h1One,
+  acceleratorTitle,
   cardHeader,
-  footerHeading,
-  tagLabel,
-  heading700,
-  subText2,
   cta1,
+  footerHeading,
+  h1One,
+  h3Title,
+  heading700,
+  infoSectionH2,
   subHeading1,
-  tagLabel2
+  subText2,
+  tagLabel,
+  tagLabel2,
+  ctaDescription,
+  descriptionOne
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -47,6 +51,16 @@ export const Typography = (): any => {
             <td>footerHeading</td>
           </tr>
           <tr>
+            <th scope="row" className={acceleratorTitle}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>acceleratorTitle</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h3Title}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h3Title</td>
             <th scope="row" className={tagLabel}>
               Tellus in hac habitasse platea
             </th>
@@ -81,6 +95,18 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>subHeading1</td>
+          </tr>
+          <tr>
+            <th scope="row" className={ctaDescription}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>ctaDescription</td>
+          </tr>
+          <tr>
+            <th scope="row" className={descriptionOne}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>descriptionOne</td>
           </tr>
         </tbody>
       </table>

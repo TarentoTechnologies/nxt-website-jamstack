@@ -47,6 +47,22 @@ a:hover {
   padding-right: 0.938rem;
 }
 
+.col3 {
+  width: unset;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.containerRow {
+  display: grid;
+  grid-template-columns: repeat(3, calc(33.33% - 30px));
+  gap: 30px;
+  margin: 0;
+}
+.layoutBg {
+  background-color: #f7f7f7;
+}
 /* Swiper styles starts here */
 
 .swiper-button-next,
@@ -85,6 +101,16 @@ a:hover {
 @media only screen and (min-width: 1200px) {
   .containerService {
     width: 73.125rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .containerRow {
+    flex-direction: column;
+    grid-template-columns: repeat(1, calc(100%));
+  }
+
+  .col3 {
+    flex: 1;
   }
 }
 

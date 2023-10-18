@@ -1,10 +1,11 @@
+import { Link } from "gatsby";
+
 import { PortfolioCard } from "../../../components";
 import { PrimaryCTA } from "../../../components/buttons/PrimaryCTA";
 import { bgNeutralGray2 } from "../../../styles/style-guide/ColorGuide.module.css";
 import { h1One } from "../../../styles/style-guide/Typography.module.css";
 import { productCardLayoutStyles } from "../Home.module.css";
 import { paddingTopDown100 } from "../Home.module.css";
-import { Link } from "gatsby";
 
 interface AgencyPortfolioProps {
   title: string;
@@ -71,12 +72,12 @@ export const AgencyPortfolio = ({
               data-sal-easing="ease-in-back"
             >
               <PortfolioCard
-                ctaLink={data.ctaLink}
-                ctaText={data.ctaText}
-                description={data.description}
-                tag={data.tag}
-                title={data.title}
-                imgSrc={data.imgSrc}
+                ctaLink={`/agency-portfolio/${data.Slug}`}
+                ctaText={data.CTATextForDisplay}
+                description={data.HeroSection?.Description}
+                tag={data.PortfolioTag}
+                title={data.HeroSection?.Title}
+                imgSrc={data.HeroSection?.Image?.localFile}
                 imgAlt={data.imgAlt}
               />
             </div>
