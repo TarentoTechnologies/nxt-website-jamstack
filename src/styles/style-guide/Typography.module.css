@@ -95,6 +95,12 @@ h3 {
   font-size: 1.5rem;
 }
 
+.descriptionOne {
+  font-family: "Lato-Regular";
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

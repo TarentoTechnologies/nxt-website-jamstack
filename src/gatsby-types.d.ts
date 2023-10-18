@@ -2066,6 +2066,7 @@ type Query_strapiAgencyPortfolioArgs = {
   RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFilterListInput>;
   ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionFilterInput>;
   ResultTitle: InputMaybe<StringQueryOperatorInput>;
+  SectionFourTitle: InputMaybe<StringQueryOperatorInput>;
   ShowcasePost: InputMaybe<BooleanQueryOperatorInput>;
   Slug: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -2381,6 +2382,7 @@ type STRAPI_AGENCY_PORTFOLIO = Node & {
   readonly RelatedPortfolios: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARD>>>;
   readonly ResultDescription: Maybe<STRAPI_AGENCY_PORTFOLIOResultDescription>;
   readonly ResultTitle: Maybe<Scalars['String']>;
+  readonly SectionFourTitle: Maybe<Scalars['String']>;
   readonly ShowcasePost: Maybe<Scalars['Boolean']>;
   readonly Slug: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
@@ -2475,6 +2477,7 @@ type STRAPI_AGENCY_PORTFOLIOFieldSelector = {
   readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFieldSelector>;
   readonly ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionFieldSelector>;
   readonly ResultTitle: InputMaybe<FieldSelectorEnum>;
+  readonly SectionFourTitle: InputMaybe<FieldSelectorEnum>;
   readonly ShowcasePost: InputMaybe<FieldSelectorEnum>;
   readonly Slug: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
@@ -2500,6 +2503,7 @@ type STRAPI_AGENCY_PORTFOLIOFilterInput = {
   readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFilterListInput>;
   readonly ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionFilterInput>;
   readonly ResultTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly SectionFourTitle: InputMaybe<StringQueryOperatorInput>;
   readonly ShowcasePost: InputMaybe<BooleanQueryOperatorInput>;
   readonly Slug: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
@@ -2582,6 +2586,7 @@ type STRAPI_AGENCY_PORTFOLIOSortInput = {
   readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDSortInput>;
   readonly ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionSortInput>;
   readonly ResultTitle: InputMaybe<SortOrderEnum>;
+  readonly SectionFourTitle: InputMaybe<SortOrderEnum>;
   readonly ShowcasePost: InputMaybe<SortOrderEnum>;
   readonly Slug: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
@@ -6486,6 +6491,13 @@ type TransformOptions = {
 type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
+
+type AgencyPortfolioQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+type AgencyPortfolioQuery = { readonly en: { readonly id: string, readonly SectionFourTitle: string | null, readonly ResultTitle: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly AboutSection: { readonly id: string, readonly Title: string | null, readonly ColumnOneTitle: string | null, readonly ColumnOneValue: string | null, readonly ColumnTwoTitle: string | null, readonly ColumnTwoValue: string | null, readonly ColumnThreeTitle: string | null, readonly ColumnThreeValue: string | null, readonly ColumnFourTitle: string | null, readonly ColumnFourLink: string | null, readonly Description: { readonly data: { readonly Description: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly RelatedPortfolios: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Tag: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly ResultDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly KeyInformation: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null } | null };
 
 type DesignPortfolioQueryVariables = Exact<{
   slug: Scalars['String'];

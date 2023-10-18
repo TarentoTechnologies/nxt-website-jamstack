@@ -15,11 +15,11 @@ export const About = ({ data }: AboutProps) => {
 
   return (
     <div
-      className={`container-fluid d-flex justify-content-center ${acceleratorsLayout}`}
+      className={`container-fluid d-flex justify-content-center ${acceleratorsLayout} pb-0`}
       key={data.id}
     >
       <div className={`containerService paddingLeftRight15`}>
-        <div className={`${titleStyles}`}>
+        <div className={`${titleStyles} px-3 px-sm-3 px-md-0 px-lg-0`}>
           <PrimaryTitle title={data?.Title} variant="infoSectionH2" />
           <p className={`pt-3 pb-4 ${black75}`}>
             {data?.Description?.data?.Description}
