@@ -1,35 +1,39 @@
-import {
-  heroImage,
-  customTag,
-  ctaIcon,
-  truncateDescription,
-} from "./PortfolioCard.module.css";
-import {
-  tagLabel,
-  heading700,
-  subText2,
-  cta1,
-} from "../../styles/style-guide/Typography.module.css";
+import { Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
 import {
   bgCadiumOrange,
-  white87,
   bgGlaucousGreen,
-  black87,
   bgUraniaBlue,
+  black87,
+  white87,
 } from "../../styles/style-guide/ColorGuide.module.css";
-import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
+import {
+  cta1,
+  heading700,
+  subText2,
+  tagLabel,
+} from "../../styles/style-guide/Typography.module.css";
+import {
+  ctaIcon,
+  customTag,
+  heroImage,
+  heroProgrammerImage,
+  truncateDescription,
+} from "./PortfolioCard.module.css";
 import { ctaIconPos } from "./ShowcaseCard.module.css";
-import { Link } from "gatsby";
 
 interface PortfolioCardProps {
   imgSrc?: any;
   imgAlt?: string;
-  tag: string;
+  tag?: string;
   title: string;
   description: string;
   ctaText: string;
   ctaLink: any;
   tagVariant?: string;
+  isProgramme?: boolean;
 }
 
 export const PortfolioCard = ({
@@ -41,26 +45,31 @@ export const PortfolioCard = ({
   ctaText,
   ctaLink,
   tagVariant,
+  isProgramme,
 }: PortfolioCardProps) => {
+  const image: any = getImage(imgSrc);
+
   return (
     <div className="container-fluid">
       {/* Image */}
-      <img
-        className={`${heroImage} ${bgGlaucousGreen} img-fluid ${
-          !imgSrc ? "w-100" : ""
-        }`}
-        src={imgSrc}
-        alt={imgAlt}
+      <GatsbyImage
+        image={image}
+        alt={imgAlt ? imgAlt : ""}
+        className={`${
+          isProgramme ? heroProgrammerImage : heroImage
+        } ${bgGlaucousGreen} img-fluid ${!imgSrc ? "w-100" : ""}`}
       />
 
       {/* Tag */}
-      <div
-        className={`${customTag} ${
-          tagVariant === "blue" ? bgUraniaBlue : bgCadiumOrange
-        }  mt-4`}
-      >
-        <label className={`${tagLabel} ${white87} px-3`}>{tag}</label>
-      </div>
+      {tag && tag !== null && (
+        <div
+          className={`${customTag} ${
+            tagVariant === "blue" ? bgUraniaBlue : bgCadiumOrange
+          }  mt-4`}
+        >
+          <label className={`${tagLabel} ${white87} px-3`}>{tag}</label>
+        </div>
+      )}
 
       {/* Heading */}
       <div className="mt-3">

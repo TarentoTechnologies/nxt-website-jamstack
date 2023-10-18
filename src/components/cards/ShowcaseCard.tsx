@@ -1,22 +1,24 @@
+import { Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
 import {
-  showCaseCard,
-  showCaseImg,
-  dummyImgArea,
-  ctaIconPos,
-} from "./ShowcaseCard.module.css";
+  bgGlaucousGreen,
+  bgWhite,
+  black,
+} from "../../styles/style-guide/ColorGuide.module.css";
 import {
+  cta1,
   heading700,
   subText2,
-  cta1,
 } from "../../styles/style-guide/Typography.module.css";
-import {
-  black,
-  bgWhite,
-  bgGlaucousGreen,
-} from "../../styles/style-guide/ColorGuide.module.css";
-import { Link } from "gatsby";
 import { ctaIcon } from "../cards/PortfolioCard.module.css";
-import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
+import {
+  ctaIconPos,
+  dummyImgArea,
+  showCaseCard,
+  showCaseImg,
+} from "./ShowcaseCard.module.css";
 
 interface ShowcaseCardProps {
   imgSrc: any;
@@ -35,6 +37,8 @@ export const ShowcaseCard = ({
   ctaText,
   ctaLink,
 }: ShowcaseCardProps) => {
+  const image: any = getImage(imgSrc);
+
   return (
     <div className={`container-fluid`}>
       <div className={`row ${showCaseCard} ${bgWhite}`}>
@@ -43,9 +47,14 @@ export const ShowcaseCard = ({
           <div
             className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover`}
           >
-            <img
+            {/* <img
               src={imgSrc}
               alt={imgAlt}
+              className={`${showCaseImg} img-fluid`}
+            /> */}
+            <GatsbyImage
+              image={image}
+              alt={imgAlt ? imgAlt : ""}
               className={`${showCaseImg} img-fluid`}
             />
           </div>

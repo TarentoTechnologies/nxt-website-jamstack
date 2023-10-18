@@ -359,9 +359,11 @@
 .blue {
   color: var(--blue);
 }
+
 .bgBlue {
   background-color: var(--blue);
 }
+
 .bgNeutralGray2 {
   background-color: var(--neutral-gray-2);
 }

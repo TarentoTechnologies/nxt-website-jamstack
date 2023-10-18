@@ -13,6 +13,8 @@ import {
   subText2,
   tagLabel,
   tagLabel2,
+  ctaDescription,
+  descriptionOne
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -105,6 +107,18 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>subHeading1</td>
+          </tr>
+          <tr>
+            <th scope="row" className={ctaDescription}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>ctaDescription</td>
+          </tr>
+          <tr>
+            <th scope="row" className={descriptionOne}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>descriptionOne</td>
           </tr>
         </tbody>
       </table>
