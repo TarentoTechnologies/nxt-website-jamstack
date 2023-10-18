@@ -16,7 +16,7 @@ export const TriCardLayout = ({ data }: TriCardLayoutProps) => {
           >
             <TriCard
               title={item.Title}
-              logo={item.Icon.localFile.url}
+              logo={item.Icon?.localFile?.url}
               bgColor={item.BackgroundColor}
             />
           </div>
