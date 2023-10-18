@@ -1,8 +1,8 @@
 import {
   heroBannerStyles,
-  logoSection,
-  logoMainStyles,
   logoHeadStyles,
+  logoMainStyles,
+  logoSection,
 } from "./HeroBanner.module.css";
 
 interface HeroBannerProps {

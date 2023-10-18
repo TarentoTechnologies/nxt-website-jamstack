@@ -39,6 +39,12 @@
   font-family: "RobotoSlab-Regular", serif;
   line-height: 1.5;
 }
+
+.ctaDescription {
+  font-size: 1rem;
+  font-family: "RobotoSlab-Regular", serif;
+}
+
 .acceleratorTitle {
   font-family: "RobotoSlab-Bold", serif;
   font-size: 3.25rem;
@@ -87,6 +93,12 @@ h3 {
 .subHeading1 {
   font-family: "Lato-Bold";
   font-size: 1.5rem;
+}
+
+.descriptionOne {
+  font-family: "Lato-Regular";
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }
 
 /* Media queries starts here */

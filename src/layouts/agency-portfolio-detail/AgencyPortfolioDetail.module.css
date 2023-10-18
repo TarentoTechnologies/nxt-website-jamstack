@@ -1,0 +1,56 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.gradientBackground {
+  background: var(--dusky-blue-violet-2);
+  background: -moz-linear-gradient(
+    0deg,
+    var(--dusky-blue-violet-2) 0%,
+    var(--urania-blue) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    var(--dusky-blue-violet-2) 0%,
+    var(--urania-blue) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    var(--dusky-blue-violet-2) 0%,
+    var(--urania-blue) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#290262",endColorstr="#120133",GradientType=1);
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+  .verticalRule {
+    border-right: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .verticalRule {
+    border-right: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .verticalRule {
+    border-right: none;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .verticalRule {
+    border-right: 1px solid var(--lilac-gray);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .verticalRule {
+    border-right: 1px solid var(--lilac-gray);
+  }
+}
+
+/* Media queries ends here */

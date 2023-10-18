@@ -37,7 +37,7 @@ export const BannerWithTag = ({ title, tagsList }: BannerWithTagProps) => {
                   key={data.id}
                 >
                   <label className={`${tagLabel2} ${white87}`}>
-                    {data.value}
+                    {data.Label}
                   </label>
                 </div>
               );
@@ -53,7 +53,7 @@ export const BannerWithTag = ({ title, tagsList }: BannerWithTagProps) => {
                   key={data.id}
                 >
                   <label className={`${tagLabel2} ${white87}`}>
-                    {data.value}
+                    {data.Label}
                   </label>
                 </div>
               );

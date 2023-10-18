@@ -1,15 +1,15 @@
 import { PrimaryCTACard } from "../../../components";
 import { bgNeutralGray2 } from "../../../styles/style-guide/ColorGuide.module.css";
-import { paddingTopDown100, productCardLayoutStyles } from "../../home/Home.module.css";
+import { paddingTopDown100, productCardLayoutStyles } from "../Home.module.css";
 
-interface AreYouInterestedProps {
+interface CTALayoutProps {
   data: any;
 }
 
-export const AreYouInterested = ({ data }: AreYouInterestedProps) => {
+export const CTALayout = ({ data }: CTALayoutProps) => {
   return (
     <div
-      className={`container-fluid ${productCardLayoutStyles} ${bgNeutralGray2} ${paddingTopDown100} mb-0 mt-0`}
+      className={`container-fluid ${productCardLayoutStyles} ${bgNeutralGray2} ${paddingTopDown100} mb-0`}
     >
       <PrimaryCTACard
         title={data?.Title}
