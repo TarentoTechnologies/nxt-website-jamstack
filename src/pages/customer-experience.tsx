@@ -169,16 +169,20 @@ const CustomerExperiencePage: React.FC<PageProps> = () => {
     description:
       "Proven platforms that can go country scale. Can be deployed in short notice and customised to fit needs of government agencies.Will fully in-house hosting, you have the total control of the data.",
   };
+  const HeroBannerData = {
+    description:
+      "Aurora customer experience platform brings in the best of data engineering, analytics and user experience design to enable a superior customer support experience.",
+    img: "https://nxt.tarento.com/img/cx_pack_illustration.svg",
+    title: "Customer Experience Pack",
+    subText: "Words by one of the greatest sociologists - Daniel Bell",
+  };
   return (
     <main className="">
       <HeroBannerForTDI
-        data={{
-          description:
-            "Aurora customer experience platform brings in the best of data engineering, analytics and user experience design to enable a superior customer support experience.",
-          img: "https://nxt.tarento.com/img/cx_pack_illustration.svg",
-          subtext: "Words by one of the greatest sociologists - Daniel Bell",
-          title: "Customer Experience Pack",
-        }}
+        description={HeroBannerData.description}
+        img={HeroBannerData.img}
+        title={HeroBannerData.title}
+        subText={HeroBannerData.subText}
       />
       <AI data={HowItWorksData} />
       <OtherSolution data={OtherSolutionData} />
