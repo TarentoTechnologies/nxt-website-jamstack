@@ -1,5 +1,6 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
@@ -11,8 +12,39 @@ import {
   HeroBanner,
   Showcase,
 } from "../layouts/design-portfolio";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const AgenctPortfolio: React.FC<PageProps> = () => {
+interface AgencyPortfolioProps {
+  data: any;
+}
+
+const AgencyPortfolio: React.FC<PageProps> = ({
+  data,
+}: AgencyPortfolioProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  const [currentPostsForShowcase, setCurrentPostsForShowcase] =
+    React.useState<any>([]);
+
+  const currentAgencyPortfolioList = currentLang + "AgencyPortfolios";
+
+  const getShowCaseData = () => {
+    let tempArray: any = [];
+
+    data[currentAgencyPortfolioList]?.nodes.map(
+      (listData: any, index: number) => {
+        if (listData.ShowcasePost) {
+          return tempArray.push(listData);
+        }
+      }
+    );
+
+    setCurrentPostsForShowcase(tempArray);
+  };
+
+  React.useEffect(() => {
+    getShowCaseData();
+  }, [data[currentAgencyPortfolioList]]);
+
   const heroBannerData = {
     title:
       "Creativity is thinking up new things.  Innovation is doing new things.",
@@ -184,16 +216,75 @@ const AgenctPortfolio: React.FC<PageProps> = () => {
 
   return (
     <main className="">
-      <HeroBanner heroBannerData={heroBannerData} />
-      <Showcase data={showCaseData} />
-      <AllOtherClients data={allOtherClientsData} />
-      <AreYouInterested data={areYouInterestedData} />
+      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} />
+      <Showcase
+        sectionTitle={data[currentLang]?.SectionOneTitle}
+        data={currentPostsForShowcase}
+      />
+      <AllOtherClients
+        sectionTitle={data[currentLang]?.SectionTwoTitle}
+        data={data[currentAgencyPortfolioList]?.nodes}
+        ctaBtnText={data[currentLang]?.DynamicButtonText}
+        portfolioPath="/agency-portfolio/"
+      />
+      <AreYouInterested data={data[currentLang]?.CTA} />
       <Footer data={footerData} />
     </main>
   );
 };
 
-export default AgenctPortfolio;
+export const query = graphql`
+  query DesignPortfolioListing {
+    en: strapiAgencyPortfolioListing(locale: { eq: "en" }) {
+      HeroSection {
+        id
+        Title
+        Image {
+          localFile {
+            url
+          }
+        }
+        Description
+      }
+      SectionOneTitle
+      SectionTwoTitle
+      CTA {
+        id
+        Title
+        Description
+        CTAText
+        CTALink
+      }
+      DynamicButtonText
+    }
+    enAgencyPortfolios: allStrapiAgencyPortfolio(
+      sort: { updatedAt: DESC }
+      filter: { locale: { eq: "en" } }
+    ) {
+      nodes {
+        id
+        HeroSection {
+          id
+          Title
+          Image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(formats: PNG)
+              }
+            }
+          }
+          Description
+        }
+        CTATextForDisplay
+        ShowcasePost
+        Slug
+        PortfolioTag
+      }
+    }
+  }
+`;
+
+export default AgencyPortfolio;
 
 export const Head: HeadFC = () => (
   <>
