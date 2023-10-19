@@ -117,6 +117,12 @@ h3 {
   font-size: 1.125rem;
   line-height: 1.5rem;
 }
+.useCasesSubTitle {
+  font-size: 1.125em;
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  margin-left: 1rem;
+}
 
 /* Media queries starts here */
 

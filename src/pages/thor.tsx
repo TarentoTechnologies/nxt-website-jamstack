@@ -1,3 +1,6 @@
+import type { HeadFC, PageProps } from "gatsby";
+import * as React from "react";
+
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
@@ -9,8 +12,6 @@ import {
   MultiChannel,
   UseCases,
 } from "../layouts/thor";
-import type { HeadFC, PageProps } from "gatsby";
-import * as React from "react";
 
 const ThorPage: React.FC<PageProps> = () => {
   const heroBannerData = {
@@ -173,12 +174,33 @@ const ThorPage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
-      <HeroBannerForTDI data={heroBannerData} />
-      <Avatars data={AvatarData} />
-      <Features data={FeaturesData} />
-      <MultiChannel data={MutliChannelData} />
-      <CaseStudies data={CaseStudyData} />
-      <UseCases data={UseCaseData} />
+      <HeroBannerForTDI
+        title={heroBannerData.title}
+        img={heroBannerData.img}
+        description={heroBannerData.description}
+        mainTitle={heroBannerData.mainTitle}
+      />
+      <Avatars
+        title={AvatarData.title}
+        list={AvatarData.list}
+        subText={AvatarData.subText}
+      />
+      <Features
+        imgSrc={FeaturesData.imgSrc}
+        imgCaption={FeaturesData.imgCaption}
+      />
+      <MultiChannel
+        title={MutliChannelData.title}
+        subText={MutliChannelData.subTitle}
+        imgSrc={MutliChannelData.imgSrc}
+        list={MutliChannelData.list}
+      />
+      <CaseStudies title={CaseStudyData.title} list={CaseStudyData.list} />
+      <UseCases
+        title={UseCaseData.title}
+        list={UseCaseData.list}
+        subText={UseCaseData.subText}
+      />
       <Footer data={footerData} />
     </main>
   );
