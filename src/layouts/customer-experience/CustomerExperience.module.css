@@ -13,7 +13,21 @@
   visibility: visible;
   /* opacity: 0; */
 }
+.contactUsLayout {
+  background-color: #f7f7f7;
+  padding-top: 5rem;
+  padding-bottom: 3.75rem;
+}
 
+.contactUsLayout .titleStyles {
+  padding-bottom: 2rem;
+  visibility: visible;
+}
+
+.contactUsLayout .btnStyles {
+  padding-top: 2.625rem;
+  visibility: visible;
+}
 .border {
   width: 3.5rem;
   height: 1.125rem;
@@ -21,29 +35,38 @@
   background: #f96a00;
   display: -webkit-box;
   margin: 1.875rem 0 1.25rem 0;
-  /* animation: fadeInUp 1s ease 0.9s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .titleStyles {
   color: #fff;
   line-height: 1.1 !important;
-  /* animation: fadeInUp 1s ease 0.3s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .imgStyles {
-  /* animation: fadeIn 1s ease 1s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .layout {
   padding: 5rem 0;
 }
 /* Media queries starts here */
+
+.listMoveLeft {
+  margin-left: 6em;
+  margin-bottom: 3em;
+}
+.liStyle {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+.moveLeftOne {
+  margin-left: 10%;
+}
+.w40 {
+  width: 40%;
+}
 
 @media only screen and (max-width: 600px) {
   .bannerStyles {
@@ -59,6 +82,12 @@
   }
   .titleStyles {
     font-size: 32px !important;
+  }
+  .moveLeftOne {
+    margin-left: 0 !important;
+  }
+  .listMoveLeft {
+    margin-left: 1rem;
   }
 }
 

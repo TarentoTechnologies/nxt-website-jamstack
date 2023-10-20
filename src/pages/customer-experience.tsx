@@ -7,9 +7,10 @@ import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
 import {
   AI,
+  ContactUs,
   Feature,
-  Form,
   OtherSolution,
+  UserEngagement,
 } from "../layouts/customer-experience";
 
 const CustomerExperiencePage: React.FC<PageProps> = () => {
@@ -167,7 +168,7 @@ const CustomerExperiencePage: React.FC<PageProps> = () => {
       },
     ],
     description:
-      "Proven platforms that can go country scale. Can be deployed in short notice and customised to fit needs of government agencies.Will fully in-house hosting, you have the total control of the data.",
+      "Proven platforms that can go country scale. Can be deployed in short notice and customised to fit needs of government agencies. Will fully in-house hosting, you have the total control of the data.",
   };
   const HeroBannerData = {
     description:
@@ -175,6 +176,12 @@ const CustomerExperiencePage: React.FC<PageProps> = () => {
     img: "https://nxt.tarento.com/img/cx_pack_illustration.svg",
     title: "Customer Experience Pack",
     subText: "Words by one of the greatest sociologists - Daniel Bell",
+  };
+  const contactUsData = {
+    desc: "Does this pack look interesting to you? Get in touch with us to know more. Send us a mail with the subject “Customer Experience” by clicking the button below",
+    CTAlink: "mailto:hello@tarento.com",
+    heading: "Are you interested?",
+    CTAlabel: "Contact Us",
   };
   return (
     <main className="">
@@ -185,9 +192,11 @@ const CustomerExperiencePage: React.FC<PageProps> = () => {
         subText={HeroBannerData.subText}
       />
       <AI data={HowItWorksData} />
+
+      {/* <Feature data={FeatureData} /> */}
+      <UserEngagement data={HowItWorksData} />
       <OtherSolution data={OtherSolutionData} />
-      <Feature data={FeatureData} />
-      <Form data={FormData} />
+      <ContactUs data={contactUsData} />
       <Footer data={footerData} />
     </main>
   );

@@ -4,20 +4,18 @@ import {
   white,
 } from "../../../styles/style-guide/ColorGuide.module.css";
 import { h3Title } from "../../../styles/style-guide/Typography.module.css";
-import { bannerStyles } from "../CustomerExperience.module.css";
+import { layout, w40 } from "../CustomerExperience.module.css";
 
 interface OtherSolutionProps {
   data: any;
 }
 export const OtherSolution = ({ data }: OtherSolutionProps) => {
   return (
-    <div
-      className={`${bannerStyles} ${bgHaysBlue} d-flex justify-content-center`}
-    >
+    <div className={`${layout} d-flex justify-content-center`}>
       <div className="containerService paddingLeftRight15">
-        <h1 className={`${h3Title} ${white} mt-4 mb-5`}>{data.title}</h1>
-        <p className="">{data.description}</p>
-        <div className={`row containerRow`}>
+        <h1 className={`${h3Title} mt-4 mb-4`}>{data.title}</h1>
+        <p className={w40}>{data.description}</p>
+        <div className={`row containerRow mt-5`}>
           {data.list?.map((item: any, index: any) => {
             return (
               <>
