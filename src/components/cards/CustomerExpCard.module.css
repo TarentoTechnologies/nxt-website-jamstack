@@ -1,92 +1,11 @@
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
-
-.proCard {
-  min-height: 20.3125rem;
-  min-width: 23.1875rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  cursor: pointer;
-  border-radius: 5%;
-  position: relative;
+.cxCard {
+  height: 10.9375em;
+  max-height: 10.9375em;
+  background-color: #120033;
+  border-radius: 0.375em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.proCardSecondary {
-  min-height: 13.125rem;
-  min-width: 16.375rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  cursor: pointer;
-  border-radius: 5%;
-  position: relative;
-}
-
-.titleStyles {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  color: var(--white);
-  padding-right: 10%;
-}
-
-.logoStyles {
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-}
-
-.secondaryFontsize {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-/* Media queries starts here */
-
-@media only screen and (max-width: 600px) {
-  .proCard {
-    min-height: 18.3125rem;
-    min-width: 18rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    cursor: pointer;
-    border-radius: 5%;
-    position: relative;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
-  .proCard {
-    min-height: 15.3125rem;
-    min-width: 15rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    cursor: pointer;
-    border-radius: 5%;
-    position: relative;
-  }
-  .proCardSecondary {
-    min-height: 13.125rem;
-    min-width: 13.313rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    cursor: pointer;
-    border-radius: 5%;
-    position: relative;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-}
-
-@media only screen and (min-width: 1200px) {
-}
-
-/* Media queries ends here */

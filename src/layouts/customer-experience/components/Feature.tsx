@@ -1,31 +1,26 @@
-import { AcceleratorFeatureCard } from "../../../components/cards/AcceleratorFeatureCard";
+import { CustomerExpCard } from "../../../components/cards/CustomerExpCard";
 import { h3Title } from "../../../styles/style-guide/Typography.module.css";
-import { bannerStyles, flexDirection } from "../CustomerExperience.module.css";
+import { layout } from "../CustomerExperience.module.css";
+
 interface FeaturesProps {
-  data: {
-    title?: string;
-    list: { title?: string; logo?: any; bgColor?: string }[];
-  };
+  title?: string;
+  list: { title?: string; logo?: any; description?: string }[];
 }
 
-export const Feature = ({ data }: FeaturesProps) => {
+export const Feature = ({ title, list }: FeaturesProps) => {
   return (
-    <div className={`${bannerStyles} ${flexDirection} layoutBg`}>
+    <div className={`${layout} d-flex justify-content-center`}>
       <div className="containerService paddingLeftRight15">
-        <h1 className={`${h3Title} wow animated fadeInUp mt-4 mb-5`}>
-          {data.title}
-        </h1>
-        <div className={`row containerRow`}>
-          {data.list.map((item, index) => {
+        <h1 className={`${h3Title} mt-4 mb-5`}>{title}</h1>
+        <div className={`row`}>
+          {list.map((item, index) => {
             return (
               <>
-                <div className={`col-md-4 col-sm-6 col3`}>
-                  <AcceleratorFeatureCard
-                    title={item.title}
-                    logo={item.logo}
-                    bgColor={item.bgColor}
-                  />
-                </div>
+                <CustomerExpCard
+                  title={item.title}
+                  description={item?.description}
+                  logo={item.logo}
+                />
               </>
             );
           })}

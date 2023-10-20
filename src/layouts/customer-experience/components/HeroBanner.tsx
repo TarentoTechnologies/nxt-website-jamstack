@@ -38,7 +38,7 @@ export const HeroBanner = ({ data }: HeroBannerProps) => {
         </div>
         <div className={`col-sm-12 col-md-6 d-flex align-items-center`}>
           <img
-            className={`${imgStyles} img-fluid`}
+            className={`${imgStyles}`}
             src={data?.img}
             alt={data?.imgAltText}
             title={data?.imgAltText}

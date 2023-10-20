@@ -1,6 +1,7 @@
 import type { HeadFC, PageProps } from "gatsby";
 import * as React from "react";
 
+import boltImg from "../../static/images/bolt_thumb.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
@@ -14,67 +15,32 @@ import {
 } from "../layouts/customer-experience";
 
 const CustomerExperiencePage: React.FC<PageProps> = () => {
-  const keyInsightsData = {
-    title: "Key Insights",
-    list: [
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-    ],
-  };
   const FeatureData = {
-    title: "Feature",
+    title: "Good customer experience requires more than just a good product",
     list: [
       {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
+        title: "Intuitive Experience",
+        description:
+          "Make the experience as intuitive as possible. Avoid chances for errors, confusion. Ensure that your users have sufficient self help materials when they want to know more. Capture telemetry to understand user behaviour anonymously.",
+        logo: "https://nxt.tarento.com/img/experience.svg",
       },
       {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
+        title: "Intuitive Experience",
+        description:
+          "Make the experience as intuitive as possible. Avoid chances for errors, confusion. Ensure that your users have sufficient self help materials when they want to know more. Capture telemetry to understand user behaviour anonymously.",
+        logo: "https://nxt.tarento.com/img/experience.svg",
       },
       {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
+        title: "Intuitive Experience",
+        description:
+          "Make the experience as intuitive as possible. Avoid chances for errors, confusion. Ensure that your users have sufficient self help materials when they want to know more. Capture telemetry to understand user behaviour anonymously.",
+        logo: "https://nxt.tarento.com/img/experience.svg",
       },
       {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
+        title: "Intuitive Experience",
+        description:
+          "Make the experience as intuitive as possible. Avoid chances for errors, confusion. Ensure that your users have sufficient self help materials when they want to know more. Capture telemetry to understand user behaviour anonymously.",
+        logo: "https://nxt.tarento.com/img/experience.svg",
       },
     ],
   };
@@ -83,25 +49,6 @@ const CustomerExperiencePage: React.FC<PageProps> = () => {
       "Artificial Intelligence for the next generation customer experience",
     imgSrc: "https://nxt.tarento.com/img/aurora_ai.svg",
     imgCaption: "Artificial Intelligence",
-  };
-  const FormData = {
-    title: "Every business can benefit from the mastery of the data",
-    subTitle: `
-    <p>
-      Onboard and take your business to the next level.
-      <br /> Send a message to
-      <b>
-        <a href="mailto:hello@tarento.com?subject=Pulse Demo" >
-          hello@tarento.com
-        </a>
-      </b>
-      and we will contact you within one business day.
-    </p>
-  `,
-    buttonText: "Request a demo",
-    buttonLink: "mailto:hello@tarento.com?subject=Pulse Demo",
-    imgSrc: "https://nxt.tarento.com/img/data_QRCode.png",
-    imgCaption: "QR Code Scanner",
   };
 
   const footerData = {
@@ -153,8 +100,8 @@ const CustomerExperiencePage: React.FC<PageProps> = () => {
         isLink: "true",
       },
       {
-        title: "Pulz",
-        bgImg: "https://nxt.tarento.com/img/pulz.svg",
+        title: "BOLT",
+        bgImg: boltImg,
         logo: "https://nxt.tarento.com/img/energySaving-icon.svg",
         link: "/pulz",
         isLink: "true",
@@ -183,6 +130,22 @@ const CustomerExperiencePage: React.FC<PageProps> = () => {
     heading: "Are you interested?",
     CTAlabel: "Contact Us",
   };
+  const UserEnagagementData = {
+    title: "Thor - AI Bot for user engagement",
+    imgSrc: "https://nxt.tarento.com/img/thor_story.svg",
+    list: [
+      "Engage your customer 24x7 with AI powered chat bots that are specially trained over the domain",
+      "Reduce load on the customer support team, so that they can focus on complex problems, where a personal intervention is needed.",
+      "Help your customers get the answers to the common queries directly. Reduce unnecessary requests.",
+      "Move from unstructured channels to structured channels so that the performance can be measured and improved.",
+      "Self learning. AI Bots can learn from the customer interaction and improve over time and create a very good cutomer experience.",
+      "Personalised alternative to the FAQ.",
+      "Human in the Loop - Seamlessly hand over to human operator when necessary or demanded by the user.",
+      "Multi lingual - Bot can understand and respond in multiple languages.",
+    ],
+    ctaText: "Read More",
+    ctaLink: "",
+  };
   return (
     <main className="">
       <HeroBannerForTDI
@@ -191,12 +154,30 @@ const CustomerExperiencePage: React.FC<PageProps> = () => {
         title={HeroBannerData.title}
         subText={HeroBannerData.subText}
       />
-      <AI data={HowItWorksData} />
-
-      {/* <Feature data={FeatureData} /> */}
-      <UserEngagement data={HowItWorksData} />
-      <OtherSolution data={OtherSolutionData} />
-      <ContactUs data={contactUsData} />
+      <Feature title={FeatureData.title} list={FeatureData.list} />
+      <AI
+        title={HowItWorksData.title}
+        imgCaption={HowItWorksData.imgCaption}
+        imgSrc={HowItWorksData.imgSrc}
+      />
+      <UserEngagement
+        title={UserEnagagementData.title}
+        imgSrc={UserEnagagementData.imgSrc}
+        ctaText={UserEnagagementData.ctaText}
+        ctaLink={UserEnagagementData.ctaLink}
+        list={UserEnagagementData.list}
+      />
+      <OtherSolution
+        title={OtherSolutionData.title}
+        list={OtherSolutionData.list}
+        description={OtherSolutionData.description}
+      />
+      <ContactUs
+        heading={contactUsData.heading}
+        CTAlabel={contactUsData.CTAlabel}
+        CTAlink={contactUsData.CTAlink}
+        desc={contactUsData.desc}
+      />
       <Footer data={footerData} />
     </main>
   );

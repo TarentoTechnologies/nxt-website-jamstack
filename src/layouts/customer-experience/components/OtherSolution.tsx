@@ -1,36 +1,39 @@
 import { ProductCard } from "../../../components/cards/ProductCard";
-import {
-  bgHaysBlue,
-  white,
-} from "../../../styles/style-guide/ColorGuide.module.css";
 import { h3Title } from "../../../styles/style-guide/Typography.module.css";
 import { layout, w40 } from "../CustomerExperience.module.css";
 
 interface OtherSolutionProps {
-  data: any;
+  title?: string;
+  description: string;
+  list?: {
+    title: string;
+    logo?: any;
+    bgImg?: string;
+    link?: string;
+    isLink?: string;
+  }[];
 }
-export const OtherSolution = ({ data }: OtherSolutionProps) => {
+export const OtherSolution = ({
+  title,
+  description,
+  list,
+}: OtherSolutionProps) => {
   return (
-    <div className={`${layout} d-flex justify-content-center`}>
+    <div className={`${layout} layoutBg d-flex justify-content-center`}>
       <div className="containerService paddingLeftRight15">
-        <h1 className={`${h3Title} mt-4 mb-4`}>{data.title}</h1>
-        <p className={w40}>{data.description}</p>
-        <div className={`row containerRow mt-5`}>
-          {data.list?.map((item: any, index: any) => {
-            return (
-              <>
-                <div className={`col-md-4 col-sm-6 col3`}>
-                  <ProductCard
-                    title={item.title}
-                    bgImg={item.bgImg}
-                    logo={item.logo}
-                    link={item.link}
-                    isLink={item.isLink}
-                  />
-                </div>
-              </>
-            );
-          })}
+        <h1 className={`${h3Title} mt-4 mb-4`}>{title}</h1>
+        <p className={w40}>{description}</p>
+        <div className={`row mt-5`}>
+          {list?.map((item, index) => (
+            <div key={index} className={`col-sm-6 col-lg-4 mb-3`}>
+              <ProductCard
+               bgImg={item.bgImg}
+                logo={item.logo}
+                isSecondary={false}
+                title={item.title}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

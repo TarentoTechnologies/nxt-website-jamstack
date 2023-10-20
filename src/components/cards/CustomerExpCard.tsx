@@ -1,28 +1,19 @@
-
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
-import {
-  logoStyles,
-  proCard,
-  proCardSecondary,
-  secondaryFontsize,
-  titleStyles,
-} from "./CustomerExpCard.module.css";
+import { cxCard } from "./CustomerExpCard.module.css";
 
 interface CustomerExpCardProps {
-  title: string;
-  bgImg?: any;
+  title?: string;
   logo?: any;
   isSecondary?: boolean;
-  secLogo?: any;
+  description?: string;
   link?: string;
   isLink?: boolean;
 }
 
 export const CustomerExpCard = ({
   title,
-  bgImg,
+  description,
   logo,
-  secLogo,
   isSecondary,
   link,
   isLink,
@@ -30,42 +21,34 @@ export const CustomerExpCard = ({
   if (isLink) {
     return (
       <a href={link != null ? link : ""} target="_blank" rel="noreferrer">
-        <div
-          className={`container-fluid ${
-            isSecondary ? proCardSecondary : proCard
-          }`}
-          style={{ backgroundImage: `url(${bgImg})` }}
-        >
-          <div
-            className={`${titleStyles} ${cardHeader} ${
-              isSecondary ? secondaryFontsize : ""
-            }`}
-          >
-            <span>{title}</span>
+        <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1">
+        <div className="wow fadeInUp  animated">
+          <div className={cxCard}>
+            <img className="centerImg" src={logo} alt={title} />
           </div>
-          <div className={`${logoStyles}`}>
-            <img src={isSecondary ? secLogo : logo} alt={title} title={title} />
-          </div>
+        </div>
+        <div className="spaceTwo wow fadeInUp  animated">
+          <div className={`${cardHeader} mt-4`}>{title}</div>
+        </div>
+        <div className="mt-4 mb-4">
+          <p>{description}</p>
+        </div>
         </div>
       </a>
     );
   } else {
     return (
-      <div
-        className={`container-fluid ${
-          isSecondary ? proCardSecondary : proCard
-        }`}
-        style={{ backgroundImage: `url(${bgImg})` }}
-      >
-        <div
-          className={`${titleStyles} ${cardHeader} ${
-            isSecondary ? secondaryFontsize : ""
-          }`}
-        >
-          <span>{title}</span>
+      <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1">
+        <div className="wow fadeInUp  animated">
+          <div className={cxCard}>
+            <img className="centerImg" src={logo} alt={title} />
+          </div>
         </div>
-        <div className={`${logoStyles}`}>
-          <img src={isSecondary ? secLogo : logo} alt={title} title={title} />
+        <div className="">
+          <div className={`${cardHeader} mt-4`}>{title}</div>
+        </div>
+        <div className="mt-4 mb-4">
+          <p>{description}</p>
         </div>
       </div>
     );
