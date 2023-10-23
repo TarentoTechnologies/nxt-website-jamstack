@@ -1,17 +1,16 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
-import techHero from "../../static/images/tech-hero.png";
+import rainHero from "../../static/images/ai-img.svg";
 import rainLogo from "../../static/images/rain.svg";
 
 const RainPage: React.FC<PageProps> = () => {
   const heroBannerData = {
-    title:
-      "Technology, like art, is a soaring exercise of the human imagination",
-    img: techHero,
-    subtext: "Words by one of the greatest sociologists - Daniel Bell",
+    title: "Realtime analytics and insights",
+    img: rainHero,
+    subtext: "Supercharge your business with the power of Data.",
     description:
-      "Technology is akin to language in the world of contributing ideas.It's a key arsenal for innovation.",
+      "Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.",
     withLogo: true,
     logo: rainLogo,
   };
