@@ -1,98 +1,32 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import techHero from "../../static/images/tech-hero.png";
 import { Footer } from "../components/footer/Footer";
 import {
+  KeyInfoLayout,
+  ResultLayout,
+} from "../layouts/agency-portfolio-detail";
+import {
   AllOtherClients,
   AreYouInterested,
   HeroBanner,
   Showcase,
 } from "../layouts/design-portfolio";
-import {
-  About,
-  Highlight,
-  RelatedPortfolio,
-  TagSection,
-} from "../layouts/design-portfolio-detail";
+import { About, RelatedPortfolio } from "../layouts/design-portfolio-detail";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const DesignPortfolioDetail: React.FC<PageProps> = () => {
-  const heroBannerData = {
-    title: "Bihar Museum",
-    img: techHero,
-    description:
-      "Bihar Museum is a museum located in Patna. It was partially opened in August 2015. 'The children's museum', the main entrance area, and an orientation theatre were the only parts opened to the public in August 2015. Later, in October 2017 remaining galleries were also opened.",
-  };
+interface AgencyPortfolioDetailProps {
+  data: any;
+}
 
-  const aboutData = {
-    title: "About CIBoost",
-    description:
-      "Innovation is now more important than ever in today's world. To stand out in a crowded market, business leaders need to focus on different ways they can keep up with evolving demand. Innovation is now more important than ever in today's world. To stand out in a crowded market, business leaders need to focus on different ways they can keep up with evolving demand.",
-    columnOneTitle: "Industry",
-    columnOneValue: "Government",
-    columnTwoTitle: "Geography",
-    columnTwoValue: "India",
-    columnThreeTitle: "Platform",
-    columnThreeValue: "Web",
-    columnFourTitle: "Link",
-    columnFourValue: "https://www.biharmuseum.org/",
-  };
-
-  const tagSectionData = {
-    title: "The Design tools and Technology that we use to support CIBoost",
-    tagsList: [
-      {
-        id: 0,
-        value: "Sketch",
-      },
-      {
-        id: 1,
-        value: "Photoshop",
-      },
-      {
-        id: 2,
-        value: "HTML",
-      },
-      {
-        id: 3,
-        value: "React",
-      },
-      {
-        id: 4,
-        value: "PHP",
-      },
-    ],
-  };
-
-  const relatedPortfolioData = {
-    title: "Related Portfolio",
-    list: [
-      {
-        id: 0,
-        title: "Spinverse​",
-        tag: "Gov",
-        description:
-          "CIBoost is a collective intelligence platform.  A team efficiency enhancement tool that will revolutionize team performance as we know it! Built on a methodology that has been proved to increase performance by up to 2x.",
-        imgSrc: "https://picsum.photos/560/300?random=1",
-        imgAlt: "Spinverse",
-        ctaLink: "https://www.google.com",
-        ctaText: "Read More",
-      },
-      {
-        id: 1,
-        title: "CellMark",
-        tag: "Gov",
-        description:
-          "CellMark is an employee-owned independent supply chain services company. We are here to make your business operations easier and support your trade.",
-        imgSrc: "https://picsum.photos/560/300?random=2",
-        imgAlt: "CellMark",
-        ctaLink: "https://www.google.com",
-        ctaText: "Read More",
-      },
-    ],
-  };
+const AgencyPortfolioDetail: React.FC<PageProps> = ({
+  data,
+}: AgencyPortfolioDetailProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -135,17 +69,107 @@ const DesignPortfolioDetail: React.FC<PageProps> = () => {
 
   return (
     <main className="">
-      <HeroBanner heroBannerData={heroBannerData} />
-      <About data={aboutData} />
-      {/* <Highlight /> */}
-      <TagSection data={tagSectionData} />
-      <RelatedPortfolio data={relatedPortfolioData} />
+      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} isImage />
+      <About data={data[currentLang]?.AboutSection} />
+      <KeyInfoLayout data={data[currentLang]?.KeyInformation} />
+      <ResultLayout
+        sectionTitle={data[currentLang]?.ResultTitle}
+        description={data[currentLang]?.ResultDescription}
+      />
+      <RelatedPortfolio
+        data={data[currentLang]?.RelatedPortfolios}
+        sectionTitle={data[currentLang]?.SectionFourTitle}
+        portfolioPath="/agency-portfolio/"
+      />
       <Footer data={footerData} />
     </main>
   );
 };
 
-export default DesignPortfolioDetail;
+export const query = graphql`
+  query AgencyPortfolio($slug: String!) {
+    en: strapiAgencyPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
+      id
+      HeroSection {
+        id
+        Title
+        Description
+        Image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      AboutSection {
+        id
+        Title
+        Description {
+          data {
+            Description
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        ColumnOneTitle
+        ColumnOneValue
+        ColumnTwoTitle
+        ColumnTwoValue
+        ColumnThreeTitle
+        ColumnThreeValue
+        ColumnFourTitle
+        ColumnFourLink
+      }
+      RelatedPortfolios {
+        id
+        Title
+        Tag
+        Description
+        CTAText
+        CTALink
+        Image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      SectionFourTitle
+      ResultTitle
+      ResultDescription {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      KeyInformation {
+        id
+        Title
+        Image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+        DescriptionAlignment
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default AgencyPortfolioDetail;
 
 export const Head: HeadFC = () => (
   <>
