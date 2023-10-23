@@ -9,21 +9,21 @@
   cursor: pointer;
 }
 
-.imgStyles :global {
+.imgStyles {
   height: 8.875rem;
   margin-top: 4.375rem;
-  animation: fadeInUp 1s ease 0.5s 1 normal forwards;
+  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.titleStyles :global {
+.titleStyles {
   text-transform: uppercase;
   padding-top: 1.875rem;
   font-size: 1.313rem;
-  animation: fadeInUp 1s ease 0.1s 1 normal forwards;
+  /* animation: fadeInUp 1s ease 0.1s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 /* Media queries starts here */

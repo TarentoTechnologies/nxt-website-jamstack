@@ -6,18 +6,22 @@ interface ProductCardLayoutProps {
 }
 
 export const ProductCardLayout = ({ data }: ProductCardLayoutProps) => {
+
   return (
     <div className={`container-fluid ${productCardLayoutStyles}`}>
       <div className={`row`}>
         {data.map((item, index) => (
           <div
-            key={index}
+            key={item.id}
             className={`col-xs-12 col-sm-12 col-md-4 col-lg-4 ${productCardStyles}`}
+            data-sal="slide-up"
+            data-sal-duration="900"
+            data-sal-easing="ease-in-back"
           >
             <ProductCard
-              title={item.title}
-              bgImg={item.bgImg}
-              logo={item.logo}
+              title={item.Title}
+              bgImg={item.BackgroundImage.localFile.url}
+              logo={item.Logo.localFile.url}
             />
           </div>
         ))}

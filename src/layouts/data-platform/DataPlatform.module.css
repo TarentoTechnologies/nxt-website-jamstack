@@ -1,0 +1,52 @@
+@import url("../../styles//global//colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerStyles {
+  overflow: hidden;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.flexDirection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.keyFeatureText {
+  font-size: 1.125rem;
+  margin-top: 0.938rem;
+  display: block;
+  text-align: center;
+}
+.formSubText a {
+  color: var(--black-90);
+}
+@media only screen and (max-width: 600px) {
+  .flexDirection {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .bannerStyles {
+    padding: 6.25rem 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bannerStyles {
+    padding: 5rem 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .bannerStyles {
+    padding: 5rem 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .bannerStyles {
+    padding: 5rem 0;
+  }
+}
+
+/* Media queries ends here */

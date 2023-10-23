@@ -1,27 +1,31 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
+  border,
   headerInfo,
   imgStyles,
-  border,
-  titleStyles,
   subtextStyles,
   logoStyles,
+  titleStyles,
 } from "./HeroBannerForTDI.module.css";
-import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 
 interface HeroBannerForTDIProps {
   data: {
     title: string;
     img: any;
     imgAltText?: string;
-    subtext?: string;
+    subText?: string;
     description: string;
     withLogo?: boolean;
     logo?: any;
+    isImage?: boolean;
   };
 }
 
 export const HeroBannerForTDI = ({ data }: HeroBannerForTDIProps) => {
+  const image: any = getImage(data?.img);
+
   return (
     <div
       className={`container-fluid ${bannerStyles} d-flex justify-content-center`}
@@ -46,18 +50,26 @@ export const HeroBannerForTDI = ({ data }: HeroBannerForTDIProps) => {
             <div className={`${cardHeader} ${titleStyles}`}>{data?.title}</div>
             <div className={`${subtextStyles}`}>
               <span className={`${border}`}></span>
-              <p>{data?.subtext}</p>
+              <p>{data?.subText}</p>
               <p>{data?.description}</p>
             </div>
           </div>
         </div>
         <div className={`col-sm-12 col-md-6 d-flex align-items-center`}>
-          <img
-            className={`${imgStyles} img-fluid`}
-            src={data?.img}
-            alt={data?.imgAltText}
-            title={data?.imgAltText}
-          />
+          {data?.isImage ? (
+            <GatsbyImage
+              image={image}
+              alt={data?.imgAltText ? data?.imgAltText : ""}
+              className={`${imgStyles} img-fluid`}
+            />
+          ) : (
+            <img
+              className={`${imgStyles} img-fluid`}
+              src={data?.img}
+              alt={data?.imgAltText}
+              title={data?.imgAltText}
+            />
+          )}
         </div>
       </div>
     </div>

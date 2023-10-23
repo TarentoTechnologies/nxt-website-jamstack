@@ -2,21 +2,24 @@ import { PrimaryCTA } from "../buttons/PrimaryCTA";
 import { PrimaryTitle } from "../titles/PrimaryTitle";
 import {
   bannerStyles,
-  retailInfo,
   imgPadding,
   infoSectionPadding,
+  retailInfo,
 } from "./PyramidBanner.module.css";
 
 interface PyramidBannerProps {
-  data: {
-    title: string;
-    description: string;
-    btnDescr?: string;
-    pyramidImg: any;
-  };
+  title: string;
+  description: string;
+  btnDescr?: string;
+  pyramidImg: any;
 }
 
-export const PyramidBanner = ({ data }: PyramidBannerProps) => {
+export const PyramidBanner = ({
+  title,
+  description,
+  btnDescr,
+  pyramidImg,
+}: PyramidBannerProps) => {
   return (
     <div className={`container-fluid ${bannerStyles}`}>
       <div className={`row`}>
@@ -24,17 +27,25 @@ export const PyramidBanner = ({ data }: PyramidBannerProps) => {
           <div className={`d-flex justify-content-center align-items-center`}>
             <img
               className={`${imgPadding} img-fluid`}
-              src={data.pyramidImg}
-              alt={data.title}
-              title={data.title}
+              src={pyramidImg}
+              alt={title}
+              title={title}
+              data-sal="slide-up"
+              data-sal-duration="900"
+              data-sal-easing="ease-in-back"
             />
           </div>
         </div>
         <div className={`col-md-12 col-lg-6 col-xl-4`}>
-          <div className={`${infoSectionPadding} ${retailInfo}`}>
-            <PrimaryTitle title={data.title} variant="banner" color="white" />
-            <p>{data.description}</p>
-            <PrimaryCTA label={data.btnDescr} primary />
+          <div
+            className={`${infoSectionPadding} ${retailInfo}`}
+            data-sal="slide-up"
+            data-sal-duration="900"
+            data-sal-easing="ease-in-back"
+          >
+            <PrimaryTitle title={title} variant="banner" color="white" />
+            <p>{description}</p>
+            <PrimaryCTA label={btnDescr} primary />
           </div>
         </div>
       </div>
