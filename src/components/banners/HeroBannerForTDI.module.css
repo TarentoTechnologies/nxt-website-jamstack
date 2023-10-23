@@ -40,6 +40,11 @@
   opacity: 0;
 }
 
+.logoStyles {
+  margin-top: -6.75rem;
+  margin-bottom: 1.25rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

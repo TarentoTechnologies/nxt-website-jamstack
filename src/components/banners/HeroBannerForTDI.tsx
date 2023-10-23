@@ -5,6 +5,7 @@ import {
   border,
   titleStyles,
   subtextStyles,
+  logoStyles,
 } from "./HeroBannerForTDI.module.css";
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 
@@ -15,6 +16,8 @@ interface HeroBannerForTDIProps {
     imgAltText?: string;
     subtext?: string;
     description: string;
+    withLogo?: boolean;
+    logo?: any;
   };
 }
 
@@ -28,6 +31,18 @@ export const HeroBannerForTDI = ({ data }: HeroBannerForTDIProps) => {
           className={`col-sm-12 col-md-6 d-flex flex-column justify-content-center px-md-0`}
         >
           <div className={`${headerInfo}`}>
+            {data.withLogo && (
+              <div className={`${logoStyles}`}>
+                <img
+                  src={data?.logo}
+                  alt={data?.imgAltText}
+                  title={data.imgAltText}
+                  width="217"
+                  height="71"
+                  className={`img-fluid`}
+                />
+              </div>
+            )}
             <div className={`${cardHeader} ${titleStyles}`}>{data?.title}</div>
             <div className={`${subtextStyles}`}>
               <span className={`${border}`}></span>
