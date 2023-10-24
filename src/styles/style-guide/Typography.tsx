@@ -2,17 +2,18 @@ import {
   acceleratorTitle,
   cardHeader,
   cta1,
+  ctaDescription,
+  descriptionOne,
   footerHeading,
   h1One,
   h3Title,
   heading700,
   infoSectionH2,
+  revolutionHeading,
   subHeading1,
   subText2,
   tagLabel,
   tagLabel2,
-  ctaDescription,
-  descriptionOne
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -107,6 +108,12 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>descriptionOne</td>
+          </tr>
+          <tr>
+            <th scope="row" className={revolutionHeading}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>revolutionHeading</td>
           </tr>
         </tbody>
       </table>

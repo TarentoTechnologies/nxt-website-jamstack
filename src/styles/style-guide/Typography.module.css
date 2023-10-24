@@ -100,7 +100,10 @@ h3 {
   font-size: 1.125rem;
   line-height: 1.5rem;
 }
-
+.revolutionHeading {
+  font-size: 2.676666693433344em;
+  font-family: "RobotoSlab-Bold", serif;
+}
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

@@ -51,9 +51,9 @@ import techStack36 from "../../static/images/technology/36.png";
 import techStack37 from "../../static/images/technology/37.svg";
 import techStack1 from "../../static/images/technology/Bitmap.png";
 import techStack2 from "../../static/images/technology/s2.png";
-import { Footer } from "../components/footer/Footer";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { StoryBanner } from "../components/banners/StoryBanner";
+import { Footer } from "../components/footer/Footer";
 import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
 import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
 import { TechPrinciplesLayout } from "../layouts/tech/components/TechPrinciplesLayout";
@@ -346,7 +346,11 @@ const TechnologyPage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
-      <HeroBannerForTDI data={heroBannerData} />
+      <HeroBannerForTDI
+        title={heroBannerData.title}
+        description={heroBannerData.description}
+        img={heroBannerData.img}
+      />
       <TechPrinciplesLayout data={techPrinciplesData} />
       <StoryBanner data={techStoryBannerData} />
       <TechStackLayout data={techStackData} />

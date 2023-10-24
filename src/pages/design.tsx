@@ -1,20 +1,21 @@
-import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
-import { DesignProcessLayout } from "../layouts/design/components/DesignProcessLayout";
-import { DesignProcessBannerLayout } from "../layouts/design/components/DesignProcessBannerLayout";
-import { Footer } from "../components/footer/Footer";
-import designHero from "../../static/images/invoation-img.svg";
-import discoverImg from "../../static/images/discover-img.svg";
-import ideateImg from "../../static/images/ideate-img.svg";
-import designImg from "../../static/images/design-icon.svg";
-import deliverImg from "../../static/images/deliver.svg";
-import bannerImg1 from "../../static/images/discover.png";
-import bannerImg2 from "../../static/images/ideate.png";
-import bannerImg3 from "../../static/images/design_process.png";
-import bannerImg4 from "../../static/images/deliver.png";
-import NXTlogo from "../../static/images/logo-inner.svg";
+import * as React from "react";
+
 import TarentoLogo from "../../static/images/company-logo.svg";
+import bannerImg4 from "../../static/images/deliver.png";
+import deliverImg from "../../static/images/deliver.svg";
+import designImg from "../../static/images/design-icon.svg";
+import bannerImg3 from "../../static/images/design_process.png";
+import discoverImg from "../../static/images/discover-img.svg";
+import bannerImg1 from "../../static/images/discover.png";
+import ideateImg from "../../static/images/ideate-img.svg";
+import bannerImg2 from "../../static/images/ideate.png";
+import designHero from "../../static/images/invoation-img.svg";
+import NXTlogo from "../../static/images/logo-inner.svg";
+import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
+import { Footer } from "../components/footer/Footer";
+import { DesignProcessBannerLayout } from "../layouts/design/components/DesignProcessBannerLayout";
+import { DesignProcessLayout } from "../layouts/design/components/DesignProcessLayout";
 
 const DesignPage: React.FC<PageProps> = () => {
   const heroBannerData = {
@@ -136,7 +137,11 @@ const DesignPage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
-      <HeroBannerForTDI data={heroBannerData} />
+      <HeroBannerForTDI
+        title={heroBannerData.title}
+        img={heroBannerData.img}
+        description={heroBannerData.description}
+      />
       <DesignProcessLayout data={designProcessData} />
       <DesignProcessBannerLayout data={designProcessBannerData} />
       <Footer data={footerData} />

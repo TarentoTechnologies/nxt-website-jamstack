@@ -1,0 +1,77 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.cardStyles {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.imgStyles {
+  width: 7.5rem;
+  height: 7.5rem;
+  background: #120033;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: inline-block;
+  border-radius: 0.5em;
+}
+
+.imgStyles img {
+  height: 3.875rem;
+  position: relative;
+  top: 1.875rem;
+}
+
+.titleStyles {
+  padding-top: 1.125rem;
+  font-size: 1.125rem;
+  margin: 0.625rem 0;
+}
+
+.cardOneImg {
+  /* background-image: url(https://nxt.tarento.com/img/translation.svg); */
+  background-repeat: no-repeat;
+  object-fit: cover;
+  color: #ffffff;
+}
+.cardSize {
+  /* width: 23.1875em; */
+  height: 20.3125em;
+  border-radius: 0.5em;
+  padding: 2rem;
+  position: relative;
+}
+.cardHover {
+  background-color: #ffffff;
+}
+
+.customBrds {
+  border-radius: 0.5em;
+}
+.cardLogo {
+  position: absolute;
+  margin-bottom: 2em;
+  bottom: 0;
+  /* min-width: 10rem; */
+}
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .cardSize {
+    height: 15.3125em !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */
