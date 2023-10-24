@@ -1,52 +1,72 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import backwardArrow from "../../../static/icons/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg";
-import forwardArrow from "../../../static/icons/arrow_forward_ios_FILL0_wght400_GRAD0_opsz24.svg";
 
-export const PortfolioCarousel = () => {
+interface PortfolioCarouselProps {
+  sliderData: any;
+}
+
+export const PortfolioCarousel = ({ sliderData }: PortfolioCarouselProps) => {
+
   return (
-    <div className="container-fluid">
+    <div className="container-fluid p-0 m-0">
       <div className="">
         <Swiper
-          spaceBetween={30}
+          id={sliderData?.id}
           modules={[Navigation, Pagination]}
-          slidesPerView={2}
-          navigation
+          navigation={{
+            nextEl: ".arrow-right-custom",
+            prevEl: ".arrow-left-custom",
+          }}
           loop={true}
           pagination={{ clickable: true }}
+          breakpoints={{
+            375: {
+              slidesPerView: 1,
+              spaceBetween: 4,
+            },
+            390: {
+              slidesPerView: 1,
+              spaceBetween: 4,
+            },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 4,
+            },
+            768: {
+              slidesPerView: 1.5,
+              spaceBetween: 24,
+            },
+            1024: {
+              slidesPerView: 1.5,
+              spaceBetween: 24,
+            },
+            1200: {
+              slidesPerView: 1.5,
+              spaceBetween: 44,
+            },
+          }}
         >
-          <SwiperSlide>
-            <img
-              src="https://picsum.photos/824/457?random=1"
-              alt="Test image 1"
-              className="img-fluid"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://picsum.photos/824/457?random=2"
-              alt="Test image 2"
-              className="img-fluid"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://picsum.photos/824/457?random=3"
-              alt="Test image 3"
-              className="img-fluid"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://picsum.photos/824/457?random=4"
-              alt="Test image 4"
-              className="img-fluid"
-            />
-          </SwiperSlide>
+          {sliderData?.Images.map((data: any, index: number) => {
+            return (
+              <SwiperSlide key={index}>
+                <GatsbyImage
+                  image={
+                    getImage(data.localFile)
+                      ? getImage(data.localFile)
+                      : data.localFile
+                  }
+                  alt={`Portfolio carousel image ${index}`}
+                  className="img-fluid"
+                />
+                {/* <img src={data.imgSrc} alt={data.alt} className="img-fluid" /> */}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>

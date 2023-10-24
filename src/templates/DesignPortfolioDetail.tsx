@@ -14,6 +14,7 @@ import {
 } from "../layouts/design-portfolio";
 import {
   About,
+  Highlight,
   RelatedPortfolio,
   TagSection,
 } from "../layouts/design-portfolio-detail";
@@ -71,6 +72,11 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
     <main className="">
       <HeroBanner heroBannerData={data[currentLang]?.HeroSection} isImage />
       <About data={data[currentLang]?.AboutSection} />
+      <Highlight
+        carouselData={data[currentLang]?.HighlightCarousel}
+        highlightDescription={data[currentLang]?.HighlightSectionDescription}
+        highlightTitle={data[currentLang]?.HighlightSectionTitle}
+      />
       <TagSection data={data[currentLang]?.BannerWithTagSection} />
       <RelatedPortfolio
         data={data[currentLang]?.RelatedPortfolios}
@@ -142,6 +148,18 @@ export const query = graphql`
         CTAText
         CTALink
         Image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      HighlightSectionTitle
+      HighlightSectionDescription
+      HighlightCarousel {
+        id
+        Images {
           localFile {
             childImageSharp {
               gatsbyImageData(formats: PNG)
