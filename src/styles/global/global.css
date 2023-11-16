@@ -42,6 +42,10 @@ a:hover {
   padding: 1.875rem;
 }
 
+.paddingTopBottom60 {
+  padding: 3.75rem 0;
+}
+
 .paddingLeftRight15 {
   padding-left: 0.938rem;
   padding-right: 0.938rem;
@@ -71,7 +75,8 @@ a:hover {
   color: var(--white) !important;
 }
 
-.swiper-button-prev, .swiper-rtl .swiper-button-next {
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
   top: 0rem !important;
   color: var(--white) !important;
 }

@@ -6,7 +6,7 @@
   height: auto;
 }
 .basePriceBox {
-  width: 17.75em;
+  max-width: 17.75em;
   height: 2.6875em;
   background-color: #f4f1ff;
   border-radius: 0.5em;
@@ -14,7 +14,7 @@
   padding: 0.625rem;
 }
 .supportBar {
-  width: 17.75em;
+  max-width: 17.75em;
   height: 2.6875em;
   background-color: #f5f5f5;
   border-radius: 0.5em;
@@ -27,8 +27,12 @@
   font-weight: 100;
 }
 .pricingBox {
-  width: 22em;
+  max-width: 22rem;
+  min-height: 41.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
 }
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

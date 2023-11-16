@@ -1,6 +1,7 @@
 import checkIcon from "../../../static/images/green-check.svg";
 import { bgWhite } from "../../styles/style-guide/ColorGuide.module.css";
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
+import { PrimaryCTA } from "../buttons/PrimaryCTA";
 import {
   basePriceBox,
   optional,
@@ -19,6 +20,10 @@ interface PricingCardProps {
   supportSubText?: string;
   baseList?: string[];
   supportList?: string[];
+  withBtn?: boolean;
+  CTAlabel: string;
+  CTAlink: any;
+  spTitle: string;
 }
 
 export const PricingCard = ({
@@ -31,42 +36,72 @@ export const PricingCard = ({
   supportPrice,
   supportSubText,
   supportText,
+  withBtn,
+  CTAlabel,
+  CTAlink,
+  spTitle,
 }: PricingCardProps) => {
-  return (
-    <div className={`col-md-4 ${bgWhite} mb-4`}>
-      <div className={`${pricingBox} p-4`}>
-        <div className={` d-flex align-items-center ps-3`}>
-          <img src={logo} alt={title} />
-          <div className={`${cardHeader} ms-4`}>{title}</div>
-        </div>
-        <div className="mt-5 mb-5 ps-3">{description} </div>
-        <div className={basePriceBox}>{basePrice}</div>
-        {baseList?.map((item, index) => (
-          <div className="d-flex mt-3 mb-4 ps-3">
-            <div className="me-3">
-              <img src={checkIcon} className={tickStyle} />
+  if (withBtn) {
+    return (
+      <div className={`col-sm-12 col-md-6 col-lg-5 col-xl-4`}>
+        <div className={`${pricingBox} ${bgWhite} p-4`}>
+          <div className={`d-flex align-items-center ps-3`}>
+            <img src={logo} alt={title} />
+            <div className={`${cardHeader} ms-4`}>
+              {title}
+              <span style={{ color: "#f96a00" }}>{spTitle}</span>
             </div>
-            <span>{item}</span>
           </div>
-        ))}
-
-        <div className={supportBar}>
-          <p>{supportPrice} </p>
-          <span className="floatRight">
-            {" "}
-            {supportText}
-            <span className={optional}>{supportSubText}</span>
-          </span>
-        </div>
-        {supportList?.map((item, index) => (
-          <div className="d-flex mt-3 mb-4 ps-3">
-            <div className="me-3">
-              <img src={checkIcon} className={tickStyle} />
+          <div className="mt-5 mb-5">
+            <PrimaryCTA label={CTAlabel} btnLink={CTAlink} size="large" />
+          </div>
+          {baseList?.map((item, index) => (
+            <div className="d-flex mt-3 mb-4 ps-3">
+              <div className="me-3">
+                <img src={checkIcon} className={tickStyle} />
+              </div>
+              <span>{item}</span>
             </div>
-            <span>{item}</span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className={`col-sm-12 col-md-6 col-lg-5 col-xl-4`}>
+        <div className={`${pricingBox} ${bgWhite} p-4`}>
+          <div className={`d-flex align-items-center ps-3`}>
+            <img src={logo} alt={title} />
+            <div className={`${cardHeader} ms-4`}>{title}</div>
+          </div>
+          <div className="mt-5 mb-5 ps-3">{description} </div>
+          <div className={basePriceBox}>{basePrice}</div>
+          {baseList?.map((item, index) => (
+            <div className="d-flex mt-3 mb-4 ps-3">
+              <div className="me-3">
+                <img src={checkIcon} className={tickStyle} />
+              </div>
+              <span>{item}</span>
+            </div>
+          ))}
+          <div className={supportBar}>
+            <p>{supportPrice} </p>
+            <span className="floatRight">
+              {" "}
+              {supportText}
+              <span className={optional}>{supportSubText}</span>
+            </span>
+          </div>
+          {supportList?.map((item, index) => (
+            <div className="d-flex mt-3 mb-4 ps-3">
+              <div className="me-3">
+                <img src={checkIcon} className={tickStyle} />
+              </div>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 };

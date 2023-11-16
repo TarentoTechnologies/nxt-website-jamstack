@@ -3,15 +3,9 @@ import * as React from "react";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
-import { HeroBannerForAccelerators } from "../components/banners/HeroBannerForAccelerators";
 import { Footer } from "../components/footer/Footer";
-import {
-  Feature,
-  Form,
-  KeyInsights,
-  WorkingProcess,
-} from "../layouts/data-platform";
-import { PricingList } from "../layouts/pricing";
+import { HeroText, PricingList } from "../layouts/pricing";
+import { ContactUsLayout } from "../layouts/pricing/components/ContactUsLayout";
 
 const PricingPage: React.FC<PageProps> = () => {
   const footerData = {
@@ -52,63 +46,134 @@ const PricingPage: React.FC<PageProps> = () => {
     ],
     rightsText: "All rights reserved © 2023 Tarento Technologies.",
   };
-  const PricingListData = {
-    heading: "accelerators",
-    pricingDta: [
-      {
-        title: "RAIN",
-        logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
-        description:
-          "Real time analytics and insights from your business data.",
-        baseprice: "€25K",
-        supportPrice: "€3000 per year",
-        supportText: "Support",
-        supportSubText: "(Optional)",
-        baseList: ["Full perpetual license", "100 hours for implementation"],
-        supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
-      },
-      {
-        title: "BOLT",
-        logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
-        description:
-          "Real time analytics and insights from your business data.",
-        baseprice: "€25K",
-        supportPrice: "€3000 per year",
-        supportText: "Support",
-        supportSubText: "(Optional)",
-        baseList: ["Full perpetual license", "100 hours for implementation"],
-        supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
-      },
-      {
-        title: "RAIN",
-        logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
-        description:
-          "Real time analytics and insights from your business data.",
-        baseprice: "€25K",
-        supportPrice: "€3000 per year",
-        supportText: "Support",
-        supportSubText: "(Optional)",
-        baseList: ["Full perpetual license", "100 hours for implementation"],
-        supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
-      },
-      {
-        title: "THOR",
-        logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
-        description:
-          "Real time analytics and insights from your business data.",
-        baseprice: "€25K",
-        supportPrice: "€3000 per year",
-        supportText: "Support",
-        supportSubText: "(Optional)",
-        baseList: ["Full perpetual license", "100 hours for implementation"],
-        supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
-      },
-    ],
-  };
+  const pricingListData = [
+    {
+      title: "RAIN",
+      logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
+      description: "Real time analytics and insights from your business data.",
+      basePrice: "€25K",
+      supportPrice: "€3000 per year",
+      supportText: "Support",
+      supportSubText: "(Optional)",
+      baseList: ["Full perpetual license", "100 hours for implementation"],
+      supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
+    },
+    {
+      title: "BOLT",
+      logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
+      description: "Real time analytics and insights from your business data.",
+      basePrice: "€25K",
+      supportPrice: "€3000 per year",
+      supportText: "Support",
+      supportSubText: "(Optional)",
+      baseList: ["Full perpetual license", "100 hours for implementation"],
+      supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
+    },
+    {
+      title: "RAIN",
+      logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
+      description: "Real time analytics and insights from your business data.",
+      basePrice: "€25K",
+      supportPrice: "€3000 per year",
+      supportText: "Support",
+      supportSubText: "(Optional)",
+      baseList: ["Full perpetual license", "100 hours for implementation"],
+      supportList: ["Security fixes", "Bug fixes", "OS compatibility"],
+    },
+    {
+      title: "THOR Chatbot(SaaS)",
+      logo: "https://nxt.tarento.com/img/chatbot.svg",
+      description:
+        "Intelligent assistant for your business. Multi channel domain specific chatbot to engage your users.",
+      basePrice: "€15K",
+      supportPrice: "€650 per month",
+      supportText: "Subscription",
+      supportSubText: "",
+      baseList: [
+        "25 scenarios",
+        "More than 80% accuracy in 4 weeks",
+        "2 weeks time to market",
+      ],
+      supportList: ["Up to 1 Million interactions per month"],
+    },
+    {
+      title: "Pulz",
+      logo: "https://nxt.tarento.com/img/aurora_with_circle.svg",
+      description:
+        "Know the pulse of your customer with Pulz feedback & micro survey framework",
+      basePrice: "€15K",
+      supportPrice: "€28 per hour",
+      supportText: "Support",
+      supportSubText: "(Optional)",
+      baseList: [" Full perpetual license"],
+      supportList: [" Security fixes", "Bug fixes", "OS compatibility"],
+    },
+  ];
+
+  const bundlesData = [
+    {
+      title: "RAIN+BOLT",
+      logo: "https://nxt.tarento.com/img/rain+bolt.svg",
+      description: "Real time analytics and insights from your business data.",
+      basePrice: "€25K",
+      supportPrice: "€3000 per year",
+      supportText: "Support",
+      supportSubText: "(Optional)",
+      baseList: ["Full perpetual license", "100 hours for implementation"],
+      supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
+    },
+    {
+      title: "RAIN+BOLT +THOR",
+      logo: "https://nxt.tarento.com/img/rain+bolt+thor.svg",
+      description: "Real time analytics and insights from your business data.",
+      basePrice: "€25K",
+      supportPrice: "€3000 per year",
+      supportText: "Support",
+      supportSubText: "(Optional)",
+      baseList: ["Full perpetual license", "100 hours for implementation"],
+      supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
+    },
+    {
+      title: "RAIN+BOLT +THOR+",
+      spTitle: "LEAD",
+      logo: "https://nxt.tarento.com/img/rain+bolt+thor.svg",
+      baseList: ["Full perpetual license", "4 Lead Workshops"],
+      withBtn: true,
+      CTAlabel: "Contact us",
+      CTAlink: "mailto:hello@tarento.com;",
+    },
+  ];
 
   return (
     <main className="">
-      <PricingList heading={""} pricingData={PricingListData.pricingDta} />
+      <HeroText
+        title={"The right price for you"}
+        desc={
+          "At NXT we try to bring Innovation to everyone. Make cutting edge technology more affordable and accessible to all. We apply AI to solve real world problems, we enable businesses to leverage data and make informed decisions. We help you scale with cutting edge technology, design and innovation."
+        }
+      />
+      <PricingList
+        heading={"Accelerators"}
+        pricingData={pricingListData}
+        additionalInfo={
+          "*Additional customization's and integration effort at €28 per hour"
+        }
+      />
+      <PricingList
+        heading={"Bundles"}
+        pricingData={bundlesData}
+        additionalInfo=""
+      />
+      <ContactUsLayout
+        heading1="Are you interested?"
+        desc1="Do these accelerators look interesting to you? Get in touch with us to know how to buy any of them. Click on the button below to send us a mail."
+        CTAlabel1="Contact us"
+        CTAlink1="mailto:hello@tarento.com;"
+        heading2="Are you a Reseller?"
+        desc2="We collaborate with resellers around the world. Want to join our community? Contact us to know more about us and what we offer."
+        CTAlabel2="Contact us"
+        CTAlink2="mailto:hello@tarento.com;"
+      />
       <Footer data={footerData} />
     </main>
   );
