@@ -28,7 +28,7 @@ export const Avatars = ({ title, list, subText }: AvatarProps) => {
         <div className={`containerService paddingLeftRight15`}>
           <h1 className={`${h3Title}`}>{title}</h1>
           <p className="mb-5 mt-3">{subText}</p>
-          <div className={`row ms-lg-5`}>
+          <div className={`row gx-5`}>
             {list?.map((item, index) => (
               <div
                 className="col-md-12 col-lg-6 col-sm-12 col-xs-12"
@@ -38,12 +38,13 @@ export const Avatars = ({ title, list, subText }: AvatarProps) => {
                   <p className={revolutionHeading}>
                     <span>
                       <img
-                        className="me-1 me-md-5"
+                        className="me-3"
                         src={item.imgSrc}
                         alt={item.title}
                         title={item.title}
+                        
                       />
-                    </span>{" "}
+                    </span>
                     {item.title}
                   </p>
                   <p>{item.description}</p>
