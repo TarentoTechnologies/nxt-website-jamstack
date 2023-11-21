@@ -2,18 +2,21 @@ import {
   acceleratorTitle,
   cXHeading,
   cardHeader,
+  caseStudyTitle,
   cta1,
   ctaDescription,
   descriptionOne,
   footerHeading,
   h1One,
   h3Title,
+  h4subTitle,
   heading700,
   infoSectionH2,
   subHeading1,
   subText2,
   tagLabel,
   tagLabel2,
+  useCasesSubTitle,
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -52,6 +55,18 @@ export const Typography = (): any => {
             <td>footerHeading</td>
           </tr>
           <tr>
+            <th scope="row" className={caseStudyTitle}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>caseStudyTitle</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h4subTitle}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h4subTitle</td>
+          </tr>
+          <tr>
             <th scope="row" className={acceleratorTitle}>
               Tellus in hac habitasse platea
             </th>
@@ -62,6 +77,8 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>h3Title</td>
+          </tr>
+          <tr>
             <th scope="row" className={tagLabel}>
               Tellus in hac habitasse platea
             </th>
@@ -108,6 +125,12 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>descriptionOne</td>
+          </tr>
+          <tr>
+            <th scope="row" className={useCasesSubTitle}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>useCasesSubTitle</td>
           </tr>
           <tr>
             <th scope="row" className={cXHeading}>

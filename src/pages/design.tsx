@@ -138,9 +138,10 @@ const DesignPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBannerForTDI
-        description={heroBannerData.description}
-        img={heroBannerData.img}
         title={heroBannerData.title}
+        img={heroBannerData.img}
+        description={heroBannerData.description}
+        subText={heroBannerData.subtext}
       />
       <DesignProcessLayout data={designProcessData} />
       <DesignProcessBannerLayout data={designProcessBannerData} />

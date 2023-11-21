@@ -71,7 +71,8 @@ a:hover {
   color: var(--white) !important;
 }
 
-.swiper-button-prev, .swiper-rtl .swiper-button-next {
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
   top: 0rem !important;
   color: var(--white) !important;
 }
