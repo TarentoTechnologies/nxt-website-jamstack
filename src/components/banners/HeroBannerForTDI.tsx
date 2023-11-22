@@ -1,5 +1,6 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
+import { white87, white70 } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   cardHeader,
   h1One,
@@ -60,8 +61,8 @@ export const HeroBannerForTDI = ({
                 <div className={`${h1One} ${titleStyles}`}>{title}</div>
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
-                  <p>{subText}</p>
-                  <p>{description}</p>
+                  <p className={`${white87}`}>{subText}</p>
+                  <p className={`${white70}`}>{description}</p>
                 </div>
               </div>
             </div>
@@ -115,10 +116,10 @@ export const HeroBannerForTDI = ({
                 </div>
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
-                  <p className={`${subTextBold ? boldSubtext : ""}`}>
+                  <p className={`${white87} ${subTextBold ? boldSubtext : ""}`}>
                     {subText}
                   </p>
-                  <p>{description}</p>
+                  <p className={`${white70}`}>{description}</p>
                 </div>
               </div>
             </div>

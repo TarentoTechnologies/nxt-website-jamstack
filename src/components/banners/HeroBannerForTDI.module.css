@@ -6,8 +6,8 @@
   overflow: hidden;
 }
 
-.subtextStyles :global {
-  color: rgba(255, 255, 255, 0.7);
+.subtextStyles {
+  /* color: rgba(255, 255, 255, 0.7); */
   margin-left: 0;
   /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
@@ -46,10 +46,9 @@
 }
 
 .boldSubtext {
-  color: rgba(255, 255, 255, 0.87) !important;
   font-size: 1.125rem !important;
-  font-weight: 600 !important;
-  opacity: 87%;
+  font-weight: 400 !important;
+  /* opacity: 87%; */
 }
 
 /* Media queries starts here */
