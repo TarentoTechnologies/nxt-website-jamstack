@@ -141,6 +141,7 @@ const DesignPage: React.FC<PageProps> = () => {
         title={heroBannerData.title}
         img={heroBannerData.img}
         description={heroBannerData.description}
+        subText={heroBannerData.subtext}
       />
       <DesignProcessLayout data={designProcessData} />
       <DesignProcessBannerLayout data={designProcessBannerData} />

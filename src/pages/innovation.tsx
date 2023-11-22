@@ -167,9 +167,9 @@ const InnovationPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBannerForTDI
-        title={heroBannerData.title}
-        img={heroBannerData.img}
         description={heroBannerData.description}
+        img={heroBannerData.img}
+        title={heroBannerData.title}
       />
       <ForgingInnovationLayout data={forgingInnovationData} />
       <StoryBanner data={innovationStoryBannerData} />

@@ -347,9 +347,9 @@ const TechnologyPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBannerForTDI
-        title={heroBannerData.title}
         description={heroBannerData.description}
         img={heroBannerData.img}
+        title={heroBannerData.title}
       />
       <TechPrinciplesLayout data={techPrinciplesData} />
       <StoryBanner data={techStoryBannerData} />

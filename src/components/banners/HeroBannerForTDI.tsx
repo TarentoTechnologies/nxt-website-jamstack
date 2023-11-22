@@ -17,6 +17,7 @@ interface HeroBannerForTDIProps {
   subText?: string;
   description: string;
   isImage?: boolean;
+  mainTitle?: string;
   govTech?: boolean;
 }
 
@@ -27,6 +28,7 @@ export const HeroBannerForTDI = ({
   subText,
   description,
   isImage,
+  mainTitle,
   govTech,
 }: HeroBannerForTDIProps) => {
   const image: any = getImage(img);
@@ -77,7 +79,15 @@ export const HeroBannerForTDI = ({
               className={`col-sm-12 col-md-6 d-flex flex-column justify-content-center px-md-0`}
             >
               <div className={`${headerInfo}`}>
-                <div className={`${cardHeader} ${titleStyles}`}>{title}</div>
+                <div className={`${cardHeader} ${titleStyles}`}>
+              {mainTitle && (
+                <b>
+                  {mainTitle}
+                  <br />
+                </b>
+              )}
+              {title}
+            </div>
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
                   <p>{subText}</p>
