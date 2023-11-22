@@ -1,22 +1,23 @@
-import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
-import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
-import { ForgingInnovationLayout } from "../layouts/innovation/components/ForgingInnovationLayout";
-import { StoryBanner } from "../components/banners/StoryBanner";
-import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
-import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
-import { Footer } from "../components/footer/Footer";
-import innovationHero from "../../static/images/innovation/innovation_hero.svg";
-import forgingInnovation from "../../static/images/innovation/forging_innovation.svg";
-import innoStoryImg from "../../static/images/innovation/map.svg";
-import leadImg from "../../static/images/innovation/lead.svg";
-import leadBgImg from "../../static/images/innovation/Bitmap.jpg";
-import boltLogoSecondary from "../../static/images/tech_bolt_dark.svg";
+import * as React from "react";
+
 import boltImg from "../../static/images/bolt_thumb.svg";
+import TarentoLogo from "../../static/images/company-logo.svg";
+import leadBgImg from "../../static/images/innovation/Bitmap.jpg";
+import forgingInnovation from "../../static/images/innovation/forging_innovation.svg";
+import innovationHero from "../../static/images/innovation/innovation_hero.svg";
+import leadImg from "../../static/images/innovation/lead.svg";
+import innoStoryImg from "../../static/images/innovation/map.svg";
+import NXTlogo from "../../static/images/logo-inner.svg";
+import boltLogoSecondary from "../../static/images/tech_bolt_dark.svg";
 import rainImg from "../../static/images/tech_rain_dark.svg";
 import thorImg from "../../static/images/tech_thor_dark.svg";
-import NXTlogo from "../../static/images/logo-inner.svg";
-import TarentoLogo from "../../static/images/company-logo.svg";
+import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
+import { StoryBanner } from "../components/banners/StoryBanner";
+import { Footer } from "../components/footer/Footer";
+import { ForgingInnovationLayout } from "../layouts/innovation/components/ForgingInnovationLayout";
+import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
+import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
 
 const InnovationPage: React.FC<PageProps> = () => {
   const heroBannerData = {
@@ -165,7 +166,11 @@ const InnovationPage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
-      <HeroBannerForTDI data={heroBannerData} />
+      <HeroBannerForTDI
+        description={heroBannerData.description}
+        img={heroBannerData.img}
+        title={heroBannerData.title}
+      />
       <ForgingInnovationLayout data={forgingInnovationData} />
       <StoryBanner data={innovationStoryBannerData} />
       <StoryBanner data={leadStoryBannerData} />

@@ -39,6 +39,25 @@
   font-family: "RobotoSlab-Regular", serif;
   line-height: 1.5;
 }
+.caseStudyTitle {
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.h4SubTitle {
+  font-size: 1.3075966647366rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.1;
+  font-family: "RobotoSlab-Regular", serif;
+}
+
+.revolutionHeading {
+  font-size: 2.6666670026247rem;
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+}
 
 .ctaDescription {
   font-size: 1rem;
@@ -99,6 +118,25 @@ h3 {
   font-family: "Lato-Regular";
   font-size: 1.125rem;
   line-height: 1.5rem;
+}
+
+.cxHeading {
+  font-family: "RobotoSlab-Regular", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.useCasesSubTitle {
+  font-size: 1.1207971412028rem;
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  margin-left: 1rem;
+}
+
+.revolutionHeading {
+  font-size: 2.6666670026247rem;
+  font-family: "RobotoSlab-Bold", serif;
 }
 
 /* Media queries starts here */
