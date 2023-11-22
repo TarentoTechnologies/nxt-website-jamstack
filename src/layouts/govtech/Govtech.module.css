@@ -1,16 +1,19 @@
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
-.featureCard {
-  text-align: center;
-  font-size: 1.313rem;
-  background: #fff;
-  padding: 3.125rem;
+.contactUsLayout {
+  padding-top: 5rem;
+  padding-bottom: 3.75rem;
 }
 
-.featureCardImg {
-  width: 5rem;
-  height: 5rem;
+.contactUsLayout .titleStyles {
+  padding-bottom: 2rem;
+  visibility: visible;
+}
+
+.contactUsLayout .btnStyles {
+  padding-top: 2.625rem;
+  visibility: visible;
 }
 
 /* Media queries starts here */
@@ -21,7 +24,7 @@
 @media only screen and (min-width: 600px) {
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+@media only screen and (min-width: 768px) {
 }
 
 @media only screen and (min-width: 992px) {
