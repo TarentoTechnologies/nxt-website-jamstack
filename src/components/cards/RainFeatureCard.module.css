@@ -1,0 +1,15 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.headingStyles{
+    margin: 2rem 0;
+    line-height: 1.1;
+}
+
+.subTextStyles{
+    line-height: 1.5;
+}
+
+.imgStyles{
+    margin-top: 3rem;
+}

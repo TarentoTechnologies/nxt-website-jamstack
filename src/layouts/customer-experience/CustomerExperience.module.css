@@ -1,4 +1,4 @@
-@import url("../../styles/global/colors.css");
+@import url("../../styles/global//colors.css");
 @import url("../../styles/global/global.css");
 
 .bannerStyles {
@@ -6,14 +6,27 @@
   overflow: hidden;
 }
 
-.subtextStyles {
-  /* color: rgba(255, 255, 255, 0.7); */
+.subtextStyles :global {
+  color: rgba(255, 255, 255, 0.7);
   margin-left: 0;
   /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
   /* opacity: 0; */
 }
+.contactUsLayout {
+  padding-top: 5rem;
+  padding-bottom: 3.75rem;
+}
 
+.contactUsLayout .titleStyles {
+  padding-bottom: 2rem;
+  visibility: visible;
+}
+
+.contactUsLayout .btnStyles {
+  padding-top: 2.625rem;
+  visibility: visible;
+}
 .border {
   width: 3.5rem;
   height: 1.125rem;
@@ -21,37 +34,38 @@
   background: #f96a00;
   display: -webkit-box;
   margin: 1.875rem 0 1.25rem 0;
-  /* animation: fadeInUp 1s ease 0.9s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .titleStyles {
   color: #fff;
   line-height: 1.1 !important;
-  /* animation: fadeInUp 1s ease 0.3s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .imgStyles {
-  /* animation: fadeIn 1s ease 1s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
-.logoStyles {
-  margin-top: -6.75rem;
-  margin-bottom: 1.25rem;
+.layout {
+  padding: 5rem 0;
 }
-
-.boldSubtext {
-  font-size: 1.125rem !important;
-  font-weight: 400 !important;
-  /* opacity: 87%; */
-}
-
 /* Media queries starts here */
+
+.listMoveLeft {
+  margin-left: 6em;
+  margin-bottom: 3em;
+}
+.liStyle {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+.moveLeftOne {
+  margin-left: 10%;
+}
+.w40 {
+  width: 40%;
+}
 
 @media only screen and (max-width: 600px) {
   .bannerStyles {
@@ -66,7 +80,7 @@
     padding: 1.25rem 0;
   }
   .titleStyles {
-    font-size: 32px !important;
+    font-size: 2rem !important;
   }
 }
 
@@ -83,7 +97,7 @@
     padding: 1.25rem 1rem 1rem 0;
   }
   .titleStyles {
-    font-size: 32px !important;
+    font-size: 2rem !important;
   }
 }
 
@@ -123,6 +137,17 @@
   .imgStyles {
     max-height: 34.375rem;
     padding-left: 2rem;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .moveLeftOne {
+    margin-left: 0 !important;
+  }
+  .listMoveLeft {
+    margin-left: 1rem;
+  }
+  .w40 {
+    width: 100%;
   }
 }
 

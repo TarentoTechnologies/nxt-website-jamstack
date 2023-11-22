@@ -1,0 +1,12 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.cxCard {
+  height: 10.896638872805rem;
+  max-height: 10.896638872805rem;
+  background-color: #120033;
+  border-radius: 0.3735990470676rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
