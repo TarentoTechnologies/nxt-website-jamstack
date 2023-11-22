@@ -69,6 +69,7 @@ const RainPage: React.FC<PageProps> = () => {
         description="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform."
         withLogo={true}
         logo={rainLogo}
+        subTextBold={true}
       />
       <WorkingLayout
         title="How does RAIN work?"

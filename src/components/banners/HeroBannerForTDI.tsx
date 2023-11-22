@@ -6,6 +6,7 @@ import {
 } from "../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
+  boldSubtext,
   border,
   headerInfo,
   imgStyles,
@@ -25,6 +26,7 @@ interface HeroBannerForTDIProps {
   isImage?: boolean;
   mainTitle?: string;
   govTech?: boolean;
+  subTextBold?: boolean;
 }
 
 export const HeroBannerForTDI = ({
@@ -38,6 +40,7 @@ export const HeroBannerForTDI = ({
   logo,
   mainTitle,
   govTech,
+  subTextBold,
 }: HeroBannerForTDIProps) => {
   const image: any = getImage(img);
 
@@ -112,7 +115,9 @@ export const HeroBannerForTDI = ({
                 </div>
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
-                  <p>{subText}</p>
+                  <p className={`${subTextBold ? boldSubtext : ""}`}>
+                    {subText}
+                  </p>
                   <p>{description}</p>
                 </div>
               </div>
