@@ -47,7 +47,9 @@ export const HeroBannerForTDI = ({
         <div
           className={`container-fluid ${bannerStyles} d-flex justify-content-center`}
         >
-          <div className={`row d-flex containerService paddingLeftRight15 justify-content-between`}>
+          <div
+            className={`row d-flex containerService paddingLeftRight15 justify-content-between`}
+          >
             <div
               className={`col-sm-12 col-md-5 d-flex flex-column justify-content-center px-md-0`}
             >
@@ -87,15 +89,27 @@ export const HeroBannerForTDI = ({
               className={`col-sm-12 col-md-6 d-flex flex-column justify-content-center px-md-0`}
             >
               <div className={`${headerInfo}`}>
+                {withLogo && (
+                  <div className={`${logoStyles}`}>
+                    <img
+                      src={logo}
+                      alt={imgAltText}
+                      title={imgAltText}
+                      width="217"
+                      height="71"
+                      className={`img-fluid`}
+                    />
+                  </div>
+                )}
                 <div className={`${cardHeader} ${titleStyles}`}>
-              {mainTitle && (
-                <b>
-                  {mainTitle}
-                  <br />
-                </b>
-              )}
-              {title}
-            </div>
+                  {mainTitle && (
+                    <b>
+                      {mainTitle}
+                      <br />
+                    </b>
+                  )}
+                  {title}
+                </div>
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
                   <p>{subText}</p>

@@ -21,16 +21,6 @@ import {
 } from "../layouts/rain";
 
 const RainPage: React.FC<PageProps> = () => {
-  const heroBannerData = {
-    title: "Realtime analytics and insights",
-    img: rainHero,
-    subText: "Supercharge your business with the power of Data.",
-    description:
-      "Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.",
-    withLogo: true,
-    logo: rainLogo,
-  };
-
   const footerData = {
     nxtLogoImg: NXTlogo,
     nxtLogoImgTitle: "NXT-logo",
@@ -72,7 +62,14 @@ const RainPage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
-      <HeroBannerForTDI data={heroBannerData} />
+      <HeroBannerForTDI
+        title="Realtime analytics and insights"
+        img={rainHero}
+        subText="Supercharge your business with the power of Data."
+        description="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform."
+        withLogo={true}
+        logo={rainLogo}
+      />
       <WorkingLayout
         title="How does RAIN work?"
         desc="Collect data from diverse sources, process and visualize. Make
