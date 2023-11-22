@@ -1,0 +1,154 @@
+@import url("../../styles/global//colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerStyles {
+  background: #120033;
+  overflow: hidden;
+}
+
+.subtextStyles :global {
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 0;
+  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+.contactUsLayout {
+  padding-top: 5rem;
+  padding-bottom: 3.75rem;
+}
+
+.contactUsLayout .titleStyles {
+  padding-bottom: 2rem;
+  visibility: visible;
+}
+
+.contactUsLayout .btnStyles {
+  padding-top: 2.625rem;
+  visibility: visible;
+}
+.border {
+  width: 3.5rem;
+  height: 1.125rem;
+  border-radius: 1.875rem;
+  background: #f96a00;
+  display: -webkit-box;
+  margin: 1.875rem 0 1.25rem 0;
+  visibility: visible;
+}
+
+.titleStyles {
+  color: #fff;
+  line-height: 1.1 !important;
+  visibility: visible;
+}
+
+.imgStyles {
+  visibility: visible;
+}
+
+.layout {
+  padding: 5rem 0;
+}
+/* Media queries starts here */
+
+.listMoveLeft {
+  margin-left: 6em;
+  margin-bottom: 3em;
+}
+.liStyle {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+.moveLeftOne {
+  margin-left: 10%;
+}
+.w40 {
+  width: 40%;
+}
+
+@media only screen and (max-width: 600px) {
+  .bannerStyles {
+    min-height: 48rem;
+    padding: 6.25rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+  .headerInfo {
+    padding: 1.25rem 0;
+  }
+  .titleStyles {
+    font-size: 2rem !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .bannerStyles {
+    min-height: 48rem;
+    padding: 6.25rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+  .headerInfo {
+    padding: 1.25rem 1rem 1rem 0;
+  }
+  .titleStyles {
+    font-size: 2rem !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bannerStyles {
+    max-height: 48rem;
+    padding: 5rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+  .headerInfo {
+    padding: 3.75rem 1rem 1rem 0;
+  }
+  .titleStyles {
+    font-size: 48px !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .bannerStyles {
+    max-height: 48rem;
+    padding: 5rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .bannerStyles {
+    max-height: 48rem;
+    padding: 5rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding-left: 2rem;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .moveLeftOne {
+    margin-left: 0 !important;
+  }
+  .listMoveLeft {
+    margin-left: 1rem;
+  }
+  .w40 {
+    width: 100%;
+  }
+}
+
+/* Media queries ends here */

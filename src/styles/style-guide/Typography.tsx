@@ -1,5 +1,6 @@
 import {
   acceleratorTitle,
+  cXHeading,
   cardHeader,
   caseStudyTitle,
   cta1,
@@ -64,6 +65,8 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>h4subTitle</td>
+          </tr>
+          <tr>
             <th scope="row" className={acceleratorTitle}>
               Tellus in hac habitasse platea
             </th>
@@ -74,6 +77,8 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>h3Title</td>
+          </tr>
+          <tr>
             <th scope="row" className={tagLabel}>
               Tellus in hac habitasse platea
             </th>
@@ -126,6 +131,12 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>useCasesSubTitle</td>
+          </tr>
+          <tr>
+            <th scope="row" className={cXHeading}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>cXHeading</td>
           </tr>
         </tbody>
       </table>
