@@ -22,12 +22,12 @@ export const CustomerExpCard = ({
     return (
       <a href={link != null ? link : ""} target="_blank" rel="noreferrer">
         <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1">
-        <div className="wow fadeInUp  animated">
+        <div className="">
           <div className={cxCard}>
             <img className="centerImg" src={logo} alt={title} />
           </div>
         </div>
-        <div className="spaceTwo wow fadeInUp  animated">
+        <div className="">
           <div className={`${cardHeader} mt-4`}>{title}</div>
         </div>
         <div className="mt-4 mb-4">
@@ -39,7 +39,7 @@ export const CustomerExpCard = ({
   } else {
     return (
       <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1">
-        <div className="wow fadeInUp  animated">
+        <div className="">
           <div className={cxCard}>
             <img className="centerImg" src={logo} alt={title} />
           </div>

@@ -27,7 +27,7 @@ export const OtherSolution = ({
           {list?.map((item, index) => (
             <div key={index} className={`col-sm-6 col-lg-4 mb-3`}>
               <ProductCard
-               bgImg={item.bgImg}
+                bgImg={item.bgImg}
                 logo={item.logo}
                 isSecondary={false}
                 title={item.title}
