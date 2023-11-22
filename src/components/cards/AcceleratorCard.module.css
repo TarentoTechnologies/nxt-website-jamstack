@@ -34,13 +34,15 @@
   object-fit: cover;
   color: #ffffff;
 }
+
 .cardSize {
   /* width: 23.1875em; */
-  height: 20.3125em;
-  border-radius: 0.5em;
+  height: 20.236615049495rem;
+  border-radius: 0.4981320627568rem;
   padding: 2rem;
   position: relative;
 }
+
 .cardHover {
   background-color: #ffffff;
 }
@@ -57,6 +59,10 @@
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
+  .cardSize {
+    width: 22.236615049495rem;
+    height: 20.236615049495rem;
+  }
 }
 
 @media only screen and (min-width: 600px) {

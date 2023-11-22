@@ -35,7 +35,7 @@ export const AcceleratorCard = ({
 
   return (
     <div
-      className="col-xs-12 col-sm-4 col-md-4 col-lg-4 mb-4"
+      className="col-xs-12 col-sm-12 col-md-4 col-lg-4 mb-4"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

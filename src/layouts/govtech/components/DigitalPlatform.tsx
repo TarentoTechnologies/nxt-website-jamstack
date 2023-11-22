@@ -2,7 +2,7 @@ import { AcceleratorCard } from "../../../components/cards/AcceleratorCard";
 import {
   revolutionHeading
 } from "../../../styles/style-guide/Typography.module.css";
-import { contactUsLayout } from "../Govtech.module.css";
+import { layout } from "../../customer-experience/CustomerExperience.module.css";
 
 interface DigitalPlatformProps {
   heading: string;
@@ -23,16 +23,15 @@ export const DigitalPlatform = ({
 }: DigitalPlatformProps) => {
   return (
     <div
-      className={`container-fluid d-flex justify-content-center layoutBg ${contactUsLayout}`}
+      className={`${layout} d-flex justify-content-center`}
     >
-      <div className={`row containerService paddingLeftRight15`}>
+      <div className={`row containerService paddingLeftRight15 p-0 m-0`}>
         <div className={`col-lg-12`}>
-          <div className={revolutionHeading}>{heading}</div>
+          <h1 className={revolutionHeading}><b>{heading}</b></h1>
           <p className="mt-4 mb-4">{desc}</p>
         </div>
         {list?.map((item, index) => (
           <>
-            {" "}
             <AcceleratorCard
               bgImg={item.bgImg}
               title={item.title}
