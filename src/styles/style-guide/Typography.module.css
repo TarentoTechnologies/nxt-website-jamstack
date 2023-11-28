@@ -139,6 +139,12 @@ h3 {
   font-family: "RobotoSlab-Bold", serif;
 }
 
+.pricingHeroTitle {
+  font-family: "RobotoSlab-Bold", serif;
+  font-size: 2.625rem;
+  line-height: 1.1;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
