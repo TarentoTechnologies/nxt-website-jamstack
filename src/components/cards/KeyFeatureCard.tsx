@@ -1,12 +1,14 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import {
   bgCadiumOrange,
-  bgPeacockGreen,
-  bgSpectrumViolet,
-  bgScarletRed,
   bgCeruleanBlue,
   bgItalianBlue,
+  bgPeacockGreen,
+  bgScarletRed,
+  bgSpectrumViolet,
 } from "../../styles/style-guide/ColorGuide.module.css";
-import { cardStyles, imgStyles } from "./KeyFeatureCard.module.css";
+import { cardStyles, iconSize, imgStyles } from "./KeyFeatureCard.module.css";
 
 interface KeyFeatureCardProps {
   title: string;
@@ -40,13 +42,19 @@ export const KeyFeatureCard = ({
     }
   };
   const bgColour = getBgColor();
+  const image: any = getImage(logo?.localFile);
+
   return (
     <div
       className={`container-fluid col-sm-12 col-md-6 col-lg-4 ${cardStyles} ${bgColour}`}
       onClick={clickHandler}
     >
       <div className={`${imgStyles}`}>
-        <img src={logo} alt={title} title={title} height="70px" width="70px" />
+        <GatsbyImage
+          image={image}
+          alt={logo?.alternativeText ? logo?.alternativeText : ""}
+          className={`img-fluid ${iconSize}`}
+        />
       </div>
       <p>{title}</p>
     </div>

@@ -353,7 +353,12 @@ const TechnologyPage: React.FC<PageProps> = ({ data }: TechnologyPageProps) => {
         isImage={data[currentLang]?.HeroBanner?.isImage}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
-      <TechPrinciplesLayout data={techPrinciplesData} />
+      <TechPrinciplesLayout
+        primaryTitle={data[currentLang]?.PrincipleTitle}
+        description={data[currentLang]?.PrincipleDescription}
+        principleData={data[currentLang]?.PrincipleStackItem}
+        subTitle={data[currentLang]?.PrincipleSubText}
+      />
       <StoryBanner data={techStoryBannerData} />
       <TechStackLayout data={techStackData} />
       <AcceleratorsLayout data={acceleratorsLayoutData} />
@@ -385,6 +390,24 @@ export const query = graphql`
             }
             url
           }
+        }
+      }
+      PrincipleTitle
+      PrincipleDescription
+      PrincipleSubText
+      PrincipleStackItem {
+        id
+        Title
+        BackgroundColor
+        Image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+          alternativeText
+          caption
+          id
         }
       }
     }
