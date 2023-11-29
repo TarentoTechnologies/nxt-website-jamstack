@@ -1,5 +1,6 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import bannerImg4 from "../../static/images/deliver.png";
@@ -10,21 +11,19 @@ import discoverImg from "../../static/images/discover-img.svg";
 import bannerImg1 from "../../static/images/discover.png";
 import ideateImg from "../../static/images/ideate-img.svg";
 import bannerImg2 from "../../static/images/ideate.png";
-import designHero from "../../static/images/invoation-img.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
 import { DesignProcessBannerLayout } from "../layouts/design/components/DesignProcessBannerLayout";
 import { DesignProcessLayout } from "../layouts/design/components/DesignProcessLayout";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const DesignPage: React.FC<PageProps> = () => {
-  const heroBannerData = {
-    title: "Design can be simple. That's why it is so complicated",
-    img: designHero,
-    subtext: "Words by one of the greatest graphic designers, Paul Rand.",
-    description:
-      "Conviction in our design process helps us come up with simple and delightful experiences.",
-  };
+interface DesignPageProps {
+  data: any;
+}
+
+const DesignPage: React.FC<PageProps> = ({ data }: DesignPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
 
   const designProcessData = {
     heading: "Our design process",
@@ -138,10 +137,12 @@ const DesignPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBannerForTDI
-        title={heroBannerData.title}
-        img={heroBannerData.img}
-        description={heroBannerData.description}
-        subText={heroBannerData.subtext}
+        id={data[currentLang]?.HeroBanner?.id}
+        description={data[currentLang]?.HeroBanner?.Description}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
+        title={data[currentLang]?.HeroBanner?.Title}
+        isImage={data[currentLang]?.HeroBanner?.isImage}
+        withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
       <DesignProcessLayout data={designProcessData} />
       <DesignProcessBannerLayout data={designProcessBannerData} />
@@ -149,6 +150,35 @@ const DesignPage: React.FC<PageProps> = () => {
     </main>
   );
 };
+
+export const query = graphql`
+  query DesignPage {
+    en: strapiDesign(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        withLogo
+        isImage
+        Title
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Img {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+            url
+          }
+        }
+      }
+    }
+  }
+`;
+
 
 export default DesignPage;
 

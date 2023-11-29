@@ -1,6 +1,10 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ReactHtmlParser from "react-html-parser";
 
-import { white87, white70 } from "../../styles/style-guide/ColorGuide.module.css";
+import {
+  white70,
+  white87,
+} from "../../styles/style-guide/ColorGuide.module.css";
 import {
   cardHeader,
   h1One,
@@ -17,11 +21,12 @@ import {
 } from "./HeroBannerForTDI.module.css";
 
 interface HeroBannerForTDIProps {
+  id?: any;
   title: string;
   img: any;
   imgAltText?: string;
   subText?: string;
-  description: string;
+  description: any;
   withLogo?: boolean;
   logo?: any;
   isImage?: boolean;
@@ -31,6 +36,7 @@ interface HeroBannerForTDIProps {
 }
 
 export const HeroBannerForTDI = ({
+  id,
   title,
   img,
   imgAltText,
@@ -50,6 +56,7 @@ export const HeroBannerForTDI = ({
       {govTech == true ? (
         <div
           className={`container-fluid ${bannerStyles} d-flex justify-content-center`}
+          id={id}
         >
           <div
             className={`row d-flex containerService paddingLeftRight15 justify-content-between`}
@@ -62,17 +69,25 @@ export const HeroBannerForTDI = ({
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
                   <p className={`${white87}`}>{subText}</p>
-                  <p className={`${white70}`}>{description}</p>
+                  <p className={`${white70}`}>
+                    {ReactHtmlParser(
+                      description.data?.childMarkdownRemark?.html
+                    )}
+                  </p>
                 </div>
               </div>
             </div>
-            <div className={`col-sm-12 col-md-6 d-flex align-items-center`}>
+            <div
+              className={`col-sm-12 col-md-6 d-flex align-items-center justify-content-end`}
+            >
               {isImage ? (
-                <GatsbyImage
-                  image={image}
-                  alt={imgAltText ? imgAltText : ""}
-                  className={`${imgStyles} img-fluid`}
-                />
+                <div className="col-sm-12 col-md-10">
+                  <GatsbyImage
+                    image={image}
+                    alt={imgAltText ? imgAltText : ""}
+                    className={`img-fluid`}
+                  />
+                </div>
               ) : (
                 <img
                   className={`${imgStyles} img-fluid`}
@@ -87,6 +102,7 @@ export const HeroBannerForTDI = ({
       ) : (
         <div
           className={`container-fluid ${bannerStyles} d-flex justify-content-center`}
+          id={id}
         >
           <div className={`row containerService paddingLeftRight15`}>
             <div
@@ -119,17 +135,25 @@ export const HeroBannerForTDI = ({
                   <p className={`${white87} ${subTextBold ? boldSubtext : ""}`}>
                     {subText}
                   </p>
-                  <p className={`${white70}`}>{description}</p>
+                  <p className={`${white70}`}>
+                    {ReactHtmlParser(
+                      description.data?.childMarkdownRemark?.html
+                    )}
+                  </p>
                 </div>
               </div>
             </div>
-            <div className={`col-sm-12 col-md-6 d-flex align-items-center`}>
+            <div
+              className={`col-sm-12 col-md-6 d-flex align-items-center justify-content-end`}
+            >
               {isImage ? (
-                <GatsbyImage
-                  image={image}
-                  alt={imgAltText ? imgAltText : ""}
-                  className={`${imgStyles} img-fluid`}
-                />
+                <div className="col-sm-12 col-md-10">
+                  <GatsbyImage
+                    image={image}
+                    alt={imgAltText ? imgAltText : ""}
+                    className={`img-fluid`}
+                  />
+                </div>
               ) : (
                 <img
                   className={`${imgStyles} img-fluid`}

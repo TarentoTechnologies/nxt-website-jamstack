@@ -1,5 +1,6 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import boltImg from "../../static/images/bolt_thumb.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
@@ -58,16 +59,14 @@ import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayou
 import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
 import { TechPrinciplesLayout } from "../layouts/tech/components/TechPrinciplesLayout";
 import { TechStackLayout } from "../layouts/tech/components/TechStackLayout";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const TechnologyPage: React.FC<PageProps> = () => {
-  const heroBannerData = {
-    title:
-      "Technology, like art, is a soaring exercise of the human imagination",
-    img: techHero,
-    subtext: "Words by one of the greatest sociologists - Daniel Bell",
-    description:
-      "Technology is akin to language in the world of contributing ideas.It's a key arsenal for innovation.",
-  };
+interface TechnologyPageProps {
+  data: any;
+}
+
+const TechnologyPage: React.FC<PageProps> = ({ data }: TechnologyPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
 
   const techPrinciplesData = {
     heading: "Our Technology Principles",
@@ -347,9 +346,12 @@ const TechnologyPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBannerForTDI
-        description={heroBannerData.description}
-        img={heroBannerData.img}
-        title={heroBannerData.title}
+        id={data[currentLang]?.HeroBanner?.id}
+        description={data[currentLang]?.HeroBanner?.Description}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile}
+        title={data[currentLang]?.HeroBanner?.Title}
+        isImage={data[currentLang]?.HeroBanner?.isImage}
+        withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
       <TechPrinciplesLayout data={techPrinciplesData} />
       <StoryBanner data={techStoryBannerData} />
@@ -360,6 +362,34 @@ const TechnologyPage: React.FC<PageProps> = () => {
     </main>
   );
 };
+
+export const query = graphql`
+  query TechnologyPage {
+    en: strapiTechnology(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        withLogo
+        isImage
+        Title
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Img {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+            url
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default TechnologyPage;
 

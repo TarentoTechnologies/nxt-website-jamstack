@@ -1,11 +1,11 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil"
 
 import boltImg from "../../static/images/bolt_thumb.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
 import leadBgImg from "../../static/images/innovation/Bitmap.jpg";
 import forgingInnovation from "../../static/images/innovation/forging_innovation.svg";
-import innovationHero from "../../static/images/innovation/innovation_hero.svg";
 import leadImg from "../../static/images/innovation/lead.svg";
 import innoStoryImg from "../../static/images/innovation/map.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
@@ -18,15 +18,14 @@ import { Footer } from "../components/footer/Footer";
 import { ForgingInnovationLayout } from "../layouts/innovation/components/ForgingInnovationLayout";
 import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
 import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const InnovationPage: React.FC<PageProps> = () => {
-  const heroBannerData = {
-    title: "Art of seeing what is invisible to others",
-    img: innovationHero,
-    subtext: "NXT is all about innovation. Swimming downstream is no fun.",
-    description:
-      "Conforming to present is not our cup of tea. we love to challenge the future and keep innovation.",
-  };
+interface InnovationPageProps {
+  data: any;
+}
+
+const InnovationPage: React.FC<PageProps> = ({data}: InnovationPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
 
   const forgingInnovationData = {
     heading: "Forging Innovation",
@@ -167,9 +166,12 @@ const InnovationPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBannerForTDI
-        description={heroBannerData.description}
-        img={heroBannerData.img}
-        title={heroBannerData.title}
+        id={data[currentLang]?.HeroBanner?.id}
+        description={data[currentLang]?.HeroBanner?.Description}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
+        title={data[currentLang]?.HeroBanner?.Title}
+        isImage={data[currentLang]?.HeroBanner?.isImage}
+        withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
       <ForgingInnovationLayout data={forgingInnovationData} />
       <StoryBanner data={innovationStoryBannerData} />
@@ -180,6 +182,34 @@ const InnovationPage: React.FC<PageProps> = () => {
     </main>
   );
 };
+
+export const query = graphql`
+  query InnovationPage {
+    en: strapiInnovation(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        withLogo
+        isImage
+        Title
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Img {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+            url
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default InnovationPage;
 
