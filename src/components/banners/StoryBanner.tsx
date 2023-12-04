@@ -1,93 +1,123 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ReactHtmlParser from "react-html-parser";
+
+import { carbon } from "../../styles/style-guide/ColorGuide.module.css";
 import { PrimaryCTA } from "../buttons/PrimaryCTA";
 import { PrimaryTitle } from "../titles/PrimaryTitle";
 import {
   bannerStyles,
-  titleStyles,
-  subTitleStyles,
-  imgStyles,
-  techSolution,
-  subFont,
-  whiteBox,
-  innovationStory,
   buttonStyles,
+  customH3,
+  imgStyles,
+  innovationStory,
+  subFont,
+  subTitleStyles,
+  techSolution,
+  titleStyles,
+  whiteBox,
 } from "./StoryBanner.module.css";
 
 interface StoryBannerProps {
-  data: {
-    title: string;
-    subTitle?: string;
-    bgImg?: any;
-    image?: any;
-    subText: {
-      LevelOneHeading?: string;
-      LevelTwoHeading?: string;
-      LevelOneDesc?: string;
-      LevelTwoDesc?: string;
-      LevelThreeDesc?: string;
-    };
-    variant?: string;
-    withCTA?: boolean;
-    CTAlabel?: string;
-    CTAlink?: any;
-  };
+  primaryTitle: string;
+  cardData: any;
+  subTitle?: string;
+  bgImg?: any;
+  // image?: any;
+  // // subText: {
+  // //   LevelOneHeading?: string;
+  // //   LevelTwoHeading?: string;
+  // //   LevelOneDesc?: string;
+  // //   LevelTwoDesc?: string;
+  // //   LevelThreeDesc?: string;
+  // // };
+  variant?: string;
+  withCTA?: boolean;
+  // CTAlabel?: string;
+  // CTAlink?: any;
 }
 
-export const StoryBanner = ({ data }: StoryBannerProps) => {
-  const col1 = data?.variant === "tech" ? "col-lg-6" : "col-lg-5";
-  const col2 = data?.variant === "tech" ? "col-lg-6" : "col-lg-7";
+export const StoryBanner = ({
+  primaryTitle,
+  cardData,
+  variant,
+  bgImg,
+  subTitle,
+  withCTA,
+}: StoryBannerProps) => {
+  const col1 = variant === "tech" ? "col-lg-6" : "col-lg-5";
+  const col2 = variant === "tech" ? "col-lg-6" : "col-lg-7";
+  const image: any = getImage(cardData?.Image?.localFile);
 
   return (
     <div
       className={`container-fluid ${bannerStyles} d-flex justify-content-center`}
       style={
-        data?.variant === "lead"
+        variant === "lead"
           ? {
-              backgroundImage: `url(${data?.bgImg})`,
+              backgroundImage: `url(${bgImg})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
             }
           : {}
       }
+      id={cardData?.id}
     >
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-12 ${titleStyles} px-lg-0`}>
           <PrimaryTitle
-            title={data?.title}
+            title={primaryTitle}
             variant="infoSectionH2"
             color="white"
           />
-          <h3 className={`${subTitleStyles}`}>{data?.subTitle}</h3>
+          <h3 className={`${subTitleStyles}`}>{subTitle}</h3>
         </div>
         <div
           className={`${col1} ${imgStyles} d-flex justify-content-center align-items-center`}
         >
-          <img
-            src={data?.image}
-            alt={data?.title}
-            title={data?.title}
+          <GatsbyImage
+            image={image}
+            alt={
+              cardData?.Image?.alternativeText
+                ? cardData?.Image?.alternativeText
+                : ""
+            }
             className={`img-fluid`}
           />
+          {/* <img
+            src={image}
+            alt={""}
+            title={""}
+            className={`img-fluid`}
+          /> */}
         </div>
         <div
           className={`${col2} d-flex justify-content-center align-items-center`}
         >
           <div
-            className={`${whiteBox} 
-            ${data?.variant === "tech" ? techSolution : ""}
-            ${data?.variant === "innovation" ? innovationStory : ""}`}
+            className={`${whiteBox} ${carbon} p-5
+            ${variant === "tech" ? techSolution : ""}
+            ${variant === "innovation" ? innovationStory : ""}`}
           >
-            <h3>{data?.subText?.LevelOneHeading}</h3>
+            <h3 className={`${customH3} customMaringBtm1 pt-4 pb-3`}>
+              {cardData?.PrimaryTitle}
+            </h3>
+            {/* <div className={`${subFont}`}>{cardData?.PrimaryTitle}</div> */}
+            <div className="pb-4">
+              {ReactHtmlParser(
+                cardData?.Description.data.childMarkdownRemark.html
+              )}
+            </div>
+            {/* <h3>{data?.subText?.LevelOneHeading}</h3>
             <div className={`${subFont}`}>{data?.subText?.LevelTwoHeading}</div>
             <p>{data?.subText?.LevelOneDesc}</p>
             <p>{data?.subText?.LevelTwoDesc}</p>
-            <p>{data?.subText?.LevelThreeDesc}</p>
-            {data?.withCTA && (
-              <div
-                className={`${data?.variant === "lead" ? buttonStyles : ""}`}
-              >
+            <p>{data?.subText?.LevelThreeDesc}</p> */}
+            {withCTA && (
+              <div className={`${variant === "lead" ? buttonStyles : ""}`}>
                 <PrimaryCTA
-                  label={data?.CTAlabel}
-                  btnLink={data?.CTAlink}
+                  label={cardData?.CTAText}
+                  btnLink={cardData?.CTALink}
+                  isMail={cardData?.isCTAEmail}
                   size="large"
                 />
               </div>

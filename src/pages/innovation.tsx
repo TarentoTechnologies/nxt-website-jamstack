@@ -174,8 +174,8 @@ const InnovationPage: React.FC<PageProps> = ({data}: InnovationPageProps) => {
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
       <ForgingInnovationLayout data={forgingInnovationData} />
-      <StoryBanner data={innovationStoryBannerData} />
-      <StoryBanner data={leadStoryBannerData} />
+      {/* <StoryBanner data={innovationStoryBannerData} />
+      <StoryBanner data={leadStoryBannerData} /> */}
       <AcceleratorsLayout data={acceleratorsLayoutData} />
       <ContactUsLayout data={contactUsData} />
       <Footer data={footerData} />

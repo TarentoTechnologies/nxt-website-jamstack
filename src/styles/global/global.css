@@ -81,6 +81,10 @@ a:hover {
   color: var(--white) !important;
 }
 
+.customMaringBtm1 {
+  margin-bottom: 1rem;
+}
+
 /* Swiper styles ends here */
 
 /* Media queries starts here */
