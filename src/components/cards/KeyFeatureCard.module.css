@@ -22,6 +22,11 @@
   margin-left: 2rem;
 }
 
+.iconSize {
+  width: 4.375rem;
+  height: 4.375rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

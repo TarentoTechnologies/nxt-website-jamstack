@@ -1,30 +1,40 @@
+import { black87, white } from "../../styles/style-guide/ColorGuide.module.css";
 import {
+  acceleratorTitle,
+  cardHeader,
   h1One,
+  h3600,
+  heroTitle,
   infoSectionH2,
   infoSectionH3,
-  cardHeader,
-  heroTitle,
-  acceleratorTitle,
+  h1700
 } from "../../styles/style-guide/Typography.module.css";
-
-import { white, black87 } from "../../styles/style-guide/ColorGuide.module.css";
 
 interface PrimaryTitleProps {
   title: string;
   variant?: string;
   color?: string;
+  customClasses?: any;
 }
 
-export const PrimaryTitle = ({ title, variant, color }: PrimaryTitleProps) => {
+export const PrimaryTitle = ({
+  title,
+  variant,
+  color,
+  customClasses,
+}: PrimaryTitleProps) => {
   return (
     <div
       className={`
+      ${customClasses}
         ${variant === "banner" ? h1One : ""}
         ${variant === "heroTitle" ? heroTitle : ""}
         ${variant === "infoSectionH2" ? infoSectionH2 : ""}
         ${variant === "infoSectionH3" ? infoSectionH3 : ""}
         ${variant === "card" ? cardHeader : ""}
         ${variant === "accelerator" ? acceleratorTitle : ""}
+        ${variant === "h3600" ? h3600 : ""}
+        ${variant === "h1700" ? h1700 : ""}
         ${color === "white" ? white : black87}`}
     >
       {title}

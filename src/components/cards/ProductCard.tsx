@@ -1,12 +1,12 @@
 import { Link } from "gatsby";
-import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 
+import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import {
+  logoStyles,
   proCard,
   proCardSecondary,
-  titleStyles,
-  logoStyles,
   secondaryFontsize,
+  titleStyles,
 } from "./ProductCard.module.css";
 
 interface ProductCardProps {
@@ -45,7 +45,12 @@ export const ProductCard = ({
             <span>{title}</span>
           </div>
           <div className={`${logoStyles}`}>
-            <img src={isSecondary ? secLogo : logo} alt={title} title={title} />
+            <img
+              src={isSecondary ? secLogo : logo}
+              alt={title}
+              title={title}
+              width={80}
+            />
           </div>
         </div>
       </a>
@@ -66,7 +71,12 @@ export const ProductCard = ({
           <span>{title}</span>
         </div>
         <div className={`${logoStyles}`}>
-          <img src={isSecondary ? secLogo : logo} alt={title} title={title} />
+          <img
+            src={isSecondary ? secLogo : logo}
+            alt={title}
+            title={title}
+            width={80}
+          />
         </div>
       </div>
     );

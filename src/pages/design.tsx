@@ -1,5 +1,6 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import bannerImg4 from "../../static/images/deliver.png";
@@ -10,91 +11,19 @@ import discoverImg from "../../static/images/discover-img.svg";
 import bannerImg1 from "../../static/images/discover.png";
 import ideateImg from "../../static/images/ideate-img.svg";
 import bannerImg2 from "../../static/images/ideate.png";
-import designHero from "../../static/images/invoation-img.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
 import { DesignProcessBannerLayout } from "../layouts/design/components/DesignProcessBannerLayout";
 import { DesignProcessLayout } from "../layouts/design/components/DesignProcessLayout";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const DesignPage: React.FC<PageProps> = () => {
-  const heroBannerData = {
-    title: "Design can be simple. That's why it is so complicated",
-    img: designHero,
-    subtext: "Words by one of the greatest graphic designers, Paul Rand.",
-    description:
-      "Conviction in our design process helps us come up with simple and delightful experiences.",
-  };
+interface DesignPageProps {
+  data: any;
+}
 
-  const designProcessData = {
-    heading: "Our design process",
-    desc: "At Tarento, we believe in the power of design thinking. We follow a four step design process to shape and guide our work and thoughts to improve the outcome.",
-    cardData: [
-      {
-        title: "Discover",
-        icon: discoverImg,
-      },
-      {
-        title: "Ideate",
-        icon: ideateImg,
-      },
-      {
-        title: "Design",
-        icon: designImg,
-      },
-      {
-        title: "Deliver",
-        icon: deliverImg,
-      },
-    ],
-  };
-
-  const designProcessBannerData = [
-    {
-      heading: "Discover",
-      levelOneDesc:
-        "In the discovery stage, we work closely with the client to define our understanding of the problem.",
-      subHeading: "Primary and Secondary Research",
-      levelTwoDesc:
-        "To diverge and understand more about the problem area, we conduct user research and secondary research from any source available. We create personas to identify our users, map user journeys to find the pain points.",
-      img: bannerImg1,
-      bgGray: false,
-    },
-    {
-      heading: "Ideate",
-      levelOneDesc:
-        "Ideation stage usually involves a lot of sketching, sticky notes, jotting concepts and brainstorming. We use any method that helps us stay creative while ideating.",
-      subHeading: "Iterate Iterate Iterate",
-      levelTwoDesc:
-        "We like to make our hands dirty and express our concepts in the form of quick wires, sketches, information architecture etc. We constantly evaluate and evolve our concepts in this stage through iterations.",
-      img: bannerImg2,
-      bgGray: true,
-    },
-    {
-      heading: "Design",
-      levelOneDesc:
-        "This is the stage when our solution takes multiple forms and goes through evaluations and get finalized.",
-      subHeading: "Prototype- Test - Repeat",
-      levelTwoDesc:
-        "We create wireframes, paper prototypes, low fidelity digital prototypes and test them to crack the usability perspective.",
-      levelThreeDesc:
-        "Later, we make high fidelity prototypes and finalize the flow as well the visual style. The interactions and animations are also decided in this stage and are also shown in the prototype according to the nature of each project.",
-      img: bannerImg3,
-      bgGray: false,
-    },
-    {
-      heading: "Deliver",
-      levelOneDesc:
-        "Designer’s work is not done yet. We hand off our designs with the same passion we designed them with, making it easy for the developer to focus on his/her job.",
-      subHeading: "Working Handshake",
-      levelTwoDesc:
-        "We create wireframes, paper prototypes, low fidelity digital prototypes and test them to crack the usability perspective.",
-      levelThreeDesc:
-        "We deliver the pixel perfect visual designs, specifications , visual and experience style guide and an HTML prototype if it comes to that.",
-      img: bannerImg4,
-      bgGray: true,
-    },
-  ];
+const DesignPage: React.FC<PageProps> = ({ data }: DesignPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -138,17 +67,85 @@ const DesignPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBannerForTDI
-        title={heroBannerData.title}
-        img={heroBannerData.img}
-        description={heroBannerData.description}
-        subText={heroBannerData.subtext}
+        id={data[currentLang]?.HeroBanner?.id}
+        description={data[currentLang]?.HeroBanner?.Description}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
+        title={data[currentLang]?.HeroBanner?.Title}
+        isImage={data[currentLang]?.HeroBanner?.isImage}
+        withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
-      <DesignProcessLayout data={designProcessData} />
-      <DesignProcessBannerLayout data={designProcessBannerData} />
+      <DesignProcessLayout
+        heading={data[currentLang]?.ProcessTitle}
+        desc={data[currentLang]?.ProcessDescription}
+        cardData={data[currentLang]?.DesignProcess}
+      />
+      <DesignProcessBannerLayout data={data[currentLang]?.KeyInformation} />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query DesignPage {
+    en: strapiDesign(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        withLogo
+        isImage
+        Title
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Img {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+            url
+          }
+        }
+      }
+      DesignProcess {
+        Title
+        id
+        Image {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+      }
+      ProcessTitle
+      ProcessDescription
+      KeyInformation {
+        id
+        Title
+        DescriptionAlignment
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Image {
+          alternativeText
+          id
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default DesignPage;
 

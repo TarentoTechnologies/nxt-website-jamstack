@@ -6,31 +6,27 @@ import {
 } from "./HeroBanner.module.css";
 
 interface HeroBannerProps {
-  data: {
-    logoMain: any;
-    logoHead: any;
-    logoMainTitle?: string;
-    logoHeadTitle?: string;
-  };
+  data: any;
 }
 
 export const HeroBanner = ({ data }: HeroBannerProps) => {
+
   return (
     <div className={`container-fluid ${heroBannerStyles}`}>
       <div className={`${logoSection}`}>
         <div className={`${logoMainStyles}`}>
           <img
-            src={data.logoMain}
-            alt={data.logoMainTitle}
-            title={data.logoMainTitle}
+            src={data.PrimaryImage?.localFile?.url}
+            alt={data.PrimaryImage?.alternativeText}
+            title={data.PrimaryImage?.caption}
             className="img-fluid"
           />
         </div>
         <div className={`${logoHeadStyles}`}>
           <img
-            src={data.logoHead}
-            alt={data.logoHeadTitle}
-            title={data.logoHeadTitle}
+            src={data.SecondaryImage?.localFile?.url}
+            alt={data.SecondaryImage?.alternativeText}
+            title={data.SecondaryImage?.caption}
             className="img-fluid"
           />
         </div>

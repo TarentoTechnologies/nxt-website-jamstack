@@ -3,9 +3,7 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
-import headLogo from "../../static/images/logo-head.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
-import mainLogo from "../../static/images/logo-main.svg";
 import { HeroBanner } from "../components/banners/HeroBanner";
 import { PyramidBanner } from "../components/banners/PyramidBanner";
 import { Footer } from "../components/footer/Footer";
@@ -28,13 +26,6 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
 
   const currentDesignPortfolio = currentLang + "DesignPortfolios";
   const currentAgencyPortfolio = currentLang + "AgencyPortfolios";
-
-  const heroBannerData = {
-    logoMain: mainLogo,
-    logoHead: headLogo,
-    logoMainTitle: "NXT-main-logo",
-    logoHeadTitle: "NXT-head-logo",
-  };
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -77,7 +68,7 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
 
   return (
     <main className="">
-      <HeroBanner data={heroBannerData} />
+      <HeroBanner data={data[currentLang]?.HeroBanner} />
       <TriCardLayout data={data[currentLang]?.TriCards} />
       <PyramidBanner
         title={data[currentLang]?.PyramidTitle}
@@ -113,6 +104,24 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
 export const query = graphql`
   query HomePage {
     en: strapiHome(locale: { eq: "en" }) {
+      HeroBanner {
+        PrimaryImage {
+          alternativeText
+          caption
+          id
+          localFile {
+            url
+          }
+        }
+        SecondaryImage {
+          alternativeText
+          caption
+          id
+          localFile {
+            url
+          }
+        }
+      }
       TriCards {
         id
         Title
