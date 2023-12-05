@@ -14,6 +14,7 @@ interface HeroBannerForAcceleratorsProps {
     subText?: string;
     description?: string;
     logosrc?: string;
+    withLogo?: boolean;
   };
 }
 
@@ -26,15 +27,17 @@ export const HeroBannerForAccelerators = ({
         <div className="row microHeading justify-content-between align-items-center">
           <div className="col-lg-6 col-md-12">
             <div className="header-info">
-              <div className="wow fadeIn animated">
-                <img
-                  src={data.logosrc}
-                  width="217"
-                  height="71"
-                  alt={data.imgAltText}
-                  title={data.imgAltText}
-                />
-              </div>
+              {data.withLogo && (
+                <div className="wow fadeIn animated">
+                  <img
+                    src={data.logosrc}
+                    width="217"
+                    height="71"
+                    alt={data.imgAltText}
+                    title={data.imgAltText}
+                  />
+                </div>
+              )}
               <h1
                 className={`${acceleratorTitle} wow animated fadeInUp mt-4 mb-3`}
               >
