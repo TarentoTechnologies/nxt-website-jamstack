@@ -51,6 +51,30 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "technology",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
+    {
+      singularName: "design",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
+    {
+      singularName: "innovation",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
 };
 

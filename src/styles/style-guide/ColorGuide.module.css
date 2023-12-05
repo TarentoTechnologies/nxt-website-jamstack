@@ -379,3 +379,11 @@
 .lilacGray {
   color: var(--lilac-gray);
 }
+
+.bgNeutralGray3 {
+  background-color: var(--neutral-gray-3);
+}
+
+.neutralGray3 {
+  color: var(--neutral-gray-3);
+}

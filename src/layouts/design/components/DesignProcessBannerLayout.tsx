@@ -7,18 +7,17 @@ interface DesignProcessBannerLayoutProps {
 export const DesignProcessBannerLayout = ({
   data,
 }: DesignProcessBannerLayoutProps) => {
+
   return (
     <>
-      {data?.map((item, index) => (
+      {data?.map((item:any, index:number) => (
         <DesignProcessBanner
-          key={index}
-          heading={item?.heading}
-          subHeading={item?.subHeading}
-          levelOneDesc={item?.levelOneDesc}
-          levelTwoDesc={item?.levelTwoDesc}
-          levelThreeDesc={item?.levelThreeDesc}
-          img={item?.img}
-          bgGray={item?.bgGray}
+          key={item?.id}
+          heading={item?.Title}
+          description={item?.Description}
+          descriptionAlignment={item?.DescriptionAlignment}
+          image={item?.Image}
+          bgGray={index % 2 ? true : false}
         />
       ))}
     </>
