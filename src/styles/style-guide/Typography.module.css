@@ -146,6 +146,20 @@ h3 {
   line-height: 1.1;
 }
 
+.h3600 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 600;
+  line-height: 2.188rem;
+  font-size: 2rem;
+}
+
+.h4500 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 500;
+  line-height: 1.25rem;
+  font-size: 1.125rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

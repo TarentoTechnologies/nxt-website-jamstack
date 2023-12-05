@@ -52,6 +52,7 @@ html {
   --rhodamine-purple: #c42c90;
   --blue: #290175;
   --neutral-gray-2: #f5f5f5;
+  --neutral-gray-3: #f7f7f7;
   --lilac-gray: #bebebe;
 }
 
@@ -102,5 +103,6 @@ html[data-theme="dark"] {
   --rhodamine-purple: #c42c90;
   --blue: #290175;
   --neutral-gray-2: #f5f5f5;
+  --neutral-gray-3: #f7f7f7;
   --lilac-gray: #bebebe;
 }

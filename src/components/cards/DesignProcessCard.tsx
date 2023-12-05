@@ -1,4 +1,5 @@
-import { cardHeader } from "../../styles/style-guide/Typography.module.css";
+import { carbon } from "../../styles/style-guide/ColorGuide.module.css";
+import { h4500 } from "../../styles/style-guide/Typography.module.css";
 import {
   cardStyles,
   imgStyles,
@@ -16,7 +17,7 @@ export const DesignProcessCard = ({ title, icon }: DesignProcessCardProps) => {
       <div className={`${imgStyles}`}>
         <img src={icon} alt={title} title={title} className={`img-fluid`} />
       </div>
-      <h4 className={`${titleStyles} ${cardHeader}`}>{title}</h4>
+      <h4 className={`${titleStyles} ${h4500} ${carbon}`}>{title}</h4>
     </div>
   );
 };

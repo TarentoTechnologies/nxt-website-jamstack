@@ -25,76 +25,6 @@ interface DesignPageProps {
 const DesignPage: React.FC<PageProps> = ({ data }: DesignPageProps) => {
   const currentLang = useRecoilValue(langSelectedAtom);
 
-  const designProcessData = {
-    heading: "Our design process",
-    desc: "At Tarento, we believe in the power of design thinking. We follow a four step design process to shape and guide our work and thoughts to improve the outcome.",
-    cardData: [
-      {
-        title: "Discover",
-        icon: discoverImg,
-      },
-      {
-        title: "Ideate",
-        icon: ideateImg,
-      },
-      {
-        title: "Design",
-        icon: designImg,
-      },
-      {
-        title: "Deliver",
-        icon: deliverImg,
-      },
-    ],
-  };
-
-  const designProcessBannerData = [
-    {
-      heading: "Discover",
-      levelOneDesc:
-        "In the discovery stage, we work closely with the client to define our understanding of the problem.",
-      subHeading: "Primary and Secondary Research",
-      levelTwoDesc:
-        "To diverge and understand more about the problem area, we conduct user research and secondary research from any source available. We create personas to identify our users, map user journeys to find the pain points.",
-      img: bannerImg1,
-      bgGray: false,
-    },
-    {
-      heading: "Ideate",
-      levelOneDesc:
-        "Ideation stage usually involves a lot of sketching, sticky notes, jotting concepts and brainstorming. We use any method that helps us stay creative while ideating.",
-      subHeading: "Iterate Iterate Iterate",
-      levelTwoDesc:
-        "We like to make our hands dirty and express our concepts in the form of quick wires, sketches, information architecture etc. We constantly evaluate and evolve our concepts in this stage through iterations.",
-      img: bannerImg2,
-      bgGray: true,
-    },
-    {
-      heading: "Design",
-      levelOneDesc:
-        "This is the stage when our solution takes multiple forms and goes through evaluations and get finalized.",
-      subHeading: "Prototype- Test - Repeat",
-      levelTwoDesc:
-        "We create wireframes, paper prototypes, low fidelity digital prototypes and test them to crack the usability perspective.",
-      levelThreeDesc:
-        "Later, we make high fidelity prototypes and finalize the flow as well the visual style. The interactions and animations are also decided in this stage and are also shown in the prototype according to the nature of each project.",
-      img: bannerImg3,
-      bgGray: false,
-    },
-    {
-      heading: "Deliver",
-      levelOneDesc:
-        "Designer’s work is not done yet. We hand off our designs with the same passion we designed them with, making it easy for the developer to focus on his/her job.",
-      subHeading: "Working Handshake",
-      levelTwoDesc:
-        "We create wireframes, paper prototypes, low fidelity digital prototypes and test them to crack the usability perspective.",
-      levelThreeDesc:
-        "We deliver the pixel perfect visual designs, specifications , visual and experience style guide and an HTML prototype if it comes to that.",
-      img: bannerImg4,
-      bgGray: true,
-    },
-  ];
-
   const footerData = {
     nxtLogoImg: NXTlogo,
     nxtLogoImgTitle: "NXT-logo",
@@ -144,8 +74,12 @@ const DesignPage: React.FC<PageProps> = ({ data }: DesignPageProps) => {
         isImage={data[currentLang]?.HeroBanner?.isImage}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
-      <DesignProcessLayout data={designProcessData} />
-      <DesignProcessBannerLayout data={designProcessBannerData} />
+      <DesignProcessLayout
+        heading={data[currentLang]?.ProcessTitle}
+        desc={data[currentLang]?.ProcessDescription}
+        cardData={data[currentLang]?.DesignProcess}
+      />
+      <DesignProcessBannerLayout data={data[currentLang]?.KeyInformation} />
       <Footer data={footerData} />
     </main>
   );
@@ -175,10 +109,43 @@ export const query = graphql`
           }
         }
       }
+      DesignProcess {
+        Title
+        id
+        Image {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+      }
+      ProcessTitle
+      ProcessDescription
+      KeyInformation {
+        id
+        Title
+        DescriptionAlignment
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Image {
+          alternativeText
+          id
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
     }
   }
 `;
-
 
 export default DesignPage;
 

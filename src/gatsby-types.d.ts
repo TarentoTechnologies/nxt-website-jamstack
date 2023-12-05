@@ -2511,6 +2511,7 @@ type Query_strapiComponentTriCardTriCardArgs = {
 type Query_strapiDesignArgs = {
   DesignProcess: InputMaybe<STRAPI__COMPONENT_PRINCIPLE_STACK_PRINCIPLE_STACKFilterListInput>;
   HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterListInput>;
   ProcessDescription: InputMaybe<StringQueryOperatorInput>;
   ProcessTitle: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -3204,6 +3205,7 @@ type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODESortInput = {
 type STRAPI_DESIGN = Node & {
   readonly DesignProcess: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PRINCIPLE_STACK_PRINCIPLE_STACK>>>;
   readonly HeroBanner: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
+  readonly KeyInformation: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARD>>>;
   readonly ProcessDescription: Maybe<Scalars['String']>;
   readonly ProcessTitle: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
@@ -3289,6 +3291,7 @@ type STRAPI_DESIGNEdge = {
 type STRAPI_DESIGNFieldSelector = {
   readonly DesignProcess: InputMaybe<STRAPI__COMPONENT_PRINCIPLE_STACK_PRINCIPLE_STACKFieldSelector>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector>;
+  readonly KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFieldSelector>;
   readonly ProcessDescription: InputMaybe<FieldSelectorEnum>;
   readonly ProcessTitle: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
@@ -3305,6 +3308,7 @@ type STRAPI_DESIGNFieldSelector = {
 type STRAPI_DESIGNFilterInput = {
   readonly DesignProcess: InputMaybe<STRAPI__COMPONENT_PRINCIPLE_STACK_PRINCIPLE_STACKFilterListInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  readonly KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterListInput>;
   readonly ProcessDescription: InputMaybe<StringQueryOperatorInput>;
   readonly ProcessTitle: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
@@ -3362,6 +3366,7 @@ type STRAPI_DESIGNGroupConnection_sumArgs = {
 type STRAPI_DESIGNSortInput = {
   readonly DesignProcess: InputMaybe<STRAPI__COMPONENT_PRINCIPLE_STACK_PRINCIPLE_STACKSortInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput>;
+  readonly KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDSortInput>;
   readonly ProcessDescription: InputMaybe<SortOrderEnum>;
   readonly ProcessTitle: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
@@ -8601,7 +8606,7 @@ type AgencyPortfolioQuery = { readonly en: { readonly id: string, readonly Secti
 type DesignPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type DesignPageQuery = { readonly en: { readonly HeroBanner: { readonly id: string, readonly withLogo: boolean | null, readonly isImage: boolean | null, readonly Title: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Img: { readonly localFile: { readonly url: string | null, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null } | null };
+type DesignPageQuery = { readonly en: { readonly ProcessTitle: string | null, readonly ProcessDescription: string | null, readonly HeroBanner: { readonly id: string, readonly withLogo: boolean | null, readonly isImage: boolean | null, readonly Title: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Img: { readonly localFile: { readonly url: string | null, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly DesignProcess: ReadonlyArray<{ readonly Title: string | null, readonly id: string, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly KeyInformation: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Image: { readonly alternativeText: string | null, readonly id: string, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null } | null };
 
 type DesignPortfolioQueryVariables = Exact<{
   slug: Scalars['String'];

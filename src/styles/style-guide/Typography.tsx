@@ -18,6 +18,8 @@ import {
   tagLabel,
   tagLabel2,
   useCasesSubTitle,
+  h3600,
+  h4500
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -144,6 +146,18 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>cXHeading</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h3600}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h3600</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h4500}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h4500</td>
           </tr>
         </tbody>
       </table>
