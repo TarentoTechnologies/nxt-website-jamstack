@@ -7,6 +7,7 @@ import {
   heroTitle,
   infoSectionH2,
   infoSectionH3,
+  h1700
 } from "../../styles/style-guide/Typography.module.css";
 
 interface PrimaryTitleProps {
@@ -33,6 +34,7 @@ export const PrimaryTitle = ({
         ${variant === "card" ? cardHeader : ""}
         ${variant === "accelerator" ? acceleratorTitle : ""}
         ${variant === "h3600" ? h3600 : ""}
+        ${variant === "h1700" ? h1700 : ""}
         ${color === "white" ? white : black87}`}
     >
       {title}

@@ -1,51 +1,57 @@
 import { InnoTableCard } from "../../../components/cards/InnoTableCard";
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
+import { carbon } from "../../../styles/style-guide/ColorGuide.module.css";
 import {
-  forgingInnovation,
-  titleStyles,
-  descStyles,
-  imgStyles,
   cardStyles,
+  descStyles,
+  forgingInnovation,
+  imgStyles,
+  titleStyles,
 } from "../Innovation.module.css";
 
 interface ForgingInnovationLayoutProps {
-  data: {
-    heading: string;
-    desc: string;
-    img: string;
-    cardData: any[];
-  };
+  heading: string;
+  desc: string;
+  img: any;
+  cardData: any;
 }
 
 export const ForgingInnovationLayout = ({
-  data,
+  heading,
+  desc,
+  img,
+  cardData,
 }: ForgingInnovationLayoutProps) => {
   return (
     <div className={`d-flex justify-content-center ${forgingInnovation}`}>
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-12 ${titleStyles} px-md-0`}>
-          <PrimaryTitle title={data?.heading} variant="infoSectionH2" />
+          <PrimaryTitle
+            title={heading}
+            variant="h3600"
+            customClasses={carbon}
+          />
         </div>
-        <div className={`col-md-7 ${descStyles} px-md-0`}>
-          <p>{data?.desc}</p>
+        <div className={`col-sm-12 col-md-12 col-lg-7 ${descStyles} px-md-0`}>
+          <p className={`${carbon}`}>{desc}</p>
         </div>
         <div
-          className={`col-md-5 ${imgStyles} d-flex justify-content-center align-items-center`}
+          className={`col-sm-12 col-md-12 col-lg-5 ${imgStyles} d-flex justify-content-center align-items-center`}
         >
           <img
-            src={data?.img}
-            alt={data?.heading}
-            title={data?.heading}
+            src={img?.localFile.url}
+            alt={img?.alternativeText}
+            title={img?.caption}
             className={`img-fluid`}
           />
         </div>
         <div className={`row p-0 m-0 ${cardStyles}`}>
-          {data?.cardData.map((item, index) => (
+          {cardData.map((item: any, index: number) => (
             <InnoTableCard
-              key={index}
-              title={item.title}
-              desc={item.desc}
-              bgColor={item.bgColor}
+              key={item.id}
+              title={item.Title}
+              desc={item.Description}
+              bgColor={item.BackgroundColor}
             />
           ))}
         </div>

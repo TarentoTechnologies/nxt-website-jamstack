@@ -32,6 +32,8 @@ interface StoryBannerProps {
   // // };
   variant?: string;
   withCTA?: boolean;
+  isImage?: boolean;
+  spaceAboveCTA?: boolean;
   // CTAlabel?: string;
   // CTAlink?: any;
 }
@@ -43,9 +45,11 @@ export const StoryBanner = ({
   bgImg,
   subTitle,
   withCTA,
+  isImage,
+  spaceAboveCTA
 }: StoryBannerProps) => {
-  const col1 = variant === "tech" ? "col-lg-6" : "col-lg-5";
-  const col2 = variant === "tech" ? "col-lg-6" : "col-lg-7";
+  const col1 = variant === "tech" ? "col-lg-6" : "col-lg-6";
+  const col2 = variant === "tech" ? "col-lg-6" : "col-lg-6";
   const image: any = getImage(cardData?.Image?.localFile);
 
   return (
@@ -64,31 +68,34 @@ export const StoryBanner = ({
     >
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-12 ${titleStyles} px-lg-0`}>
-          <PrimaryTitle
-            title={primaryTitle}
-            variant="infoSectionH2"
-            color="white"
-          />
+          <PrimaryTitle title={primaryTitle} variant="h1700" color="white" />
           <h3 className={`${subTitleStyles}`}>{subTitle}</h3>
         </div>
         <div
           className={`${col1} ${imgStyles} d-flex justify-content-center align-items-center`}
         >
-          <GatsbyImage
-            image={image}
-            alt={
-              cardData?.Image?.alternativeText
-                ? cardData?.Image?.alternativeText
-                : ""
-            }
-            className={`img-fluid`}
-          />
-          {/* <img
-            src={image}
-            alt={""}
-            title={""}
-            className={`img-fluid`}
-          /> */}
+          {!isImage ? (
+            <img
+              src={cardData?.Image?.localFile?.url}
+              alt={
+                cardData?.Image?.alternativeText
+                  ? cardData?.Image?.alternativeText
+                  : ""
+              }
+              title={cardData?.Image?.caption ? cardData?.Image?.caption : ""}
+              className={`img-fluid`}
+            />
+          ) : (
+            <GatsbyImage
+              image={image}
+              alt={
+                cardData?.Image?.alternativeText
+                  ? cardData?.Image?.alternativeText
+                  : ""
+              }
+              className={`img-fluid`}
+            />
+          )}
         </div>
         <div
           className={`${col2} d-flex justify-content-center align-items-center`}
@@ -98,11 +105,14 @@ export const StoryBanner = ({
             ${variant === "tech" ? techSolution : ""}
             ${variant === "innovation" ? innovationStory : ""}`}
           >
-            <h3 className={`${customH3} customMaringBtm1 pt-4 pb-3`}>
-              {cardData?.PrimaryTitle}
-            </h3>
+            {cardData?.PrimaryTitle && (
+              <h3 className={`${customH3} customMaringBtm1 pt-4 pb-3`}>
+                {cardData?.PrimaryTitle}
+              </h3>
+            )}
+
             {/* <div className={`${subFont}`}>{cardData?.PrimaryTitle}</div> */}
-            <div className="pb-4">
+            <div className={`${spaceAboveCTA ? "pb-4" : ""}`}>
               {ReactHtmlParser(
                 cardData?.Description.data.childMarkdownRemark.html
               )}

@@ -80,6 +80,7 @@ const TechnologyPage: React.FC<PageProps> = ({ data }: TechnologyPageProps) => {
         cardData={data[currentLang]?.SolutionCard}
         withCTA
         variant="tech"
+        isImage={true}
       />
       <TechStackLayout
         sectionTitle={data[currentLang]?.StackTitle}

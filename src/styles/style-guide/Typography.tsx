@@ -19,7 +19,9 @@ import {
   tagLabel2,
   useCasesSubTitle,
   h3600,
-  h4500
+  h4500,
+  innoTitle,
+  h1700
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -158,6 +160,18 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>h4500</td>
+          </tr>
+          <tr>
+            <th scope="row" className={innoTitle}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>innoTitle</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h1700}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h1700</td>
           </tr>
         </tbody>
       </table>

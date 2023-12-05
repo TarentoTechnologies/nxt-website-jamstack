@@ -160,6 +160,20 @@ h3 {
   font-size: 1.125rem;
 }
 
+.innoTitle {
+  font-family: "Lato-Regular", serif;
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 2.063rem;
+}
+
+.h1700 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 700;
+  line-height: 3.375rem;
+  font-size: 2rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

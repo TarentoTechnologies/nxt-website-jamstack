@@ -1,6 +1,6 @@
 import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
-import { useRecoilValue } from "recoil"
+import { useRecoilValue } from "recoil";
 
 import boltImg from "../../static/images/bolt_thumb.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
@@ -24,105 +24,8 @@ interface InnovationPageProps {
   data: any;
 }
 
-const InnovationPage: React.FC<PageProps> = ({data}: InnovationPageProps) => {
+const InnovationPage: React.FC<PageProps> = ({ data }: InnovationPageProps) => {
   const currentLang = useRecoilValue(langSelectedAtom);
-
-  const forgingInnovationData = {
-    heading: "Forging Innovation",
-    desc: "Innovation is now more important than ever in today's world. To stand out in a crowded market, business leaders need to focus on different ways they can keep up with evolving demand. Learn more about the ways companies today can innovate and how innovation can take your business to the next level.",
-    img: forgingInnovation,
-    cardData: [
-      {
-        title: "TECHNOLOGY",
-        desc: "Our tech stack is crafted compact to abide by our technology serving principles to build for the future!",
-        bgColor: "blue",
-      },
-      {
-        title: "BUSINESS",
-        desc: "Deep-rooted analysis and strategic planning helps to turn complex ideas into reality.",
-        bgColor: "green",
-      },
-      {
-        title: "DESIGN",
-        desc: "Conviction in our design process helps us come up with simple and delightful experiences.",
-        bgColor: "pink",
-      },
-    ],
-  };
-
-  const innovationStoryBannerData = {
-    variant: "innovation",
-    title: "Innovation Story",
-    subTitle: "",
-    bgImg: {},
-    image: innoStoryImg,
-    subText: {
-      LevelOneHeading: "Analytics dashboard for India's covid response",
-      LevelTwoHeading: "",
-      LevelOneDesc:
-        "During the initial stages of the pandemic, India faced an unprecedented challenge in covid management with its diverse and massive population. Tarento was tasked with enabling country leadership with data driven decision making capabilities in a very short span of time.",
-      LevelTwoDesc:
-        "NXT took up the challenge and deployed our technology accelerators, leveraged GIS data from ISRO and used data from Ministry of health and Ministry of education and created a realtime dashboard that showcases cases, recovery, and fatality data, Assets and trained resources data by location. Data was granular at district level and aggregated to state and country level. Access privileges were given by state and at country level. First version of the platform was developed and launched in 5 days.",
-      LevelThreeDesc:
-        "The platform enabled the government to view the data on a daily basis and by geography and formulate policy and mobilization decisions with ease. Visualizations from the platform were used for daily briefing for the Prime minister.",
-    },
-    withCTA: false,
-    CTAlabel: "Find out more",
-    CTAlink: "mailto:hello@tarento.com;",
-  };
-
-  const leadStoryBannerData = {
-    variant: "lead",
-    title: "LEAD Program",
-    subTitle: "LEAN . AGILE . DESIGN THINKING",
-    bgImg: leadBgImg,
-    image: leadImg,
-    subText: {
-      LevelOneHeading: "",
-      LevelTwoHeading: "",
-      LevelOneDesc:
-        "Design Thinking driven 'discovery & solutioning' program that helps businesses tackle complex problems and enables informed decision making in a short time.",
-      LevelTwoDesc:
-        "LEAD drives innovation by enabling cross functional thinking across 'business', 'technology' and 'design' using the best of 'Lean', 'Agile' and 'Design thinking'.",
-      LevelThreeDesc: "",
-    },
-    withCTA: true,
-    CTAlabel: "Find out more",
-    CTAlink: "lead.html",
-  };
-
-  const acceleratorsLayoutData = {
-    heading: "Accelerators",
-    cardData: [
-      {
-        title: "BOLT - Data platform",
-        bgImg: boltImg,
-        logo: boltLogoSecondary,
-      },
-      {
-        title: "Rain - Analytics",
-        bgImg: boltImg,
-        logo: rainImg,
-      },
-      {
-        title: "THOR - AI Assistant & Chatbots",
-        bgImg: boltImg,
-        logo: thorImg,
-      },
-      {
-        title: "Pulz",
-        bgImg: boltImg,
-        logo: thorImg,
-      },
-    ],
-  };
-
-  const contactUsData = {
-    heading: "Are you interested?",
-    desc: "Does this pack look interesting to you? Get in touch with us to know more. Send us a mail with the subject 'Technology' by clicking the button below",
-    CTAlabel: "Contact us",
-    CTAlink: "mailto:hello@tarento.com;",
-  };
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -173,11 +76,40 @@ const InnovationPage: React.FC<PageProps> = ({data}: InnovationPageProps) => {
         isImage={data[currentLang]?.HeroBanner?.isImage}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
-      <ForgingInnovationLayout data={forgingInnovationData} />
-      {/* <StoryBanner data={innovationStoryBannerData} />
-      <StoryBanner data={leadStoryBannerData} /> */}
-      <AcceleratorsLayout data={acceleratorsLayoutData} />
-      <ContactUsLayout data={contactUsData} />
+      <ForgingInnovationLayout
+        heading={data[currentLang]?.ForgingTitle}
+        desc={data[currentLang]?.ForgingDescription}
+        cardData={data[currentLang]?.ForgingArea}
+        img={data[currentLang]?.ForgingImage}
+      />
+      <StoryBanner
+        primaryTitle={data[currentLang]?.StoryTitle}
+        cardData={data[currentLang]?.StoryCard}
+        withCTA={false}
+        isImage={false}
+        spaceAboveCTA={false}
+      />
+      <StoryBanner
+        primaryTitle={data[currentLang]?.ProgramTitle}
+        subTitle={data[currentLang]?.ProgramSubTitle}
+        cardData={data[currentLang]?.ProgramStory}
+        bgImg={data[currentLang]?.ProgramBackground?.localFile?.url}
+        withCTA
+        isImage={false}
+        variant="lead"
+        spaceAboveCTA={false}
+      />
+      <AcceleratorsLayout
+        sectionTitle={data[currentLang]?.AcceleratorTitle}
+        cardData={data[currentLang]?.AcceleratorCards}
+      />
+      <ContactUsLayout
+        heading={data[currentLang]?.AreYouInterested?.Title}
+        desc={data[currentLang]?.AreYouInterested?.Description}
+        CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
+        CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
+        isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
+      />
       <Footer data={footerData} />
     </main>
   );
@@ -206,6 +138,97 @@ export const query = graphql`
             url
           }
         }
+      }
+      ForgingTitle
+      ForgingDescription
+      ForgingImage {
+        alternativeText
+        caption
+        localFile {
+          url
+        }
+      }
+      ForgingArea {
+        id
+        Title
+        Description
+        BackgroundColor
+      }
+      StoryTitle
+      StoryCard {
+        id
+        PrimaryTitle
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Image {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+      }
+      ProgramTitle
+      ProgramSubTitle
+      ProgramBackground {
+        localFile {
+          url
+        }
+      }
+      ProgramStory {
+        id
+        PrimaryTitle
+        CTAText
+        CTALink
+        Image {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+      AcceleratorTitle
+      AcceleratorCards {
+        id
+        isSecondary
+        Title
+        Link
+        BackgroundImage {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        Logo {
+          alternativeText
+          caption
+          id
+          localFile {
+            url
+          }
+        }
+      }
+      AreYouInterested {
+        id
+        isMail
+        Title
+        Description
+        CTAText
+        CTALink
       }
     }
   }

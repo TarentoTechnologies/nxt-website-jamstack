@@ -2602,11 +2602,20 @@ type Query_strapiHomeArgs = {
 
 
 type Query_strapiInnovationArgs = {
+  AcceleratorCards: InputMaybe<STRAPI__COMPONENT_ACCELERATOR_CARD_ACCELERATOR_CARDFilterListInput>;
+  AcceleratorTitle: InputMaybe<StringQueryOperatorInput>;
+  AreYouInterested: InputMaybe<STRAPI__COMPONENT_INTERESTED_INTERESTEDFilterInput>;
   ForgingArea: InputMaybe<STRAPI__COMPONENT_TEXT_COLOR_CARD_TEXT_COLOR_CARDFilterListInput>;
   ForgingDescription: InputMaybe<StringQueryOperatorInput>;
   ForgingImage: InputMaybe<STRAPI__MEDIAFilterInput>;
   ForgingTitle: InputMaybe<StringQueryOperatorInput>;
   HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  ProgramBackground: InputMaybe<STRAPI__MEDIAFilterInput>;
+  ProgramStory: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AFilterInput>;
+  ProgramSubTitle: InputMaybe<StringQueryOperatorInput>;
+  ProgramTitle: InputMaybe<StringQueryOperatorInput>;
+  StoryCard: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AFilterInput>;
+  StoryTitle: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
   createdAt: InputMaybe<DateQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
@@ -3999,11 +4008,20 @@ type STRAPI_HOMESortInput = {
 };
 
 type STRAPI_INNOVATION = Node & {
+  readonly AcceleratorCards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_ACCELERATOR_CARD_ACCELERATOR_CARD>>>;
+  readonly AcceleratorTitle: Maybe<Scalars['String']>;
+  readonly AreYouInterested: Maybe<STRAPI__COMPONENT_INTERESTED_INTERESTED>;
   readonly ForgingArea: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_TEXT_COLOR_CARD_TEXT_COLOR_CARD>>>;
   readonly ForgingDescription: Maybe<Scalars['String']>;
   readonly ForgingImage: Maybe<STRAPI__MEDIA>;
   readonly ForgingTitle: Maybe<Scalars['String']>;
   readonly HeroBanner: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
+  readonly ProgramBackground: Maybe<STRAPI__MEDIA>;
+  readonly ProgramStory: Maybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A>;
+  readonly ProgramSubTitle: Maybe<Scalars['String']>;
+  readonly ProgramTitle: Maybe<Scalars['String']>;
+  readonly StoryCard: Maybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A>;
+  readonly StoryTitle: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly id: Scalars['ID'];
@@ -4085,11 +4103,20 @@ type STRAPI_INNOVATIONEdge = {
 };
 
 type STRAPI_INNOVATIONFieldSelector = {
+  readonly AcceleratorCards: InputMaybe<STRAPI__COMPONENT_ACCELERATOR_CARD_ACCELERATOR_CARDFieldSelector>;
+  readonly AcceleratorTitle: InputMaybe<FieldSelectorEnum>;
+  readonly AreYouInterested: InputMaybe<STRAPI__COMPONENT_INTERESTED_INTERESTEDFieldSelector>;
   readonly ForgingArea: InputMaybe<STRAPI__COMPONENT_TEXT_COLOR_CARD_TEXT_COLOR_CARDFieldSelector>;
   readonly ForgingDescription: InputMaybe<FieldSelectorEnum>;
   readonly ForgingImage: InputMaybe<STRAPI__MEDIAFieldSelector>;
   readonly ForgingTitle: InputMaybe<FieldSelectorEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector>;
+  readonly ProgramBackground: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly ProgramStory: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AFieldSelector>;
+  readonly ProgramSubTitle: InputMaybe<FieldSelectorEnum>;
+  readonly ProgramTitle: InputMaybe<FieldSelectorEnum>;
+  readonly StoryCard: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AFieldSelector>;
+  readonly StoryTitle: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly createdAt: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
@@ -4102,11 +4129,20 @@ type STRAPI_INNOVATIONFieldSelector = {
 };
 
 type STRAPI_INNOVATIONFilterInput = {
+  readonly AcceleratorCards: InputMaybe<STRAPI__COMPONENT_ACCELERATOR_CARD_ACCELERATOR_CARDFilterListInput>;
+  readonly AcceleratorTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly AreYouInterested: InputMaybe<STRAPI__COMPONENT_INTERESTED_INTERESTEDFilterInput>;
   readonly ForgingArea: InputMaybe<STRAPI__COMPONENT_TEXT_COLOR_CARD_TEXT_COLOR_CARDFilterListInput>;
   readonly ForgingDescription: InputMaybe<StringQueryOperatorInput>;
   readonly ForgingImage: InputMaybe<STRAPI__MEDIAFilterInput>;
   readonly ForgingTitle: InputMaybe<StringQueryOperatorInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  readonly ProgramBackground: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly ProgramStory: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AFilterInput>;
+  readonly ProgramSubTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly ProgramTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly StoryCard: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AFilterInput>;
+  readonly StoryTitle: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly createdAt: InputMaybe<DateQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
@@ -4160,11 +4196,20 @@ type STRAPI_INNOVATIONGroupConnection_sumArgs = {
 };
 
 type STRAPI_INNOVATIONSortInput = {
+  readonly AcceleratorCards: InputMaybe<STRAPI__COMPONENT_ACCELERATOR_CARD_ACCELERATOR_CARDSortInput>;
+  readonly AcceleratorTitle: InputMaybe<SortOrderEnum>;
+  readonly AreYouInterested: InputMaybe<STRAPI__COMPONENT_INTERESTED_INTERESTEDSortInput>;
   readonly ForgingArea: InputMaybe<STRAPI__COMPONENT_TEXT_COLOR_CARD_TEXT_COLOR_CARDSortInput>;
   readonly ForgingDescription: InputMaybe<SortOrderEnum>;
   readonly ForgingImage: InputMaybe<STRAPI__MEDIASortInput>;
   readonly ForgingTitle: InputMaybe<SortOrderEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput>;
+  readonly ProgramBackground: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly ProgramStory: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_ASortInput>;
+  readonly ProgramSubTitle: InputMaybe<SortOrderEnum>;
+  readonly ProgramTitle: InputMaybe<SortOrderEnum>;
+  readonly StoryCard: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_ASortInput>;
+  readonly StoryTitle: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly createdAt: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
@@ -8654,7 +8699,7 @@ type HomePageQuery = { readonly en: { readonly PyramidTitle: string | null, read
 type InnovationPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type InnovationPageQuery = { readonly en: { readonly HeroBanner: { readonly id: string, readonly withLogo: boolean | null, readonly isImage: boolean | null, readonly Title: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Img: { readonly localFile: { readonly url: string | null, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null } | null };
+type InnovationPageQuery = { readonly en: { readonly ForgingTitle: string | null, readonly ForgingDescription: string | null, readonly StoryTitle: string | null, readonly ProgramTitle: string | null, readonly ProgramSubTitle: string | null, readonly AcceleratorTitle: string | null, readonly HeroBanner: { readonly id: string, readonly withLogo: boolean | null, readonly isImage: boolean | null, readonly Title: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Img: { readonly localFile: { readonly url: string | null, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly ForgingImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly ForgingArea: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly BackgroundColor: string | null } | null> | null, readonly StoryCard: { readonly id: string, readonly PrimaryTitle: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null } | null, readonly ProgramBackground: { readonly localFile: { readonly url: string | null } | null } | null, readonly ProgramStory: { readonly id: string, readonly PrimaryTitle: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly AcceleratorCards: ReadonlyArray<{ readonly id: string, readonly isSecondary: boolean | null, readonly Title: string | null, readonly Link: string | null, readonly BackgroundImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly Logo: { readonly alternativeText: string | null, readonly caption: string | null, readonly id: string, readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly AreYouInterested: { readonly id: string, readonly isMail: boolean | null, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null } | null } | null };
 
 type TechnologyPageQueryVariables = Exact<{ [key: string]: never; }>;
 
