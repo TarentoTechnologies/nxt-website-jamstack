@@ -21,16 +21,10 @@ import {
   HowItWorks,
   KeyInsights,
   Plans,
+  PulseHeroBanner,
 } from "../layouts/pulse/index";
 
 const PulsePage: React.FC<PageProps> = () => {
-  const heroBannerData = {
-    title: "Know the Pulse of your Customer",
-    img: heroImg,
-    description:
-      "Make Informed decisions. Take your business to the next level.",
-  };
-
   const keyInsightsCards = [
     {
       imgSrc: keyImg1,
@@ -107,7 +101,12 @@ const PulsePage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
-      <HeroBannerForAccelerators data={heroBannerData} />
+      <PulseHeroBanner
+        title="Know the Pulse of your Customer"
+        description="Make Informed decisions. Take your business to the next level."
+        img={heroImg}
+        imgAltText="pulse"
+      />
       <HowItWorks
         heading="How it Works"
         imgSrc={pulseProcessImg}
