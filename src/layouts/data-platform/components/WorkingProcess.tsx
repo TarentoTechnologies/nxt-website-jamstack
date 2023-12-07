@@ -1,37 +1,51 @@
-import { h3Title } from "../../../styles/style-guide/Typography.module.css";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import { h3600 } from "../../../styles/style-guide/Typography.module.css";
 import { bannerStyles } from "../DataPlatform.module.css";
+import {carbon} from "../../../styles/style-guide/ColorGuide.module.css"
+
 interface WorkingProcesssProps {
-  data: {
-    title?: string;
-    subTitleOne?: string;
-    subTitleTwo?: string;
-    subTitleThree?: string;
-    imgSrc?: string;
-    imgCaption?: string;
-  };
+  sectionTitle: string;
+  processImage: any;
+  descriptionOne?: string;
+  descriptionTwo?: string;
+  descriptionThree?: string;
 }
 
-export const WorkingProcess = ({ data }: WorkingProcesssProps) => {
+export const WorkingProcess = ({
+  sectionTitle,
+  processImage,
+  descriptionOne,
+  descriptionTwo,
+  descriptionThree,
+}: WorkingProcesssProps) => {
+  const image: any = getImage(processImage?.localFile);
+
   return (
     <div className={`${bannerStyles} layoutBg d-flex justify-content-center`}>
       <div className="containerService paddingLeftRight15">
         <div className="row">
           <div className="col-md-12">
-            <h1 className={`${h3Title} wow animated fadeInUp`}>
-              {data.title}
+            <h1 className={`${h3600} wow animated fadeInUp ${carbon}`}>
+              {sectionTitle}
             </h1>
             <div className="pusleProcess">
-              <img src={data.imgSrc} alt={data.imgCaption} className="w-100" />
+              <GatsbyImage
+                image={image}
+                alt={processImage?.alternativeText}
+                title={processImage?.caption}
+                className="w-100"
+              />
             </div>
           </div>
           <div className="col-md-4">
-            <p>{data.subTitleOne}</p>
+            <p className={carbon}>{descriptionOne}</p>
           </div>
           <div className="col-md-4">
-            <p>{data.subTitleTwo}</p>
+            <p className={carbon}>{descriptionTwo}</p>
           </div>
           <div className="col-md-4">
-            <p>{data.subTitleThree} </p>
+            <p className={carbon}>{descriptionThree} </p>
           </div>
         </div>
       </div>

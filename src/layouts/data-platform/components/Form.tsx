@@ -1,46 +1,65 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ReactHtmlParser from "react-html-parser";
+
 import { FormButton } from "../../../components/buttons/FormButton";
-import { black60 } from "../../../styles/style-guide/ColorGuide.module.css";
+import { black60, carbon } from "../../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorSubTitle,
-  h3Title,
+  h3600,ctaDescriptionV2
 } from "../../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
   flexDirection,
   formSubText,
 } from "../DataPlatform.module.css";
+
 interface FormsProps {
-  data: {
-    title?: string;
-    subTitle: any;
-    buttonText: string;
-    buttonLink: string;
-    imgSrc: string;
-    imgCaption: string;
-  };
+  id?: any;
+  sectionTitle: string;
+  description: any;
+  ctaLink: string;
+  ctaLabel: string;
+  scannerImage: any;
+  isCTAEmail: boolean;
 }
 
-export const Form = ({ data }: FormsProps) => {
+export const Form = ({
+  id,
+  sectionTitle,
+  description,
+  ctaLink,
+  ctaLabel,
+  scannerImage,
+  isCTAEmail,
+}: FormsProps) => {
+  const image: any = getImage(scannerImage?.localFile);
+
   return (
-    <div className={`${bannerStyles} ${flexDirection}`}>
+    <div className={`${bannerStyles} ${flexDirection}`} id={id}>
       <div className="containerService paddingLeftRight15">
         <div className="mt-5 mb-5">
           <div className="row justify-content-between">
             <div className="col-md-7 order-lg-1 order-md-1 order-2">
               <div className="layoutDetails pulseView">
-                <div className={h3Title}>{data.title}</div>
+                <div className={`${h3600} ${carbon}`}>{sectionTitle}</div>
                 <div
-                  className={`${formSubText} ${acceleratorSubTitle} ${black60} mt-4 mb-5`}
-                  dangerouslySetInnerHTML={{ __html: data.subTitle }}
+                  className={`${formSubText} ${ctaDescriptionV2} ${black60} mt-4 mb-5`}
+                >
+                  {ReactHtmlParser(description?.data.childMarkdownRemark.html)}
+                </div>
+                <FormButton
+                  label={ctaLabel}
+                  btnLink={ctaLink}
+                  isEmail={isCTAEmail}
                 />
-                <FormButton label={data.buttonText} btnLink={data.buttonLink} />
               </div>
             </div>
             <div className="col-lg-3 col-md-4 order-md-2 order-1 mb-2">
               <div className="scanner">
-                <img
-                  src={data.imgSrc}
-                  alt={data.imgCaption}
+                <GatsbyImage
+                  image={image}
+                  alt={scannerImage?.alternativeText}
+                  title={scannerImage?.caption}
                   className="w-100"
                 />
               </div>

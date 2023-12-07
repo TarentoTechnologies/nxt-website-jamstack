@@ -1,29 +1,30 @@
 import { AcceleratorFeatureCard } from "../../../components/cards/AcceleratorFeatureCard";
-import { h3Title } from "../../../styles/style-guide/Typography.module.css";
+import { carbon } from "../../../styles/style-guide/ColorGuide.module.css";
+import { h3600 } from "../../../styles/style-guide/Typography.module.css";
 import { bannerStyles, flexDirection } from "../DataPlatform.module.css";
+
 interface FeaturesProps {
-  data: {
-    title?: string;
-    list: { title?: string; logo?: any; bgColor?: string }[];
-  };
+  sectionTitle: string;
+  featureCardData: any;
 }
 
-export const Feature = ({ data }: FeaturesProps) => {
+export const Feature = ({ sectionTitle, featureCardData }: FeaturesProps) => {
   return (
     <div className={`${bannerStyles} ${flexDirection} layoutBg`}>
       <div className="containerService paddingLeftRight15">
-        <h1 className={`${h3Title} wow animated fadeInUp mt-4 mb-5`}>
-          {data.title}
+        <h1 className={`${h3600} wow animated fadeInUp mt-4 mb-5 ${carbon}`}>
+          {sectionTitle}
         </h1>
         <div className={`row containerRow`}>
-          {data.list.map((item, index) => {
+          {featureCardData.map((item: any, index: number) => {
             return (
               <>
                 <div className={`col-md-4 col-sm-6 col3`}>
                   <AcceleratorFeatureCard
-                    title={item.title}
-                    logo={item.logo}
-                    bgColor={item.bgColor}
+                    title={item?.Caption}
+                    logo={item?.Image?.localFile}
+                    bgColor={"white"}
+                    isImage
                   />
                 </div>
               </>

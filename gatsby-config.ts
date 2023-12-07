@@ -75,6 +75,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "data-platform",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    }
   ],
 };
 
