@@ -64,9 +64,15 @@ a:hover {
   gap: 30px;
   margin: 0;
 }
+
 .layoutBg {
   background-color: #f7f7f7;
 }
+
+.whiteBg {
+  background-color: #ffffff;
+}
+
 /* Swiper styles starts here */
 
 .swiper-button-next,
