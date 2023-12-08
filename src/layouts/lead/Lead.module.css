@@ -4,7 +4,7 @@
 .leadCard {
   border-radius: 0.25rem;
   min-height: 23.5rem;
-  padding: 2rem;
+  padding: 1.25rem;
 }
 
 .leadCardImg {
@@ -14,8 +14,6 @@
 
 .leadCardTitle {
   margin-top: 2rem;
-  font-size: 1.3125rem;
-  font-weight: 400;
   line-height: 1.1;
 }
 

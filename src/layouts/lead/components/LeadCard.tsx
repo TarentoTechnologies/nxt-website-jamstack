@@ -7,6 +7,7 @@ import {
   black60,
   black87,
 } from "../../../styles/style-guide/ColorGuide.module.css";
+import { cardHeader } from "../../../styles/style-guide/Typography.module.css";
 import {
   leadCard,
   leadCardImg,
@@ -35,7 +36,7 @@ export const LeadCard = ({ title, img, subText, bgColor }: LeadCardProps) => {
       <div className={`${leadCardImg} pt-3`}>
         <img src={img} alt={title} title={title} className={`img-fluid`} />
       </div>
-      <h4 className={`${black87} ${leadCardTitle}`}>{title}</h4>
+      <h4 className={`${black87} ${leadCardTitle} ${cardHeader}`}>{title}</h4>
       <p className={`${black60} ${leadCardSubText}`}>{subText}</p>
     </div>
   );
