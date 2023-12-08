@@ -1607,6 +1607,9 @@ type Query = {
   readonly allStrapiComponentPortfolioListingCardPortfolioListingCard: STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDConnection;
   readonly allStrapiComponentPrincipleStackPrincipleStack: STRAPI__COMPONENT_PRINCIPLE_STACK_PRINCIPLE_STACKConnection;
   readonly allStrapiComponentProgrammeCardProgrammeCard: STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDConnection;
+  readonly allStrapiComponentRainFeatureCardRainFeatureCard: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDConnection;
+  readonly allStrapiComponentReferenceCardReferenceCard: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDConnection;
+  readonly allStrapiComponentReferenceCardReferenceCardDescriptionTextnode: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEConnection;
   readonly allStrapiComponentSolutionCardASolutionCardA: STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AConnection;
   readonly allStrapiComponentSolutionCardASolutionCardADescriptionTextnode: STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A_DESCRIPTION_TEXTNODEConnection;
   readonly allStrapiComponentTagsTags: STRAPI__COMPONENT_TAGS_TAGSConnection;
@@ -1619,6 +1622,7 @@ type Query = {
   readonly allStrapiHome: STRAPI_HOMEConnection;
   readonly allStrapiInnovation: STRAPI_INNOVATIONConnection;
   readonly allStrapiMedia: STRAPI__MEDIAConnection;
+  readonly allStrapiRain: STRAPI_RAINConnection;
   readonly allStrapiTechnology: STRAPI_TECHNOLOGYConnection;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
@@ -1654,6 +1658,9 @@ type Query = {
   readonly strapiComponentPortfolioListingCardPortfolioListingCard: Maybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARD>;
   readonly strapiComponentPrincipleStackPrincipleStack: Maybe<STRAPI__COMPONENT_PRINCIPLE_STACK_PRINCIPLE_STACK>;
   readonly strapiComponentProgrammeCardProgrammeCard: Maybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARD>;
+  readonly strapiComponentRainFeatureCardRainFeatureCard: Maybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD>;
+  readonly strapiComponentReferenceCardReferenceCard: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>;
+  readonly strapiComponentReferenceCardReferenceCardDescriptionTextnode: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE>;
   readonly strapiComponentSolutionCardASolutionCardA: Maybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A>;
   readonly strapiComponentSolutionCardASolutionCardADescriptionTextnode: Maybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A_DESCRIPTION_TEXTNODE>;
   readonly strapiComponentTagsTags: Maybe<STRAPI__COMPONENT_TAGS_TAGS>;
@@ -1666,6 +1673,7 @@ type Query = {
   readonly strapiHome: Maybe<STRAPI_HOME>;
   readonly strapiInnovation: Maybe<STRAPI_INNOVATION>;
   readonly strapiMedia: Maybe<STRAPI__MEDIA>;
+  readonly strapiRain: Maybe<STRAPI_RAIN>;
   readonly strapiTechnology: Maybe<STRAPI_TECHNOLOGY>;
 };
 
@@ -1942,6 +1950,30 @@ type Query_allStrapiComponentProgrammeCardProgrammeCardArgs = {
 };
 
 
+type Query_allStrapiComponentRainFeatureCardRainFeatureCardArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDSortInput>>>;
+};
+
+
+type Query_allStrapiComponentReferenceCardReferenceCardArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDSortInput>>>;
+};
+
+
+type Query_allStrapiComponentReferenceCardReferenceCardDescriptionTextnodeArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODESortInput>>>;
+};
+
+
 type Query_allStrapiComponentSolutionCardASolutionCardAArgs = {
   filter: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
@@ -2035,6 +2067,14 @@ type Query_allStrapiMediaArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__MEDIASortInput>>>;
+};
+
+
+type Query_allStrapiRainArgs = {
+  filter: InputMaybe<STRAPI_RAINFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_RAINSortInput>>>;
 };
 
 
@@ -2572,6 +2612,40 @@ type Query_strapiComponentProgrammeCardProgrammeCardArgs = {
 };
 
 
+type Query_strapiComponentRainFeatureCardRainFeatureCardArgs = {
+  Heading: InputMaybe<StringQueryOperatorInput>;
+  Img: InputMaybe<STRAPI__MEDIAFilterInput>;
+  SubText: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+
+type Query_strapiComponentReferenceCardReferenceCardArgs = {
+  Description: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDDescriptionFilterInput>;
+  Heading: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+
+type Query_strapiComponentReferenceCardReferenceCardDescriptionTextnodeArgs = {
+  Description: InputMaybe<StringQueryOperatorInput>;
+  childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+};
+
+
 type Query_strapiComponentSolutionCardASolutionCardAArgs = {
   CTALink: InputMaybe<StringQueryOperatorInput>;
   CTAText: InputMaybe<StringQueryOperatorInput>;
@@ -2793,6 +2867,25 @@ type Query_strapiMediaArgs = {
   updatedAt: InputMaybe<DateQueryOperatorInput>;
   url: InputMaybe<StringQueryOperatorInput>;
   width: InputMaybe<IntQueryOperatorInput>;
+};
+
+
+type Query_strapiRainArgs = {
+  FeatureListCard: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterListInput>;
+  FeatureSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  HeroBanner: InputMaybe<STRAPI__COMPONENT_ACCELERATOR_HERO_BANNER_ACCELERATOR_HERO_BANNERFilterInput>;
+  HowItWorks: InputMaybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSFilterInput>;
+  ReferenceCard: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
+  ReferenceSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  createdAt: InputMaybe<DateQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  locale: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  publishedAt: InputMaybe<DateQueryOperatorInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
+  updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
 
 
@@ -4541,6 +4634,188 @@ type STRAPI_INNOVATIONSortInput = {
   readonly ProgramTitle: InputMaybe<SortOrderEnum>;
   readonly StoryCard: InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_ASortInput>;
   readonly StoryTitle: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly createdAt: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly locale: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly publishedAt: InputMaybe<SortOrderEnum>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
+  readonly updatedAt: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI_RAIN = Node & {
+  readonly FeatureListCard: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD>>>;
+  readonly FeatureSectionTitle: Maybe<Scalars['String']>;
+  readonly HeroBanner: Maybe<STRAPI__COMPONENT_ACCELERATOR_HERO_BANNER_ACCELERATOR_HERO_BANNER>;
+  readonly HowItWorks: Maybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKS>;
+  readonly ReferenceCard: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>>>;
+  readonly ReferenceSectionTitle: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly createdAt: Maybe<Scalars['Date']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly locale: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly publishedAt: Maybe<Scalars['Date']>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+  readonly updatedAt: Maybe<Scalars['Date']>;
+};
+
+
+type STRAPI_RAIN_createdAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type STRAPI_RAIN_publishedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type STRAPI_RAIN_updatedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type STRAPI_RAINConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_RAINEdge>;
+  readonly group: ReadonlyArray<STRAPI_RAINGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_RAIN>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_RAINConnection_distinctArgs = {
+  field: STRAPI_RAINFieldSelector;
+};
+
+
+type STRAPI_RAINConnection_groupArgs = {
+  field: STRAPI_RAINFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_RAINConnection_maxArgs = {
+  field: STRAPI_RAINFieldSelector;
+};
+
+
+type STRAPI_RAINConnection_minArgs = {
+  field: STRAPI_RAINFieldSelector;
+};
+
+
+type STRAPI_RAINConnection_sumArgs = {
+  field: STRAPI_RAINFieldSelector;
+};
+
+type STRAPI_RAINEdge = {
+  readonly next: Maybe<STRAPI_RAIN>;
+  readonly node: STRAPI_RAIN;
+  readonly previous: Maybe<STRAPI_RAIN>;
+};
+
+type STRAPI_RAINFieldSelector = {
+  readonly FeatureListCard: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector>;
+  readonly FeatureSectionTitle: InputMaybe<FieldSelectorEnum>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_ACCELERATOR_HERO_BANNER_ACCELERATOR_HERO_BANNERFieldSelector>;
+  readonly HowItWorks: InputMaybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSFieldSelector>;
+  readonly ReferenceCard: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector>;
+  readonly ReferenceSectionTitle: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly createdAt: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly locale: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly publishedAt: InputMaybe<FieldSelectorEnum>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+  readonly updatedAt: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI_RAINFilterInput = {
+  readonly FeatureListCard: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterListInput>;
+  readonly FeatureSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_ACCELERATOR_HERO_BANNER_ACCELERATOR_HERO_BANNERFilterInput>;
+  readonly HowItWorks: InputMaybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSFilterInput>;
+  readonly ReferenceCard: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
+  readonly ReferenceSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly createdAt: InputMaybe<DateQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly locale: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+  readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
+};
+
+type STRAPI_RAINGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_RAINEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI_RAINGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_RAIN>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_RAINGroupConnection_distinctArgs = {
+  field: STRAPI_RAINFieldSelector;
+};
+
+
+type STRAPI_RAINGroupConnection_groupArgs = {
+  field: STRAPI_RAINFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_RAINGroupConnection_maxArgs = {
+  field: STRAPI_RAINFieldSelector;
+};
+
+
+type STRAPI_RAINGroupConnection_minArgs = {
+  field: STRAPI_RAINFieldSelector;
+};
+
+
+type STRAPI_RAINGroupConnection_sumArgs = {
+  field: STRAPI_RAINFieldSelector;
+};
+
+type STRAPI_RAINSortInput = {
+  readonly FeatureListCard: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDSortInput>;
+  readonly FeatureSectionTitle: InputMaybe<SortOrderEnum>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_ACCELERATOR_HERO_BANNER_ACCELERATOR_HERO_BANNERSortInput>;
+  readonly HowItWorks: InputMaybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSSortInput>;
+  readonly ReferenceCard: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDSortInput>;
+  readonly ReferenceSectionTitle: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly createdAt: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
@@ -7788,6 +8063,414 @@ type STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDSortInput = {
   readonly internal: InputMaybe<InternalSortInput>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD = Node & {
+  readonly Heading: Maybe<Scalars['String']>;
+  readonly Img: Maybe<STRAPI__MEDIA>;
+  readonly SubText: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDConnection_groupArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDConnection_maxArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDConnection_minArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDConnection_sumArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+};
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD>;
+  readonly node: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD;
+  readonly previous: Maybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD>;
+};
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector = {
+  readonly Heading: InputMaybe<FieldSelectorEnum>;
+  readonly Img: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly SubText: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterInput = {
+  readonly Heading: InputMaybe<StringQueryOperatorInput>;
+  readonly Img: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly SubText: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterListInput = {
+  readonly elemMatch: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterInput>;
+};
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector;
+};
+
+type STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDSortInput = {
+  readonly Heading: InputMaybe<SortOrderEnum>;
+  readonly Img: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly SubText: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD = Node & {
+  readonly Description: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDDescription>;
+  readonly Heading: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDConnection_groupArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDConnection_maxArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDConnection_minArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDConnection_sumArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDDescription = {
+  readonly data: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDDescriptionFieldSelector = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDDescriptionFilterInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFilterInput>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDDescriptionSortInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODESortInput>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>;
+  readonly node: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD;
+  readonly previous: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector = {
+  readonly Description: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDDescriptionFieldSelector>;
+  readonly Heading: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterInput = {
+  readonly Description: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDDescriptionFilterInput>;
+  readonly Heading: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput = {
+  readonly elemMatch: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterInput>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDSortInput = {
+  readonly Description: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDDescriptionSortInput>;
+  readonly Heading: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE = Node & {
+  readonly Description: Maybe<Scalars['String']>;
+  /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
+  readonly childMarkdownRemark: Maybe<MarkdownRemark>;
+  readonly children: ReadonlyArray<Node>;
+  /** Returns all children nodes filtered by type MarkdownRemark */
+  readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEConnection_groupArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEConnection_maxArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEConnection_minArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEConnection_sumArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE>;
+  readonly node: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE;
+  readonly previous: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector = {
+  readonly Description: InputMaybe<FieldSelectorEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFilterInput = {
+  readonly Description: InputMaybe<StringQueryOperatorInput>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODESortInput = {
+  readonly Description: InputMaybe<SortOrderEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
 };
 
 type STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A = Node & {

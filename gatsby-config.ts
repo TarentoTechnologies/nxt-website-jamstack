@@ -82,6 +82,14 @@ const strapiConfig = {
           locale: "all", // Fetch all localizations
         },
       },
+    },
+    {
+      singularName: "rain",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
     }
   ],
 };
