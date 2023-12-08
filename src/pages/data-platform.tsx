@@ -1,5 +1,6 @@
 import type { HeadFC, PageProps } from "gatsby";
 import * as React from "react";
+
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForAccelerators } from "../components/banners/HeroBannerForAccelerators";
@@ -10,6 +11,7 @@ import {
   KeyInsights,
   WorkingProcess,
 } from "../layouts/data-platform";
+
 const DataPlatformPage: React.FC<PageProps> = () => {
   const keyInsightsData = {
     title: "Key Insights",
@@ -155,6 +157,7 @@ const DataPlatformPage: React.FC<PageProps> = () => {
           description:
             " Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.",
           logosrc: "https://nxt.tarento.com/img/bolt_light.svg",
+          withLogo: true,
         }}
       />
       <WorkingProcess data={HowItWorksData} />
