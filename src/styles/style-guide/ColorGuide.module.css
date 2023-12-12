@@ -387,3 +387,19 @@
 .neutralGray3 {
   color: var(--neutral-gray-3);
 }
+
+.bgHayBlue {
+  background-color: var(--hay-blue);
+}
+
+.hayBlue {
+  color: var(--hay-blue);
+}
+
+.bgRoslynsBlue {
+  background-color: var(--roslyns-blue);
+}
+
+.roslynsBlue {
+  color: var(--roslyns-blue);
+}
