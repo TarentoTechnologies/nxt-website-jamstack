@@ -3,11 +3,14 @@ import ReactHtmlParser from "react-html-parser";
 
 import {
   white70,
+  white,
   white87,
 } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   cardHeader,
   h1One,
+  h1CardTitle,
+  subTextV1
 } from "../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
@@ -121,7 +124,7 @@ export const HeroBannerForTDI = ({
                     />
                   </div>
                 )}
-                <div className={`${cardHeader} ${titleStyles}`}>
+                <h1 className={`${h1CardTitle} ${white}`}>
                   {mainTitle && (
                     <b>
                       {mainTitle}
@@ -129,10 +132,10 @@ export const HeroBannerForTDI = ({
                     </b>
                   )}
                   {title}
-                </div>
+                </h1>
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
-                  <p className={`${white87} ${subTextBold ? boldSubtext : ""}`}>
+                  <p className={`${white87} ${subTextBold ? subTextV1 : ""}`}>
                     {subText}
                   </p>
                   <p className={`${white70}`}>

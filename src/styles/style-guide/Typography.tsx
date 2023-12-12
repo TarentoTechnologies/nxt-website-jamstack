@@ -24,7 +24,10 @@ import {
   h1700,
   acceleratorTitleV2,
   h3500Lato,
-  ctaDescriptionV2
+  ctaDescriptionV2,
+  h1CardTitle,
+  subTextV1,
+  h4400
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -193,6 +196,24 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>ctaDescriptionV2</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h1CardTitle}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h1CardTitle</td>
+          </tr>
+          <tr>
+            <th scope="row" className={subTextV1}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>subTextV1</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h4400}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h4400</td>
           </tr>
         </tbody>
       </table>

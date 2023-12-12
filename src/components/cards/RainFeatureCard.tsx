@@ -7,6 +7,7 @@ import {
   imgStyles,
   subTextStyles,
 } from "./RainFeatureCard.module.css";
+import {carbon} from "../../styles/style-guide/ColorGuide.module.css"
 
 interface RainFeatureCardProps {
   heading: string;
@@ -43,8 +44,8 @@ export const RainFeatureCard = ({
           />
         )}
       </div>
-      <div className={`${headingStyles} ${cardHeader}`}>{heading}</div>
-      <p className={`${subTextStyles}`}>{subText}</p>
+      <div className={`${headingStyles} ${cardHeader} ${carbon}`}>{heading}</div>
+      <p className={`${subTextStyles} ${carbon}`}>{subText}</p>
     </div>
   );
 };

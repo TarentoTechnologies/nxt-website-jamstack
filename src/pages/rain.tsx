@@ -79,6 +79,7 @@ const RainPage: React.FC<PageProps> = ({ data }: RainPageProps) => {
         isImage={data[currentLang]?.HeroBanner?.isImage}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
         logo={data[currentLang]?.HeroBanner?.Logo?.localFile?.url}
+        subTextBold
       />
       <WorkingLayout
         title={data[currentLang]?.HowItWorks?.SectionTitle}

@@ -160,6 +160,13 @@ h3 {
   font-size: 1.125rem;
 }
 
+.h4400 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  line-height: 1.438rem;
+  font-size: 1.313rem;
+}
+
 .innoTitle {
   font-family: "Lato-Regular", serif;
   font-weight: 500;
@@ -199,6 +206,20 @@ h3 {
   font-family: "RobotoSlab-SemiBold", serif;
   font-size: 1.313rem;
   font-weight: 600;
+}
+
+.h1CardTitle {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 3.313rem;
+}
+
+.subTextV1 {
+  font-family: "Lato-Regular", serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.688rem;
 }
 
 /* Media queries starts here */
