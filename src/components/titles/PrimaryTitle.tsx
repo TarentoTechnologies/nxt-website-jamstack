@@ -1,13 +1,13 @@
-import { black87, white } from "../../styles/style-guide/ColorGuide.module.css";
+import { carbon, white } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorTitle,
   cardHeader,
   h1One,
+  h1700,
   h3600,
   heroTitle,
   infoSectionH2,
   infoSectionH3,
-  h1700
 } from "../../styles/style-guide/Typography.module.css";
 
 interface PrimaryTitleProps {
@@ -35,7 +35,7 @@ export const PrimaryTitle = ({
         ${variant === "accelerator" ? acceleratorTitle : ""}
         ${variant === "h3600" ? h3600 : ""}
         ${variant === "h1700" ? h1700 : ""}
-        ${color === "white" ? white : black87}`}
+        ${color === "white" ? white : ""}`}
     >
       {title}
     </div>

@@ -89,6 +89,8 @@ const RainPage: React.FC<PageProps> = ({ data }: RainPageProps) => {
       <FeaturesLayout
         title={data[currentLang]?.FeatureSectionTitle}
         cardsData={data[currentLang]?.FeatureListCard}
+        isImage={false}
+        bgGrey
       />
       <ReferencesLayout
         title={data[currentLang]?.ReferenceSectionTitle}

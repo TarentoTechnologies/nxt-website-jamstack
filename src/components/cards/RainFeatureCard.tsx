@@ -26,7 +26,7 @@ export const RainFeatureCard = ({
   return (
     <div className={`${cardStyles}`}>
       <div className={`${imgStyles}`}>
-        {isImage ? (
+        {!isImage ? (
           <GatsbyImage
             image={
               getImage(img?.localFile)

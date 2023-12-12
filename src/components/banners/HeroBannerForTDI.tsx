@@ -81,7 +81,7 @@ export const HeroBannerForTDI = ({
               </div>
             </div>
             <div
-              className={`col-sm-12 col-md-6 d-flex align-items-center justify-content-end`}
+              className={`col-sm-12 col-md-6 d-flex align-items-center justify-content-center`}
             >
               {isImage ? (
                 <div className="col-sm-12 col-md-10">
@@ -147,7 +147,7 @@ export const HeroBannerForTDI = ({
               </div>
             </div>
             <div
-              className={`col-sm-12 col-md-6 d-flex align-items-center justify-content-end`}
+              className={`col-sm-12 col-md-6 d-flex align-items-center justify-content-center`}
             >
               {isImage ? (
                 <div className="col-sm-12 col-md-10">

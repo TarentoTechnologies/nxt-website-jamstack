@@ -6,12 +6,21 @@ import { featureGrid, titleStyles } from "../Rain.module.css";
 interface FeaturesLayoutProps {
   title: string;
   cardsData: any;
+  bgGrey?: boolean;
+  isImage: boolean;
 }
 
-export const FeaturesLayout = ({ title, cardsData }: FeaturesLayoutProps) => {
+export const FeaturesLayout = ({
+  title,
+  cardsData,
+  bgGrey,
+  isImage
+}: FeaturesLayoutProps) => {
+  const bgcolor = bgGrey ? "layoutBg" : "";
+
   return (
     <div
-      className={`container-fluid layoutBg d-flex justify-content-center paddingTopBottom60`}
+      className={`container-fluid d-flex justify-content-center paddingTopBottom60 ${bgcolor}`}
     >
       <div className={`containerService paddingLeftRight15`}>
         <div className={`${titleStyles}`}>
@@ -28,7 +37,7 @@ export const FeaturesLayout = ({ title, cardsData }: FeaturesLayoutProps) => {
               heading={item.Heading}
               subText={item.SubText}
               img={item.Img}
-              isImage={true}
+              isImage={isImage}
             />
           ))}
         </div>
