@@ -1,9 +1,12 @@
+import ReactHtmlParser from "react-html-parser";
+
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { cardHeader } from "../../../styles/style-guide/Typography.module.css";
 import {
   referenceCard,
   referenceCardSection,
   titleStyles,
+  parserCustomStyles
 } from "../Rain.module.css";
 
 interface ReferencesLayoutProps {
@@ -15,6 +18,7 @@ export const ReferencesLayout = ({
   title,
   cardsData,
 }: ReferencesLayoutProps) => {
+
   return (
     <div
       className={`container-fluid d-flex justify-content-center paddingTopBottom60 pt-0`}
@@ -24,12 +28,14 @@ export const ReferencesLayout = ({
           <PrimaryTitle title={title} variant="infoSectionH2" />
         </div>
         <div className={`${referenceCardSection}`}>
-          {cardsData.map((item, index) => (
+          {cardsData?.map((item: any, index: number) => (
             <div key={index} className={`${referenceCard} layoutBg mb-5`}>
-              <div className={`pb-3 ${cardHeader}`}>{item.heading}</div>
-              <p className={`pb-3`}>{item.p1}</p>
-              <p className={`pb-3`}>{item.p2}</p>
-              <p className={`pb-3`}>{item.p3}</p>
+              <div className={`${cardHeader}`}>{item.Heading}</div>
+              <div className={`${parserCustomStyles}`}>
+                {ReactHtmlParser(
+                  item.Description.data.childMarkdownRemark.html
+                )}
+              </div>
             </div>
           ))}
         </div>

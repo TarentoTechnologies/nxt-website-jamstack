@@ -4,10 +4,11 @@ import { featureGrid, titleStyles } from "../Rain.module.css";
 
 interface FeaturesLayoutProps {
   title: string;
-  cardsData: any[];
+  cardsData: any;
 }
 
 export const FeaturesLayout = ({ title, cardsData }: FeaturesLayoutProps) => {
+
   return (
     <div
       className={`container-fluid layoutBg d-flex justify-content-center paddingTopBottom60`}
@@ -17,12 +18,13 @@ export const FeaturesLayout = ({ title, cardsData }: FeaturesLayoutProps) => {
           <PrimaryTitle title={title} variant="infoSectionH2" />
         </div>
         <div className={`${featureGrid}`}>
-          {cardsData.map((item, index) => (
+          {cardsData.map((item:any, index:number) => (
             <RainFeatureCard
-              key={index}
-              heading={item.heading}    
-              subText={item.subText}
-              img={item.img}
+              key={item.id}
+              heading={item.Heading}    
+              subText={item.SubText}
+              img={item.Img}
+              isImage={true}
             />
           ))}
         </div>

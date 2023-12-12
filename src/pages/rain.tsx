@@ -1,5 +1,6 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import rainHero from "../../static/images/ai-img.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
@@ -19,8 +20,15 @@ import {
   ReferencesLayout,
   WorkingLayout,
 } from "../layouts/rain";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const RainPage: React.FC<PageProps> = () => {
+interface RainPageProps {
+  data: any;
+}
+
+const RainPage: React.FC<PageProps> = ({ data }: RainPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+
   const footerData = {
     nxtLogoImg: NXTlogo,
     nxtLogoImgTitle: "NXT-logo",
@@ -63,83 +71,109 @@ const RainPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBannerForTDI
-        title="Realtime analytics and insights"
-        img={rainHero}
-        subText="Supercharge your business with the power of Data."
-        description="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform."
-        withLogo={true}
-        logo={rainLogo}
-        subTextBold={true}
+        id={data[currentLang]?.HeroBanner?.id}
+        subText={data[currentLang]?.HeroBanner?.SubText}
+        description={data[currentLang]?.HeroBanner?.Description}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
+        title={data[currentLang]?.HeroBanner?.Title}
+        isImage={data[currentLang]?.HeroBanner?.isImage}
+        withLogo={data[currentLang]?.HeroBanner?.withLogo}
+        logo={data[currentLang]?.HeroBanner?.Logo?.localFile?.url}
       />
       <WorkingLayout
-        title="How does RAIN work?"
-        desc="Collect data from diverse sources, process and visualize. Make
-relevant visualizations available to the users based on their roles on
-preferred channels - Mobile or Web."
-        img={rainData}
+        title={data[currentLang]?.HowItWorks?.SectionTitle}
+        desc={data[currentLang]?.HowItWorks?.DescriptionOne}
+        img={data[currentLang]?.HowItWorks?.ProcessImage?.localFile?.url}
       />
       <FeaturesLayout
-        title={"Features"}
-        cardsData={[
-          {
-            heading:
-              "Create your own dashboards with your favourite visualization",
-            subText:
-              "Visualizations ranging from a simple bar chart to map visualizations. User has the freedom to create multiple dashboards with different collections of visulizations.",
-            img: featureImg1,
-          },
-          {
-            heading: "Dig deep using filters, drill downs and more",
-            subText:
-              "Make more of the data and analyse by using default date filter and custom filters, drill-downs and drill - throughs.",
-            img: featureImg2,
-          },
-          {
-            heading: "Manage access, visibility and much more through admin",
-            subText:
-              "An integrated Admin interface is available where user roles, access, dashboard layout, filters, reports etc. can be controlled.",
-            img: featureImg3,
-          },
-          {
-            heading: "Create forms to source data",
-            subText:
-              "Users can create forms which can collect different types of data and the same data can be fetched by the data pipelines to show realtime visualizations.",
-            img: featureImg4,
-          },
-          {
-            heading: "Create, download and share reports and visualizations",
-            subText:
-              "User can create reports, download or share visualizations/reports in multiple formats.",
-            img: featureImg5,
-          },
-          {
-            heading: "Customize and make use of themes",
-            subText:
-              "RAIN comes by default in light and dark theme. It has been designed to enable quick and easy customization as well.",
-            img: featureImg6,
-          },
-        ]}
+        title={data[currentLang]?.FeatureSectionTitle}
+        cardsData={data[currentLang]?.FeatureListCard}
       />
       <ReferencesLayout
-        title={"References"}
-        cardsData={[
-          {
-            heading: "eGovernments",
-            p1: "A Decision Support System (DSS) is a composite tool that collects, organizes and analyzes business data to facilitate quality decision-making for management, operations and planning.",
-            p2: "Using RAIN Accelerator, Distributed Data from Multiple Data Sources are visualized on a Classic Intuitive Design which has Role Based Access, Custom Logical Filters, Insights, Archive Data Comparisons, Mobile Responsive UI and an option to share and download.",
-            p3: "With a Data Pipeline as its backbone, instant real-time insightful data of eGov's Smart City Suite was visualized to enable decision making more targeted and effective.",
-          },
-          {
-            heading: "iGOT Dashboards",
-            p1: "Using RAIN platform (Data Pipeline & Analytics System), we consolidated data from different sources to single source of data assets which would be more accessible, actionable, auditable source of reference for future operations (The very first turbocharge of data was done with 300,000 records from multiple sources).",
-            p2: "At this point, we used our custom visualization engine capabilities of RAIN to draw effective visualization which can give authorities a most detailed, clear and vivid picture of health workers and professionals getting trained on Integrated Government Online Training (iGOT) platform",
-          },
-        ]}
+        title={data[currentLang]?.ReferenceSectionTitle}
+        cardsData={data[currentLang]?.ReferenceCard}
       />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query RainPage {
+    en: strapiRain(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        withLogo
+        isImage
+        Title
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Img {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+            url
+          }
+          alternativeText
+          caption
+        }
+        SubText
+        Logo {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+      }
+      HowItWorks {
+        id
+        SectionTitle
+        ProcessImage {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        DescriptionOne
+      }
+      FeatureSectionTitle
+      FeatureListCard {
+        id
+        SubText
+        Heading
+        Img {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      ReferenceCard {
+        id
+        Heading
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+      ReferenceSectionTitle
+    }
+  }
+`;
 
 export default RainPage;
 
