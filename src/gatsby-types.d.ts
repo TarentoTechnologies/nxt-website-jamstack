@@ -2272,6 +2272,8 @@ type Query_strapiComponentCtaCardPrimaryCtaCardPrimaryArgs = {
 type Query_strapiComponentHeroBannerForTdiHeroBannerForTdiArgs = {
   Description: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIDescriptionFilterInput>;
   Img: InputMaybe<STRAPI__MEDIAFilterInput>;
+  Logo: InputMaybe<STRAPI__MEDIAFilterInput>;
+  SubText: InputMaybe<StringQueryOperatorInput>;
   Title: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
   id: InputMaybe<StringQueryOperatorInput>;
@@ -4836,6 +4838,8 @@ type STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYSortInput = {
 type STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI = Node & {
   readonly Description: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIDescription>;
   readonly Img: Maybe<STRAPI__MEDIA>;
+  readonly Logo: Maybe<STRAPI__MEDIA>;
+  readonly SubText: Maybe<Scalars['String']>;
   readonly Title: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
   readonly id: Scalars['ID'];
@@ -4910,6 +4914,8 @@ type STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIEdge = {
 type STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector = {
   readonly Description: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIDescriptionFieldSelector>;
   readonly Img: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly Logo: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly SubText: InputMaybe<FieldSelectorEnum>;
   readonly Title: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly id: InputMaybe<FieldSelectorEnum>;
@@ -4923,6 +4929,8 @@ type STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector = {
 type STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput = {
   readonly Description: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIDescriptionFilterInput>;
   readonly Img: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly Logo: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly SubText: InputMaybe<StringQueryOperatorInput>;
   readonly Title: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
@@ -4977,6 +4985,8 @@ type STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIGroupConnection_su
 type STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput = {
   readonly Description: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIDescriptionSortInput>;
   readonly Img: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly Logo: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly SubText: InputMaybe<SortOrderEnum>;
   readonly Title: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
