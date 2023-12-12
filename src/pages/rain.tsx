@@ -80,6 +80,7 @@ preferred channels - Mobile or Web."
       />
       <FeaturesLayout
         title={"Features"}
+        bgGrey
         cardsData={[
           {
             heading:
