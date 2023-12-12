@@ -75,6 +75,7 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
         description={data[currentLang]?.PyramidDescription}
         pyramidImg={data[currentLang]?.PyramidImage.localFile.url}
         btnDescr={data[currentLang]?.PyramidCTAText}
+        btnLink={data[currentLang]?.PyramidCTALink}
       />
       <ProductCardLayout data={data[currentLang]?.AcceleratorCards} />
       <OurProgramme
@@ -146,6 +147,7 @@ export const query = graphql`
       AcceleratorCards {
         id
         Title
+        Link
         Logo {
           localFile {
             url

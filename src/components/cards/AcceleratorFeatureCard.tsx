@@ -1,4 +1,6 @@
-import { bgWhite } from "../../styles/style-guide/ColorGuide.module.css";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import { bgWhite, carbon } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   featureCard,
   featureCardImg,
@@ -8,6 +10,7 @@ interface AcceleratorFeatureCardProps {
   title?: string;
   logo?: any;
   bgColor?: any;
+  isImage: boolean;
   clickHandler?: (event: any) => void;
 }
 
@@ -15,8 +18,11 @@ export const AcceleratorFeatureCard = ({
   title,
   logo,
   bgColor,
+  isImage,
   clickHandler,
 }: AcceleratorFeatureCardProps) => {
+  const image: any = getImage(logo);
+
   const getBgColor = () => {
     switch (bgColor) {
       case "white":
@@ -26,10 +32,26 @@ export const AcceleratorFeatureCard = ({
     }
   };
   const bgColour = getBgColor();
+  
   return (
     <div className={`${featureCard} ${bgColor}`}>
-      <img src={logo} alt={title} className={`mb-3 ${featureCardImg}`} />
-      <p>{title}</p>
+      {isImage ? (
+        <GatsbyImage
+          image={image}
+          alt={logo?.alternativeText}
+          title={logo?.caption}
+          className={`mb-3 ${featureCardImg}`}
+        />
+      ) : (
+        <img
+          src={logo?.url}
+          alt={logo?.alternativeText}
+          title={logo?.caption}
+          className={`mb-3 ${featureCardImg}`}
+        />
+      )}
+
+      <p className={`${carbon}`}>{title}</p>
     </div>
   );
 };

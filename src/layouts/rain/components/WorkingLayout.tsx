@@ -1,4 +1,5 @@
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
+import { carbon } from "../../../styles/style-guide/ColorGuide.module.css";
 import {
   descStyles,
   imgStyles,
@@ -19,10 +20,10 @@ export const WorkingLayout = ({ title, desc, img }: WorkingLayoutProps) => {
     >
       <div className={`containerService paddingLeftRight15`}>
         <div className={`${titleStyles}`}>
-          <PrimaryTitle title={title} variant="infoSectionH2" />
+          <PrimaryTitle title={title} variant="h3600" customClasses={`${carbon}`}/>
         </div>
         <div className={`${descStyles}`}>
-          <p className={`col-md-7 col-lg-5`}>{desc}</p>
+          <p className={`col-md-7 col-lg-5 ${carbon}`}>{desc}</p>
         </div>
         <div className={`${imgStyles} d-flex justify-content-center`}>
           <img src={img} alt={title} title={title} className={`img-fluid`} />

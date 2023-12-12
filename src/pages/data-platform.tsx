@@ -1,5 +1,6 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
@@ -11,101 +12,16 @@ import {
   KeyInsights,
   WorkingProcess,
 } from "../layouts/data-platform";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const DataPlatformPage: React.FC<PageProps> = () => {
-  const keyInsightsData = {
-    title: "Key Insights",
-    list: [
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-    ],
-  };
-  const FeatureData = {
-    title: "Feature",
-    list: [
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-    ],
-  };
-  const HowItWorksData = {
-    title: "How it Works ",
-    imgSrc: "https://nxt.tarento.com/img/dataProcess.jpg",
-    imgCaption: "data process",
-    subTitleOne: "Ability to collect data from diverse sources.",
-    subTitleTwo:
-      "Data processing - Ingest, validate, transform, enrich, and store.",
-    subTitleThree:
-      "Build insights &amp; Intelligence, predict &amp; plan. Use the processed and enriched data for wide range of business use cases.",
-  };
-  const FormData = {
-    title: "Every business can benefit from the mastery of the data",
-    subTitle: `
-    <p>
-      Onboard and take your business to the next level.
-      <br /> Send a message to
-      <b>
-        <a href="mailto:hello@tarento.com?subject=Pulse Demo" >
-          hello@tarento.com
-        </a>
-      </b>
-      and we will contact you within one business day.
-    </p>
-  `,
-    buttonText: "Request a demo",
-    buttonLink: "mailto:hello@tarento.com?subject=Pulse Demo",
-    imgSrc: "https://nxt.tarento.com/img/data_QRCode.png",
-    imgCaption: "QR Code Scanner",
-  };
+interface DataPlatformPageProps {
+  data: any;
+}
+
+const DataPlatformPage: React.FC<PageProps> = ({
+  data,
+}: DataPlatformPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -149,25 +65,136 @@ const DataPlatformPage: React.FC<PageProps> = () => {
   return (
     <main className="">
       <HeroBannerForAccelerators
-        data={{
-          title: "Data. Information. Insight.",
-          img: "https://nxt.tarento.com/img/data-platform.jpg",
-          imgAltText: "data-platform",
-          subText: " Supercharge your business with the power of Data.",
-          description:
-            " Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.",
-          logosrc: "https://nxt.tarento.com/img/bolt_light.svg",
-          withLogo: true,
-        }}
+        title={data[currentLang]?.HeroBanner?.Title}
+        description={data[currentLang]?.HeroBanner?.Description}
+        img={data[currentLang]?.HeroBanner?.Image}
+        logosrc={data[currentLang]?.HeroBanner?.Logo}
+        subText={data[currentLang]?.HeroBanner?.SubText}
       />
-      <WorkingProcess data={HowItWorksData} />
-      <KeyInsights data={keyInsightsData} />
-      <Feature data={FeatureData} />
-      <Form data={FormData} />
+      <WorkingProcess
+        sectionTitle={data[currentLang]?.HowItWorks?.SectionTitle}
+        processImage={data[currentLang]?.HowItWorks?.ProcessImage}
+        descriptionOne={data[currentLang]?.HowItWorks?.DescriptionOne}
+        descriptionTwo={data[currentLang]?.HowItWorks?.DescriptionTwo}
+        descriptionThree={data[currentLang]?.HowItWorks?.DescriptionThree}
+      />
+      <KeyInsights
+        sectionTitle={data[currentLang]?.InsightSectionTitle}
+        insightsData={data[currentLang]?.InsightsCard}
+      />
+      <Feature
+        sectionTitle={data[currentLang]?.FeatureSectionTitle}
+        featureCardData={data[currentLang]?.FeatureListCard}
+      />
+      <Form
+        id={data[currentLang]?.CTASection?.id}
+        sectionTitle={data[currentLang]?.CTASection?.Title}
+        description={data[currentLang]?.CTASection?.Description}
+        ctaLink={data[currentLang]?.CTASection?.CTALink}
+        ctaLabel={data[currentLang]?.CTASection?.CTAText}
+        scannerImage={data[currentLang]?.CTASection?.ScannerImage}
+        isCTAEmail={data[currentLang]?.CTASection?.isEmail}
+      />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query DataPlatform {
+    en: strapiDataPlatform(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        Title
+        SubText
+        Description
+        Logo {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        Image {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      HowItWorks {
+        id
+        SectionTitle
+        ProcessImage {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+        DescriptionOne
+        DescriptionTwo
+        DescriptionThree
+      }
+      InsightSectionTitle
+      InsightsCard {
+        Caption
+        id
+        Image {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      FeatureSectionTitle
+      FeatureListCard {
+        id
+        Caption
+        Image {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      CTASection {
+        id
+        Title
+        ScannerImage {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        CTAText
+        CTALink
+        isEmail
+      }
+    }
+  }
+`;
 
 export default DataPlatformPage;
 

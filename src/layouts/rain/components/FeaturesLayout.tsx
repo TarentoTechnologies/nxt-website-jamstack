@@ -1,17 +1,20 @@
 import { RainFeatureCard } from "../../../components/cards/RainFeatureCard";
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
+import { carbon } from "../../../styles/style-guide/ColorGuide.module.css";
 import { featureGrid, titleStyles } from "../Rain.module.css";
 
 interface FeaturesLayoutProps {
   title: string;
-  cardsData: any[];
+  cardsData: any;
   bgGrey?: boolean;
+  isImage: boolean;
 }
 
 export const FeaturesLayout = ({
   title,
   cardsData,
   bgGrey,
+  isImage
 }: FeaturesLayoutProps) => {
   const bgcolor = bgGrey ? "layoutBg" : "";
 
@@ -21,15 +24,20 @@ export const FeaturesLayout = ({
     >
       <div className={`containerService paddingLeftRight15`}>
         <div className={`${titleStyles}`}>
-          <PrimaryTitle title={title} variant="infoSectionH2" />
+          <PrimaryTitle
+            title={title}
+            variant="h3600"
+            customClasses={`${carbon}`}
+          />
         </div>
         <div className={`${featureGrid}`}>
-          {cardsData.map((item, index) => (
+          {cardsData.map((item: any, index: number) => (
             <RainFeatureCard
-              key={index}
-              heading={item.heading}
-              subText={item.subText}
-              img={item.img}
+              key={item.id}
+              heading={item.Heading}
+              subText={item.SubText}
+              img={item.Img}
+              isImage={isImage}
             />
           ))}
         </div>

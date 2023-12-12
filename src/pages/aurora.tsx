@@ -30,40 +30,40 @@ const AuroraPage: React.FC<PageProps> = () => {
 
   const featureCards = [
     {
-      heading: "Connect to any source, manage from one place",
-      subText:
+      Heading: "Connect to any source, manage from one place",
+      SubText:
         "Aurora can be configured to accept tickets from multiple sources including email, mobile applications, QR codes, web portals etc.",
-      img: featureImg1,
+      Img: featureImg1,
     },
     {
-      heading: "Reply directly regardless of the type of source",
-      subText:
+      Heading: "Reply directly regardless of the type of source",
+      SubText:
         "From Aurora desk, the user can reply to any ticket, using an intuitive chat interface, regardless of the source platform from which the ticket was raised.",
-      img: featureImg2,
+      Img: featureImg2,
     },
     {
-      heading: "Be more informed with full history",
-      subText:
+      Heading: "Be more informed with full history",
+      SubText:
         "User can access the full history of activities to make an informed decision with short and effective back and forth communication.",
-      img: featureImg3,
+      Img: featureImg3,
     },
     {
-      heading: "Manage access, visibility and much more with admin",
-      subText:
+      Heading: "Manage access, visibility and much more with admin",
+      SubText:
         "The administration module lets the admin user control almost everything easily without any help.",
-      img: featureImg4,
+      Img: featureImg4,
     },
     {
-      heading: "Better organisation with tags, pins, progress indicators etc.",
-      subText:
+      Heading: "Better organisation with tags, pins, progress indicators etc.",
+      SubText:
         "Have a huge number of feedback/tickets? Aurora has the right tools that let you make it a habit to better organize items.",
-      img: featureImg5,
+      Img: featureImg5,
     },
     {
-      heading: "Learn from feedback - get real-time insights",
-      subText:
+      Heading: "Learn from feedback - get real-time insights",
+      SubText:
         "Just solving concerns does not always help. One needs to identify patterns and take proactive decisions inorder to be effective. The analytics capability built into Aurora generates visualizations and insights to help you with that.",
-      img: featureImg6,
+      Img: featureImg6,
     },
   ];
 
@@ -128,7 +128,12 @@ const AuroraPage: React.FC<PageProps> = () => {
         ]}
         videoSrc={auroraVideo}
       />
-      <FeaturesLayout title="Features" cardsData={featureCards} />
+      <FeaturesLayout
+        title="Features"
+        cardsData={featureCards}
+        isImage={true}
+        bgGrey
+      />
       <Stories
         title="Stories"
         cardsData={[

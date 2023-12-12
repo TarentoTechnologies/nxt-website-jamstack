@@ -27,19 +27,34 @@ export const PrimaryCTA = ({
   isMail,
 }: PrimaryCTAProps) => {
   const mode = primary ? `${primaryBtn}` : `${secondaryBtn}`;
+
   return (
-    <a
-      href={
-        btnLink != null ? `${isMail ? `mailto:${btnLink};` : "btnLink"}` : ""
-      }
-    >
-      <div
-        className={`text-center d-flex align-items-center justify-content-center 
+    <>
+      {isMail ? (
+        <a
+          href={
+            btnLink != null ? `${isMail ? `mailto:${btnLink};` : btnLink}` : ""
+          }
+        >
+          <div
+            className={`text-center d-flex align-items-center justify-content-center 
       ${mode} ${size === "large" ? large : ""} ${customClasses}`}
-        onClick={clickHandler}
-      >
-        <label className={`${labelStyles}`}>{label}</label>
-      </div>
-    </a>
+            onClick={clickHandler}
+          >
+            <label className={`${labelStyles}`}>{label}</label>
+          </div>
+        </a>
+      ) : (
+        <Link to={btnLink != null ? btnLink : ""}>
+          <div
+            className={`text-center d-flex align-items-center justify-content-center 
+      ${mode} ${size === "large" ? large : ""} ${customClasses}`}
+            onClick={clickHandler}
+          >
+            <label className={`${labelStyles}`}>{label}</label>
+          </div>
+        </Link>
+      )}
+    </>
   );
 };
