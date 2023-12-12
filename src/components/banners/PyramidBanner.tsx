@@ -11,6 +11,7 @@ interface PyramidBannerProps {
   title: string;
   description: string;
   btnDescr?: string;
+  btnLink?: any
   pyramidImg: any;
 }
 
@@ -19,6 +20,7 @@ export const PyramidBanner = ({
   description,
   btnDescr,
   pyramidImg,
+  btnLink
 }: PyramidBannerProps) => {
   return (
     <div className={`container-fluid ${bannerStyles}`}>
@@ -45,7 +47,7 @@ export const PyramidBanner = ({
           >
             <PrimaryTitle title={title} variant="banner" color="white" />
             <p>{description}</p>
-            <PrimaryCTA label={btnDescr} primary />
+            <PrimaryCTA label={btnDescr} btnLink={btnLink} primary />
           </div>
         </div>
       </div>

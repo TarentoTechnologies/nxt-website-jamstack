@@ -30,7 +30,7 @@ export const ProductCard = ({
 }: ProductCardProps) => {
   if (isLink) {
     return (
-      <a href={link != null ? link : ""} target="_blank" rel="noreferrer">
+      <Link to={link != null ? link : ""}>
         <div
           className={`container-fluid ${
             isSecondary ? proCardSecondary : proCard
@@ -53,7 +53,7 @@ export const ProductCard = ({
             />
           </div>
         </div>
-      </a>
+      </Link>
     );
   } else {
     return (

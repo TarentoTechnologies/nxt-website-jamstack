@@ -22,6 +22,8 @@ export const ProductCardLayout = ({ data }: ProductCardLayoutProps) => {
               title={item.Title}
               bgImg={item.BackgroundImage.localFile.url}
               logo={item.Logo.localFile.url}
+              link={item.Link}
+              isLink={item.Link}
             />
           </div>
         ))}

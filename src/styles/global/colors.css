@@ -54,6 +54,8 @@ html {
   --neutral-gray-2: #f5f5f5;
   --neutral-gray-3: #f7f7f7;
   --lilac-gray: #bebebe;
+  --hay-blue: RGBA(37, 41, 153, 0.6);
+  --roslyns-blue: RGBA(79, 33, 134, 0.6);
 }
 
 html[data-theme="dark"] {
@@ -105,4 +107,6 @@ html[data-theme="dark"] {
   --neutral-gray-2: #f5f5f5;
   --neutral-gray-3: #f7f7f7;
   --lilac-gray: #bebebe;
+  --hay-blue: RGBA(37, 41, 153, 0.6);
+  --roslyns-blue: RGBA(79, 33, 134, 0.6);
 }
