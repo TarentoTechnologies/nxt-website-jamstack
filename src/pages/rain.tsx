@@ -2,17 +2,8 @@ import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import { useRecoilValue } from "recoil";
 
-import rainHero from "../../static/images/ai-img.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
-import featureImg1 from "../../static/images/features 1.jpg";
-import featureImg2 from "../../static/images/features 2.jpg";
-import featureImg3 from "../../static/images/features 3.jpg";
-import featureImg4 from "../../static/images/features 4.jpg";
-import featureImg5 from "../../static/images/features 5.jpg";
-import featureImg6 from "../../static/images/features 6.jpg";
 import NXTlogo from "../../static/images/logo-inner.svg";
-import rainLogo from "../../static/images/rain.svg";
-import rainData from "../../static/images/rain_data.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
 import {

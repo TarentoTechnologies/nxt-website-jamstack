@@ -181,6 +181,13 @@ h3 {
   font-size: 2rem;
 }
 
+.logoTitle {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 700;
+  line-height: 3.313rem;
+  font-size: 3rem;
+}
+
 .acceleratorTitleV2 {
   font-family: "RobotoSlab-Bold", serif;
   font-weight: 700;
@@ -220,6 +227,41 @@ h3 {
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.688rem;
+}
+
+.sectionTitleV1 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 700;
+  font-size: 2.688rem;
+  line-height: 2.938rem;
+}
+
+.subTitleV1 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  font-size: 2.688rem;
+  line-height: 4rem;
+}
+
+.h1700V2 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 700;
+  line-height: 2.188rem;
+  font-size: 2rem;
+}
+
+.h4500V2 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 500;
+  line-height: 1.438rem;
+  font-size: 1.313rem;
+}
+
+.h2400 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  line-height: 1.25rem;
+  font-size: 1.125rem;
 }
 
 /* Media queries starts here */
