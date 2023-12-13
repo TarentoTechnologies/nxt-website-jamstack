@@ -4,7 +4,7 @@ import { layout } from "../CustomerExperience.module.css";
 
 interface FeaturesProps {
   title?: string;
-  list: { title?: string; logo?: any; description?: string }[];
+  list: any;
 }
 
 export const Feature = ({ title, list }: FeaturesProps) => {
@@ -13,15 +13,14 @@ export const Feature = ({ title, list }: FeaturesProps) => {
       <div className="containerService paddingLeftRight15">
         <h1 className={`${h3Title} mt-4 mb-5`}>{title}</h1>
         <div className={`row`}>
-          {list.map((item, index) => {
+          {list.map((item: any, index: number) => {
             return (
-              <>
-                <CustomerExpCard
-                  title={item.title}
-                  description={item?.description}
-                  logo={item.logo}
-                />
-              </>
+              <CustomerExpCard
+                id={item?.id}
+                title={item?.Heading}
+                description={item?.SubText}
+                logo={item?.Img?.localFile?.url}
+              />
             );
           })}
         </div>

@@ -2,6 +2,7 @@ import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import { cxCard } from "./CustomerExpCard.module.css";
 
 interface CustomerExpCardProps {
+  id: any;
   title?: string;
   logo?: any;
   isSecondary?: boolean;
@@ -11,6 +12,7 @@ interface CustomerExpCardProps {
 }
 
 export const CustomerExpCard = ({
+  id,
   title,
   description,
   logo,
@@ -20,7 +22,7 @@ export const CustomerExpCard = ({
 }: CustomerExpCardProps) => {
   if (isLink) {
     return (
-      <a href={link != null ? link : ""} target="_blank" rel="noreferrer">
+      <a href={link != null ? link : ""} target="_blank" rel="noreferrer" id={id}>
         <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1">
         <div className="">
           <div className={cxCard}>
@@ -38,7 +40,7 @@ export const CustomerExpCard = ({
     );
   } else {
     return (
-      <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1">
+      <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1" id={id}>
         <div className="">
           <div className={cxCard}>
             <img className="centerImg" src={logo} alt={title} />

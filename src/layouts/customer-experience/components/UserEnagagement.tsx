@@ -9,13 +9,15 @@ import {
 } from "../CustomerExperience.module.css";
 
 interface UserEngagementProps {
+  id?: any;
   title?: string;
   imgSrc?: string;
-  list?: string[];
+  list?: any;
   ctaText?: string;
   ctaLink?: string;
 }
 export const UserEngagement = ({
+  id,
   title,
   imgSrc,
   list,
@@ -23,7 +25,7 @@ export const UserEngagement = ({
   ctaLink,
 }: UserEngagementProps) => {
   return (
-    <div className={`${layout} d-flex justify-content-center`}>
+    <div className={`${layout} d-flex justify-content-center`} id={id}>
       <div className="containerService paddingLeftRight15">
         <div className="row">
           <div className="col-lg-6 col-md-12 col-sm-12 ">
@@ -38,8 +40,8 @@ export const UserEngagement = ({
               <div className={`${cxHeading} ${moveLeftOne} mb-4`}>{title}</div>
               <div id="cxList">
                 <ul className={`${listMoveLeft} ${liStyle} ps-3`}>
-                  {list?.map((item, index) => (
-                    <li className={liStyle}>{item}</li>
+                  {list?.map((item:any, index:number) => (
+                    <li className={liStyle} key={item?.id}>{item?.ListItem}</li>
                   ))}
                 </ul>
               </div>
