@@ -27,7 +27,13 @@ import {
   ctaDescriptionV2,
   h1CardTitle,
   subTextV1,
-  h4400
+  h4400,
+  logoTitle,
+  sectionTitleV1,
+  subTitleV1,
+  h1700V2,
+  h4500V2,
+  h2400
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -214,6 +220,42 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>h4400</td>
+          </tr>
+          <tr>
+            <th scope="row" className={logoTitle}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>logoTitle</td>
+          </tr>
+          <tr>
+            <th scope="row" className={sectionTitleV1}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>sectionTitleV1</td>
+          </tr>
+          <tr>
+            <th scope="row" className={subTitleV1}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>subTitleV1</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h1700V2}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h1700V2</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h4500V2}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h4500V2</td>
+          </tr>
+          <tr>
+            <th scope="row" className={h2400}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>h2400</td>
           </tr>
         </tbody>
       </table>

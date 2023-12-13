@@ -10,7 +10,8 @@ import {
   cardHeader,
   h1One,
   h1CardTitle,
-  subTextV1
+  subTextV1,
+  logoTitle
 } from "../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
@@ -53,7 +54,7 @@ export const HeroBannerForTDI = ({
   subTextBold,
 }: HeroBannerForTDIProps) => {
   const image: any = getImage(img);
-
+  
   return (
     <>
       {govTech == true ? (
@@ -126,7 +127,7 @@ export const HeroBannerForTDI = ({
                 )}
                 <h1 className={`${h1CardTitle} ${white}`}>
                   {mainTitle && (
-                    <b>
+                    <b className={`${white} ${logoTitle}`}>
                       {mainTitle}
                       <br />
                     </b>

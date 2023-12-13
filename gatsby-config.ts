@@ -90,6 +90,14 @@ const strapiConfig = {
           locale: "all", // Fetch all localizations
         },
       },
+    },
+    {
+      singularName: "thor",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
     }
   ],
 };

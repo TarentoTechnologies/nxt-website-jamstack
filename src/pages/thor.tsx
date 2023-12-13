@@ -1,5 +1,6 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
@@ -12,15 +13,14 @@ import {
   MultiChannel,
   UseCases,
 } from "../layouts/thor";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const ThorPage: React.FC<PageProps> = () => {
-  const heroBannerData = {
-    mainTitle: "THOR",
-    title: "AI Powered Assistant and Chatbot",
-    img: "https://nxt.tarento.com/img/Thor_animation.svg",
-    description:
-      "THOR is highly scalable, extensible and allows deep integration to any domain. Multi channel capabilities of THOR enables businesses to engage their users over a wide range of channels",
-  };
+interface ThorPageProps {
+  data: any;
+}
+
+const ThorPage: React.FC<PageProps> = ({ data }: ThorPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -60,151 +60,151 @@ const ThorPage: React.FC<PageProps> = () => {
     ],
     rightsText: "All rights reserved © 2023 Tarento Technologies.",
   };
-  const FeaturesData = {
-    imgSrc: "https://nxt.tarento.com/img/Capabilties.png",
-    imgCaption: "thor capabilities",
-  };
-  const CaseStudyData = {
-    title: "Case Studies",
-    list: [
-      {
-        title: "Worlds most sophisticated ID program",
-        imgSrc: "https://nxt.tarento.com/img/photo%202.jpg",
-        description:
-          "Objective of this program was to reduce the unstructured support requests and feedback (such as over calls and emails) which are hard to track and ensure the quality of the responses. In this context it was decided to build an AI powered bot platform that will provide a quicker turnaround to customer grievances and significantly enhanced customer experience. Data security was of paramount importance to such a program and hence it was decided to build the entire platform in-house and ensure that no data leaving the premises ever. Tarento built the entire AI bot platform and deployed the same ahead of schedule. Several innovations including methods and tools to train the bot and measure the effectiveness and reduce the time to launch. System uses live cases to constantly train and improve the responses.",
-      },
-      {
-        title:
-          "Digital learning platform with a few million active users across 28 Indian states",
-        imgSrc: "https://nxt.tarento.com/img/photo3.jpg",
-        description:
-          "DIKSHA - Digital Infrastructure for Knowledge Sharing is an initiative from Ministry of Human Resource Development (MHRD), Government of India. The platform provides augmented learning contents and tools to enhance learning opportunity for students and teachers. “Diksha Vani” is an initiative from MHRD to enable a channel for users to interact with platform and get answers. Platform also provides content search and learning recommendations.",
-      },
-    ],
-  };
-  const UseCaseData = {
-    title: "Use cases",
-    list: [
-      { imgSrc: "https://nxt.tarento.com/img/FAQs.svg", imgText: "FAQs" },
-      {
-        imgSrc: "https://nxt.tarento.com/img/Customer%20Support.svg",
-        imgText: "Customer Support",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/recomendations.svg",
-        imgText: "Recommendations",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/Marketing.svg",
-        imgText: "Marketing",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/Reservations.svg",
-        imgText: "Reservations",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/helpdesk.svg",
-        imgText: "Help desk",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/Guided%20Selling.svg",
-        imgText: "Guided Selling",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/HR%20Support.svg",
-        imgText: "HR Support",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/Event%20Booking.svg",
-        imgText: "Event Booking",
-      },
-    ],
-    subText: "And many more..",
-  };
-  const AvatarData = {
-    title: "Two Avatars",
-
-    list: [
-      {
-        imgSrc: "https://nxt.tarento.com/img/thor_avatars_01.svg",
-        title: "AI Assistant",
-
-        description:
-          "THOR AI Assistant is highly personalized and deeply integrated to the business domain & IT systems. Core capabilities of the Assistant falls in 3 main categories: Answers, Alerts and Automation.",
-        videoSrc: "https://nxt.tarento.com/videos/thor_v5.mp4",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/chatbot.svg",
-        title: "Chatbot",
-
-        description:
-          "THOR bot is an AI powered chatbot that is very easy to integrate and simple to manage. Thor bot has multi channel integration capabilities and is available on wide variety of channels including web, mobile web, native mobile apps like Telegram & Whatsapp.",
-        videoSrc: "https://nxt.tarento.com/videos/Chatbot_Generic_v4.mp4",
-      },
-    ],
-    subText: (
-      <>
-        {" "}
-        THOR has two avatars - As an AI Assistant for business domain and <br />
-        as multi-channel chatbot.
-      </>
-    ),
-  };
-  const MutliChannelData = {
-    imgSrc: "https://nxt.tarento.com/img/multichannel.png",
-    title: "Multi channel engagement",
-    subTitle: "Engage your users across the spectrum.",
-
-    list: [
-      {
-        title: "Chat widget for Web and Mobile ",
-        description: "Chat widget that can be embedded in web and mobile web",
-      },
-      {
-        title: " Mobile Application",
-        description: "Simple integration with native mobile apps",
-      },
-      {
-        title: "Messaging applications",
-        description:
-          "Use Telegram and WhatsApp messengers to expand your reach",
-      },
-    ],
-  };
 
   return (
     <main className="">
       <HeroBannerForTDI
-        title={heroBannerData.title}
-        img={heroBannerData.img}
-        description={heroBannerData.description}
-        mainTitle={heroBannerData.mainTitle}
+        title={data[currentLang]?.HeroBanner?.SubText}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
+        imgAltText={data[currentLang]?.HeroBanner?.Img?.alternativeText}
+        description={data[currentLang]?.HeroBanner?.Description}
+        mainTitle={data[currentLang]?.HeroBanner?.Title}
+        isImage={data[currentLang]?.HeroBanner?.isImage}
+        withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
       <Avatars
-        title={AvatarData.title}
-        list={AvatarData.list}
-        subText={AvatarData.subText}
+        title={data[currentLang]?.TwoAvatars?.PrimaryTitle}
+        list={data[currentLang]?.TwoAvatars?.AvatarList}
+        subText={data[currentLang]?.TwoAvatars?.PrimaryDescription}
       />
-      <Features
-        imgSrc={FeaturesData.imgSrc}
-        imgCaption={FeaturesData.imgCaption}
-      />
+      <Features imgSrc={data[currentLang]?.Capabilities} />
       <MultiChannel
-        title={MutliChannelData.title}
-        subText={MutliChannelData.subTitle}
-        imgSrc={MutliChannelData.imgSrc}
-        list={MutliChannelData.list}
+        title={data[currentLang]?.MultiChannelEngagement?.Title}
+        subText={data[currentLang]?.MultiChannelEngagement?.Description}
+        imgSrc={data[currentLang]?.MultiChannelEngagement?.Image}
+        list={data[currentLang]?.MultiChannelEngagement?.ChannelList}
       />
-      <CaseStudies title={CaseStudyData.title} list={CaseStudyData.list} />
+      <CaseStudies
+        title={data[currentLang]?.CaseStudiesTitle}
+        list={data[currentLang]?.CaseStudiesList}
+      />
       <UseCases
-        title={UseCaseData.title}
-        list={UseCaseData.list}
-        subText={UseCaseData.subText}
+        title={data[currentLang]?.UseCaseTitle}
+        list={data[currentLang]?.UseCasesList}
+        subText={data[currentLang]?.UseCaseSubText}
       />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query ThorPage {
+    en: strapiThor(locale: { eq: "en" }) {
+      id
+      HeroBanner {
+        id
+        isImage
+        withLogo
+        Title
+        SubText
+        Img {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+      TwoAvatars {
+        id
+        PrimaryTitle
+        PrimaryDescription
+        AvatarList {
+          id
+          Title
+          Description
+          Logo {
+            alternativeText
+            caption
+            localFile {
+              url
+            }
+          }
+        }
+      }
+      Capabilities {
+        alternativeText
+        caption
+        localFile {
+          childImageSharp {
+            gatsbyImageData(formats: PNG)
+          }
+        }
+      }
+      CaseStudiesTitle
+      CaseStudiesList {
+        id
+        Heading
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Image {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      MultiChannelEngagement {
+        id
+        Title
+        Description
+        Image {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+        ChannelList {
+          id
+          Title
+          Description
+        }
+      }
+      UseCaseTitle
+      UseCasesList {
+        id
+        Image {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        Caption
+      }
+      UseCaseSubText
+    }
+  }
+`;
 
 export default ThorPage;
 
