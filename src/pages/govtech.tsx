@@ -1,13 +1,21 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
 import { ContactUsLayout, DigitalPlatform } from "../layouts/govtech";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const GovTechPage: React.FC<PageProps> = () => {
+interface GovTechPageProps {
+  data: any;
+}
+
+const GovTechPage: React.FC<PageProps> = ({ data }: GovTechPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+
   const footerData = {
     nxtLogoImg: NXTlogo,
     nxtLogoImgTitle: "NXT-logo",
@@ -46,123 +54,97 @@ const GovTechPage: React.FC<PageProps> = () => {
     ],
     rightsText: "All rights reserved © 2023 Tarento Technologies.",
   };
-  const heroBannerData = {
-    title: "Gov Tech",
-    img: "https://nxt.tarento.com/img/gov_tech.svg",
-    subtext: "Words by one of the greatest sociologists - Daniel Bell",
-    description:
-      "Cutting edge solutions with best in class open source technologies for efficient and secure governance.",
-  };
-  const DigitalPlatformData = {
-    heading: "Country Scale Digital Platforms and Solutions",
-    list: [
-      {
-        bgImg: "https://nxt.tarento.com/img/translation.svg",
-        title: "Anuvaad Translation",
-        logoDarkSrc: "https://nxt.tarento.com/img/anuvad_dark_logo.svg",
-        logoLightSrc: "https://nxt.tarento.com/img/anuvad_light_logo.svg",
-        description: (
-          <>
-            AI Powered translation platform for <br />
-            Indian languages. Used by Hon.
-            <br />
-            Supreme Court of India for Suvaas <br />
-            project.{" "}
-          </>
-        ),
-      },
-      {
-        bgImg: "https://nxt.tarento.com/img/translation.svg",
-        title: "Anuvaad Translation",
-        logoDarkSrc: "https://nxt.tarento.com/img/anuvad_dark_logo.svg",
-        logoLightSrc: "https://nxt.tarento.com/img/anuvad_light_logo.svg",
-        description: (
-          <>
-            AI Powered translation platform for <br />
-            Indian languages. Used by Hon.
-            <br />
-            Supreme Court of India for Suvaas <br />
-            project.{" "}
-          </>
-        ),
-      },
-      {
-        bgImg: "https://nxt.tarento.com/img/translation.svg",
-        title: "Anuvaad Translation",
-        logoDarkSrc: "https://nxt.tarento.com/img/anuvad_dark_logo.svg",
-        logoLightSrc: "https://nxt.tarento.com/img/anuvad_light_logo.svg",
-        description: (
-          <>
-            AI Powered translation platform for <br />
-            Indian languages. Used by Hon.
-            <br />
-            Supreme Court of India for Suvaas <br />
-            project.{" "}
-          </>
-        ),
-      },
-      {
-        bgImg: "https://nxt.tarento.com/img/translation.svg",
-        title: "Anuvaad Translation",
-        logoDarkSrc: "https://nxt.tarento.com/img/anuvad_dark_logo.svg",
-        logoLightSrc: "https://nxt.tarento.com/img/anuvad_light_logo.svg",
-        description: (
-          <>
-            AI Powered translation platform for <br />
-            Indian languages. Used by Hon.
-            <br />
-            Supreme Court of India for Suvaas <br />
-            project.{" "}
-          </>
-        ),
-      },
-      {
-        bgImg: "https://nxt.tarento.com/img/translation.svg",
-        title: "Anuvaad Translation",
-        logoDarkSrc: "https://nxt.tarento.com/img/anuvad_dark_logo.svg",
-        logoLightSrc: "https://nxt.tarento.com/img/anuvad_light_logo.svg",
-        description: (
-          <>
-            AI Powered translation platform for <br />
-            Indian languages. Used by Hon.
-            <br />
-            Supreme Court of India for Suvaas <br />
-            project.{" "}
-          </>
-        ),
-      },
-    ],
-    desc: "Proven platforms that can go country scale. Can be deployed in short notice and customized to fit needs of government agencies. With fully in-house hosting, you have the total control of the data.",
-  };
-  const ContactUsData = {
-    heading: "Are you interested?",
-    desc: "Does this pack look interesting to you? Get in touch with us to know more. Send us a mail with the subject “GovTech” by clicking the button below",
-    CTAlabel: "Contact us",
-    CTAlink: undefined,
-  };
+
   return (
     <main className="">
       <HeroBannerForTDI
-        title={heroBannerData.title}
-        description={heroBannerData.description}
-        img={heroBannerData.img}
-        govTech={true}
+        title={data[currentLang]?.HeroBanner?.Title}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
+        imgAltText={data[currentLang]?.HeroBanner?.Img?.alternativeText}
+        description={data[currentLang]?.HeroBanner?.Description}
+        isImage={data[currentLang]?.HeroBanner?.isImage}
+        withLogo={data[currentLang]?.HeroBanner?.withLogo}
+        govTech
       />
       <DigitalPlatform
-        heading={DigitalPlatformData.heading}
-        desc={DigitalPlatformData.desc}
-        list={DigitalPlatformData.list}
+        heading={data[currentLang]?.DigitalPlatformsTitle}
+        desc={data[currentLang]?.DigitalPlatformDescription}
+        list={data[currentLang]?.PlatformsList}
       />
       <ContactUsLayout
-        heading={ContactUsData.heading}
-        desc={ContactUsData.desc}
-        CTAlabel={ContactUsData.CTAlabel}
-        CTAlink={ContactUsData.CTAlink}
+        heading={data[currentLang]?.AreYouInterested?.Title}
+        desc={data[currentLang]?.AreYouInterested?.Description}
+        CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
+        CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
+        isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
       />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query GovTechPage {
+    en: strapiGovTech(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        Title
+        isImage
+        withLogo
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Img {
+          caption
+          alternativeText
+          localFile {
+            url
+          }
+        }
+      }
+      DigitalPlatformsTitle
+      DigitalPlatformDescription
+      PlatformsList {
+        id
+        Title
+        Description
+        BackgroundImage {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        LogoDark {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        LogoLight {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+      }
+      AreYouInterested {
+        id
+        isMail
+        Title
+        Description
+        CTAText
+        CTALink
+      }
+    }
+  }
+`;
 
 export default GovTechPage;
 

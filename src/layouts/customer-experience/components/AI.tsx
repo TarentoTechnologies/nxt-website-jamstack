@@ -1,4 +1,4 @@
-import { h3Title } from "../../../styles/style-guide/Typography.module.css";
+import { h3600 } from "../../../styles/style-guide/Typography.module.css";
 import { layout } from "../CustomerExperience.module.css";
 
 interface AIsProps {
@@ -13,7 +13,7 @@ export const AI = ({ title, imgCaption, imgSrc }: AIsProps) => {
       <div className="containerService paddingLeftRight15">
         <div className="row">
           <div className="col-md-12">
-            <h1 className={`${h3Title} mb-5`}>{title}</h1>
+            <h1 className={`${h3600} mb-5`}>{title}</h1>
             <div className="">
               <img src={imgSrc} alt={imgCaption} className="w-100" />
             </div>

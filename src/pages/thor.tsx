@@ -138,6 +138,11 @@ export const query = graphql`
               url
             }
           }
+          Video {
+            localFile {
+              url
+            }
+          }
         }
       }
       Capabilities {

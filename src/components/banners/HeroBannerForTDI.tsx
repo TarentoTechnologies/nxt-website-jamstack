@@ -69,7 +69,7 @@ export const HeroBannerForTDI = ({
               className={`col-sm-12 col-md-5 d-flex flex-column justify-content-center px-md-0`}
             >
               <div className={`${headerInfo}`}>
-                <div className={`${h1One} ${titleStyles}`}>{title}</div>
+                <div className={`${logoTitle} ${titleStyles}`}>{title}</div>
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
                   <p className={`${white87}`}>{subText}</p>

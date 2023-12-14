@@ -35,6 +35,7 @@
 
 .labelStyles {
   cursor: pointer;
+  line-height: 1.438rem !important;
 }
 
 a {

@@ -2,16 +2,8 @@ import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import { useRecoilValue } from "recoil";
 
-import boltImg from "../../static/images/bolt_thumb.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
-import leadBgImg from "../../static/images/innovation/Bitmap.jpg";
-import forgingInnovation from "../../static/images/innovation/forging_innovation.svg";
-import leadImg from "../../static/images/innovation/lead.svg";
-import innoStoryImg from "../../static/images/innovation/map.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
-import boltLogoSecondary from "../../static/images/tech_bolt_dark.svg";
-import rainImg from "../../static/images/tech_rain_dark.svg";
-import thorImg from "../../static/images/tech_thor_dark.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { StoryBanner } from "../components/banners/StoryBanner";
 import { Footer } from "../components/footer/Footer";
@@ -239,7 +231,7 @@ export default InnovationPage;
 export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
-    <title>::NXT Tarento - Technology design and Innovation::</title>
+    <title>::NXT Tarento - Innovation::</title>
     <link rel="canonical" href="https://nxt.tarento.com/" />
     <meta name="title" content="NXT Tarento" />
     <meta
@@ -254,7 +246,7 @@ export const Head: HeadFC = () => (
     {/* Open graph */}
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nxt.tarento.com/" />
-    <meta property="og:title" content="NXT Tarento" />
+    <meta property="og:title" content="NXT Tarento - Innovation" />
     <meta
       property="og:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
@@ -264,7 +256,7 @@ export const Head: HeadFC = () => (
     {/* Twitter */}
     <meta property="twitter:card" content="" />
     <meta property="twitter:url" content="https://nxt.tarento.com/" />
-    <meta property="twitter:title" content="NXT Tarento" />
+    <meta property="twitter:title" content="NXT Tarento - Innovation" />
     <meta
       property="twitter:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."

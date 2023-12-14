@@ -1,7 +1,9 @@
 import { Link } from "gatsby";
 
+import { bgUraniaBlue } from "../../styles/style-guide/ColorGuide.module.css";
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import {
+  customBgStyle,
   logoStyles,
   proCard,
   proCardSecondary,
@@ -17,6 +19,7 @@ interface ProductCardProps {
   secLogo?: any;
   link?: string;
   isLink?: boolean;
+  customBgPosition?: boolean;
 }
 
 export const ProductCard = ({
@@ -27,14 +30,16 @@ export const ProductCard = ({
   isSecondary,
   link,
   isLink,
+  customBgPosition,
 }: ProductCardProps) => {
+
   if (isLink) {
     return (
       <Link to={link != null ? link : ""}>
         <div
           className={`container-fluid ${
             isSecondary ? proCardSecondary : proCard
-          }`}
+          } ${customBgPosition ? `${bgUraniaBlue} ${customBgStyle}` : ""}`}
           style={{ backgroundImage: `url(${bgImg})` }}
         >
           <div
@@ -44,14 +49,16 @@ export const ProductCard = ({
           >
             <span>{title}</span>
           </div>
-          <div className={`${logoStyles}`}>
-            <img
-              src={isSecondary ? secLogo : logo}
-              alt={title}
-              title={title}
-              width={80}
-            />
-          </div>
+          {(secLogo || logo) && (
+            <div className={`${logoStyles}`}>
+              <img
+                src={isSecondary ? secLogo : logo}
+                alt={title}
+                title={title}
+                width={80}
+              />
+            </div>
+          )}
         </div>
       </Link>
     );
@@ -60,7 +67,7 @@ export const ProductCard = ({
       <div
         className={`container-fluid ${
           isSecondary ? proCardSecondary : proCard
-        }`}
+        } ${customBgPosition ? `${bgUraniaBlue} ${customBgStyle}` : ""}`}
         style={{ backgroundImage: `url(${bgImg})` }}
       >
         <div
@@ -70,14 +77,16 @@ export const ProductCard = ({
         >
           <span>{title}</span>
         </div>
-        <div className={`${logoStyles}`}>
-          <img
-            src={isSecondary ? secLogo : logo}
-            alt={title}
-            title={title}
-            width={80}
-          />
-        </div>
+        {(secLogo || logo) && (
+          <div className={`${logoStyles}`}>
+            <img
+              src={isSecondary ? secLogo : logo}
+              alt={title}
+              title={title}
+              width={80}
+            />
+          </div>
+        )}
       </div>
     );
   }

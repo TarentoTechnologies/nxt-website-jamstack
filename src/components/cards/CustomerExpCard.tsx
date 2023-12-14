@@ -1,7 +1,8 @@
-import { cardHeader } from "../../styles/style-guide/Typography.module.css";
+import { h4400 } from "../../styles/style-guide/Typography.module.css";
 import { cxCard } from "./CustomerExpCard.module.css";
 
 interface CustomerExpCardProps {
+  id: any;
   title?: string;
   logo?: any;
   isSecondary?: boolean;
@@ -11,6 +12,7 @@ interface CustomerExpCardProps {
 }
 
 export const CustomerExpCard = ({
+  id,
   title,
   description,
   logo,
@@ -20,7 +22,7 @@ export const CustomerExpCard = ({
 }: CustomerExpCardProps) => {
   if (isLink) {
     return (
-      <a href={link != null ? link : ""} target="_blank" rel="noreferrer">
+      <a href={link != null ? link : ""} target="_blank" rel="noreferrer" id={id}>
         <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1">
         <div className="">
           <div className={cxCard}>
@@ -28,7 +30,7 @@ export const CustomerExpCard = ({
           </div>
         </div>
         <div className="">
-          <div className={`${cardHeader} mt-4`}>{title}</div>
+          <h4 className={`${h4400} mt-4`}>{title}</h4>
         </div>
         <div className="mt-4 mb-4">
           <p>{description}</p>
@@ -38,14 +40,14 @@ export const CustomerExpCard = ({
     );
   } else {
     return (
-      <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1">
+      <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1" id={id}>
         <div className="">
           <div className={cxCard}>
             <img className="centerImg" src={logo} alt={title} />
           </div>
         </div>
         <div className="">
-          <div className={`${cardHeader} mt-4`}>{title}</div>
+          <h4 className={`${h4400} mt-4`}>{title}</h4>
         </div>
         <div className="mt-4 mb-4">
           <p>{description}</p>
