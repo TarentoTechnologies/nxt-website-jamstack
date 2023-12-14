@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { lightNeutralGray } from "../../styles/style-guide/ColorGuide.module.css";
+import { lightNeutralGray, black } from "../../styles/style-guide/ColorGuide.module.css";
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import {
   cardHover,
@@ -15,6 +15,7 @@ interface AcceleratorCardProps {
   logoLightSrc: string;
   logoDarkSrc: string;
   bgImg: string;
+  id?: any
 }
 
 export const AcceleratorCard = ({
@@ -23,6 +24,7 @@ export const AcceleratorCard = ({
   logoDarkSrc,
   logoLightSrc,
   bgImg,
+  id
 }: AcceleratorCardProps) => {
   const [hovered, setHovered] = useState(false);
 
@@ -38,11 +40,12 @@ export const AcceleratorCard = ({
       className="col-xs-12 col-sm-12 col-md-4 col-lg-4 mb-4"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      id={id}
     >
       {hovered ? (
         <div className={`${cardSize} ${cardHover}`}>
           <div>
-            <p className={cardHeader}>{title}</p>
+            <p className={`${cardHeader} ${black}`}>{title}</p>
             <p className={lightNeutralGray}>{description}</p>
             <img
               className={cardLogo}

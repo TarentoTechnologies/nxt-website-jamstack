@@ -98,7 +98,23 @@ const strapiConfig = {
           locale: "all", // Fetch all localizations
         },
       },
-    }
+    },
+    {
+      singularName: "gov-tech",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
+    {
+      singularName: "customer-experience-pack",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
 };
 

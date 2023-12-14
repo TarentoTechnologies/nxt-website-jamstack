@@ -158,6 +158,7 @@ export const query = graphql`
             url
           }
         }
+        customBgPosition
       }
       ProgrammeCards {
         id

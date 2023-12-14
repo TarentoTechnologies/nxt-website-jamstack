@@ -44,13 +44,13 @@ export const Avatars = ({ title, list, subText }: AvatarProps) => {
                     </span>
                     {item?.Title}
                   </p>
-                  <p>{item.Description}</p>
+                  <p>{item?.Description}</p>
 
                   <div className={videoPosition}>
                     <video
                       className={videoContainer}
                       controls
-                      src={item.videoSrc}
+                      src={item?.Video?.localFile?.url}
                     />
                   </div>
                 </div>

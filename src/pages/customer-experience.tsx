@@ -1,5 +1,6 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import boltImg from "../../static/images/bolt_thumb.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
@@ -8,48 +9,21 @@ import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
 import {
   AI,
-  ContactUs,
   Feature,
   OtherSolution,
   UserEngagement,
 } from "../layouts/customer-experience";
+import { ContactUsLayout } from "../layouts/govtech";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const CustomerExperiencePage: React.FC<PageProps> = () => {
-  const FeatureData = {
-    title: "Good customer experience requires more than just a good product",
-    list: [
-      {
-        title: "Intuitive Experience",
-        description:
-          "Make the experience as intuitive as possible. Avoid chances for errors, confusion. Ensure that your users have sufficient self help materials when they want to know more. Capture telemetry to understand user behaviour anonymously.",
-        logo: "https://nxt.tarento.com/img/experience.svg",
-      },
-      {
-        title: "Intuitive Experience",
-        description:
-          "Make the experience as intuitive as possible. Avoid chances for errors, confusion. Ensure that your users have sufficient self help materials when they want to know more. Capture telemetry to understand user behaviour anonymously.",
-        logo: "https://nxt.tarento.com/img/experience.svg",
-      },
-      {
-        title: "Intuitive Experience",
-        description:
-          "Make the experience as intuitive as possible. Avoid chances for errors, confusion. Ensure that your users have sufficient self help materials when they want to know more. Capture telemetry to understand user behaviour anonymously.",
-        logo: "https://nxt.tarento.com/img/experience.svg",
-      },
-      {
-        title: "Intuitive Experience",
-        description:
-          "Make the experience as intuitive as possible. Avoid chances for errors, confusion. Ensure that your users have sufficient self help materials when they want to know more. Capture telemetry to understand user behaviour anonymously.",
-        logo: "https://nxt.tarento.com/img/experience.svg",
-      },
-    ],
-  };
-  const HowItWorksData = {
-    title:
-      "Artificial Intelligence for the next generation customer experience",
-    imgSrc: "https://nxt.tarento.com/img/aurora_ai.svg",
-    imgCaption: "Artificial Intelligence",
-  };
+interface CustomerExperiencePageProps {
+  data: any;
+}
+
+const CustomerExperiencePage: React.FC<PageProps> = ({
+  data,
+}: CustomerExperiencePageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -89,99 +63,151 @@ const CustomerExperiencePage: React.FC<PageProps> = () => {
     ],
     rightsText: "All rights reserved © 2023 Tarento Technologies.",
   };
-  const OtherSolutionData = {
-    title: "Other Platforms and Solutions",
-    list: [
-      {
-        title: "Pulz",
-        bgImg: "https://nxt.tarento.com/img/pulz.svg",
-        logo: "https://nxt.tarento.com/img/energySaving-icon.svg",
-        link: "/pulz",
-        isLink: "true",
-      },
-      {
-        title: "BOLT",
-        bgImg: boltImg,
-        logo: "https://nxt.tarento.com/img/energySaving-icon.svg",
-        link: "/pulz",
-        isLink: "true",
-      },
-      {
-        title: "Pulz",
-        bgImg: "https://nxt.tarento.com/img/pulz.svg",
-        logo: "https://nxt.tarento.com/img/energySaving-icon.svg",
-        link: "/pulz",
-        isLink: "true",
-      },
-    ],
-    description:
-      "Proven platforms that can go country scale. Can be deployed in short notice and customised to fit needs of government agencies. Will fully in-house hosting, you have the total control of the data.",
-  };
-  const HeroBannerData = {
-    description:
-      "Aurora customer experience platform brings in the best of data engineering, analytics and user experience design to enable a superior customer support experience.",
-    img: "https://nxt.tarento.com/img/cx_pack_illustration.svg",
-    title: "Customer Experience Pack",
-    subText: "Words by one of the greatest sociologists - Daniel Bell",
-  };
-  const contactUsData = {
-    desc: "Does this pack look interesting to you? Get in touch with us to know more. Send us a mail with the subject “Customer Experience” by clicking the button below",
-    CTAlink: "mailto:hello@tarento.com",
-    heading: "Are you interested?",
-    CTAlabel: "Contact Us",
-  };
-  const UserEnagagementData = {
-    title: "Thor - AI Bot for user engagement",
-    imgSrc: "https://nxt.tarento.com/img/thor_story.svg",
-    list: [
-      "Engage your customer 24x7 with AI powered chat bots that are specially trained over the domain",
-      "Reduce load on the customer support team, so that they can focus on complex problems, where a personal intervention is needed.",
-      "Help your customers get the answers to the common queries directly. Reduce unnecessary requests.",
-      "Move from unstructured channels to structured channels so that the performance can be measured and improved.",
-      "Self learning. AI Bots can learn from the customer interaction and improve over time and create a very good cutomer experience.",
-      "Personalised alternative to the FAQ.",
-      "Human in the Loop - Seamlessly hand over to human operator when necessary or demanded by the user.",
-      "Multi lingual - Bot can understand and respond in multiple languages.",
-    ],
-    ctaText: "Read More",
-    ctaLink: "",
-  };
+
   return (
     <main className="">
       <HeroBannerForTDI
-        description={HeroBannerData.description}
-        img={HeroBannerData.img}
-        title={HeroBannerData.title}
-        subText={HeroBannerData.subText}
+        title={data[currentLang]?.HeroBanner?.Title}
+        subText={data[currentLang]?.HeroBanner?.SubText}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
+        imgAltText={data[currentLang]?.HeroBanner?.Img?.alternativeText}
+        description={data[currentLang]?.HeroBanner?.Description}
+        isImage={data[currentLang]?.HeroBanner?.isImage}
+        withLogo={data[currentLang]?.HeroBanner?.withLogo}
+        subTextBold
       />
-      <Feature title={FeatureData.title} list={FeatureData.list} />
+      <Feature
+        title={data[currentLang]?.CXTitle}
+        list={data[currentLang]?.CXFeatureList}
+      />
       <AI
-        title={HowItWorksData.title}
-        imgCaption={HowItWorksData.imgCaption}
-        imgSrc={HowItWorksData.imgSrc}
+        title={data[currentLang]?.CXAITitle}
+        imgCaption={data[currentLang]?.CXAIImage?.caption}
+        imgSrc={data[currentLang]?.CXAIImage?.localFile?.url}
       />
-      <UserEngagement
-        title={UserEnagagementData.title}
-        imgSrc={UserEnagagementData.imgSrc}
-        ctaText={UserEnagagementData.ctaText}
-        ctaLink={UserEnagagementData.ctaLink}
-        list={UserEnagagementData.list}
-      />
+      {data[currentLang]?.CXList.length > 0 &&
+        data[currentLang]?.CXList?.map((item: any, index: number) => {
+          return (
+            <UserEngagement
+              id={item?.id}
+              title={item?.Title}
+              imgSrc={item?.Image?.localFile?.url}
+              ctaText={item?.CTAText}
+              ctaLink={item?.CTALink}
+              list={item?.ListItems}
+            />
+          );
+        })}
+
       <OtherSolution
-        title={OtherSolutionData.title}
-        list={OtherSolutionData.list}
-        description={OtherSolutionData.description}
+        title={data[currentLang]?.OtherSolutionsTitle}
+        list={data[currentLang]?.SolutionsCard}
+        description={data[currentLang]?.OtherSolutionsDescription}
       />
-      <ContactUs
-        heading={contactUsData.heading}
-        CTAlabel={contactUsData.CTAlabel}
-        CTAlink={contactUsData.CTAlink}
-        desc={contactUsData.desc}
+      <ContactUsLayout
+        heading={data[currentLang]?.AreYouInterested?.Title}
+        desc={data[currentLang]?.AreYouInterested?.Description}
+        CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
+        CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
+        isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
       />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query CustomerExperiencePackPage {
+    en: strapiCustomerExperiencePack(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        Title
+        SubText
+        withLogo
+        isImage
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Img {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+      }
+      CXTitle
+      CXFeatureList {
+        id
+        Heading
+        SubText
+        Img {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+      }
+      CXAITitle
+      CXAIImage {
+        alternativeText
+        caption
+        localFile {
+          url
+        }
+      }
+      CXList {
+        id
+        Title
+        Image {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        CTAText
+        CTALink
+        ListItems {
+          id
+          ListItem
+        }
+      }
+      OtherSolutionsTitle
+      OtherSolutionsDescription
+      SolutionsCard {
+        id
+        Title
+        Link
+        BackgroundImage {
+          localFile {
+            url
+          }
+        }
+        Logo {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+      }
+      AreYouInterested {
+        id
+        isMail
+        Title
+        Description
+        CTAText
+        CTALink
+      }
+    }
+  }
+`;
 
 export default CustomerExperiencePage;
 
