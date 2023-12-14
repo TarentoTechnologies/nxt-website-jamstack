@@ -1,4 +1,4 @@
-import { cardHeader } from "../../styles/style-guide/Typography.module.css";
+import { h4400 } from "../../styles/style-guide/Typography.module.css";
 import { cxCard } from "./CustomerExpCard.module.css";
 
 interface CustomerExpCardProps {
@@ -30,7 +30,7 @@ export const CustomerExpCard = ({
           </div>
         </div>
         <div className="">
-          <div className={`${cardHeader} mt-4`}>{title}</div>
+          <h4 className={`${h4400} mt-4`}>{title}</h4>
         </div>
         <div className="mt-4 mb-4">
           <p>{description}</p>
@@ -47,7 +47,7 @@ export const CustomerExpCard = ({
           </div>
         </div>
         <div className="">
-          <div className={`${cardHeader} mt-4`}>{title}</div>
+          <h4 className={`${h4400} mt-4`}>{title}</h4>
         </div>
         <div className="mt-4 mb-4">
           <p>{description}</p>

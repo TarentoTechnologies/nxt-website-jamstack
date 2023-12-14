@@ -1,5 +1,5 @@
 import { ProductCard } from "../../../components/cards/ProductCard";
-import { h3Title } from "../../../styles/style-guide/Typography.module.css";
+import { h3600 } from "../../../styles/style-guide/Typography.module.css";
 import { layout, w40 } from "../CustomerExperience.module.css";
 
 interface OtherSolutionProps {
@@ -15,7 +15,7 @@ export const OtherSolution = ({
   return (
     <div className={`${layout} layoutBg d-flex justify-content-center`}>
       <div className="containerService paddingLeftRight15">
-        <h1 className={`${h3Title} mt-4 mb-4`}>{title}</h1>
+        <h1 className={`${h3600} mt-4 mb-4`}>{title}</h1>
         <p className={w40}>{description}</p>
         <div className={`row mt-5`}>
           {list?.map((item:any, index:number) => (

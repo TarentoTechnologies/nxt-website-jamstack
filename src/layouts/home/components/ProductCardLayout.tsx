@@ -24,6 +24,7 @@ export const ProductCardLayout = ({ data }: ProductCardLayoutProps) => {
               logo={item?.Logo?.localFile?.url}
               link={item?.Link}
               isLink={item?.Link}
+              customBgPosition={item?.customBgPosition}
             />
           </div>
         ))}
