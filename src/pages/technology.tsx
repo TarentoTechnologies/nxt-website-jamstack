@@ -4,9 +4,11 @@ import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { StoryBanner } from "../components/banners/StoryBanner";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
 import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
 import { TechPrinciplesLayout } from "../layouts/tech/components/TechPrinciplesLayout";
@@ -61,6 +63,7 @@ const TechnologyPage: React.FC<PageProps> = ({ data }: TechnologyPageProps) => {
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
         description={data[currentLang]?.HeroBanner?.Description}

@@ -2,8 +2,10 @@ import type { HeadFC, PageProps } from "gatsby";
 import * as React from "react";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import { HeroText, PricingList } from "../layouts/pricing";
 import { ContactUsLayout } from "../layouts/pricing/components/ContactUsLayout";
 
@@ -146,6 +148,7 @@ const PricingPage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroText
         title={"The right price for you"}
         desc={

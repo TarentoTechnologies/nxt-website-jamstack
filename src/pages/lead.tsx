@@ -15,9 +15,11 @@ import cardImg5 from "../../static/images/lead/minimum_risks.png";
 import cardImg3 from "../../static/images/lead/mvm.png";
 import cardImg4 from "../../static/images/lead/tangible_results.png";
 import cardImg2 from "../../static/images/lead/tech_design_business.png";
+import navbarImg from "../../static/images/logo-inner.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import {
   HeroSection,
   LeadCountries,
@@ -123,6 +125,7 @@ const LeadPage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         title="Powering digital trasformation with innovation"
         img={leadImg}

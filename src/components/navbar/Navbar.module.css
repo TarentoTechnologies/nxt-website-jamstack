@@ -2,11 +2,15 @@
 @import url("../../styles/global/global.css");
 
 .navBarStyles {
-  left: 50px;
+  position: fixed;
+  left: 3.125rem;
+  z-index: 1;
 }
 
 @media (max-width: 767px) {
   .navBarStyles {
-    left: 20px;
+    position: fixed;
+    left: 1.25rem;
+    z-index: 1;
   }
 }

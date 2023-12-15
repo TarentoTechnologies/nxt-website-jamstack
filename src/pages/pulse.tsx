@@ -3,6 +3,7 @@ import * as React from "react";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import heroImg from "../../static/images/pulseImg.jpg";
 import pulseProcessImg from "../../static/images/pulseProcess.jpg";
 import pulseQRcode from "../../static/images/pulse_QRCode.jpg";
@@ -16,6 +17,7 @@ import keyImg7 from "../../static/images/pulse_img07.png";
 import keyImg8 from "../../static/images/pulse_img08.png";
 import { HeroBannerForAccelerators } from "../components/banners/HeroBannerForAccelerators";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import {
   GetInTouch,
   HowItWorks,
@@ -101,6 +103,7 @@ const PulsePage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <PulseHeroBanner
         title="Know the Pulse of your Customer"
         description="Make Informed decisions. Take your business to the next level."

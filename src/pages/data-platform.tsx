@@ -3,9 +3,11 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForAccelerators } from "../components/banners/HeroBannerForAccelerators";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import {
   Feature,
   Form,
@@ -64,6 +66,7 @@ const DataPlatformPage: React.FC<PageProps> = ({
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForAccelerators
         title={data[currentLang]?.HeroBanner?.Title}
         description={data[currentLang]?.HeroBanner?.Description}

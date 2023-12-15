@@ -4,9 +4,11 @@ import { useRecoilValue } from "recoil";
 
 import boltImg from "../../static/images/bolt_thumb.svg";
 import TarentoLogo from "../../static/images/company-logo.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import {
   AI,
   Feature,
@@ -66,6 +68,7 @@ const CustomerExperiencePage: React.FC<PageProps> = ({
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         title={data[currentLang]?.HeroBanner?.Title}
         subText={data[currentLang]?.HeroBanner?.SubText}
