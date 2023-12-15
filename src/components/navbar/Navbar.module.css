@@ -1,0 +1,12 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.navBarStyles {
+  left: 50px;
+}
+
+@media (max-width: 767px) {
+  .navBarStyles {
+    left: 20px;
+  }
+}
