@@ -1,12 +1,14 @@
 import { Link } from "gatsby";
-import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 
+import { bgUraniaBlue } from "../../styles/style-guide/ColorGuide.module.css";
+import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import {
+  customBgStyle,
+  logoStyles,
   proCard,
   proCardSecondary,
-  titleStyles,
-  logoStyles,
   secondaryFontsize,
+  titleStyles,
 } from "./ProductCard.module.css";
 
 interface ProductCardProps {
@@ -17,6 +19,7 @@ interface ProductCardProps {
   secLogo?: any;
   link?: string;
   isLink?: boolean;
+  customBgPosition?: boolean;
 }
 
 export const ProductCard = ({
@@ -27,14 +30,16 @@ export const ProductCard = ({
   isSecondary,
   link,
   isLink,
+  customBgPosition,
 }: ProductCardProps) => {
+
   if (isLink) {
     return (
-      <a href={link != null ? link : ""} target="_blank" rel="noreferrer">
+      <Link to={link != null ? link : ""}>
         <div
           className={`container-fluid ${
             isSecondary ? proCardSecondary : proCard
-          }`}
+          } ${customBgPosition ? `${bgUraniaBlue} ${customBgStyle}` : ""}`}
           style={{ backgroundImage: `url(${bgImg})` }}
         >
           <div
@@ -44,18 +49,25 @@ export const ProductCard = ({
           >
             <span>{title}</span>
           </div>
-          <div className={`${logoStyles}`}>
-            <img src={isSecondary ? secLogo : logo} alt={title} title={title} />
-          </div>
+          {(secLogo || logo) && (
+            <div className={`${logoStyles}`}>
+              <img
+                src={isSecondary ? secLogo : logo}
+                alt={title}
+                title={title}
+                width={80}
+              />
+            </div>
+          )}
         </div>
-      </a>
+      </Link>
     );
   } else {
     return (
       <div
         className={`container-fluid ${
           isSecondary ? proCardSecondary : proCard
-        }`}
+        } ${customBgPosition ? `${bgUraniaBlue} ${customBgStyle}` : ""}`}
         style={{ backgroundImage: `url(${bgImg})` }}
       >
         <div
@@ -65,9 +77,16 @@ export const ProductCard = ({
         >
           <span>{title}</span>
         </div>
-        <div className={`${logoStyles}`}>
-          <img src={isSecondary ? secLogo : logo} alt={title} title={title} />
-        </div>
+        {(secLogo || logo) && (
+          <div className={`${logoStyles}`}>
+            <img
+              src={isSecondary ? secLogo : logo}
+              alt={title}
+              title={title}
+              width={80}
+            />
+          </div>
+        )}
       </div>
     );
   }

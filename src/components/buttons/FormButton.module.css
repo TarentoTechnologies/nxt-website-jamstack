@@ -1,0 +1,13 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.buttonClass {
+  width: 21.875rem;
+  font-family: "RobotoSlab-Regular", serif;
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  font-size: 1.125rem;
+  color: #fff;
+  margin-top: 1.875rem;
+  line-height: 1.625rem;
+}

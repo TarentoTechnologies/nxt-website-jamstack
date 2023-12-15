@@ -5,8 +5,28 @@
   padding: 3.75rem 0;
 }
 
-.imgStyles {
+.imgStyles :global {
   padding-top: 2rem;
+  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+
+.textStyles :global {
+  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+
+.customDescription p {
+  color: var(--carbon);
+}
+
+.customDescription p strong {
+  font-family: "RobotoSlab-Regular", serif;
+  font-size: 1.313rem;
+  line-height: 1.438rem;
+  font-weight: 400;
 }
 
 /* Media queries starts here */

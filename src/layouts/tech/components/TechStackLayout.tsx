@@ -1,37 +1,53 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import {
-  techStack,
-  titleStyles,
   gridLayout,
   logoStyles,
+  techStack,
+  titleStyles,
 } from "../Tech.module.css";
 
 interface TechStackLayoutProps {
-  data: {
-    heading: string;
-    logoList: any[];
-  };
+  sectionTitle: string;
+  data: any;
 }
 
-export const TechStackLayout = ({ data }: TechStackLayoutProps) => {
+export const TechStackLayout = ({
+  sectionTitle,
+  data,
+}: TechStackLayoutProps) => {
+
   return (
     <div className={`d-flex justify-content-center ${techStack}`}>
       <div className={`containerService paddingLeftRight15`}>
         <div className={`${titleStyles}`}>
-          <PrimaryTitle title={data?.heading} variant="infoSectionH2" />
+          <PrimaryTitle title={sectionTitle} variant="infoSectionH2" />
         </div>
         <div className={`${gridLayout}`}>
-          {data?.logoList.map((item, index) => (
+          {data?.map((item: any, index: number) => (
             <div
               key={index}
               className={`${logoStyles} d-flex justify-content-center align-items-center`}
             >
-              <img
-                src={item.logo}
-                alt={item.name}
-                title={item.name}
-                className={`img-fluid`}
-              />
+              {item?.isImage ? (
+                <GatsbyImage
+                  image={
+                    item?.Image?.localFile
+                      ? getImage(item?.Image?.localFile)
+                      : item?.Image?.localFile
+                  }
+                  alt={item?.Image?.alternativeText}
+                  className={`img-fluid`}
+                />
+              ) : (
+                <img
+                  src={item?.Image?.localFile?.url}
+                  alt={item?.Image?.alternativeText}
+                  title={item?.Image?.caption}
+                  className={`img-fluid`}
+                />
+              )}
             </div>
           ))}
         </div>

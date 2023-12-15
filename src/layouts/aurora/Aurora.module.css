@@ -1,0 +1,83 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.videoHeading {
+  margin-left: 10%;
+  margin-top: 2rem;
+}
+
+.listStyles li {
+  list-style-type: disc;
+}
+
+.listStyles ul {
+  margin-left: 6rem;
+}
+
+.storyImg {
+  height: 20.375rem;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 375px) {
+  .videoSize {
+    max-width: 20rem !important;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  .videoSize {
+    max-width: 22rem !important;
+  }
+}
+
+@media only screen and (min-width: 440px) {
+  .videoSize {
+    max-width: 26rem !important;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .videoSize {
+    max-width: 30rem !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .listStyles ul {
+    margin-left: 4rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .videoSize {
+    max-width: 32rem !important;
+  }
+  .listStyles ul {
+    margin-left: 5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .listStyles ul {
+    margin-left: 6rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .videoSize {
+    max-width: 30rem !important;
+  }
+  .listStyles ul {
+    margin-left: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .videoSize {
+    max-width: 35.906rem !important;
+  }
+  .listStyles ul {
+    margin-left: 6rem;
+  }
+}

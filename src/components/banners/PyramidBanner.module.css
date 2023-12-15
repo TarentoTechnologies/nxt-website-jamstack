@@ -29,15 +29,15 @@
 }
 
 .imgPadding :global {
-  animation: fadeInUp 1s ease 0.6s 1 normal forwards;
+  /* animation: fadeInUp 1s ease 0.6s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .retailInfo :global {
-  animation: fadeInUp 1s ease 0.9s 1 normal forwards;
+  /* animation: fadeInUp 1s ease 0.9s 1 normal forwards; */
   visibility: visible;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 /* Media queries starts here */

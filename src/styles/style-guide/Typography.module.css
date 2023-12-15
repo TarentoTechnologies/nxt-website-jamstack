@@ -39,6 +39,230 @@
   font-family: "RobotoSlab-Regular", serif;
   line-height: 1.5;
 }
+.caseStudyTitle {
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.h4SubTitle {
+  font-size: 1.3075966647366rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.1;
+  font-family: "RobotoSlab-Regular", serif;
+}
+
+.revolutionHeading {
+  font-size: 2.6666670026247rem;
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+}
+
+.ctaDescription {
+  font-size: 1rem;
+  font-family: "RobotoSlab-Regular", serif;
+}
+
+.acceleratorTitle {
+  font-family: "RobotoSlab-Bold", serif;
+  font-size: 3.25rem;
+}
+.acceleratorSubTitle {
+  font-size: 1.5rem;
+}
+.acceleratorDescription {
+  font-size: 1.313rem;
+}
+
+.h3Title,
+h3 {
+  font-family: "RobotoSlab-SemiBold", serif;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.tagLabel {
+  font-family: "Lato-Regular";
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+
+.tagLabel2 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-size: 1rem;
+}
+
+.heading700 {
+  font-family: "RobotoSlab-Bold";
+  font-size: 1.313rem;
+  line-height: 1.625rem;
+}
+
+.subText2 {
+  font-family: "Lato-Regular";
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.cta1 {
+  font-family: "Lato-Bold";
+  font-size: 1rem;
+}
+
+.subHeading1 {
+  font-family: "Lato-Bold";
+  font-size: 1.5rem;
+}
+
+.descriptionOne {
+  font-family: "Lato-Regular";
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.cxHeading {
+  font-family: "RobotoSlab-Regular", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.useCasesSubTitle {
+  font-size: 1.1207971412028rem;
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  margin-left: 1rem;
+}
+
+.revolutionHeading {
+  font-size: 2.6666670026247rem;
+  font-family: "RobotoSlab-Bold", serif;
+}
+
+.pricingHeroTitle {
+  font-family: "RobotoSlab-Bold", serif;
+  font-size: 2.625rem;
+  line-height: 1.1;
+}
+
+.h3600 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 600;
+  line-height: 2.188rem;
+  font-size: 2rem;
+}
+
+.h4500 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 500;
+  line-height: 1.25rem;
+  font-size: 1.125rem;
+}
+
+.h4400 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  line-height: 1.438rem;
+  font-size: 1.313rem;
+}
+
+.innoTitle {
+  font-family: "Lato-Regular", serif;
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 2.063rem;
+}
+
+.h1700 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 700;
+  line-height: 3.375rem;
+  font-size: 2rem;
+}
+
+.logoTitle {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 700;
+  line-height: 3.313rem;
+  font-size: 3rem;
+}
+
+.acceleratorTitleV2 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 700;
+  line-height: 3.563rem;
+  font-size: 3.25rem;
+}
+
+.h3500Lato {
+  font-family: "Lato-Regular", serif;
+  font-weight: 500;
+  line-height: 1.625rem;
+  font-size: 1.5rem;
+}
+
+.ctaDescriptionV2 {
+  font-family: "Lato-Regular", serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.125rem;
+}
+
+.planHeading {
+  font-family: "RobotoSlab-SemiBold", serif;
+  font-size: 1.313rem;
+  font-weight: 600;
+}
+
+.h1CardTitle {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 3.313rem;
+}
+
+.subTextV1 {
+  font-family: "Lato-Regular", serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.688rem;
+}
+
+.sectionTitleV1 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 700;
+  font-size: 2.688rem;
+  line-height: 2.938rem;
+}
+
+.subTitleV1 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  font-size: 2.688rem;
+  line-height: 4rem;
+}
+
+.h1700V2 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-weight: 700;
+  line-height: 2.188rem;
+  font-size: 2rem;
+}
+
+.h4500V2 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 500;
+  line-height: 1.438rem;
+  font-size: 1.313rem;
+}
+
+.h2400 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  line-height: 1.25rem;
+  font-size: 1.125rem;
+}
 
 /* Media queries starts here */
 

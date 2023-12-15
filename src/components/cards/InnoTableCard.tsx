@@ -4,6 +4,7 @@ import {
   bgRhodaminePurple,
 } from "../../styles/style-guide/ColorGuide.module.css";
 import { cardStyles, titleStyles } from "./InnoTableCard.module.css";
+import {innoTitle} from "../../styles/style-guide/Typography.module.css"
 
 interface InnoTableCardProps {
   title: string;
@@ -33,10 +34,10 @@ export const InnoTableCard = ({
   const bgColour = getBgColor();
   return (
     <div
-      className={`col-lg-4 col-md-4 col-sm-12 ${bgColour} ${cardStyles}`}
+      className={`col-md-4 ${bgColour} ${cardStyles}`}
       onClick={clickHandler}
     >
-      <h2 className={`${titleStyles}`}>{title}</h2>
+      <h2 className={`${titleStyles} ${innoTitle}`}>{title}</h2>
       <p>{desc}</p>
     </div>
   );

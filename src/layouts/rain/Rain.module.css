@@ -1,0 +1,49 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.titleStyles {
+  margin-top: 1.25rem;
+}
+
+.descStyles {
+  margin-top: 2rem;
+}
+
+.imgStyles {
+  margin-top: 4rem;
+}
+
+.referenceCard {
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.parserCustomStyles p {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .featureGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .referenceCardSection {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .featureGrid {
+    display: grid;
+    gap: 1.875rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .referenceCardSection {
+    display: grid;
+    gap: 1.875rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

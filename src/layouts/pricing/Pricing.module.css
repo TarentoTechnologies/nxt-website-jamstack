@@ -1,0 +1,46 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.heroTextSection {
+  padding: 6.25rem 0;
+}
+
+.descStyles {
+  margin-top: 2rem;
+}
+
+span.border {
+  width: 3.5rem;
+  height: 1.125rem;
+  border-radius: 1.875rem;
+  background: #f96a00;
+  display: -webkit-box;
+  margin: 1.875rem 0 1.25rem 0;
+}
+
+.infoStyles {
+  background-color: var(--white);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.contactUsLayout {
+  padding-top: 5rem;
+  padding-bottom: 3.75rem;
+}
+
+.contactUsLayout .titleStyles {
+  padding-bottom: 2rem;
+  visibility: visible;
+}
+
+.contactUsLayout .btnStyles {
+  padding-top: 2rem;
+  visibility: visible;
+}
+
+@media only screen and (max-width: 991px) {
+  .levelTwoPadding {
+    margin-top: 1.25rem;
+  }
+}

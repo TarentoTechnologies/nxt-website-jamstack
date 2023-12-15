@@ -1,4 +1,5 @@
-import { cardHeader } from "../../styles/style-guide/Typography.module.css";
+import { carbon } from "../../styles/style-guide/ColorGuide.module.css";
+import { h4500 } from "../../styles/style-guide/Typography.module.css";
 import {
   cardStyles,
   imgStyles,
@@ -12,13 +13,11 @@ interface DesignProcessCardProps {
 
 export const DesignProcessCard = ({ title, icon }: DesignProcessCardProps) => {
   return (
-    <div className={`${cardStyles}`}>
-      <div className={`col-xs-6 col-sm-3 col-md-3`}>
-        <div className={`${imgStyles}`}>
-          <img src={icon} alt={title} title={title} className={`img-fluid`} />
-        </div>
-        <h4 className={`${titleStyles} ${cardHeader}`}>{title}</h4>
+    <div className={`col-6 col-md-3 ${cardStyles}`}>
+      <div className={`${imgStyles}`}>
+        <img src={icon} alt={title} title={title} className={`img-fluid`} />
       </div>
+      <h4 className={`${titleStyles} ${h4500} ${carbon}`}>{title}</h4>
     </div>
   );
 };

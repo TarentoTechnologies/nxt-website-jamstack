@@ -20,6 +20,13 @@
 .black {
   color: var(--black);
 }
+.bgBlack50 {
+  background-color: var(--black-50);
+}
+
+.black50 {
+  color: var(--black-50);
+}
 
 .bgBlack60 {
   background-color: var(--black-60);
@@ -43,6 +50,14 @@
 
 .black70 {
   color: var(--black-70);
+}
+
+.bgBlack75 {
+  background-color: var(--black-75);
+}
+
+.black75 {
+  color: var(--black-75);
 }
 
 .bgBlack87 {
@@ -205,6 +220,14 @@
   color: var(--pallid-blue-violet);
 }
 
+.bgPallidBlueViolet2 {
+  background-color: var(--pallid-blue-violet-2);
+}
+
+.pallidBlueViolet2 {
+  color: var(--pallid-blue-violet-2);
+}
+
 .bgGlaucousGreen {
   background-color: var(--pale-glaucous-green);
 }
@@ -331,4 +354,52 @@
 
 .rhodaminePurple {
   color: var(--rhodamine-purple);
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.bgBlue {
+  background-color: var(--blue);
+}
+
+.bgNeutralGray2 {
+  background-color: var(--neutral-gray-2);
+}
+
+.neutralGray2 {
+  color: var(--neutral-gray-2);
+}
+
+.bgLilacGray {
+  background-color: var(--lilac-gray);
+}
+
+.lilacGray {
+  color: var(--lilac-gray);
+}
+
+.bgNeutralGray3 {
+  background-color: var(--neutral-gray-3);
+}
+
+.neutralGray3 {
+  color: var(--neutral-gray-3);
+}
+
+.bgHayBlue {
+  background-color: var(--hay-blue);
+}
+
+.hayBlue {
+  color: var(--hay-blue);
+}
+
+.bgRoslynsBlue {
+  background-color: var(--roslyns-blue);
+}
+
+.roslynsBlue {
+  color: var(--roslyns-blue);
 }
