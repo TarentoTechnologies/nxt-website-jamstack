@@ -1,5 +1,5 @@
 import { PricingCard } from "../../../components/cards/PricingCard";
-import { cxHeading } from "../../../styles/style-guide/Typography.module.css";
+import { pricingHeading } from "../../../styles/style-guide/Typography.module.css";
 import { infoStyles } from "../Pricing.module.css";
 
 interface PricingListProps {
@@ -19,7 +19,7 @@ export const PricingList = ({
     >
       <div className={`containerService paddingLeftRight15`}>
         <div
-          className={`${cxHeading} wow animated fadeInUp paddingTopBottom60 pt-0`}
+          className={`${pricingHeading} wow animated fadeInUp paddingTopBottom60 pt-0`}
         >
           {heading}
         </div>
@@ -33,7 +33,7 @@ export const PricingList = ({
               basePrice={item?.BasePrice}
               supportList={item?.SupportList}
               supportPrice={item?.SupportPrice}
-              supportSubText={item?.SupportSubText}
+              supportSubText={item?.SupportSubtext}
               supportText={item?.SupportText}
               withBtn={item?.withBtn}
               CTAlabel={item?.Tag?.Label}

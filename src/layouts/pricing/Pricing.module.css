@@ -2,7 +2,7 @@
 @import url("../../styles/global/global.css");
 
 .heroTextSection {
-  padding: 6.25rem 0;
+  padding: 10rem 0 7.5rem 0;
 }
 
 .descStyles {
@@ -30,12 +30,12 @@ span.border {
 }
 
 .contactUsLayout .titleStyles {
-  padding-bottom: 2rem;
+  margin: 1.25rem 0 0.625rem 0;
   visibility: visible;
 }
 
 .contactUsLayout .btnStyles {
-  padding-top: 2rem;
+  margin-top: 2rem;
   visibility: visible;
 }
 

@@ -8,11 +8,11 @@ import { Footer } from "../components/footer/Footer";
 import { ContactUsLayout, HeroText, PricingList } from "../layouts/pricing";
 import { langSelected as langSelectedAtom } from "../states/atoms";
 
-interface RainPageProps {
+interface PricingPageProps {
   data: any;
 }
 
-const PricingPage: React.FC<PageProps> = ({ data }: RainPageProps) => {
+const PricingPage: React.FC<PageProps> = ({ data }: PricingPageProps) => {
   const currentLang = useRecoilValue(langSelectedAtom);
 
   const footerData = {
