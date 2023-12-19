@@ -1,13 +1,12 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
+import { carbon } from "../../styles/style-guide/ColorGuide.module.css";
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import {
-  cardStyles,
   headingStyles,
   imgStyles,
   subTextStyles,
 } from "./RainFeatureCard.module.css";
-import {carbon} from "../../styles/style-guide/ColorGuide.module.css"
 
 interface RainFeatureCardProps {
   heading: string;
@@ -22,9 +21,8 @@ export const RainFeatureCard = ({
   img,
   isImage,
 }: RainFeatureCardProps) => {
-
   return (
-    <div className={`${cardStyles}`}>
+    <div>
       <div className={`${imgStyles}`}>
         {!isImage ? (
           <GatsbyImage
@@ -44,7 +42,9 @@ export const RainFeatureCard = ({
           />
         )}
       </div>
-      <div className={`${headingStyles} ${cardHeader} ${carbon}`}>{heading}</div>
+      <div className={`${headingStyles} ${cardHeader} ${carbon}`}>
+        {heading}
+      </div>
       <p className={`${subTextStyles} ${carbon}`}>{subText}</p>
     </div>
   );

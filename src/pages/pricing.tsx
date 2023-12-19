@@ -1,15 +1,22 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import navbarImg from "../../static/images/logo-inner.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { Footer } from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
-import { HeroText, PricingList } from "../layouts/pricing";
-import { ContactUsLayout } from "../layouts/pricing/components/ContactUsLayout";
+import { ContactUsLayout, HeroText, PricingList } from "../layouts/pricing";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const PricingPage: React.FC<PageProps> = () => {
+interface PricingPageProps {
+  data: any;
+}
+
+const PricingPage: React.FC<PageProps> = ({ data }: PricingPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+
   const footerData = {
     nxtLogoImg: NXTlogo,
     nxtLogoImgTitle: "NXT-logo",
@@ -48,139 +55,98 @@ const PricingPage: React.FC<PageProps> = () => {
     ],
     rightsText: "All rights reserved © 2023 Tarento Technologies.",
   };
-  const pricingListData = [
-    {
-      title: "RAIN",
-      logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
-      description: "Real time analytics and insights from your business data.",
-      basePrice: "€25K",
-      supportPrice: "€3000 per year",
-      supportText: "Support",
-      supportSubText: "(Optional)",
-      baseList: ["Full perpetual license", "100 hours for implementation"],
-      supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
-    },
-    {
-      title: "BOLT",
-      logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
-      description: "Real time analytics and insights from your business data.",
-      basePrice: "€25K",
-      supportPrice: "€3000 per year",
-      supportText: "Support",
-      supportSubText: "(Optional)",
-      baseList: ["Full perpetual license", "100 hours for implementation"],
-      supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
-    },
-    {
-      title: "RAIN",
-      logo: "https://nxt.tarento.com/img/rain_with_circle.svg",
-      description: "Real time analytics and insights from your business data.",
-      basePrice: "€25K",
-      supportPrice: "€3000 per year",
-      supportText: "Support",
-      supportSubText: "(Optional)",
-      baseList: ["Full perpetual license", "100 hours for implementation"],
-      supportList: ["Security fixes", "Bug fixes", "OS compatibility"],
-    },
-    {
-      title: "THOR Chatbot(SaaS)",
-      logo: "https://nxt.tarento.com/img/chatbot.svg",
-      description:
-        "Intelligent assistant for your business. Multi channel domain specific chatbot to engage your users.",
-      basePrice: "€15K",
-      supportPrice: "€650 per month",
-      supportText: "Subscription",
-      supportSubText: "",
-      baseList: [
-        "25 scenarios",
-        "More than 80% accuracy in 4 weeks",
-        "2 weeks time to market",
-      ],
-      supportList: ["Up to 1 Million interactions per month"],
-    },
-    {
-      title: "Pulz",
-      logo: "https://nxt.tarento.com/img/aurora_with_circle.svg",
-      description:
-        "Know the pulse of your customer with Pulz feedback & micro survey framework",
-      basePrice: "€15K",
-      supportPrice: "€28 per hour",
-      supportText: "Support",
-      supportSubText: "(Optional)",
-      baseList: [" Full perpetual license"],
-      supportList: [" Security fixes", "Bug fixes", "OS compatibility"],
-    },
-  ];
-
-  const bundlesData = [
-    {
-      title: "RAIN+BOLT",
-      logo: "https://nxt.tarento.com/img/rain+bolt.svg",
-      description: "Real time analytics and insights from your business data.",
-      basePrice: "€25K",
-      supportPrice: "€3000 per year",
-      supportText: "Support",
-      supportSubText: "(Optional)",
-      baseList: ["Full perpetual license", "100 hours for implementation"],
-      supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
-    },
-    {
-      title: "RAIN+BOLT +THOR",
-      logo: "https://nxt.tarento.com/img/rain+bolt+thor.svg",
-      description: "Real time analytics and insights from your business data.",
-      basePrice: "€25K",
-      supportPrice: "€3000 per year",
-      supportText: "Support",
-      supportSubText: "(Optional)",
-      baseList: ["Full perpetual license", "100 hours for implementation"],
-      supportList: ["Security fixes", "  Bug fixes", "OS compatibility"],
-    },
-    {
-      title: "RAIN+BOLT +THOR+",
-      spTitle: "LEAD",
-      logo: "https://nxt.tarento.com/img/rain+bolt+thor.svg",
-      baseList: ["Full perpetual license", "4 Lead Workshops"],
-      withBtn: true,
-      CTAlabel: "Contact us",
-      CTAlink: "mailto:hello@tarento.com;",
-    },
-  ];
 
   return (
     <main className="">
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroText
-        title={"The right price for you"}
-        desc={
-          "At NXT we try to bring Innovation to everyone. Make cutting edge technology more affordable and accessible to all. We apply AI to solve real world problems, we enable businesses to leverage data and make informed decisions. We help you scale with cutting edge technology, design and innovation."
-        }
+        title={data[currentLang]?.HeroText?.Title}
+        desc={data[currentLang]?.HeroText?.Description?.data?.Description}
       />
       <PricingList
-        heading={"Accelerators"}
-        pricingData={pricingListData}
-        additionalInfo={
-          "*Additional customization's and integration effort at €28 per hour"
-        }
+        heading={data[currentLang]?.PricingList[0]?.Heading}
+        pricingData={data[currentLang]?.PricingList[0]?.PricingCards}
+        additionalInfo={data[currentLang]?.PricingList[0]?.AdditionalInfo}
       />
       <PricingList
-        heading={"Bundles"}
-        pricingData={bundlesData}
-        additionalInfo=""
+        heading={data[currentLang]?.PricingList[1]?.Heading}
+        pricingData={data[currentLang]?.PricingList[1]?.PricingCards}
+        additionalInfo={""}
       />
       <ContactUsLayout
-        heading1="Are you interested?"
-        desc1="Do these accelerators look interesting to you? Get in touch with us to know how to buy any of them. Click on the button below to send us a mail."
-        CTAlabel1="Contact us"
-        CTAlink1="mailto:hello@tarento.com;"
-        heading2="Are you a Reseller?"
-        desc2="We collaborate with resellers around the world. Want to join our community? Contact us to know more about us and what we offer."
-        CTAlabel2="Contact us"
-        CTAlink2="mailto:hello@tarento.com;"
+        heading1={data[currentLang]?.ContactUs?.AreYouInterested?.Title}
+        desc1={data[currentLang]?.ContactUs?.AreYouInterested?.Description}
+        CTAlabel1={data[currentLang]?.ContactUs?.AreYouInterested?.CTAText}
+        CTAlink1={data[currentLang]?.ContactUs?.AreYouInterested?.CTALink}
+        heading2={data[currentLang]?.ContactUs?.AreYouSeller?.Title}
+        desc2={data[currentLang]?.ContactUs?.AreYouSeller?.Description}
+        CTAlabel2={data[currentLang]?.ContactUs?.AreYouSeller?.CTAText}
+        CTAlink2={data[currentLang]?.ContactUs?.AreYouSeller?.CTALink}
       />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query PricingPage {
+    en: strapiPricing(locale: { eq: "en" }) {
+      HeroText {
+        Title
+        Description {
+          data {
+            Description
+          }
+        }
+      }
+      PricingList {
+        Heading
+        PricingCards {
+          Title
+          Logo {
+            localFile {
+              url
+            }
+          }
+          Description
+          BasePrice
+          BaseList {
+            ListItem
+          }
+          SupportPrice
+          SupportList {
+            ListItem
+          }
+          SupportText
+          SupportSubtext
+          withBtn
+          Tag {
+            Label
+            Link
+          }
+          SpTitle
+        }
+        AdditionalInfo
+      }
+      ContactUs {
+        AreYouInterested {
+          Title
+          Description
+          CTAText
+          CTALink
+          isMail
+        }
+        AreYouSeller {
+          Title
+          Description
+          CTAText
+          CTALink
+          isMail
+        }
+      }
+    }
+  }
+`;
 
 export default PricingPage;
 

@@ -115,6 +115,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "pricing",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
 };
 
