@@ -25,7 +25,7 @@ export const ContactUsLayout = ({
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-lg-6 px-0`}>
           <div className={`${titleStyles}`}>
-            <PrimaryTitle title={heading} variant="infoSectionH2" />
+            <PrimaryTitle title={heading} variant="h1700V3" />
           </div>
           <p className={`${subText1}`}>{desc}</p>
           <div className={`${btnStyles}`}>
