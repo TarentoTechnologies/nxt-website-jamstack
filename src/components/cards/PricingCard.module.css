@@ -32,9 +32,17 @@
 
 .pricingBox {
   max-width: 22rem;
-  min-height: 41.5rem;
+  min-height: 38.375rem;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
+}
+
+.levelOneBox {
+  min-height: 12rem;
+}
+
+.levelTwoBox {
+  min-height: 7rem;
 }
 
 /* Media queries starts here */

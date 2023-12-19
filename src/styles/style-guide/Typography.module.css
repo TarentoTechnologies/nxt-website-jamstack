@@ -144,6 +144,7 @@ h3 {
   font-family: "RobotoSlab-Bold", serif;
   font-size: 2.625rem;
   line-height: 1.1;
+  font-weight: 600;
 }
 
 .h3600 {
@@ -262,6 +263,27 @@ h3 {
   font-weight: 400;
   line-height: 1.25rem;
   font-size: 1.125rem;
+}
+
+.pricingHeading {
+  font-family: "RobotoSlab-Regular", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.h1700V3 {
+  font-family: "RobotoSlab-Bold", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.subTextV2 {
+  font-family: "RobotoSlab-Regular", serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.688rem;
 }
 
 /* Media queries starts here */

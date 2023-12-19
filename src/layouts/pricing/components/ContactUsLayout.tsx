@@ -1,6 +1,8 @@
 import { PrimaryCTA } from "../../../components/buttons/PrimaryCTA";
-import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
-import { subText1 } from "../../../styles/style-guide/Typography.module.css";
+import {
+  h1700V3,
+  subTextV2,
+} from "../../../styles/style-guide/Typography.module.css";
 import {
   btnStyles,
   contactUsLayout,
@@ -36,18 +38,18 @@ export const ContactUsLayout = ({
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-lg-6 px-0`}>
           <div className={`${titleStyles}`}>
-            <PrimaryTitle title={heading1} variant="infoSectionH2" />
+            <h1 className={`${h1700V3}`}>{heading1}</h1>
           </div>
-          <p className={`${subText1} me-5 pe-5`}>{desc1}</p>
+          <p className={`${subTextV2} me-5 pe-4`}>{desc1}</p>
           <div className={`${btnStyles}`}>
             <PrimaryCTA label={CTAlabel1} btnLink={CTAlink1} size="small" />
           </div>
         </div>
         <div className={`col-lg-6 px-0 ${levelTwoPadding}`}>
           <div className={`${titleStyles}`}>
-            <PrimaryTitle title={heading2} variant="infoSectionH2" />
+            <h1 className={`${h1700V3}`}>{heading2}</h1>
           </div>
-          <p className={`${subText1} me-5 pe-5`}>{desc2}</p>
+          <p className={`${subTextV2} me-5 pe-4`}>{desc2}</p>
           <div className={`${btnStyles}`}>
             <PrimaryCTA label={CTAlabel2} btnLink={CTAlink2} size="small" />
           </div>
