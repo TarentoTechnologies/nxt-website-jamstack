@@ -11,9 +11,11 @@ import discoverImg from "../../static/images/discover-img.svg";
 import bannerImg1 from "../../static/images/discover.png";
 import ideateImg from "../../static/images/ideate-img.svg";
 import bannerImg2 from "../../static/images/ideate.png";
+import navbarImg from "../../static/images/logo-inner.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import { DesignProcessBannerLayout } from "../layouts/design/components/DesignProcessBannerLayout";
 import { DesignProcessLayout } from "../layouts/design/components/DesignProcessLayout";
 import { langSelected as langSelectedAtom } from "../states/atoms";
@@ -66,6 +68,7 @@ const DesignPage: React.FC<PageProps> = ({ data }: DesignPageProps) => {
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
         description={data[currentLang]?.HeroBanner?.Description}

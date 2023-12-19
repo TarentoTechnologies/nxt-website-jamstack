@@ -3,10 +3,12 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { StoryBanner } from "../components/banners/StoryBanner";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import { ForgingInnovationLayout } from "../layouts/innovation/components/ForgingInnovationLayout";
 import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
 import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
@@ -60,6 +62,7 @@ const InnovationPage: React.FC<PageProps> = ({ data }: InnovationPageProps) => {
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
         description={data[currentLang]?.HeroBanner?.Description}

@@ -1,0 +1,16 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.navBarStyles {
+  position: fixed;
+  left: 3.125rem;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .navBarStyles {
+    position: fixed;
+    left: 1.25rem;
+    z-index: 1;
+  }
+}

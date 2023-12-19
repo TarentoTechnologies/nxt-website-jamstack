@@ -4,8 +4,10 @@ import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import { ContactUsLayout, DigitalPlatform } from "../layouts/govtech";
 import { langSelected as langSelectedAtom } from "../states/atoms";
 
@@ -57,6 +59,7 @@ const GovTechPage: React.FC<PageProps> = ({ data }: GovTechPageProps) => {
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         title={data[currentLang]?.HeroBanner?.Title}
         img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}

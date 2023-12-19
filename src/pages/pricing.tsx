@@ -3,8 +3,10 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import { ContactUsLayout, HeroText, PricingList } from "../layouts/pricing";
 import { langSelected as langSelectedAtom } from "../states/atoms";
 
@@ -56,6 +58,7 @@ const PricingPage: React.FC<PageProps> = ({ data }: PricingPageProps) => {
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroText
         title={data[currentLang]?.HeroText?.Title}
         desc={data[currentLang]?.HeroText?.Description?.data?.Description}

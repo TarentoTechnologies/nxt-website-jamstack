@@ -10,12 +10,14 @@ import featureImg6 from "../../static/images/aurora_feature_6.png";
 import heroImg from "../../static/images/aurora_header.svg";
 import auroraWorking from "../../static/images/aurora_how_it_works.png";
 import TarentoLogo from "../../static/images/company-logo.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import storyImg2 from "../../static/images/photo3.jpg";
 import storyImg1 from "../../static/images/story_1.png";
 import auroraVideo from "../../static/videos/aurora_video_v5.mp4";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import { HowItWorks, Stories, VideoSection } from "../layouts/aurora";
 import { FeaturesLayout } from "../layouts/rain";
 
@@ -108,6 +110,7 @@ const AuroraPage: React.FC<PageProps> = () => {
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         title={heroBannerData.title}
         subText={heroBannerData.subtext}
