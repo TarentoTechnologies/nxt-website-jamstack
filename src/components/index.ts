@@ -5,3 +5,4 @@ export { BannerWithTag } from "./banners/BannerWithTag";
 export { PortfolioCarousel } from "./carousels/PortfolioCarousel";
 export { PrimaryCTACard } from "./cards/PrimaryCTACard";
 export { KeyInfoCard } from "./cards/KeyInfoCard";
+export { Footer } from "./footer/Footer";

@@ -123,6 +123,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "footer-section",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    }
   ],
 };
 
