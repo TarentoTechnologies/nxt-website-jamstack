@@ -85,36 +85,17 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
         }
         cardList={data[currentLang]?.HeroSection?.CardList}
       />
-      <StepSection
-        title={data[currentLang]?.Steps[0]?.Title}
-        description={
-          data[currentLang]?.Steps[0]?.Description?.data?.Description
-        }
-        imgSrc={data[currentLang]?.Steps[0]?.ImgSrc?.localFile?.url}
-        cardHeading={data[currentLang]?.Steps[0]?.CardHeading}
-        keyPoints={data[currentLang]?.Steps[0]?.KeyPoints}
-        bgGrey={data[currentLang]?.Steps[0]?.BgGrey}
-      />
-      <StepSection
-        title={data[currentLang]?.Steps[1]?.Title}
-        description={
-          data[currentLang]?.Steps[1]?.Description?.data?.Description
-        }
-        imgSrc={data[currentLang]?.Steps[1]?.ImgSrc?.localFile?.url}
-        cardHeading={data[currentLang]?.Steps[1]?.CardHeading}
-        keyPoints={data[currentLang]?.Steps[1]?.KeyPoints}
-        bgGrey={data[currentLang]?.Steps[1]?.BgGrey}
-      />
-      <StepSection
-        title={data[currentLang]?.Steps[2]?.Title}
-        description={
-          data[currentLang]?.Steps[2]?.Description?.data?.Description
-        }
-        imgSrc={data[currentLang]?.Steps[2]?.ImgSrc?.localFile?.url}
-        cardHeading={data[currentLang]?.Steps[2]?.CardHeading}
-        keyPoints={data[currentLang]?.Steps[2]?.KeyPoints}
-        bgGrey={data[currentLang]?.Steps[2]?.BgGrey}
-      />
+      {data[currentLang]?.Steps.map((item: any, index: any) => (
+        <StepSection
+          key={index}
+          title={item?.Title}
+          description={item?.Description?.data?.Description}
+          imgSrc={item?.ImgSrc?.localFile?.url}
+          cardHeading={item?.CardHeading}
+          keyPoints={item?.KeyPoints}
+          bgGrey={item?.BgGrey}
+        />
+      ))}
       <VideoSection videoSrc={data[currentLang]?.VideoSection?.videoSrc} />
       <LeadCountries
         title={data[currentLang]?.LeadCountries?.Title}
