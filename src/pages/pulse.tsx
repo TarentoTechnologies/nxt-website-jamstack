@@ -1,21 +1,10 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import navbarImg from "../../static/images/logo-inner.svg";
-import heroImg from "../../static/images/pulseImg.jpg";
-import pulseProcessImg from "../../static/images/pulseProcess.jpg";
-import pulseQRcode from "../../static/images/pulse_QRCode.jpg";
-import keyImg1 from "../../static/images/pulse_img01.png";
-import keyImg2 from "../../static/images/pulse_img02.png";
-import keyImg3 from "../../static/images/pulse_img03.png";
-import keyImg4 from "../../static/images/pulse_img04.png";
-import keyImg5 from "../../static/images/pulse_img05.png";
-import keyImg6 from "../../static/images/pulse_img06.png";
-import keyImg7 from "../../static/images/pulse_img07.png";
-import keyImg8 from "../../static/images/pulse_img08.png";
-import { HeroBannerForAccelerators } from "../components/banners/HeroBannerForAccelerators";
 import { Footer } from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
 import {
@@ -25,42 +14,14 @@ import {
   Plans,
   PulseHeroBanner,
 } from "../layouts/pulse/index";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const PulsePage: React.FC<PageProps> = () => {
-  const keyInsightsCards = [
-    {
-      imgSrc: keyImg1,
-      imgAltText: "trend",
-    },
-    {
-      imgSrc: keyImg2,
-      imgAltText: "overall",
-    },
-    {
-      imgSrc: keyImg3,
-      imgAltText: "Week day trend",
-    },
-    {
-      imgSrc: keyImg4,
-      imgAltText: "pattern",
-    },
-    {
-      imgSrc: keyImg5,
-      imgAltText: "distribution",
-    },
-    {
-      imgSrc: keyImg6,
-      imgAltText: "customer feedback",
-    },
-    {
-      imgSrc: keyImg7,
-      imgAltText: "top 10 stores",
-    },
-    {
-      imgSrc: keyImg8,
-      imgAltText: "bottom 10 stores",
-    },
-  ];
+interface PulsePageProps {
+  data: any;
+}
+
+const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
 
   const footerData = {
     nxtLogoImg: NXTlogo,
@@ -105,56 +66,107 @@ const PulsePage: React.FC<PageProps> = () => {
     <main className="">
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <PulseHeroBanner
-        title="Know the Pulse of your Customer"
-        description="Make Informed decisions. Take your business to the next level."
-        img={heroImg}
-        imgAltText="pulse"
+        title={data[currentLang]?.HeroBanner?.Title}
+        description={data[currentLang]?.HeroBanner?.Description}
+        img={data[currentLang]?.HeroBanner?.Image?.localFile?.url}
+        imgAltText={data[currentLang]?.HeroBanner?.Image?.alternativeText}
       />
       <HowItWorks
-        heading="How it Works"
-        imgSrc={pulseProcessImg}
-        levelOneText="Collect data and feedback from your customers across geography"
-        levelTwoText="Process and generate insights in realtime"
-        levelThreeText="Make the insights available at your fingerprints so that you can make right decisions, act proactively"
+        heading={data[currentLang]?.HowItWorks?.SectionTitle}
+        imgSrc={data[currentLang]?.HowItWorks?.ProcessImage?.localFile?.url}
+        levelOneText={data[currentLang]?.HowItWorks?.DescriptionOne}
+        levelTwoText={data[currentLang]?.HowItWorks?.DescriptionTwo}
+        levelThreeText={data[currentLang]?.HowItWorks?.DescriptionThree}
       />
-      <KeyInsights heading="Key Insights" cardList={keyInsightsCards} />
+      <KeyInsights
+        heading={data[currentLang]?.InsightSectionTitle}
+        cardList={data[currentLang]?.KeyInsightImages}
+      />
       <Plans
-        heading="Plans for every business"
-        subText="Plans that are tailored to suit big, established business as well as young fast growing ones."
-        levelOnePlan={{
-          title: "Fully on premise",
-          list: [
-            "Flexibility to host the platform fully in-house",
-            "Customise and extend to your business need",
-            "Total control of your data",
-            "Perpetual licence option for total freedom",
-            "Suitable for large businesses",
-          ],
-        }}
-        levelTwoPlan={{
-          title: "As a Service",
-          list: [
-            "On board with least hassles",
-            "No worries of infrastructure",
-            "Apps that meet your brand",
-            "Onboard more stores as needed",
-            "Suitable for young, fast growing businesses",
-          ],
-        }}
+        heading={data[currentLang]?.PlansTitleDescription?.Title}
+        subText={data[currentLang]?.PlansTitleDescription?.Description}
+        cardData={data[currentLang]?.PlanCards}
       />
       <GetInTouch
-        heading="Get in Touch"
-        subText={
-          '<p>Onboard and take you business to the next level.<br> Send a message to <b><a href="mailto:hello@tarento.com?subject=Pulse Demo" rel="canonical">hello@tarento.com</a></b> and we will contact you within one business day. </p>'
-        }
-        btnLabel="Request a Demo"
-        btnLink="mailto:hello@tarento.com?subject=Pulse Demo"
-        imgSrc={pulseQRcode}
+        heading={data[currentLang]?.GetInTouch?.Title}
+        subText={data[currentLang]?.GetInTouch?.Description}
+        btnLabel={data[currentLang]?.GetInTouch?.Tag?.Label}
+        btnLink={data[currentLang]?.GetInTouch?.Tag?.Link}
+        imgSrc={data[currentLang]?.GetInTouch?.ImgSrc?.localFile?.url}
+        imgAltText={data[currentLang]?.GetInTouch?.ImgSrc?.alternativeText}
       />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query PulsePage {
+    en: strapiPulse(locale: { eq: "en" }) {
+      HeroBanner {
+        Title
+        Description
+        Image {
+          localFile {
+            url
+          }
+          alternativeText
+        }
+      }
+      HowItWorks {
+        SectionTitle
+        DescriptionOne
+        DescriptionTwo
+        DescriptionThree
+        ProcessImage {
+          localFile {
+            url
+          }
+          alternativeText
+        }
+      }
+      InsightSectionTitle
+      KeyInsightImages {
+        Image {
+          localFile {
+            url
+          }
+          alternativeText
+        }
+      }
+      PlansTitleDescription {
+        Title
+        Description
+      }
+      PlanCards {
+        Title
+        KeyPoints {
+          ListItem
+        }
+      }
+      GetInTouch {
+        Title
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        ImgSrc {
+          localFile {
+            url
+          }
+          alternativeText
+        }
+        Tag {
+          Label
+          Link
+        }
+      }
+    }
+  }
+`;
 
 export default PulsePage;
 

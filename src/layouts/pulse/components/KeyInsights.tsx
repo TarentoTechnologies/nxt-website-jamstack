@@ -19,9 +19,9 @@ export const KeyInsights = ({ heading, cardList }: KeyInsightsProps) => {
           {cardList.map((item, index) => (
             <div key={index} className={`${keyImg}`}>
               <img
-                src={item.imgSrc}
-                alt={item.imgAltText}
-                title={item.imgAltText}
+                src={item?.Image?.localFile?.url}
+                alt={item?.Image?.alternativeText}
+                title={item?.Image?.alternativeText}
                 className={`img-fluid`}
               />
             </div>

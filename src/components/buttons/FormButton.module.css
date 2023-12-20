@@ -11,3 +11,11 @@
   margin-top: 1.875rem;
   line-height: 1.625rem;
 }
+
+.pulseBg {
+  background-color: #380a65;
+}
+
+.pulseBg:hover {
+  background-color: #000;
+}

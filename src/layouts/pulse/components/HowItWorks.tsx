@@ -21,7 +21,9 @@ export const HowItWorks = ({
     >
       <div className={`containerService paddingLeftRight15`}>
         <div className={`row`}>
-          <PrimaryTitle title={heading} variant="infoSectionH2" />
+          <div className={`mt-3 mb-2 pt-1`}>
+            <PrimaryTitle title={heading} variant="infoSectionH2" />
+          </div>
           <div className={`col-12`}>
             <img
               src={imgSrc}

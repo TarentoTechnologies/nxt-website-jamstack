@@ -1,3 +1,5 @@
+import ReactHtmlParser from "react-html-parser";
+
 import { FormButton } from "../../../components/buttons/FormButton";
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { contactSectionPadding, subTextStyles } from "../Pulse.module.css";
@@ -6,7 +8,7 @@ interface GetInTouchProps {
   heading: string;
   subText: any;
   btnLabel: string;
-  btnLink?: any;
+  btnLink: any;
   imgSrc: any;
   imgAltText?: string;
 }
@@ -39,11 +41,10 @@ export const GetInTouch = ({
             <div className={`pt-3`}>
               <PrimaryTitle title={heading} variant="infoSectionH2" />
             </div>
-            <div
-              className={`${subTextStyles}`}
-              dangerouslySetInnerHTML={{ __html: subText }}
-            ></div>
-            <FormButton label={btnLabel} btnLink={btnLink} />
+            <div className={`${subTextStyles}`}>
+              {ReactHtmlParser(subText.data?.childMarkdownRemark?.html)}
+            </div>
+            <FormButton label={btnLabel} btnLink={btnLink} isEmail isPulse />
           </div>
         </div>
       </div>
