@@ -2,16 +2,17 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ReactHtmlParser from "react-html-parser";
 
 import {
-  white70,
   white,
+  white70,
   white87,
 } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   cardHeader,
-  h1One,
   h1CardTitle,
+  h1One,
+  logoTitle,
   subTextV1,
-  logoTitle
+  subTextV3,
 } from "../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
@@ -37,6 +38,7 @@ interface HeroBannerForTDIProps {
   mainTitle?: string;
   govTech?: boolean;
   subTextBold?: boolean;
+  isAurora?: boolean;
 }
 
 export const HeroBannerForTDI = ({
@@ -52,9 +54,10 @@ export const HeroBannerForTDI = ({
   mainTitle,
   govTech,
   subTextBold,
+  isAurora,
 }: HeroBannerForTDIProps) => {
   const image: any = getImage(img);
-  
+
   return (
     <>
       {govTech == true ? (
@@ -136,7 +139,11 @@ export const HeroBannerForTDI = ({
                 </h1>
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
-                  <p className={`${white87} ${subTextBold ? subTextV1 : ""}`}>
+                  <p
+                    className={`${white87} ${subTextBold ? subTextV1 : ""} ${
+                      isAurora ? subTextV3 : ""
+                    }`}
+                  >
                     {subText}
                   </p>
                   <p className={`${white70}`}>

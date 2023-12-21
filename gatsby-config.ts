@@ -139,6 +139,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "aurora",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
 };
 

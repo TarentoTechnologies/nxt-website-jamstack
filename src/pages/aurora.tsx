@@ -1,5 +1,6 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
+import { useRecoilValue } from "recoil";
 
 import featureImg1 from "../../static/images/aurora_feature_1.png";
 import featureImg2 from "../../static/images/aurora_feature_2.png";
@@ -20,8 +21,15 @@ import { Footer } from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
 import { HowItWorks, Stories, VideoSection } from "../layouts/aurora";
 import { FeaturesLayout } from "../layouts/rain";
+import { langSelected as langSelectedAtom } from "../states/atoms";
 
-const AuroraPage: React.FC<PageProps> = () => {
+interface AuroraPageProps {
+  data: any;
+}
+
+const AuroraPage: React.FC<PageProps> = ({ data }: AuroraPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+
   const heroBannerData = {
     title: "Aurora - Customer Experience Platform",
     img: heroImg,
@@ -112,52 +120,117 @@ const AuroraPage: React.FC<PageProps> = () => {
     <main className="">
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
-        title={heroBannerData.title}
-        subText={heroBannerData.subtext}
-        subTextBold
-        description={heroBannerData.description}
-        img={heroBannerData.img}
+        id={data[currentLang]?.HeroBanner?.id}
+        title={data[currentLang]?.HeroBanner?.Title}
+        subText={data[currentLang]?.HeroBanner?.SubText}
+        description={data[currentLang]?.HeroBanner?.Description}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
+        imgAltText={data[currentLang]?.HeroBanner?.Img?.alternativeText}
+        isAurora
       />
-      <HowItWorks heading="How does Aurora work?" imgSrc={auroraWorking} />
+      <HowItWorks
+        heading={data[currentLang]?.WorkingSectionTitle}
+        imgSrc={data[currentLang]?.WorkingImg}
+      />
       <VideoSection
-        heading="Aurora - One Desk for all customer needs"
-        listData={[
-          "Intuitive interface for efficient interactions.",
-          "Empower support personnel to make descisions and arrive at resolution with contextual data.",
-          "Meta data from the source system along with customer information.",
-          "Analytics around the task and customer for setting the relevance and priority.",
-          "Auto response - AI powered response recommendations.",
-          "Potential solutions - Solution reference from the past resolution for similar issues.",
-        ]}
-        videoSrc={auroraVideo}
+        heading={data[currentLang]?.VideoData?.Title}
+        listData={data[currentLang]?.VideoData?.KeyPoints}
+        videoSrc={data[currentLang]?.AuroraVideo?.localFile?.url}
       />
       <FeaturesLayout
-        title="Features"
-        cardsData={featureCards}
-        isImage={true}
-        bgGrey
+        title={data[currentLang]?.FeatureSectionTitle}
+        cardsData={data[currentLang]?.FeatureCards}
+        isImage={false}
       />
       <Stories
-        title="Stories"
-        cardsData={[
-          {
-            imgSrc: storyImg1,
-            heading: "Tasks - Feedback module for a 100k+ userbase",
-            description:
-              "Objective of this program was to reduce the unstructured support requests and feedback (such as over calls and emails) which are hard to track and ensure the quality of the responses. In this context it was decided to build an AI powered bot platform that will provide a quicker turnaround to customer grievances and significantly enhanced customer experience.",
-          },
-          {
-            imgSrc: storyImg2,
-            heading: "Aurora seemlessly integrated in customer projects",
-            description:
-              "DIKSHA - Digital Infrastructure for Knowledge Sharing is an initiative from Ministry of Human Resource Development (MHRD), Government of India. The platform provides augmented learning contents and tools to enhance learning opportunity for students and teachers. “Diksha Vani” is an initiative from MHRD to enable a channel for users to interact with platform and get answers. Platform also provides content search and learning recommendations.",
-          },
-        ]}
+        title={data[currentLang]?.StorySectionTitle}
+        cardsData={data[currentLang]?.StoryCards}
       />
       <Footer data={footerData} />
     </main>
   );
 };
+
+export const query = graphql`
+  query AuroraPage {
+    en: strapiAurora(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        withLogo
+        isImage
+        Title
+        SubText
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        Img {
+          localFile {
+            url
+          }
+          alternativeText
+        }
+      }
+      WorkingSectionTitle
+      WorkingImg {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(formats: PNG)
+          }
+        }
+        alternativeText
+        caption
+      }
+      AuroraVideo {
+        localFile {
+          url
+        }
+        alternativeText
+      }
+      VideoData {
+        Title
+        KeyPoints {
+          ListItem
+        }
+      }
+      FeatureSectionTitle
+      FeatureCards {
+        Heading
+        SubText
+        Img {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+          alternativeText
+          caption
+        }
+      }
+      StorySectionTitle
+      StoryCards {
+        Title
+        Description {
+          data {
+            Description
+          }
+        }
+        Img {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, height: 326)
+            }
+          }
+          alternativeText
+          caption
+        }
+      }
+    }
+  }
+`;
 
 export default AuroraPage;
 
