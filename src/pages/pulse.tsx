@@ -81,6 +81,7 @@ const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
       <KeyInsights
         heading={data[currentLang]?.InsightSectionTitle}
         cardList={data[currentLang]?.KeyInsightImages}
+        isImage
       />
       <Plans
         heading={data[currentLang]?.PlansTitleDescription?.Title}
