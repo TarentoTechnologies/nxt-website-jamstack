@@ -68,12 +68,11 @@ const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
       <PulseHeroBanner
         title={data[currentLang]?.HeroBanner?.Title}
         description={data[currentLang]?.HeroBanner?.Description}
-        img={data[currentLang]?.HeroBanner?.Image?.localFile?.url}
-        imgAltText={data[currentLang]?.HeroBanner?.Image?.alternativeText}
+        img={data[currentLang]?.HeroBanner?.Image}
       />
       <HowItWorks
         heading={data[currentLang]?.HowItWorks?.SectionTitle}
-        imgSrc={data[currentLang]?.HowItWorks?.ProcessImage?.localFile?.url}
+        imgSrc={data[currentLang]?.HowItWorks?.ProcessImage?.localFile}
         levelOneText={data[currentLang]?.HowItWorks?.DescriptionOne}
         levelTwoText={data[currentLang]?.HowItWorks?.DescriptionTwo}
         levelThreeText={data[currentLang]?.HowItWorks?.DescriptionThree}
@@ -81,7 +80,6 @@ const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
       <KeyInsights
         heading={data[currentLang]?.InsightSectionTitle}
         cardList={data[currentLang]?.KeyInsightImages}
-        isImage
       />
       <Plans
         heading={data[currentLang]?.PlansTitleDescription?.Title}
@@ -93,8 +91,7 @@ const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
         subText={data[currentLang]?.GetInTouch?.Description}
         btnLabel={data[currentLang]?.GetInTouch?.Tag?.Label}
         btnLink={data[currentLang]?.GetInTouch?.Tag?.Link}
-        imgSrc={data[currentLang]?.GetInTouch?.ImgSrc?.localFile?.url}
-        imgAltText={data[currentLang]?.GetInTouch?.ImgSrc?.alternativeText}
+        imgSrc={data[currentLang]?.GetInTouch?.ImgSrc}
       />
       <Footer data={footerData} />
     </main>
@@ -109,9 +106,12 @@ export const query = graphql`
         Description
         Image {
           localFile {
-            url
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
           }
           alternativeText
+          caption
         }
       }
       HowItWorks {
@@ -121,19 +121,27 @@ export const query = graphql`
         DescriptionThree
         ProcessImage {
           localFile {
-            url
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
           }
           alternativeText
+          caption
         }
       }
       InsightSectionTitle
       KeyInsightImages {
         Image {
           localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
             url
           }
           alternativeText
+          caption
         }
+        isImage
       }
       PlansTitleDescription {
         Title
@@ -156,9 +164,12 @@ export const query = graphql`
         }
         ImgSrc {
           localFile {
-            url
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
           }
           alternativeText
+          caption
         }
         Tag {
           Label

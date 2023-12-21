@@ -1,3 +1,5 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 
 interface HowItWorksProps {
@@ -25,8 +27,8 @@ export const HowItWorks = ({
             <PrimaryTitle title={heading} variant="infoSectionH2" />
           </div>
           <div className={`col-12`}>
-            <img
-              src={imgSrc}
+            <GatsbyImage
+              image={getImage(imgSrc) ? getImage(imgSrc) : imgSrc}
               alt={heading}
               title={heading}
               className="img-fluid"

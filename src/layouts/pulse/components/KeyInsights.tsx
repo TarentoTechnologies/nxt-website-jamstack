@@ -6,14 +6,9 @@ import { keyFeature, keyImg, purpleBg } from "../Pulse.module.css";
 interface KeyInsightsProps {
   heading: string;
   cardList: any[];
-  isImage?: boolean;
 }
 
-export const KeyInsights = ({
-  heading,
-  cardList,
-  isImage,
-}: KeyInsightsProps) => {
+export const KeyInsights = ({ heading, cardList }: KeyInsightsProps) => {
   return (
     <div
       className={`container-fluid d-flex justify-content-center paddingTopBottom60 ${purpleBg}`}
@@ -25,20 +20,22 @@ export const KeyInsights = ({
         <div className={`${keyFeature}`}>
           {cardList.map((item, index) => (
             <div key={index} className={`${keyImg}`}>
-              {!isImage ? (
+              {item?.isImage ? (
                 <GatsbyImage
                   image={
-                    getImage(item?.img?.localFile)
-                      ? getImage(item?.img?.localFile)
-                      : item?.img?.localFile
+                    getImage(item?.Image?.localFile)
+                      ? getImage(item?.Image?.localFile)
+                      : item?.Image?.localFile
                   }
-                  alt={""}
+                  alt={item?.Image?.alternativeText}
+                  title={item?.Image?.caption}
+                  className={`img-fluid`}
                 />
               ) : (
                 <img
                   src={item?.Image?.localFile?.url}
                   alt={item?.Image?.alternativeText}
-                  title={item?.Image?.alternativeText}
+                  title={item?.Image?.caption}
                   className={`img-fluid`}
                 />
               )}
