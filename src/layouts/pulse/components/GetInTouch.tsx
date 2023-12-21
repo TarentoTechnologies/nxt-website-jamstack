@@ -1,3 +1,6 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ReactHtmlParser from "react-html-parser";
+
 import { FormButton } from "../../../components/buttons/FormButton";
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { contactSectionPadding, subTextStyles } from "../Pulse.module.css";
@@ -6,9 +9,8 @@ interface GetInTouchProps {
   heading: string;
   subText: any;
   btnLabel: string;
-  btnLink?: any;
+  btnLink: any;
   imgSrc: any;
-  imgAltText?: string;
 }
 
 export const GetInTouch = ({
@@ -17,7 +19,6 @@ export const GetInTouch = ({
   btnLabel,
   btnLink,
   imgSrc,
-  imgAltText,
 }: GetInTouchProps) => {
   return (
     <div
@@ -27,10 +28,14 @@ export const GetInTouch = ({
         <div className={`row`}>
           <div className={`col-lg-3 order-lg-2`}>
             <div className={`d-flex justify-content-center`}>
-              <img
-                src={imgSrc}
-                alt={imgAltText}
-                title={imgAltText}
+              <GatsbyImage
+                image={
+                  getImage(imgSrc?.localFile)
+                    ? getImage(imgSrc?.localFile)
+                    : imgSrc?.localFile
+                }
+                alt={imgSrc?.alternativeText}
+                title={imgSrc?.caption}
                 className={`img-fluid`}
               />
             </div>
@@ -39,11 +44,10 @@ export const GetInTouch = ({
             <div className={`pt-3`}>
               <PrimaryTitle title={heading} variant="infoSectionH2" />
             </div>
-            <div
-              className={`${subTextStyles}`}
-              dangerouslySetInnerHTML={{ __html: subText }}
-            ></div>
-            <FormButton label={btnLabel} btnLink={btnLink} />
+            <div className={`${subTextStyles}`}>
+              {ReactHtmlParser(subText.data?.childMarkdownRemark?.html)}
+            </div>
+            <FormButton label={btnLabel} btnLink={btnLink} isEmail isPulse />
           </div>
         </div>
       </div>

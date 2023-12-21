@@ -27,7 +27,7 @@ interface FooterProps {
 }
 
 export const Footer = ({ data }: FooterProps) => {
-  console.log(data);
+
   return (
     <div className={`container-fluid ${footer}`}>
       <div className={`row`}>
@@ -87,7 +87,7 @@ export const Footer = ({ data }: FooterProps) => {
                   {data?.PrimaryLevelOneHeading}
                 </p>
                 <ul>
-                  {data?.PrimaryLevelOneList.map((item: any, index: number) => (
+                  {data?.PrimaryLevelOneList?.map((item: any, index: number) => (
                     <li key={item?.id}>
                       <Link to={item?.Link} rel="canonical">
                         {item?.Label}

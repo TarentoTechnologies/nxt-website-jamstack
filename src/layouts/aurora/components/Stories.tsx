@@ -1,3 +1,5 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { storyImg } from "../Aurora.module.css";
 
@@ -18,16 +20,22 @@ export const Stories = ({ title, cardsData }: StoriesProps) => {
         <div className={`row`}>
           {cardsData.map((item, index) => (
             <div key={index} className={`col-lg-6 mt-5`}>
-              <div className={`d-flex justify-content-center`}>
-                <img
-                  src={item.imgSrc}
-                  alt={item.heading}
-                  title={item.heading}
-                  className={`img-fluid ${storyImg}`}
+              <div
+                className={`d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start`}
+              >
+                <GatsbyImage
+                  image={
+                    getImage(item?.Img?.localFile)
+                      ? getImage(item?.Img?.localFile)
+                      : item?.Img?.localFile
+                  }
+                  alt={item?.Img?.alternativeText}
+                  title={item?.Img?.title}
+                  className={`img-fluid`}
                 />
               </div>
-              <h2 className={`mt-3 pt-3`}>{item.heading}</h2>
-              <p className={`mt-3`}>{item.description}</p>
+              <h2 className={`mt-3 pt-3`}>{item?.Title}</h2>
+              <p className={`mt-3`}>{item?.Description?.data?.Description}</p>
             </div>
           ))}
         </div>
