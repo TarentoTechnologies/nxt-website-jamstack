@@ -1,3 +1,5 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { keyFeature, keyImg, purpleBg } from "../Pulse.module.css";
 
@@ -18,12 +20,25 @@ export const KeyInsights = ({ heading, cardList }: KeyInsightsProps) => {
         <div className={`${keyFeature}`}>
           {cardList.map((item, index) => (
             <div key={index} className={`${keyImg}`}>
-              <img
-                src={item.imgSrc}
-                alt={item.imgAltText}
-                title={item.imgAltText}
-                className={`img-fluid`}
-              />
+              {item?.isImage ? (
+                <GatsbyImage
+                  image={
+                    getImage(item?.Image?.localFile)
+                      ? getImage(item?.Image?.localFile)
+                      : item?.Image?.localFile
+                  }
+                  alt={item?.Image?.alternativeText}
+                  title={item?.Image?.caption}
+                  className={`img-fluid`}
+                />
+              ) : (
+                <img
+                  src={item?.Image?.localFile?.url}
+                  alt={item?.Image?.alternativeText}
+                  title={item?.Image?.caption}
+                  className={`img-fluid`}
+                />
+              )}
             </div>
           ))}
         </div>

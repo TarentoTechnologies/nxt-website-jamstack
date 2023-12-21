@@ -11,3 +11,7 @@
   margin-top: 1.875rem;
   line-height: 1.625rem;
 }
+
+.pulseBg:hover {
+  background-color: var(--black);
+}
