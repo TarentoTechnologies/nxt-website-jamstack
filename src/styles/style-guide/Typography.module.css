@@ -287,6 +287,13 @@ h3 {
   line-height: 1.688rem;
 }
 
+.subTextV3 {
+  font-family: "Lato-Regular", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

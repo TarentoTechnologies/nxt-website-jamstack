@@ -20,14 +20,14 @@ export const Stories = ({ title, cardsData }: StoriesProps) => {
             <div key={index} className={`col-lg-6 mt-5`}>
               <div className={`d-flex justify-content-center`}>
                 <img
-                  src={item.imgSrc}
-                  alt={item.heading}
-                  title={item.heading}
+                  src={item?.Img?.localFile?.url}
+                  alt={item?.Img?.alternativeText}
+                  title={item?.Img?.alternativeText}
                   className={`img-fluid ${storyImg}`}
                 />
               </div>
-              <h2 className={`mt-3 pt-3`}>{item.heading}</h2>
-              <p className={`mt-3`}>{item.description}</p>
+              <h2 className={`mt-3 pt-3`}>{item?.Title}</h2>
+              <p className={`mt-3`}>{item?.Description?.data?.Description}</p>
             </div>
           ))}
         </div>

@@ -1585,6 +1585,7 @@ type Query = {
   readonly allStrapiAgencyPortfolio: STRAPI_AGENCY_PORTFOLIOConnection;
   readonly allStrapiAgencyPortfolioListing: STRAPI_AGENCY_PORTFOLIO_LISTINGConnection;
   readonly allStrapiAgencyPortfolioResultdescriptionTextnode: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEConnection;
+  readonly allStrapiAurora: STRAPI_AURORAConnection;
   readonly allStrapiComponentAcceleratorCardAcceleratorCard: STRAPI__COMPONENT_ACCELERATOR_CARD_ACCELERATOR_CARDConnection;
   readonly allStrapiComponentAcceleratorHeroBannerAcceleratorHeroBanner: STRAPI__COMPONENT_ACCELERATOR_HERO_BANNER_ACCELERATOR_HERO_BANNERConnection;
   readonly allStrapiComponentAvatarCardV1AvatarCardV1: STRAPI__COMPONENT_AVATAR_CARD_V_1_AVATAR_CARD_V_1Connection;
@@ -1634,6 +1635,8 @@ type Query = {
   readonly allStrapiComponentReferenceCardReferenceCardDescriptionTextnode: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEConnection;
   readonly allStrapiComponentSolutionCardASolutionCardA: STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AConnection;
   readonly allStrapiComponentSolutionCardASolutionCardADescriptionTextnode: STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A_DESCRIPTION_TEXTNODEConnection;
+  readonly allStrapiComponentStoryCardStoryCard: STRAPI__COMPONENT_STORY_CARD_STORY_CARDConnection;
+  readonly allStrapiComponentStoryCardStoryCardDescriptionTextnode: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEConnection;
   readonly allStrapiComponentStringListStringList: STRAPI__COMPONENT_STRING_LIST_STRING_LISTConnection;
   readonly allStrapiComponentTagsTags: STRAPI__COMPONENT_TAGS_TAGSConnection;
   readonly allStrapiComponentTextColorCardTextColorCard: STRAPI__COMPONENT_TEXT_COLOR_CARD_TEXT_COLOR_CARDConnection;
@@ -1668,6 +1671,7 @@ type Query = {
   readonly strapiAgencyPortfolio: Maybe<STRAPI_AGENCY_PORTFOLIO>;
   readonly strapiAgencyPortfolioListing: Maybe<STRAPI_AGENCY_PORTFOLIO_LISTING>;
   readonly strapiAgencyPortfolioResultdescriptionTextnode: Maybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODE>;
+  readonly strapiAurora: Maybe<STRAPI_AURORA>;
   readonly strapiComponentAcceleratorCardAcceleratorCard: Maybe<STRAPI__COMPONENT_ACCELERATOR_CARD_ACCELERATOR_CARD>;
   readonly strapiComponentAcceleratorHeroBannerAcceleratorHeroBanner: Maybe<STRAPI__COMPONENT_ACCELERATOR_HERO_BANNER_ACCELERATOR_HERO_BANNER>;
   readonly strapiComponentAvatarCardV1AvatarCardV1: Maybe<STRAPI__COMPONENT_AVATAR_CARD_V_1_AVATAR_CARD_V_1>;
@@ -1717,6 +1721,8 @@ type Query = {
   readonly strapiComponentReferenceCardReferenceCardDescriptionTextnode: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE>;
   readonly strapiComponentSolutionCardASolutionCardA: Maybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A>;
   readonly strapiComponentSolutionCardASolutionCardADescriptionTextnode: Maybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A_DESCRIPTION_TEXTNODE>;
+  readonly strapiComponentStoryCardStoryCard: Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD>;
+  readonly strapiComponentStoryCardStoryCardDescriptionTextnode: Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODE>;
   readonly strapiComponentStringListStringList: Maybe<STRAPI__COMPONENT_STRING_LIST_STRING_LIST>;
   readonly strapiComponentTagsTags: Maybe<STRAPI__COMPONENT_TAGS_TAGS>;
   readonly strapiComponentTextColorCardTextColorCard: Maybe<STRAPI__COMPONENT_TEXT_COLOR_CARD_TEXT_COLOR_CARD>;
@@ -1835,6 +1841,14 @@ type Query_allStrapiAgencyPortfolioResultdescriptionTextnodeArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODESortInput>>>;
+};
+
+
+type Query_allStrapiAuroraArgs = {
+  filter: InputMaybe<STRAPI_AURORAFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_AURORASortInput>>>;
 };
 
 
@@ -2227,6 +2241,22 @@ type Query_allStrapiComponentSolutionCardASolutionCardADescriptionTextnodeArgs =
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A_DESCRIPTION_TEXTNODESortInput>>>;
+};
+
+
+type Query_allStrapiComponentStoryCardStoryCardArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDSortInput>>>;
+};
+
+
+type Query_allStrapiComponentStoryCardStoryCardDescriptionTextnodeArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODESortInput>>>;
 };
 
 
@@ -2647,6 +2677,28 @@ type Query_strapiAgencyPortfolioResultdescriptionTextnodeArgs = {
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   parent: InputMaybe<NodeFilterInput>;
+};
+
+
+type Query_strapiAuroraArgs = {
+  AuroraVideo: InputMaybe<STRAPI__MEDIAFilterInput>;
+  FeatureCards: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterListInput>;
+  FeatureSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  StoryCards: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDFilterListInput>;
+  StorySectionTitle: InputMaybe<StringQueryOperatorInput>;
+  VideoData: InputMaybe<STRAPI__COMPONENT_TITLE_WITH_KEYPOINTS_TITLE_WITH_KEYPOINTSFilterInput>;
+  WorkingImg: InputMaybe<STRAPI__MEDIAFilterInput>;
+  WorkingSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  createdAt: InputMaybe<DateQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  locale: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  publishedAt: InputMaybe<DateQueryOperatorInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
+  updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
 
 
@@ -3262,6 +3314,29 @@ type Query_strapiComponentSolutionCardASolutionCardAArgs = {
 
 
 type Query_strapiComponentSolutionCardASolutionCardADescriptionTextnodeArgs = {
+  Description: InputMaybe<StringQueryOperatorInput>;
+  childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+};
+
+
+type Query_strapiComponentStoryCardStoryCardArgs = {
+  Description: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDDescriptionFilterInput>;
+  Img: InputMaybe<STRAPI__MEDIAFilterInput>;
+  Title: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+
+type Query_strapiComponentStoryCardStoryCardDescriptionTextnodeArgs = {
   Description: InputMaybe<StringQueryOperatorInput>;
   childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -4211,6 +4286,200 @@ type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODESortInput = {
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly parent: InputMaybe<NodeSortInput>;
+};
+
+type STRAPI_AURORA = Node & {
+  readonly AuroraVideo: Maybe<STRAPI__MEDIA>;
+  readonly FeatureCards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD>>>;
+  readonly FeatureSectionTitle: Maybe<Scalars['String']>;
+  readonly HeroBanner: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
+  readonly StoryCards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD>>>;
+  readonly StorySectionTitle: Maybe<Scalars['String']>;
+  readonly VideoData: Maybe<STRAPI__COMPONENT_TITLE_WITH_KEYPOINTS_TITLE_WITH_KEYPOINTS>;
+  readonly WorkingImg: Maybe<STRAPI__MEDIA>;
+  readonly WorkingSectionTitle: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly createdAt: Maybe<Scalars['Date']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly locale: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly publishedAt: Maybe<Scalars['Date']>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+  readonly updatedAt: Maybe<Scalars['Date']>;
+};
+
+
+type STRAPI_AURORA_createdAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type STRAPI_AURORA_publishedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type STRAPI_AURORA_updatedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type STRAPI_AURORAConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_AURORAEdge>;
+  readonly group: ReadonlyArray<STRAPI_AURORAGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_AURORA>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_AURORAConnection_distinctArgs = {
+  field: STRAPI_AURORAFieldSelector;
+};
+
+
+type STRAPI_AURORAConnection_groupArgs = {
+  field: STRAPI_AURORAFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_AURORAConnection_maxArgs = {
+  field: STRAPI_AURORAFieldSelector;
+};
+
+
+type STRAPI_AURORAConnection_minArgs = {
+  field: STRAPI_AURORAFieldSelector;
+};
+
+
+type STRAPI_AURORAConnection_sumArgs = {
+  field: STRAPI_AURORAFieldSelector;
+};
+
+type STRAPI_AURORAEdge = {
+  readonly next: Maybe<STRAPI_AURORA>;
+  readonly node: STRAPI_AURORA;
+  readonly previous: Maybe<STRAPI_AURORA>;
+};
+
+type STRAPI_AURORAFieldSelector = {
+  readonly AuroraVideo: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly FeatureCards: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector>;
+  readonly FeatureSectionTitle: InputMaybe<FieldSelectorEnum>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector>;
+  readonly StoryCards: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector>;
+  readonly StorySectionTitle: InputMaybe<FieldSelectorEnum>;
+  readonly VideoData: InputMaybe<STRAPI__COMPONENT_TITLE_WITH_KEYPOINTS_TITLE_WITH_KEYPOINTSFieldSelector>;
+  readonly WorkingImg: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly WorkingSectionTitle: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly createdAt: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly locale: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly publishedAt: InputMaybe<FieldSelectorEnum>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+  readonly updatedAt: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI_AURORAFilterInput = {
+  readonly AuroraVideo: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly FeatureCards: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterListInput>;
+  readonly FeatureSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  readonly StoryCards: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDFilterListInput>;
+  readonly StorySectionTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly VideoData: InputMaybe<STRAPI__COMPONENT_TITLE_WITH_KEYPOINTS_TITLE_WITH_KEYPOINTSFilterInput>;
+  readonly WorkingImg: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly WorkingSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly createdAt: InputMaybe<DateQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly locale: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+  readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
+};
+
+type STRAPI_AURORAGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_AURORAEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI_AURORAGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_AURORA>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_AURORAGroupConnection_distinctArgs = {
+  field: STRAPI_AURORAFieldSelector;
+};
+
+
+type STRAPI_AURORAGroupConnection_groupArgs = {
+  field: STRAPI_AURORAFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_AURORAGroupConnection_maxArgs = {
+  field: STRAPI_AURORAFieldSelector;
+};
+
+
+type STRAPI_AURORAGroupConnection_minArgs = {
+  field: STRAPI_AURORAFieldSelector;
+};
+
+
+type STRAPI_AURORAGroupConnection_sumArgs = {
+  field: STRAPI_AURORAFieldSelector;
+};
+
+type STRAPI_AURORASortInput = {
+  readonly AuroraVideo: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly FeatureCards: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDSortInput>;
+  readonly FeatureSectionTitle: InputMaybe<SortOrderEnum>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput>;
+  readonly StoryCards: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDSortInput>;
+  readonly StorySectionTitle: InputMaybe<SortOrderEnum>;
+  readonly VideoData: InputMaybe<STRAPI__COMPONENT_TITLE_WITH_KEYPOINTS_TITLE_WITH_KEYPOINTSSortInput>;
+  readonly WorkingImg: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly WorkingSectionTitle: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly createdAt: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly locale: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly publishedAt: InputMaybe<SortOrderEnum>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
+  readonly updatedAt: InputMaybe<SortOrderEnum>;
 };
 
 type STRAPI_CUSTOMER_EXPERIENCE_PACK = Node & {
@@ -13699,6 +13968,284 @@ type STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A_DESCRIPTION_TEXTNODESortI
   readonly parent: InputMaybe<NodeSortInput>;
 };
 
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD = Node & {
+  readonly Description: Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDDescription>;
+  readonly Img: Maybe<STRAPI__MEDIA>;
+  readonly Title: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARDEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARDGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARD>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDConnection_groupArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDConnection_maxArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDConnection_minArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDConnection_sumArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDDescription = {
+  readonly data: Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDDescriptionFieldSelector = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDDescriptionFilterInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFilterInput>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDDescriptionSortInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODESortInput>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD>;
+  readonly node: STRAPI__COMPONENT_STORY_CARD_STORY_CARD;
+  readonly previous: Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector = {
+  readonly Description: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDDescriptionFieldSelector>;
+  readonly Img: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly Title: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDFilterInput = {
+  readonly Description: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDDescriptionFilterInput>;
+  readonly Img: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly Title: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDFilterListInput = {
+  readonly elemMatch: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDFilterInput>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARDEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARDGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARD>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARDFieldSelector;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARDSortInput = {
+  readonly Description: InputMaybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARDDescriptionSortInput>;
+  readonly Img: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly Title: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODE = Node & {
+  readonly Description: Maybe<Scalars['String']>;
+  /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
+  readonly childMarkdownRemark: Maybe<MarkdownRemark>;
+  readonly children: ReadonlyArray<Node>;
+  /** Returns all children nodes filtered by type MarkdownRemark */
+  readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEConnection_groupArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEConnection_maxArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEConnection_minArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEConnection_sumArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODE>;
+  readonly node: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODE;
+  readonly previous: Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector = {
+  readonly Description: InputMaybe<FieldSelectorEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFilterInput = {
+  readonly Description: InputMaybe<StringQueryOperatorInput>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+type STRAPI__COMPONENT_STORY_CARD_STORY_CARD_DESCRIPTION_TEXTNODESortInput = {
+  readonly Description: InputMaybe<SortOrderEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+};
+
 type STRAPI__COMPONENT_STRING_LIST_STRING_LIST = Node & {
   readonly ListItem: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
@@ -15813,6 +16360,11 @@ type AgencyPortfolioQueryVariables = Exact<{
 
 
 type AgencyPortfolioQuery = { readonly en: { readonly id: string, readonly SectionFourTitle: string | null, readonly ResultTitle: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly AboutSection: { readonly id: string, readonly Title: string | null, readonly ColumnOneTitle: string | null, readonly ColumnOneValue: string | null, readonly ColumnTwoTitle: string | null, readonly ColumnTwoValue: string | null, readonly ColumnThreeTitle: string | null, readonly ColumnThreeValue: string | null, readonly ColumnFourTitle: string | null, readonly ColumnFourLink: string | null, readonly Description: { readonly data: { readonly Description: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly RelatedPortfolios: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Tag: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly ResultDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly KeyInformation: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null } | null };
+
+type AuroraPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type AuroraPageQuery = { readonly en: { readonly WorkingSectionTitle: string | null, readonly FeatureSectionTitle: string | null, readonly StorySectionTitle: string | null, readonly HeroBanner: { readonly id: string, readonly withLogo: boolean | null, readonly isImage: boolean | null, readonly Title: string | null, readonly SubText: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Img: { readonly alternativeText: string | null, readonly localFile: { readonly url: string | null } | null } | null } | null, readonly WorkingImg: { readonly alternativeText: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly AuroraVideo: { readonly alternativeText: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly VideoData: { readonly Title: string | null, readonly KeyPoints: ReadonlyArray<{ readonly ListItem: string | null } | null> | null } | null, readonly FeatureCards: ReadonlyArray<{ readonly Heading: string | null, readonly SubText: string | null, readonly Img: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly StoryCards: ReadonlyArray<{ readonly Title: string | null, readonly Description: { readonly data: { readonly Description: string | null } | null } | null, readonly Img: { readonly alternativeText: string | null, readonly localFile: { readonly url: string | null } | null } | null } | null> | null } | null };
 
 type CustomerExperiencePackPageQueryVariables = Exact<{ [key: string]: never; }>;
 

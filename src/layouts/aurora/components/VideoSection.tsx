@@ -41,8 +41,8 @@ export const VideoSection = ({
               <h2 className={`${cxHeading} ${videoHeading} mb-3`}>{heading}</h2>
               <div className={`${listStyles}`}>
                 <ul>
-                  {listData.map((item, index) => (
-                    <li key={index}>{item}</li>
+                  {listData.map((item: any, index) => (
+                    <li key={index}>{item?.ListItem}</li>
                   ))}
                 </ul>
               </div>

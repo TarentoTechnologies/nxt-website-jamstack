@@ -11,7 +11,9 @@ export const HowItWorks = ({ heading, imgSrc }: HowItWorksProps) => {
       className={`container-fluid d-flex justify-content-center paddingTopBottom60`}
     >
       <div className={`containerService paddingLeftRight15`}>
-        <PrimaryTitle title={heading} variant="infoSectionH2" />
+        <div className={`mt-3 mb-2 pt-1`}>
+          <PrimaryTitle title={heading} variant="infoSectionH2" />
+        </div>
         <div className={`pt-5`}>
           <img
             src={imgSrc}
