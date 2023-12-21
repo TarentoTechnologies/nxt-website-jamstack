@@ -12,6 +12,7 @@ import {
   footerDesc,
   footerEmail,
   footerHeading,
+  footerReachUs,
   footerRight,
   marginBtm,
   marginBtm1,
@@ -58,7 +59,7 @@ export const Footer = ({ data }: FooterProps) => {
             </a>
           </div>
           <div className={`${nxtLogo}`}>
-          <Link to={data?.PrimaryLogoLink} rel="canonical">
+            <Link to={data?.PrimaryLogoLink} rel="canonical">
               <img
                 src={data?.PrimaryLogo?.localFile?.url}
                 alt={data?.PrimaryLogo?.alternativeText}
@@ -72,21 +73,11 @@ export const Footer = ({ data }: FooterProps) => {
           <div className={`d-none d-md-block ${topBar}`}></div>
           <div className={`row ${marginBtm}`}>
             <div className={`col-xs-12 col-sm-12 col-md-6 ${footerDesc}`}>
-              <p>
+              <p className={`${footerReachUs}`}>
                 {ReactHtmlParser(
                   data?.PrimaryDescription?.data?.childMarkdownRemark?.html
                 )}
               </p>
-              {/* <p className={`${footerHeading}`}>
-                Reach us at{" "}
-                <a
-                  href="mailto:hello@tarento.com;"
-                  className={`${footerEmail}`}
-                  rel="canonical"
-                >
-                  {data?.mailId}
-                </a>
-              </p> */}
             </div>
             <div className="col-md-6 d-flex p-0">
               <div

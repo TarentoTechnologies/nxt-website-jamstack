@@ -145,6 +145,22 @@ a.company-logo > img {
   padding-right: 5rem;
 }
 
+.footerReachUs strong {
+  color: var(--white);
+  font-family: "Lato-Regular", serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.footerReachUs a strong {
+  color: var(--cadmium-orange) !important;
+  font-family: "Lato-Regular", serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 375px) {
