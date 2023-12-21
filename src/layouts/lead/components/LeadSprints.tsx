@@ -18,13 +18,13 @@ export const LeadSprints = ({ title, cardData }: LeadSprintsProps) => {
           {cardData.map((item, index) => (
             <div className={`col-lg-6`} key={index}>
               <div className={`layoutBg ${sprintCard}`}>
-                <h4 className={`${cardHeader}`}>{item.heading}</h4>
-                <p className={`my-4`}>{item.description}</p>
+                <h4 className={`${cardHeader}`}>{item?.Heading}</h4>
+                <p className={`my-4`}>{item?.Description?.data?.Description}</p>
                 <div className={`d-flex justify-content-center`}>
                   <img
-                    src={item.imgSrc}
-                    alt={item.heading}
-                    title={item.heading}
+                    src={item?.ImgSrc?.localFile?.url}
+                    alt={item?.Heading}
+                    title={item?.Heading}
                     className={`img-fluid`}
                   />
                 </div>

@@ -30,10 +30,10 @@ export const HeroSection = ({
           {cardList.map((item, index) => (
             <LeadCard
               key={index}
-              title={item.title}
-              img={item.img}
-              subText={item.subText}
-              bgColor={item.bgColor}
+              title={item?.Title}
+              img={item?.Img?.localFile?.url}
+              subText={item?.SubText}
+              bgColor={item?.BgColor}
             />
           ))}
         </div>

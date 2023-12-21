@@ -41,7 +41,7 @@
 }
 
 .logoStyles {
-  margin-top: -6.75rem;
+  /* margin-top: -6.75rem; */
   margin-bottom: 1.25rem;
 }
 
@@ -63,7 +63,7 @@
     padding: 0;
   }
   .headerInfo {
-    padding: 1.25rem 0;
+    padding: 1.25rem;
   }
   .titleStyles {
     font-size: 2rem !important;
@@ -80,7 +80,7 @@
     padding: 0;
   }
   .headerInfo {
-    padding: 1.25rem 1rem 1rem 0;
+    padding: 1.25rem;
   }
   .titleStyles {
     font-size: 2rem !important;
@@ -89,7 +89,7 @@
 
 @media only screen and (min-width: 768px) {
   .bannerStyles {
-    max-height: 48rem;
+    /* max-height: 48rem; */
     padding: 5rem 0;
   }
   .imgStyles {
@@ -97,7 +97,7 @@
     padding: 0;
   }
   .headerInfo {
-    padding: 3.75rem 1rem 1rem 0;
+    padding: 1.25rem;
   }
   .titleStyles {
     font-size: 3rem !important;

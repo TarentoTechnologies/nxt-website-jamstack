@@ -6,10 +6,8 @@ interface StepSectionProps {
   title: string;
   description: string;
   imgSrc: any;
-  cardData: {
-    heading: string;
-    keyPoints: string[];
-  };
+  cardHeading: string;
+  keyPoints: string[];
   bgGrey?: boolean;
 }
 
@@ -17,7 +15,8 @@ export const StepSection = ({
   title,
   description,
   imgSrc,
-  cardData,
+  cardHeading,
+  keyPoints,
   bgGrey,
 }: StepSectionProps) => {
   const bgColor = bgGrey ? "layoutBg" : "";
@@ -43,11 +42,11 @@ export const StepSection = ({
           </div>
           <div className={`col-lg-6`}>
             <div className={`${cardBg} ${stepCard}`}>
-              <h4 className={`${cardHeader}`}>{cardData.heading}</h4>
+              <h4 className={`${cardHeader}`}>{cardHeading}</h4>
               <div className={`${cardList}`}>
                 <ul>
-                  {cardData.keyPoints.map((item, index) => (
-                    <li key={index}>{item}</li>
+                  {keyPoints.map((item: any, index) => (
+                    <li key={index}>{item?.ListItem}</li>
                   ))}
                 </ul>
               </div>

@@ -1,14 +1,15 @@
-import { carbon, white } from "../../styles/style-guide/ColorGuide.module.css";
+import { white } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorTitle,
   cardHeader,
   h1One,
   h1700,
+  h1700V2,
+  h1700V3,
   h3600,
   heroTitle,
   infoSectionH2,
   infoSectionH3,
-  h1700V2
 } from "../../styles/style-guide/Typography.module.css";
 
 interface PrimaryTitleProps {
@@ -37,6 +38,7 @@ export const PrimaryTitle = ({
         ${variant === "h3600" ? h3600 : ""}
         ${variant === "h1700" ? h1700 : ""}
         ${variant === "h1700V2" ? h1700V2 : ""}
+        ${variant === "h1700V3" ? h1700V3 : ""}
         ${color === "white" ? white : ""}`}
     >
       {title}

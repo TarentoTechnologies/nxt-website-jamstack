@@ -3,7 +3,8 @@
 .infoSectionH2 {
   font-family: "RobotoSlab-Bold", serif;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 600;
+  line-height: 1.1;
 }
 
 .infoSectionH3 {
@@ -294,9 +295,15 @@ h3 {
 @media only screen and (min-width: 600px) {
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .heroTitle {
     font-family: "RobotoSlab-Bold", serif;
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  .h1CardTitle {
+    font-family: "RobotoSlab-Regular", serif;
+    font-weight: 500;
     font-size: 2rem;
     line-height: 1.1;
   }
