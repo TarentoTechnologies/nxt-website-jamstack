@@ -73,7 +73,7 @@ const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
       />
       <HowItWorks
         heading={data[currentLang]?.HowItWorks?.SectionTitle}
-        imgSrc={data[currentLang]?.HowItWorks?.ProcessImage?.localFile?.url}
+        imgSrc={data[currentLang]?.HowItWorks?.ProcessImage?.localFile}
         levelOneText={data[currentLang]?.HowItWorks?.DescriptionOne}
         levelTwoText={data[currentLang]?.HowItWorks?.DescriptionTwo}
         levelThreeText={data[currentLang]?.HowItWorks?.DescriptionThree}
@@ -81,7 +81,6 @@ const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
       <KeyInsights
         heading={data[currentLang]?.InsightSectionTitle}
         cardList={data[currentLang]?.KeyInsightImages}
-        isImage
       />
       <Plans
         heading={data[currentLang]?.PlansTitleDescription?.Title}
@@ -121,19 +120,27 @@ export const query = graphql`
         DescriptionThree
         ProcessImage {
           localFile {
-            url
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
           }
           alternativeText
+          caption
         }
       }
       InsightSectionTitle
       KeyInsightImages {
         Image {
           localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
             url
           }
           alternativeText
+          caption
         }
+        isImage
       }
       PlansTitleDescription {
         Title
