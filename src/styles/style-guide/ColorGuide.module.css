@@ -403,3 +403,11 @@
 .roslynsBlue {
   color: var(--roslyns-blue);
 }
+
+.bgDuskyViolet {
+  background-color: var(--dusky-violet);
+}
+
+.duskyViolet {
+  color: var(--dusky-violet);
+}
