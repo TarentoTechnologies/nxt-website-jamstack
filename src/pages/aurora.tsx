@@ -130,7 +130,7 @@ const AuroraPage: React.FC<PageProps> = ({ data }: AuroraPageProps) => {
       />
       <HowItWorks
         heading={data[currentLang]?.WorkingSectionTitle}
-        imgSrc={data[currentLang]?.WorkingImg?.localFile?.url}
+        imgSrc={data[currentLang]?.WorkingImg}
       />
       <VideoSection
         heading={data[currentLang]?.VideoData?.Title}
@@ -177,9 +177,12 @@ export const query = graphql`
       WorkingSectionTitle
       WorkingImg {
         localFile {
-          url
+          childImageSharp {
+            gatsbyImageData(formats: PNG)
+          }
         }
         alternativeText
+        caption
       }
       AuroraVideo {
         localFile {
@@ -204,6 +207,7 @@ export const query = graphql`
             }
           }
           alternativeText
+          caption
         }
       }
       StorySectionTitle
@@ -216,9 +220,12 @@ export const query = graphql`
         }
         Img {
           localFile {
-            url
+            childImageSharp {
+              gatsbyImageData(formats: PNG, height: 326)
+            }
           }
           alternativeText
+          caption
         }
       }
     }
