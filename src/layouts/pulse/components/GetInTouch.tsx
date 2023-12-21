@@ -1,3 +1,4 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ReactHtmlParser from "react-html-parser";
 
 import { FormButton } from "../../../components/buttons/FormButton";
@@ -10,7 +11,6 @@ interface GetInTouchProps {
   btnLabel: string;
   btnLink: any;
   imgSrc: any;
-  imgAltText?: string;
 }
 
 export const GetInTouch = ({
@@ -19,7 +19,6 @@ export const GetInTouch = ({
   btnLabel,
   btnLink,
   imgSrc,
-  imgAltText,
 }: GetInTouchProps) => {
   return (
     <div
@@ -29,10 +28,14 @@ export const GetInTouch = ({
         <div className={`row`}>
           <div className={`col-lg-3 order-lg-2`}>
             <div className={`d-flex justify-content-center`}>
-              <img
-                src={imgSrc}
-                alt={imgAltText}
-                title={imgAltText}
+              <GatsbyImage
+                image={
+                  getImage(imgSrc?.localFile)
+                    ? getImage(imgSrc?.localFile)
+                    : imgSrc?.localFile
+                }
+                alt={imgSrc?.alternativeText}
+                title={imgSrc?.caption}
                 className={`img-fluid`}
               />
             </div>

@@ -68,8 +68,7 @@ const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
       <PulseHeroBanner
         title={data[currentLang]?.HeroBanner?.Title}
         description={data[currentLang]?.HeroBanner?.Description}
-        img={data[currentLang]?.HeroBanner?.Image?.localFile?.url}
-        imgAltText={data[currentLang]?.HeroBanner?.Image?.alternativeText}
+        img={data[currentLang]?.HeroBanner?.Image}
       />
       <HowItWorks
         heading={data[currentLang]?.HowItWorks?.SectionTitle}
@@ -92,8 +91,7 @@ const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
         subText={data[currentLang]?.GetInTouch?.Description}
         btnLabel={data[currentLang]?.GetInTouch?.Tag?.Label}
         btnLink={data[currentLang]?.GetInTouch?.Tag?.Link}
-        imgSrc={data[currentLang]?.GetInTouch?.ImgSrc?.localFile?.url}
-        imgAltText={data[currentLang]?.GetInTouch?.ImgSrc?.alternativeText}
+        imgSrc={data[currentLang]?.GetInTouch?.ImgSrc}
       />
       <Footer data={footerData} />
     </main>
@@ -108,9 +106,12 @@ export const query = graphql`
         Description
         Image {
           localFile {
-            url
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
           }
           alternativeText
+          caption
         }
       }
       HowItWorks {
@@ -163,9 +164,12 @@ export const query = graphql`
         }
         ImgSrc {
           localFile {
-            url
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
           }
           alternativeText
+          caption
         }
         Tag {
           Label

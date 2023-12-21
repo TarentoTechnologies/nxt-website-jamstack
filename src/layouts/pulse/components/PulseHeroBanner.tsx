@@ -1,3 +1,5 @@
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import { black50 } from "../../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorDescription,
@@ -9,14 +11,12 @@ interface PulseHeroBannerProps {
   title: string;
   description: string;
   img: any;
-  imgAltText?: string;
 }
 
 export const PulseHeroBanner = ({
   title,
   description,
   img,
-  imgAltText,
 }: PulseHeroBannerProps) => {
   return (
     <div
@@ -39,10 +39,14 @@ export const PulseHeroBanner = ({
             </div>
           </div>
           <div className={`col-lg-6`}>
-            <img
-              src={img}
-              alt={imgAltText}
-              title={imgAltText}
+            <GatsbyImage
+              image={
+                getImage(img?.localFile)
+                  ? getImage(img?.localFile)
+                  : img?.localFile
+              }
+              alt={img?.alternativeText}
+              title={img?.caption}
               className={`img-fluid`}
             />
           </div>
