@@ -1,3 +1,6 @@
+import { Link } from "gatsby";
+import ReactHtmlParser from "react-html-parser";
+
 import {
   dLinkLeft,
   dLinkRight,
@@ -9,6 +12,7 @@ import {
   footerDesc,
   footerEmail,
   footerHeading,
+  footerReachUs,
   footerRight,
   marginBtm,
   marginBtm1,
@@ -19,26 +23,11 @@ import {
 } from "./Footer.module.css";
 
 interface FooterProps {
-  data: {
-    nxtLogoImg: any;
-    nxtLogoImgTitle?: string;
-    companyLogoImg: any;
-    companyLogoImgTitle?: string;
-    description: string;
-    mailId: string;
-    levelOneHeading: string;
-    levelOneList: any[];
-    levelTwoHeading: string;
-    levelTwoList: any[];
-    levelThreeHeading: string;
-    levelThreeList: any[];
-    levelFourHeading: string;
-    levelFourList: any[];
-    rightsText: string;
-  };
+  data: any;
 }
 
 export const Footer = ({ data }: FooterProps) => {
+
   return (
     <div className={`container-fluid ${footer}`}>
       <div className={`row`}>
@@ -46,67 +35,63 @@ export const Footer = ({ data }: FooterProps) => {
         <div className={`col-sm-12 col-md-12 col-xl-8`}>
           <div className={`d-block d-md-none ${topBar}`}></div>
           <div className={`d-block d-md-none ${tarentoLogo} ${footerRight}`}>
-            <a href="https://www.tarento.com" rel="canonical" target="_blank">
+            <Link to={data?.PrimaryLogoLink} rel="canonical">
               <img
-                src={data.companyLogoImg}
-                alt={data.companyLogoImgTitle}
-                title={data.companyLogoImgTitle}
+                src={data?.PrimaryLogo?.localFile?.url}
+                alt={data?.PrimaryLogo?.alternativeText}
+                title={data?.PrimaryLogo?.caption}
                 width="187"
                 height="43"
               />
-            </a>
+            </Link>
           </div>
           <div
             className={`d-none d-md-block d-xl-none ${tarentoLogo} ${footerRight} ${floatRight}`}
           >
-            <a href="https://www.tarento.com" rel="canonical" target="_blank">
+            <a href={data?.SecondaryLogoLink} rel="canonical" target="_blank">
               <img
-                src={data.companyLogoImg}
-                alt={data.companyLogoImgTitle}
-                title={data.companyLogoImgTitle}
+                src={data?.SecondaryLogo?.localFile?.url}
+                alt={data?.SecondaryLogo?.alternativeText}
+                title={data?.SecondaryLogo?.caption}
                 width="187"
                 height="43"
               />
             </a>
           </div>
           <div className={`${nxtLogo}`}>
-            <a href="nxt.html" rel="canonical" target="_blank" className="">
+            <Link to={data?.PrimaryLogoLink} rel="canonical">
               <img
-                src={data.nxtLogoImg}
-                alt={data.nxtLogoImgTitle}
-                title={data.nxtLogoImgTitle}
+                src={data?.PrimaryLogo?.localFile?.url}
+                alt={data?.PrimaryLogo?.alternativeText}
+                title={data?.PrimaryLogo?.caption}
                 width="72"
                 height="72"
               />
-            </a>
+            </Link>
           </div>
 
           <div className={`d-none d-md-block ${topBar}`}></div>
           <div className={`row ${marginBtm}`}>
             <div className={`col-xs-12 col-sm-12 col-md-6 ${footerDesc}`}>
-              <p>{data.description}</p>
-              <p className={`${footerHeading}`}>
-                Reach us at{" "}
-                <a
-                  href="mailto:hello@tarento.com;"
-                  className={`${footerEmail}`}
-                  rel="canonical"
-                >
-                  {data?.mailId}
-                </a>
+              <p className={`${footerReachUs}`}>
+                {ReactHtmlParser(
+                  data?.PrimaryDescription?.data?.childMarkdownRemark?.html
+                )}
               </p>
             </div>
             <div className="col-md-6 d-flex p-0">
               <div
                 className={`${directlink} ${dlinkLeft} ${dLinkLeft} offset-xl-2`}
               >
-                <p className={`${footerHeading}`}>{data?.levelOneHeading}</p>
+                <p className={`${footerHeading}`}>
+                  {data?.PrimaryLevelOneHeading}
+                </p>
                 <ul>
-                  {data?.levelOneList?.map((item, index) => (
-                    <li key={index}>
-                      <a href={item.href} rel="canonical">
-                        {item.title}
-                      </a>
+                  {data?.PrimaryLevelOneList?.map((item: any, index: number) => (
+                    <li key={item?.id}>
+                      <Link to={item?.Link} rel="canonical">
+                        {item?.Label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -114,15 +99,19 @@ export const Footer = ({ data }: FooterProps) => {
               <div
                 className={`${directlink} ${dlinkRight} ${dLinkRight} offset-xl-2`}
               >
-                <p className={`${footerHeading}`}>{data?.levelTwoHeading}</p>
+                <p className={`${footerHeading}`}>
+                  {data?.PrimaryLevelTwoHeading}
+                </p>
                 <ul>
-                  {data?.levelTwoList?.map((item, index) => (
-                    <li key={index}>
-                      <a href={item.href} rel="canonical">
-                        {item.title}
-                      </a>
-                    </li>
-                  ))}
+                  {data?.PrimaryLevelTwoList?.map(
+                    (item: any, index: number) => (
+                      <li key={item?.id}>
+                        <Link to={item?.Link} rel="canonical">
+                          {item?.Label}
+                        </Link>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </div>
@@ -132,11 +121,11 @@ export const Footer = ({ data }: FooterProps) => {
         {/* Column two */}
         <div className={`col-sm-12 col-md-12 col-xl-4`}>
           <div className={`d-none d-xl-block ${tarentoLogo} ${footerRight}`}>
-            <a href="https://www.tarento.com" rel="canonical" target="_blank">
+            <a href={data?.SecondaryLogoLink} rel="canonical" target="_blank">
               <img
-                src={data.companyLogoImg}
-                alt={data.companyLogoImgTitle}
-                title={data.companyLogoImgTitle}
+                src={data?.SecondaryLogo?.localFile?.url}
+                alt={data?.SecondaryLogo?.alternativeText}
+                title={data?.SecondaryLogo?.caption}
                 width="187"
                 height="43"
               />
@@ -148,36 +137,44 @@ export const Footer = ({ data }: FooterProps) => {
               className={`col-xs-6 col-sm-12 col-md-12 col-lg-12 ${marginBtm1} d-flex ps-0`}
             >
               <div className={`${directlink} ${dlinkLeft} offset-xl-1`}>
-                <p className={`${footerHeading}`}>{data?.levelThreeHeading}</p>
+                <p className={`${footerHeading}`}>
+                  {data?.SecondaryLevelOneHeading}
+                </p>
                 <ul>
-                  {data?.levelThreeList?.map((item, index) => (
-                    <li key={index}>
-                      <a href={item.href} rel="canonical" target="_blank">
-                        {item.title}
-                      </a>
-                    </li>
-                  ))}
+                  {data?.SecondaryLevelOneList?.map(
+                    (item: any, index: number) => (
+                      <li key={item?.id}>
+                        <a href={item?.Link} rel="canonical">
+                          {item?.Label}
+                        </a>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
               <div
                 className={`${directlink} ${dlinkRight} offset-lg-1 offset-xl-2`}
               >
-                <p className={`${footerHeading}`}>{data?.levelFourHeading}</p>
+                <p className={`${footerHeading}`}>
+                  {data?.SecondaryLevelOneHeading}
+                </p>
                 <ul>
-                  {data?.levelFourList?.map((item, index) => (
-                    <li key={index}>
-                      <a href={item.href} rel="canonical" target="_blank">
-                        {item.title}
-                      </a>
-                    </li>
-                  ))}
+                  {data?.SecondaryLevelTwoList?.map(
+                    (item: any, index: number) => (
+                      <li key={item?.id}>
+                        <a href={item?.Link} rel="canonical">
+                          {item?.Label}
+                        </a>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-12`}>
-          <p className={`${footerHeading} ${rights}`}>{data?.rightsText}</p>
+          <p className={`${footerHeading} ${rights}`}>{data?.Copyright}</p>
         </div>
       </div>
     </div>
