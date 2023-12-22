@@ -4,7 +4,9 @@ import { useRecoilValue } from "recoil";
 
 import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
+import navbarImg from "../../static/images/logo-inner.svg";
 import techHero from "../../static/images/tech-hero.png";
+import { Navbar } from "../components/navbar/Navbar";
 import {
   KeyInfoLayout,
   ResultLayout,
@@ -32,6 +34,7 @@ const AgencyPortfolioDetail: React.FC<PageProps> = ({
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBanner heroBannerData={data[currentLang]?.HeroSection} isImage />
       <About data={data[currentLang]?.AboutSection} />
       <KeyInfoLayout data={data[currentLang]?.KeyInformation} />

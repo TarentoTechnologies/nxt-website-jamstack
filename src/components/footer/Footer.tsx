@@ -35,11 +35,11 @@ export const Footer = ({ data }: FooterProps) => {
         <div className={`col-sm-12 col-md-12 col-xl-8`}>
           <div className={`d-block d-md-none ${topBar}`}></div>
           <div className={`d-block d-md-none ${tarentoLogo} ${footerRight}`}>
-            <Link to={data?.PrimaryLogoLink} rel="canonical">
+            <Link to={data?.SecondaryLogoLink} rel="canonical">
               <img
-                src={data?.PrimaryLogo?.localFile?.url}
-                alt={data?.PrimaryLogo?.alternativeText}
-                title={data?.PrimaryLogo?.caption}
+                src={data?.SecondaryLogo?.localFile?.url}
+                alt={data?.SecondaryLogo?.alternativeText}
+                title={data?.SecondaryLogo?.caption}
                 width="187"
                 height="43"
               />
