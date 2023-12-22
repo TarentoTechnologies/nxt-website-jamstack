@@ -155,6 +155,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "nxt-application",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
 };
 
