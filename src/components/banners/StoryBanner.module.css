@@ -9,7 +9,7 @@
 
 .whiteBox :global {
   background-color: #ffffff;
-  padding: 3.125rem;
+  /* padding: 1rem; */
   animation: fadeInUp 1s ease 0.6s 1 normal forwards;
   visibility: visible;
   opacity: 0;
@@ -20,15 +20,27 @@
   margin-bottom: 2rem;
 }
 
-.whiteBox h3 {
+.whiteBox p strong {
+  font-size: 1.313rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+/* .whiteBox h3 {
   font-size: 1.688rem;
   font-weight: 500;
   margin-bottom: 1rem;
-}
+} */
 
 .subFont {
   font-size: 1.313rem;
   margin-bottom: 1rem;
+}
+
+.customH3 {
+  font-family: "Lato-Regular";
+  font-size: 1.688rem;
+  font-weight: 500;
 }
 
 .titleStyles {

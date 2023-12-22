@@ -1,7 +1,10 @@
-import { bgNeutralGray } from "../../../styles/style-guide/ColorGuide.module.css";
 import {
-  h3Title,
-  revolutionHeading,
+  bgNeutralGray,
+  black,
+} from "../../../styles/style-guide/ColorGuide.module.css";
+import {
+  subTitleV1,
+  sectionTitleV1,
 } from "../../../styles/style-guide/Typography.module.css";
 import {
   avatarContainer,
@@ -12,12 +15,7 @@ import {
 
 interface AvatarProps {
   title?: string;
-  list?: {
-    imgSrc: string;
-    title: string;
-    description: string;
-    videoSrc: string;
-  }[];
+  list?: any;
   subText?: any;
 }
 
@@ -26,34 +24,33 @@ export const Avatars = ({ title, list, subText }: AvatarProps) => {
     <div className={`layout ${bgNeutralGray} ${topBottomPadding}`}>
       <div className={`container-fluid d-flex justify-content-center`}>
         <div className={`containerService paddingLeftRight15`}>
-          <h1 className={`${h3Title}`}>{title}</h1>
+          <h1 className={`${sectionTitleV1} ${black}`}>{title}</h1>
           <p className="mb-5 mt-3">{subText}</p>
           <div className={`row gx-5`}>
-            {list?.map((item, index) => (
+            {list?.map((item: any, index: number) => (
               <div
                 className="col-md-12 col-lg-6 col-sm-12 col-xs-12"
-                key={index}
+                key={item?.id}
               >
                 <div className={`${avatarContainer} position-relative`}>
-                  <p className={revolutionHeading}>
+                  <p className={`${black} ${subTitleV1}`}>
                     <span>
                       <img
                         className="me-3"
-                        src={item.imgSrc}
-                        alt={item.title}
-                        title={item.title}
-                        
+                        src={item?.Logo?.localFile?.url}
+                        alt={item?.Logo?.alternativeText}
+                        title={item?.Logo?.caption}
                       />
                     </span>
-                    {item.title}
+                    {item?.Title}
                   </p>
-                  <p>{item.description}</p>
+                  <p>{item?.Description}</p>
 
                   <div className={videoPosition}>
                     <video
                       className={videoContainer}
                       controls
-                      src={item.videoSrc}
+                      src={item?.Video?.localFile?.url}
                     />
                   </div>
                 </div>

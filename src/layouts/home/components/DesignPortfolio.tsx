@@ -46,7 +46,7 @@ export const DesignPortfolio = ({
           data-sal-duration="900"
           data-sal-easing="ease-in-back"
         >
-          <PrimaryCTA label={ctaText} clickHandler={(e) => navigateTo(e)} />
+          <PrimaryCTA label={ctaText} btnLink={ctaLink} />
         </div>
       </div>
 
@@ -88,16 +88,15 @@ export const DesignPortfolio = ({
       {/* For smaller screen CTA */}
       <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none">
         <div className="clearfix mt-3">
-          <Link
-            to={ctaLink}
+          <div
             className="float-end"
             data-sal="slide-up"
             data-sal-delay="200"
             data-sal-duration="1000"
             data-sal-easing="ease-in-back"
           >
-            <PrimaryCTA label={ctaText} />
-          </Link>
+            <PrimaryCTA label={ctaText} btnLink={ctaLink} />
+          </div>
         </div>
       </div>
     </div>

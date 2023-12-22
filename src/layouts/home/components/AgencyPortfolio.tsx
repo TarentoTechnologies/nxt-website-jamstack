@@ -22,6 +22,7 @@ export const AgencyPortfolio = ({
   ctaLink,
   agencyPortfolioData,
 }: AgencyPortfolioProps) => {
+
   return (
     <div
       className={`container-fluid ${productCardLayoutStyles} ${bgNeutralGray2} ${paddingTopDown100}`}
@@ -38,15 +39,14 @@ export const AgencyPortfolio = ({
             {title}
           </h1>
         </div>
+
         <div
           className="float-end d-none d-sm-none d-md-block d-lg-block d-xl-block"
           data-sal="slide-up"
           data-sal-duration="900"
           data-sal-easing="ease-in-back"
         >
-          <Link to={ctaLink}>
-            <PrimaryCTA label={ctaText} />
-          </Link>
+          <PrimaryCTA label={ctaText} btnLink={ctaLink} />
         </div>
       </div>
 
@@ -88,15 +88,14 @@ export const AgencyPortfolio = ({
       {/* For smaller screen CTA */}
       <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none">
         <div className="clearfix mt-3">
-          <Link
-            to={ctaLink}
+          <div
             className="float-end"
             data-sal="slide-up"
             data-sal-duration="900"
             data-sal-easing="ease-in-back"
           >
-            <PrimaryCTA label={ctaText} />
-          </Link>
+            <PrimaryCTA label={ctaText} btnLink={ctaLink} />
+          </div>
         </div>
       </div>
     </div>

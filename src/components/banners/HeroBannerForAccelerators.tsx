@@ -1,25 +1,31 @@
-import { black50, blue } from "../../styles/style-guide/ColorGuide.module.css";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import { black50, blue, black } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorDescription,
   acceleratorSubTitle,
   acceleratorTitle,
+  acceleratorTitleV2,
+  h3500Lato
 } from "../../styles/style-guide/Typography.module.css";
 import { bannerStyles } from "./HeroBannerForAccelerators.module.css";
 
 interface HeroBannerForAcceleratorsProps {
-  data: {
-    title?: string;
-    img?: any;
-    imgAltText?: string;
-    subText?: string;
-    description?: string;
-    logosrc?: string;
-  };
+  title: string;
+  img?: any;
+  subText?: string;
+  description?: string;
+  logosrc?: any;
 }
 
 export const HeroBannerForAccelerators = ({
-  data,
+  title,
+  img,
+  subText,
+  description,
+  logosrc,
 }: HeroBannerForAcceleratorsProps) => {
+  
   return (
     <div className={`${bannerStyles} d-flex justify-content-center`}>
       <div className="containerService paddingLeftRight15">
@@ -28,37 +34,40 @@ export const HeroBannerForAccelerators = ({
             <div className="header-info">
               <div className="wow fadeIn animated">
                 <img
-                  src={data.logosrc}
+                  src={logosrc?.localFile?.url}
                   width="217"
                   height="71"
-                  alt={data.imgAltText}
-                  title={data.imgAltText}
+                  alt={logosrc?.alternativeText}
+                  title={logosrc?.alternativeText}
                 />
               </div>
               <h1
-                className={`${acceleratorTitle} wow animated fadeInUp mt-4 mb-3`}
+                className={`${acceleratorTitleV2} wow animated fadeInUp mt-4 mb-3 ${black}`}
               >
-                {data.title}
+                {title}
               </h1>
               <div
-                className={`wow animated fadeInUp titleSubHeading ${blue} ${acceleratorSubTitle} mb-4`}
+                className={`wow animated fadeInUp titleSubHeading ${blue} ${h3500Lato} mb-4`}
               >
-                {data.subText}
+                {subText}
               </div>
 
               <p
                 className={`wow animated fadeInUp ${black50} ${acceleratorDescription}`}
               >
-                {data.description}
+                {description}
               </p>
             </div>
           </div>
           <div className="col-lg-5 col-lg-push-1 col-md-12">
             <div className="retail-img">
-              <img
-                src={data.img}
-                alt={data.imgAltText}
-                title={data.imgAltText}
+              <GatsbyImage
+                image={
+                  getImage(img?.localFile)
+                    ? getImage(img?.localFile)
+                    : img?.localFile
+                }
+                alt={""}
                 className="w-100"
               />
             </div>

@@ -21,6 +21,7 @@ body {
   background: #ffffff;
   margin: 0;
   padding: 0;
+  color: var(--carbon);
 }
 
 a:focus {
@@ -42,6 +43,14 @@ a:hover {
   padding: 1.875rem;
 }
 
+.paddingTopBottom60 {
+  padding: 3.75rem 0;
+}
+
+.paddingTopBottom100 {
+  padding: 6.25rem 0;
+}
+
 .paddingLeftRight15 {
   padding-left: 0.938rem;
   padding-right: 0.938rem;
@@ -60,9 +69,20 @@ a:hover {
   gap: 30px;
   margin: 0;
 }
+
 .layoutBg {
   background-color: #f7f7f7;
 }
+
+b {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.whiteBg {
+  background-color: #ffffff;
+}
+
 /* Swiper styles starts here */
 
 .swiper-button-next,
@@ -75,6 +95,10 @@ a:hover {
 .swiper-rtl .swiper-button-next {
   top: 0rem !important;
   color: var(--white) !important;
+}
+
+.customMaringBtm1 {
+  margin-bottom: 1rem;
 }
 
 /* Swiper styles ends here */

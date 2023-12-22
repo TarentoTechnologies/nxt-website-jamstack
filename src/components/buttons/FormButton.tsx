@@ -1,10 +1,16 @@
-import { bgHaysBlue } from "../../styles/style-guide/ColorGuide.module.css";
-import { buttonClass } from "./FormButton.module.css";
+import {
+  bgDuskyViolet,
+  bgHaysBlue,
+} from "../../styles/style-guide/ColorGuide.module.css";
+import { buttonClass, pulseBg } from "./FormButton.module.css";
+
 interface FormButtonProps {
   label: any;
   primary?: boolean;
   clickHandler?: (event: any) => void;
   btnLink?: string;
+  isEmail: boolean;
+  isPulse?: boolean;
 }
 
 export const FormButton = ({
@@ -12,12 +18,16 @@ export const FormButton = ({
   primary = false,
   clickHandler,
   btnLink,
+  isEmail,
+  isPulse = false,
 }: FormButtonProps) => {
+  const bgColor = isPulse ? bgDuskyViolet : bgHaysBlue;
+
   return (
-    <a href={btnLink != null ? btnLink : ""}>
+    <a href={btnLink != null ? (isEmail ? `mailto:${btnLink}` : btnLink) : ""}>
       <div
         className={`text-center d-flex align-items-center justify-content-center 
-      ${buttonClass} ${bgHaysBlue}`}
+      ${buttonClass} ${bgColor} ${isPulse ? pulseBg : ""}`}
         onClick={clickHandler}
       >
         <label>{label}</label>

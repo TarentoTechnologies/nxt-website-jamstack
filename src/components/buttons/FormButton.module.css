@@ -9,4 +9,9 @@
   font-size: 1.125rem;
   color: #fff;
   margin-top: 1.875rem;
+  line-height: 1.625rem;
+}
+
+.pulseBg:hover {
+  background-color: var(--black);
 }

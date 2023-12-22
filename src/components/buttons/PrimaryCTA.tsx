@@ -1,10 +1,11 @@
+import { Link } from "gatsby";
+
 import {
+  labelStyles,
+  large,
   primaryBtn,
   secondaryBtn,
-  large,
-  labelStyles,
 } from "./PrimaryCTA.module.css";
-import { Link } from "gatsby";
 
 interface PrimaryCTAProps {
   label: any;
@@ -13,6 +14,7 @@ interface PrimaryCTAProps {
   clickHandler?: (event: any) => void;
   customClasses?: any;
   btnLink?: string;
+  isMail?: boolean;
 }
 
 export const PrimaryCTA = ({
@@ -22,17 +24,37 @@ export const PrimaryCTA = ({
   clickHandler,
   customClasses,
   btnLink,
+  isMail,
 }: PrimaryCTAProps) => {
   const mode = primary ? `${primaryBtn}` : `${secondaryBtn}`;
+
   return (
-    <a href={btnLink != null ? btnLink : ""}>
-      <div
-        className={`text-center d-flex align-items-center justify-content-center 
+    <>
+      {isMail ? (
+        <a
+          href={
+            btnLink != null ? `${isMail ? `mailto:${btnLink};` : btnLink}` : ""
+          }
+        >
+          <div
+            className={`text-center d-flex align-items-center justify-content-center 
       ${mode} ${size === "large" ? large : ""} ${customClasses}`}
-        onClick={clickHandler}
-      >
-        <label className={`${labelStyles}`}>{label}</label>
-      </div>
-    </a>
+            onClick={clickHandler}
+          >
+            <label className={`${labelStyles}`}>{label}</label>
+          </div>
+        </a>
+      ) : (
+        <Link to={btnLink != null ? btnLink : ""}>
+          <div
+            className={`text-center d-flex align-items-center justify-content-center 
+      ${mode} ${size === "large" ? large : ""} ${customClasses}`}
+            onClick={clickHandler}
+          >
+            <label className={`${labelStyles}`}>{label}</label>
+          </div>
+        </Link>
+      )}
+    </>
   );
 };

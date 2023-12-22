@@ -1,170 +1,221 @@
-import type { HeadFC, PageProps } from "gatsby";
+import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
-import TarentoLogo from "../../static/images/company-logo.svg";
-import NXTlogo from "../../static/images/logo-inner.svg";
+import { useRecoilValue } from "recoil";
+
+import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForAccelerators } from "../components/banners/HeroBannerForAccelerators";
-import { Footer } from "../components/footer/Footer";
+import { Navbar } from "../components/navbar/Navbar";
 import {
   Feature,
   Form,
   KeyInsights,
   WorkingProcess,
 } from "../layouts/data-platform";
-const DataPlatformPage: React.FC<PageProps> = () => {
-  const keyInsightsData = {
-    title: "Key Insights",
-    list: [
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-      {
-        imgSrc: "https://nxt.tarento.com/img/data-img01.jpg",
-        imgCaption: "CXO Insights Platform",
-      },
-    ],
-  };
-  const FeatureData = {
-    title: "Feature",
-    list: [
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-      {
-        logo: "https://nxt.tarento.com/img/featureImg-01.png",
-        title: "CXO Insights Platform",
-        bgColor: "white",
-      },
-    ],
-  };
-  const HowItWorksData = {
-    title: "How it Works ",
-    imgSrc: "https://nxt.tarento.com/img/dataProcess.jpg",
-    imgCaption: "data process",
-    subTitleOne: "Ability to collect data from diverse sources.",
-    subTitleTwo:
-      "Data processing - Ingest, validate, transform, enrich, and store.",
-    subTitleThree:
-      "Build insights &amp; Intelligence, predict &amp; plan. Use the processed and enriched data for wide range of business use cases.",
-  };
-  const FormData = {
-    title: "Every business can benefit from the mastery of the data",
-    subTitle: `
-    <p>
-      Onboard and take your business to the next level.
-      <br /> Send a message to
-      <b>
-        <a href="mailto:hello@tarento.com?subject=Pulse Demo" >
-          hello@tarento.com
-        </a>
-      </b>
-      and we will contact you within one business day.
-    </p>
-  `,
-    buttonText: "Request a demo",
-    buttonLink: "mailto:hello@tarento.com?subject=Pulse Demo",
-    imgSrc: "https://nxt.tarento.com/img/data_QRCode.png",
-    imgCaption: "QR Code Scanner",
-  };
+import { langSelected as langSelectedAtom } from "../states/atoms";
+import { FooterSection } from "../layouts/common";
 
-  const footerData = {
-    nxtLogoImg: NXTlogo,
-    nxtLogoImgTitle: "NXT-logo",
-    companyLogoImg: TarentoLogo,
-    companyLogoImgTitle: "Tarento-logo",
-    description:
-      "NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento. We take pride in being unconventional with our approaches while retaining the passion with which we work.",
-    mailId: "hello@tarento.com",
-    levelOneHeading: "Direct Links",
-    levelOneList: [
-      { title: "Home", href: "nxt.html" },
-      { title: "Technology", href: "technology.html" },
-      { title: "Design", href: "design-process.html" },
-      { title: "Innovation", href: "nxt-innovation.html" },
-      { title: "Pricing", href: "pricing.html" },
-    ],
-    levelTwoHeading: "Tech & Innovations",
-    levelTwoList: [
-      { title: "Bolt - Data Platform", href: "/data-platform" },
-      { title: "Rain - Analytics", href: "rain.html" },
-      { title: "Thor - Chatbot", href: "thor.html" },
-      { title: "GovTech", href: "govtech.html" },
-      { title: "Customer Experience", href: "customer-experience.html" },
-    ],
-    levelThreeHeading: "Direct Links",
-    levelThreeList: [
-      { title: "Home", href: "https://www.tarento.com/" },
-      { title: "About us", href: "https://www.tarento.com/about/" },
-      { title: "Services", href: "https://www.tarento.com/services/" },
-      { title: "Careers", href: "https://www.tarento.com/careers/" },
-    ],
-    levelFourHeading: "Programmes",
-    levelFourList: [
-      { title: "Lead", href: "https://www.tarento.com/lead/" },
-      { title: "Blixt", href: "https://www.tarento.com/blixt/" },
-    ],
-    rightsText: "All rights reserved © 2023 Tarento Technologies.",
-  };
+interface DataPlatformPageProps {
+  data: any;
+}
+
+const DataPlatformPage: React.FC<PageProps> = ({
+  data,
+}: DataPlatformPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+
+  const currentFooterSection = currentLang + "FooterSection";
 
   return (
     <main className="">
+      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForAccelerators
-        data={{
-          title: "Data. Information. Insight.",
-          img: "https://nxt.tarento.com/img/data-platform.jpg",
-          imgAltText: "data-platform",
-          subText: " Supercharge your business with the power of Data.",
-          description:
-            " Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.",
-          logosrc: "https://nxt.tarento.com/img/bolt_light.svg",
-        }}
+        title={data[currentLang]?.HeroBanner?.Title}
+        description={data[currentLang]?.HeroBanner?.Description}
+        img={data[currentLang]?.HeroBanner?.Image}
+        logosrc={data[currentLang]?.HeroBanner?.Logo}
+        subText={data[currentLang]?.HeroBanner?.SubText}
       />
-      <WorkingProcess data={HowItWorksData} />
-      <KeyInsights data={keyInsightsData} />
-      <Feature data={FeatureData} />
-      <Form data={FormData} />
-      <Footer data={footerData} />
+      <WorkingProcess
+        sectionTitle={data[currentLang]?.HowItWorks?.SectionTitle}
+        processImage={data[currentLang]?.HowItWorks?.ProcessImage}
+        descriptionOne={data[currentLang]?.HowItWorks?.DescriptionOne}
+        descriptionTwo={data[currentLang]?.HowItWorks?.DescriptionTwo}
+        descriptionThree={data[currentLang]?.HowItWorks?.DescriptionThree}
+      />
+      <KeyInsights
+        sectionTitle={data[currentLang]?.InsightSectionTitle}
+        insightsData={data[currentLang]?.InsightsCard}
+      />
+      <Feature
+        sectionTitle={data[currentLang]?.FeatureSectionTitle}
+        featureCardData={data[currentLang]?.FeatureListCard}
+      />
+      <Form
+        id={data[currentLang]?.CTASection?.id}
+        sectionTitle={data[currentLang]?.CTASection?.Title}
+        description={data[currentLang]?.CTASection?.Description}
+        ctaLink={data[currentLang]?.CTASection?.CTALink}
+        ctaLabel={data[currentLang]?.CTASection?.CTAText}
+        scannerImage={data[currentLang]?.CTASection?.ScannerImage}
+        isCTAEmail={data[currentLang]?.CTASection?.isEmail}
+      />
+        <FooterSection
+        id={data[currentFooterSection]?.id}
+        footerData={data[currentFooterSection]?.Footer}
+      />
     </main>
   );
 };
+
+export const query = graphql`
+  query DataPlatform {
+    en: strapiDataPlatform(locale: { eq: "en" }) {
+      HeroBanner {
+        id
+        Title
+        SubText
+        Description
+        Logo {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        Image {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      HowItWorks {
+        id
+        SectionTitle
+        ProcessImage {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+        DescriptionOne
+        DescriptionTwo
+        DescriptionThree
+      }
+      InsightSectionTitle
+      InsightsCard {
+        Caption
+        id
+        Image {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      FeatureSectionTitle
+      FeatureListCard {
+        id
+        Caption
+        Image {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+      }
+      CTASection {
+        id
+        Title
+        ScannerImage {
+          alternativeText
+          caption
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG)
+            }
+          }
+        }
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        CTAText
+        CTALink
+        isEmail
+      }
+    }
+    enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+      id
+      Footer {
+        id
+        PrimaryLogo {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        SecondaryLogo {
+          alternativeText
+          caption
+          localFile {
+            url
+          }
+        }
+        PrimaryDescription {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        PrimaryLevelOneHeading
+        PrimaryLevelOneList {
+          id
+          Label
+          Link
+        }
+        PrimaryLevelTwoHeading
+        PrimaryLevelTwoList {
+          id
+          Link
+          Label
+        }
+        SecondaryLevelOneHeading
+        SecondaryLevelOneList {
+          id
+          Link
+          Label
+        }
+        SecondaryLevelTwoHeading
+        SecondaryLevelTwoList {
+          id
+          Link
+          Label
+        }
+        Copyright
+        PrimaryLogoLink
+        SecondaryLogoLink
+      }
+    }
+  }
+`;
 
 export default DataPlatformPage;
 
