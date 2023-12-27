@@ -72,11 +72,18 @@ export const HeroBannerForTDI = ({
               className={`col-sm-12 col-md-5 d-flex flex-column justify-content-center px-md-0`}
             >
               <div className={`${headerInfo}`}>
-                <div className={`${logoTitle} ${titleStyles}`}>{title}</div>
+                <div
+                  className={`${logoTitle} ${titleStyles}`}
+                  data-aos="fade-up"
+                >
+                  {title}
+                </div>
                 <div className={`${subtextStyles}`}>
                   <span className={`${border}`}></span>
-                  <p className={`${white87}`}>{subText}</p>
-                  <p className={`${white70}`}>
+                  <p className={`${white87}`} data-aos="fade-up">
+                    {subText}
+                  </p>
+                  <p className={`${white70}`} data-aos="fade-up">
                     {ReactHtmlParser(
                       description.data?.childMarkdownRemark?.html
                     )}
@@ -93,6 +100,7 @@ export const HeroBannerForTDI = ({
                     image={image}
                     alt={imgAltText ? imgAltText : ""}
                     className={`img-fluid`}
+                    data-aos="fade-up"
                   />
                 </div>
               ) : (
@@ -101,6 +109,7 @@ export const HeroBannerForTDI = ({
                   src={img}
                   alt={imgAltText}
                   title={imgAltText}
+                  data-aos="fade-up"
                 />
               )}
             </div>
@@ -125,10 +134,11 @@ export const HeroBannerForTDI = ({
                       width="217"
                       height="71"
                       className={`img-fluid`}
+                      data-aos="fade-up"
                     />
                   </div>
                 )}
-                <h1 className={`${h1CardTitle} ${white}`}>
+                <h1 className={`${h1CardTitle} ${white}`} data-aos="fade-up">
                   {mainTitle && (
                     <b className={`${white} ${logoTitle}`}>
                       {mainTitle}
@@ -137,7 +147,7 @@ export const HeroBannerForTDI = ({
                   )}
                   {title}
                 </h1>
-                <div className={`${subtextStyles}`}>
+                <div className={`${subtextStyles}`} data-aos="fade-up">
                   <span className={`${border}`}></span>
                   <p
                     className={`${white87} ${subTextBold ? subTextV1 : ""} ${
@@ -163,6 +173,7 @@ export const HeroBannerForTDI = ({
                     image={image}
                     alt={imgAltText ? imgAltText : ""}
                     className={`img-fluid`}
+                    data-aos="fade-up"
                   />
                 </div>
               ) : (
@@ -171,6 +182,7 @@ export const HeroBannerForTDI = ({
                   src={img}
                   alt={imgAltText}
                   title={imgAltText}
+                  data-aos="fade-up"
                 />
               )}
             </div>

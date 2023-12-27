@@ -21,7 +21,10 @@ export const ResultLayout = ({
         <div className={`${titleStyles} px-3 px-sm-3 px-md-0 px-lg-0`}>
           <PrimaryTitle title={sectionTitle} variant="infoSectionH2" />
           <div className="">
-            <p className={`pt-3 ${black75} ${descriptionOne}`}>
+            <p
+              className={`pt-3 ${black75} ${descriptionOne}`}
+              data-aos="fade-up"
+            >
               {ReactHtmlParser(description?.data?.childMarkdownRemark?.html)}
             </p>
           </div>

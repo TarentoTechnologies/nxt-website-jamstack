@@ -6,8 +6,9 @@ export const wrapPageElement = ({ element }: any): any => {
   return (
     <>
       {element}
-      <Script id="aos-animations">{`${
-        typeof window !== "undefined" && AOS.init({ duration: 600 })
+      <Script id="aos-animations" strategy="idle">{`${
+        typeof window !== "undefined" &&
+        AOS.init({ duration: 600, startEvent: "DOMContentLoaded" })
       }`}</Script>
     </>
   );

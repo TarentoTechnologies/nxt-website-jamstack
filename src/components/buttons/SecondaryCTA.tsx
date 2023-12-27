@@ -26,6 +26,7 @@ export const SecondaryCTA = ({
         className={`text-center d-flex align-items-center justify-content-center 
         ${size === "large" ? large : ""} ${customClasses} ${secondaryBtn}`}
         onClick={clickHandler}
+        data-aos="fade-up"
       >
         <label className={`${labelStyles}`}>{label}</label>
       </div>

@@ -69,7 +69,7 @@ export const StoryBanner = ({
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-12 ${titleStyles} px-lg-0`}>
           <PrimaryTitle title={primaryTitle} variant="h1700" color="white" />
-          <h3 className={`${subTitleStyles}`}>{subTitle}</h3>
+          <h3 className={`${subTitleStyles}`} data-aos="fade-up">{subTitle}</h3>
         </div>
         <div
           className={`${col1} ${imgStyles} d-flex justify-content-center align-items-center`}
@@ -84,6 +84,7 @@ export const StoryBanner = ({
               }
               title={cardData?.Image?.caption ? cardData?.Image?.caption : ""}
               className={`img-fluid`}
+              data-aos="fade-up"
             />
           ) : (
             <GatsbyImage
@@ -94,6 +95,7 @@ export const StoryBanner = ({
                   : ""
               }
               className={`img-fluid`}
+              data-aos="fade-up"
             />
           )}
         </div>
@@ -106,13 +108,13 @@ export const StoryBanner = ({
             ${variant === "innovation" ? innovationStory : ""}`}
           >
             {cardData?.PrimaryTitle && (
-              <h3 className={`${customH3} customMaringBtm1 pt-4 pb-3`}>
+              <h3 className={`${customH3} customMaringBtm1 pt-4 pb-3`} data-aos="fade-up">
                 {cardData?.PrimaryTitle}
               </h3>
             )}
 
             {/* <div className={`${subFont}`}>{cardData?.PrimaryTitle}</div> */}
-            <div className={`${spaceAboveCTA ? "pb-4" : ""}`}>
+            <div className={`${spaceAboveCTA ? "pb-4" : ""}`} data-aos="fade-up">
               {ReactHtmlParser(
                 cardData?.Description.data.childMarkdownRemark.html
               )}

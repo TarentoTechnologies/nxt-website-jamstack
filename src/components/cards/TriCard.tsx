@@ -60,12 +60,14 @@ export const TriCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div
-        className={`${imgStyles}`}
-        data-aos="fade-up"
-        data-aos-delay="500"
-      >
-        <img src={logo} alt={title} title={title} />
+      <div className={`${imgStyles}`}>
+        <img
+          src={logo}
+          alt={title}
+          title={title}
+          data-aos="fade-up"
+          data-aos-delay="500"
+        />
       </div>
       <div className={`${titleStyles}`} data-aos="fade-up">
         <PrimaryTitle title={title} variant="card" color="white" />

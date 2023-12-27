@@ -54,9 +54,10 @@ export const KeyFeatureCard = ({
           image={image}
           alt={logo?.alternativeText ? logo?.alternativeText : ""}
           className={`img-fluid ${iconSize}`}
+          data-aos="fade-up"
         />
       </div>
-      <p>{title}</p>
+      <p data-aos="fade-up">{title}</p>
     </div>
   );
 };

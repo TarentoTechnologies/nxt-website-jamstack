@@ -56,29 +56,36 @@ export const ShowcaseCard = ({
               image={image}
               alt={imgAlt ? imgAlt : ""}
               className={`${showCaseImg} img-fluid`}
+              data-aos="fade-up"
             />
           </div>
         ) : (
           <div
             className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover ${bgGlaucousGreen} ${dummyImgArea}`}
+            data-aos="fade-up"
           ></div>
         )}
 
         {/* Right side */}
         <div className="col-sm-12 col-md-12 col-lg-12 col-xl-6 d-flex align-items-center">
           <div className="my-4 my-sm-4 my-md-4 my-lg-4 my-xl-0 mx-4">
-            <h2 className={`${heading700}`}>{title}</h2>
-            <p className={`${subText2} ${black} py-3`}>{description}</p>
+            <h2 className={`${heading700}`} data-aos="fade-up">
+              {title}
+            </h2>
+            <p className={`${subText2} ${black} py-3`} data-aos="fade-up">
+              {description}
+            </p>
             {/* CTA */}
             <div className="mt-3">
               <Link to={ctaLink}>
-                <label className={`${cta1}`} role="button">
+                <label className={`${cta1}`} role="button" data-aos="fade-up">
                   {ctaText}
                   <span className={`${ctaIconPos}`}>
                     <img
                       className={`${ctaIcon} ps-2`}
                       src={forwardArrow}
                       alt={ctaText}
+                      data-aos="fade-up"
                     />
                   </span>
                 </label>

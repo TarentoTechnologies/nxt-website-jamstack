@@ -39,6 +39,7 @@ export const TechStackLayout = ({
                   }
                   alt={item?.Image?.alternativeText}
                   className={`img-fluid`}
+                  data-aos="fade-up"
                 />
               ) : (
                 <img
@@ -46,6 +47,7 @@ export const TechStackLayout = ({
                   alt={item?.Image?.alternativeText}
                   title={item?.Image?.caption}
                   className={`img-fluid`}
+                  data-aos="fade-up"
                 />
               )}
             </div>

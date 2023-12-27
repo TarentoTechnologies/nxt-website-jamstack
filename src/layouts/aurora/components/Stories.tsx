@@ -32,10 +32,11 @@ export const Stories = ({ title, cardsData }: StoriesProps) => {
                   alt={item?.Img?.alternativeText}
                   title={item?.Img?.title}
                   className={`img-fluid`}
+                  data-aos="fade-up"
                 />
               </div>
-              <h2 className={`mt-3 pt-3`}>{item?.Title}</h2>
-              <p className={`mt-3`}>{item?.Description?.data?.Description}</p>
+              <h2 className={`mt-3 pt-3`} data-aos="fade-up">{item?.Title}</h2>
+              <p className={`mt-3`} data-aos="fade-up">{item?.Description?.data?.Description}</p>
             </div>
           ))}
         </div>

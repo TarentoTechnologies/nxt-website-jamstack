@@ -20,6 +20,10 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
             test: /bootstrap/,
             use: loaders.null(),
           },
+          {
+            test: /aos/,
+            use: loaders.null(),
+          },
         ],
       },
     });
