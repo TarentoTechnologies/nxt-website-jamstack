@@ -22,7 +22,6 @@ export const AgencyPortfolio = ({
   ctaLink,
   agencyPortfolioData,
 }: AgencyPortfolioProps) => {
-
   return (
     <div
       className={`container-fluid ${productCardLayoutStyles} ${bgNeutralGray2} ${paddingTopDown100}`}
@@ -32,9 +31,7 @@ export const AgencyPortfolio = ({
         <div className="float-start">
           <h1
             className={`${h1One}`}
-            data-sal="slide-up"
-            data-sal-duration="900"
-            data-sal-easing="ease-in-back"
+            data-aos="fade-up"
           >
             {title}
           </h1>
@@ -42,9 +39,7 @@ export const AgencyPortfolio = ({
 
         <div
           className="float-end d-none d-sm-none d-md-block d-lg-block d-xl-block"
-          data-sal="slide-up"
-          data-sal-duration="900"
-          data-sal-easing="ease-in-back"
+          data-aos="fade-up"
         >
           <PrimaryCTA label={ctaText} btnLink={ctaLink} />
         </div>
@@ -53,9 +48,7 @@ export const AgencyPortfolio = ({
       {/* Description */}
       <p
         className="col-9"
-        data-sal="slide-up"
-        data-sal-duration="900"
-        data-sal-easing="ease-in-back"
+        data-aos="fade-up"
       >
         {description}
       </p>
@@ -67,9 +60,6 @@ export const AgencyPortfolio = ({
             <div
               className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0`}
               key={data.id}
-              data-sal="slide-up"
-              data-sal-duration="900"
-              data-sal-easing="ease-in-back"
             >
               <PortfolioCard
                 ctaLink={`/agency-portfolio/${data.Slug}`}
@@ -90,9 +80,7 @@ export const AgencyPortfolio = ({
         <div className="clearfix mt-3">
           <div
             className="float-end"
-            data-sal="slide-up"
-            data-sal-duration="900"
-            data-sal-easing="ease-in-back"
+            data-aos="fade-up"
           >
             <PrimaryCTA label={ctaText} btnLink={ctaLink} />
           </div>

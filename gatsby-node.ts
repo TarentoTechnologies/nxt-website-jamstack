@@ -12,14 +12,14 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
       modules: [path.resolve(__dirname, "src"), "node_modules"],
     },
   });
-  if (stage === "build-html") {
+  if (stage === "build-html" || stage === "develop-html") {
     actions.setWebpackConfig({
       module: {
         rules: [
           {
             test: /bootstrap/,
             use: loaders.null(),
-          },
+          }
         ],
       },
     });

@@ -40,6 +40,7 @@ export const PrimaryCTA = ({
             className={`text-center d-flex align-items-center justify-content-center 
       ${mode} ${size === "large" ? large : ""} ${customClasses}`}
             onClick={clickHandler}
+            data-aos="fade-up"
           >
             <label className={`${labelStyles}`}>{label}</label>
           </div>
@@ -50,6 +51,7 @@ export const PrimaryCTA = ({
             className={`text-center d-flex align-items-center justify-content-center 
       ${mode} ${size === "large" ? large : ""} ${customClasses}`}
             onClick={clickHandler}
+            data-aos="fade-up"
           >
             <label className={`${labelStyles}`}>{label}</label>
           </div>

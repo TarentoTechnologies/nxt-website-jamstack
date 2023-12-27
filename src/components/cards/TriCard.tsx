@@ -1,14 +1,15 @@
+import { useState } from "react";
+
 import {
-  bgOxideBlue,
-  bgViridianGreen,
-  bgSpectrumViolet,
-  bgLeitchsBlue,
   bgDarkViridianGreen,
+  bgLeitchsBlue,
+  bgOxideBlue,
   bgRoslynBlue,
+  bgSpectrumViolet,
+  bgViridianGreen,
 } from "../../styles/style-guide/ColorGuide.module.css";
 import { PrimaryTitle } from "../titles/PrimaryTitle";
-import { triCardStyles, imgStyles, titleStyles } from "./TriCard.module.css";
-import { useState } from "react";
+import { imgStyles, titleStyles, triCardStyles } from "./TriCard.module.css";
 
 interface TriCardProps {
   title: string;
@@ -61,18 +62,12 @@ export const TriCard = ({
     >
       <div
         className={`${imgStyles}`}
-        data-sal="slide-up"
-        data-sal-duration="900"
-        data-sal-easing="ease-in-back"
+        data-aos="fade-up"
+        data-aos-delay="500"
       >
         <img src={logo} alt={title} title={title} />
       </div>
-      <div
-        className={`${titleStyles}`}
-        data-sal="slide-up"
-        data-sal-duration="900"
-        data-sal-easing="ease-in-back"
-      >
+      <div className={`${titleStyles}`} data-aos="fade-up">
         <PrimaryTitle title={title} variant="card" color="white" />
       </div>
     </div>

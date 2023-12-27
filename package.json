@@ -18,12 +18,12 @@
     "test-storybook": "test-storybook"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "bootstrap": "^5.3.1",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
-    "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-sitemap": "^6.11.0",
     "gatsby-source-filesystem": "^5.11.0",
@@ -55,6 +55,7 @@
     "@storybook/test-runner": "^0.13.0",
     "@storybook/testing-library": "^0.2.2",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20.4.9",
     "@types/react": "^18.2.19",
     "@types/react-dom": "^18.2.7",
