@@ -16,10 +16,12 @@ export const PricingList = ({
   return (
     <div
       className={`layoutBg container-fluid d-flex justify-content-center paddingTopBottom60 pt-0`}
+      data-aos="fade-up"
     >
       <div className={`containerService paddingLeftRight15`}>
         <div
           className={`${pricingHeading} wow animated fadeInUp paddingTopBottom60 pt-0`}
+          data-aos="fade-up"
         >
           {heading}
         </div>

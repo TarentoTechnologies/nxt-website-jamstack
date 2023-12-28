@@ -19,6 +19,7 @@ export const Features = ({ imgSrc }: FeaturesProps) => {
               alt={imgSrc?.alternativeText}
               title={imgSrc?.caption}
               className="w-100"
+              data-aos="fade-up"
             />
           </div>
         </div>

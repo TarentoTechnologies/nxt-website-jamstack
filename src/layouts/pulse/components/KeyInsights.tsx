@@ -19,7 +19,7 @@ export const KeyInsights = ({ heading, cardList }: KeyInsightsProps) => {
         </div>
         <div className={`${keyFeature}`}>
           {cardList.map((item, index) => (
-            <div key={index} className={`${keyImg}`}>
+            <div key={index} className={`${keyImg}`} data-aos="fade-up">
               {item?.isImage ? (
                 <GatsbyImage
                   image={
@@ -30,6 +30,7 @@ export const KeyInsights = ({ heading, cardList }: KeyInsightsProps) => {
                   alt={item?.Image?.alternativeText}
                   title={item?.Image?.caption}
                   className={`img-fluid`}
+                  data-aos="fade-up"
                 />
               ) : (
                 <img
@@ -37,6 +38,7 @@ export const KeyInsights = ({ heading, cardList }: KeyInsightsProps) => {
                   alt={item?.Image?.alternativeText}
                   title={item?.Image?.caption}
                   className={`img-fluid`}
+                  data-aos="fade-up"
                 />
               )}
             </div>

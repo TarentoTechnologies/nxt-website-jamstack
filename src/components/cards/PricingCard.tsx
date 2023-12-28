@@ -48,10 +48,12 @@ export const PricingCard = ({
       <div className={`col-sm-12 col-md-6 col-lg-5 col-xl-4`}>
         <div className={`${pricingBox} ${bgWhite} p-4`}>
           <div className={`d-flex align-items-center ps-3 ${levelTwoBox}`}>
-            <img src={logo} alt={title} />
-            <div className={`${cardHeader} ms-4`}>
+            <img src={logo} alt={title} data-aos="fade-up" />
+            <div className={`${cardHeader} ms-4`} data-aos="fade-up">
               {title}
-              <span style={{ color: "#f96a00" }}>{spTitle}</span>
+              <span style={{ color: "#f96a00" }} data-aos="fade-up">
+                {spTitle}
+              </span>
             </div>
           </div>
           <div className="mt-4 mb-4">
@@ -60,9 +62,9 @@ export const PricingCard = ({
           {baseList?.map((item: any, index) => (
             <div className="d-flex mt-3 mb-4 ps-3">
               <div className="me-3">
-                <img src={checkIcon} className={tickStyle} />
+                <img src={checkIcon} className={tickStyle} data-aos="fade-up" />
               </div>
-              <span>{item?.ListItem}</span>
+              <span data-aos="fade-up">{item?.ListItem}</span>
             </div>
           ))}
         </div>
@@ -78,34 +80,42 @@ export const PricingCard = ({
                 description ? "" : levelTwoBox
               }`}
             >
-              <img src={logo} alt={title} />
-              <div className={`${cardHeader} ms-4`}>{title}</div>
+              <img src={logo} alt={title} data-aos="fade-up" />
+              <div className={`${cardHeader} ms-4`} data-aos="fade-up">
+                {title}
+              </div>
             </div>
-            <div className="mt-4 mb-3 ps-3">{description}</div>
+            <div className="mt-4 mb-3 ps-3" data-aos="fade-up">
+              {description}
+            </div>
           </div>
-          <div className={basePriceBox}>{basePrice}</div>
+          <div className={basePriceBox} data-aos="fade-up">
+            {basePrice}
+          </div>
           {baseList?.map((item: any, index) => (
             <div className="d-flex mt-3 mb-4 ps-3">
               <div className="me-3">
-                <img src={checkIcon} className={tickStyle} />
+                <img src={checkIcon} className={tickStyle} data-aos="fade-up" />
               </div>
-              <span>{item?.ListItem}</span>
+              <span data-aos="fade-up">{item?.ListItem}</span>
             </div>
           ))}
           <div className={supportBar}>
-            <p>{supportPrice} </p>
-            <span className="floatRight">
+            <p data-aos="fade-up">{supportPrice} </p>
+            <span className="floatRight" data-aos="fade-up">
               {" "}
               {supportText}
-              <span className={optional}>{supportSubText}</span>
+              <span className={optional} data-aos="fade-up">
+                {supportSubText}
+              </span>
             </span>
           </div>
           {supportList?.map((item: any, index) => (
             <div className="d-flex mt-3 mb-4 ps-3">
               <div className="me-3">
-                <img src={checkIcon} className={tickStyle} />
+                <img src={checkIcon} className={tickStyle} data-aos="fade-up" />
               </div>
-              <span>{item?.ListItem}</span>
+              <span data-aos="fade-up">{item?.ListItem}</span>
             </div>
           ))}
         </div>
