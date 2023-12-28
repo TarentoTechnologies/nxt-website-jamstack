@@ -2,10 +2,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ReactHtmlParser from "react-html-parser";
 
 import { FormButton } from "../../../components/buttons/FormButton";
-import { black60, carbon } from "../../../styles/style-guide/ColorGuide.module.css";
+import {
+  black60,
+  carbon,
+} from "../../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorSubTitle,
-  h3600,ctaDescriptionV2
+  ctaDescriptionV2,
+  h3600,
 } from "../../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
@@ -41,9 +45,12 @@ export const Form = ({
           <div className="row justify-content-between">
             <div className="col-md-7 order-lg-1 order-md-1 order-2">
               <div className="layoutDetails pulseView">
-                <div className={`${h3600} ${carbon}`}>{sectionTitle}</div>
+                <div className={`${h3600} ${carbon}`} data-aos="fade-up">
+                  {sectionTitle}
+                </div>
                 <div
                   className={`${formSubText} ${ctaDescriptionV2} ${black60} mt-4 mb-5`}
+                  data-aos="fade-up"
                 >
                   {ReactHtmlParser(description?.data.childMarkdownRemark.html)}
                 </div>
@@ -61,6 +68,7 @@ export const Form = ({
                   alt={scannerImage?.alternativeText}
                   title={scannerImage?.caption}
                   className="w-100"
+                  data-aos="fade-up"
                 />
               </div>
             </div>

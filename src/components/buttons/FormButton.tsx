@@ -29,8 +29,9 @@ export const FormButton = ({
         className={`text-center d-flex align-items-center justify-content-center 
       ${buttonClass} ${bgColor} ${isPulse ? pulseBg : ""}`}
         onClick={clickHandler}
+        data-aos="fade-up"
       >
-        <label>{label}</label>
+        <label data-aos="fade-up">{label}</label>
       </div>
     </a>
   );

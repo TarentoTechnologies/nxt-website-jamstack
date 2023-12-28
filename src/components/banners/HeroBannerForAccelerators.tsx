@@ -32,28 +32,35 @@ export const HeroBannerForAccelerators = ({
         <div className="row microHeading justify-content-between align-items-center">
           <div className="col-lg-6 col-md-12">
             <div className="header-info">
-              <div className="wow fadeIn animated">
+              <div className="">
                 <img
                   src={logosrc?.localFile?.url}
                   width="217"
                   height="71"
                   alt={logosrc?.alternativeText}
                   title={logosrc?.alternativeText}
+                  data-aos="fade-up"
                 />
               </div>
               <h1
-                className={`${acceleratorTitleV2} wow animated fadeInUp mt-4 mb-3 ${black}`}
+                className={`${acceleratorTitleV2} mt-4 mb-3 ${black}`}
+                data-aos="fade-up"
+                data-aos-delay="50"
               >
                 {title}
               </h1>
               <div
-                className={`wow animated fadeInUp titleSubHeading ${blue} ${h3500Lato} mb-4`}
+                className={`titleSubHeading ${blue} ${h3500Lato} mb-4`}
+                data-aos="fade-up"
+                data-aos-delay="200"
               >
                 {subText}
               </div>
 
               <p
-                className={`wow animated fadeInUp ${black50} ${acceleratorDescription}`}
+                className={`${black50} ${acceleratorDescription}`}
+                data-aos="fade-up"
+                data-aos-delay="300"
               >
                 {description}
               </p>
@@ -69,6 +76,7 @@ export const HeroBannerForAccelerators = ({
                 }
                 alt={""}
                 className="w-100"
+                data-aos="fade-up"
               />
             </div>
           </div>
