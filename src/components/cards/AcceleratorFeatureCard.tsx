@@ -1,6 +1,9 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import { bgWhite, carbon } from "../../styles/style-guide/ColorGuide.module.css";
+import {
+  bgWhite,
+  carbon,
+} from "../../styles/style-guide/ColorGuide.module.css";
 import {
   featureCard,
   featureCardImg,
@@ -32,7 +35,7 @@ export const AcceleratorFeatureCard = ({
     }
   };
   const bgColour = getBgColor();
-  
+
   return (
     <div className={`${featureCard} ${bgColor}`}>
       {isImage ? (
@@ -41,6 +44,7 @@ export const AcceleratorFeatureCard = ({
           alt={logo?.alternativeText}
           title={logo?.caption}
           className={`mb-3 ${featureCardImg}`}
+          data-aos="fade-up"
         />
       ) : (
         <img
@@ -48,10 +52,13 @@ export const AcceleratorFeatureCard = ({
           alt={logo?.alternativeText}
           title={logo?.caption}
           className={`mb-3 ${featureCardImg}`}
+          data-aos="fade-up"
         />
       )}
 
-      <p className={`${carbon}`}>{title}</p>
+      <p className={`${carbon}`} data-aos="fade-up">
+        {title}
+      </p>
     </div>
   );
 };

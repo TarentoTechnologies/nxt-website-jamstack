@@ -26,6 +26,7 @@ export const HowItWorks = ({ heading, imgSrc }: HowItWorksProps) => {
             alt={imgSrc?.alternativeText}
             title={imgSrc?.caption}
             className={`img-fluid`}
+            data-aos="fade-up"
           />
         </div>
       </div>

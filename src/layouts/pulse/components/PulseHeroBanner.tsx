@@ -27,12 +27,14 @@ export const PulseHeroBanner = ({
           <div className={`col-lg-6 d-flex flex-column justify-content-center`}>
             <h1
               className={`${acceleratorTitleV2} text-black wow animated fadeInUp my-4 pt-5`}
+              data-aos="fade-up"
             >
               {title}
             </h1>
             <div className={`me-5 pe-5`}>
               <p
                 className={`wow animated fadeInUp ${black50} ${acceleratorDescription} pe-5 me-5`}
+                data-aos="fade-up"
               >
                 {description}
               </p>
@@ -48,6 +50,7 @@ export const PulseHeroBanner = ({
               alt={img?.alternativeText}
               title={img?.caption}
               className={`img-fluid`}
+              data-aos="fade-up"
             />
           </div>
         </div>

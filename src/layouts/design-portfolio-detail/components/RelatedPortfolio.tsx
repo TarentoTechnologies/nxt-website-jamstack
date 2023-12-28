@@ -30,6 +30,7 @@ export const RelatedPortfolio = ({
               <div
                 className="col-sm-12 col-md-6 col-lg-6 col-xl-6 p-0 m-0 mb-4"
                 key={listData.id}
+                data-aos="fade-up"
               >
                 <PortfolioCard
                   title={listData?.Title}

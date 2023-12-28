@@ -27,6 +27,7 @@ export const VideoSection = ({
               preload="true"
               controls
               controlsList="nodownload"
+              data-aos="fade-up"
             >
               <source
                 className={`${videoSize}`}
@@ -38,11 +39,18 @@ export const VideoSection = ({
           </div>
           <div className={`col-lg-6`}>
             <div className={`pb-5`}>
-              <h2 className={`${cxHeading} ${videoHeading} mb-3`}>{heading}</h2>
+              <h2
+                className={`${cxHeading} ${videoHeading} mb-3`}
+                data-aos="fade-up"
+              >
+                {heading}
+              </h2>
               <div className={`${listStyles}`}>
                 <ul>
                   {listData.map((item: any, index) => (
-                    <li key={index}>{item?.ListItem}</li>
+                    <li key={index} data-aos="fade-up">
+                      {item?.ListItem}
+                    </li>
                   ))}
                 </ul>
               </div>

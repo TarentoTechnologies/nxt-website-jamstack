@@ -13,16 +13,17 @@ interface CaseStudiesProps {
 }
 
 export const CaseStudies = ({ title, list }: CaseStudiesProps) => {
-
   return (
     <div className={topBottomPadding}>
       <div className={`container-fluid d-flex justify-content-center`}>
         <div className={`containerService paddingLeftRight15`}>
           <div className="">
-            <h1 className={`${h1700V2}`}>{title}</h1>
+            <h1 className={`${h1700V2}`} data-aos="fade-up">
+              {title}
+            </h1>
             <div className="row mt-5">
               {list?.map((item: any, index: number) => (
-                <div className="col-md-6 mt-2" key={index}>
+                <div className="col-md-6 mt-2" key={index} data-aos="fade-up">
                   <center>
                     <GatsbyImage
                       image={
@@ -33,12 +34,16 @@ export const CaseStudies = ({ title, list }: CaseStudiesProps) => {
                       alt={item?.Image?.alternativeText}
                       title={item?.Image?.caption}
                       className="w-100"
+                      data-aos="fade-up"
                     />
                   </center>
-                  <div className={`${caseStudyTitle} mt-4 mb-4`}>
+                  <div
+                    className={`${caseStudyTitle} mt-4 mb-4`}
+                    data-aos="fade-up"
+                  >
                     {item?.Heading}
                   </div>
-                  <p>
+                  <p data-aos="fade-up">
                     {ReactHtmlParser(
                       item?.Description.data.childMarkdownRemark.html
                     )}

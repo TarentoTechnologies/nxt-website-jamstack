@@ -1,10 +1,10 @@
 import {
+  bgRhodaminePurple,
   bgSpectrumBlue,
   bgVividGreen,
-  bgRhodaminePurple,
 } from "../../styles/style-guide/ColorGuide.module.css";
+import { innoTitle } from "../../styles/style-guide/Typography.module.css";
 import { cardStyles, titleStyles } from "./InnoTableCard.module.css";
-import {innoTitle} from "../../styles/style-guide/Typography.module.css"
 
 interface InnoTableCardProps {
   title: string;
@@ -36,9 +36,12 @@ export const InnoTableCard = ({
     <div
       className={`col-md-4 ${bgColour} ${cardStyles}`}
       onClick={clickHandler}
+      data-aos="fade-up"
     >
-      <h2 className={`${titleStyles} ${innoTitle}`}>{title}</h2>
-      <p>{desc}</p>
+      <h2 className={`${titleStyles} ${innoTitle}`} data-aos="fade-up">
+        {title}
+      </h2>
+      <p data-aos="fade-up">{desc}</p>
     </div>
   );
 };

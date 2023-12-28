@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.subtextStyles :global {
+.subtextStyles {
   color: rgba(255, 255, 255, 0.7);
   margin-left: 0;
   /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */

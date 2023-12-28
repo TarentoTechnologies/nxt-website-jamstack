@@ -1,14 +1,15 @@
+import { useState } from "react";
+
 import {
-  bgOxideBlue,
-  bgViridianGreen,
-  bgSpectrumViolet,
-  bgLeitchsBlue,
   bgDarkViridianGreen,
+  bgLeitchsBlue,
+  bgOxideBlue,
   bgRoslynBlue,
+  bgSpectrumViolet,
+  bgViridianGreen,
 } from "../../styles/style-guide/ColorGuide.module.css";
 import { PrimaryTitle } from "../titles/PrimaryTitle";
-import { triCardStyles, imgStyles, titleStyles } from "./TriCard.module.css";
-import { useState } from "react";
+import { imgStyles, titleStyles, triCardStyles } from "./TriCard.module.css";
 
 interface TriCardProps {
   title: string;
@@ -59,20 +60,16 @@ export const TriCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div
-        className={`${imgStyles}`}
-        data-sal="slide-up"
-        data-sal-duration="900"
-        data-sal-easing="ease-in-back"
-      >
-        <img src={logo} alt={title} title={title} />
+      <div className={`${imgStyles}`}>
+        <img
+          src={logo}
+          alt={title}
+          title={title}
+          data-aos="fade-up"
+          data-aos-delay="500"
+        />
       </div>
-      <div
-        className={`${titleStyles}`}
-        data-sal="slide-up"
-        data-sal-duration="900"
-        data-sal-easing="ease-in-back"
-      >
+      <div className={`${titleStyles}`} data-aos="fade-up">
         <PrimaryTitle title={title} variant="card" color="white" />
       </div>
     </div>

@@ -35,8 +35,12 @@ export const BannerWithTag = ({ title, tagsList }: BannerWithTagProps) => {
                 <div
                   className={`${tag} ${bgBlack} d-flex align-items-center justify-content-center col-sm-12 col-md-3 col-lg-3 col-xl-3 me-3`}
                   key={data.id}
+                  data-aos="fade-up"
                 >
-                  <label className={`${tagLabel2} ${white87}`}>
+                  <label
+                    className={`${tagLabel2} ${white87}`}
+                    data-aos="fade-up"
+                  >
                     {data.Label}
                   </label>
                 </div>
@@ -51,8 +55,12 @@ export const BannerWithTag = ({ title, tagsList }: BannerWithTagProps) => {
                 <div
                   className={`${tag} ${bgBlack} d-flex align-items-center justify-content-center  col-sm-3 col-md-3 col-lg-3 col-xl-3 me-3`}
                   key={data.id}
+                  data-aos="fade-up"
                 >
-                  <label className={`${tagLabel2} ${white87}`}>
+                  <label
+                    className={`${tagLabel2} ${white87}`}
+                    data-aos="fade-up"
+                  >
                     {data.Label}
                   </label>
                 </div>
@@ -65,6 +73,7 @@ export const BannerWithTag = ({ title, tagsList }: BannerWithTagProps) => {
             src={transparentPNG}
             alt="Test Image"
             className={`img-fluid ${bannerImg} float-end mt-0 mt-sm-0 mt-md-4 mt-lg-4 mt-xl-4`}
+            data-aos="fade-up"
           />
         </div>
       </div>

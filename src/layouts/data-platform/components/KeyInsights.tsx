@@ -15,13 +15,12 @@ export const KeyInsights = ({
   sectionTitle,
   insightsData,
 }: KeyInsightsProps) => {
-  
   return (
     <div
       className={`${bannerStyles} ${bgHaysBlue} d-flex justify-content-center`}
     >
       <div className="containerService paddingLeftRight15">
-        <h1 className={`${h3600} ${white} wow animated fadeInUp mt-4 mb-5`}>
+        <h1 className={`${h3600} ${white} mt-4 mb-5`} data-aos="fade-up">
           {sectionTitle}
         </h1>
         <div className={`row containerRow`}>
@@ -38,8 +37,12 @@ export const KeyInsights = ({
                     alt={item?.Image?.alternativeText}
                     title={item?.Image?.caption}
                     className="w-100"
+                    data-aos="fade-up"
                   />
-                  <div className={`${white} ${keyFeatureText}`}>
+                  <div
+                    className={`${white} ${keyFeatureText}`}
+                    data-aos="fade-up"
+                  >
                     {item.Caption}
                   </div>
                 </div>

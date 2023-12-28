@@ -6,17 +6,14 @@ interface ProductCardLayoutProps {
 }
 
 export const ProductCardLayout = ({ data }: ProductCardLayoutProps) => {
-
   return (
     <div className={`container-fluid ${productCardLayoutStyles}`}>
       <div className={`row`}>
-        {data.map((item:any, index:number) => (
+        {data.map((item: any, index: number) => (
           <div
             key={item.id}
             className={`col-xs-12 col-sm-12 col-md-4 col-lg-4 ${productCardStyles}`}
-            data-sal="slide-up"
-            data-sal-duration="900"
-            data-sal-easing="ease-in-back"
+            data-aos="fade-up"
           >
             <ProductCard
               title={item?.Title}

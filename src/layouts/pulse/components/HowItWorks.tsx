@@ -32,16 +32,17 @@ export const HowItWorks = ({
               alt={heading}
               title={heading}
               className="img-fluid"
+              data-aos="fade-up"
             />
           </div>
           <div className={`col-lg-4`}>
-            <p>{levelOneText}</p>
+            <p data-aos="fade-up">{levelOneText}</p>
           </div>
           <div className={`col-lg-4`}>
-            <p>{levelTwoText}</p>
+            <p data-aos="fade-up">{levelTwoText}</p>
           </div>
           <div className={`col-lg-4`}>
-            <p>{levelThreeText}</p>
+            <p data-aos="fade-up">{levelThreeText}</p>
           </div>
         </div>
       </div>

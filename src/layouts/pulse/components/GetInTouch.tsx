@@ -37,6 +37,7 @@ export const GetInTouch = ({
                 alt={imgSrc?.alternativeText}
                 title={imgSrc?.caption}
                 className={`img-fluid`}
+                data-aos="fade-up"
               />
             </div>
           </div>
@@ -44,7 +45,7 @@ export const GetInTouch = ({
             <div className={`pt-3`}>
               <PrimaryTitle title={heading} variant="infoSectionH2" />
             </div>
-            <div className={`${subTextStyles}`}>
+            <div className={`${subTextStyles}`} data-aos="fade-up">
               {ReactHtmlParser(subText.data?.childMarkdownRemark?.html)}
             </div>
             <FormButton label={btnLabel} btnLink={btnLink} isEmail isPulse />

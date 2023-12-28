@@ -12,9 +12,9 @@ export const HeroText = ({ title, desc }: HeroTextProps) => {
       className={`layoutBg container-fluid d-flex justify-content-center ${heroTextSection}`}
     >
       <div className={`containerService paddingLeftRight15`}>
-        <h1 className={`${pricingHeroTitle}`}>{title}</h1>
+        <h1 className={`${pricingHeroTitle}`} data-aos="fade-up">{title}</h1>
         <span className={`${border}`}></span>
-        <p className={`${descStyles} col-lg-10`}>{desc}</p>
+        <p className={`${descStyles} col-lg-10`} data-aos="fade-up">{desc}</p>
       </div>
     </div>
   );

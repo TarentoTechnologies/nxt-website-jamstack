@@ -18,8 +18,12 @@ export const DigitalPlatform = ({
     <div className={`${layout} d-flex justify-content-center layoutBg`}>
       <div className={`row containerService paddingLeftRight15 p-0 m-0`}>
         <div className={`col-lg-12`}>
-          <h1 className={`${sectionTitleV1} ${black}`}>{heading}</h1>
-          <p className="mt-4 mb-4">{desc}</p>
+          <h1 className={`${sectionTitleV1} ${black}`} data-aos="fade-up">
+            {heading}
+          </h1>
+          <p className="mt-4 mb-4" data-aos="fade-up">
+            {desc}
+          </p>
         </div>
         {list?.map((item: any, index: number) => (
           <AcceleratorCard

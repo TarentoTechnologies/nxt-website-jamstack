@@ -9,9 +9,9 @@ import {
 } from "../../styles/style-guide/Typography.module.css";
 import {
   bannerStyles,
+  customDescription,
   imgStyles,
   textStyles,
-  customDescription
 } from "./DesignProcessBanner.module.css";
 
 interface DesignProcessBannerProps {
@@ -49,13 +49,16 @@ export const DesignProcessBanner = ({
                 }
                 alt={image?.alternativeText}
                 id={image?.id}
+                data-aos="fade-up"
               />
             </div>
 
             {/* Right */}
             <div className={`col-md-6 col-lg-5 offset-lg-1 pt-3 ${textStyles}`}>
-              <h3 className={`${h3600} pt-3 ${carbon}`}>{heading}</h3>
-              <div className={`py-2 ${customDescription}`}>
+              <h3 className={`${h3600} pt-3 ${carbon}`} data-aos="fade-up">
+                {heading}
+              </h3>
+              <div className={`py-2 ${customDescription}`} data-aos="fade-up">
                 {ReactHtmlParser(description?.data.childMarkdownRemark?.html)}
               </div>
             </div>
@@ -65,8 +68,10 @@ export const DesignProcessBanner = ({
             {/* Description aligment: Left */}
             {/* Left */}
             <div className={`col-md-6 col-lg-5 pt-3 ${textStyles}`}>
-              <h3 className={`${h3600} pt-3 ${carbon}`}>{heading}</h3>
-              <div className={`py-2 ${customDescription}`}>
+              <h3 className={`${h3600} pt-3 ${carbon}`} data-aos="fade-up">
+                {heading}
+              </h3>
+              <div className={`py-2 ${customDescription}`} data-aos="fade-up">
                 {ReactHtmlParser(description?.data.childMarkdownRemark?.html)}
               </div>
             </div>
@@ -81,6 +86,7 @@ export const DesignProcessBanner = ({
                 }
                 alt={image?.alternativeText}
                 id={image?.id}
+                data-aos="fade-up"
               />
             </div>
           </>

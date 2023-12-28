@@ -38,18 +38,26 @@ export const ContactUsLayout = ({
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-lg-6 px-0`}>
           <div className={`${titleStyles}`}>
-            <h1 className={`${h1700V3}`}>{heading1}</h1>
+            <h1 className={`${h1700V3}`} data-aos="fade-up">
+              {heading1}
+            </h1>
           </div>
-          <p className={`${subTextV2} me-5 pe-4`}>{desc1}</p>
+          <p className={`${subTextV2} me-5 pe-4`} data-aos="fade-up">
+            {desc1}
+          </p>
           <div className={`${btnStyles}`}>
             <PrimaryCTA label={CTAlabel1} btnLink={CTAlink1} size="small" />
           </div>
         </div>
         <div className={`col-lg-6 px-0 ${levelTwoPadding}`}>
           <div className={`${titleStyles}`}>
-            <h1 className={`${h1700V3}`}>{heading2}</h1>
+            <h1 className={`${h1700V3}`} data-aos="fade-up">
+              {heading2}
+            </h1>
           </div>
-          <p className={`${subTextV2} me-5 pe-4`}>{desc2}</p>
+          <p className={`${subTextV2} me-5 pe-4`} data-aos="fade-up">
+            {desc2}
+          </p>
           <div className={`${btnStyles}`}>
             <PrimaryCTA label={CTAlabel2} btnLink={CTAlink2} size="small" />
           </div>

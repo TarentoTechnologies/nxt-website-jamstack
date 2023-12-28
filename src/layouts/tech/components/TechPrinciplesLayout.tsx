@@ -20,16 +20,18 @@ export const TechPrinciplesLayout = ({
   subTitle,
   principleData,
 }: TechPrinciplesLayoutProps) => {
-
-
   return (
     <div className={`d-flex justify-content-center ${techPrinciples}`}>
       <div className={`containerService paddingLeftRight15 mt-5`}>
         <div className={`${titleStyles}`}>
           <PrimaryTitle title={primaryTitle} variant="infoSectionH2" />
         </div>
-        <p className={`${descStyles}`}>{description}</p>
-        <div className={`${subHeadingStyles}`}>{subTitle}</div>
+        <p className={`${descStyles}`} data-aos="fade-up">
+          {description}
+        </p>
+        <div className={`${subHeadingStyles}`} data-aos="fade-up">
+          {subTitle}
+        </div>
         <div className={`row m-0`}>
           {principleData?.map((item: any, index: number) => (
             <KeyFeatureCard
