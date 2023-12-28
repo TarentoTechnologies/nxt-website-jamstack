@@ -1,8 +1,8 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
+import { carbon } from "../../../styles/style-guide/ColorGuide.module.css";
 import { h3600 } from "../../../styles/style-guide/Typography.module.css";
 import { bannerStyles } from "../DataPlatform.module.css";
-import {carbon} from "../../../styles/style-guide/ColorGuide.module.css"
 
 interface WorkingProcesssProps {
   sectionTitle: string;
@@ -26,7 +26,10 @@ export const WorkingProcess = ({
       <div className="containerService paddingLeftRight15">
         <div className="row">
           <div className="col-md-12">
-            <h1 className={`${h3600} wow animated fadeInUp ${carbon}`}>
+            <h1
+              className={`${h3600} wow animated fadeInUp ${carbon}`}
+              data-aos="fade-up"
+            >
               {sectionTitle}
             </h1>
             <div className="pusleProcess">
@@ -35,17 +38,25 @@ export const WorkingProcess = ({
                 alt={processImage?.alternativeText}
                 title={processImage?.caption}
                 className="w-100"
+                data-aos="fade-up"
+                data-aos-delay="200"
               />
             </div>
           </div>
           <div className="col-md-4">
-            <p className={carbon}>{descriptionOne}</p>
+            <p className={carbon} data-aos="fade-up">
+              {descriptionOne}
+            </p>
           </div>
           <div className="col-md-4">
-            <p className={carbon}>{descriptionTwo}</p>
+            <p className={carbon} data-aos="fade-up">
+              {descriptionTwo}
+            </p>
           </div>
           <div className="col-md-4">
-            <p className={carbon}>{descriptionThree} </p>
+            <p className={carbon} data-aos="fade-up">
+              {descriptionThree}{" "}
+            </p>
           </div>
         </div>
       </div>

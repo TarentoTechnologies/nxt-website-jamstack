@@ -32,6 +32,7 @@ export const RainFeatureCard = ({
                 : img?.localFile
             }
             alt={""}
+            data-aos="fade-up"
           />
         ) : (
           <img
@@ -39,13 +40,19 @@ export const RainFeatureCard = ({
             alt={heading}
             title={heading}
             className={`img-fluid`}
+            data-aos="fade-up"
           />
         )}
       </div>
-      <div className={`${headingStyles} ${cardHeader} ${carbon}`}>
+      <div
+        className={`${headingStyles} ${cardHeader} ${carbon}`}
+        data-aos="fade-up"
+      >
         {heading}
       </div>
-      <p className={`${subTextStyles} ${carbon}`}>{subText}</p>
+      <p className={`${subTextStyles} ${carbon}`} data-aos="fade-up">
+        {subText}
+      </p>
     </div>
   );
 };

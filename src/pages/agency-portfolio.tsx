@@ -4,6 +4,7 @@ import { useRecoilValue } from "recoil";
 
 import navbarImg from "../../static/images/logo-inner.svg";
 import { Navbar } from "../components/navbar/Navbar";
+import { FooterSection } from "../layouts/common";
 import {
   AllOtherClients,
   AreYouInterested,
@@ -11,7 +12,6 @@ import {
   Showcase,
 } from "../layouts/design-portfolio";
 import { langSelected as langSelectedAtom } from "../states/atoms";
-import { FooterSection } from "../layouts/common";
 
 interface AgencyPortfolioProps {
   data: any;

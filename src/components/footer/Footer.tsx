@@ -27,7 +27,6 @@ interface FooterProps {
 }
 
 export const Footer = ({ data }: FooterProps) => {
-
   return (
     <div className={`container-fluid ${footer}`}>
       <div className={`row`}>
@@ -42,6 +41,7 @@ export const Footer = ({ data }: FooterProps) => {
                 title={data?.SecondaryLogo?.caption}
                 width="187"
                 height="43"
+                data-aos="fade-up"
               />
             </Link>
           </div>
@@ -55,6 +55,7 @@ export const Footer = ({ data }: FooterProps) => {
                 title={data?.SecondaryLogo?.caption}
                 width="187"
                 height="43"
+                data-aos="fade-up"
               />
             </a>
           </div>
@@ -66,6 +67,7 @@ export const Footer = ({ data }: FooterProps) => {
                 title={data?.PrimaryLogo?.caption}
                 width="72"
                 height="72"
+                data-aos="fade-up"
               />
             </Link>
           </div>
@@ -73,7 +75,7 @@ export const Footer = ({ data }: FooterProps) => {
           <div className={`d-none d-md-block ${topBar}`}></div>
           <div className={`row ${marginBtm}`}>
             <div className={`col-xs-12 col-sm-12 col-md-6 ${footerDesc}`}>
-              <p className={`${footerReachUs}`}>
+              <p className={`${footerReachUs}`} data-aos="fade-up">
                 {ReactHtmlParser(
                   data?.PrimaryDescription?.data?.childMarkdownRemark?.html
                 )}
@@ -83,29 +85,31 @@ export const Footer = ({ data }: FooterProps) => {
               <div
                 className={`${directlink} ${dlinkLeft} ${dLinkLeft} offset-xl-2`}
               >
-                <p className={`${footerHeading}`}>
+                <p className={`${footerHeading}`} data-aos="fade-up">
                   {data?.PrimaryLevelOneHeading}
                 </p>
                 <ul>
-                  {data?.PrimaryLevelOneList?.map((item: any, index: number) => (
-                    <li key={item?.id}>
-                      <Link to={item?.Link} rel="canonical">
-                        {item?.Label}
-                      </Link>
-                    </li>
-                  ))}
+                  {data?.PrimaryLevelOneList?.map(
+                    (item: any, index: number) => (
+                      <li key={item?.id} data-aos="fade-up">
+                        <Link to={item?.Link} rel="canonical">
+                          {item?.Label}
+                        </Link>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
               <div
                 className={`${directlink} ${dlinkRight} ${dLinkRight} offset-xl-2`}
               >
-                <p className={`${footerHeading}`}>
+                <p className={`${footerHeading}`} data-aos="fade-up">
                   {data?.PrimaryLevelTwoHeading}
                 </p>
                 <ul>
                   {data?.PrimaryLevelTwoList?.map(
                     (item: any, index: number) => (
-                      <li key={item?.id}>
+                      <li key={item?.id} data-aos="fade-up">
                         <Link to={item?.Link} rel="canonical">
                           {item?.Label}
                         </Link>
@@ -128,6 +132,7 @@ export const Footer = ({ data }: FooterProps) => {
                 title={data?.SecondaryLogo?.caption}
                 width="187"
                 height="43"
+                data-aos="fade-up"
               />
             </a>
           </div>
@@ -137,13 +142,13 @@ export const Footer = ({ data }: FooterProps) => {
               className={`col-xs-6 col-sm-12 col-md-12 col-lg-12 ${marginBtm1} d-flex ps-0`}
             >
               <div className={`${directlink} ${dlinkLeft} offset-xl-1`}>
-                <p className={`${footerHeading}`}>
+                <p className={`${footerHeading}`} data-aos="fade-up">
                   {data?.SecondaryLevelOneHeading}
                 </p>
                 <ul>
                   {data?.SecondaryLevelOneList?.map(
                     (item: any, index: number) => (
-                      <li key={item?.id}>
+                      <li key={item?.id} data-aos="fade-up">
                         <a href={item?.Link} rel="canonical">
                           {item?.Label}
                         </a>
@@ -155,13 +160,13 @@ export const Footer = ({ data }: FooterProps) => {
               <div
                 className={`${directlink} ${dlinkRight} offset-lg-1 offset-xl-2`}
               >
-                <p className={`${footerHeading}`}>
+                <p className={`${footerHeading}`} data-aos="fade-up">
                   {data?.SecondaryLevelOneHeading}
                 </p>
                 <ul>
                   {data?.SecondaryLevelTwoList?.map(
                     (item: any, index: number) => (
-                      <li key={item?.id}>
+                      <li key={item?.id} data-aos="fade-up">
                         <a href={item?.Link} rel="canonical">
                           {item?.Label}
                         </a>
@@ -174,7 +179,9 @@ export const Footer = ({ data }: FooterProps) => {
           </div>
         </div>
         <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-12`}>
-          <p className={`${footerHeading} ${rights}`}>{data?.Copyright}</p>
+          <p className={`${footerHeading} ${rights}`}>
+            {data?.Copyright}
+          </p>
         </div>
       </div>
     </div>

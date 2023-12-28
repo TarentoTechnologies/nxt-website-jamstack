@@ -1,3 +1,5 @@
+import { Link } from "gatsby";
+
 import { navBarStyles } from "./Navbar.module.css";
 
 interface NavbarProps {
@@ -7,11 +9,12 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ imgSrc, imgAltText, link }: NavbarProps) => {
+  
   return (
     <div className={`${navBarStyles}`}>
-      <a href={link} rel="canonical">
+      <Link to={link} rel="canonical">
         <img src={imgSrc} alt={imgAltText} title={imgAltText} />
-      </a>
+      </Link>
     </div>
   );
 };

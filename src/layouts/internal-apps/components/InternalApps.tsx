@@ -31,7 +31,10 @@ export const InternalApps = ({ title, appData }: InternalAppsProps) => {
           <div className="row mt-2 gx-5">
             {appData?.map((data: any, index: number) => {
               return (
-                <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={data?.id}>
+                <div
+                  className="col-lg-4 col-md-6 col-sm-12 mb-4"
+                  key={data?.id}
+                >
                   <div className="">
                     <GatsbyImage
                       image={
@@ -42,19 +45,25 @@ export const InternalApps = ({ title, appData }: InternalAppsProps) => {
                       alt={data?.Logo?.alternativeText}
                       title={data?.Logo?.caption}
                       className={`img-fluid`}
+                      data-aos="fade-up"
                     />
                   </div>
                   <div className="mt-4">
-                    <h4 className={`${h4400}`}>{data?.AppTitle}</h4>
+                    <h4 className={`${h4400}`} data-aos="fade-up">
+                      {data?.AppTitle}
+                    </h4>
                   </div>
                   <div className="pt-3">
-                    <p className={`${subText1}`}>{data?.AppDescription}</p>
+                    <p className={`${subText1}`} data-aos="fade-up">
+                      {data?.AppDescription}
+                    </p>
                   </div>
                   <div className="d-flex flex-column mt-4">
                     <div className="mb-3">
                       <a
                         href={data?.iOSAppLInk}
                         className={`${cxButton} btn btn-primary`}
+                        data-aos="fade-up"
                       >
                         Install iOS App
                       </a>
@@ -64,6 +73,7 @@ export const InternalApps = ({ title, appData }: InternalAppsProps) => {
                         href={data?.AndoridAppLink?.localFile?.url}
                         className={`${cxButton} btn btn-primary`}
                         download
+                        data-aos="fade-up"
                       >
                         Install Android App
                       </a>

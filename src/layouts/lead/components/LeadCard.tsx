@@ -32,12 +32,26 @@ export const LeadCard = ({ title, img, subText, bgColor }: LeadCardProps) => {
   return (
     <div
       className={`${leadCard} ${bgYellow} ${bgBlue} ${bgGrey} ${bgViolet} ${bglightViolet}`}
+      data-aos="fade-up"
     >
       <div className={`${leadCardImg} pt-3`}>
-        <img src={img} alt={title} title={title} className={`img-fluid`} />
+        <img
+          src={img}
+          alt={title}
+          title={title}
+          className={`img-fluid`}
+          data-aos="fade-up"
+        />
       </div>
-      <h4 className={`${black87} ${leadCardTitle} ${cardHeader}`}>{title}</h4>
-      <p className={`${black60} ${leadCardSubText}`}>{subText}</p>
+      <h4
+        className={`${black87} ${leadCardTitle} ${cardHeader}`}
+        data-aos="fade-up"
+      >
+        {title}
+      </h4>
+      <p className={`${black60} ${leadCardSubText}`} data-aos="fade-up">
+        {subText}
+      </p>
     </div>
   );
 };

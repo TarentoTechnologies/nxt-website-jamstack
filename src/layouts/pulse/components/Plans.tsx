@@ -17,17 +17,24 @@ export const Plans = ({ heading, subText, cardData }: PlansProps) => {
         <div className={`mb-2`}>
           <PrimaryTitle title={heading} variant="infoSectionH2" />
         </div>
-        <p className={`pt-1`}>{subText}</p>
+        <p className={`pt-1`} data-aos="fade-up">
+          {subText}
+        </p>
         <div className={`row`}>
           {cardData.map((item, index) => (
-            <div className={`col-lg-6`} key={index}>
+            <div className={`col-lg-6`} key={index} data-aos="fade-up">
               <div className={`layoutBg ${planDetails}`}>
-                <h4 className={`${planHeading} text-center mb-3`}>
+                <h4
+                  className={`${planHeading} text-center mb-3`}
+                  data-aos="fade-up"
+                >
                   {item?.Title}
                 </h4>
                 <ul className={`${planList}`}>
                   {item?.KeyPoints?.map((item: any, index: any) => (
-                    <li key={index}>{item?.ListItem}</li>
+                    <li key={index} data-aos="fade-up">
+                      {item?.ListItem}
+                    </li>
                   ))}
                 </ul>
               </div>

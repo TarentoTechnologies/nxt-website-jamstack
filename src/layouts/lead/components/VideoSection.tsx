@@ -19,6 +19,7 @@ export const VideoSection = ({ videoSrc }: VideoSectionProps) => {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            data-aos="fade-up"
             // loop="1"
           ></iframe>
         </div>

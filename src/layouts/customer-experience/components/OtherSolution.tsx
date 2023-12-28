@@ -15,11 +15,19 @@ export const OtherSolution = ({
   return (
     <div className={`${layout} layoutBg d-flex justify-content-center`}>
       <div className="containerService paddingLeftRight15">
-        <h1 className={`${h3600} mt-4 mb-4`}>{title}</h1>
-        <p className={w40}>{description}</p>
+        <h1 className={`${h3600} mt-4 mb-4`} data-aos="fade-up">
+          {title}
+        </h1>
+        <p className={w40} data-aos="fade-up">
+          {description}
+        </p>
         <div className={`row mt-5`}>
-          {list?.map((item:any, index:number) => (
-            <div key={item.id} className={`col-sm-6 col-lg-4 mb-3`}>
+          {list?.map((item: any, index: number) => (
+            <div
+              key={item.id}
+              className={`col-sm-6 col-lg-4 mb-3`}
+              data-aos="fade-up"
+            >
               <ProductCard
                 bgImg={item?.BackgroundImage?.localFile?.url}
                 logo={item?.Logo?.localFile?.url}

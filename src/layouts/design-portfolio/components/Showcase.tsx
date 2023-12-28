@@ -18,7 +18,7 @@ export const Showcase = ({ sectionTitle, data }: ShowcaseProps) => {
         <div className="">
           {data?.map((listData: any, index: number) => {
             return (
-              <div className="my-4" key={listData?.id}>
+              <div className="my-4" key={listData?.id} data-aos="fade-up">
                 <ShowcaseCard
                   title={listData?.HeroSection?.Title}
                   description={listData?.HeroSection?.Description}

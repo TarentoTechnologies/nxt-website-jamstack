@@ -12,14 +12,14 @@ export const Feature = ({ sectionTitle, featureCardData }: FeaturesProps) => {
   return (
     <div className={`${bannerStyles} ${flexDirection} layoutBg`}>
       <div className="containerService paddingLeftRight15">
-        <h1 className={`${h3600} wow animated fadeInUp mt-4 mb-5 ${carbon}`}>
+        <h1 className={`${h3600} mt-4 mb-5 ${carbon}`} data-aos="fade-up">
           {sectionTitle}
         </h1>
         <div className={`row containerRow`}>
           {featureCardData.map((item: any, index: number) => {
             return (
               <>
-                <div className={`col-md-4 col-sm-6 col3`}>
+                <div className={`col-md-4 col-sm-6 col3`} data-aos="fade-up">
                   <AcceleratorFeatureCard
                     title={item?.Caption}
                     logo={item?.Image?.localFile}

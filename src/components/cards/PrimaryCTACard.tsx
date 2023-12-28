@@ -2,8 +2,8 @@ import { Link } from "gatsby";
 
 import { black75 } from "../../styles/style-guide/ColorGuide.module.css";
 import {
-  h1One,
   ctaDescription,
+  h1One,
 } from "../../styles/style-guide/Typography.module.css";
 import { PrimaryCTA } from "../buttons/PrimaryCTA";
 
@@ -25,16 +25,20 @@ export const PrimaryCTACard = ({
       <div className="">
         <h1
           className={`${h1One}`}
-          data-sal="slide-up"
-          data-sal-duration="900"
-          data-sal-easing="ease-in-back"
+          data-aos="fade-up"
         >
           {title}
         </h1>
-        <p className={`col-sm-10 col-md-10 col-lg-10 col-xl-6 mt-4 mb-5 ${black75} ${ctaDescription}`}>
+        <p
+          className={`col-sm-10 col-md-10 col-lg-10 col-xl-6 mt-4 mb-5 ${black75} ${ctaDescription}`}
+          data-aos="fade-up"
+        >
           {description}
         </p>
-        <Link to={ctaLink}>
+        <Link
+          to={ctaLink}
+          data-aos="fade-up"
+        >
           <PrimaryCTA label={ctaText} />
         </Link>
       </div>

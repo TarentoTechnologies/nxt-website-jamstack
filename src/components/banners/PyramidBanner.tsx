@@ -11,7 +11,7 @@ interface PyramidBannerProps {
   title: string;
   description: string;
   btnDescr?: string;
-  btnLink?: any
+  btnLink?: any;
   pyramidImg: any;
 }
 
@@ -20,7 +20,7 @@ export const PyramidBanner = ({
   description,
   btnDescr,
   pyramidImg,
-  btnLink
+  btnLink,
 }: PyramidBannerProps) => {
   return (
     <div className={`container-fluid ${bannerStyles}`}>
@@ -32,18 +32,14 @@ export const PyramidBanner = ({
               src={pyramidImg}
               alt={title}
               title={title}
-              data-sal="slide-up"
-              data-sal-duration="900"
-              data-sal-easing="ease-in-back"
+              data-aos="fade-up"
             />
           </div>
         </div>
         <div className={`col-md-12 col-lg-6 col-xl-4`}>
           <div
             className={`${infoSectionPadding} ${retailInfo}`}
-            data-sal="slide-up"
-            data-sal-duration="900"
-            data-sal-easing="ease-in-back"
+            data-aos="fade-up"
           >
             <PrimaryTitle title={title} variant="banner" color="white" />
             <p>{description}</p>

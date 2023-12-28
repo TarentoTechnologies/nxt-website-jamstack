@@ -33,18 +33,14 @@ export const DesignPortfolio = ({
         <div className="float-start">
           <h1
             className={`${h1One}`}
-            data-sal="slide-up"
-            data-sal-duration="900"
-            data-sal-easing="ease-in-back"
+            data-aos="fade-up"
           >
             {title}
           </h1>
         </div>
         <div
           className="float-end d-none d-sm-none d-md-block d-lg-block d-xl-block"
-          data-sal="slide-up"
-          data-sal-duration="900"
-          data-sal-easing="ease-in-back"
+          data-aos="fade-up"
         >
           <PrimaryCTA label={ctaText} btnLink={ctaLink} />
         </div>
@@ -53,9 +49,7 @@ export const DesignPortfolio = ({
       {/* Description */}
       <p
         className="col-9"
-        data-sal="slide-up"
-        data-sal-duration="900"
-        data-sal-easing="ease-in-back"
+        data-aos="fade-up"
       >
         {description}
       </p>
@@ -67,9 +61,6 @@ export const DesignPortfolio = ({
             <div
               className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0 mb-3 mb-sm-3 mb-md-3 mb-lg-3 mb-xl-0`}
               key={data.id}
-              data-sal="slide-up"
-              data-sal-duration="900"
-              data-sal-easing="ease-in-back"
             >
               <PortfolioCard
                 ctaLink={`/design-portfolio/${data.Slug}`}
@@ -90,10 +81,7 @@ export const DesignPortfolio = ({
         <div className="clearfix mt-3">
           <div
             className="float-end"
-            data-sal="slide-up"
-            data-sal-delay="200"
-            data-sal-duration="1000"
-            data-sal-easing="ease-in-back"
+            data-aos="fade-up"
           >
             <PrimaryCTA label={ctaText} btnLink={ctaLink} />
           </div>

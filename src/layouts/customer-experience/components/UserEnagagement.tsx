@@ -31,17 +31,29 @@ export const UserEngagement = ({
           <div className="col-lg-6 col-md-12 col-sm-12 ">
             <div className="mb-4">
               <center>
-                <img className="w-100" src={imgSrc} alt={title} />
+                <img
+                  className="w-100"
+                  src={imgSrc}
+                  alt={title}
+                  data-aos="fade-up"
+                />
               </center>
             </div>
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 ">
             <div className="">
-              <div className={`${cxHeading} ${moveLeftOne} mb-4`}>{title}</div>
+              <div
+                className={`${cxHeading} ${moveLeftOne} mb-4`}
+                data-aos="fade-up"
+              >
+                {title}
+              </div>
               <div id="cxList">
                 <ul className={`${listMoveLeft} ${liStyle} ps-3`}>
-                  {list?.map((item:any, index:number) => (
-                    <li className={liStyle} key={item?.id}>{item?.ListItem}</li>
+                  {list?.map((item: any, index: number) => (
+                    <li className={liStyle} key={item?.id} data-aos="fade-up">
+                      {item?.ListItem}
+                    </li>
                   ))}
                 </ul>
               </div>

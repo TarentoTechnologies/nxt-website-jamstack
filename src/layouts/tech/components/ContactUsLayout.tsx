@@ -27,7 +27,7 @@ export const ContactUsLayout = ({
           <div className={`${titleStyles}`}>
             <PrimaryTitle title={heading} variant="h1700V3" />
           </div>
-          <p className={`${subText1}`}>{desc}</p>
+          <p className={`${subText1}`} data-aos="fade-up">{desc}</p>
           <div className={`${btnStyles}`}>
             <PrimaryCTA
               label={CTAlabel}

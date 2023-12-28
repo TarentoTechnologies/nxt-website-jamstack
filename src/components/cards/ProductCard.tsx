@@ -47,7 +47,7 @@ export const ProductCard = ({
               isSecondary ? secondaryFontsize : ""
             }`}
           >
-            <span>{title}</span>
+            <span data-aos="fade-up">{title}</span>
           </div>
           {(secLogo || logo) && (
             <div className={`${logoStyles}`}>
@@ -56,6 +56,7 @@ export const ProductCard = ({
                 alt={title}
                 title={title}
                 width={80}
+                data-aos="fade-up"
               />
             </div>
           )}
@@ -75,7 +76,7 @@ export const ProductCard = ({
             isSecondary ? secondaryFontsize : ""
           }`}
         >
-          <span>{title}</span>
+          <span data-aos="fade-up">{title}</span>
         </div>
         {(secLogo || logo) && (
           <div className={`${logoStyles}`}>
@@ -84,6 +85,7 @@ export const ProductCard = ({
               alt={title}
               title={title}
               width={80}
+              data-aos="fade-up"
             />
           </div>
         )}

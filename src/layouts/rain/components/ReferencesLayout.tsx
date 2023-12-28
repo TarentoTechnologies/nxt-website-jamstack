@@ -33,9 +33,18 @@ export const ReferencesLayout = ({
         </div>
         <div className={`${referenceCardSection}`}>
           {cardsData?.map((item: any, index: number) => (
-            <div key={index} className={`${referenceCard} layoutBg mb-5`}>
-              <h4 className={`${h4400} ${carbon}`}>{item.Heading}</h4>
-              <div className={`${parserCustomStyles} ${carbon}`}>
+            <div
+              key={index}
+              className={`${referenceCard} layoutBg mb-5`}
+              data-aos="fade-up"
+            >
+              <h4 className={`${h4400} ${carbon}`} data-aos="fade-up">
+                {item.Heading}
+              </h4>
+              <div
+                className={`${parserCustomStyles} ${carbon}`}
+                data-aos="fade-up"
+              >
                 {ReactHtmlParser(
                   item.Description.data.childMarkdownRemark.html
                 )}

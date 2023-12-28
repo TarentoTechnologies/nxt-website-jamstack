@@ -15,9 +15,17 @@ export const DesignProcessCard = ({ title, icon }: DesignProcessCardProps) => {
   return (
     <div className={`col-6 col-md-3 ${cardStyles}`}>
       <div className={`${imgStyles}`}>
-        <img src={icon} alt={title} title={title} className={`img-fluid`} />
+        <img
+          src={icon}
+          alt={title}
+          title={title}
+          className={`img-fluid`}
+          data-aos="fade-up"
+        />
       </div>
-      <h4 className={`${titleStyles} ${h4500} ${carbon}`}>{title}</h4>
+      <h4 className={`${titleStyles} ${h4500} ${carbon}`} data-aos="fade-up">
+        {title}
+      </h4>
     </div>
   );
 };

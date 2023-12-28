@@ -16,16 +16,21 @@ export const LeadSprints = ({ title, cardData }: LeadSprintsProps) => {
         <PrimaryTitle title={title} variant="infoSectionH2" />
         <div className={`row mt-5`}>
           {cardData.map((item, index) => (
-            <div className={`col-lg-6`} key={index}>
+            <div className={`col-lg-6`} key={index} data-aos="fade-up">
               <div className={`layoutBg ${sprintCard}`}>
-                <h4 className={`${cardHeader}`}>{item?.Heading}</h4>
-                <p className={`my-4`}>{item?.Description?.data?.Description}</p>
+                <h4 className={`${cardHeader}`} data-aos="fade-up">
+                  {item?.Heading}
+                </h4>
+                <p className={`my-4`} data-aos="fade-up">
+                  {item?.Description?.data?.Description}
+                </p>
                 <div className={`d-flex justify-content-center`}>
                   <img
                     src={item?.ImgSrc?.localFile?.url}
                     alt={item?.Heading}
                     title={item?.Heading}
                     className={`img-fluid`}
+                    data-aos="fade-up"
                   />
                 </div>
               </div>

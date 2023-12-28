@@ -13,9 +13,8 @@ export const AllOtherClients = ({
   sectionTitle,
   data,
   ctaBtnText,
-  portfolioPath
+  portfolioPath,
 }: AllOtherClientsProps) => {
-
   return (
     <div
       className={`container-fluid d-flex justify-content-center ${acceleratorsLayout}`}
@@ -31,6 +30,7 @@ export const AllOtherClients = ({
                 <div
                   className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0 mb-5`}
                   key={listData?.id}
+                  data-aos="fade-up"
                 >
                   <PortfolioCard
                     title={listData?.HeroSection?.Title}

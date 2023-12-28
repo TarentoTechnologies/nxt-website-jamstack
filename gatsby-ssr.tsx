@@ -173,3 +173,5 @@ export const onRenderBody = ({ setHeadComponents }: any) => {
     />,
   ]);
 };
+
+export { wrapPageElement } from "./gatsby-shared";

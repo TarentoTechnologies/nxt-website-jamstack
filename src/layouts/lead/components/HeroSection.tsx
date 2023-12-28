@@ -23,7 +23,9 @@ export const HeroSection = ({
             <div className={`mt-3`}>
               <PrimaryTitle title={title} variant="infoSectionH2" />
             </div>
-            <p className={`mt-4`}>{description}</p>
+            <p className={`mt-4`} data-aos="fade-up">
+              {description}
+            </p>
           </div>
         </div>
         <div className={`${leadCardSection} pt-2`}>

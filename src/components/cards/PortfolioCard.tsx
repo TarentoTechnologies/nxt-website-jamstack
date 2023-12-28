@@ -58,6 +58,7 @@ export const PortfolioCard = ({
         className={`${
           isProgramme ? heroProgrammerImage : heroImage
         } ${bgGlaucousGreen} img-fluid ${!imgSrc ? "w-100" : ""}`}
+        data-aos="fade-up"
       />
 
       {/* Tag */}
@@ -66,23 +67,24 @@ export const PortfolioCard = ({
           className={`${customTag} ${
             tagVariant === "blue" ? bgUraniaBlue : bgCadiumOrange
           }  mt-4`}
+          data-aos="fade-up"
         >
           <label className={`${tagLabel} ${white87} px-3`}>{tag}</label>
         </div>
       )}
 
       {/* Heading */}
-      <div className="mt-3">
+      <div className="mt-3" data-aos="fade-up">
         <h2 className={`${heading700} ${black87}`}>{title}</h2>
       </div>
 
       {/* Description */}
-      <div className={`${subText2} ${black87} ${truncateDescription}`}>
+      <div className={`${subText2} ${black87} ${truncateDescription}`} data-aos="fade-up">
         {description}
       </div>
 
       {/* CTA */}
-      <div className="mt-4">
+      <div className="mt-4" data-aos="fade-up">
         <Link to={ctaLink}>
           <label className={`${cta1}`} role="button">
             {ctaText}
