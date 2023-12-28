@@ -29,8 +29,10 @@ export const DesignProcessLayout = ({
             customClasses={`${carbon}`}
           />
         </div>
-        <p className={`${descStyles} col-lg-6 ${carbon}`}>{desc}</p>
-        <div className={`row ${cardStyles}`}>
+        <p className={`${descStyles} col-lg-6 ${carbon}`} data-aos="fade-up">
+          {desc}
+        </p>
+        <div className={`row ${cardStyles}`} data-aos="fade-up">
           {cardData.map((item: any, index: number) => (
             <DesignProcessCard
               key={item.id}

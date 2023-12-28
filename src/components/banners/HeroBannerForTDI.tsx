@@ -147,7 +147,7 @@ export const HeroBannerForTDI = ({
                   )}
                   {title}
                 </h1>
-                <div className={`${subtextStyles}`} data-aos="fade-up">
+                <div className={`${subtextStyles}`} data-aos="fade-up" data-aos-delay="100">
                   <span className={`${border}`}></span>
                   <p
                     className={`${white87} ${subTextBold ? subTextV1 : ""} ${
