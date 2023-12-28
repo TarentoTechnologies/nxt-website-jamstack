@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-import { lightNeutralGray, black } from "../../styles/style-guide/ColorGuide.module.css";
+import {
+  black,
+  lightNeutralGray,
+} from "../../styles/style-guide/ColorGuide.module.css";
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
 import {
   cardHover,
@@ -15,7 +18,7 @@ interface AcceleratorCardProps {
   logoLightSrc: string;
   logoDarkSrc: string;
   bgImg: string;
-  id?: any
+  id?: any;
 }
 
 export const AcceleratorCard = ({
@@ -24,7 +27,7 @@ export const AcceleratorCard = ({
   logoDarkSrc,
   logoLightSrc,
   bgImg,
-  id
+  id,
 }: AcceleratorCardProps) => {
   const [hovered, setHovered] = useState(false);
 
@@ -43,15 +46,20 @@ export const AcceleratorCard = ({
       id={id}
     >
       {hovered ? (
-        <div className={`${cardSize} ${cardHover}`}>
+        <div className={`${cardSize} ${cardHover}`} data-aos="fade-up">
           <div>
-            <p className={`${cardHeader} ${black}`}>{title}</p>
-            <p className={lightNeutralGray}>{description}</p>
+            <p className={`${cardHeader} ${black}`} data-aos="fade-up">
+              {title}
+            </p>
+            <p className={lightNeutralGray} data-aos="fade-up">
+              {description}
+            </p>
             <img
               className={cardLogo}
               src={logoLightSrc}
               alt={title}
               title={title}
+              data-aos="fade-up"
             />
           </div>
         </div>
@@ -59,13 +67,17 @@ export const AcceleratorCard = ({
         <div
           className={`${cardSize} ${cardOneImg}`}
           style={{ backgroundImage: `url(${bgImg})` }}
+          data-aos="fade-up"
         >
-          <p className={cardHeader}>{title}</p>
+          <p className={cardHeader} data-aos="fade-up">
+            {title}
+          </p>
           <img
             className={cardLogo}
             src={logoDarkSrc}
             alt={title}
             title={title}
+            data-aos="fade-up"
           />
         </div>
       )}

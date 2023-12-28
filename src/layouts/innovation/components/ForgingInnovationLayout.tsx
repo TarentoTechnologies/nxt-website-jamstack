@@ -32,8 +32,13 @@ export const ForgingInnovationLayout = ({
             customClasses={carbon}
           />
         </div>
-        <div className={`col-sm-12 col-md-12 col-lg-7 ${descStyles} px-md-0`}>
-          <p className={`${carbon}`}>{desc}</p>
+        <div
+          className={`col-sm-12 col-md-12 col-lg-7 ${descStyles} px-md-0`}
+          data-aos="fade-up"
+        >
+          <p className={`${carbon}`} data-aos="fade-up">
+            {desc}
+          </p>
         </div>
         <div
           className={`col-sm-12 col-md-12 col-lg-5 ${imgStyles} d-flex justify-content-center align-items-center`}
@@ -43,6 +48,7 @@ export const ForgingInnovationLayout = ({
             alt={img?.alternativeText}
             title={img?.caption}
             className={`img-fluid`}
+            data-aos="fade-up"
           />
         </div>
         <div className={`row p-0 m-0 ${cardStyles}`}>
