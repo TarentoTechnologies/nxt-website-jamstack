@@ -42,7 +42,7 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
         sectionTitle={data[currentLang]?.ProgrammeSectionTitle}
         cards={data[currentLang]?.ProgrammeCards}
       />
-      <AgencyPortfolio
+      {/* <AgencyPortfolio
         title={data[currentLang]?.HighlighterOneTitle}
         description={data[currentLang]?.HighlighterOneDescription}
         ctaText={data[currentLang]?.HighlighterOneCTAText}
@@ -55,7 +55,7 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
         ctaText={data[currentLang]?.HighlighterTwoCTAText}
         ctaLink={data[currentLang]?.HighlighterTwoCTALink}
         designPortfolioData={data[currentDesignPortfolio]?.nodes}
-      />
+      /> */}
       <CTALayout data={data[currentLang]?.CTA} />
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -129,13 +129,14 @@ export const query = graphql`
         Image {
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: PNG)
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
         }
         Description
         CTAText
         CTALink
+        isCTAExternal
       }
       HighlighterOneTitle
       HighlighterOneDescription
@@ -166,7 +167,7 @@ export const query = graphql`
           Image {
             localFile {
               childImageSharp {
-                gatsbyImageData(formats: PNG)
+                gatsbyImageData(formats: PNG, placeholder: BLURRED)
               }
             }
           }
@@ -190,7 +191,7 @@ export const query = graphql`
           Image {
             localFile {
               childImageSharp {
-                gatsbyImageData(formats: PNG)
+                gatsbyImageData(formats: PNG, placeholder: BLURRED)
               }
             }
           }
@@ -263,9 +264,12 @@ export default IndexPage;
 export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
-    <title>::NXT Tarento - Technology design and Innovation::</title>
-    <link rel="canonical" href="https://nxt.tarento.com/" />
-    <meta name="title" content="NXT Tarento" />
+    <title>::NXT Tarento - Technology, Design and Innovation::</title>
+    <link href="https://nxt.tarento.com/" rel="canonical" />
+    <meta
+      name="title"
+      content="NXT Tarento - Technology, Design and Innovation"
+    />
     <meta
       name="description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
@@ -278,21 +282,33 @@ export const Head: HeadFC = () => (
     {/* Open graph */}
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nxt.tarento.com/" />
-    <meta property="og:title" content="NXT Tarento" />
+    <meta
+      property="og:title"
+      content="NXT Tarento - Technology, Design and Innovation"
+    />
     <meta
       property="og:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
     />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content="https://www.tarento.com/static/780e7bd9e60e4b1f6f744287386bf866/3fa08/microsite-5.png"
+    />
 
     {/* Twitter */}
     <meta property="twitter:card" content="" />
     <meta property="twitter:url" content="https://nxt.tarento.com/" />
-    <meta property="twitter:title" content="NXT Tarento" />
+    <meta
+      property="twitter:title"
+      content="NXT Tarento - Technology, Design and Innovation"
+    />
     <meta
       property="twitter:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
     />
-    <meta property="twitter:image" content="" />
+    <meta
+      property="twitter:image"
+      content="https://www.tarento.com/static/780e7bd9e60e4b1f6f744287386bf866/3fa08/microsite-5.png"
+    />
   </>
 );

@@ -1636,6 +1636,8 @@ type Query = {
   readonly allStrapiComponentRainFeatureCardRainFeatureCard: STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDConnection;
   readonly allStrapiComponentReferenceCardReferenceCard: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDConnection;
   readonly allStrapiComponentReferenceCardReferenceCardDescriptionTextnode: STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODEConnection;
+  readonly allStrapiComponentSharedMetaSocial: STRAPI__COMPONENT_SHARED_META_SOCIALConnection;
+  readonly allStrapiComponentSharedSeo: STRAPI__COMPONENT_SHARED_SEOConnection;
   readonly allStrapiComponentSolutionCardASolutionCardA: STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_AConnection;
   readonly allStrapiComponentSolutionCardASolutionCardADescriptionTextnode: STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A_DESCRIPTION_TEXTNODEConnection;
   readonly allStrapiComponentStoryCardStoryCard: STRAPI__COMPONENT_STORY_CARD_STORY_CARDConnection;
@@ -1727,6 +1729,8 @@ type Query = {
   readonly strapiComponentRainFeatureCardRainFeatureCard: Maybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD>;
   readonly strapiComponentReferenceCardReferenceCard: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>;
   readonly strapiComponentReferenceCardReferenceCardDescriptionTextnode: Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODE>;
+  readonly strapiComponentSharedMetaSocial: Maybe<STRAPI__COMPONENT_SHARED_META_SOCIAL>;
+  readonly strapiComponentSharedSeo: Maybe<STRAPI__COMPONENT_SHARED_SEO>;
   readonly strapiComponentSolutionCardASolutionCardA: Maybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A>;
   readonly strapiComponentSolutionCardASolutionCardADescriptionTextnode: Maybe<STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A_DESCRIPTION_TEXTNODE>;
   readonly strapiComponentStoryCardStoryCard: Maybe<STRAPI__COMPONENT_STORY_CARD_STORY_CARD>;
@@ -2259,6 +2263,22 @@ type Query_allStrapiComponentReferenceCardReferenceCardDescriptionTextnodeArgs =
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODESortInput>>>;
+};
+
+
+type Query_allStrapiComponentSharedMetaSocialArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_SHARED_META_SOCIALFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_SHARED_META_SOCIALSortInput>>>;
+};
+
+
+type Query_allStrapiComponentSharedSeoArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_SHARED_SEOFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_SHARED_SEOSortInput>>>;
 };
 
 
@@ -3356,6 +3376,7 @@ type Query_strapiComponentProgrammeCardProgrammeCardArgs = {
   children: InputMaybe<NodeFilterListInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
+  isCTAExternal: InputMaybe<BooleanQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   strapi_id: InputMaybe<IntQueryOperatorInput>;
 };
@@ -3393,6 +3414,35 @@ type Query_strapiComponentReferenceCardReferenceCardDescriptionTextnodeArgs = {
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   parent: InputMaybe<NodeFilterInput>;
+};
+
+
+type Query_strapiComponentSharedMetaSocialArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  description: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  image: InputMaybe<STRAPI__MEDIAFilterInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  socialNetwork: InputMaybe<StringQueryOperatorInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_strapiComponentSharedSeoArgs = {
+  canonicalURL: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  keywords: InputMaybe<StringQueryOperatorInput>;
+  metaDescription: InputMaybe<StringQueryOperatorInput>;
+  metaImage: InputMaybe<STRAPI__MEDIAFilterInput>;
+  metaSocial: InputMaybe<STRAPI__COMPONENT_SHARED_META_SOCIALFilterListInput>;
+  metaTitle: InputMaybe<StringQueryOperatorInput>;
+  metaViewport: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
 };
 
 
@@ -3688,6 +3738,7 @@ type Query_strapiHomeArgs = {
   locale: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   publishedAt: InputMaybe<DateQueryOperatorInput>;
+  seo: InputMaybe<STRAPI__COMPONENT_SHARED_SEOFilterInput>;
   strapi_id: InputMaybe<IntQueryOperatorInput>;
   updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
@@ -5923,6 +5974,7 @@ type STRAPI_HOME = Node & {
   readonly locale: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
   readonly publishedAt: Maybe<Scalars['Date']>;
+  readonly seo: Maybe<STRAPI__COMPONENT_SHARED_SEO>;
   readonly strapi_id: Maybe<Scalars['Int']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
 };
@@ -6023,6 +6075,7 @@ type STRAPI_HOMEFieldSelector = {
   readonly locale: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly publishedAt: InputMaybe<FieldSelectorEnum>;
+  readonly seo: InputMaybe<STRAPI__COMPONENT_SHARED_SEOFieldSelector>;
   readonly strapi_id: InputMaybe<FieldSelectorEnum>;
   readonly updatedAt: InputMaybe<FieldSelectorEnum>;
 };
@@ -6054,6 +6107,7 @@ type STRAPI_HOMEFilterInput = {
   readonly locale: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly seo: InputMaybe<STRAPI__COMPONENT_SHARED_SEOFilterInput>;
   readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
   readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
@@ -6126,6 +6180,7 @@ type STRAPI_HOMESortInput = {
   readonly locale: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly publishedAt: InputMaybe<SortOrderEnum>;
+  readonly seo: InputMaybe<STRAPI__COMPONENT_SHARED_SEOSortInput>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
   readonly updatedAt: InputMaybe<SortOrderEnum>;
 };
@@ -14057,6 +14112,7 @@ type STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARD = Node & {
   readonly children: ReadonlyArray<Node>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
+  readonly isCTAExternal: Maybe<Scalars['Boolean']>;
   readonly parent: Maybe<Node>;
   readonly strapi_id: Maybe<Scalars['Int']>;
 };
@@ -14115,6 +14171,7 @@ type STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFieldSelector = {
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly isCTAExternal: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly strapi_id: InputMaybe<FieldSelectorEnum>;
 };
@@ -14128,6 +14185,7 @@ type STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterInput = {
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
+  readonly isCTAExternal: InputMaybe<BooleanQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
 };
@@ -14186,6 +14244,7 @@ type STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDSortInput = {
   readonly children: InputMaybe<NodeSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
+  readonly isCTAExternal: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
 };
@@ -14600,6 +14659,290 @@ type STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD_DESCRIPTION_TEXTNODESortInp
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly parent: InputMaybe<NodeSortInput>;
+};
+
+type STRAPI__COMPONENT_SHARED_META_SOCIAL = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly description: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly image: Maybe<STRAPI__MEDIA>;
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly socialNetwork: Maybe<Scalars['String']>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_SHARED_META_SOCIALEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_SHARED_META_SOCIALGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_SHARED_META_SOCIAL>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALConnection_groupArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALConnection_maxArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALConnection_minArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALConnection_sumArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+};
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_SHARED_META_SOCIAL>;
+  readonly node: STRAPI__COMPONENT_SHARED_META_SOCIAL;
+  readonly previous: Maybe<STRAPI__COMPONENT_SHARED_META_SOCIAL>;
+};
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly image: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly socialNetwork: InputMaybe<FieldSelectorEnum>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly image: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly socialNetwork: InputMaybe<StringQueryOperatorInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALFilterListInput = {
+  readonly elemMatch: InputMaybe<STRAPI__COMPONENT_SHARED_META_SOCIALFilterInput>;
+};
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_SHARED_META_SOCIALEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_SHARED_META_SOCIALGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_SHARED_META_SOCIAL>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector;
+};
+
+type STRAPI__COMPONENT_SHARED_META_SOCIALSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly description: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly image: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly socialNetwork: InputMaybe<SortOrderEnum>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI__COMPONENT_SHARED_SEO = Node & {
+  readonly canonicalURL: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly keywords: Maybe<Scalars['String']>;
+  readonly metaDescription: Maybe<Scalars['String']>;
+  readonly metaImage: Maybe<STRAPI__MEDIA>;
+  readonly metaSocial: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_SHARED_META_SOCIAL>>>;
+  readonly metaTitle: Maybe<Scalars['String']>;
+  readonly metaViewport: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__COMPONENT_SHARED_SEOConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_SHARED_SEOEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_SHARED_SEOGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_SHARED_SEO>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOConnection_groupArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOConnection_maxArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOConnection_minArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOConnection_sumArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+};
+
+type STRAPI__COMPONENT_SHARED_SEOEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_SHARED_SEO>;
+  readonly node: STRAPI__COMPONENT_SHARED_SEO;
+  readonly previous: Maybe<STRAPI__COMPONENT_SHARED_SEO>;
+};
+
+type STRAPI__COMPONENT_SHARED_SEOFieldSelector = {
+  readonly canonicalURL: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly keywords: InputMaybe<FieldSelectorEnum>;
+  readonly metaDescription: InputMaybe<FieldSelectorEnum>;
+  readonly metaImage: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly metaSocial: InputMaybe<STRAPI__COMPONENT_SHARED_META_SOCIALFieldSelector>;
+  readonly metaTitle: InputMaybe<FieldSelectorEnum>;
+  readonly metaViewport: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI__COMPONENT_SHARED_SEOFilterInput = {
+  readonly canonicalURL: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly keywords: InputMaybe<StringQueryOperatorInput>;
+  readonly metaDescription: InputMaybe<StringQueryOperatorInput>;
+  readonly metaImage: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly metaSocial: InputMaybe<STRAPI__COMPONENT_SHARED_META_SOCIALFilterListInput>;
+  readonly metaTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly metaViewport: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+type STRAPI__COMPONENT_SHARED_SEOGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_SHARED_SEOEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_SHARED_SEOGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_SHARED_SEO>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_SHARED_SEOGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_SHARED_SEOFieldSelector;
+};
+
+type STRAPI__COMPONENT_SHARED_SEOSortInput = {
+  readonly canonicalURL: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly keywords: InputMaybe<SortOrderEnum>;
+  readonly metaDescription: InputMaybe<SortOrderEnum>;
+  readonly metaImage: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly metaSocial: InputMaybe<STRAPI__COMPONENT_SHARED_META_SOCIALSortInput>;
+  readonly metaTitle: InputMaybe<SortOrderEnum>;
+  readonly metaViewport: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
 };
 
 type STRAPI__COMPONENT_SOLUTION_CARD_A_SOLUTION_CARD_A = Node & {
@@ -17352,7 +17695,7 @@ type GovTechPageQuery = { readonly en: { readonly DigitalPlatformsTitle: string 
 type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type HomePageQuery = { readonly en: { readonly PyramidTitle: string | null, readonly PyramidDescription: string | null, readonly PyramidCTAText: string | null, readonly PyramidCTALink: string | null, readonly ProgrammeSectionTitle: string | null, readonly HighlighterOneTitle: string | null, readonly HighlighterOneDescription: string | null, readonly HighlighterOneCTAText: string | null, readonly HighlighterOneCTALink: string | null, readonly HighlighterTwoTitle: string | null, readonly HighlighterTwoDescription: string | null, readonly HighlighterTwoCTAText: string | null, readonly HighlighterTwoCTALink: string | null, readonly HeroBanner: { readonly PrimaryImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly id: string, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly id: string, readonly localFile: { readonly url: string | null } | null } | null } | null, readonly TriCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly CTALink: string | null, readonly BackgroundColor: string | null, readonly Icon: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly PyramidImage: { readonly localFile: { readonly url: string | null } | null } | null, readonly AcceleratorCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Link: string | null, readonly customBgPosition: boolean | null, readonly Logo: { readonly localFile: { readonly url: string | null } | null } | null, readonly BackgroundImage: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly ProgrammeCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly CTA: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null } | null } | null, readonly enDesignPortfolios: { readonly nodes: ReadonlyArray<{ readonly PortfolioTag: string | null, readonly id: string, readonly Slug: string | null, readonly CTATextForDisplay: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> }, readonly enAgencyPortfolios: { readonly nodes: ReadonlyArray<{ readonly PortfolioTag: string | null, readonly id: string, readonly Slug: string | null, readonly CTATextForDisplay: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> }, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
+type HomePageQuery = { readonly en: { readonly PyramidTitle: string | null, readonly PyramidDescription: string | null, readonly PyramidCTAText: string | null, readonly PyramidCTALink: string | null, readonly ProgrammeSectionTitle: string | null, readonly HighlighterOneTitle: string | null, readonly HighlighterOneDescription: string | null, readonly HighlighterOneCTAText: string | null, readonly HighlighterOneCTALink: string | null, readonly HighlighterTwoTitle: string | null, readonly HighlighterTwoDescription: string | null, readonly HighlighterTwoCTAText: string | null, readonly HighlighterTwoCTALink: string | null, readonly HeroBanner: { readonly PrimaryImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly id: string, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly id: string, readonly localFile: { readonly url: string | null } | null } | null } | null, readonly TriCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly CTALink: string | null, readonly BackgroundColor: string | null, readonly Icon: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly PyramidImage: { readonly localFile: { readonly url: string | null } | null } | null, readonly AcceleratorCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Link: string | null, readonly customBgPosition: boolean | null, readonly Logo: { readonly localFile: { readonly url: string | null } | null } | null, readonly BackgroundImage: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly ProgrammeCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly isCTAExternal: boolean | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly CTA: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null } | null } | null, readonly enDesignPortfolios: { readonly nodes: ReadonlyArray<{ readonly PortfolioTag: string | null, readonly id: string, readonly Slug: string | null, readonly CTATextForDisplay: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> }, readonly enAgencyPortfolios: { readonly nodes: ReadonlyArray<{ readonly PortfolioTag: string | null, readonly id: string, readonly Slug: string | null, readonly CTATextForDisplay: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> }, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
 
 type InnovationPageQueryVariables = Exact<{ [key: string]: never; }>;
 
