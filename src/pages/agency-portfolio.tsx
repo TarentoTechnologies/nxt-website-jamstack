@@ -198,7 +198,10 @@ export const Head: HeadFC = () => (
       property="og:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
     />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content="https://www.tarento.com/static/780e7bd9e60e4b1f6f744287386bf866/3fa08/microsite-5.png"
+    />
 
     {/* Twitter */}
     <meta property="twitter:card" content="" />
@@ -208,6 +211,9 @@ export const Head: HeadFC = () => (
       property="twitter:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
     />
-    <meta property="twitter:image" content="" />
+    <meta
+      property="twitter:image"
+      content="https://www.tarento.com/static/780e7bd9e60e4b1f6f744287386bf866/3fa08/microsite-5.png"
+    />
   </>
 );

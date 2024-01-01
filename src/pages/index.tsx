@@ -266,7 +266,10 @@ export const Head: HeadFC = () => (
     {/* Primary meta tags */}
     <title>::NXT Tarento - Technology, Design and Innovation::</title>
     <link href="https://nxt.tarento.com/" rel="canonical" />
-    <meta name="title" content="NXT Tarento - Technology, Design and Innovation" />
+    <meta
+      name="title"
+      content="NXT Tarento - Technology, Design and Innovation"
+    />
     <meta
       name="description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
@@ -279,21 +282,33 @@ export const Head: HeadFC = () => (
     {/* Open graph */}
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nxt.tarento.com/" />
-    <meta property="og:title" content="NXT Tarento - Technology, Design and Innovation" />
+    <meta
+      property="og:title"
+      content="NXT Tarento - Technology, Design and Innovation"
+    />
     <meta
       property="og:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
     />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content="https://www.tarento.com/static/780e7bd9e60e4b1f6f744287386bf866/3fa08/microsite-5.png"
+    />
 
     {/* Twitter */}
     <meta property="twitter:card" content="" />
     <meta property="twitter:url" content="https://nxt.tarento.com/" />
-    <meta property="twitter:title" content="NXT Tarento - Technology, Design and Innovation" />
+    <meta
+      property="twitter:title"
+      content="NXT Tarento - Technology, Design and Innovation"
+    />
     <meta
       property="twitter:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
     />
-    <meta property="twitter:image" content="" />
+    <meta
+      property="twitter:image"
+      content="https://www.tarento.com/static/780e7bd9e60e4b1f6f744287386bf866/3fa08/microsite-5.png"
+    />
   </>
 );
