@@ -210,14 +210,14 @@ const config: GatsbyConfig = {
         excludes: ["/apps/"],
       },
     },
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://thunderous-sorbet-381875.netlify.app/",
-        sitemap: "https://thunderous-sorbet-381875.netlify.app/sitemap-0.xml",
-        policy: [{ userAgent: "*", allow: "/", disallow: "/apps/" }],
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-robots-txt",
+    //   options: {
+    //     host: "https://thunderous-sorbet-381875.netlify.app/",
+    //     sitemap: "https://thunderous-sorbet-381875.netlify.app/sitemap-0.xml",
+    //     policy: [{ userAgent: "*", allow: "/", disallow: "/apps/" }],
+    //   },
+    // },
   ],
 };
 

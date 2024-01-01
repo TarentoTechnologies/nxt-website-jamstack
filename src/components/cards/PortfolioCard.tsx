@@ -34,6 +34,7 @@ interface PortfolioCardProps {
   ctaLink: any;
   tagVariant?: string;
   isProgramme?: boolean;
+  isCTAExternal?: boolean;
 }
 
 export const PortfolioCard = ({
@@ -46,6 +47,7 @@ export const PortfolioCard = ({
   ctaLink,
   tagVariant,
   isProgramme,
+  isCTAExternal,
 }: PortfolioCardProps) => {
   const image: any = getImage(imgSrc);
 
@@ -79,24 +81,42 @@ export const PortfolioCard = ({
       </div>
 
       {/* Description */}
-      <div className={`${subText2} ${black87} ${truncateDescription}`} data-aos="fade-up">
+      <div
+        className={`${subText2} ${black87} ${truncateDescription}`}
+        data-aos="fade-up"
+      >
         {description}
       </div>
 
       {/* CTA */}
       <div className="mt-4" data-aos="fade-up">
-        <Link to={ctaLink}>
-          <label className={`${cta1}`} role="button">
-            {ctaText}
-            <span className={`${ctaIconPos}`}>
-              <img
-                className={`${ctaIcon} ps-2`}
-                src={forwardArrow}
-                alt={ctaText}
-              />
-            </span>
-          </label>
-        </Link>
+        {!isCTAExternal ? (
+          <Link to={ctaLink}>
+            <label className={`${cta1}`} role="button">
+              {ctaText}
+              <span className={`${ctaIconPos}`}>
+                <img
+                  className={`${ctaIcon} ps-2`}
+                  src={forwardArrow}
+                  alt={ctaText}
+                />
+              </span>
+            </label>
+          </Link>
+        ) : (
+          <a href={ctaLink} rel="external" target="_blank">
+            <label className={`${cta1}`} role="button">
+              {ctaText}
+              <span className={`${ctaIconPos}`}>
+                <img
+                  className={`${ctaIcon} ps-2`}
+                  src={forwardArrow}
+                  alt={ctaText}
+                />
+              </span>
+            </label>
+          </a>
+        )}
       </div>
     </div>
   );
