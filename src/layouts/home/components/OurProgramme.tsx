@@ -13,10 +13,7 @@ export const OurProgramme = ({ sectionTitle, cards }: OurProgrammeProps) => {
       {/* Header */}
       <div className="clearfix">
         <div className="float-start">
-          <h1
-            className={`${h1One}`}
-            data-aos="fade-up"
-          >
+          <h1 className={`${h1One}`} data-aos="fade-up">
             {sectionTitle}
           </h1>
         </div>
@@ -38,6 +35,7 @@ export const OurProgramme = ({ sectionTitle, cards }: OurProgrammeProps) => {
                 imgSrc={data.Image.localFile}
                 imgAlt={data.imgAlt}
                 isProgramme
+                isCTAExternal={data?.isCTAExternal}
               />
             </div>
           );

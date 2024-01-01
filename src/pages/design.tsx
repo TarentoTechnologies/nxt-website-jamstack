@@ -62,7 +62,7 @@ export const query = graphql`
         Img {
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: PNG)
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
             url
           }
@@ -97,7 +97,7 @@ export const query = graphql`
           id
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: PNG)
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
         }

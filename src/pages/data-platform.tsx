@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil";
 import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForAccelerators } from "../components/banners/HeroBannerForAccelerators";
 import { Navbar } from "../components/navbar/Navbar";
+import { FooterSection } from "../layouts/common";
 import {
   Feature,
   Form,
@@ -12,7 +13,6 @@ import {
   WorkingProcess,
 } from "../layouts/data-platform";
 import { langSelected as langSelectedAtom } from "../states/atoms";
-import { FooterSection } from "../layouts/common";
 
 interface DataPlatformPageProps {
   data: any;
@@ -59,7 +59,7 @@ const DataPlatformPage: React.FC<PageProps> = ({
         scannerImage={data[currentLang]?.CTASection?.ScannerImage}
         isCTAEmail={data[currentLang]?.CTASection?.isEmail}
       />
-        <FooterSection
+      <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
       />
@@ -87,7 +87,7 @@ export const query = graphql`
           caption
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: PNG)
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
         }
@@ -100,7 +100,7 @@ export const query = graphql`
           caption
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: PNG)
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
         }
@@ -117,7 +117,7 @@ export const query = graphql`
           caption
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: PNG)
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
         }
@@ -131,7 +131,7 @@ export const query = graphql`
           caption
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: PNG)
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
         }
@@ -144,7 +144,7 @@ export const query = graphql`
           caption
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: PNG)
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
         }
