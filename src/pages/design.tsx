@@ -21,6 +21,13 @@ const DesignPage: React.FC<PageProps> = ({ data }: DesignPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#designMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
@@ -30,12 +37,14 @@ const DesignPage: React.FC<PageProps> = ({ data }: DesignPageProps) => {
         isImage={data[currentLang]?.HeroBanner?.isImage}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
-      <DesignProcessLayout
-        heading={data[currentLang]?.ProcessTitle}
-        desc={data[currentLang]?.ProcessDescription}
-        cardData={data[currentLang]?.DesignProcess}
-      />
-      <DesignProcessBannerLayout data={data[currentLang]?.KeyInformation} />
+      <section id="designMain">
+        <DesignProcessLayout
+          heading={data[currentLang]?.ProcessTitle}
+          desc={data[currentLang]?.ProcessDescription}
+          cardData={data[currentLang]?.DesignProcess}
+        />
+        <DesignProcessBannerLayout data={data[currentLang]?.KeyInformation} />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

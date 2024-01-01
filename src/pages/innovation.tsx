@@ -23,6 +23,13 @@ const InnovationPage: React.FC<PageProps> = ({ data }: InnovationPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#innovationMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
@@ -32,40 +39,42 @@ const InnovationPage: React.FC<PageProps> = ({ data }: InnovationPageProps) => {
         isImage={data[currentLang]?.HeroBanner?.isImage}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
-      <ForgingInnovationLayout
-        heading={data[currentLang]?.ForgingTitle}
-        desc={data[currentLang]?.ForgingDescription}
-        cardData={data[currentLang]?.ForgingArea}
-        img={data[currentLang]?.ForgingImage}
-      />
-      <StoryBanner
-        primaryTitle={data[currentLang]?.StoryTitle}
-        cardData={data[currentLang]?.StoryCard}
-        withCTA={false}
-        isImage={false}
-        spaceAboveCTA={false}
-      />
-      <StoryBanner
-        primaryTitle={data[currentLang]?.ProgramTitle}
-        subTitle={data[currentLang]?.ProgramSubTitle}
-        cardData={data[currentLang]?.ProgramStory}
-        bgImg={data[currentLang]?.ProgramBackground?.localFile?.url}
-        withCTA
-        isImage={false}
-        variant="lead"
-        spaceAboveCTA={false}
-      />
-      <AcceleratorsLayout
-        sectionTitle={data[currentLang]?.AcceleratorTitle}
-        cardData={data[currentLang]?.AcceleratorCards}
-      />
-      <ContactUsLayout
-        heading={data[currentLang]?.AreYouInterested?.Title}
-        desc={data[currentLang]?.AreYouInterested?.Description}
-        CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
-        CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
-        isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
-      />
+      <section id="innovationMain">
+        <ForgingInnovationLayout
+          heading={data[currentLang]?.ForgingTitle}
+          desc={data[currentLang]?.ForgingDescription}
+          cardData={data[currentLang]?.ForgingArea}
+          img={data[currentLang]?.ForgingImage}
+        />
+        <StoryBanner
+          primaryTitle={data[currentLang]?.StoryTitle}
+          cardData={data[currentLang]?.StoryCard}
+          withCTA={false}
+          isImage={false}
+          spaceAboveCTA={false}
+        />
+        <StoryBanner
+          primaryTitle={data[currentLang]?.ProgramTitle}
+          subTitle={data[currentLang]?.ProgramSubTitle}
+          cardData={data[currentLang]?.ProgramStory}
+          bgImg={data[currentLang]?.ProgramBackground?.localFile?.url}
+          withCTA
+          isImage={false}
+          variant="lead"
+          spaceAboveCTA={false}
+        />
+        <AcceleratorsLayout
+          sectionTitle={data[currentLang]?.AcceleratorTitle}
+          cardData={data[currentLang]?.AcceleratorCards}
+        />
+        <ContactUsLayout
+          heading={data[currentLang]?.AreYouInterested?.Title}
+          desc={data[currentLang]?.AreYouInterested?.Description}
+          CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
+          CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
+          isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

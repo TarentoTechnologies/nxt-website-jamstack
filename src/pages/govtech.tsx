@@ -20,6 +20,13 @@ const GovTechPage: React.FC<PageProps> = ({ data }: GovTechPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#govtechMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         title={data[currentLang]?.HeroBanner?.Title}
@@ -30,18 +37,20 @@ const GovTechPage: React.FC<PageProps> = ({ data }: GovTechPageProps) => {
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
         govTech
       />
-      <DigitalPlatform
-        heading={data[currentLang]?.DigitalPlatformsTitle}
-        desc={data[currentLang]?.DigitalPlatformDescription}
-        list={data[currentLang]?.PlatformsList}
-      />
-      <ContactUsLayout
-        heading={data[currentLang]?.AreYouInterested?.Title}
-        desc={data[currentLang]?.AreYouInterested?.Description}
-        CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
-        CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
-        isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
-      />
+      <section id="govtechMain">
+        <DigitalPlatform
+          heading={data[currentLang]?.DigitalPlatformsTitle}
+          desc={data[currentLang]?.DigitalPlatformDescription}
+          list={data[currentLang]?.PlatformsList}
+        />
+        <ContactUsLayout
+          heading={data[currentLang]?.AreYouInterested?.Title}
+          desc={data[currentLang]?.AreYouInterested?.Description}
+          CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
+          CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
+          isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

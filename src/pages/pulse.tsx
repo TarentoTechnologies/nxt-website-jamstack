@@ -28,35 +28,44 @@ const PulsePage: React.FC<PageProps> = ({ data }: PulsePageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#pulzMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <PulseHeroBanner
         title={data[currentLang]?.HeroBanner?.Title}
         description={data[currentLang]?.HeroBanner?.Description}
         img={data[currentLang]?.HeroBanner?.Image}
       />
-      <HowItWorks
-        heading={data[currentLang]?.HowItWorks?.SectionTitle}
-        imgSrc={data[currentLang]?.HowItWorks?.ProcessImage?.localFile}
-        levelOneText={data[currentLang]?.HowItWorks?.DescriptionOne}
-        levelTwoText={data[currentLang]?.HowItWorks?.DescriptionTwo}
-        levelThreeText={data[currentLang]?.HowItWorks?.DescriptionThree}
-      />
-      <KeyInsights
-        heading={data[currentLang]?.InsightSectionTitle}
-        cardList={data[currentLang]?.KeyInsightImages}
-      />
-      <Plans
-        heading={data[currentLang]?.PlansTitleDescription?.Title}
-        subText={data[currentLang]?.PlansTitleDescription?.Description}
-        cardData={data[currentLang]?.PlanCards}
-      />
-      <GetInTouch
-        heading={data[currentLang]?.GetInTouch?.Title}
-        subText={data[currentLang]?.GetInTouch?.Description}
-        btnLabel={data[currentLang]?.GetInTouch?.Tag?.Label}
-        btnLink={data[currentLang]?.GetInTouch?.Tag?.Link}
-        imgSrc={data[currentLang]?.GetInTouch?.ImgSrc}
-      />
+      <section id="pulzMain">
+        <HowItWorks
+          heading={data[currentLang]?.HowItWorks?.SectionTitle}
+          imgSrc={data[currentLang]?.HowItWorks?.ProcessImage?.localFile}
+          levelOneText={data[currentLang]?.HowItWorks?.DescriptionOne}
+          levelTwoText={data[currentLang]?.HowItWorks?.DescriptionTwo}
+          levelThreeText={data[currentLang]?.HowItWorks?.DescriptionThree}
+        />
+        <KeyInsights
+          heading={data[currentLang]?.InsightSectionTitle}
+          cardList={data[currentLang]?.KeyInsightImages}
+        />
+        <Plans
+          heading={data[currentLang]?.PlansTitleDescription?.Title}
+          subText={data[currentLang]?.PlansTitleDescription?.Description}
+          cardData={data[currentLang]?.PlanCards}
+        />
+        <GetInTouch
+          heading={data[currentLang]?.GetInTouch?.Title}
+          subText={data[currentLang]?.GetInTouch?.Description}
+          btnLabel={data[currentLang]?.GetInTouch?.Tag?.Label}
+          btnLink={data[currentLang]?.GetInTouch?.Tag?.Link}
+          imgSrc={data[currentLang]?.GetInTouch?.ImgSrc}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

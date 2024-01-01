@@ -24,6 +24,13 @@ const TechnologyPage: React.FC<PageProps> = ({ data }: TechnologyPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#technologyMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
@@ -33,34 +40,36 @@ const TechnologyPage: React.FC<PageProps> = ({ data }: TechnologyPageProps) => {
         isImage={data[currentLang]?.HeroBanner?.isImage}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
-      <TechPrinciplesLayout
-        primaryTitle={data[currentLang]?.PrincipleTitle}
-        description={data[currentLang]?.PrincipleDescription}
-        principleData={data[currentLang]?.PrincipleStackItem}
-        subTitle={data[currentLang]?.PrincipleSubText}
-      />
-      <StoryBanner
-        primaryTitle={data[currentLang]?.SolutionTitle}
-        cardData={data[currentLang]?.SolutionCard}
-        withCTA
-        variant="tech"
-        isImage={true}
-      />
-      <TechStackLayout
-        sectionTitle={data[currentLang]?.StackTitle}
-        data={data[currentLang]?.TechStackImages}
-      />
-      <AcceleratorsLayout
-        sectionTitle={data[currentLang]?.AcceleratorsTitle}
-        cardData={data[currentLang]?.AcceleratorList}
-      />
-      <ContactUsLayout
-        heading={data[currentLang]?.AreYouInterested?.Title}
-        desc={data[currentLang]?.AreYouInterested?.Description}
-        CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
-        CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
-        isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
-      />
+      <section id="technologyMain">
+        <TechPrinciplesLayout
+          primaryTitle={data[currentLang]?.PrincipleTitle}
+          description={data[currentLang]?.PrincipleDescription}
+          principleData={data[currentLang]?.PrincipleStackItem}
+          subTitle={data[currentLang]?.PrincipleSubText}
+        />
+        <StoryBanner
+          primaryTitle={data[currentLang]?.SolutionTitle}
+          cardData={data[currentLang]?.SolutionCard}
+          withCTA
+          variant="tech"
+          isImage={true}
+        />
+        <TechStackLayout
+          sectionTitle={data[currentLang]?.StackTitle}
+          data={data[currentLang]?.TechStackImages}
+        />
+        <AcceleratorsLayout
+          sectionTitle={data[currentLang]?.AcceleratorsTitle}
+          cardData={data[currentLang]?.AcceleratorList}
+        />
+        <ContactUsLayout
+          heading={data[currentLang]?.AreYouInterested?.Title}
+          desc={data[currentLang]?.AreYouInterested?.Description}
+          CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
+          CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
+          isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
@@ -245,10 +254,7 @@ export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
     <title>::NXT Tarento - Technology::</title>
-    <link
-      rel="canonical"
-      href={`${process.env.GATSBY_SITE_URL}technology/`}
-    />
+    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}technology/`} />
     <meta name="title" content="NXT Tarento - Technology" />
     <meta
       name="description"

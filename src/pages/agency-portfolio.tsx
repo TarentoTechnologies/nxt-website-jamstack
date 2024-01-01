@@ -47,19 +47,28 @@ const AgencyPortfolio: React.FC<PageProps> = ({
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#agencyPortfolioMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBanner heroBannerData={data[currentLang]?.HeroSection} />
-      <Showcase
-        sectionTitle={data[currentLang]?.SectionOneTitle}
-        data={currentPostsForShowcase}
-      />
-      <AllOtherClients
-        sectionTitle={data[currentLang]?.SectionTwoTitle}
-        data={data[currentAgencyPortfolioList]?.nodes}
-        ctaBtnText={data[currentLang]?.DynamicButtonText}
-        portfolioPath="/agency-portfolio/"
-      />
-      <AreYouInterested data={data[currentLang]?.CTA} />
+      <section id="agencyPortfolioMain">
+        <Showcase
+          sectionTitle={data[currentLang]?.SectionOneTitle}
+          data={currentPostsForShowcase}
+        />
+        <AllOtherClients
+          sectionTitle={data[currentLang]?.SectionTwoTitle}
+          data={data[currentAgencyPortfolioList]?.nodes}
+          ctaBtnText={data[currentLang]?.DynamicButtonText}
+          portfolioPath="/agency-portfolio/"
+        />
+        <AreYouInterested data={data[currentLang]?.CTA} />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

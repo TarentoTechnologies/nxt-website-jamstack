@@ -27,6 +27,13 @@ const DataPlatformPage: React.FC<PageProps> = ({
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#boltMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForAccelerators
         title={data[currentLang]?.HeroBanner?.Title}
@@ -35,30 +42,32 @@ const DataPlatformPage: React.FC<PageProps> = ({
         logosrc={data[currentLang]?.HeroBanner?.Logo}
         subText={data[currentLang]?.HeroBanner?.SubText}
       />
-      <WorkingProcess
-        sectionTitle={data[currentLang]?.HowItWorks?.SectionTitle}
-        processImage={data[currentLang]?.HowItWorks?.ProcessImage}
-        descriptionOne={data[currentLang]?.HowItWorks?.DescriptionOne}
-        descriptionTwo={data[currentLang]?.HowItWorks?.DescriptionTwo}
-        descriptionThree={data[currentLang]?.HowItWorks?.DescriptionThree}
-      />
-      <KeyInsights
-        sectionTitle={data[currentLang]?.InsightSectionTitle}
-        insightsData={data[currentLang]?.InsightsCard}
-      />
-      <Feature
-        sectionTitle={data[currentLang]?.FeatureSectionTitle}
-        featureCardData={data[currentLang]?.FeatureListCard}
-      />
-      <Form
-        id={data[currentLang]?.CTASection?.id}
-        sectionTitle={data[currentLang]?.CTASection?.Title}
-        description={data[currentLang]?.CTASection?.Description}
-        ctaLink={data[currentLang]?.CTASection?.CTALink}
-        ctaLabel={data[currentLang]?.CTASection?.CTAText}
-        scannerImage={data[currentLang]?.CTASection?.ScannerImage}
-        isCTAEmail={data[currentLang]?.CTASection?.isEmail}
-      />
+      <section id="boltMain">
+        <WorkingProcess
+          sectionTitle={data[currentLang]?.HowItWorks?.SectionTitle}
+          processImage={data[currentLang]?.HowItWorks?.ProcessImage}
+          descriptionOne={data[currentLang]?.HowItWorks?.DescriptionOne}
+          descriptionTwo={data[currentLang]?.HowItWorks?.DescriptionTwo}
+          descriptionThree={data[currentLang]?.HowItWorks?.DescriptionThree}
+        />
+        <KeyInsights
+          sectionTitle={data[currentLang]?.InsightSectionTitle}
+          insightsData={data[currentLang]?.InsightsCard}
+        />
+        <Feature
+          sectionTitle={data[currentLang]?.FeatureSectionTitle}
+          featureCardData={data[currentLang]?.FeatureListCard}
+        />
+        <Form
+          id={data[currentLang]?.CTASection?.id}
+          sectionTitle={data[currentLang]?.CTASection?.Title}
+          description={data[currentLang]?.CTASection?.Description}
+          ctaLink={data[currentLang]?.CTASection?.CTALink}
+          ctaLabel={data[currentLang]?.CTASection?.CTAText}
+          scannerImage={data[currentLang]?.CTASection?.ScannerImage}
+          isCTAEmail={data[currentLang]?.CTASection?.isEmail}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

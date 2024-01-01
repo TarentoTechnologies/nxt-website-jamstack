@@ -26,6 +26,13 @@ const ThorPage: React.FC<PageProps> = ({ data }: ThorPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#thorMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         title={data[currentLang]?.HeroBanner?.SubText}
@@ -36,27 +43,29 @@ const ThorPage: React.FC<PageProps> = ({ data }: ThorPageProps) => {
         isImage={data[currentLang]?.HeroBanner?.isImage}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
       />
-      <Avatars
-        title={data[currentLang]?.TwoAvatars?.PrimaryTitle}
-        list={data[currentLang]?.TwoAvatars?.AvatarList}
-        subText={data[currentLang]?.TwoAvatars?.PrimaryDescription}
-      />
-      <Features imgSrc={data[currentLang]?.Capabilities} />
-      <MultiChannel
-        title={data[currentLang]?.MultiChannelEngagement?.Title}
-        subText={data[currentLang]?.MultiChannelEngagement?.Description}
-        imgSrc={data[currentLang]?.MultiChannelEngagement?.Image}
-        list={data[currentLang]?.MultiChannelEngagement?.ChannelList}
-      />
-      <CaseStudies
-        title={data[currentLang]?.CaseStudiesTitle}
-        list={data[currentLang]?.CaseStudiesList}
-      />
-      <UseCases
-        title={data[currentLang]?.UseCaseTitle}
-        list={data[currentLang]?.UseCasesList}
-        subText={data[currentLang]?.UseCaseSubText}
-      />
+      <section id="thorMain">
+        <Avatars
+          title={data[currentLang]?.TwoAvatars?.PrimaryTitle}
+          list={data[currentLang]?.TwoAvatars?.AvatarList}
+          subText={data[currentLang]?.TwoAvatars?.PrimaryDescription}
+        />
+        <Features imgSrc={data[currentLang]?.Capabilities} />
+        <MultiChannel
+          title={data[currentLang]?.MultiChannelEngagement?.Title}
+          subText={data[currentLang]?.MultiChannelEngagement?.Description}
+          imgSrc={data[currentLang]?.MultiChannelEngagement?.Image}
+          list={data[currentLang]?.MultiChannelEngagement?.ChannelList}
+        />
+        <CaseStudies
+          title={data[currentLang]?.CaseStudiesTitle}
+          list={data[currentLang]?.CaseStudiesList}
+        />
+        <UseCases
+          title={data[currentLang]?.UseCaseTitle}
+          list={data[currentLang]?.UseCasesList}
+          subText={data[currentLang]?.UseCaseSubText}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
