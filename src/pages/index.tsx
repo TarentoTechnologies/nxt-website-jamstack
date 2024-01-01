@@ -28,21 +28,29 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#homeMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <HeroBanner data={data[currentLang]?.HeroBanner} />
-      <TriCardLayout data={data[currentLang]?.TriCards} />
-      <PyramidBanner
-        title={data[currentLang]?.PyramidTitle}
-        description={data[currentLang]?.PyramidDescription}
-        pyramidImg={data[currentLang]?.PyramidImage.localFile.url}
-        btnDescr={data[currentLang]?.PyramidCTAText}
-        btnLink={data[currentLang]?.PyramidCTALink}
-      />
-      <ProductCardLayout data={data[currentLang]?.AcceleratorCards} />
-      <OurProgramme
-        sectionTitle={data[currentLang]?.ProgrammeSectionTitle}
-        cards={data[currentLang]?.ProgrammeCards}
-      />
-      {/* <AgencyPortfolio
+      <section id="homeMain">
+        <TriCardLayout data={data[currentLang]?.TriCards} />
+        <PyramidBanner
+          title={data[currentLang]?.PyramidTitle}
+          description={data[currentLang]?.PyramidDescription}
+          pyramidImg={data[currentLang]?.PyramidImage.localFile.url}
+          btnDescr={data[currentLang]?.PyramidCTAText}
+          btnLink={data[currentLang]?.PyramidCTALink}
+        />
+        <ProductCardLayout data={data[currentLang]?.AcceleratorCards} />
+        <OurProgramme
+          sectionTitle={data[currentLang]?.ProgrammeSectionTitle}
+          cards={data[currentLang]?.ProgrammeCards}
+        />
+        {/* <AgencyPortfolio
         title={data[currentLang]?.HighlighterOneTitle}
         description={data[currentLang]?.HighlighterOneDescription}
         ctaText={data[currentLang]?.HighlighterOneCTAText}
@@ -56,7 +64,8 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
         ctaLink={data[currentLang]?.HighlighterTwoCTALink}
         designPortfolioData={data[currentDesignPortfolio]?.nodes}
       /> */}
-      <CTALayout data={data[currentLang]?.CTA} />
+        <CTALayout data={data[currentLang]?.CTA} />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

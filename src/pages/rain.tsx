@@ -24,6 +24,13 @@ const RainPage: React.FC<PageProps> = ({ data }: RainPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#rainMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
@@ -36,21 +43,23 @@ const RainPage: React.FC<PageProps> = ({ data }: RainPageProps) => {
         logo={data[currentLang]?.HeroBanner?.Logo?.localFile?.url}
         subTextBold
       />
-      <WorkingLayout
-        title={data[currentLang]?.HowItWorks?.SectionTitle}
-        desc={data[currentLang]?.HowItWorks?.DescriptionOne}
-        img={data[currentLang]?.HowItWorks?.ProcessImage?.localFile?.url}
-      />
-      <FeaturesLayout
-        title={data[currentLang]?.FeatureSectionTitle}
-        cardsData={data[currentLang]?.FeatureListCard}
-        isImage={false}
-        bgGrey
-      />
-      <ReferencesLayout
-        title={data[currentLang]?.ReferenceSectionTitle}
-        cardsData={data[currentLang]?.ReferenceCard}
-      />
+      <section id="rainMain">
+        <WorkingLayout
+          title={data[currentLang]?.HowItWorks?.SectionTitle}
+          desc={data[currentLang]?.HowItWorks?.DescriptionOne}
+          img={data[currentLang]?.HowItWorks?.ProcessImage?.localFile?.url}
+        />
+        <FeaturesLayout
+          title={data[currentLang]?.FeatureSectionTitle}
+          cardsData={data[currentLang]?.FeatureListCard}
+          isImage={false}
+          bgGrey
+        />
+        <ReferencesLayout
+          title={data[currentLang]?.ReferenceSectionTitle}
+          cardsData={data[currentLang]?.ReferenceCard}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
@@ -215,17 +224,26 @@ export const Head: HeadFC = () => (
       property="og:description"
       content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time."
     />
-    <meta property="og:image" content={`${process.env.GATSBY_SITE_URL}static/578bbd98b4b623cfc925bc7c55b0927d/02c3d/features_6_d557ad36c7.png`} />
+    <meta
+      property="og:image"
+      content={`${process.env.GATSBY_SITE_URL}static/578bbd98b4b623cfc925bc7c55b0927d/02c3d/features_6_d557ad36c7.png`}
+    />
     <meta property="og:site_name" content="RAIN" />
 
     {/* Twitter */}
     <meta property="twitter:card" content="website" />
-    <meta property="twitter:url" content={`${process.env.GATSBY_SITE_URL}rain/`} />
+    <meta
+      property="twitter:url"
+      content={`${process.env.GATSBY_SITE_URL}rain/`}
+    />
     <meta property="twitter:title" content="NXT Tarento - RAIN" />
     <meta
       property="twitter:description"
       content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time."
     />
-    <meta property="twitter:image" content={`${process.env.GATSBY_SITE_URL}static/578bbd98b4b623cfc925bc7c55b0927d/02c3d/features_6_d557ad36c7.png`} />
+    <meta
+      property="twitter:image"
+      content={`${process.env.GATSBY_SITE_URL}static/578bbd98b4b623cfc925bc7c55b0927d/02c3d/features_6_d557ad36c7.png`}
+    />
   </>
 );

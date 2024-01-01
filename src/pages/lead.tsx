@@ -27,6 +27,13 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#leadMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
@@ -39,45 +46,47 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
         subTextBold
       />
-      <HeroSection
-        title={data[currentLang]?.HeroSection?.Title}
-        description={
-          data[currentLang]?.HeroSection?.Description?.data?.Description
-        }
-        cardList={data[currentLang]?.HeroSection?.CardList}
-      />
-      {data[currentLang]?.Steps.map((item: any, index: any) => (
-        <StepSection
-          key={index}
-          title={item?.Title}
-          description={item?.Description?.data?.Description}
-          imgSrc={item?.ImgSrc?.localFile?.url}
-          cardHeading={item?.CardHeading}
-          keyPoints={item?.KeyPoints}
-          bgGrey={item?.BgGrey}
+      <section id="leadMain">
+        <HeroSection
+          title={data[currentLang]?.HeroSection?.Title}
+          description={
+            data[currentLang]?.HeroSection?.Description?.data?.Description
+          }
+          cardList={data[currentLang]?.HeroSection?.CardList}
         />
-      ))}
-      <VideoSection videoSrc={data[currentLang]?.VideoSection?.videoSrc} />
-      <LeadCountries
-        title={data[currentLang]?.LeadCountries?.Title}
-        description={
-          data[currentLang]?.LeadCountries?.Description?.data?.Description
-        }
-        imgSrc={data[currentLang]?.LeadCountries?.ImgSrc?.localFile?.url}
-        cardHeading={data[currentLang]?.LeadCountries?.CardHeading}
-        keyPoints={data[currentLang]?.LeadCountries?.KeyPoints}
-      />
-      <LeadSprints
-        title={data[currentLang]?.LeadSprints?.Title}
-        cardData={data[currentLang]?.LeadSprints?.CardData}
-      />
-      <ContactUsLayout
-        heading={data[currentLang]?.Interested?.Title}
-        desc={data[currentLang]?.Interested?.Description}
-        CTAlabel={data[currentLang]?.Interested?.CTAText}
-        CTAlink={data[currentLang]?.Interested?.CTALink}
-        isCTAMail={data[currentLang]?.Interested?.isMail}
-      />
+        {data[currentLang]?.Steps.map((item: any, index: any) => (
+          <StepSection
+            key={index}
+            title={item?.Title}
+            description={item?.Description?.data?.Description}
+            imgSrc={item?.ImgSrc?.localFile?.url}
+            cardHeading={item?.CardHeading}
+            keyPoints={item?.KeyPoints}
+            bgGrey={item?.BgGrey}
+          />
+        ))}
+        <VideoSection videoSrc={data[currentLang]?.VideoSection?.videoSrc} />
+        <LeadCountries
+          title={data[currentLang]?.LeadCountries?.Title}
+          description={
+            data[currentLang]?.LeadCountries?.Description?.data?.Description
+          }
+          imgSrc={data[currentLang]?.LeadCountries?.ImgSrc?.localFile?.url}
+          cardHeading={data[currentLang]?.LeadCountries?.CardHeading}
+          keyPoints={data[currentLang]?.LeadCountries?.KeyPoints}
+        />
+        <LeadSprints
+          title={data[currentLang]?.LeadSprints?.Title}
+          cardData={data[currentLang]?.LeadSprints?.CardData}
+        />
+        <ContactUsLayout
+          heading={data[currentLang]?.Interested?.Title}
+          desc={data[currentLang]?.Interested?.Description}
+          CTAlabel={data[currentLang]?.Interested?.CTAText}
+          CTAlink={data[currentLang]?.Interested?.CTALink}
+          isCTAMail={data[currentLang]?.Interested?.isMail}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

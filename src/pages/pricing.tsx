@@ -19,31 +19,40 @@ const PricingPage: React.FC<PageProps> = ({ data }: PricingPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#pricingMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroText
         title={data[currentLang]?.HeroText?.Title}
         desc={data[currentLang]?.HeroText?.Description?.data?.Description}
       />
-      <PricingList
-        heading={data[currentLang]?.PricingList[0]?.Heading}
-        pricingData={data[currentLang]?.PricingList[0]?.PricingCards}
-        additionalInfo={data[currentLang]?.PricingList[0]?.AdditionalInfo}
-      />
-      <PricingList
-        heading={data[currentLang]?.PricingList[1]?.Heading}
-        pricingData={data[currentLang]?.PricingList[1]?.PricingCards}
-        additionalInfo={""}
-      />
-      <ContactUsLayout
-        heading1={data[currentLang]?.ContactUs?.AreYouInterested?.Title}
-        desc1={data[currentLang]?.ContactUs?.AreYouInterested?.Description}
-        CTAlabel1={data[currentLang]?.ContactUs?.AreYouInterested?.CTAText}
-        CTAlink1={data[currentLang]?.ContactUs?.AreYouInterested?.CTALink}
-        heading2={data[currentLang]?.ContactUs?.AreYouSeller?.Title}
-        desc2={data[currentLang]?.ContactUs?.AreYouSeller?.Description}
-        CTAlabel2={data[currentLang]?.ContactUs?.AreYouSeller?.CTAText}
-        CTAlink2={data[currentLang]?.ContactUs?.AreYouSeller?.CTALink}
-      />
+      <section id="pricingMain">
+        <PricingList
+          heading={data[currentLang]?.PricingList[0]?.Heading}
+          pricingData={data[currentLang]?.PricingList[0]?.PricingCards}
+          additionalInfo={data[currentLang]?.PricingList[0]?.AdditionalInfo}
+        />
+        <PricingList
+          heading={data[currentLang]?.PricingList[1]?.Heading}
+          pricingData={data[currentLang]?.PricingList[1]?.PricingCards}
+          additionalInfo={""}
+        />
+        <ContactUsLayout
+          heading1={data[currentLang]?.ContactUs?.AreYouInterested?.Title}
+          desc1={data[currentLang]?.ContactUs?.AreYouInterested?.Description}
+          CTAlabel1={data[currentLang]?.ContactUs?.AreYouInterested?.CTAText}
+          CTAlink1={data[currentLang]?.ContactUs?.AreYouInterested?.CTALink}
+          heading2={data[currentLang]?.ContactUs?.AreYouSeller?.Title}
+          desc2={data[currentLang]?.ContactUs?.AreYouSeller?.Description}
+          CTAlabel2={data[currentLang]?.ContactUs?.AreYouSeller?.CTAText}
+          CTAlink2={data[currentLang]?.ContactUs?.AreYouSeller?.CTALink}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

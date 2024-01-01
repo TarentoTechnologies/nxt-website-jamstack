@@ -22,6 +22,13 @@ const AppsPage: React.FC<PageProps> = ({ data }: AppsPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#appsMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
@@ -32,10 +39,12 @@ const AppsPage: React.FC<PageProps> = ({ data }: AppsPageProps) => {
         imgAltText={data[currentLang]?.HeroBanner?.Img?.alternativeText}
         subTextBold
       />
-      <InternalApps
-        title={data[currentLang]?.SectionTitle}
-        appData={data[currentLang]?.Applications}
-      />
+      <section id="appsMain">
+        <InternalApps
+          title={data[currentLang]?.SectionTitle}
+          appData={data[currentLang]?.Applications}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

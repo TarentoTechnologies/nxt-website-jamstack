@@ -28,6 +28,13 @@ const CustomerExperiencePage: React.FC<PageProps> = ({
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#customerExperienceMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         title={data[currentLang]?.HeroBanner?.Title}
@@ -39,41 +46,43 @@ const CustomerExperiencePage: React.FC<PageProps> = ({
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
         subTextBold
       />
-      <Feature
-        title={data[currentLang]?.CXTitle}
-        list={data[currentLang]?.CXFeatureList}
-      />
-      <AI
-        title={data[currentLang]?.CXAITitle}
-        imgCaption={data[currentLang]?.CXAIImage?.caption}
-        imgSrc={data[currentLang]?.CXAIImage?.localFile?.url}
-      />
-      {data[currentLang]?.CXList.length > 0 &&
-        data[currentLang]?.CXList?.map((item: any, index: number) => {
-          return (
-            <UserEngagement
-              id={item?.id}
-              title={item?.Title}
-              imgSrc={item?.Image?.localFile?.url}
-              ctaText={item?.CTAText}
-              ctaLink={item?.CTALink}
-              list={item?.ListItems}
-            />
-          );
-        })}
+      <section id="customerExperienceMain">
+        <Feature
+          title={data[currentLang]?.CXTitle}
+          list={data[currentLang]?.CXFeatureList}
+        />
+        <AI
+          title={data[currentLang]?.CXAITitle}
+          imgCaption={data[currentLang]?.CXAIImage?.caption}
+          imgSrc={data[currentLang]?.CXAIImage?.localFile?.url}
+        />
+        {data[currentLang]?.CXList.length > 0 &&
+          data[currentLang]?.CXList?.map((item: any, index: number) => {
+            return (
+              <UserEngagement
+                id={item?.id}
+                title={item?.Title}
+                imgSrc={item?.Image?.localFile?.url}
+                ctaText={item?.CTAText}
+                ctaLink={item?.CTALink}
+                list={item?.ListItems}
+              />
+            );
+          })}
 
-      <OtherSolution
-        title={data[currentLang]?.OtherSolutionsTitle}
-        list={data[currentLang]?.SolutionsCard}
-        description={data[currentLang]?.OtherSolutionsDescription}
-      />
-      <ContactUsLayout
-        heading={data[currentLang]?.AreYouInterested?.Title}
-        desc={data[currentLang]?.AreYouInterested?.Description}
-        CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
-        CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
-        isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
-      />
+        <OtherSolution
+          title={data[currentLang]?.OtherSolutionsTitle}
+          list={data[currentLang]?.SolutionsCard}
+          description={data[currentLang]?.OtherSolutionsDescription}
+        />
+        <ContactUsLayout
+          heading={data[currentLang]?.AreYouInterested?.Title}
+          desc={data[currentLang]?.AreYouInterested?.Description}
+          CTAlabel={data[currentLang]?.AreYouInterested?.CTAText}
+          CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
+          isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}

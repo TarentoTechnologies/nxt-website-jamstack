@@ -21,6 +21,13 @@ const AuroraPage: React.FC<PageProps> = ({ data }: AuroraPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#auroraMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
@@ -31,24 +38,26 @@ const AuroraPage: React.FC<PageProps> = ({ data }: AuroraPageProps) => {
         imgAltText={data[currentLang]?.HeroBanner?.Img?.alternativeText}
         isAurora
       />
-      <HowItWorks
-        heading={data[currentLang]?.WorkingSectionTitle}
-        imgSrc={data[currentLang]?.WorkingImg}
-      />
-      <VideoSection
-        heading={data[currentLang]?.VideoData?.Title}
-        listData={data[currentLang]?.VideoData?.KeyPoints}
-        videoSrc={data[currentLang]?.AuroraVideo?.localFile?.url}
-      />
-      <FeaturesLayout
-        title={data[currentLang]?.FeatureSectionTitle}
-        cardsData={data[currentLang]?.FeatureCards}
-        isImage={false}
-      />
-      <Stories
-        title={data[currentLang]?.StorySectionTitle}
-        cardsData={data[currentLang]?.StoryCards}
-      />
+      <section id="auroraMain">
+        <HowItWorks
+          heading={data[currentLang]?.WorkingSectionTitle}
+          imgSrc={data[currentLang]?.WorkingImg}
+        />
+        <VideoSection
+          heading={data[currentLang]?.VideoData?.Title}
+          listData={data[currentLang]?.VideoData?.KeyPoints}
+          videoSrc={data[currentLang]?.AuroraVideo?.localFile?.url}
+        />
+        <FeaturesLayout
+          title={data[currentLang]?.FeatureSectionTitle}
+          cardsData={data[currentLang]?.FeatureCards}
+          isImage={false}
+        />
+        <Stories
+          title={data[currentLang]?.StorySectionTitle}
+          cardsData={data[currentLang]?.StoryCards}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
