@@ -165,12 +165,12 @@ export default DesignPage;
 export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
-    <title>::NXT Tarento - Technology design and Innovation::</title>
-    <link rel="canonical" href="https://nxt.tarento.com/" />
-    <meta name="title" content="NXT Tarento" />
+    <title>::NXT Tarento - Design::</title>
+    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}design/`} />
+    <meta name="title" content="NXT Tarento - Design" />
     <meta
       name="description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="At Tarento, we believe in the power of design thinking. We follow a four step design process to shape and guide our work and thoughts to improve the outcome."
     />
     <meta
       name="viewport"
@@ -179,22 +179,32 @@ export const Head: HeadFC = () => (
 
     {/* Open graph */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nxt.tarento.com/" />
-    <meta property="og:title" content="NXT Tarento" />
+    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}design/`} />
+    <meta property="og:title" content="NXT Tarento - Design" />
     <meta
       property="og:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="At Tarento, we believe in the power of design thinking. We follow a four step design process to shape and guide our work and thoughts to improve the outcome."
     />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content={`${process.env.GATSBY_SITE_URL}static/b01f50406c5f668090a5b40210fff276/5fae0/deliver_e8944227f3.png`}
+    />
+    <meta property="og:site_name" content="Design" />
 
     {/* Twitter */}
-    <meta property="twitter:card" content="" />
-    <meta property="twitter:url" content="https://nxt.tarento.com/" />
-    <meta property="twitter:title" content="NXT Tarento" />
+    <meta property="twitter:card" content="website" />
+    <meta
+      property="twitter:url"
+      content={`${process.env.GATSBY_SITE_URL}design/`}
+    />
+    <meta property="twitter:title" content="NXT Tarento - Design" />
     <meta
       property="twitter:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="At Tarento, we believe in the power of design thinking. We follow a four step design process to shape and guide our work and thoughts to improve the outcome."
     />
-    <meta property="twitter:image" content="" />
+    <meta
+      property="twitter:image"
+      content={`${process.env.GATSBY_SITE_URL}static/b01f50406c5f668090a5b40210fff276/5fae0/deliver_e8944227f3.png`}
+    />
   </>
 );

@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil";
 import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
+import { FooterSection } from "../layouts/common";
 import {
   AI,
   Feature,
@@ -13,7 +14,6 @@ import {
 } from "../layouts/customer-experience";
 import { ContactUsLayout } from "../layouts/govtech";
 import { langSelected as langSelectedAtom } from "../states/atoms";
-import { FooterSection } from "../layouts/common";
 
 interface CustomerExperiencePageProps {
   data: any;
@@ -74,7 +74,7 @@ const CustomerExperiencePage: React.FC<PageProps> = ({
         CTAlink={data[currentLang]?.AreYouInterested?.CTALink}
         isCTAMail={data[currentLang]?.AreYouInterested?.isMail}
       />
-       <FooterSection
+      <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
       />
@@ -235,12 +235,14 @@ export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
     <title>::NXT Tarento - Customer Experience Pack::</title>
-    <link rel="canonical" href="https://nxt.tarento.com/data-platform" />
+    <link
+      rel="canonical"
+      href={`${process.env.GATSBY_SITE_URL}customer-experience/`}
+    />
     <meta name="title" content="::NXT Tarento - Customer Experience Pack::" />
     <meta
       name="description"
-      content="Aurora customer experience platform brings in the best of data engineering, analytics and user experience 
-    design to enable a superior customer support experience."
+      content="Good customer experience requires more than just a good product. Empowering customer experience with data & Insights"
     />
     <meta
       name="viewport"
@@ -249,23 +251,29 @@ export const Head: HeadFC = () => (
 
     {/* Open graph */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nxt.tarento.com/data-platform" />
+    <meta
+      property="og:url"
+      content={`${process.env.GATSBY_SITE_URL}customer-experience/`}
+    />
     <meta
       property="og:title"
       content="::NXT Tarento - Customer Experience Pack::"
     />
     <meta
       property="og:description"
-      content="Aurora customer experience platform brings in the best of data engineering, analytics and user experience 
-    design to enable a superior customer support experience."
+      content="Good customer experience requires more than just a good product. Empowering customer experience with data & Insights"
     />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content={`${process.env.GATSBY_SITE_URL}static/4af750352a6c177c7f80d9ed351d244d/6998c/tech_solution_d8d031719f.png`}
+    />
+    <meta property="og:site_name" content="Customer Experience Pack" />
 
     {/* Twitter */}
-    <meta property="twitter:card" content="" />
+    <meta property="twitter:card" content="website" />
     <meta
       property="twitter:url"
-      content="https://nxt.tarento.com/data-platform"
+      content={`${process.env.GATSBY_SITE_URL}customer-experience/`}
     />
     <meta
       property="twitter:title"
@@ -273,9 +281,11 @@ export const Head: HeadFC = () => (
     />
     <meta
       property="twitter:description"
-      content="Aurora customer experience platform brings in the best of data engineering, analytics and user experience 
-    design to enable a superior customer support experience."
+      content="Good customer experience requires more than just a good product. Empowering customer experience with data & Insights"
     />
-    <meta property="twitter:image" content="" />
+    <meta
+      property="twitter:image"
+      content={`${process.env.GATSBY_SITE_URL}static/4af750352a6c177c7f80d9ed351d244d/6998c/tech_solution_d8d031719f.png`}
+    />
   </>
 );

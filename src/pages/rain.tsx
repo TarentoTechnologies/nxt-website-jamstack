@@ -195,12 +195,12 @@ export default RainPage;
 export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
-    <title>::NXT Tarento - Technology design and Innovation::</title>
-    <link rel="canonical" href="https://nxt.tarento.com/" />
-    <meta name="title" content="NXT Tarento" />
+    <title>::NXT Tarento - RAIN::</title>
+    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}rain/`} />
+    <meta name="title" content="NXT Tarento - RAIN" />
     <meta
       name="description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time."
     />
     <meta
       name="viewport"
@@ -209,22 +209,23 @@ export const Head: HeadFC = () => (
 
     {/* Open graph */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nxt.tarento.com/" />
-    <meta property="og:title" content="NXT Tarento" />
+    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}rain/`} />
+    <meta property="og:title" content="NXT Tarento - RAIN" />
     <meta
       property="og:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time."
     />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content={`${process.env.GATSBY_SITE_URL}static/578bbd98b4b623cfc925bc7c55b0927d/02c3d/features_6_d557ad36c7.png`} />
+    <meta property="og:site_name" content="RAIN" />
 
     {/* Twitter */}
-    <meta property="twitter:card" content="" />
-    <meta property="twitter:url" content="https://nxt.tarento.com/" />
-    <meta property="twitter:title" content="NXT Tarento" />
+    <meta property="twitter:card" content="website" />
+    <meta property="twitter:url" content={`${process.env.GATSBY_SITE_URL}rain/`} />
+    <meta property="twitter:title" content="NXT Tarento - RAIN" />
     <meta
       property="twitter:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time."
     />
-    <meta property="twitter:image" content="" />
+    <meta property="twitter:image" content={`${process.env.GATSBY_SITE_URL}static/578bbd98b4b623cfc925bc7c55b0927d/02c3d/features_6_d557ad36c7.png`} />
   </>
 );

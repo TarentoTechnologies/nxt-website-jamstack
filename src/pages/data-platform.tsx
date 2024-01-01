@@ -223,7 +223,10 @@ export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
     <title>::Tarento - NXT - BOLT Data Information Insight.::</title>
-    <link rel="canonical" href="https://nxt.tarento.com/data-platform" />
+    <link
+      rel="canonical"
+      href={`${process.env.GATSBY_SITE_URL}data-platform/`}
+    />
     <meta
       name="title"
       content="::Tarento - NXT - BOLT Data Information Insight.::"
@@ -239,7 +242,10 @@ export const Head: HeadFC = () => (
 
     {/* Open graph */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nxt.tarento.com/data-platform" />
+    <meta
+      property="og:url"
+      content={`${process.env.GATSBY_SITE_URL}data-platform/`}
+    />
     <meta
       property="og:title"
       content="::Tarento - NXT - BOLT Data Information Insight::"
@@ -248,13 +254,17 @@ export const Head: HeadFC = () => (
       property="og:description"
       content="Make reliable, data driven decisions. Take your business to the next level with our data-platform."
     />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content={`${process.env.GATSBY_SITE_URL}static/8afccf7dc2c496868e9783df2c8a76b8/a4367/data_platform_2cb1ba726e.png`}
+    />
+    <meta property="og:site_name" content="BOLT" />
 
     {/* Twitter */}
-    <meta property="twitter:card" content="" />
+    <meta property="twitter:card" content="website" />
     <meta
       property="twitter:url"
-      content="https://nxt.tarento.com/data-platform"
+      content={`${process.env.GATSBY_SITE_URL}data-platform/`}
     />
     <meta
       property="twitter:title"
@@ -264,6 +274,9 @@ export const Head: HeadFC = () => (
       property="twitter:description"
       content="Make reliable, data driven decisions. Take your business to the next level with our data-platform."
     />
-    <meta property="twitter:image" content="" />
+    <meta
+      property="twitter:image"
+      content={`${process.env.GATSBY_SITE_URL}static/8afccf7dc2c496868e9783df2c8a76b8/a4367/data_platform_2cb1ba726e.png`}
+    />
   </>
 );

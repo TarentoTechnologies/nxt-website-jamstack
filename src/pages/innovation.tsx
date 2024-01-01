@@ -253,8 +253,8 @@ export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
     <title>::NXT Tarento - Innovation::</title>
-    <link rel="canonical" href="https://nxt.tarento.com/" />
-    <meta name="title" content="NXT Tarento" />
+    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}innovation/`} />
+    <meta name="title" content="NXT Tarento - Innovation" />
     <meta
       name="description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
@@ -266,22 +266,35 @@ export const Head: HeadFC = () => (
 
     {/* Open graph */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nxt.tarento.com/" />
+    <meta
+      property="og:url"
+      content={`${process.env.GATSBY_SITE_URL}innovation/`}
+    />
     <meta property="og:title" content="NXT Tarento - Innovation" />
     <meta
       property="og:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
     />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content={`${process.env.GATSBY_SITE_URL}static/d8556e7d840b4fa5b66d2c2e806ec9c3/b53dd/discover_pro_9a68b674f0.png`}
+    />
+    <meta property="og:site_name" content="Innovation" />
 
     {/* Twitter */}
-    <meta property="twitter:card" content="" />
-    <meta property="twitter:url" content="https://nxt.tarento.com/" />
+    <meta property="twitter:card" content="website" />
+    <meta
+      property="twitter:url"
+      content={`${process.env.GATSBY_SITE_URL}innovation/`}
+    />
     <meta property="twitter:title" content="NXT Tarento - Innovation" />
     <meta
       property="twitter:description"
       content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
     />
-    <meta property="twitter:image" content="" />
+    <meta
+      property="twitter:image"
+      content={`${process.env.GATSBY_SITE_URL}static/d8556e7d840b4fa5b66d2c2e806ec9c3/b53dd/discover_pro_9a68b674f0.png`}
+    />
   </>
 );
