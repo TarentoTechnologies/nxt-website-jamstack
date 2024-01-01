@@ -197,12 +197,12 @@ export default AuroraPage;
 export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
-    <title>::NXT Tarento - Technology design and Innovation::</title>
-    <link rel="canonical" href="https://nxt.tarento.com/" />
-    <meta name="title" content="NXT Tarento" />
+    <title>::NXT Tarento - Aurora::</title>
+    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}aurora/`} />
+    <meta name="title" content="NXT Tarento - Aurora" />
     <meta
       name="description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. "
     />
     <meta
       name="viewport"
@@ -211,22 +211,32 @@ export const Head: HeadFC = () => (
 
     {/* Open graph */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nxt.tarento.com/" />
-    <meta property="og:title" content="NXT Tarento" />
+    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}aurora/`} />
+    <meta property="og:title" content="NXT Tarento - Aurora" />
     <meta
       property="og:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. "
     />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content={`${process.env.GATSBY_SITE_URL}static/abb964b52c0286769f800618508f54d6/a52df/aurora_feature_6_db0ae1fd1c.png`}
+    />
+    <meta property="og:site_name" content="Aurora" />
 
     {/* Twitter */}
-    <meta property="twitter:card" content="" />
-    <meta property="twitter:url" content="https://nxt.tarento.com/" />
-    <meta property="twitter:title" content="NXT Tarento" />
+    <meta property="twitter:card" content="website" />
+    <meta
+      property="twitter:url"
+      content={`${process.env.GATSBY_SITE_URL}aurora/`}
+    />
+    <meta property="twitter:title" content="NXT Tarento - Aurora" />
     <meta
       property="twitter:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. "
     />
-    <meta property="twitter:image" content="" />
+    <meta
+      property="twitter:image"
+      content={`${process.env.GATSBY_SITE_URL}static/abb964b52c0286769f800618508f54d6/a52df/aurora_feature_6_db0ae1fd1c.png`}
+    />
   </>
 );

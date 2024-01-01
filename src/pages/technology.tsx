@@ -247,7 +247,7 @@ export const Head: HeadFC = () => (
     <title>::NXT Tarento - Technology::</title>
     <link
       rel="canonical"
-      href={`.env.${process.env.GATSBY_SITE_URL}technology/`}
+      href={`${process.env.GATSBY_SITE_URL}technology/`}
     />
     <meta name="title" content="NXT Tarento - Technology" />
     <meta
@@ -263,7 +263,7 @@ export const Head: HeadFC = () => (
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content={`.env.${process.env.GATSBY_SITE_URL}technology/`}
+      content={`${process.env.GATSBY_SITE_URL}technology/`}
     />
     <meta property="og:title" content="NXT Tarento - Technology" />
     <meta
@@ -272,7 +272,7 @@ export const Head: HeadFC = () => (
     />
     <meta
       property="og:image"
-      content={`.env.${process.env.GATSBY_SITE_URL}static/e69b1cdf9d4ee59dca8f2c06a35f8455/9ef3b/tech_hero_deb1d828ab.png`}
+      content={`${process.env.GATSBY_SITE_URL}static/e69b1cdf9d4ee59dca8f2c06a35f8455/9ef3b/tech_hero_deb1d828ab.png`}
     />
     <meta property="og:site_name" content="Technology" />
 
@@ -280,7 +280,7 @@ export const Head: HeadFC = () => (
     <meta property="twitter:card" content="website" />
     <meta
       property="twitter:url"
-      content={`.env.${process.env.GATSBY_SITE_URL}technology/`}
+      content={`${process.env.GATSBY_SITE_URL}technology/`}
     />
     <meta property="twitter:title" content="NXT Tarento - Technology" />
     <meta
@@ -289,7 +289,7 @@ export const Head: HeadFC = () => (
     />
     <meta
       property="twitter:image"
-      content={`.env.${process.env.GATSBY_SITE_URL}static/e69b1cdf9d4ee59dca8f2c06a35f8455/9ef3b/tech_hero_deb1d828ab.png`}
+      content={`${process.env.GATSBY_SITE_URL}static/e69b1cdf9d4ee59dca8f2c06a35f8455/9ef3b/tech_hero_deb1d828ab.png`}
     />
   </>
 );

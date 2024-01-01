@@ -265,7 +265,7 @@ export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
     <title>::NXT Tarento - Technology, Design and Innovation::</title>
-    <link href={`.env.${process.env.GATSBY_SITE_URL}`} rel="canonical" />
+    <link href={`${process.env.GATSBY_SITE_URL}`} rel="canonical" />
     <meta
       name="title"
       content="NXT Tarento - Technology, Design and Innovation"
@@ -281,7 +281,7 @@ export const Head: HeadFC = () => (
 
     {/* Open graph */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`.env.${process.env.GATSBY_SITE_URL}`} />
+    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}`} />
     <meta
       property="og:title"
       content="NXT Tarento - Technology, Design and Innovation"
@@ -297,7 +297,7 @@ export const Head: HeadFC = () => (
 
     {/* Twitter */}
     <meta property="twitter:card" content="website" />
-    <meta property="twitter:url" content={`.env.${process.env.GATSBY_SITE_URL}`} />
+    <meta property="twitter:url" content={`${process.env.GATSBY_SITE_URL}`} />
     <meta
       property="twitter:title"
       content="NXT Tarento - Technology, Design and Innovation"
