@@ -1,0 +1,38 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.bgStyles {
+  background-image: url("../../../static/images/bg-404.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgStyles {
+  position: absolute;
+  top: 0.625rem;
+  left: 2.5rem;
+}
+
+.btnStyles {
+  background-color: var(--white);
+  height: 2.813rem;
+  width: 12.5rem;
+  border-radius: 0.313rem;
+}
+
+.btnStyles span {
+  font-weight: 400;
+  color: var(--black);
+}
+
+@media only screen and (max-width: 767px) {
+  .imgStyles {
+    display: none;
+  }
+}
