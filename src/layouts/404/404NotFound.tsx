@@ -21,8 +21,11 @@ export const NotFound = () => {
           </div>
         </div>
         <span className={`${notFoundSubtext}`}>Oops.... Page not found</span>
-        <p className="pt-3">This Page doesn`t exist or was removed!</p>
-        <p>We suggest you back to home.</p>
+        <p className="pt-3">
+          This page doesn`t exist or was removed! <br></br>
+          We suggest you back to home.
+        </p>
+        {/* <p className="">We suggest you back to home.</p> */}
       </div>
       <Link to="/">
         <div
