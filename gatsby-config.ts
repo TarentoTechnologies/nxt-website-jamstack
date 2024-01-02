@@ -169,7 +169,7 @@ const strapiConfig = {
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `NXT Tarento - Technology design and Innovation`,
-    siteUrl: `https://thunderous-sorbet-381875.netlify.app/`,
+    siteUrl: `${process.env.GATSBY_SITE_URL}`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -210,14 +210,20 @@ const config: GatsbyConfig = {
         excludes: ["/apps/"],
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-robots-txt",
-    //   options: {
-    //     host: "https://thunderous-sorbet-381875.netlify.app/",
-    //     sitemap: "https://thunderous-sorbet-381875.netlify.app/sitemap-0.xml",
-    //     policy: [{ userAgent: "*", allow: "/", disallow: "/apps/" }],
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: `${process.env.GATSBY_SITE_URL}`,
+        sitemap: `${process.env.GATSBY_SITE_URL}sitemap-0.xml`,
+        policy: [{ userAgent: "*", allow: "/", disallow: "/apps/" }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["UA-76613193-3"],
+      },
+    },
   ],
 };
 
