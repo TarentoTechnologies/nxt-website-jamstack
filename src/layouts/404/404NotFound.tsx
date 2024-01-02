@@ -25,7 +25,6 @@ export const NotFound = () => {
           This page doesn`t exist or was removed! <br></br>
           We suggest you back to home.
         </p>
-        {/* <p className="">We suggest you back to home.</p> */}
       </div>
       <Link to="/">
         <div
