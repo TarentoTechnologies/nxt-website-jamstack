@@ -27,6 +27,13 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#leadMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
@@ -39,45 +46,47 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
         subTextBold
       />
-      <HeroSection
-        title={data[currentLang]?.HeroSection?.Title}
-        description={
-          data[currentLang]?.HeroSection?.Description?.data?.Description
-        }
-        cardList={data[currentLang]?.HeroSection?.CardList}
-      />
-      {data[currentLang]?.Steps.map((item: any, index: any) => (
-        <StepSection
-          key={index}
-          title={item?.Title}
-          description={item?.Description?.data?.Description}
-          imgSrc={item?.ImgSrc?.localFile?.url}
-          cardHeading={item?.CardHeading}
-          keyPoints={item?.KeyPoints}
-          bgGrey={item?.BgGrey}
+      <section id="leadMain">
+        <HeroSection
+          title={data[currentLang]?.HeroSection?.Title}
+          description={
+            data[currentLang]?.HeroSection?.Description?.data?.Description
+          }
+          cardList={data[currentLang]?.HeroSection?.CardList}
         />
-      ))}
-      <VideoSection videoSrc={data[currentLang]?.VideoSection?.videoSrc} />
-      <LeadCountries
-        title={data[currentLang]?.LeadCountries?.Title}
-        description={
-          data[currentLang]?.LeadCountries?.Description?.data?.Description
-        }
-        imgSrc={data[currentLang]?.LeadCountries?.ImgSrc?.localFile?.url}
-        cardHeading={data[currentLang]?.LeadCountries?.CardHeading}
-        keyPoints={data[currentLang]?.LeadCountries?.KeyPoints}
-      />
-      <LeadSprints
-        title={data[currentLang]?.LeadSprints?.Title}
-        cardData={data[currentLang]?.LeadSprints?.CardData}
-      />
-      <ContactUsLayout
-        heading={data[currentLang]?.Interested?.Title}
-        desc={data[currentLang]?.Interested?.Description}
-        CTAlabel={data[currentLang]?.Interested?.CTAText}
-        CTAlink={data[currentLang]?.Interested?.CTALink}
-        isCTAMail={data[currentLang]?.Interested?.isMail}
-      />
+        {data[currentLang]?.Steps.map((item: any, index: any) => (
+          <StepSection
+            key={index}
+            title={item?.Title}
+            description={item?.Description?.data?.Description}
+            imgSrc={item?.ImgSrc?.localFile?.url}
+            cardHeading={item?.CardHeading}
+            keyPoints={item?.KeyPoints}
+            bgGrey={item?.BgGrey}
+          />
+        ))}
+        <VideoSection videoSrc={data[currentLang]?.VideoSection?.videoSrc} />
+        <LeadCountries
+          title={data[currentLang]?.LeadCountries?.Title}
+          description={
+            data[currentLang]?.LeadCountries?.Description?.data?.Description
+          }
+          imgSrc={data[currentLang]?.LeadCountries?.ImgSrc?.localFile?.url}
+          cardHeading={data[currentLang]?.LeadCountries?.CardHeading}
+          keyPoints={data[currentLang]?.LeadCountries?.KeyPoints}
+        />
+        <LeadSprints
+          title={data[currentLang]?.LeadSprints?.Title}
+          cardData={data[currentLang]?.LeadSprints?.CardData}
+        />
+        <ContactUsLayout
+          heading={data[currentLang]?.Interested?.Title}
+          desc={data[currentLang]?.Interested?.Description}
+          CTAlabel={data[currentLang]?.Interested?.CTAText}
+          CTAlink={data[currentLang]?.Interested?.CTALink}
+          isCTAMail={data[currentLang]?.Interested?.isMail}
+        />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
@@ -257,12 +266,12 @@ export default LeadPage;
 export const Head: HeadFC = () => (
   <>
     {/* Primary meta tags */}
-    <title>::NXT Tarento - Technology design and Innovation::</title>
-    <link rel="canonical" href="https://nxt.tarento.com/" />
-    <meta name="title" content="NXT Tarento" />
+    <title>::NXT Tarento - LEAD::</title>
+    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}lead/`} />
+    <meta name="title" content="NXT Tarento - LEAD" />
     <meta
       name="description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="Design Thinking driven 'discovery & solutioning' program that helps businesses tackle complex problems and enables informed decision making in a short time."
     />
     <meta
       name="viewport"
@@ -271,22 +280,33 @@ export const Head: HeadFC = () => (
 
     {/* Open graph */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nxt.tarento.com/" />
-    <meta property="og:title" content="NXT Tarento" />
+    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}lead/`} />
+    <meta property="og:title" content="NXT Tarento - LEAD" />
     <meta
       property="og:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="Design Thinking driven 'discovery & solutioning' program that helps businesses tackle complex problems and enables informed decision making in a short time."
     />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content={`${process.env.GATSBY_SITE_URL}static/4af750352a6c177c7f80d9ed351d244d/6998c/tech_solution_d8d031719f.png`}
+    />
+    <meta property="og:site_name" content="LEAD" />
+    <meta property="og:video" content="https://youtu.be/jrxB_PPKMAQ" />
 
     {/* Twitter */}
-    <meta property="twitter:card" content="" />
-    <meta property="twitter:url" content="https://nxt.tarento.com/" />
-    <meta property="twitter:title" content="NXT Tarento" />
+    <meta property="twitter:card" content="website" />
+    <meta
+      property="twitter:url"
+      content={`${process.env.GATSBY_SITE_URL}lead/`}
+    />
+    <meta property="twitter:title" content="NXT Tarento - LEAD" />
     <meta
       property="twitter:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+      content="Design Thinking driven 'discovery & solutioning' program that helps businesses tackle complex problems and enables informed decision making in a short time."
     />
-    <meta property="twitter:image" content="" />
+    <meta
+      property="twitter:image"
+      content={`${process.env.GATSBY_SITE_URL}static/4af750352a6c177c7f80d9ed351d244d/6998c/tech_solution_d8d031719f.png`}
+    />
   </>
 );

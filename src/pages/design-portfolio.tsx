@@ -4,6 +4,7 @@ import { useRecoilValue } from "recoil";
 
 import navbarImg from "../../static/images/logo-inner.svg";
 import { Navbar } from "../components/navbar/Navbar";
+import { FooterSection } from "../layouts/common";
 import {
   AllOtherClients,
   AreYouInterested,
@@ -11,7 +12,6 @@ import {
   Showcase,
 } from "../layouts/design-portfolio";
 import { langSelected as langSelectedAtom } from "../states/atoms";
-import { FooterSection } from "../layouts/common";
 
 interface DesignPortfolioProps {
   data: any;
@@ -47,19 +47,28 @@ const DesignPortfolio: React.FC<PageProps> = ({
 
   return (
     <main className="">
+      <ul className="skip-links">
+        <li>
+          <a href="#designPortfolioMain" rel="canonical">
+            Skip to main content
+          </a>
+        </li>
+      </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBanner heroBannerData={data[currentLang]?.HeroSection} />
-      <Showcase
-        sectionTitle={data[currentLang]?.SectionOneTitle}
-        data={currentPostsForShowcase}
-      />
-      <AllOtherClients
-        sectionTitle={data[currentLang]?.SectionTwoTitle}
-        data={data[currentDesignPortfolioList]?.nodes}
-        ctaBtnText={data[currentLang]?.DynamicButtonText}
-        portfolioPath="/design-portfolio/"
-      />
-      <AreYouInterested data={data[currentLang]?.CTA} />
+      <section id="designPortfolioMain">
+        <Showcase
+          sectionTitle={data[currentLang]?.SectionOneTitle}
+          data={currentPostsForShowcase}
+        />
+        <AllOtherClients
+          sectionTitle={data[currentLang]?.SectionTwoTitle}
+          data={data[currentDesignPortfolioList]?.nodes}
+          ctaBtnText={data[currentLang]?.DynamicButtonText}
+          portfolioPath="/design-portfolio/"
+        />
+        <AreYouInterested data={data[currentLang]?.CTA} />
+      </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
