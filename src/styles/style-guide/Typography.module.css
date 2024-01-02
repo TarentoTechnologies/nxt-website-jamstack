@@ -294,6 +294,19 @@ h3 {
   line-height: 1.5;
 }
 
+.notFoundTitle {
+  font-family: "Lato-Bold";
+  font-size: 26rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.notFoundSubtext {
+  font-family: "RobotoSlab-Bold", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
@@ -313,6 +326,12 @@ h3 {
     font-weight: 500;
     font-size: 2rem;
     line-height: 1.1;
+  }
+  .notFoundTitle {
+    font-size: 12rem;
+  }
+  .notFoundSubtext {
+    font-size: 1.5rem;
   }
 }
 
