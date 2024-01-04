@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil";
 import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
+import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import {
   FeaturesLayout,
@@ -141,6 +142,18 @@ export const query = graphql`
         }
       }
       ReferenceSectionTitle
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
+      }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
       id
@@ -201,49 +214,16 @@ export const query = graphql`
 
 export default RainPage;
 
-export const Head: HeadFC = () => (
-  <>
-    {/* Primary meta tags */}
-    <title>::NXT Tarento - RAIN::</title>
-    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}rain/`} />
-    <meta name="title" content="NXT Tarento - RAIN" />
-    <meta
-      name="description"
-      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time."
+export const Head: HeadFC = ({ data }: RainPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  return (
+    <Seo
+      metaTitle={data[currentLang]?.seo?.metaTitle}
+      metaDesc={data[currentLang]?.seo?.metaDescription}
+      metaImg={data[currentLang]?.seo?.metaImage?.localFile?.url}
+      canonicalUrl={data[currentLang]?.seo?.canonicalURL}
+      metaViewport={data[currentLang]?.seo?.metaViewport}
+      keywords={data[currentLang]?.seo?.keywords}
     />
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
-
-    {/* Open graph */}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}rain/`} />
-    <meta property="og:title" content="NXT Tarento - RAIN" />
-    <meta
-      property="og:description"
-      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time."
-    />
-    <meta
-      property="og:image"
-      content={`${process.env.GATSBY_SITE_URL}static/578bbd98b4b623cfc925bc7c55b0927d/02c3d/features_6_d557ad36c7.png`}
-    />
-    <meta property="og:site_name" content="RAIN" />
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="website" />
-    <meta
-      property="twitter:url"
-      content={`${process.env.GATSBY_SITE_URL}rain/`}
-    />
-    <meta property="twitter:title" content="NXT Tarento - RAIN" />
-    <meta
-      property="twitter:description"
-      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time."
-    />
-    <meta
-      property="twitter:image"
-      content={`${process.env.GATSBY_SITE_URL}static/578bbd98b4b623cfc925bc7c55b0927d/02c3d/features_6_d557ad36c7.png`}
-    />
-  </>
-);
+  );
+};

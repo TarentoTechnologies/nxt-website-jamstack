@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil";
 import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
+import { Seo } from "../components/seo/Seo";
 import { HowItWorks, Stories, VideoSection } from "../layouts/aurora";
 import { FooterSection } from "../layouts/common";
 import { FeaturesLayout } from "../layouts/rain";
@@ -143,6 +144,18 @@ export const query = graphql`
           caption
         }
       }
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
+      }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
       id
@@ -203,49 +216,16 @@ export const query = graphql`
 
 export default AuroraPage;
 
-export const Head: HeadFC = () => (
-  <>
-    {/* Primary meta tags */}
-    <title>::NXT Tarento - Aurora::</title>
-    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}aurora/`} />
-    <meta name="title" content="NXT Tarento - Aurora" />
-    <meta
-      name="description"
-      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. "
+export const Head: HeadFC = ({ data }: AuroraPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  return (
+    <Seo
+      metaTitle={data[currentLang]?.seo?.metaTitle}
+      metaDesc={data[currentLang]?.seo?.metaDescription}
+      metaImg={data[currentLang]?.seo?.metaImage?.localFile?.url}
+      canonicalUrl={data[currentLang]?.seo?.canonicalURL}
+      metaViewport={data[currentLang]?.seo?.metaViewport}
+      keywords={data[currentLang]?.seo?.keywords}
     />
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
-
-    {/* Open graph */}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}aurora/`} />
-    <meta property="og:title" content="NXT Tarento - Aurora" />
-    <meta
-      property="og:description"
-      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. "
-    />
-    <meta
-      property="og:image"
-      content={`${process.env.GATSBY_SITE_URL}static/abb964b52c0286769f800618508f54d6/a52df/aurora_feature_6_db0ae1fd1c.png`}
-    />
-    <meta property="og:site_name" content="Aurora" />
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="website" />
-    <meta
-      property="twitter:url"
-      content={`${process.env.GATSBY_SITE_URL}aurora/`}
-    />
-    <meta property="twitter:title" content="NXT Tarento - Aurora" />
-    <meta
-      property="twitter:description"
-      content="Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. "
-    />
-    <meta
-      property="twitter:image"
-      content={`${process.env.GATSBY_SITE_URL}static/abb964b52c0286769f800618508f54d6/a52df/aurora_feature_6_db0ae1fd1c.png`}
-    />
-  </>
-);
+  );
+};

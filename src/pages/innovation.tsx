@@ -6,6 +6,7 @@ import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { StoryBanner } from "../components/banners/StoryBanner";
 import { Navbar } from "../components/navbar/Navbar";
+import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import { ForgingInnovationLayout } from "../layouts/innovation/components/ForgingInnovationLayout";
 import { AcceleratorsLayout } from "../layouts/tech/components/AcceleratorsLayout";
@@ -198,6 +199,18 @@ export const query = graphql`
         CTAText
         CTALink
       }
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
+      }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
       id
@@ -258,52 +271,16 @@ export const query = graphql`
 
 export default InnovationPage;
 
-export const Head: HeadFC = () => (
-  <>
-    {/* Primary meta tags */}
-    <title>::NXT Tarento - Innovation::</title>
-    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}innovation/`} />
-    <meta name="title" content="NXT Tarento - Innovation" />
-    <meta
-      name="description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
+export const Head: HeadFC = ({ data }: InnovationPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  return (
+    <Seo
+      metaTitle={data[currentLang]?.seo?.metaTitle}
+      metaDesc={data[currentLang]?.seo?.metaDescription}
+      metaImg={data[currentLang]?.seo?.metaImage?.localFile?.url}
+      canonicalUrl={data[currentLang]?.seo?.canonicalURL}
+      metaViewport={data[currentLang]?.seo?.metaViewport}
+      keywords={data[currentLang]?.seo?.keywords}
     />
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
-
-    {/* Open graph */}
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content={`${process.env.GATSBY_SITE_URL}innovation/`}
-    />
-    <meta property="og:title" content="NXT Tarento - Innovation" />
-    <meta
-      property="og:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
-    />
-    <meta
-      property="og:image"
-      content={`${process.env.GATSBY_SITE_URL}static/d8556e7d840b4fa5b66d2c2e806ec9c3/b53dd/discover_pro_9a68b674f0.png`}
-    />
-    <meta property="og:site_name" content="Innovation" />
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="website" />
-    <meta
-      property="twitter:url"
-      content={`${process.env.GATSBY_SITE_URL}innovation/`}
-    />
-    <meta property="twitter:title" content="NXT Tarento - Innovation" />
-    <meta
-      property="twitter:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
-    />
-    <meta
-      property="twitter:image"
-      content={`${process.env.GATSBY_SITE_URL}static/d8556e7d840b4fa5b66d2c2e806ec9c3/b53dd/discover_pro_9a68b674f0.png`}
-    />
-  </>
-);
+  );
+};
