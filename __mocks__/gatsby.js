@@ -1,4 +1,4 @@
-const React = require("react");
+import 
 const gatsby = jest.requireActual("gatsby");
 
 module.exports = {
