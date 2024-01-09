@@ -223,7 +223,7 @@ const config: GatsbyConfig = {
       options: {
         trackingIds: ["UA-76613193-3"],
       },
-    },
+    }
   ],
 };
 

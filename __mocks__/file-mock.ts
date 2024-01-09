@@ -1,1 +1,0 @@
-export const testFileStub: string = "test-file-stub";

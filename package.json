@@ -16,9 +16,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
-    "test:unit": "jest --passWithNoTests",
-    "test:unit:coverage": "yarn test:unit -- --coverage",
-    "test:unit:watch": "yarn test:unit -- --watch"
+    "test": "jest"
   },
   "dependencies": {
     "aos": "^3.0.0-beta.6",
@@ -68,6 +66,7 @@
     "@types/react": "^18.2.19",
     "@types/react-dom": "^18.2.7",
     "@types/react-html-parser": "^2.0.3",
+    "add": "^2.0.6",
     "babel-jest": "^29.7.0",
     "babel-loader": "^9.1.3",
     "babel-plugin-remove-graphql-queries": "^5.12.0",
@@ -77,6 +76,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "storybook": "^7.4.6",
     "ts-jest": "^29.1.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "yarn": "^1.22.21"
   }
 }
