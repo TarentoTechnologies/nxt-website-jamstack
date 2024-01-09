@@ -3,6 +3,7 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import navbarImg from "../../static/images/logo-inner.svg";
+import { BannerWithCTA } from "../components";
 import { Navbar } from "../components/navbar/Navbar";
 import { FooterSection } from "../layouts/common";
 import {
@@ -67,7 +68,14 @@ const DesignPortfolio: React.FC<PageProps> = ({
           ctaBtnText={data[currentLang]?.DynamicButtonText}
           portfolioPath="/design-portfolio/"
         />
-        <AreYouInterested data={data[currentLang]?.CTA} />
+        {/* <AreYouInterested data={data[currentLang]?.CTA} /> */}
+        <BannerWithCTA
+          title={data[currentLang]?.BottomBanner?.Title}
+          bgImg={data[currentLang]?.BottomBanner?.BgImg?.localFile?.url}
+          CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
+          CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
+          isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
+        />
       </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -87,8 +95,20 @@ export const query = graphql`
           localFile {
             url
           }
+          alternativeText
         }
         Description
+        Desc {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        isImage
+        isAgencyDetail
+        isListingPage
+        withBreadCrumbs
       }
       SectionOneTitle
       SectionTwoTitle
@@ -100,6 +120,19 @@ export const query = graphql`
         CTALink
       }
       DynamicButtonText
+      BottomBanner {
+        Title
+        CTAButton {
+          Label
+          Link
+        }
+        BgImg {
+          localFile {
+            url
+          }
+        }
+        isCTAExternal
+      }
     }
     enDesignPortfolios: allStrapiDesignPortfolio(
       sort: { updatedAt: DESC }

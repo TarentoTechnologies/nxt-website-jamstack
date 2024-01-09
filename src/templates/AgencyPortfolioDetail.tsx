@@ -12,6 +12,7 @@ import {
   KeyInfoLayout,
   ResultLayout,
 } from "../layouts/agency-portfolio-detail";
+import { About } from "../layouts/agency-portfolio-detail";
 import { FooterSection } from "../layouts/common";
 import {
   AllOtherClients,
@@ -20,7 +21,6 @@ import {
   Showcase,
 } from "../layouts/design-portfolio";
 import {
-  About,
   Highlight,
   RelatedPortfolio,
 } from "../layouts/design-portfolio-detail";

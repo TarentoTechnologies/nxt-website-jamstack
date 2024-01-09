@@ -31,10 +31,7 @@ export const DesignPortfolio = ({
       {/* Header */}
       <div className="clearfix">
         <div className="float-start">
-          <h1
-            className={`${h1One}`}
-            data-aos="fade-up"
-          >
+          <h1 className={`${h1One}`} data-aos="fade-up">
             {title}
           </h1>
         </div>
@@ -47,10 +44,7 @@ export const DesignPortfolio = ({
       </div>
 
       {/* Description */}
-      <p
-        className="col-9"
-        data-aos="fade-up"
-      >
+      <p className="col-9" data-aos="fade-up">
         {description}
       </p>
 
@@ -70,6 +64,7 @@ export const DesignPortfolio = ({
                 title={data.HeroSection?.Title}
                 imgSrc={data.HeroSection?.Image?.localFile}
                 imgAlt={data.imgAlt}
+                bgGrey
               />
             </div>
           );
@@ -79,10 +74,7 @@ export const DesignPortfolio = ({
       {/* For smaller screen CTA */}
       <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none">
         <div className="clearfix mt-3">
-          <div
-            className="float-end"
-            data-aos="fade-up"
-          >
+          <div className="float-end" data-aos="fade-up">
             <PrimaryCTA label={ctaText} btnLink={ctaLink} />
           </div>
         </div>

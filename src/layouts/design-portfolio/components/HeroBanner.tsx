@@ -4,9 +4,14 @@ import { PortfolioHeroBanner } from "../../../components/banners/PortfolioHeroBa
 interface HeroBannerProps {
   heroBannerData: any;
   isImage?: boolean;
+  aboutSectionData?: any;
 }
 
-export const HeroBanner = ({ heroBannerData, isImage }: HeroBannerProps) => {
+export const HeroBanner = ({
+  heroBannerData,
+  isImage,
+  aboutSectionData,
+}: HeroBannerProps) => {
   return (
     // <HeroBannerForTDI
     //   title={heroBannerData?.Title}
@@ -30,6 +35,7 @@ export const HeroBanner = ({ heroBannerData, isImage }: HeroBannerProps) => {
       isAgencyDetail={heroBannerData?.isAgencyDetail}
       withBreadcrumbs={heroBannerData?.withBreadCrumbs}
       isListingPage={heroBannerData?.isListingPage}
+      AboutSectionData={aboutSectionData}
     />
   );
 };

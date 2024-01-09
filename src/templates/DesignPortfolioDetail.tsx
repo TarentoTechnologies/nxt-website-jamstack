@@ -6,6 +6,7 @@ import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import navbarImg from "../../static/images/logo-inner.svg";
 import techHero from "../../static/images/tech-hero.png";
+import { BannerWithCTA } from "../components";
 import { Footer } from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
 import { FooterSection } from "../layouts/common";
@@ -33,16 +34,29 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
 
   const currentFooterSection = currentLang + "FooterSection";
 
+  const currentBottomBanner = currentLang + "BottomBanner";
+
   return (
     <main className="">
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} isImage />
-      <About data={data[currentLang]?.AboutSection} />
+      <HeroBanner
+        heroBannerData={data[currentLang]?.HeroSection}
+        isImage
+        aboutSectionData={data[currentLang]?.AboutSection}
+      />
+      {/* <About data={data[currentLang]?.AboutSection} /> */}
       <TagSection data={data[currentLang]?.BannerWithTagSection} />
       <RelatedPortfolio
         data={data[currentLang]?.RelatedPortfolios}
         sectionTitle={data[currentLang]?.SectionFourTitle}
         portfolioPath="/design-portfolio/"
+      />
+      <BannerWithCTA
+        title={data[currentBottomBanner]?.BottomBanner?.Title}
+        bgImg={data[currentBottomBanner]?.BottomBanner?.BgImg?.localFile?.url}
+        CTAtext={data[currentBottomBanner]?.BottomBanner?.CTAButton?.Label}
+        CTAlink={data[currentBottomBanner]?.BottomBanner?.CTAButton?.Link}
+        isCTAExternal={data[currentBottomBanner]?.BottomBanner?.isCTAExternal}
       />
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -67,6 +81,17 @@ export const query = graphql`
             }
           }
         }
+        Desc {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        isImage
+        isAgencyDetail
+        isListingPage
+        withBreadCrumbs
       }
       AboutSection {
         id
@@ -118,6 +143,21 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    enBottomBanner: strapiDesignPortfolioListing(locale: { eq: "en" }) {
+      BottomBanner {
+        Title
+        CTAButton {
+          Label
+          Link
+        }
+        BgImg {
+          localFile {
+            url
+          }
+        }
+        isCTAExternal
       }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {

@@ -6,6 +6,18 @@
   overflow: hidden;
 }
 
+.designPortfolioDetail {
+  background: #120033;
+  overflow: hidden;
+  padding-top: 6.25rem;
+}
+
+.designPortfolioImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .subtextStyles {
   /* color: rgba(255, 255, 255, 0.7); */
   margin-left: 0;
@@ -58,6 +70,7 @@
 .agencyImg {
   min-height: 28.125rem;
   min-width: 36.25rem;
+  background-color: var(--white);
 }
 
 /* Media queries starts here */
