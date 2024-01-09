@@ -15,7 +15,7 @@ import {
 import { ctaIcon } from "../cards/PortfolioCard.module.css";
 import {
   ctaIconPos,
-  dummyImgArea,
+  imgContainer,
   showCaseCard,
   showCaseImg,
 } from "./ShowcaseCard.module.css";
@@ -45,7 +45,7 @@ export const ShowcaseCard = ({
         {/* Left side */}
         {imgSrc && imgSrc !== null ? (
           <div
-            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover d-flex justify-content-center align-items-center`}
+            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover d-flex justify-content-center align-items-center ${imgContainer}`}
           >
             {/* <img
               src={imgSrc}
@@ -61,7 +61,7 @@ export const ShowcaseCard = ({
           </div>
         ) : (
           <div
-            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover ${bgGlaucousGreen} ${dummyImgArea}`}
+            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover ${bgGlaucousGreen} ${imgContainer}`}
             data-aos="fade-up"
           ></div>
         )}
