@@ -45,7 +45,7 @@ export const ShowcaseCard = ({
         {/* Left side */}
         {imgSrc && imgSrc !== null ? (
           <div
-            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover`}
+            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover d-flex justify-content-center align-items-center`}
           >
             {/* <img
               src={imgSrc}

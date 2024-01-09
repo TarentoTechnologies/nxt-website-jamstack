@@ -41,6 +41,7 @@ export const AllOtherClients = ({
                     imgSrc={listData?.HeroSection?.Image?.localFile}
                     imgAlt={listData?.Slug}
                     tagVariant={"blue"}
+                    bgGrey
                   />
                 </div>
               );

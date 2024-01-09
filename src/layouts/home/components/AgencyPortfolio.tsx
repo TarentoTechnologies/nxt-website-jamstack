@@ -29,10 +29,7 @@ export const AgencyPortfolio = ({
       {/* Header */}
       <div className="clearfix">
         <div className="float-start">
-          <h1
-            className={`${h1One}`}
-            data-aos="fade-up"
-          >
+          <h1 className={`${h1One}`} data-aos="fade-up">
             {title}
           </h1>
         </div>
@@ -46,10 +43,7 @@ export const AgencyPortfolio = ({
       </div>
 
       {/* Description */}
-      <p
-        className="col-9"
-        data-aos="fade-up"
-      >
+      <p className="col-9" data-aos="fade-up">
         {description}
       </p>
 
@@ -78,10 +72,7 @@ export const AgencyPortfolio = ({
       {/* For smaller screen CTA */}
       <div className="d-block d-sm-block d-md-none d-lg-none d-xl-none">
         <div className="clearfix mt-3">
-          <div
-            className="float-end"
-            data-aos="fade-up"
-          >
+          <div className="float-end" data-aos="fade-up">
             <PrimaryCTA label={ctaText} btnLink={ctaLink} />
           </div>
         </div>

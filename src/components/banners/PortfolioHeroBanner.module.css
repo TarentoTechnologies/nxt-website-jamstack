@@ -1,0 +1,154 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerStyles {
+  background: #120033;
+  overflow: hidden;
+}
+
+.subtextStyles {
+  /* color: rgba(255, 255, 255, 0.7); */
+  margin-left: 0;
+  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+
+.border {
+  width: 3.5rem;
+  height: 1.125rem;
+  border-radius: 1.875rem;
+  background: #f96a00;
+  display: -webkit-box;
+  margin: 1.875rem 0 1.25rem 0;
+  /* animation: fadeInUp 1s ease 0.9s 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+
+.titleStyles {
+  color: #fff;
+  line-height: 1.1 !important;
+  /* animation: fadeInUp 1s ease 0.3s 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+
+.imgStyles {
+  /* animation: fadeIn 1s ease 1s 1 normal forwards; */
+  visibility: visible;
+  /* opacity: 0; */
+}
+
+.logoStyles {
+  /* margin-top: -6.75rem; */
+  margin-bottom: 1.25rem;
+}
+
+.boldSubtext {
+  font-size: 1.125rem !important;
+  font-weight: 400 !important;
+  /* opacity: 87%; */
+}
+
+.breadCrumb {
+  padding: 1.5rem 0 1.5rem 1.25rem;
+}
+
+.agencyImg {
+  min-height: 28.125rem;
+  min-width: 36.25rem;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+  .bannerStyles {
+    min-height: 48rem;
+    padding: 6.25rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+  .headerInfo {
+    padding: 1.25rem;
+  }
+  .titleStyles {
+    font-size: 2rem !important;
+  }
+  .agencyImg {
+    min-height: 28.125rem;
+    min-width: 21.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .bannerStyles {
+    min-height: 48rem;
+    padding: 6.25rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+  .headerInfo {
+    padding: 1.25rem;
+  }
+  .titleStyles {
+    font-size: 2rem !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bannerStyles {
+    /* max-height: 48rem; */
+    padding: 5rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+  .headerInfo {
+    padding: 1.25rem;
+  }
+  .titleStyles {
+    font-size: 3rem !important;
+  }
+  .agencyImg {
+    min-height: 28.125rem;
+    min-width: 22.5rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .bannerStyles {
+    max-height: 48rem;
+    padding: 5rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding: 0;
+  }
+  .agencyImg {
+    min-height: 28.125rem;
+    min-width: 31.25rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .bannerStyles {
+    max-height: 48rem;
+    padding: 5rem 0;
+  }
+  .imgStyles {
+    max-height: 34.375rem;
+    padding-left: 2rem;
+  }
+  .agencyImg {
+    min-height: 28.125rem;
+    min-width: 36.25rem;
+  }
+}
+
+/* Media queries ends here */

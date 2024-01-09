@@ -2,6 +2,7 @@ import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import { useRecoilValue } from "recoil";
 
+import { BannerWithCTA } from "../components";
 import { HeroBanner } from "../components/banners/HeroBanner";
 import { PyramidBanner } from "../components/banners/PyramidBanner";
 import { FooterSection } from "../layouts/common";
@@ -50,21 +51,28 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
           sectionTitle={data[currentLang]?.ProgrammeSectionTitle}
           cards={data[currentLang]?.ProgrammeCards}
         />
-        {/* <AgencyPortfolio
-        title={data[currentLang]?.HighlighterOneTitle}
-        description={data[currentLang]?.HighlighterOneDescription}
-        ctaText={data[currentLang]?.HighlighterOneCTAText}
-        ctaLink={data[currentLang]?.HighlighterOneCTALink}
-        agencyPortfolioData={data[currentAgencyPortfolio]?.nodes}
-      />
-      <DesignPortfolio
-        title={data[currentLang]?.HighlighterTwoTitle}
-        description={data[currentLang]?.HighlighterTwoDescription}
-        ctaText={data[currentLang]?.HighlighterTwoCTAText}
-        ctaLink={data[currentLang]?.HighlighterTwoCTALink}
-        designPortfolioData={data[currentDesignPortfolio]?.nodes}
-      /> */}
-        <CTALayout data={data[currentLang]?.CTA} />
+        <AgencyPortfolio
+          title={data[currentLang]?.HighlighterOneTitle}
+          description={data[currentLang]?.HighlighterOneDescription}
+          ctaText={data[currentLang]?.HighlighterOneCTAText}
+          ctaLink={data[currentLang]?.HighlighterOneCTALink}
+          agencyPortfolioData={data[currentAgencyPortfolio]?.nodes}
+        />
+        <DesignPortfolio
+          title={data[currentLang]?.HighlighterTwoTitle}
+          description={data[currentLang]?.HighlighterTwoDescription}
+          ctaText={data[currentLang]?.HighlighterTwoCTAText}
+          ctaLink={data[currentLang]?.HighlighterTwoCTALink}
+          designPortfolioData={data[currentDesignPortfolio]?.nodes}
+        />
+        {/* <CTALayout data={data[currentLang]?.CTA} /> */}
+        <BannerWithCTA
+          title={data[currentLang]?.BottomBanner?.Title}
+          bgImg={data[currentLang]?.BottomBanner?.BgImg?.localFile?.url}
+          CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
+          CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
+          isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
+        />
       </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -161,6 +169,19 @@ export const query = graphql`
         Description
         CTAText
         CTALink
+      }
+      BottomBanner {
+        Title
+        CTAButton {
+          Label
+          Link
+        }
+        BgImg {
+          localFile {
+            url
+          }
+        }
+        isCTAExternal
       }
     }
     enDesignPortfolios: allStrapiDesignPortfolio(

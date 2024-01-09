@@ -1,0 +1,41 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.swiperContainer {
+  position: relative;
+}
+
+.navButtons {
+  z-index: 100;
+}
+
+.prevBtn {
+  position: absolute;
+  top: 50;
+  left: 0;
+}
+
+.nextBtn {
+  position: absolute;
+  top: 50;
+  right: 0;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+/* Media queries ends here */

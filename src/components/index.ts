@@ -7,3 +7,4 @@ export { PrimaryCTACard } from "./cards/PrimaryCTACard";
 export { KeyInfoCard } from "./cards/KeyInfoCard";
 export { Footer } from "./footer/Footer";
 export { PrimaryTitle } from "../components/titles/PrimaryTitle";
+export { BannerWithCTA } from "./banners/BannerWithCTA";

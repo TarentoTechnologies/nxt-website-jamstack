@@ -17,7 +17,7 @@ export const KeyInfoCard = ({ data }: KeyInfoCardProps) => {
             {listData.DescriptionAlignment === "left" ? (
               <div className={`row ${index === 0 ? "" : "my-5"} gx-5`}>
                 <div
-                  className={`col-sm-12 col-md-6 col-lg-6 ${
+                  className={`col-sm-12 col-md-6 col-lg-6 d-flex flex-column justify-content-center ${
                     index === 0 ? "" : "mt-4"
                   }`}
                 >
@@ -65,7 +65,7 @@ export const KeyInfoCard = ({ data }: KeyInfoCardProps) => {
                   />
                 </div>
                 <div
-                  className={`col-sm-12 col-md-6 col-lg-6 ${
+                  className={`col-sm-12 col-md-6 col-lg-6 d-flex flex-column justify-content-center ${
                     index === 0 ? "" : "mt-4"
                   }`}
                 >

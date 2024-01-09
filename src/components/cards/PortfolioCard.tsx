@@ -17,6 +17,7 @@ import {
 } from "../../styles/style-guide/Typography.module.css";
 import {
   ctaIcon,
+  customImgSize,
   customTag,
   heroImage,
   heroProgrammerImage,
@@ -35,6 +36,7 @@ interface PortfolioCardProps {
   tagVariant?: string;
   isProgramme?: boolean;
   isCTAExternal?: boolean;
+  bgGrey?: boolean;
 }
 
 export const PortfolioCard = ({
@@ -48,20 +50,33 @@ export const PortfolioCard = ({
   tagVariant,
   isProgramme,
   isCTAExternal,
+  bgGrey = false,
 }: PortfolioCardProps) => {
   const image: any = getImage(imgSrc);
 
   return (
     <div className="container-fluid">
       {/* Image */}
-      <GatsbyImage
-        image={image}
-        alt={imgAlt ? imgAlt : ""}
-        className={`${
-          isProgramme ? heroProgrammerImage : heroImage
-        } ${bgGlaucousGreen} img-fluid ${!imgSrc ? "w-100" : ""}`}
-        data-aos="fade-up"
-      />
+      <div
+        className={`${isProgramme ? heroProgrammerImage : heroImage} ${
+          bgGrey ? "layoutBg" : "whiteBg"
+        } d-flex justify-content-center align-items-center`}
+      >
+        {/* <GatsbyImage
+          image={image}
+          alt={imgAlt ? imgAlt : ""}
+          className={`${
+            isProgramme ? heroProgrammerImage : heroImage
+          } ${bgGlaucousGreen} img-fluidlayoutBg ${!imgSrc ? "w-100" : ""}`}
+          data-aos="fade-up"
+        /> */}
+        <GatsbyImage
+          image={image}
+          alt={imgAlt ? imgAlt : ""}
+          className={`img-fluid ${isProgramme ? "w-100" : customImgSize}`}
+          data-aos="fade-up"
+        />
+      </div>
 
       {/* Tag */}
       {tag && tag !== null && (

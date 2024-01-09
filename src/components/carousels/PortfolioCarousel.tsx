@@ -4,51 +4,55 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import backwardArrow from "../../../static/icons/arrow_back_ios_FILL0_wght400_GRAD0_opsz24.svg";
-import forwardArrow from "../../../static/icons/arrow_forward_ios_FILL0_wght400_GRAD0_opsz24.svg";
+import backwardArrow from "../../../static/icons/Chevron_backward_Light.svg";
+import forwardArrow from "../../../static/icons/Chevron_forward_D.svg";
+import img1 from "../../../static/images/agencyportfolio/01 CEO Dashboard Copy 2.png";
+import img2 from "../../../static/images/agencyportfolio/Home Copy 4.png";
+import {
+  navButtons,
+  nextBtn,
+  prevBtn,
+  swiperContainer,
+} from "./PortfolioCarousel.module.css";
 
-export const PortfolioCarousel = () => {
+interface PortfolioCarouselProps {
+  data: any[];
+}
+
+export const PortfolioCarousel = ({ data }: PortfolioCarouselProps) => {
   return (
-    <div className="container-fluid">
-      <div className="">
+    <div className="swiper">
+      <div className={`${swiperContainer}`}>
         <Swiper
-          spaceBetween={30}
+          spaceBetween={24}
           modules={[Navigation, Pagination]}
-          slidesPerView={2}
-          navigation
+          slidesPerView={1.5}
+          // navigation={true}
           loop={true}
           pagination={{ clickable: true }}
+          autoplay={true}
         >
-          <SwiperSlide>
-            <img
-              src="https://picsum.photos/824/457?random=1"
-              alt="Test image 1"
-              className="img-fluid"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://picsum.photos/824/457?random=2"
-              alt="Test image 2"
-              className="img-fluid"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://picsum.photos/824/457?random=3"
-              alt="Test image 3"
-              className="img-fluid"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://picsum.photos/824/457?random=4"
-              alt="Test image 4"
-              className="img-fluid"
-            />
-          </SwiperSlide>
+          {data?.map((listData: any, index: number) => {
+            return (
+              <SwiperSlide>
+                <img
+                  src={listData?.localFile?.url}
+                  alt={listData?.alternativeText}
+                  className="img-fluid"
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
+      {/* <div className={`${navButtons}`}>
+        <div className={`swiper-button-prev ${prevBtn}`}>
+          <img src={backwardArrow} alt="Previous" />
+        </div>
+        <div className={`swiper-button-next ${nextBtn}`}>
+          <img src={forwardArrow} alt="Next" />
+        </div>
+      </div> */}
     </div>
   );
 };
