@@ -1607,6 +1607,7 @@ type Query = {
   readonly allStrapiComponentHowItWorksHowItWorks: STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSConnection;
   readonly allStrapiComponentImageStackImageStack: STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACKConnection;
   readonly allStrapiComponentImageWithCaptionImageWithCaption: STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONConnection;
+  readonly allStrapiComponentImgGalleryImgGallery: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYConnection;
   readonly allStrapiComponentInterestedInterested: STRAPI__COMPONENT_INTERESTED_INTERESTEDConnection;
   readonly allStrapiComponentKeyInformationCardKeyInformationCard: STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDConnection;
   readonly allStrapiComponentKeyInformationCardKeyInformationCardDescriptionTextnode: STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARD_DESCRIPTION_TEXTNODEConnection;
@@ -1702,6 +1703,7 @@ type Query = {
   readonly strapiComponentHowItWorksHowItWorks: Maybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKS>;
   readonly strapiComponentImageStackImageStack: Maybe<STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACK>;
   readonly strapiComponentImageWithCaptionImageWithCaption: Maybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTION>;
+  readonly strapiComponentImgGalleryImgGallery: Maybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY>;
   readonly strapiComponentInterestedInterested: Maybe<STRAPI__COMPONENT_INTERESTED_INTERESTED>;
   readonly strapiComponentKeyInformationCardKeyInformationCard: Maybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARD>;
   readonly strapiComponentKeyInformationCardKeyInformationCardDescriptionTextnode: Maybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARD_DESCRIPTION_TEXTNODE>;
@@ -2035,6 +2037,14 @@ type Query_allStrapiComponentImageWithCaptionImageWithCaptionArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONSortInput>>>;
+};
+
+
+type Query_allStrapiComponentImgGalleryImgGalleryArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYSortInput>>>;
 };
 
 
@@ -3075,6 +3085,18 @@ type Query_strapiComponentImageWithCaptionImageWithCaptionArgs = {
 };
 
 
+type Query_strapiComponentImgGalleryImgGalleryArgs = {
+  ImageList: InputMaybe<STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACKFilterListInput>;
+  SliderLeftImg: InputMaybe<STRAPI__MEDIAFilterInput>;
+  SliderRightImg: InputMaybe<STRAPI__MEDIAFilterInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+
 type Query_strapiComponentInterestedInterestedArgs = {
   CTALink: InputMaybe<StringQueryOperatorInput>;
   CTAText: InputMaybe<StringQueryOperatorInput>;
@@ -3694,6 +3716,7 @@ type Query_strapiDesignPortfolioArgs = {
   AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTFilterInput>;
   BannerWithTagSection: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGSFilterInput>;
   CTATextForDisplay: InputMaybe<StringQueryOperatorInput>;
+  GallerySection: InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFilterInput>;
   HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
   HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
   HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
@@ -5312,6 +5335,7 @@ type STRAPI_DESIGN_PORTFOLIO = Node & {
   readonly AboutSection: Maybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUT>;
   readonly BannerWithTagSection: Maybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGS>;
   readonly CTATextForDisplay: Maybe<Scalars['String']>;
+  readonly GallerySection: Maybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY>;
   readonly HeroSection: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
   readonly HighlightCarousel: Maybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSEL>;
   readonly HighlightSectionDescription: Maybe<Scalars['String']>;
@@ -5405,6 +5429,7 @@ type STRAPI_DESIGN_PORTFOLIOFieldSelector = {
   readonly AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTFieldSelector>;
   readonly BannerWithTagSection: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGSFieldSelector>;
   readonly CTATextForDisplay: InputMaybe<FieldSelectorEnum>;
+  readonly GallerySection: InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector>;
   readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector>;
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFieldSelector>;
   readonly HighlightSectionDescription: InputMaybe<FieldSelectorEnum>;
@@ -5429,6 +5454,7 @@ type STRAPI_DESIGN_PORTFOLIOFilterInput = {
   readonly AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTFilterInput>;
   readonly BannerWithTagSection: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGSFilterInput>;
   readonly CTATextForDisplay: InputMaybe<StringQueryOperatorInput>;
+  readonly GallerySection: InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFilterInput>;
   readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
   readonly HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
@@ -5494,6 +5520,7 @@ type STRAPI_DESIGN_PORTFOLIOSortInput = {
   readonly AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTSortInput>;
   readonly BannerWithTagSection: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGSSortInput>;
   readonly CTATextForDisplay: InputMaybe<SortOrderEnum>;
+  readonly GallerySection: InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYSortInput>;
   readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput>;
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELSortInput>;
   readonly HighlightSectionDescription: InputMaybe<SortOrderEnum>;
@@ -10761,6 +10788,136 @@ type STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONGroupConnection_sumA
 type STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONSortInput = {
   readonly Caption: InputMaybe<SortOrderEnum>;
   readonly Image: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY = Node & {
+  readonly ImageList: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACK>>>;
+  readonly SliderLeftImg: Maybe<STRAPI__MEDIA>;
+  readonly SliderRightImg: Maybe<STRAPI__MEDIA>;
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYConnection_groupArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYConnection_maxArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYConnection_minArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYConnection_sumArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+};
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY>;
+  readonly node: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY;
+  readonly previous: Maybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY>;
+};
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector = {
+  readonly ImageList: InputMaybe<STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACKFieldSelector>;
+  readonly SliderLeftImg: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly SliderRightImg: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFilterInput = {
+  readonly ImageList: InputMaybe<STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACKFilterListInput>;
+  readonly SliderLeftImg: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly SliderRightImg: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector;
+};
+
+type STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYSortInput = {
+  readonly ImageList: InputMaybe<STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACKSortInput>;
+  readonly SliderLeftImg: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly SliderRightImg: InputMaybe<STRAPI__MEDIASortInput>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;

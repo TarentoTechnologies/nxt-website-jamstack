@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the DesignProcessBanner component is working as expected <DesignProcessBanner /> matches snapshot 1`] = `
+<div>
+  <div
+    class="container-fluid d-flex justify-content-center bannerStyles bgNeutralGray3"
+    data-testid="design-process-banner"
+  >
+    <div
+      class="row containerService paddingLeftRight15"
+    >
+      <div
+        class="col-md-6 imgStyles"
+      >
+        <div
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 689px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='341'%20width='689'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <div
+            aria-hidden="true"
+            data-placeholder-image=""
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <img
+            alt="discover process"
+            data-aos="fade-up"
+            data-gatsby-image-ssr=""
+            data-main-image=""
+            data-src="http://localhost:8000/static/d8556e7d840b4fa5b66d2c2e806ec9c3/b53dd/discover_pro_9a68b674f0.png"
+            data-srcset="http://localhost:8000/static/d8556e7d840b4fa5b66d2c2e806ec9c3/4e18a/discover_pro_9a68b674f0.png 172w,http://localhost:8000//static/d8556e7d840b4fa5b66d2c2e806ec9c3/c6a26/discover_pro_9a68b674f0.png 345w,http://localhost:8000//static/d8556e7d840b4fa5b66d2c2e806ec9c3/b53dd/discover_pro_9a68b674f0.png 689w"
+            decoding="async"
+            id="1cebd1e0-d090-5a86-9db7-42caac85f629"
+            loading="lazy"
+            sizes="(min-width: 689px) 689px, 100vw"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          />
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-5 offset-lg-1 pt-3 textStyles"
+      >
+        <h3
+          class="h3600 pt-3 carbon"
+          data-aos="fade-up"
+        >
+          Discover
+        </h3>
+        <div
+          class="py-2 customDescription"
+          data-aos="fade-up"
+        >
+          <p>
+            In the discovery stage, we work closely with the client to define our understanding of the problem.
+          </p>
+          <p>
+            <strong>
+              Primary and Secondary Research
+            </strong>
+          </p>
+          <p>
+            To diverge and understand more about the problem area, we conduct user research and secondary research from any source available. We create personas to identify our users, map user journeys to find the pain points.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 import { bgNeutralGray3 } from "../../styles/style-guide/ColorGuide.module.css";
@@ -34,6 +35,7 @@ export const DesignProcessBanner = ({
       className={`container-fluid d-flex justify-content-center ${bannerStyles} ${
         bgGray ? bgNeutralGray3 : ""
       }`}
+      data-testid="design-process-banner"
     >
       <div className={`row containerService paddingLeftRight15`}>
         {descriptionAlignment === "right" ? (
