@@ -1,3 +1,5 @@
+
+import React from "react"
 import { white } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorTitle,

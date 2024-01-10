@@ -1,3 +1,4 @@
+import React from 'react';
 import transparentPNG from "../../../static/images/pngimg.com - laptop_PNG101775.png";
 import {
   bgBlack,
@@ -22,6 +23,7 @@ export const BannerWithTag = ({ title, tagsList }: BannerWithTagProps) => {
   return (
     <div
       className={`container-fluid ${bgPallidBlueViolet2} ${bannerWithTag} h-100 position-relative`}
+      data-testid="banner-with-tag"
     >
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-12 col-xl-6 p-5">

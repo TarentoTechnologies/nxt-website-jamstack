@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the BannerWithTag component is working as expected <BannerWithTag /> matches snapshot 1`] = `
+<div>
+  <div
+    class="container-fluid bgPallidBlueViolet2 bannerWithTag h-100 position-relative"
+    data-testid="banner-with-tag"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-sm-12 col-md-12 col-lg-12 col-xl-6 p-5"
+      >
+        <div
+          class="
+      undefined
+        
+        
+        infoSectionH2
+        
+        
+        
+        
+        
+        
+        
+        "
+          data-aos="fade-up"
+        >
+          The Design tools and Technology that we use to support CIBoost
+        </div>
+        <div
+          class="row gy-3 position-absolute tagPos d-none d-sm-none d-md-flex"
+        >
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center col-sm-12 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              Sketch
+            </label>
+          </div>
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center col-sm-12 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              Photoshop
+            </label>
+          </div>
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center col-sm-12 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              HTML
+            </label>
+          </div>
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center col-sm-12 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              React
+            </label>
+          </div>
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center col-sm-12 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              PHP
+            </label>
+          </div>
+        </div>
+        <div
+          class="row gy-3 tagPos d-flex d-sm-flex d-md-none mt-5"
+        >
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center  col-sm-3 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              Sketch
+            </label>
+          </div>
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center  col-sm-3 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              Photoshop
+            </label>
+          </div>
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center  col-sm-3 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              HTML
+            </label>
+          </div>
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center  col-sm-3 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              React
+            </label>
+          </div>
+          <div
+            class="tag bgBlack d-flex align-items-center justify-content-center  col-sm-3 col-md-3 col-lg-3 col-xl-3 me-3"
+            data-aos="fade-up"
+          >
+            <label
+              class="tagLabel2 white87"
+              data-aos="fade-up"
+            >
+              PHP
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-sm-12 col-md-12 col-lg-12 col-xl-6 overflow-hidden p-0 m-0"
+      >
+        <img
+          alt="Test Image"
+          class="img-fluid bannerImg float-end mt-0 mt-sm-0 mt-md-4 mt-lg-4 mt-xl-4"
+          data-aos="fade-up"
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

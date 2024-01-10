@@ -16,7 +16,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
-    "test": "jest"
+    "test": "jest",
+    "test:update": "jest --updateSnapshot"
   },
   "dependencies": {
     "aos": "^3.0.0-beta.6",

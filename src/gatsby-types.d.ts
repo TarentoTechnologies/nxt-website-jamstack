@@ -1627,6 +1627,7 @@ type Query = {
   readonly allStrapiComponentPortfolioAboutPortfolioAboutDescriptionTextnode: STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUT_DESCRIPTION_TEXTNODEConnection;
   readonly allStrapiComponentPortfolioCarouselPortfolioCarousel: STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELConnection;
   readonly allStrapiComponentPortfolioHeroBannerPortfolioHeroBanner: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection;
+  readonly allStrapiComponentPortfolioHeroBannerPortfolioHeroBannerDescTextnode: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection;
   readonly allStrapiComponentPortfolioListingCardPortfolioListingCard: STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDConnection;
   readonly allStrapiComponentPricingCardPricingCard: STRAPI__COMPONENT_PRICING_CARD_PRICING_CARDConnection;
   readonly allStrapiComponentPricingHeroTextPricingHeroText: STRAPI__COMPONENT_PRICING_HERO_TEXT_PRICING_HERO_TEXTConnection;
@@ -1721,6 +1722,7 @@ type Query = {
   readonly strapiComponentPortfolioAboutPortfolioAboutDescriptionTextnode: Maybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUT_DESCRIPTION_TEXTNODE>;
   readonly strapiComponentPortfolioCarouselPortfolioCarousel: Maybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSEL>;
   readonly strapiComponentPortfolioHeroBannerPortfolioHeroBanner: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
+  readonly strapiComponentPortfolioHeroBannerPortfolioHeroBannerDescTextnode: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
   readonly strapiComponentPortfolioListingCardPortfolioListingCard: Maybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARD>;
   readonly strapiComponentPricingCardPricingCard: Maybe<STRAPI__COMPONENT_PRICING_CARD_PRICING_CARD>;
   readonly strapiComponentPricingHeroTextPricingHeroText: Maybe<STRAPI__COMPONENT_PRICING_HERO_TEXT_PRICING_HERO_TEXT>;
@@ -2193,6 +2195,14 @@ type Query_allStrapiComponentPortfolioHeroBannerPortfolioHeroBannerArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput>>>;
+};
+
+
+type Query_allStrapiComponentPortfolioHeroBannerPortfolioHeroBannerDescTextnodeArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODESortInput>>>;
 };
 
 
@@ -3299,14 +3309,30 @@ type Query_strapiComponentPortfolioCarouselPortfolioCarouselArgs = {
 
 
 type Query_strapiComponentPortfolioHeroBannerPortfolioHeroBannerArgs = {
+  Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFilterInput>;
   Description: InputMaybe<StringQueryOperatorInput>;
   Image: InputMaybe<STRAPI__MEDIAFilterInput>;
   Title: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
+  isAgencyDetail: InputMaybe<BooleanQueryOperatorInput>;
+  isImage: InputMaybe<BooleanQueryOperatorInput>;
+  isListingPage: InputMaybe<BooleanQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   strapi_id: InputMaybe<IntQueryOperatorInput>;
+  withBreadCrumbs: InputMaybe<BooleanQueryOperatorInput>;
+};
+
+
+type Query_strapiComponentPortfolioHeroBannerPortfolioHeroBannerDescTextnodeArgs = {
+  Desc: InputMaybe<StringQueryOperatorInput>;
+  childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
 };
 
 
@@ -3690,6 +3716,7 @@ type Query_strapiDesignPortfolioArgs = {
 
 
 type Query_strapiDesignPortfolioListingArgs = {
+  BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFilterInput>;
   DynamicButtonText: InputMaybe<StringQueryOperatorInput>;
   HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
@@ -5488,6 +5515,7 @@ type STRAPI_DESIGN_PORTFOLIOSortInput = {
 };
 
 type STRAPI_DESIGN_PORTFOLIO_LISTING = Node & {
+  readonly BottomBanner: Maybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTA>;
   readonly CTA: Maybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARY>;
   readonly DynamicButtonText: Maybe<Scalars['String']>;
   readonly HeroSection: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
@@ -5574,6 +5602,7 @@ type STRAPI_DESIGN_PORTFOLIO_LISTINGEdge = {
 };
 
 type STRAPI_DESIGN_PORTFOLIO_LISTINGFieldSelector = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFieldSelector>;
   readonly CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFieldSelector>;
   readonly DynamicButtonText: InputMaybe<FieldSelectorEnum>;
   readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector>;
@@ -5591,6 +5620,7 @@ type STRAPI_DESIGN_PORTFOLIO_LISTINGFieldSelector = {
 };
 
 type STRAPI_DESIGN_PORTFOLIO_LISTINGFilterInput = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   readonly CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFilterInput>;
   readonly DynamicButtonText: InputMaybe<StringQueryOperatorInput>;
   readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
@@ -5649,6 +5679,7 @@ type STRAPI_DESIGN_PORTFOLIO_LISTINGGroupConnection_sumArgs = {
 };
 
 type STRAPI_DESIGN_PORTFOLIO_LISTINGSortInput = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTASortInput>;
   readonly CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYSortInput>;
   readonly DynamicButtonText: InputMaybe<SortOrderEnum>;
   readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput>;
@@ -13352,14 +13383,19 @@ type STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELSortInput = {
 };
 
 type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER = Node & {
+  readonly Desc: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDesc>;
   readonly Description: Maybe<Scalars['String']>;
   readonly Image: Maybe<STRAPI__MEDIA>;
   readonly Title: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
+  readonly isAgencyDetail: Maybe<Scalars['Boolean']>;
+  readonly isImage: Maybe<Scalars['Boolean']>;
+  readonly isListingPage: Maybe<Scalars['Boolean']>;
   readonly parent: Maybe<Node>;
   readonly strapi_id: Maybe<Scalars['Int']>;
+  readonly withBreadCrumbs: Maybe<Scalars['Boolean']>;
 };
 
 type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection = {
@@ -13401,6 +13437,22 @@ type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection_sum
   field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
 };
 
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDesc = {
+  readonly data: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFieldSelector = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector>;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFilterInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFilterInput>;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescSortInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODESortInput>;
+};
+
 type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNEREdge = {
   readonly next: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
   readonly node: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER;
@@ -13408,25 +13460,35 @@ type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNEREdge = {
 };
 
 type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector = {
+  readonly Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFieldSelector>;
   readonly Description: InputMaybe<FieldSelectorEnum>;
   readonly Image: InputMaybe<STRAPI__MEDIAFieldSelector>;
   readonly Title: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly isAgencyDetail: InputMaybe<FieldSelectorEnum>;
+  readonly isImage: InputMaybe<FieldSelectorEnum>;
+  readonly isListingPage: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+  readonly withBreadCrumbs: InputMaybe<FieldSelectorEnum>;
 };
 
 type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput = {
+  readonly Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFilterInput>;
   readonly Description: InputMaybe<StringQueryOperatorInput>;
   readonly Image: InputMaybe<STRAPI__MEDIAFilterInput>;
   readonly Title: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
+  readonly isAgencyDetail: InputMaybe<BooleanQueryOperatorInput>;
+  readonly isImage: InputMaybe<BooleanQueryOperatorInput>;
+  readonly isListingPage: InputMaybe<BooleanQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+  readonly withBreadCrumbs: InputMaybe<BooleanQueryOperatorInput>;
 };
 
 type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnection = {
@@ -13471,14 +13533,147 @@ type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnectio
 };
 
 type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput = {
+  readonly Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescSortInput>;
   readonly Description: InputMaybe<SortOrderEnum>;
   readonly Image: InputMaybe<STRAPI__MEDIASortInput>;
   readonly Title: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
+  readonly isAgencyDetail: InputMaybe<SortOrderEnum>;
+  readonly isImage: InputMaybe<SortOrderEnum>;
+  readonly isListingPage: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
+  readonly withBreadCrumbs: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE = Node & {
+  readonly Desc: Maybe<Scalars['String']>;
+  /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
+  readonly childMarkdownRemark: Maybe<MarkdownRemark>;
+  readonly children: ReadonlyArray<Node>;
+  /** Returns all children nodes filtered by type MarkdownRemark */
+  readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_groupArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_maxArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_minArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_sumArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+  readonly node: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE;
+  readonly previous: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector = {
+  readonly Desc: InputMaybe<FieldSelectorEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFilterInput = {
+  readonly Desc: InputMaybe<StringQueryOperatorInput>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+};
+
+type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODESortInput = {
+  readonly Desc: InputMaybe<SortOrderEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
 };
 
 type STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARD = Node & {

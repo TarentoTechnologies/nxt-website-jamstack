@@ -223,7 +223,15 @@ const config: GatsbyConfig = {
       options: {
         trackingIds: ["UA-76613193-3"],
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
   ],
 };
 
