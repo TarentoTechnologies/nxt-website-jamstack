@@ -18,6 +18,7 @@ import {
 } from "../layouts/design-portfolio";
 import {
   About,
+  GallerySection,
   RelatedPortfolio,
   TagSection,
 } from "../layouts/design-portfolio-detail";
@@ -45,6 +46,15 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
         aboutSectionData={data[currentLang]?.AboutSection}
       />
       {/* <About data={data[currentLang]?.AboutSection} /> */}
+      <GallerySection
+        imageList={data[currentLang]?.GallerySection?.ImageList}
+        sliderLeftImg={
+          data[currentLang]?.GallerySection?.SliderLeftImg?.localFile?.url
+        }
+        sliderRightImg={
+          data[currentLang]?.GallerySection?.SliderRightImg?.localFile?.url
+        }
+      />
       <TagSection data={data[currentLang]?.BannerWithTagSection} />
       <RelatedPortfolio
         data={data[currentLang]?.RelatedPortfolios}
@@ -140,6 +150,25 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+        }
+      }
+      GallerySection {
+        SliderLeftImg {
+          localFile {
+            url
+          }
+        }
+        SliderRightImg {
+          localFile {
+            url
+          }
+        }
+        ImageList {
+          Image {
+            localFile {
+              url
             }
           }
         }

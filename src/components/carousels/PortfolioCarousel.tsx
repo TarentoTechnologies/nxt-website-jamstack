@@ -27,7 +27,7 @@ export const PortfolioCarousel = ({ data }: PortfolioCarouselProps) => {
           spaceBetween={24}
           modules={[Navigation, Pagination]}
           slidesPerView={1.5}
-          // navigation={true}
+          navigation={true}
           loop={true}
           pagination={{ clickable: true }}
           autoplay={true}
