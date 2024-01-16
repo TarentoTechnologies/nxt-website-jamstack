@@ -156,6 +156,13 @@ export const query = graphql`
         ShowcasePost
         Slug
         PortfolioTag
+        Logo {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+        }
       }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {

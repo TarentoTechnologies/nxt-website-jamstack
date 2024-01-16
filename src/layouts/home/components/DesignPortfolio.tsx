@@ -62,7 +62,7 @@ export const DesignPortfolio = ({
                 description={data.HeroSection?.Description}
                 tag={data.PortfolioTag}
                 title={data.HeroSection?.Title}
-                imgSrc={data.HeroSection?.Image?.localFile}
+                imgSrc={data.Logo?.localFile}
                 imgAlt={data.imgAlt}
                 bgGrey
               />

@@ -63,7 +63,13 @@ export const ShowcaseCard = ({
           <div
             className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover ${bgGlaucousGreen} ${imgContainer}`}
             data-aos="fade-up"
-          ></div>
+          >
+            <img
+              src={imgSrc}
+              alt={imgAlt}
+              className={`${showCaseImg} img-fluid`}
+            />
+          </div>
         )}
 
         {/* Right side */}

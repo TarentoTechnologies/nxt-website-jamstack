@@ -206,6 +206,13 @@ export const query = graphql`
         id
         Slug
         CTATextForDisplay
+        Logo {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+        }
       }
     }
     enAgencyPortfolios: allStrapiAgencyPortfolio(

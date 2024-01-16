@@ -1,19 +1,11 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import { A11y, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import backwardArrow from "../../../static/icons/Chevron_backward_Light.svg";
-import forwardArrow from "../../../static/icons/Chevron_forward_D.svg";
-import img1 from "../../../static/images/agencyportfolio/01 CEO Dashboard Copy 2.png";
-import img2 from "../../../static/images/agencyportfolio/Home Copy 4.png";
-import {
-  navButtons,
-  nextBtn,
-  prevBtn,
-  swiperContainer,
-} from "./PortfolioCarousel.module.css";
+import { navButtons, swiperContainer } from "./PortfolioCarousel.module.css";
+import { SwiperNavButtons } from "./SwiperNavButtons";
 
 interface PortfolioCarouselProps {
   data: any[];
@@ -21,38 +13,43 @@ interface PortfolioCarouselProps {
 
 export const PortfolioCarousel = ({ data }: PortfolioCarouselProps) => {
   return (
-    <div className="swiper">
-      <div className={`${swiperContainer}`}>
-        <Swiper
-          spaceBetween={24}
-          modules={[Navigation, Pagination]}
-          slidesPerView={1.5}
-          navigation={true}
-          loop={true}
-          pagination={{ clickable: true }}
-          autoplay={true}
-        >
-          {data?.map((listData: any, index: number) => {
-            return (
-              <SwiperSlide>
-                <img
-                  src={listData?.localFile?.url}
-                  alt={listData?.alternativeText}
-                  className="img-fluid"
-                />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
-      {/* <div className={`${navButtons}`}>
-        <div className={`swiper-button-prev ${prevBtn}`}>
-          <img src={backwardArrow} alt="Previous" />
+    <div className={`${swiperContainer}`}>
+      <Swiper
+        // spaceBetween={24}
+        modules={[Navigation, Pagination, A11y]}
+        // slidesPerView={1.5}
+        loop={true}
+        pagination={{ clickable: true }}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 1.5,
+            spaceBetween: 24,
+          },
+        }}
+      >
+        {data?.map((listData: any, index: number) => {
+          return (
+            <SwiperSlide>
+              <img
+                src={listData?.localFile?.url}
+                alt={listData?.alternativeText}
+                className="img-fluid"
+              />
+            </SwiperSlide>
+          );
+        })}
+        <div className={`${navButtons}`}>
+          <SwiperNavButtons />
         </div>
-        <div className={`swiper-button-next ${nextBtn}`}>
-          <img src={forwardArrow} alt="Next" />
-        </div>
-      </div> */}
+      </Swiper>
     </div>
   );
 };
