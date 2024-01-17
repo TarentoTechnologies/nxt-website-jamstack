@@ -2732,6 +2732,7 @@ type Query_strapiAgencyPortfolioArgs = {
   HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
   HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
   KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterListInput>;
+  Logo: InputMaybe<STRAPI__MEDIAFilterInput>;
   PortfolioTag: InputMaybe<StringQueryOperatorInput>;
   RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFilterListInput>;
   ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionFilterInput>;
@@ -3721,6 +3722,7 @@ type Query_strapiDesignPortfolioArgs = {
   HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
   HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
   HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  Logo: InputMaybe<STRAPI__MEDIAFilterInput>;
   PortfolioTag: InputMaybe<StringQueryOperatorInput>;
   RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFilterListInput>;
   SectionFourTitle: InputMaybe<StringQueryOperatorInput>;
@@ -4027,6 +4029,7 @@ type STRAPI_AGENCY_PORTFOLIO = Node & {
   readonly HighlightSectionDescription: Maybe<Scalars['String']>;
   readonly HighlightSectionTitle: Maybe<Scalars['String']>;
   readonly KeyInformation: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARD>>>;
+  readonly Logo: Maybe<STRAPI__MEDIA>;
   readonly PortfolioTag: Maybe<Scalars['String']>;
   readonly RelatedPortfolios: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARD>>>;
   readonly ResultDescription: Maybe<STRAPI_AGENCY_PORTFOLIOResultDescription>;
@@ -4122,6 +4125,7 @@ type STRAPI_AGENCY_PORTFOLIOFieldSelector = {
   readonly HighlightSectionDescription: InputMaybe<FieldSelectorEnum>;
   readonly HighlightSectionTitle: InputMaybe<FieldSelectorEnum>;
   readonly KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFieldSelector>;
+  readonly Logo: InputMaybe<STRAPI__MEDIAFieldSelector>;
   readonly PortfolioTag: InputMaybe<FieldSelectorEnum>;
   readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFieldSelector>;
   readonly ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionFieldSelector>;
@@ -4148,6 +4152,7 @@ type STRAPI_AGENCY_PORTFOLIOFilterInput = {
   readonly HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
   readonly HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
   readonly KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterListInput>;
+  readonly Logo: InputMaybe<STRAPI__MEDIAFilterInput>;
   readonly PortfolioTag: InputMaybe<StringQueryOperatorInput>;
   readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFilterListInput>;
   readonly ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionFilterInput>;
@@ -4231,6 +4236,7 @@ type STRAPI_AGENCY_PORTFOLIOSortInput = {
   readonly HighlightSectionDescription: InputMaybe<SortOrderEnum>;
   readonly HighlightSectionTitle: InputMaybe<SortOrderEnum>;
   readonly KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDSortInput>;
+  readonly Logo: InputMaybe<STRAPI__MEDIASortInput>;
   readonly PortfolioTag: InputMaybe<SortOrderEnum>;
   readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDSortInput>;
   readonly ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionSortInput>;
@@ -5340,6 +5346,7 @@ type STRAPI_DESIGN_PORTFOLIO = Node & {
   readonly HighlightCarousel: Maybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSEL>;
   readonly HighlightSectionDescription: Maybe<Scalars['String']>;
   readonly HighlightSectionTitle: Maybe<Scalars['String']>;
+  readonly Logo: Maybe<STRAPI__MEDIA>;
   readonly PortfolioTag: Maybe<Scalars['String']>;
   readonly RelatedPortfolios: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARD>>>;
   readonly SectionFourTitle: Maybe<Scalars['String']>;
@@ -5434,6 +5441,7 @@ type STRAPI_DESIGN_PORTFOLIOFieldSelector = {
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFieldSelector>;
   readonly HighlightSectionDescription: InputMaybe<FieldSelectorEnum>;
   readonly HighlightSectionTitle: InputMaybe<FieldSelectorEnum>;
+  readonly Logo: InputMaybe<STRAPI__MEDIAFieldSelector>;
   readonly PortfolioTag: InputMaybe<FieldSelectorEnum>;
   readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFieldSelector>;
   readonly SectionFourTitle: InputMaybe<FieldSelectorEnum>;
@@ -5459,6 +5467,7 @@ type STRAPI_DESIGN_PORTFOLIOFilterInput = {
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
   readonly HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
   readonly HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly Logo: InputMaybe<STRAPI__MEDIAFilterInput>;
   readonly PortfolioTag: InputMaybe<StringQueryOperatorInput>;
   readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFilterListInput>;
   readonly SectionFourTitle: InputMaybe<StringQueryOperatorInput>;
@@ -5525,6 +5534,7 @@ type STRAPI_DESIGN_PORTFOLIOSortInput = {
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELSortInput>;
   readonly HighlightSectionDescription: InputMaybe<SortOrderEnum>;
   readonly HighlightSectionTitle: InputMaybe<SortOrderEnum>;
+  readonly Logo: InputMaybe<STRAPI__MEDIASortInput>;
   readonly PortfolioTag: InputMaybe<SortOrderEnum>;
   readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDSortInput>;
   readonly SectionFourTitle: InputMaybe<SortOrderEnum>;

@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   heroBannerStyles,
   logoHeadStyles,
@@ -10,9 +12,11 @@ interface HeroBannerProps {
 }
 
 export const HeroBanner = ({ data }: HeroBannerProps) => {
-
   return (
-    <div className={`container-fluid ${heroBannerStyles}`}>
+    <div
+      className={`container-fluid ${heroBannerStyles}`}
+      data-testid="hero-banner"
+    >
       <div className={`${logoSection}`}>
         <div className={`${logoMainStyles}`}>
           <img

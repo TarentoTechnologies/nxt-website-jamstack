@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the HeroBannerForAccelerators component is working as expected <HeroBannerForAccelerators /> matches snapshot 1`] = `
+<div>
+  <div
+    class="bannerStyles d-flex justify-content-center"
+    data-testid="hero-banner-for-accelerators"
+  >
+    <div
+      class="containerService paddingLeftRight15"
+    >
+      <div
+        class="row microHeading justify-content-between align-items-center"
+      >
+        <div
+          class="col-lg-6 col-md-12"
+        >
+          <div
+            class="header-info"
+          >
+            <div
+              class=""
+            >
+              <img
+                alt="bolt_light"
+                data-aos="fade-up"
+                height="71"
+                src="https://strapi-stage-nxt.tarento.com/uploads/bolt_light_df3a6f2e25.svg"
+                title="bolt_light"
+                width="217"
+              />
+            </div>
+            <h1
+              class="acceleratorTitleV2 mt-4 mb-3 black"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
+              Data. Information. Insight.
+            </h1>
+            <div
+              class="titleSubHeading blue h3500Lato mb-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              Supercharge your business with the power of Data.
+            </div>
+            <p
+              class="black50 acceleratorDescription"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.
+            </p>
+          </div>
+        </div>
+        <div
+          class="col-lg-5 col-lg-push-1 col-md-12"
+        >
+          <div
+            class="retail-img"
+          >
+            <div
+              class="gatsby-image-wrapper w-100"
+              data-gatsby-image-wrapper=""
+              style="position: relative; overflow: hidden;"
+            >
+              <div
+                aria-hidden="true"
+                data-placeholder-image=""
+                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              />
+              <img
+                alt=""
+                data-aos="fade-up"
+                data-gatsby-image-ssr=""
+                data-main-image=""
+                data-src="/static/8afccf7dc2c496868e9783df2c8a76b8/a4367/data_platform_2cb1ba726e.png"
+                data-srcset="/static/8afccf7dc2c496868e9783df2c8a76b8/2a3f3/data_platform_2cb1ba726e.png 197w,/static/8afccf7dc2c496868e9783df2c8a76b8/fdd58/data_platform_2cb1ba726e.png 393w,/static/8afccf7dc2c496868e9783df2c8a76b8/a4367/data_platform_2cb1ba726e.png 786w"
+                decoding="async"
+                loading="lazy"
+                sizes="(min-width: 786px) 786px, 100vw"
+                style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+              />
+              <noscript />
+              <script
+                type="module"
+              >
+                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

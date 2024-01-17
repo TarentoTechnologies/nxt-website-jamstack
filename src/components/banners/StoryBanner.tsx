@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 import { carbon } from "../../styles/style-guide/ColorGuide.module.css";
@@ -46,7 +47,7 @@ export const StoryBanner = ({
   subTitle,
   withCTA,
   isImage,
-  spaceAboveCTA
+  spaceAboveCTA,
 }: StoryBannerProps) => {
   const col1 = variant === "tech" ? "col-lg-6" : "col-lg-6";
   const col2 = variant === "tech" ? "col-lg-6" : "col-lg-6";
@@ -65,11 +66,14 @@ export const StoryBanner = ({
           : {}
       }
       id={cardData?.id}
+      data-testid="story-banner"
     >
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-12 ${titleStyles} px-lg-0`}>
           <PrimaryTitle title={primaryTitle} variant="h1700" color="white" />
-          <h3 className={`${subTitleStyles}`} data-aos="fade-up">{subTitle}</h3>
+          <h3 className={`${subTitleStyles}`} data-aos="fade-up">
+            {subTitle}
+          </h3>
         </div>
         <div
           className={`${col1} ${imgStyles} d-flex justify-content-center align-items-center`}
@@ -108,13 +112,19 @@ export const StoryBanner = ({
             ${variant === "innovation" ? innovationStory : ""}`}
           >
             {cardData?.PrimaryTitle && (
-              <h3 className={`${customH3} customMaringBtm1 pt-4 pb-3`} data-aos="fade-up">
+              <h3
+                className={`${customH3} customMaringBtm1 pt-4 pb-3`}
+                data-aos="fade-up"
+              >
                 {cardData?.PrimaryTitle}
               </h3>
             )}
 
             {/* <div className={`${subFont}`}>{cardData?.PrimaryTitle}</div> */}
-            <div className={`${spaceAboveCTA ? "pb-4" : ""}`} data-aos="fade-up">
+            <div
+              className={`${spaceAboveCTA ? "pb-4" : ""}`}
+              data-aos="fade-up"
+            >
               {ReactHtmlParser(
                 cardData?.Description.data.childMarkdownRemark.html
               )}
