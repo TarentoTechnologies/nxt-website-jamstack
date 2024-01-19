@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil";
 import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
+import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import { DesignProcessBannerLayout } from "../layouts/design/components/DesignProcessBannerLayout";
 import { DesignProcessLayout } from "../layouts/design/components/DesignProcessLayout";
@@ -111,6 +112,18 @@ export const query = graphql`
           }
         }
       }
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
+      }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
       id
@@ -171,49 +184,16 @@ export const query = graphql`
 
 export default DesignPage;
 
-export const Head: HeadFC = () => (
-  <>
-    {/* Primary meta tags */}
-    <title>::NXT Tarento - Design::</title>
-    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}design/`} />
-    <meta name="title" content="NXT Tarento - Design" />
-    <meta
-      name="description"
-      content="At Tarento, we believe in the power of design thinking. We follow a four step design process to shape and guide our work and thoughts to improve the outcome."
+export const Head: HeadFC = ({ data }: DesignPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  return (
+    <Seo
+      metaTitle={data[currentLang]?.seo?.metaTitle}
+      metaDesc={data[currentLang]?.seo?.metaDescription}
+      metaImg={data[currentLang]?.seo?.metaImage?.localFile?.url}
+      canonicalUrl={data[currentLang]?.seo?.canonicalURL}
+      metaViewport={data[currentLang]?.seo?.metaViewport}
+      keywords={data[currentLang]?.seo?.keywords}
     />
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
-
-    {/* Open graph */}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}design/`} />
-    <meta property="og:title" content="NXT Tarento - Design" />
-    <meta
-      property="og:description"
-      content="At Tarento, we believe in the power of design thinking. We follow a four step design process to shape and guide our work and thoughts to improve the outcome."
-    />
-    <meta
-      property="og:image"
-      content={`${process.env.GATSBY_SITE_URL}static/b01f50406c5f668090a5b40210fff276/5fae0/deliver_e8944227f3.png`}
-    />
-    <meta property="og:site_name" content="Design" />
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="website" />
-    <meta
-      property="twitter:url"
-      content={`${process.env.GATSBY_SITE_URL}design/`}
-    />
-    <meta property="twitter:title" content="NXT Tarento - Design" />
-    <meta
-      property="twitter:description"
-      content="At Tarento, we believe in the power of design thinking. We follow a four step design process to shape and guide our work and thoughts to improve the outcome."
-    />
-    <meta
-      property="twitter:image"
-      content={`${process.env.GATSBY_SITE_URL}static/b01f50406c5f668090a5b40210fff276/5fae0/deliver_e8944227f3.png`}
-    />
-  </>
-);
+  );
+};
