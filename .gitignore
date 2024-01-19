@@ -120,3 +120,7 @@ attachments
 
 #Storybook build files
 storybook-static/
+
+#sonarqube
+sonar-project.properties
+.scannerwork/
