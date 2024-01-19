@@ -4,6 +4,7 @@ import { useRecoilValue } from "recoil";
 
 import { HeroBanner } from "../components/banners/HeroBanner";
 import { PyramidBanner } from "../components/banners/PyramidBanner";
+import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import {
   AgencyPortfolio,
@@ -162,6 +163,18 @@ export const query = graphql`
         CTAText
         CTALink
       }
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
+      }
     }
     enDesignPortfolios: allStrapiDesignPortfolio(
       filter: { locale: { eq: "en" } }
@@ -270,54 +283,16 @@ export const query = graphql`
 
 export default IndexPage;
 
-export const Head: HeadFC = () => (
-  <>
-    {/* Primary meta tags */}
-    <title>::NXT Tarento - Technology, Design and Innovation::</title>
-    <link href={`${process.env.GATSBY_SITE_URL}`} rel="canonical" />
-    <meta
-      name="title"
-      content="NXT Tarento - Technology, Design and Innovation"
+export const Head: HeadFC = ({ data }: IndexPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  return (
+    <Seo
+      metaTitle={data[currentLang]?.seo?.metaTitle}
+      metaDesc={data[currentLang]?.seo?.metaDescription}
+      metaImg={data[currentLang]?.seo?.metaImage?.localFile?.url}
+      canonicalUrl={data[currentLang]?.seo?.canonicalURL}
+      metaViewport={data[currentLang]?.seo?.metaViewport}
+      keywords={data[currentLang]?.seo?.keywords}
     />
-    <meta
-      name="description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
-    />
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
-
-    {/* Open graph */}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}`} />
-    <meta
-      property="og:title"
-      content="NXT Tarento - Technology, Design and Innovation"
-    />
-    <meta
-      property="og:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
-    />
-    <meta
-      property="og:image"
-      content="https://www.tarento.com/static/780e7bd9e60e4b1f6f744287386bf866/3fa08/microsite-5.png"
-    />
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="website" />
-    <meta property="twitter:url" content={`${process.env.GATSBY_SITE_URL}`} />
-    <meta
-      property="twitter:title"
-      content="NXT Tarento - Technology, Design and Innovation"
-    />
-    <meta
-      property="twitter:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
-    />
-    <meta
-      property="twitter:image"
-      content="https://www.tarento.com/static/780e7bd9e60e4b1f6f744287386bf866/3fa08/microsite-5.png"
-    />
-  </>
-);
+  );
+};
