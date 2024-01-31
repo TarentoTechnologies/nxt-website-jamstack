@@ -1,4 +1,4 @@
-import { PortfolioCarousel } from "../../../components";
+import { PortfolioCarousel } from "../../../components/carousels/PortfolioCarousel";
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { white75 } from "../../../styles/style-guide/ColorGuide.module.css";
 import { acceleratorsLayout, titleStyles } from "../../tech/Tech.module.css";
@@ -22,7 +22,7 @@ export const Highlight = ({ title, desc, carouselData }: HighlightProps) => {
           <PrimaryTitle title={title} variant="h1700V4" color="white" />
           <p className={`pt-3 pb-4 ${white75}`}>{desc}</p>
         </div>
-        <div>
+        <div className="pt-md-5 pt-xl-0">
           <PortfolioCarousel data={carouselData} />
         </div>
       </div>

@@ -50,7 +50,7 @@ export const KeyInfoCard = ({ data }: KeyInfoCardProps) => {
             ) : (
               <div className={`row ${index === 0 ? "" : "my-5"} gx-5`}>
                 <div
-                  className={`col-sm-12 col-md-6 col-lg-6 ${
+                  className={`col-sm-12 col-md-6 col-lg-6 d-none d-md-block ${
                     index === 0 ? "" : "mt-4"
                   }`}
                 >
@@ -78,6 +78,21 @@ export const KeyInfoCard = ({ data }: KeyInfoCardProps) => {
                       listData.Description.data.childMarkdownRemark.html
                     )}
                   </div>
+                </div>
+                <div
+                  className={`col-sm-12 col-md-6 col-lg-6 d-block d-md-none ${
+                    index === 0 ? "" : "mt-4"
+                  }`}
+                >
+                  <GatsbyImage
+                    image={
+                      getImage(listData.Image.localFile)
+                        ? getImage(listData.Image.localFile)
+                        : listData.Image.localFile
+                    }
+                    alt={""}
+                    data-aos="fade-up"
+                  />
                 </div>
               </div>
             )}

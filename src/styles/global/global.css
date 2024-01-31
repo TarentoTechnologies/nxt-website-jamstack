@@ -87,25 +87,9 @@ b {
   background-color: #ffffff;
 }
 
-/* Swiper styles starts here */
-
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev {
-  top: 0rem !important;
-  color: var(--white) !important;
-}
-
-.swiper-button-prev,
-.swiper-rtl .swiper-button-next {
-  top: 0rem !important;
-  color: var(--white) !important;
-}
-
 .customMaringBtm1 {
   margin-bottom: 1rem;
 }
-
-/* Swiper styles ends here */
 
 /* Skip navigation links styles starts here */
 
@@ -131,9 +115,36 @@ b {
 
 /* Skip navigation links styles ends here */
 
+/* Splide styles starts here */
+
+.splide__pagination {
+  bottom: -3rem !important;
+}
+
+#portfolioCarousel .splide__pagination__page {
+  background-color: var(--white);
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 1.438rem;
+  margin-right: 0.5rem;
+}
+
+#portfolioCarousel .splide__pagination__page.is-active {
+  background-color: var(--cadmium-orange);
+  width: 0.8rem;
+  height: 0.5rem;
+  margin-top: 1.438rem;
+  margin-right: 0.5rem;
+}
+
+/* Splide styles ends here */
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
+  .splide__pagination {
+    bottom: -2rem !important;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -142,6 +153,10 @@ b {
 @media only screen and (min-width: 768px) {
   .containerService {
     width: 46.875rem;
+  }
+
+  .splide__pagination {
+    bottom: -2rem !important;
   }
 }
 
@@ -156,6 +171,7 @@ b {
     width: 73.125rem;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .containerRow {
     flex-direction: column;
