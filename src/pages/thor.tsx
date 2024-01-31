@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil";
 import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
+import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import {
   Avatars,
@@ -183,6 +184,18 @@ export const query = graphql`
         Caption
       }
       UseCaseSubText
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
+      }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
       id
@@ -243,64 +256,16 @@ export const query = graphql`
 
 export default ThorPage;
 
-export const Head: HeadFC = () => (
-  <>
-    {/* Primary meta tags */}
-    <title>::NXT Tarento - THOR - AI Powered Assistant and Chatbot::</title>
-    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}thor/`} />
-    <meta
-      name="title"
-      content="NXT Tarento - THOR - AI Powered Assistant and Chatbot"
+export const Head: HeadFC = ({ data }: ThorPageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  return (
+    <Seo
+      metaTitle={data[currentLang]?.seo?.metaTitle}
+      metaDesc={data[currentLang]?.seo?.metaDescription}
+      metaImg={data[currentLang]?.seo?.metaImage?.localFile?.url}
+      canonicalUrl={data[currentLang]?.seo?.canonicalURL}
+      metaViewport={data[currentLang]?.seo?.metaViewport}
+      keywords={data[currentLang]?.seo?.keywords}
     />
-    <meta
-      name="description"
-      content="THOR is highly scalable, extensible and allows deep integration to any
-      domain. Multi channel capabilities of THOR enables businesses to engage
-      their users over a wide range of channels"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
-
-    {/* Open graph */}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}thor/`} />
-    <meta
-      property="og:title"
-      content="NXT Tarento - THOR - AI Powered Assistant and Chatbot"
-    />
-    <meta
-      property="og:description"
-      content="THOR is highly scalable, extensible and allows deep integration to any
-      domain. Multi channel capabilities of THOR enables businesses to engage
-      their users over a wide range of channels"
-    />
-    <meta
-      property="og:image"
-      content={`${process.env.GATSBY_SITE_URL}static/6fb426207c6ee2394136eddec143fc08/7eaa0/multichannel_62a5520ef3.png`}
-    />
-    <meta property="og:site_name" content="THOR" />
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="website" />
-    <meta
-      property="twitter:url"
-      content={`${process.env.GATSBY_SITE_URL}thor/`}
-    />
-    <meta
-      property="twitter:title"
-      content="NXT Tarento - THOR - AI Powered Assistant and Chatbot"
-    />
-    <meta
-      property="twitter:description"
-      content="THOR is highly scalable, extensible and allows deep integration to any
-      domain. Multi channel capabilities of THOR enables businesses to engage
-      their users over a wide range of channels"
-    />
-    <meta
-      property="twitter:image"
-      content={`${process.env.GATSBY_SITE_URL}static/6fb426207c6ee2394136eddec143fc08/7eaa0/multichannel_62a5520ef3.png`}
-    />
-  </>
-);
+  );
+};

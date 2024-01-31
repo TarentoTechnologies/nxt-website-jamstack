@@ -7,6 +7,7 @@ import NXTlogo from "../../static/images/logo-inner.svg";
 import navbarImg from "../../static/images/logo-inner.svg";
 import { Footer } from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
+import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import {
   GetInTouch,
@@ -152,6 +153,18 @@ export const query = graphql`
           Link
         }
       }
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
+      }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
       id
@@ -212,49 +225,16 @@ export const query = graphql`
 
 export default PulsePage;
 
-export const Head: HeadFC = () => (
-  <>
-    {/* Primary meta tags */}
-    <title>::NXT Tarento - Pulse::</title>
-    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}pulse/`} />
-    <meta name="title" content="NXT Tarento - Pulse" />
-    <meta
-      name="description"
-      content="Make Informed decisions. Take your business to the next level."
+export const Head: HeadFC = ({ data }: PulsePageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  return (
+    <Seo
+      metaTitle={data[currentLang]?.seo?.metaTitle}
+      metaDesc={data[currentLang]?.seo?.metaDescription}
+      metaImg={data[currentLang]?.seo?.metaImage?.localFile?.url}
+      canonicalUrl={data[currentLang]?.seo?.canonicalURL}
+      metaViewport={data[currentLang]?.seo?.metaViewport}
+      keywords={data[currentLang]?.seo?.keywords}
     />
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
-
-    {/* Open graph */}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}pulse/`} />
-    <meta property="og:title" content="NXT Tarento - Pulse" />
-    <meta
-      property="og:description"
-      content="Make Informed decisions. Take your business to the next level."
-    />
-    <meta
-      property="og:image"
-      content={`${process.env.GATSBY_SITE_URL}static/2b02791991d27c06385b3209cdf1f960/25a33/pulse_Img_cde3adbc86.png`}
-    />
-    <meta property="og:site_name" content="Pulz" />
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="website" />
-    <meta
-      property="twitter:url"
-      content={`${process.env.GATSBY_SITE_URL}pulse/`}
-    />
-    <meta property="twitter:title" content="NXT Tarento - Pulse" />
-    <meta
-      property="twitter:description"
-      content="NXT is the innovation wing of Tarento with primary focus on bringing new technologies, new perspectives and new ways of working into Tarento."
-    />
-    <meta
-      property="twitter:image"
-      content={`${process.env.GATSBY_SITE_URL}static/2b02791991d27c06385b3209cdf1f960/25a33/pulse_Img_cde3adbc86.png`}
-    />
-  </>
-);
+  );
+};

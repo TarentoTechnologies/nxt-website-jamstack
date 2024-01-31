@@ -14,8 +14,8 @@ interface AboutProps {
 export const About = ({ data }: AboutProps) => {
   return (
     <div
-      className={`container-fluid d-flex justify-content-center text-white ${acceleratorsLayout} pb-0`}
-      key={data.id}
+      className={`container-fluid d-flex justify-content-center ${acceleratorsLayout} pb-0`}
+      key={data?.id}
     >
       <div className={`containerService`}>
         <div className={`${titleStyles} m-0`}>
