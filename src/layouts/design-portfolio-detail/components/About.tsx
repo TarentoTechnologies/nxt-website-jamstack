@@ -18,7 +18,7 @@ export const About = ({ data }: AboutProps) => {
       key={data?.id}
     >
       <div className={`containerService`}>
-        <div className={`${titleStyles} m-0`}>
+        <div className={`${titleStyles} m-0 text-white`}>
           <PrimaryTitle title={data?.Title} variant="infoSectionH2" />
           <p className={`pt-3 pb-4`} data-aos="fade-up">
             {data?.Description?.data?.Description}
