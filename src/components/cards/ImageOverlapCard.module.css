@@ -1,0 +1,39 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+  .customPosLeft {
+    position: absolute;
+    left: 35%;
+    z-index: 2;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .customPosRight {
+    position: absolute;
+    right: 35%;
+    z-index: 2;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+
+/* Media queries ends here */

@@ -7,3 +7,5 @@ export { PrimaryCTACard } from "./cards/PrimaryCTACard";
 export { KeyInfoCard } from "./cards/KeyInfoCard";
 export { Footer } from "./footer/Footer";
 export { PrimaryTitle } from "../components/titles/PrimaryTitle";
+export { WhatLEADCard } from "../components/cards/WhatLEADCard";
+export { ImageOverlapCard } from "../components/cards/ImageOverlapCard";
