@@ -3951,11 +3951,22 @@ type Query_strapiLeadArgs = {
 
 
 type Query_strapiLeadV2Args = {
+  FormDescription: InputMaybe<StringQueryOperatorInput>;
+  FormQRCode: InputMaybe<STRAPI__MEDIAFilterInput>;
+  FormTitle: InputMaybe<StringQueryOperatorInput>;
   HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
   HeroSection: InputMaybe<STRAPI__COMPONENT_LEAD_HERO_V_2_LEAD_HERO_SECTION_V_2FilterInput>;
   ProcessCard: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterInput>;
+  SectionDescription5: InputMaybe<StringQueryOperatorInput>;
+  SectionDescription6: InputMaybe<StringQueryOperatorInput>;
   SectionHeader3: InputMaybe<StringQueryOperatorInput>;
+  SectionHeader4: InputMaybe<StringQueryOperatorInput>;
+  SectionHeader5: InputMaybe<StringQueryOperatorInput>;
+  SectionHeader6: InputMaybe<StringQueryOperatorInput>;
   SectionList3: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterListInput>;
+  SectionList4: InputMaybe<STRAPI__COMPONENT_LEAD_CARD_V_2_LEAD_CARD_V_2FilterListInput>;
+  SectionList5: InputMaybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONFilterListInput>;
+  SectionList6: InputMaybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONFilterListInput>;
   children: InputMaybe<NodeFilterListInput>;
   createdAt: InputMaybe<DateQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
@@ -3963,6 +3974,7 @@ type Query_strapiLeadV2Args = {
   locale: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   publishedAt: InputMaybe<DateQueryOperatorInput>;
+  seo: InputMaybe<STRAPI__COMPONENT_SHARED_SEOFilterInput>;
   strapi_id: InputMaybe<IntQueryOperatorInput>;
   updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
@@ -6821,11 +6833,22 @@ type STRAPI_LEADSortInput = {
 };
 
 type STRAPI_LEAD_V_2 = Node & {
+  readonly FormDescription: Maybe<Scalars['String']>;
+  readonly FormQRCode: Maybe<STRAPI__MEDIA>;
+  readonly FormTitle: Maybe<Scalars['String']>;
   readonly HeroBanner: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
   readonly HeroSection: Maybe<STRAPI__COMPONENT_LEAD_HERO_V_2_LEAD_HERO_SECTION_V_2>;
   readonly ProcessCard: Maybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARD>;
+  readonly SectionDescription5: Maybe<Scalars['String']>;
+  readonly SectionDescription6: Maybe<Scalars['String']>;
   readonly SectionHeader3: Maybe<Scalars['String']>;
+  readonly SectionHeader4: Maybe<Scalars['String']>;
+  readonly SectionHeader5: Maybe<Scalars['String']>;
+  readonly SectionHeader6: Maybe<Scalars['String']>;
   readonly SectionList3: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARD>>>;
+  readonly SectionList4: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_LEAD_CARD_V_2_LEAD_CARD_V_2>>>;
+  readonly SectionList5: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTION>>>;
+  readonly SectionList6: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTION>>>;
   readonly children: ReadonlyArray<Node>;
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly id: Scalars['ID'];
@@ -6833,6 +6856,7 @@ type STRAPI_LEAD_V_2 = Node & {
   readonly locale: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
   readonly publishedAt: Maybe<Scalars['Date']>;
+  readonly seo: Maybe<STRAPI__COMPONENT_SHARED_SEO>;
   readonly strapi_id: Maybe<Scalars['Int']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
 };
@@ -6907,11 +6931,22 @@ type STRAPI_LEAD_V_2Edge = {
 };
 
 type STRAPI_LEAD_V_2FieldSelector = {
+  readonly FormDescription: InputMaybe<FieldSelectorEnum>;
+  readonly FormQRCode: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly FormTitle: InputMaybe<FieldSelectorEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector>;
   readonly HeroSection: InputMaybe<STRAPI__COMPONENT_LEAD_HERO_V_2_LEAD_HERO_SECTION_V_2FieldSelector>;
   readonly ProcessCard: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFieldSelector>;
+  readonly SectionDescription5: InputMaybe<FieldSelectorEnum>;
+  readonly SectionDescription6: InputMaybe<FieldSelectorEnum>;
   readonly SectionHeader3: InputMaybe<FieldSelectorEnum>;
+  readonly SectionHeader4: InputMaybe<FieldSelectorEnum>;
+  readonly SectionHeader5: InputMaybe<FieldSelectorEnum>;
+  readonly SectionHeader6: InputMaybe<FieldSelectorEnum>;
   readonly SectionList3: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFieldSelector>;
+  readonly SectionList4: InputMaybe<STRAPI__COMPONENT_LEAD_CARD_V_2_LEAD_CARD_V_2FieldSelector>;
+  readonly SectionList5: InputMaybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONFieldSelector>;
+  readonly SectionList6: InputMaybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly createdAt: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
@@ -6919,16 +6954,28 @@ type STRAPI_LEAD_V_2FieldSelector = {
   readonly locale: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly publishedAt: InputMaybe<FieldSelectorEnum>;
+  readonly seo: InputMaybe<STRAPI__COMPONENT_SHARED_SEOFieldSelector>;
   readonly strapi_id: InputMaybe<FieldSelectorEnum>;
   readonly updatedAt: InputMaybe<FieldSelectorEnum>;
 };
 
 type STRAPI_LEAD_V_2FilterInput = {
+  readonly FormDescription: InputMaybe<StringQueryOperatorInput>;
+  readonly FormQRCode: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly FormTitle: InputMaybe<StringQueryOperatorInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
   readonly HeroSection: InputMaybe<STRAPI__COMPONENT_LEAD_HERO_V_2_LEAD_HERO_SECTION_V_2FilterInput>;
   readonly ProcessCard: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterInput>;
+  readonly SectionDescription5: InputMaybe<StringQueryOperatorInput>;
+  readonly SectionDescription6: InputMaybe<StringQueryOperatorInput>;
   readonly SectionHeader3: InputMaybe<StringQueryOperatorInput>;
+  readonly SectionHeader4: InputMaybe<StringQueryOperatorInput>;
+  readonly SectionHeader5: InputMaybe<StringQueryOperatorInput>;
+  readonly SectionHeader6: InputMaybe<StringQueryOperatorInput>;
   readonly SectionList3: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterListInput>;
+  readonly SectionList4: InputMaybe<STRAPI__COMPONENT_LEAD_CARD_V_2_LEAD_CARD_V_2FilterListInput>;
+  readonly SectionList5: InputMaybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONFilterListInput>;
+  readonly SectionList6: InputMaybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONFilterListInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly createdAt: InputMaybe<DateQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
@@ -6936,6 +6983,7 @@ type STRAPI_LEAD_V_2FilterInput = {
   readonly locale: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly seo: InputMaybe<STRAPI__COMPONENT_SHARED_SEOFilterInput>;
   readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
   readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
@@ -6982,11 +7030,22 @@ type STRAPI_LEAD_V_2GroupConnection_sumArgs = {
 };
 
 type STRAPI_LEAD_V_2SortInput = {
+  readonly FormDescription: InputMaybe<SortOrderEnum>;
+  readonly FormQRCode: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly FormTitle: InputMaybe<SortOrderEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput>;
   readonly HeroSection: InputMaybe<STRAPI__COMPONENT_LEAD_HERO_V_2_LEAD_HERO_SECTION_V_2SortInput>;
   readonly ProcessCard: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDSortInput>;
+  readonly SectionDescription5: InputMaybe<SortOrderEnum>;
+  readonly SectionDescription6: InputMaybe<SortOrderEnum>;
   readonly SectionHeader3: InputMaybe<SortOrderEnum>;
+  readonly SectionHeader4: InputMaybe<SortOrderEnum>;
+  readonly SectionHeader5: InputMaybe<SortOrderEnum>;
+  readonly SectionHeader6: InputMaybe<SortOrderEnum>;
   readonly SectionList3: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDSortInput>;
+  readonly SectionList4: InputMaybe<STRAPI__COMPONENT_LEAD_CARD_V_2_LEAD_CARD_V_2SortInput>;
+  readonly SectionList5: InputMaybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONSortInput>;
+  readonly SectionList6: InputMaybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly createdAt: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
@@ -6994,6 +7053,7 @@ type STRAPI_LEAD_V_2SortInput = {
   readonly locale: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly publishedAt: InputMaybe<SortOrderEnum>;
+  readonly seo: InputMaybe<STRAPI__COMPONENT_SHARED_SEOSortInput>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
   readonly updatedAt: InputMaybe<SortOrderEnum>;
 };
@@ -18983,7 +19043,7 @@ type LeadPageQuery = { readonly en: { readonly HeroBanner: { readonly id: string
 type LEADV2PageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type LEADV2PageQuery = { readonly en: { readonly id: string, readonly SectionHeader3: string | null, readonly HeroBanner: { readonly id: string, readonly Title: string | null, readonly isImage: boolean | null, readonly withLogo: boolean | null, readonly ImgAltText: string | null, readonly Logo: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Img: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly id: string, readonly Description: string | null } | null } | null } | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: { readonly data: { readonly Description: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly CardList: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly SubText: string | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null } | null, readonly ProcessCard: { readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly SectionList3: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null } | null, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
+type LEADV2PageQuery = { readonly en: { readonly id: string, readonly SectionHeader3: string | null, readonly SectionHeader4: string | null, readonly SectionHeader5: string | null, readonly SectionDescription5: string | null, readonly SectionHeader6: string | null, readonly SectionDescription6: string | null, readonly FormTitle: string | null, readonly FormDescription: string | null, readonly HeroBanner: { readonly id: string, readonly Title: string | null, readonly isImage: boolean | null, readonly withLogo: boolean | null, readonly ImgAltText: string | null, readonly Logo: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Img: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly id: string, readonly Description: string | null } | null } | null } | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: { readonly data: { readonly Description: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly CardList: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly SubText: string | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null } | null, readonly ProcessCard: { readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly SectionList3: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly id: string, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null, readonly SectionList4: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly SubText: string | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly SectionList5: ReadonlyArray<{ readonly id: string, readonly Caption: string | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly FormQRCode: { readonly id: string, readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly SectionList6: ReadonlyArray<{ readonly id: string, readonly Caption: string | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly seo: { readonly metaTitle: string | null, readonly metaDescription: string | null, readonly canonicalURL: string | null, readonly metaViewport: string | null, readonly keywords: string | null, readonly metaImage: { readonly localFile: { readonly url: string | null } | null } | null } | null } | null, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
 
 type PricingPageQueryVariables = Exact<{ [key: string]: never; }>;
 

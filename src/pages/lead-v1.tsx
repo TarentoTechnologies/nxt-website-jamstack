@@ -3,7 +3,6 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import navbarImg from "../../static/images/logo-inner.svg";
-import { WhatLEADCard } from "../components";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
 import { Seo } from "../components/seo/Seo";
@@ -15,15 +14,14 @@ import {
   StepSection,
   VideoSection,
 } from "../layouts/lead";
-import { LEADSprints, Process, WhatLead } from "../layouts/lead-v2";
 import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
 import { langSelected as langSelectedAtom } from "../states/atoms";
 
-interface LeadV2PageProps {
+interface LeadPageProps {
   data: any;
 }
 
-const LeadV2Page: React.FC<PageProps> = ({ data }: LeadV2PageProps) => {
+const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
   const currentLang = useRecoilValue(langSelectedAtom);
 
   const currentFooterSection = currentLang + "FooterSection";
@@ -41,39 +39,23 @@ const LeadV2Page: React.FC<PageProps> = ({ data }: LeadV2PageProps) => {
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
         title={data[currentLang]?.HeroBanner?.Title}
-        img={data[currentLang]?.HeroBanner?.Img?.localFile}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
         imgAltText={data[currentLang]?.HeroBanner?.ImgAltText}
         subText={data[currentLang]?.HeroBanner?.SubText}
         description={data[currentLang]?.HeroBanner?.Description}
-        logo={data[currentLang]?.HeroBanner?.Logo}
+        logo={data[currentLang]?.HeroBanner?.Logo?.localFile?.url}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
-        isImage
         subTextBold
       />
       <section id="leadMain">
-        <WhatLead
-          title={data[currentLang]?.HeroSection?.Title}
-          description={data[currentLang]?.HeroSection?.Description}
-          cardList={data[currentLang]?.HeroSection?.CardList}
-        />
-        <Process
-          sectionTitle={data[currentLang]?.ProcessCard?.Title}
-          sectionContent={data[currentLang]?.ProcessCard?.Description}
-          sectionImage={data[currentLang]?.ProcessCard?.Image}
-          descriptionPos={data[currentLang]?.ProcessCard?.DescriptionAlignment}
-        />
-        <LEADSprints
-          sectionTitle={data[currentLang]?.SectionHeader3}
-          sectionList={data[currentLang]?.SectionList3}
-        />
-        {/* <HeroSection
+        <HeroSection
           title={data[currentLang]?.HeroSection?.Title}
           description={
             data[currentLang]?.HeroSection?.Description?.data?.Description
           }
           cardList={data[currentLang]?.HeroSection?.CardList}
-        /> */}
-        {/* {data[currentLang]?.Steps.map((item: any, index: any) => (
+        />
+        {data[currentLang]?.Steps.map((item: any, index: any) => (
           <StepSection
             key={index}
             title={item?.Title}
@@ -104,7 +86,7 @@ const LeadV2Page: React.FC<PageProps> = ({ data }: LeadV2PageProps) => {
           CTAlabel={data[currentLang]?.Interested?.CTAText}
           CTAlink={data[currentLang]?.Interested?.CTALink}
           isCTAMail={data[currentLang]?.Interested?.isMail}
-        /> */}
+        />
       </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -115,102 +97,122 @@ const LeadV2Page: React.FC<PageProps> = ({ data }: LeadV2PageProps) => {
 };
 
 export const query = graphql`
-  query LEADV2Page {
-    en: strapiLeadV2(locale: { eq: "en" }) {
-      id
+  query LeadPage {
+    en: strapiLead(locale: { eq: "en" }) {
       HeroBanner {
         id
-        Title
-        isImage
         withLogo
-        Logo {
-          alternativeText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+        Title
+        SubText
+        Description {
+          data {
+            childMarkdownRemark {
+              html
             }
+          }
+        }
+        Img {
+          localFile {
+            url
           }
         }
         ImgAltText
-        Img {
-          alternativeText
+        Logo {
           localFile {
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED)
-            }
-          }
-        }
-        Description {
-          data {
-            id
-            Description
+            url
           }
         }
       }
       HeroSection {
-        id
         Title
         Description {
           data {
             Description
-            childMarkdownRemark {
-              html
-            }
           }
         }
         CardList {
           id
           Title
-          SubText
-          Image {
-            alternativeText
+          Img {
             localFile {
-              childImageSharp {
-                gatsbyImageData(formats: PNG, placeholder: BLURRED)
-              }
+              url
+            }
+          }
+          SubText
+          BgColor
+        }
+      }
+      Steps {
+        Title
+        Description {
+          data {
+            Description
+          }
+        }
+        ImgSrc {
+          localFile {
+            url
+          }
+        }
+        CardHeading
+        KeyPoints {
+          id
+          ListItem
+        }
+        BgGrey
+      }
+      VideoSection {
+        videoSrc
+      }
+      LeadCountries {
+        Title
+        Description {
+          data {
+            Description
+          }
+        }
+        ImgSrc {
+          localFile {
+            url
+          }
+        }
+        CardHeading
+        KeyPoints {
+          ListItem
+        }
+      }
+      LeadSprints {
+        Title
+        CardData {
+          Heading
+          Description {
+            data {
+              Description
+            }
+          }
+          ImgSrc {
+            localFile {
+              url
             }
           }
         }
       }
-      ProcessCard {
-        id
+      Interested {
         Title
-        Image {
-          alternativeText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED, width: 480)
-            }
-          }
-        }
-        DescriptionAlignment
-        Description {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
+        Description
+        isMail
+        CTAText
+        CTALink
       }
-      SectionHeader3
-      SectionList3 {
-        id
-        Title
-        DescriptionAlignment
-        Image {
-          alternativeText
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
           localFile {
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED)
-            }
-          }
-        }
-        Description {
-          data {
-            id
-            childMarkdownRemark {
-              html
-            }
+            url
           }
         }
       }
@@ -272,9 +274,9 @@ export const query = graphql`
   }
 `;
 
-export default LeadV2Page;
+export default LeadPage;
 
-export const Head: HeadFC = ({ data }: LeadV2PageProps) => {
+export const Head: HeadFC = ({ data }: LeadPageProps) => {
   const currentLang = useRecoilValue(langSelectedAtom);
   return (
     <Seo

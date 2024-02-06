@@ -22,6 +22,8 @@
   line-height: 1.5;
 }
 
+/* Media queries starts here */
+
 @media only screen and (max-width: 600px) {
   .leadCardSection {
     display: grid;
@@ -74,3 +76,5 @@
     row-gap: 1rem;
   }
 }
+
+/* Media queries ends here */

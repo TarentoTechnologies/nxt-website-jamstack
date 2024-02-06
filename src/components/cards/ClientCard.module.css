@@ -1,6 +1,12 @@
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
+.clientCard {
+    height: 6.25rem;
+    border-radius: 0px;
+}
+
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
@@ -19,21 +25,6 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .customPosLeft {
-    position: absolute;
-    left: 33%;
-    z-index: 2;
-    margin-top: 5.75%;
-    margin-bottom: 5.75%;
-  }
-
-  .customPosRight {
-    position: absolute;
-    right: 33%;
-    z-index: 2;
-    margin-top: 5.75%;
-    margin-bottom: 5.75%;
-  }
 }
 
 /* Media queries ends here */

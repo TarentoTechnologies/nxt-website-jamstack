@@ -9,7 +9,6 @@ export const LEADSprints = ({
   sectionTitle,
   sectionList,
 }: LEADSprintsProps) => {
-  console.log(sectionList);
 
   return (
     <div className="container-fluid d-flex justify-content-center paddingTopBottom60">

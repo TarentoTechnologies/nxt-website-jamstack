@@ -19,8 +19,6 @@ export const Process = ({
 }: ProcessProps) => {
   const image: any = getImage(sectionImage?.localFile);
 
-  console.log(descriptionPos);
-
   return (
     <div className="container-fluid d-flex justify-content-center paddingTopBottom60 layoutBg">
       <div className={`containerService paddingLeftRight15`}>

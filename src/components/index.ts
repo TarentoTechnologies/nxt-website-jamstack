@@ -9,3 +9,6 @@ export { Footer } from "./footer/Footer";
 export { PrimaryTitle } from "../components/titles/PrimaryTitle";
 export { WhatLEADCard } from "../components/cards/WhatLEADCard";
 export { ImageOverlapCard } from "../components/cards/ImageOverlapCard";
+export { StoryCard } from "../components/cards/StoryCard";
+export { ArtefactCard } from "../components/cards/ArtefactCard";
+export { ClientCard } from "../components/cards/ClientCard";
