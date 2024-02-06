@@ -1,6 +1,10 @@
 @import url("../../styles/global/colors.css");
 @import url("../../styles/global/global.css");
 
+.customBorderRadius {
+  border-radius: 0.5rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

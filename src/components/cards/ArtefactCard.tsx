@@ -5,6 +5,7 @@ import {
   black87,
 } from "../../styles/style-guide/ColorGuide.module.css";
 import { infoSectionH3 } from "../../styles/style-guide/Typography.module.css";
+import { customBorderRadius } from "./ArtefactCard.module.css";
 
 interface ArtefactCardProps {
   id?: any;
@@ -17,7 +18,7 @@ export const ArtefactCard = ({ id, image, title }: ArtefactCardProps) => {
 
   return (
     <div
-      className={`${bgNeutralGray2} card p-4 border border-0 h-100`}
+      className={`${bgNeutralGray2} card p-4 border border-0 h-100 ${customBorderRadius}`}
       key={id}
     >
       <div className="">

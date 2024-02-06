@@ -91,7 +91,8 @@ const LeadV2Page: React.FC<PageProps> = ({ data }: LeadV2PageProps) => {
         <Form
           formTitle={data[currentLang]?.FormTitle}
           formDescription={data[currentLang]?.FormDescription}
-          qrCode={data[currentLang]?.FormQRCode}
+          ctaLabel={data[currentLang]?.FormCTALabel}
+          ctaLink={data[currentLang]?.FormCTALink}
         />
       </section>
       <FooterSection
@@ -131,7 +132,9 @@ export const query = graphql`
         Description {
           data {
             id
-            Description
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
@@ -244,15 +247,6 @@ export const query = graphql`
       SectionDescription6
       FormTitle
       FormDescription
-      FormQRCode {
-        id
-        alternativeText
-        localFile {
-          childImageSharp {
-            gatsbyImageData(formats: PNG, placeholder: BLURRED, width: 500)
-          }
-        }
-      }
       SectionList6 {
         id
         Image {
@@ -265,6 +259,8 @@ export const query = graphql`
         }
         Caption
       }
+      FormCTALink
+      FormCTALabel
       seo {
         metaTitle
         metaDescription

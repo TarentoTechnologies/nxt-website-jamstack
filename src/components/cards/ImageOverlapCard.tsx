@@ -1,7 +1,9 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ReactHtmlParser from "react-html-parser";
 
-import { customPosLeft, customPosRight } from "./ImageOverlapCard.module.css";
+import { black60, black87 } from "../../styles/style-guide/ColorGuide.module.css";
+import { customPosLeft, customPosRight, customBorderRadius } from "./ImageOverlapCard.module.css";
+import {infoSectionH3} from "../../styles/style-guide/Typography.module.css"
 
 interface ImageOverlapCardProps {
   img: any;
@@ -20,7 +22,7 @@ export const ImageOverlapCard = ({
 
   return (
     <div className="">
-      <div className="row position-relative">
+      <div className="row position-relative my-5">
         <div
           className={`col-lg-6 ${textPos === "right" ? "order-2" : "order-1"}`}
         >
@@ -32,15 +34,20 @@ export const ImageOverlapCard = ({
           />
         </div>
         <div
-          className={`col-lg-6 ${textPos === "right" ? "order-1" : "order-2"} mb-5 mb-sm-5 mb-md-5 mb-lg-0`}
+          className={`col-lg-6 ${customBorderRadius} ${
+            textPos === "right" ? "order-1" : "order-2"
+          } mb-5 mb-sm-5 mb-md-5 mb-lg-0`}
         >
           <div
             className={`${
               textPos === "right" ? customPosRight : customPosLeft
             } card layoutBg border border-0 p-4`}
           >
-            <h4 className="pb-2">{subTitle}</h4>
-            {ReactHtmlParser(content?.data?.childMarkdownRemark?.html)}
+            <h4 className={`${black87} pb-2 ${infoSectionH3}`}>{subTitle}</h4>
+            <p className={`${black60}`}>
+              {" "}
+              {ReactHtmlParser(content?.data?.childMarkdownRemark?.html)}
+            </p>
           </div>
         </div>
       </div>
