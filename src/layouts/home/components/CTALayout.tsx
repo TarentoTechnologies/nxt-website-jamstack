@@ -16,6 +16,7 @@ export const CTALayout = ({ data }: CTALayoutProps) => {
         description={data?.Description}
         ctaLink={data?.CTALink}
         ctaText={data?.CTAText}
+        isCTAMail
       />
     </div>
   );

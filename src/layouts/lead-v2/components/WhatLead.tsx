@@ -18,7 +18,7 @@ export const WhatLead = ({ title, description, cardList }: WhatLeadProps) => {
     >
       <div className={`containerService paddingLeftRight15`}>
         <div className={`row`}>
-          <div className={`col-lg-6`}>
+          <div className={`col-lg-10`}>
             <div className={`mt-3`}>
               <PrimaryTitle title={title} variant="infoSectionH2" />
             </div>

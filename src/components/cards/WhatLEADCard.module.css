@@ -2,7 +2,7 @@
 @import url("../../styles/global/global.css");
 
 .leadCard {
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   min-height: 23.5rem;
   padding: 1.25rem;
 }
