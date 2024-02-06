@@ -35,8 +35,8 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
           </a>
         </li>
       </ul>
-      <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBannerForTDI
+      {/* <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} /> */}
+      {/* <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
         title={data[currentLang]?.HeroBanner?.Title}
         img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
@@ -46,8 +46,8 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
         logo={data[currentLang]?.HeroBanner?.Logo?.localFile?.url}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
         subTextBold
-      />
-      <section id="leadMain">
+      /> */}
+      {/* <section id="leadMain">
         <HeroSection
           title={data[currentLang]?.HeroSection?.Title}
           description={
@@ -87,192 +87,192 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
           CTAlink={data[currentLang]?.Interested?.CTALink}
           isCTAMail={data[currentLang]?.Interested?.isMail}
         />
-      </section>
-      <FooterSection
+      </section> */}
+      {/* <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
-      />
+      /> */}
     </main>
   );
 };
 
-export const query = graphql`
-  query LeadPage {
-    en: strapiLead(locale: { eq: "en" }) {
-      HeroBanner {
-        id
-        withLogo
-        Title
-        SubText
-        Description {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-        Img {
-          localFile {
-            url
-          }
-        }
-        ImgAltText
-        Logo {
-          localFile {
-            url
-          }
-        }
-      }
-      HeroSection {
-        Title
-        Description {
-          data {
-            Description
-          }
-        }
-        CardList {
-          id
-          Title
-          Img {
-            localFile {
-              url
-            }
-          }
-          SubText
-          BgColor
-        }
-      }
-      Steps {
-        Title
-        Description {
-          data {
-            Description
-          }
-        }
-        ImgSrc {
-          localFile {
-            url
-          }
-        }
-        CardHeading
-        KeyPoints {
-          id
-          ListItem
-        }
-        BgGrey
-      }
-      VideoSection {
-        videoSrc
-      }
-      LeadCountries {
-        Title
-        Description {
-          data {
-            Description
-          }
-        }
-        ImgSrc {
-          localFile {
-            url
-          }
-        }
-        CardHeading
-        KeyPoints {
-          ListItem
-        }
-      }
-      LeadSprints {
-        Title
-        CardData {
-          Heading
-          Description {
-            data {
-              Description
-            }
-          }
-          ImgSrc {
-            localFile {
-              url
-            }
-          }
-        }
-      }
-      Interested {
-        Title
-        Description
-        isMail
-        CTAText
-        CTALink
-      }
-      seo {
-        metaTitle
-        metaDescription
-        canonicalURL
-        metaViewport
-        keywords
-        metaImage {
-          localFile {
-            url
-          }
-        }
-      }
-    }
-    enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
-      id
-      Footer {
-        id
-        PrimaryLogo {
-          alternativeText
-          caption
-          localFile {
-            url
-          }
-        }
-        SecondaryLogo {
-          alternativeText
-          caption
-          localFile {
-            url
-          }
-        }
-        PrimaryDescription {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-        PrimaryLevelOneHeading
-        PrimaryLevelOneList {
-          id
-          Label
-          Link
-        }
-        PrimaryLevelTwoHeading
-        PrimaryLevelTwoList {
-          id
-          Link
-          Label
-        }
-        SecondaryLevelOneHeading
-        SecondaryLevelOneList {
-          id
-          Link
-          Label
-        }
-        SecondaryLevelTwoHeading
-        SecondaryLevelTwoList {
-          id
-          Link
-          Label
-        }
-        Copyright
-        PrimaryLogoLink
-        SecondaryLogoLink
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query LeadPage {
+//     en: strapiLead(locale: { eq: "en" }) {
+//       HeroBanner {
+//         id
+//         withLogo
+//         Title
+//         SubText
+//         Description {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         Img {
+//           localFile {
+//             url
+//           }
+//         }
+//         ImgAltText
+//         Logo {
+//           localFile {
+//             url
+//           }
+//         }
+//       }
+//       HeroSection {
+//         Title
+//         Description {
+//           data {
+//             Description
+//           }
+//         }
+//         CardList {
+//           id
+//           Title
+//           Img {
+//             localFile {
+//               url
+//             }
+//           }
+//           SubText
+//           BgColor
+//         }
+//       }
+//       Steps {
+//         Title
+//         Description {
+//           data {
+//             Description
+//           }
+//         }
+//         ImgSrc {
+//           localFile {
+//             url
+//           }
+//         }
+//         CardHeading
+//         KeyPoints {
+//           id
+//           ListItem
+//         }
+//         BgGrey
+//       }
+//       VideoSection {
+//         videoSrc
+//       }
+//       LeadCountries {
+//         Title
+//         Description {
+//           data {
+//             Description
+//           }
+//         }
+//         ImgSrc {
+//           localFile {
+//             url
+//           }
+//         }
+//         CardHeading
+//         KeyPoints {
+//           ListItem
+//         }
+//       }
+//       LeadSprints {
+//         Title
+//         CardData {
+//           Heading
+//           Description {
+//             data {
+//               Description
+//             }
+//           }
+//           ImgSrc {
+//             localFile {
+//               url
+//             }
+//           }
+//         }
+//       }
+//       Interested {
+//         Title
+//         Description
+//         isMail
+//         CTAText
+//         CTALink
+//       }
+//       seo {
+//         metaTitle
+//         metaDescription
+//         canonicalURL
+//         metaViewport
+//         keywords
+//         metaImage {
+//           localFile {
+//             url
+//           }
+//         }
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
 
 export default LeadPage;
 

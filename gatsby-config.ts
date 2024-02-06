@@ -132,14 +132,6 @@ const strapiConfig = {
       },
     },
     {
-      singularName: "lead",
-      pluginOptions: {
-        i18n: {
-          locale: "all", // Fetch all localizations
-        },
-      },
-    },
-    {
       singularName: "pulse",
       pluginOptions: {
         i18n: {
