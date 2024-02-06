@@ -33,7 +33,8 @@ import {
   subTitleV1,
   h1700V2,
   h4500V2,
-  h2400
+  h2400,
+  cardTitleV1
 } from "./Typography.module.css";
 
 export const Typography = (): any => {
@@ -256,6 +257,12 @@ export const Typography = (): any => {
               Tellus in hac habitasse platea
             </th>
             <td>h2400</td>
+          </tr>
+          <tr>
+            <th scope="row" className={cardTitleV1}>
+              Tellus in hac habitasse platea
+            </th>
+            <td>cardTitleV1</td>
           </tr>
         </tbody>
       </table>

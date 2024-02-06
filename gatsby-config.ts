@@ -163,6 +163,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "lead-v2",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
 };
 
