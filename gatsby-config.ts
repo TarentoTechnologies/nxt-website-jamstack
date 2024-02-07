@@ -132,14 +132,6 @@ const strapiConfig = {
       },
     },
     {
-      singularName: "lead",
-      pluginOptions: {
-        i18n: {
-          locale: "all", // Fetch all localizations
-        },
-      },
-    },
-    {
       singularName: "pulse",
       pluginOptions: {
         i18n: {
@@ -157,6 +149,14 @@ const strapiConfig = {
     },
     {
       singularName: "nxt-application",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
+    {
+      singularName: "lead-v2",
       pluginOptions: {
         i18n: {
           locale: "all", // Fetch all localizations

@@ -1,0 +1,43 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.customBorderRadius {
+  border-radius: 0.5rem;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+  .customPosLeft {
+    position: absolute;
+    left: 33%;
+    z-index: 2;
+    margin-top: 5.75%;
+    margin-bottom: 5.75%;
+  }
+
+  .customPosRight {
+    position: absolute;
+    right: 33%;
+    z-index: 2;
+    margin-top: 5.75%;
+    margin-bottom: 5.75%;
+  }
+}
+
+/* Media queries ends here */
