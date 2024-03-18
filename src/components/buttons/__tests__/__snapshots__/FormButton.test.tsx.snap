@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the FormButton component is working as expected <FormButton /> matches snapshot 1`] = `
+<div>
+  <a
+    data-testid="form-button"
+    href=""
+  >
+    <div
+      class="text-center d-flex align-items-center justify-content-center 
+      buttonClass bgHaysBlue "
+      data-aos="fade-up"
+    >
+      <label
+        data-aos="fade-up"
+      >
+        Request a Demo
+      </label>
+    </div>
+  </a>
+</div>
+`;

@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   bgDuskyViolet,
   bgHaysBlue,
@@ -24,7 +26,10 @@ export const FormButton = ({
   const bgColor = isPulse ? bgDuskyViolet : bgHaysBlue;
 
   return (
-    <a href={btnLink != null ? (isEmail ? `mailto:${btnLink}` : btnLink) : ""}>
+    <a
+      href={btnLink != null ? (isEmail ? `mailto:${btnLink}` : btnLink) : ""}
+      data-testid="form-button"
+    >
       <div
         className={`text-center d-flex align-items-center justify-content-center 
       ${buttonClass} ${bgColor} ${isPulse ? pulseBg : ""}`}

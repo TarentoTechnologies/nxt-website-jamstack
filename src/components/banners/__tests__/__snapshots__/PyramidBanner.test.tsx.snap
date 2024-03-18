@@ -53,6 +53,7 @@ exports[`Test if the PyramidBanner component is working as expected <PyramidBann
             Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.
           </p>
           <a
+            data-testid="primary-cta"
             href="/data-platform"
           >
             <div

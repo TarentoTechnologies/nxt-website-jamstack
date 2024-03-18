@@ -93,6 +93,7 @@ exports[`Test if the StoryBanner component is working as expected <StoryBanner /
             class=""
           >
             <a
+              data-testid="primary-cta"
               href="hello@tarento.com"
             >
               <div

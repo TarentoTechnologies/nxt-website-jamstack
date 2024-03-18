@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the Footer component is working as expected <Footer /> matches snapshot 1`] = `
+<div>
+  <div
+    class="container-fluid footer"
+    data-testid="footer"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-sm-12 col-md-12 col-xl-8"
+      >
+        <div
+          class="d-block d-md-none topBar"
+        />
+        <div
+          class="d-block d-md-none tarentoLogo footerRight"
+        >
+          <a
+            rel="canonical"
+          >
+            <img
+              data-aos="fade-up"
+              height="43"
+              width="187"
+            />
+          </a>
+        </div>
+        <div
+          class="d-none d-md-block d-xl-none tarentoLogo footerRight floatRight"
+        >
+          <a
+            rel="canonical"
+            target="_blank"
+          >
+            <img
+              data-aos="fade-up"
+              height="43"
+              width="187"
+            />
+          </a>
+        </div>
+        <div
+          class="nxtLogo"
+        >
+          <a
+            rel="canonical"
+          >
+            <img
+              data-aos="fade-up"
+              height="72"
+              width="72"
+            />
+          </a>
+        </div>
+        <div
+          class="d-none d-md-block topBar"
+        />
+        <div
+          class="row marginBtm"
+        >
+          <div
+            class="col-xs-12 col-sm-12 col-md-6 footerDesc"
+          >
+            <p
+              class="footerReachUs"
+              data-aos="fade-up"
+            />
+          </div>
+          <div
+            class="col-md-6 d-flex p-0"
+          >
+            <div
+              class="directlink dlinkLeft dLinkLeft offset-xl-2"
+            >
+              <p
+                class="footerHeading"
+                data-aos="fade-up"
+              />
+              <ul />
+            </div>
+            <div
+              class="directlink dlinkRight dLinkRight offset-xl-2"
+            >
+              <p
+                class="footerHeading"
+                data-aos="fade-up"
+              />
+              <ul />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-sm-12 col-md-12 col-xl-4"
+      >
+        <div
+          class="d-none d-xl-block tarentoLogo footerRight"
+        >
+          <a
+            rel="canonical"
+            target="_blank"
+          >
+            <img
+              data-aos="fade-up"
+              height="43"
+              width="187"
+            />
+          </a>
+        </div>
+        <div
+          class="topBar col-md-6 col-lg-12"
+        />
+        <div
+          class="row"
+        >
+          <div
+            class="col-xs-6 col-sm-12 col-md-12 col-lg-12 marginBtm1 d-flex ps-0"
+          >
+            <div
+              class="directlink dlinkLeft offset-xl-1"
+            >
+              <p
+                class="footerHeading"
+                data-aos="fade-up"
+              />
+              <ul />
+            </div>
+            <div
+              class="directlink dlinkRight offset-lg-1 offset-xl-2"
+            >
+              <p
+                class="footerHeading"
+                data-aos="fade-up"
+              />
+              <ul />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+      >
+        <p
+          class="footerHeading rights"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

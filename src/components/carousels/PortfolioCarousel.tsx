@@ -1,3 +1,4 @@
+import React from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -9,7 +10,7 @@ import forwardArrow from "../../../static/icons/arrow_forward_ios_FILL0_wght400_
 
 export const PortfolioCarousel = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" data-testid="portfolio-carousel">
       <div className="">
         <Swiper
           spaceBetween={30}

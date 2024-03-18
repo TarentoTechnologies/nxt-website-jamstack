@@ -36,6 +36,7 @@ export const PrimaryCTA = ({
           href={
             btnLink != null ? `${isMail ? `mailto:${btnLink};` : btnLink}` : ""
           }
+          data-testid="primary-cta"
         >
           <div
             className={`text-center d-flex align-items-center justify-content-center 
@@ -47,7 +48,7 @@ export const PrimaryCTA = ({
           </div>
         </a>
       ) : (
-        <Link to={btnLink != null ? btnLink : ""}>
+        <Link to={btnLink != null ? btnLink : ""} data-testid="primary-cta">
           <div
             className={`text-center d-flex align-items-center justify-content-center 
       ${mode} ${size === "large" ? large : ""} ${customClasses}`}
