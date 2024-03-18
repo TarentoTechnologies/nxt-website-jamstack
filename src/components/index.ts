@@ -12,3 +12,4 @@ export { ImageOverlapCard } from "../components/cards/ImageOverlapCard";
 export { StoryCard } from "../components/cards/StoryCard";
 export { ArtefactCard } from "../components/cards/ArtefactCard";
 export { ClientCard } from "../components/cards/ClientCard";
+export { BannerWithCTA } from "./banners/BannerWithCTA";
