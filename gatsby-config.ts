@@ -224,6 +224,7 @@ const config: GatsbyConfig = {
         trackingIds: ["UA-76613193-3"],
       },
     },
+    `gatsby-plugin-netlify-redirect`
   ],
 };
 
