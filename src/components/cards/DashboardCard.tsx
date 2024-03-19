@@ -32,7 +32,7 @@ export const DashboardCard = ({
   isCTAExternal,
 }: DashboardCardProps) => {
   return (
-    <div className={`${dashboardCard} whiteBg`}>
+    <div className={`${dashboardCard} whiteBg position-relative`}>
       <div data-aos="fade-up">
         <GatsbyImage
           image={
@@ -46,10 +46,10 @@ export const DashboardCard = ({
       <div className={`${planHeading} pt-3`} data-aos="fade-up">
         {title}
       </div>
-      <div className={`${subText2} pt-3`} data-aos="fade-up">
+      <div className={`${subText2} py-0 py-sm-0 py-md-0 py-lg-0 py-xl-2`} data-aos="fade-up">
         {description}
       </div>
-      <div className="mt-4" data-aos="fade-up">
+      <div className="position-absolute bottom-0 pb-3" data-aos="fade-up">
         {!isCTAExternal ? (
           <Link to={ctaLink}>
             <label className={`${cta1}`} role="button">

@@ -171,6 +171,7 @@ export const query = graphql`
         }
         CTAText
         CTALink
+        isCTAExternal
       }
       BottomBanner {
         Title
