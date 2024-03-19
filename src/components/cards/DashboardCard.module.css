@@ -1,0 +1,9 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.dashboardCard {
+  padding: 1.5rem;
+  min-height: 15.625rem;
+  border-radius: 0.25rem;
+  color: var(--black);
+}
