@@ -3,12 +3,14 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import navbarImg from "../../static/images/logo-inner.svg";
+import { BannerWithCTA } from "../components";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
 import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import {
   FeaturesLayout,
+  LiveExpLayout,
   ReferencesLayout,
   WorkingLayout,
 } from "../layouts/rain";
@@ -56,9 +58,21 @@ const RainPage: React.FC<PageProps> = ({ data }: RainPageProps) => {
           isImage={false}
           bgGrey
         />
+        <LiveExpLayout
+          title={data[currentLang]?.LiveExpTitle}
+          description={data[currentLang]?.LiveExpDesc}
+          cardList={data[currentLang]?.LiveExpCards}
+        />
         <ReferencesLayout
           title={data[currentLang]?.ReferenceSectionTitle}
           cardsData={data[currentLang]?.ReferenceCard}
+        />
+        <BannerWithCTA
+          title={data[currentLang]?.BottomBanner?.Title}
+          bgImg={data[currentLang]?.BottomBanner?.BgImg?.localFile?.url}
+          CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
+          CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
+          isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
         />
       </section>
       <FooterSection
@@ -142,6 +156,36 @@ export const query = graphql`
         }
       }
       ReferenceSectionTitle
+      LiveExpTitle
+      LiveExpDesc
+      LiveExpCards {
+        Title
+        Description
+        Image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+          alternativeText
+        }
+        CTAText
+        CTALink
+        isCTAExternal
+      }
+      BottomBanner {
+        Title
+        CTAButton {
+          Label
+          Link
+        }
+        BgImg {
+          localFile {
+            url
+          }
+        }
+        isCTAExternal
+      }
       seo {
         metaTitle
         metaDescription
