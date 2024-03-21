@@ -25,6 +25,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "demo-app",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
   singleTypes: [
     {
