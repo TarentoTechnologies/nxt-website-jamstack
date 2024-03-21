@@ -15,18 +15,15 @@ const RAINDemoPage: React.FC<PageProps> = ({ data }: RAINDemoPageProps) => {
   return (
     <main className="">
       <iframe
+        title="Demo app"
+        className="rainDemoApp"
         src={data[currentLang]?.AppURL}
         sandbox="allow-scripts allow-same-origin"
         referrerPolicy="same-origin"
         height="100%"
-        width="100%"
+        width="100"
         style={{
-          position: "absolute",
-          overflowX: "hidden",
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
+          height: "100vh",
         }}
       ></iframe>
     </main>

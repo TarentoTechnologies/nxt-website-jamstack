@@ -127,9 +127,20 @@ b {
 
 /* Skip navigation links styles ends here */
 
+/* Styles for demo app starts here */
+
+.rainDemoApp {
+  width: 100.5vw;
+}
+
+/* Styles for demo app ends here */
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
+  .rainDemoApp {
+    width: 101vw;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -138,6 +149,10 @@ b {
 @media only screen and (min-width: 768px) {
   .containerService {
     width: 46.875rem;
+  }
+  
+  .rainDemoApp {
+    width: 101vw;
   }
 }
 
