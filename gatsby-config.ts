@@ -25,6 +25,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "demo-app",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
   singleTypes: [
     {
@@ -224,6 +232,7 @@ const config: GatsbyConfig = {
         trackingIds: ["UA-76613193-3"],
       },
     },
+    `gatsby-plugin-netlify-redirect`
   ],
 };
 
