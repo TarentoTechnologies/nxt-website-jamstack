@@ -83,6 +83,10 @@ b {
   background-color: #ffffff;
 }
 
+.cursorPointer {
+  cursor: pointer;
+}
+
 /* Swiper styles starts here */
 
 .swiper-button-next,

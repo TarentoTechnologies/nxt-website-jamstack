@@ -39,13 +39,19 @@ export const BannerWithCTA = ({
         <div className={`mt-5 ${btnStyles} text-center`} data-aos="fade-up">
           {!isCTAExternal ? (
             <Link to={CTAlink}>
-              <label className={`${bannerCTAtext}`} role="button">
+              <label
+                className={`${bannerCTAtext} pe-auto cursorPointer`}
+                role="link"
+              >
                 {CTAtext}
               </label>
             </Link>
           ) : (
             <a href={CTAlink} rel="external" target="_blank">
-              <label className={`${bannerCTAtext}`} role="button">
+              <label
+                className={`${bannerCTAtext} pe-auto cursorPointer`}
+                role="link"
+              >
                 {CTAtext}
               </label>
             </a>
@@ -63,13 +69,19 @@ export const BannerWithCTA = ({
         <div className={`mt-5 ${btnStyles} text-center`} data-aos="fade-up">
           {!isCTAExternal ? (
             <Link to={CTAlink}>
-              <label className={`${bannerCTAtext}`} role="button">
+              <label
+                className={`${bannerCTAtext} pe-auto cursorPointer`}
+                role="link"
+              >
                 {CTAtext}
               </label>
             </Link>
           ) : (
             <a href={CTAlink} rel="external" target="_blank">
-              <label className={`${bannerCTAtext}`} role="button">
+              <label
+                className={`${bannerCTAtext} pe-auto cursorPointer`}
+                role="link"
+              >
                 {CTAtext}
               </label>
             </a>

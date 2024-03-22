@@ -78,7 +78,11 @@ export const ShowcaseCard = ({
             {/* CTA */}
             <div className="mt-3">
               <Link to={ctaLink}>
-                <label className={`${cta1}`} role="button" data-aos="fade-up">
+                <label
+                  className={`${cta1} pe-auto cursorPointer`}
+                  role="link"
+                  data-aos="fade-up"
+                >
                   {ctaText}
                   <span className={`${ctaIconPos}`}>
                     <img
