@@ -46,13 +46,16 @@ export const DashboardCard = ({
       <div className={`${planHeading} pt-3`} data-aos="fade-up">
         {title}
       </div>
-      <div className={`${subText2} py-0 py-sm-0 py-md-0 py-lg-0 py-xl-2`} data-aos="fade-up">
+      <div
+        className={`${subText2} py-0 py-sm-0 py-md-0 py-lg-0 py-xl-2`}
+        data-aos="fade-up"
+      >
         {description}
       </div>
       <div className="position-absolute bottom-0 pb-3" data-aos="fade-up">
         {!isCTAExternal ? (
           <Link to={ctaLink}>
-            <label className={`${cta1}`} role="button">
+            <label className={`${cta1} pe-auto cursorPointer`} role="link">
               {ctaLabel}
               <span className={`${ctaIconPos}`}>
                 <img
@@ -65,7 +68,7 @@ export const DashboardCard = ({
           </Link>
         ) : (
           <a href={ctaLink} rel="external" target="_blank">
-            <label className={`${cta1}`} role="button">
+            <label className={`${cta1} pe-auto cursorPointer`} role="link">
               {ctaLabel}
               <span className={`${ctaIconPos}`}>
                 <img

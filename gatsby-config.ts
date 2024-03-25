@@ -25,6 +25,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "demo-app",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
   singleTypes: [
     {
@@ -224,7 +232,22 @@ const config: GatsbyConfig = {
         trackingIds: ["UA-76613193-3"],
       },
     },
-    `gatsby-plugin-netlify-redirect`
+    `gatsby-plugin-netlify-redirect`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: process.env.GATSBY_SITE_URL,
+        sitemap: `${process.env.GATSBY_SITE_URL + "sitemap-index.xml"}`,
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en",
+      },
+    },
   ],
 };
 

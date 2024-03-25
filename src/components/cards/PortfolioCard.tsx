@@ -107,7 +107,7 @@ export const PortfolioCard = ({
       <div className="mt-4" data-aos="fade-up">
         {!isCTAExternal ? (
           <Link to={ctaLink}>
-            <label className={`${cta1}`} role="button">
+            <label className={`${cta1} pe-auto cursorPointer`} role="link">
               {ctaText}
               <span className={`${ctaIconPos}`}>
                 <img
@@ -120,7 +120,7 @@ export const PortfolioCard = ({
           </Link>
         ) : (
           <a href={ctaLink} rel="external" target="_blank">
-            <label className={`${cta1}`} role="button">
+            <label className={`${cta1} pe-auto cursorPointer`} role="link">
               {ctaText}
               <span className={`${ctaIconPos}`}>
                 <img

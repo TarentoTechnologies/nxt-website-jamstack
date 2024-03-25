@@ -87,6 +87,24 @@ b {
   background-color: #ffffff;
 }
 
+.cursorPointer {
+  cursor: pointer;
+}
+
+/* Swiper styles starts here */
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  top: 0rem !important;
+  color: var(--white) !important;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  top: 0rem !important;
+  color: var(--white) !important;
+}
+
 .customMaringBtm1 {
   margin-bottom: 1rem;
 }
@@ -115,6 +133,14 @@ b {
 
 /* Skip navigation links styles ends here */
 
+/* Styles for demo app starts here */
+
+.rainDemoApp {
+  width: 100.5vw;
+}
+
+/* Styles for demo app ends here */
+
 /* Splide styles starts here */
 
 .splide__pagination {
@@ -142,6 +168,9 @@ b {
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
+  .rainDemoApp {
+    width: 101vw;
+  }
   .splide__pagination {
     bottom: -2rem !important;
   }
@@ -153,6 +182,10 @@ b {
 @media only screen and (min-width: 768px) {
   .containerService {
     width: 46.875rem;
+  }
+  
+  .rainDemoApp {
+    width: 101vw;
   }
 
   .splide__pagination {
