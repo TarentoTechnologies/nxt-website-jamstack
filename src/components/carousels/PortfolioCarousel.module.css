@@ -1,0 +1,126 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/fonts.css");
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 450px) {
+  .leftIndicatorPos {
+    top: -30% !important;
+    left: 70% !important;
+  }
+
+  .rightIndicatorPos {
+    top: -30% !important;
+    left: 85% !important;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .customSlideWidth {
+    padding-top: 2rem;
+  }
+
+  .leftIndicatorPos,
+  .rightIndicatorPos {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .leftIndicatorPos {
+    top: -27%;
+    left: 75%;
+  }
+
+  .rightIndicatorPos {
+    top: -27%;
+    left: 85%;
+  }
+
+  .customImgWidth {
+    width: 90%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .customSlideWidth {
+    padding-top: 2rem;
+  }
+
+  .leftIndicatorPos,
+  .rightIndicatorPos {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .leftIndicatorPos {
+    top: -24%;
+    left: 80%;
+  }
+
+  .rightIndicatorPos {
+    top: -24%;
+    left: 90%;
+  }
+
+  .customImgWidth {
+    width: 80%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .customSlideWidth {
+    padding: 0;
+  }
+
+  .leftIndicatorPos {
+    top: -20%;
+    left: 80%;
+  }
+
+  .rightIndicatorPos {
+    top: -20%;
+    left: 90%;
+  }
+
+  .customImgWidth {
+    width: 75%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .leftIndicatorPos,
+  .rightIndicatorPos {
+    width: 3.5rem;
+    height: 3.5rem;
+    z-index: 1;
+  }
+
+  .leftIndicatorPos {
+    top: -18%;
+    left: 82%;
+  }
+
+  .rightIndicatorPos {
+    top: -18%;
+    left: 90%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .leftIndicatorPos {
+    top: -15%;
+    left: 80%;
+  }
+
+  .rightIndicatorPos {
+    top: -15%;
+    left: 88%;
+  }
+}
+
+/* Media queries ends here */

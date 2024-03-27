@@ -32,6 +32,11 @@
   min-height: 3.75rem;
 }
 
+.customImgSize {
+  max-width: 15.625rem;
+  /* max-height: 7.813rem; */
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

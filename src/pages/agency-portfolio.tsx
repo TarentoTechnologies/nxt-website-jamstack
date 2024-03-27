@@ -3,6 +3,7 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import navbarImg from "../../static/images/logo-inner.svg";
+import { BannerWithCTA } from "../components/banners/BannerWithCTA";
 import { Navbar } from "../components/navbar/Navbar";
 import { FooterSection } from "../layouts/common";
 import {
@@ -55,7 +56,7 @@ const AgencyPortfolio: React.FC<PageProps> = ({
         </li>
       </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} />
+      <HeroBanner heroBannerData={data[currentLang]?.HeroBanner} isImg />
       <section id="agencyPortfolioMain">
         <Showcase
           sectionTitle={data[currentLang]?.SectionOneTitle}
@@ -67,7 +68,13 @@ const AgencyPortfolio: React.FC<PageProps> = ({
           ctaBtnText={data[currentLang]?.DynamicButtonText}
           portfolioPath="/agency-portfolio/"
         />
-        <AreYouInterested data={data[currentLang]?.CTA} />
+        <BannerWithCTA
+          title={data[currentLang]?.BottomBanner?.Title}
+          bgImg={data[currentLang]?.BottomBanner?.BgImg?.localFile?.url}
+          CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
+          CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
+          isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
+        />
       </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -78,17 +85,32 @@ const AgencyPortfolio: React.FC<PageProps> = ({
 };
 
 export const query = graphql`
-  query DesignPortfolioListing {
+  query AgencyPortfolioListing {
     en: strapiAgencyPortfolioListing(locale: { eq: "en" }) {
-      HeroSection {
+      HeroBanner {
         id
         Title
         Image {
           localFile {
             url
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+          alternativeText
+        }
+        Desc {
+          data {
+            childMarkdownRemark {
+              html
+            }
           }
         }
-        Description
+        isAgencyDetail
+        isListingPage
+        withBreadCrumbs
+        BreadCrumbLabel
+        BreadCrumbLink
       }
       SectionOneTitle
       SectionTwoTitle
@@ -100,6 +122,19 @@ export const query = graphql`
         CTALink
       }
       DynamicButtonText
+      BottomBanner {
+        Title
+        CTAButton {
+          Label
+          Link
+        }
+        BgImg {
+          localFile {
+            url
+          }
+        }
+        isCTAExternal
+      }
     }
     enAgencyPortfolios: allStrapiAgencyPortfolio(
       sort: { updatedAt: DESC }
@@ -107,7 +142,7 @@ export const query = graphql`
     ) {
       nodes {
         id
-        HeroSection {
+        HeroBanner {
           id
           Title
           Image {
@@ -117,12 +152,25 @@ export const query = graphql`
               }
             }
           }
-          Description
+          Desc {
+            data {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
         }
         CTATextForDisplay
         ShowcasePost
         Slug
         PortfolioTag
+        Logo {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+        }
       }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
