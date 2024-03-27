@@ -80,7 +80,6 @@ export const ShowcaseCard = ({
               <Link to={ctaLink}>
                 <label
                   className={`${cta1} pe-auto cursorPointer`}
-                  role="link"
                   data-aos="fade-up"
                 >
                   {ctaText}

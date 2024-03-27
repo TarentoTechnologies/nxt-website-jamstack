@@ -7,9 +7,9 @@ import { PyramidBanner } from "../components/banners/PyramidBanner";
 import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import {
-  AgencyPortfolio,
+  // AgencyPortfolio,
   CTALayout,
-  DesignPortfolio,
+  // DesignPortfolio,
   OurProgramme,
 } from "../layouts/home";
 import { ProductCardLayout } from "../layouts/home/components/ProductCardLayout";
@@ -23,8 +23,8 @@ interface IndexPageProps {
 const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
   const currentLang = useRecoilValue(langSelectedAtom);
 
-  const currentDesignPortfolio = currentLang + "DesignPortfolios";
-  const currentAgencyPortfolio = currentLang + "AgencyPortfolios";
+  // const currentDesignPortfolio = currentLang + "DesignPortfolios";
+  // const currentAgencyPortfolio = currentLang + "AgencyPortfolios";
   const currentFooterSection = currentLang + "FooterSection";
 
   return (
