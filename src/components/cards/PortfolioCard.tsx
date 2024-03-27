@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ReactHtmlParser from "react-html-parser";
 
 import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
 import {
@@ -30,13 +31,14 @@ interface PortfolioCardProps {
   imgAlt?: string;
   tag?: string;
   title: string;
-  description: string;
+  description: any;
   ctaText: string;
   ctaLink: any;
   tagVariant?: string;
   isProgramme?: boolean;
   isCTAExternal?: boolean;
   bgGrey?: boolean;
+  descRichText?: boolean;
 }
 
 export const PortfolioCard = ({
@@ -51,6 +53,7 @@ export const PortfolioCard = ({
   isProgramme,
   isCTAExternal,
   bgGrey = false,
+  descRichText = false,
 }: PortfolioCardProps) => {
   const image: any = getImage(imgSrc);
 
@@ -100,7 +103,9 @@ export const PortfolioCard = ({
         className={`${subText2} ${black87} ${truncateDescription}`}
         data-aos="fade-up"
       >
-        {description}
+        {descRichText
+          ? ReactHtmlParser(description?.data?.childMarkdownRemark?.html)
+          : description}
       </div>
 
       {/* CTA */}

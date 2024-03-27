@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ReactHtmlParser from "react-html-parser";
 
 import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
 import {
@@ -24,7 +25,7 @@ interface ShowcaseCardProps {
   imgSrc: any;
   imgAlt: string;
   title: string;
-  description: string;
+  description: any;
   ctaText: string;
   ctaLink: any;
 }
@@ -78,9 +79,10 @@ export const ShowcaseCard = ({
             <h2 className={`${heading700}`} data-aos="fade-up">
               {title}
             </h2>
-            <p className={`${subText2} ${black} py-3`} data-aos="fade-up">
-              {description}
-            </p>
+            <div className={`${subText2} ${black} py-3`} data-aos="fade-up">
+              {/* {description} */}
+              {ReactHtmlParser(description?.data?.childMarkdownRemark?.html)}
+            </div>
             {/* CTA */}
             <div className="mt-3">
               <Link to={ctaLink}>

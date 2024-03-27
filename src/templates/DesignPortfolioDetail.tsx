@@ -41,11 +41,10 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
     <main className="">
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       <HeroBanner
-        heroBannerData={data[currentLang]?.HeroSection}
-        isImage
+        heroBannerData={data[currentLang]?.HeroBanner}
         aboutSectionData={data[currentLang]?.AboutSection}
+        isImg
       />
-      {/* <About data={data[currentLang]?.AboutSection} /> */}
       <GallerySection
         imageList={data[currentLang]?.GallerySection?.ImageList}
         sliderLeftImg={
@@ -80,16 +79,17 @@ export const query = graphql`
   query DesignPortfolio($slug: String!) {
     en: strapiDesignPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
       id
-      HeroSection {
+      HeroBanner {
         id
         Title
-        Description
         Image {
           localFile {
+            url
             childImageSharp {
               gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
+          alternativeText
         }
         Desc {
           data {
@@ -98,10 +98,11 @@ export const query = graphql`
             }
           }
         }
-        isImage
         isAgencyDetail
         isListingPage
         withBreadCrumbs
+        BreadCrumbLabel
+        BreadCrumbLink
       }
       AboutSection {
         id

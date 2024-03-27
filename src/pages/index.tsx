@@ -204,7 +204,7 @@ export const query = graphql`
     ) {
       nodes {
         PortfolioTag
-        HeroSection {
+        HeroBanner {
           id
           Title
           Image {
@@ -214,7 +214,13 @@ export const query = graphql`
               }
             }
           }
-          Description
+          Desc {
+            data {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
         }
         id
         Slug
@@ -235,7 +241,7 @@ export const query = graphql`
     ) {
       nodes {
         PortfolioTag
-        HeroSection {
+        HeroBanner {
           id
           Title
           Image {
@@ -245,7 +251,13 @@ export const query = graphql`
               }
             }
           }
-          Description
+          Desc {
+            data {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
         }
         id
         Slug

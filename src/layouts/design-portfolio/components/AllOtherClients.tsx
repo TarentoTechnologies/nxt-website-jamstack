@@ -50,14 +50,15 @@ export const AllOtherClients = ({
                     data-aos="fade-up"
                   >
                     <PortfolioCard
-                      title={listData?.HeroSection?.Title}
+                      title={listData?.HeroBanner?.Title}
                       ctaLink={`${portfolioPath}${listData?.Slug}`}
                       ctaText={listData?.CTATextForDisplay}
-                      description={listData?.HeroSection?.Description}
+                      description={listData?.HeroBanner?.Desc}
                       tag={listData?.PortfolioTag}
                       imgSrc={listData?.Logo?.localFile}
                       imgAlt={listData?.Slug}
                       tagVariant={"blue"}
+                      descRichText
                       bgGrey
                     />
                   </div>

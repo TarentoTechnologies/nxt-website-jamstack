@@ -3,9 +3,12 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 
+import backwardArrowSmall from "../../../static/icons/Chevron_forward_LightSmall.svg";
 import backwardArrow from "../../../static/icons/Chevron_left.svg";
 import forwardArrow from "../../../static/icons/Chevron_right.svg";
+import forwardArrowSmall from "../../../static/icons/rightForwardSmall.svg";
 import {
+  customImgWidth,
   customSlideWidth,
   leftIndicatorPos,
   rightIndicatorPos,
@@ -39,7 +42,7 @@ export const PortfolioCarousel = ({ data }: PortfolioCarouselProps) => {
             key={index}
             src={listData?.localFile?.url}
             alt={listData?.alternativeText}
-            className="img-fluid"
+            className="img-fluid w-100"
           />
         </div>
       );
@@ -56,7 +59,7 @@ export const PortfolioCarousel = ({ data }: PortfolioCarouselProps) => {
               key={index}
               src={listData?.localFile?.url}
               alt={listData?.alternativeText}
-              className="img-fluid"
+              className="img-fluid w-100"
             />
           </div>
         );
@@ -100,7 +103,11 @@ export const PortfolioCarousel = ({ data }: PortfolioCarouselProps) => {
 
         <SplideTrack>
           {items.map((data: any, index: number) => {
-            return <SplideSlide key={index}>{data}</SplideSlide>;
+            return (
+              <SplideSlide key={index} className={`${customImgWidth}`}>
+                {data}
+              </SplideSlide>
+            );
           })}
         </SplideTrack>
       </Splide>

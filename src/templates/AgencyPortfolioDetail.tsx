@@ -42,7 +42,7 @@ const AgencyPortfolioDetail: React.FC<PageProps> = ({
   return (
     <main className="">
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} isImage />
+      <HeroBanner heroBannerData={data[currentLang]?.HeroBanner} isImg />
       <About data={data[currentLang]?.AboutSection} />
       <KeyInfoLayout data={data[currentLang]?.KeyInformation} />
       <Highlight
@@ -78,16 +78,17 @@ export const query = graphql`
   query AgencyPortfolio($slug: String!) {
     en: strapiAgencyPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
       id
-      HeroSection {
+      HeroBanner {
         id
         Title
-        Description
         Image {
           localFile {
+            url
             childImageSharp {
               gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
+          alternativeText
         }
         Desc {
           data {
@@ -96,10 +97,11 @@ export const query = graphql`
             }
           }
         }
-        isImage
         isAgencyDetail
         isListingPage
         withBreadCrumbs
+        BreadCrumbLabel
+        BreadCrumbLink
       }
       AboutSection {
         id

@@ -57,13 +57,14 @@ export const DesignPortfolio = ({
               key={data.id}
             >
               <PortfolioCard
-                ctaLink={`/design-portfolio/${data.Slug}`}
-                ctaText={data.CTATextForDisplay}
-                description={data.HeroSection?.Description}
-                tag={data.PortfolioTag}
-                title={data.HeroSection?.Title}
-                imgSrc={data.Logo?.localFile}
-                imgAlt={data.imgAlt}
+                ctaLink={`/design-portfolio/${data?.Slug}`}
+                ctaText={data?.CTATextForDisplay}
+                description={data?.HeroBanner?.Desc}
+                tag={data?.PortfolioTag}
+                title={data?.HeroBanner?.Title}
+                imgSrc={data?.Logo?.localFile}
+                imgAlt={data?.imgAlt}
+                descRichText
                 bgGrey
               />
             </div>

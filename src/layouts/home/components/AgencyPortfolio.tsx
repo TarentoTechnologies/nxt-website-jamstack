@@ -56,13 +56,14 @@ export const AgencyPortfolio = ({
               key={data.id}
             >
               <PortfolioCard
-                ctaLink={`/agency-portfolio/${data.Slug}`}
-                ctaText={data.CTATextForDisplay}
-                description={data.HeroSection?.Description}
-                tag={data.PortfolioTag}
-                title={data.HeroSection?.Title}
-                imgSrc={data.HeroSection?.Image?.localFile}
-                imgAlt={data.imgAlt}
+                ctaLink={`/agency-portfolio/${data?.Slug}`}
+                ctaText={data?.CTATextForDisplay}
+                description={data?.HeroBanner?.Desc}
+                tag={data?.PortfolioTag}
+                title={data?.HeroBanner?.Title}
+                imgSrc={data?.HeroBanner?.Image?.localFile}
+                imgAlt={data?.imgAlt}
+                descRichText
               />
             </div>
           );

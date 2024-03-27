@@ -47,6 +47,8 @@ interface PortfolioHeroBannerProps {
   withBreadcrumbs?: boolean;
   isListingPage?: boolean;
   AboutSectionData?: any;
+  breadCrumbLabel?: string;
+  breadCrumbLink?: string;
 }
 
 export const PortfolioHeroBanner = ({
@@ -65,9 +67,9 @@ export const PortfolioHeroBanner = ({
   withBreadcrumbs,
   isListingPage,
   AboutSectionData,
+  breadCrumbLabel,
+  breadCrumbLink,
 }: PortfolioHeroBannerProps) => {
-  const image: any = getImage(img);
-
   return (
     <>
       {(isAgencyDetail || isListingPage) == true ? (
@@ -80,7 +82,7 @@ export const PortfolioHeroBanner = ({
               <div className={`${breadCrumb}`}>
                 <BreadCrumb
                   items={[
-                    { label: "Agency Portfolio", url: "/agency-portfolio" },
+                    { label: breadCrumbLabel, url: breadCrumbLink },
                     { label: title },
                   ]}
                 />
@@ -139,7 +141,11 @@ export const PortfolioHeroBanner = ({
                   }`}
                 >
                   <GatsbyImage
-                    image={image}
+                    image={
+                      getImage(img?.localFile)
+                        ? getImage(img?.localFile)
+                        : img?.localFile
+                    }
                     alt={imgAltText ? imgAltText : ""}
                     className={`img-fluid`}
                     data-aos="fade-up"
@@ -148,7 +154,7 @@ export const PortfolioHeroBanner = ({
               ) : (
                 <img
                   className={`${imgStyles} img-fluid`}
-                  src={img}
+                  src={img?.localFile?.url}
                   alt={imgAltText}
                   title={imgAltText}
                   data-aos="fade-up"
@@ -167,7 +173,7 @@ export const PortfolioHeroBanner = ({
               <div className={`${breadCrumb} ps-0 pb-4`}>
                 <BreadCrumb
                   items={[
-                    { label: "Design Portfolio", url: "/design-portfolio" },
+                    { label: breadCrumbLabel, url: breadCrumbLink },
                     { label: title },
                   ]}
                 />
@@ -178,7 +184,11 @@ export const PortfolioHeroBanner = ({
             >
               {isImage ? (
                 <GatsbyImage
-                  image={image}
+                  image={
+                    getImage(img?.localFile)
+                      ? getImage(img?.localFile)
+                      : img?.localFile
+                  }
                   alt={imgAltText ? imgAltText : ""}
                   className={`img-fluid ${designPortfolioImg}`}
                   data-aos="fade-up"
@@ -186,7 +196,7 @@ export const PortfolioHeroBanner = ({
               ) : (
                 <img
                   className={`img-fluid ${designPortfolioImg}`}
-                  src={img}
+                  src={img?.localFile?.url}
                   alt={imgAltText}
                   data-aos="fade-up"
                 />

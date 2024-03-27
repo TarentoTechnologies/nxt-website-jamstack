@@ -56,7 +56,7 @@ const DesignPortfolio: React.FC<PageProps> = ({
         </li>
       </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} />
+      <HeroBanner heroBannerData={data[currentLang]?.HeroBanner} isImg />
       <section id="designPortfolioMain">
         <Showcase
           sectionTitle={data[currentLang]?.SectionOneTitle}
@@ -68,7 +68,6 @@ const DesignPortfolio: React.FC<PageProps> = ({
           ctaBtnText={data[currentLang]?.DynamicButtonText}
           portfolioPath="/design-portfolio/"
         />
-        {/* <AreYouInterested data={data[currentLang]?.CTA} /> */}
         <BannerWithCTA
           title={data[currentLang]?.BottomBanner?.Title}
           bgImg={data[currentLang]?.BottomBanner?.BgImg?.localFile?.url}
@@ -88,16 +87,18 @@ const DesignPortfolio: React.FC<PageProps> = ({
 export const query = graphql`
   query DesignPortfolioListing {
     en: strapiDesignPortfolioListing(locale: { eq: "en" }) {
-      HeroSection {
+      HeroBanner {
         id
         Title
         Image {
           localFile {
             url
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
           }
           alternativeText
         }
-        Description
         Desc {
           data {
             childMarkdownRemark {
@@ -105,10 +106,11 @@ export const query = graphql`
             }
           }
         }
-        isImage
         isAgencyDetail
         isListingPage
         withBreadCrumbs
+        BreadCrumbLabel
+        BreadCrumbLink
       }
       SectionOneTitle
       SectionTwoTitle
@@ -140,7 +142,7 @@ export const query = graphql`
     ) {
       nodes {
         id
-        HeroSection {
+        HeroBanner {
           id
           Title
           Image {
@@ -150,7 +152,13 @@ export const query = graphql`
               }
             }
           }
-          Description
+          Desc {
+            data {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
         }
         CTATextForDisplay
         ShowcasePost

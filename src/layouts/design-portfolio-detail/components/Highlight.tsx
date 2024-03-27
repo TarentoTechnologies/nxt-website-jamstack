@@ -2,7 +2,10 @@ import { PortfolioCarousel } from "../../../components/carousels/PortfolioCarous
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { white75 } from "../../../styles/style-guide/ColorGuide.module.css";
 import { acceleratorsLayout, titleStyles } from "../../tech/Tech.module.css";
-import { gradientBackground } from "../DesignPortfolioDetail.module.css";
+import {
+  customContainer,
+  gradientBackground,
+} from "../DesignPortfolioDetail.module.css";
 
 interface HighlightProps {
   title: string;
@@ -13,9 +16,11 @@ interface HighlightProps {
 export const Highlight = ({ title, desc, carouselData }: HighlightProps) => {
   return (
     <div
-      className={`container-fluid d-flex justify-content-center ${acceleratorsLayout} ${gradientBackground}`}
+      className={`container-fluid d-flex justify-content-end ${acceleratorsLayout} ${gradientBackground}`}
     >
-      <div className={`containerService paddingLeftRight15`}>
+      <div
+        className={`${customContainer} containerService paddingLeftRight15 pe-0`}
+      >
         <div
           className={`${titleStyles} col-sm-12 col-md-12 col-lg-12 col-xl-7`}
         >
