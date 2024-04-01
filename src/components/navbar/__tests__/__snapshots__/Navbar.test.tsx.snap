@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the Navbar component is working as expected <Navbar /> matches snapshot 1`] = `
+<div>
+  <div
+    class="navBarStyles"
+    data-testid="navbar"
+  >
+    <a
+      href="/"
+      rel="canonical"
+    >
+      <img
+        alt="NXT Logo"
+        src="test-file-stub"
+        title="NXT Logo"
+      />
+    </a>
+  </div>
+</div>
+`;

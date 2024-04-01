@@ -27,6 +27,7 @@ exports[`Test if the BannerWithTag component is working as expected <BannerWithT
         
         "
           data-aos="fade-up"
+          data-testid="primary-title"
         >
           The Design tools and Technology that we use to support CIBoost
         </div>

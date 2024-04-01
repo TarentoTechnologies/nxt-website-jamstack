@@ -43,6 +43,7 @@ export const PrimaryTitle = ({
         ${variant === "h1700V3" ? h1700V3 : ""}
         ${color === "white" ? white : ""}`}
       data-aos="fade-up"
+      data-testid="primary-title"
     >
       {title}
     </div>

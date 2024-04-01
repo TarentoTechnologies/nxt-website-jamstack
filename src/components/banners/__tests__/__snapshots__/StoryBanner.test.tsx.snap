@@ -27,6 +27,7 @@ exports[`Test if the StoryBanner component is working as expected <StoryBanner /
         
         white"
           data-aos="fade-up"
+          data-testid="primary-title"
         >
           Tech Solutions
         </div>

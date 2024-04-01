@@ -1,4 +1,5 @@
 import { Link } from "gatsby";
+import React from "react";
 
 import { navBarStyles } from "./Navbar.module.css";
 
@@ -9,9 +10,8 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ imgSrc, imgAltText, link }: NavbarProps) => {
-  
   return (
-    <div className={`${navBarStyles}`}>
+    <div className={`${navBarStyles}`} data-testid="navbar">
       <Link to={link} rel="canonical">
         <img src={imgSrc} alt={imgAltText} title={imgAltText} />
       </Link>
