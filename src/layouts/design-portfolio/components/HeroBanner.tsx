@@ -1,21 +1,29 @@
 import { HeroBannerForTDI } from "../../../components/banners/HeroBannerForTDI";
+import { PortfolioHeroBanner } from "../../../components/banners/PortfolioHeroBanner";
 
 interface HeroBannerProps {
   heroBannerData: any;
-  isImage?: boolean;
+  isImg?: boolean;
+  aboutSectionData?: any;
 }
 
-export const HeroBanner = ({ heroBannerData, isImage }: HeroBannerProps) => {
+export const HeroBanner = ({
+  heroBannerData,
+  isImg,
+  aboutSectionData,
+}: HeroBannerProps) => {
   return (
-    <HeroBannerForTDI
+    <PortfolioHeroBanner
       title={heroBannerData?.Title}
-      description={heroBannerData?.Description}
-      img={
-        isImage
-          ? heroBannerData?.Image?.localFile
-          : heroBannerData?.Image?.localFile?.url
-      }
-      isImage={isImage}
+      description={heroBannerData?.Desc}
+      img={heroBannerData?.Image}
+      isImage={isImg}
+      isAgencyDetail={heroBannerData?.isAgencyDetail}
+      isListingPage={heroBannerData?.isListingPage}
+      withBreadcrumbs={heroBannerData?.withBreadCrumbs}
+      breadCrumbLabel={heroBannerData?.BreadCrumbLabel}
+      breadCrumbLink={heroBannerData?.BreadCrumbLink}
+      AboutSectionData={aboutSectionData}
     />
   );
 };

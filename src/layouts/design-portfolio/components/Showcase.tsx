@@ -8,7 +8,6 @@ interface ShowcaseProps {
 }
 
 export const Showcase = ({ sectionTitle, data }: ShowcaseProps) => {
-
   return (
     <div className={`d-flex justify-content-center ${techStack}`}>
       <div className={`containerService paddingLeftRight15`}>
@@ -20,10 +19,10 @@ export const Showcase = ({ sectionTitle, data }: ShowcaseProps) => {
             return (
               <div className="my-4" key={listData?.id} data-aos="fade-up">
                 <ShowcaseCard
-                  title={listData?.HeroSection?.Title}
-                  description={listData?.HeroSection?.Description}
-                  imgSrc={listData?.HeroSection?.Image?.localFile}
-                  imgAlt={""}
+                  title={listData?.HeroBanner?.Title}
+                  description={listData?.HeroBanner?.Desc}
+                  imgSrc={listData?.Logo?.localFile}
+                  imgAlt={listData?.HeroBanner?.Title}
                   ctaText={listData?.CTATextForDisplay}
                   ctaLink={listData?.Slug}
                 />
