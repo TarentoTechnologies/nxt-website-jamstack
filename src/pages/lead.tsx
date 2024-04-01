@@ -3,8 +3,10 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import navbarImg from "../../static/images/logo-inner.svg";
+import { Footer, WhatLEADCard } from "../components";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
+import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import {
   HeroSection,
@@ -13,14 +15,23 @@ import {
   StepSection,
   VideoSection,
 } from "../layouts/lead";
+import {
+  Artefacts,
+  Form,
+  LEADSprints,
+  OurStory,
+  Process,
+  SuccessStories,
+  WhatLead,
+} from "../layouts/lead-v2";
 import { ContactUsLayout } from "../layouts/tech/components/ContactUsLayout";
 import { langSelected as langSelectedAtom } from "../states/atoms";
 
-interface LeadPageProps {
+interface LeadV2PageProps {
   data: any;
 }
 
-const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
+const LeadV2Page: React.FC<PageProps> = ({ data }: LeadV2PageProps) => {
   const currentLang = useRecoilValue(langSelectedAtom);
 
   const currentFooterSection = currentLang + "FooterSection";
@@ -38,53 +49,50 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
       <HeroBannerForTDI
         id={data[currentLang]?.HeroBanner?.id}
         title={data[currentLang]?.HeroBanner?.Title}
-        img={data[currentLang]?.HeroBanner?.Img?.localFile?.url}
+        img={data[currentLang]?.HeroBanner?.Img?.localFile}
         imgAltText={data[currentLang]?.HeroBanner?.ImgAltText}
         subText={data[currentLang]?.HeroBanner?.SubText}
         description={data[currentLang]?.HeroBanner?.Description}
-        logo={data[currentLang]?.HeroBanner?.Logo?.localFile?.url}
+        logo={data[currentLang]?.HeroBanner?.Logo}
         withLogo={data[currentLang]?.HeroBanner?.withLogo}
+        isImage
         subTextBold
       />
       <section id="leadMain">
-        <HeroSection
+        <WhatLead
           title={data[currentLang]?.HeroSection?.Title}
-          description={
-            data[currentLang]?.HeroSection?.Description?.data?.Description
-          }
+          description={data[currentLang]?.HeroSection?.Description}
           cardList={data[currentLang]?.HeroSection?.CardList}
         />
-        {data[currentLang]?.Steps.map((item: any, index: any) => (
-          <StepSection
-            key={index}
-            title={item?.Title}
-            description={item?.Description?.data?.Description}
-            imgSrc={item?.ImgSrc?.localFile?.url}
-            cardHeading={item?.CardHeading}
-            keyPoints={item?.KeyPoints}
-            bgGrey={item?.BgGrey}
-          />
-        ))}
-        <VideoSection videoSrc={data[currentLang]?.VideoSection?.videoSrc} />
-        <LeadCountries
-          title={data[currentLang]?.LeadCountries?.Title}
-          description={
-            data[currentLang]?.LeadCountries?.Description?.data?.Description
-          }
-          imgSrc={data[currentLang]?.LeadCountries?.ImgSrc?.localFile?.url}
-          cardHeading={data[currentLang]?.LeadCountries?.CardHeading}
-          keyPoints={data[currentLang]?.LeadCountries?.KeyPoints}
+        <Process
+          sectionTitle={data[currentLang]?.ProcessCard?.Title}
+          sectionContent={data[currentLang]?.ProcessCard?.Description}
+          sectionImage={data[currentLang]?.ProcessCard?.Image}
+          descriptionPos={data[currentLang]?.ProcessCard?.DescriptionAlignment}
         />
-        <LeadSprints
-          title={data[currentLang]?.LeadSprints?.Title}
-          cardData={data[currentLang]?.LeadSprints?.CardData}
+        <LEADSprints
+          sectionTitle={data[currentLang]?.SectionHeader3}
+          sectionList={data[currentLang]?.SectionList3}
         />
-        <ContactUsLayout
-          heading={data[currentLang]?.Interested?.Title}
-          desc={data[currentLang]?.Interested?.Description}
-          CTAlabel={data[currentLang]?.Interested?.CTAText}
-          CTAlink={data[currentLang]?.Interested?.CTALink}
-          isCTAMail={data[currentLang]?.Interested?.isMail}
+        <OurStory
+          sectionTitle={data[currentLang]?.SectionHeader4}
+          sectionList={data[currentLang]?.SectionList4}
+        />
+        <Artefacts
+          sectionTitle={data[currentLang]?.SectionHeader5}
+          description={data[currentLang]?.SectionDescription5}
+          sectionList={data[currentLang]?.SectionList5}
+        />
+        <SuccessStories
+          sectionTitle={data[currentLang]?.SectionHeader6}
+          description={data[currentLang]?.SectionDescription6}
+          sectionList={data[currentLang]?.SectionList6}
+        />
+        <Form
+          formTitle={data[currentLang]?.FormTitle}
+          formDescription={data[currentLang]?.FormDescription}
+          ctaLabel={data[currentLang]?.FormCTALabel}
+          ctaLink={data[currentLang]?.FormCTALink}
         />
       </section>
       <FooterSection
@@ -96,13 +104,77 @@ const LeadPage: React.FC<PageProps> = ({ data }: LeadPageProps) => {
 };
 
 export const query = graphql`
-  query LeadPage {
-    en: strapiLead(locale: { eq: "en" }) {
+  query LEADV2Page {
+    en: strapiLeadV2(locale: { eq: "en" }) {
+      id
       HeroBanner {
         id
-        withLogo
         Title
-        SubText
+        isImage
+        withLogo
+        Logo {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+        }
+        ImgAltText
+        Img {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+        }
+        Description {
+          data {
+            id
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+      HeroSection {
+        id
+        Title
+        Description {
+          data {
+            Description
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        CardList {
+          id
+          Title
+          SubText
+          Image {
+            alternativeText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(formats: PNG, placeholder: BLURRED)
+              }
+            }
+          }
+        }
+      }
+      ProcessCard {
+        id
+        Title
+        Image {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED, width: 480)
+            }
+          }
+        }
+        DescriptionAlignment
         Description {
           data {
             childMarkdownRemark {
@@ -110,98 +182,96 @@ export const query = graphql`
             }
           }
         }
-        Img {
-          localFile {
-            url
-          }
-        }
-        ImgAltText
-        Logo {
-          localFile {
-            url
-          }
-        }
       }
-      HeroSection {
+      SectionHeader3
+      SectionList3 {
+        id
         Title
-        Description {
-          data {
-            Description
-          }
-        }
-        CardList {
-          id
-          Title
-          Img {
-            localFile {
-              url
+        DescriptionAlignment
+        Image {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
             }
           }
-          SubText
-          BgColor
         }
-      }
-      Steps {
-        Title
         Description {
           data {
-            Description
-          }
-        }
-        ImgSrc {
-          localFile {
-            url
-          }
-        }
-        CardHeading
-        KeyPoints {
-          id
-          ListItem
-        }
-        BgGrey
-      }
-      VideoSection {
-        videoSrc
-      }
-      LeadCountries {
-        Title
-        Description {
-          data {
-            Description
-          }
-        }
-        ImgSrc {
-          localFile {
-            url
-          }
-        }
-        CardHeading
-        KeyPoints {
-          ListItem
-        }
-      }
-      LeadSprints {
-        Title
-        CardData {
-          Heading
-          Description {
-            data {
-              Description
-            }
-          }
-          ImgSrc {
-            localFile {
-              url
+            id
+            childMarkdownRemark {
+              html
             }
           }
         }
       }
-      Interested {
+      SectionHeader4
+      SectionList4 {
+        id
         Title
-        Description
-        isMail
-        CTAText
-        CTALink
+        SubText
+        Image {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                formats: PNG
+                placeholder: BLURRED
+                width: 40
+                height: 40
+              )
+            }
+          }
+        }
+      }
+      SectionHeader5
+      SectionDescription5
+      SectionList5 {
+        id
+        Caption
+        Image {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                formats: PNG
+                placeholder: BLURRED
+                width: 60
+                height: 60
+              )
+            }
+          }
+        }
+      }
+      SectionHeader6
+      SectionDescription6
+      FormTitle
+      FormDescription
+      SectionList6 {
+        id
+        Image {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED, width: 149)
+            }
+          }
+        }
+        Caption
+      }
+      FormCTALink
+      FormCTALabel
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
       }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
@@ -261,52 +331,18 @@ export const query = graphql`
   }
 `;
 
-export default LeadPage;
+export default LeadV2Page;
 
-export const Head: HeadFC = () => (
-  <>
-    {/* Primary meta tags */}
-    <title>::NXT Tarento - LEAD::</title>
-    <link rel="canonical" href={`${process.env.GATSBY_SITE_URL}lead/`} />
-    <meta name="title" content="NXT Tarento - LEAD" />
-    <meta
-      name="description"
-      content="Design Thinking driven 'discovery & solutioning' program that helps businesses tackle complex problems and enables informed decision making in a short time."
+export const Head: HeadFC = ({ data }: LeadV2PageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  return (
+    <Seo
+      metaTitle={data[currentLang]?.seo?.metaTitle}
+      metaDesc={data[currentLang]?.seo?.metaDescription}
+      metaImg={data[currentLang]?.seo?.metaImage?.localFile?.url}
+      canonicalUrl={data[currentLang]?.seo?.canonicalURL}
+      metaViewport={data[currentLang]?.seo?.metaViewport}
+      keywords={data[currentLang]?.seo?.keywords}
     />
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
-
-    {/* Open graph */}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}lead/`} />
-    <meta property="og:title" content="NXT Tarento - LEAD" />
-    <meta
-      property="og:description"
-      content="Design Thinking driven 'discovery & solutioning' program that helps businesses tackle complex problems and enables informed decision making in a short time."
-    />
-    <meta
-      property="og:image"
-      content={`${process.env.GATSBY_SITE_URL}static/4af750352a6c177c7f80d9ed351d244d/6998c/tech_solution_d8d031719f.png`}
-    />
-    <meta property="og:site_name" content="LEAD" />
-    <meta property="og:video" content="https://youtu.be/jrxB_PPKMAQ" />
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="website" />
-    <meta
-      property="twitter:url"
-      content={`${process.env.GATSBY_SITE_URL}lead/`}
-    />
-    <meta property="twitter:title" content="NXT Tarento - LEAD" />
-    <meta
-      property="twitter:description"
-      content="Design Thinking driven 'discovery & solutioning' program that helps businesses tackle complex problems and enables informed decision making in a short time."
-    />
-    <meta
-      property="twitter:image"
-      content={`${process.env.GATSBY_SITE_URL}static/4af750352a6c177c7f80d9ed351d244d/6998c/tech_solution_d8d031719f.png`}
-    />
-  </>
-);
+  );
+};

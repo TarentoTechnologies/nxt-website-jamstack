@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { PortfolioCard, SecondaryCTA } from "../../../components";
 import { PrimaryTitle } from "../../../components/titles/PrimaryTitle";
 import { acceleratorsLayout, titleStyles } from "../../tech/Tech.module.css";
@@ -15,6 +17,19 @@ export const AllOtherClients = ({
   ctaBtnText,
   portfolioPath,
 }: AllOtherClientsProps) => {
+  const itemsPerPage = 6;
+
+  const [displayCount, setDisplayCount] = useState(itemsPerPage);
+
+  const filteredData = data?.filter((listData: any) => {
+    return !listData?.ShowcasePost;
+  });
+
+  const handleLoadMore = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setDisplayCount(displayCount + 3);
+  };
+
   return (
     <div
       className={`container-fluid d-flex justify-content-center ${acceleratorsLayout}`}
@@ -25,34 +40,41 @@ export const AllOtherClients = ({
         </div>
         <div className="my-5">
           <div className="row">
-            {data?.map((listData: any, index: number) => {
-              return (
-                <div
-                  className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0 mb-5`}
-                  key={listData?.id}
-                  data-aos="fade-up"
-                >
-                  <PortfolioCard
-                    title={listData?.HeroSection?.Title}
-                    ctaLink={`${portfolioPath}${listData?.Slug}`}
-                    ctaText={listData?.CTATextForDisplay}
-                    description={listData?.HeroSection?.Description}
-                    tag={listData?.PortfolioTag}
-                    imgSrc={listData?.HeroSection?.Image?.localFile}
-                    imgAlt={listData?.Slug}
-                    tagVariant={"blue"}
-                  />
-                </div>
-              );
-            })}
+            {filteredData
+              ?.slice(0, displayCount)
+              .map((listData: any, index: number) => {
+                return (
+                  <div
+                    className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0 mb-5`}
+                    key={listData?.id}
+                    data-aos="fade-up"
+                  >
+                    <PortfolioCard
+                      title={listData?.HeroBanner?.Title}
+                      ctaLink={`${portfolioPath}${listData?.Slug}`}
+                      ctaText={listData?.CTATextForDisplay}
+                      description={listData?.HeroBanner?.Desc}
+                      tag={listData?.PortfolioTag}
+                      imgSrc={listData?.Logo?.localFile}
+                      imgAlt={listData?.Slug}
+                      tagVariant={"blue"}
+                      descRichText
+                      bgGrey
+                    />
+                  </div>
+                );
+              })}
           </div>
         </div>
 
-        {data?.length > 6 && (
+        {filteredData?.length > displayCount && (
           <div className="my-5">
             <div className="d-flex justify-content-center">
               <div className="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-2">
-                <SecondaryCTA label={ctaBtnText} />
+                <SecondaryCTA
+                  label={ctaBtnText}
+                  clickHandler={handleLoadMore}
+                />
               </div>
             </div>
           </div>

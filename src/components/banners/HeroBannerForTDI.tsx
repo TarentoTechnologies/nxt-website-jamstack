@@ -128,19 +128,31 @@ export const HeroBannerForTDI = ({
               className={`col-sm-12 col-md-6 d-flex flex-column justify-content-center px-md-0`}
             >
               <div className={`${headerInfo}`}>
-                {withLogo && (
-                  <div className={`${logoStyles}`}>
-                    <img
-                      src={logo}
-                      alt={imgAltText}
-                      title={imgAltText}
-                      width="217"
-                      height="71"
-                      className={`img-fluid`}
-                      data-aos="fade-up"
-                    />
-                  </div>
-                )}
+                {withLogo &&
+                  (isImage ? (
+                    <div className={`${logoStyles}`}>
+                      <GatsbyImage
+                        image={  getImage(logo?.localFile)
+                          ? getImage(logo?.localFile)
+                          : logo?.localFile}
+                        alt={logo?.alternativeText}
+                        className={`img-fluid`}
+                        data-aos="fade-up"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`${logoStyles}`}>
+                      <img
+                        src={logo}
+                        alt={imgAltText}
+                        title={imgAltText}
+                        width="217"
+                        height="71"
+                        className={`img-fluid`}
+                        data-aos="fade-up"
+                      />
+                    </div>
+                  ))}
                 <h1 className={`${h1CardTitle} ${white}`} data-aos="fade-up">
                   {mainTitle && (
                     <b className={`${white} ${logoTitle}`}>

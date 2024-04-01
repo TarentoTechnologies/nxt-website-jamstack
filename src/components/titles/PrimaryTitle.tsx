@@ -8,6 +8,7 @@ import {
   h1700,
   h1700V2,
   h1700V3,
+  h1700V4,
   h3600,
   heroTitle,
   infoSectionH2,
@@ -41,6 +42,7 @@ export const PrimaryTitle = ({
         ${variant === "h1700" ? h1700 : ""}
         ${variant === "h1700V2" ? h1700V2 : ""}
         ${variant === "h1700V3" ? h1700V3 : ""}
+        ${variant === "h1700V4" ? h1700V4 : ""}
         ${color === "white" ? white : ""}`}
       data-aos="fade-up"
       data-testid="primary-title"

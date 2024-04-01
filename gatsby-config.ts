@@ -25,6 +25,14 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "demo-app",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
   singleTypes: [
     {
@@ -132,14 +140,6 @@ const strapiConfig = {
       },
     },
     {
-      singularName: "lead",
-      pluginOptions: {
-        i18n: {
-          locale: "all", // Fetch all localizations
-        },
-      },
-    },
-    {
       singularName: "pulse",
       pluginOptions: {
         i18n: {
@@ -157,6 +157,14 @@ const strapiConfig = {
     },
     {
       singularName: "nxt-application",
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
+    {
+      singularName: "lead-v2",
       pluginOptions: {
         i18n: {
           locale: "all", // Fetch all localizations
@@ -222,6 +230,22 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: ["UA-76613193-3"],
+      },
+    },
+    `gatsby-plugin-netlify-redirect`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: process.env.GATSBY_SITE_URL,
+        sitemap: `${process.env.GATSBY_SITE_URL + "sitemap-index.xml"}`,
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en",
       },
     },
     {

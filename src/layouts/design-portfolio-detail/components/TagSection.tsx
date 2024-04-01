@@ -6,13 +6,16 @@ interface TagSectionProps {
 }
 
 export const TagSection = ({ data }: TagSectionProps) => {
-
   return (
     <div
       className={`container-fluid d-flex justify-content-center ${acceleratorsLayout}`}
     >
       <div className={`containerService paddingLeftRight15`}>
-        <BannerWithTag tagsList={data?.Tags} title={data?.Title}/>
+        <BannerWithTag
+          tagsList={data?.Tags}
+          title={data?.Title}
+          img={data?.Image?.localFile}
+        />
       </div>
     </div>
   );

@@ -19,154 +19,113 @@ export const onRenderBody = ({ setHeadComponents }: any) => {
   setHeadComponents([
     <link
       rel="preload"
-      href="/fonts/Lato/Lato-Black.ttf"
+      href="/fonts/Lato/woff2/Lato-Black.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="latoBlack"
     />,
     <link
       rel="preload"
-      href="/fonts/Lato/Lato-BlackItalic.ttf"
+      href="/fonts/Lato/woff2/Lato-Bold.woff2"
       as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
-      key="latoBlackItalic"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Lato/Lato-Bold.ttf"
-      as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="latoBold"
     />,
     <link
       rel="preload"
-      href="/fonts/Lato/Lato-BoldItalic.ttf"
+      href="/fonts/Lato/woff2/Lato-Light.woff2"
       as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
-      key="latoBoldItalic"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Lato/Lato-Italic.ttf"
-      as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
-      key="latoItalic"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Lato/Lato-Light.ttf"
-      as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="latoLight"
     />,
     <link
       rel="preload"
-      href="/fonts/Lato/Lato-LightItalic.ttf"
+      href="/fonts/Lato/woff2/Lato-Regular.woff2"
       as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
-      key="latoLightItalic"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/Lato/Lato-Regular.ttf"
-      as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="latoRegular"
     />,
-
     <link
       rel="preload"
-      href="/fonts/Lato/Lato-Thin.ttf"
+      href="/fonts/Lato/woff2/Lato-Thin.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="latoThin"
     />,
     <link
       rel="preload"
-      href="/fonts/Lato/Lato-ThinItalic.ttf"
+      href="/fonts/static/Roboto_Slab/woff2/RobotoSlab-Black.woff2"
       as="font"
-      type="font/ttf"
-      crossOrigin="anonymous"
-      key="latoThinItalic"
-    />,
-    <link
-      rel="preload"
-      href="/fonts/static/Roboto_Slab/RobotoSlab-Black.ttf"
-      as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="robotoSlabBlack"
     />,
     <link
       rel="preload"
-      href="/fonts/static/Roboto_Slab/RobotoSlab-Bold.ttf"
+      href="/fonts/static/Roboto_Slab/woff2/RobotoSlab-Bold.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="robotoSlabBold"
     />,
     <link
       rel="preload"
-      href="/fonts/static/Roboto_Slab/RobotoSlab-ExtraBold.ttf"
+      href="/fonts/static/Roboto_Slab/woff2/RobotoSlab-ExtraBold.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="robotoSlabExtraBold"
     />,
     <link
       rel="preload"
-      href="/fonts/static/Roboto_Slab/RobotoSlab-ExtraLight.ttf"
+      href="/fonts/static/Roboto_Slab/woff2/RobotoSlab-ExtraLight.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="robotoSlabExtraLight"
     />,
     <link
       rel="preload"
-      href="/fonts/static/Roboto_Slab/RobotoSlab-Light.ttf"
+      href="/fonts/static/Roboto_Slab/woff2/RobotoSlab-Light.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="robotoSlabLight"
     />,
     <link
       rel="preload"
-      href="/fonts/static/Roboto_Slab/RobotoSlab-Medium.ttf"
+      href="/fonts/static/Roboto_Slab/woff2/RobotoSlab-Medium.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="robotoSlabMedium"
     />,
     <link
       rel="preload"
-      href="/fonts/static/Roboto_Slab/RobotoSlab-Regular.ttf"
+      href="/fonts/static/Roboto_Slab/woff2/RobotoSlab-Regular.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="robotoSlabRegular"
     />,
     <link
       rel="preload"
-      href="/fonts/static/Roboto_Slab/RobotoSlab-SemiBold.ttf"
+      href="/fonts/static/Roboto_Slab/woff2/RobotoSlab-SemiBold.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="robotoSlabSemiBold"
     />,
     <link
       rel="preload"
-      href="/fonts/static/Roboto_Slab/RobotoSlab-Thin.ttf"
+      href="/fonts/static/Roboto_Slab/woff2/RobotoSlab-Thin.woff2"
       as="font"
-      type="font/ttf"
+      type="font/woff2"
       crossOrigin="anonymous"
       key="robotoSlabThin"
     />,

@@ -1,0 +1,61 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.bannerWithCTA {
+  /* min-height: 25rem; */
+  min-height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 0;
+}
+
+.titleStyles {
+  max-width: 34rem;
+}
+
+.btnStyles {
+  border: solid 1px #fff;
+  border-radius: 0.313rem;
+  padding: 0.75rem;
+  width: 9.063rem;
+  cursor: pointer;
+}
+
+/* Media queries starts here */
+
+@media only screen and (max-width: 600px) {
+  .bannerWithCTA {
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .bannerWithCTA {
+    padding-left: 4rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bannerWithCTA {
+    padding-left: 6rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .bannerWithCTA {
+    padding-left: 10rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .bannerWithCTA {
+    padding-left: 12.5rem;
+  }
+}
+
+/* Media queries ends here */

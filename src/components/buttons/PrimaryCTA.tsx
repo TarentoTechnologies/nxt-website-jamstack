@@ -16,6 +16,7 @@ interface PrimaryCTAProps {
   customClasses?: any;
   btnLink?: string;
   isMail?: boolean;
+  isExternal?: boolean;
 }
 
 export const PrimaryCTA = ({
@@ -26,16 +27,19 @@ export const PrimaryCTA = ({
   customClasses,
   btnLink,
   isMail,
+  isExternal
 }: PrimaryCTAProps) => {
   const mode = primary ? `${primaryBtn}` : `${secondaryBtn}`;
 
   return (
     <>
-      {isMail ? (
+      {isMail || isExternal ? (
         <a
           href={
-            btnLink != null ? `${isMail ? `mailto:${btnLink};` : btnLink}` : ""
+            btnLink != null ? `${isMail && !isExternal ? `mailto:${btnLink};` : btnLink}` : ""
           }
+          aria-label="link to specific detail page to know more"
+          target="_blank"
           data-testid="primary-cta"
         >
           <div

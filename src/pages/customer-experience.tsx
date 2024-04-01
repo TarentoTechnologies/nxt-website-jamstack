@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil";
 import navbarImg from "../../static/images/logo-inner.svg";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
+import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import {
   AI,
@@ -180,6 +181,18 @@ export const query = graphql`
         CTAText
         CTALink
       }
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
+      }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
       id
@@ -240,61 +253,16 @@ export const query = graphql`
 
 export default CustomerExperiencePage;
 
-export const Head: HeadFC = () => (
-  <>
-    {/* Primary meta tags */}
-    <title>::NXT Tarento - Customer Experience Pack::</title>
-    <link
-      rel="canonical"
-      href={`${process.env.GATSBY_SITE_URL}customer-experience/`}
+export const Head: HeadFC = ({ data }: CustomerExperiencePageProps) => {
+  const currentLang = useRecoilValue(langSelectedAtom);
+  return (
+    <Seo
+      metaTitle={data[currentLang]?.seo?.metaTitle}
+      metaDesc={data[currentLang]?.seo?.metaDescription}
+      metaImg={data[currentLang]?.seo?.metaImage?.localFile?.url}
+      canonicalUrl={data[currentLang]?.seo?.canonicalURL}
+      metaViewport={data[currentLang]?.seo?.metaViewport}
+      keywords={data[currentLang]?.seo?.keywords}
     />
-    <meta name="title" content="::NXT Tarento - Customer Experience Pack::" />
-    <meta
-      name="description"
-      content="Good customer experience requires more than just a good product. Empowering customer experience with data & Insights"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
-
-    {/* Open graph */}
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content={`${process.env.GATSBY_SITE_URL}customer-experience/`}
-    />
-    <meta
-      property="og:title"
-      content="::NXT Tarento - Customer Experience Pack::"
-    />
-    <meta
-      property="og:description"
-      content="Good customer experience requires more than just a good product. Empowering customer experience with data & Insights"
-    />
-    <meta
-      property="og:image"
-      content={`${process.env.GATSBY_SITE_URL}static/4af750352a6c177c7f80d9ed351d244d/6998c/tech_solution_d8d031719f.png`}
-    />
-    <meta property="og:site_name" content="Customer Experience Pack" />
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="website" />
-    <meta
-      property="twitter:url"
-      content={`${process.env.GATSBY_SITE_URL}customer-experience/`}
-    />
-    <meta
-      property="twitter:title"
-      content="::NXT Tarento - Customer Experience Pack::"
-    />
-    <meta
-      property="twitter:description"
-      content="Good customer experience requires more than just a good product. Empowering customer experience with data & Insights"
-    />
-    <meta
-      property="twitter:image"
-      content={`${process.env.GATSBY_SITE_URL}static/4af750352a6c177c7f80d9ed351d244d/6998c/tech_solution_d8d031719f.png`}
-    />
-  </>
-);
+  );
+};

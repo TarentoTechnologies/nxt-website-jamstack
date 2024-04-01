@@ -1,0 +1,15 @@
+@import url("../../styles/global/colors.css");
+@import url("../../styles/global/global.css");
+
+.breadcrumbStyles {
+  color: var(--white);
+}
+
+.breadcrumbStyles span {
+  margin: 0 0.5rem;
+}
+
+.breadcrumbStyles span:last-child {
+  font-weight: bold;
+  margin-left: 0;
+}

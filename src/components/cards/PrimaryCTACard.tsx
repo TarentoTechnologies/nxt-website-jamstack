@@ -12,6 +12,8 @@ interface PrimaryCTACardProps {
   description?: string;
   ctaText: string;
   ctaLink: string;
+  isCTAMail?: boolean;
+  isCTAExternal?: boolean;
 }
 
 export const PrimaryCTACard = ({
@@ -19,14 +21,13 @@ export const PrimaryCTACard = ({
   description,
   ctaText,
   ctaLink,
+  isCTAMail,
+  isCTAExternal,
 }: PrimaryCTACardProps) => {
   return (
     <div className={`container-fluid`}>
       <div className="">
-        <h1
-          className={`${h1One}`}
-          data-aos="fade-up"
-        >
+        <h1 className={`${h1One}`} data-aos="fade-up">
           {title}
         </h1>
         <p
@@ -35,12 +36,14 @@ export const PrimaryCTACard = ({
         >
           {description}
         </p>
-        <Link
-          to={ctaLink}
-          data-aos="fade-up"
-        >
-          <PrimaryCTA label={ctaText} />
-        </Link>
+        <span data-aos="fade-up">
+          <PrimaryCTA
+            label={ctaText}
+            btnLink={ctaLink}
+            isMail={isCTAMail}
+            isExternal={isCTAExternal}
+          />
+        </span>
       </div>
     </div>
   );
