@@ -18,7 +18,7 @@ export const BreadCrumb = ({ items }: BreadcrumbsProps) => {
     <div className={`${breadcrumbStyles} ${breadCrumbLabel}`}>
       {items.map((item, index) => (
         <React.Fragment key={item.label}>
-          {index > 0 && <span> &gt; </span>}
+          {index > 0 && <span>|</span>}
           {item.url ? (
             <Link to={item.url}>{item.label}</Link>
           ) : (

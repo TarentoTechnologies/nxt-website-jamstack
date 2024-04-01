@@ -21,7 +21,7 @@ export const GallerySection = ({
     >
       <div className={`containerService paddingLeftRight15`}>
         <div className={`row`}>
-          {imageList.slice(0, 2)?.map((listData: any, index: number) => {
+          {imageList?.slice(0, 2)?.map((listData: any, index: number) => {
             return (
               <div key={index} className={`col-sm-12 col-lg-6 pb-4`}>
                 {/* <GatsbyImage
@@ -41,7 +41,7 @@ export const GallerySection = ({
           <div className="col-12 mt-4 mb-5">
             <SplitSlider leftImg={sliderLeftImg} rightImg={sliderRightImg} />
           </div>
-          {imageList.slice(2, 4)?.map((listData: any, index: number) => {
+          {imageList?.slice(2, 4)?.map((listData: any, index: number) => {
             return (
               <div key={index} className={`col-sm-12 col-lg-6 pb-4`}>
                 {/* <GatsbyImage

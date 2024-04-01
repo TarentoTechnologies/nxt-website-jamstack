@@ -157,7 +157,8 @@ b {
 
 #portfolioCarousel .splide__pagination__page.is-active {
   background-color: var(--cadmium-orange);
-  width: 0.8rem;
+  border-radius: 0.25rem;
+  width: 1rem;
   height: 0.5rem;
   margin-top: 1.438rem;
   margin-right: 0.5rem;
