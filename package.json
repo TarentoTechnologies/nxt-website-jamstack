@@ -15,7 +15,8 @@
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "sonar": "sonar-scanner"
   },
   "dependencies": {
     "aos": "^3.0.0-beta.6",
