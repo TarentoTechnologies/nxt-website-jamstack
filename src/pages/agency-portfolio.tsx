@@ -55,7 +55,7 @@ const AgencyPortfolio: React.FC<PageProps> = ({
         </li>
       </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} />
+      {/* <HeroBanner heroBannerData={data[currentLang]?.HeroSection} /> */}
       <section id="agencyPortfolioMain">
         <Showcase
           sectionTitle={data[currentLang]?.SectionOneTitle}
@@ -77,19 +77,10 @@ const AgencyPortfolio: React.FC<PageProps> = ({
   );
 };
 
+
 export const query = graphql`
   query DesignPortfolioListing {
     en: strapiAgencyPortfolioListing(locale: { eq: "en" }) {
-      HeroSection {
-        id
-        Title
-        Image {
-          localFile {
-            url
-          }
-        }
-        Description
-      }
       SectionOneTitle
       SectionTwoTitle
       CTA {
@@ -107,18 +98,6 @@ export const query = graphql`
     ) {
       nodes {
         id
-        HeroSection {
-          id
-          Title
-          Image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(formats: PNG, placeholder: BLURRED)
-              }
-            }
-          }
-          Description
-        }
         CTATextForDisplay
         ShowcasePost
         Slug
@@ -181,6 +160,111 @@ export const query = graphql`
     }
   }
 `;
+
+// export const query = graphql`
+//   query DesignPortfolioListing {
+//     en: strapiAgencyPortfolioListing(locale: { eq: "en" }) {
+//       HeroSection {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             url
+//           }
+//         }
+//         Description
+//       }
+//       SectionOneTitle
+//       SectionTwoTitle
+//       CTA {
+//         id
+//         Title
+//         Description
+//         CTAText
+//         CTALink
+//       }
+//       DynamicButtonText
+//     }
+//     enAgencyPortfolios: allStrapiAgencyPortfolio(
+//       sort: { updatedAt: DESC }
+//       filter: { locale: { eq: "en" } }
+//     ) {
+//       nodes {
+//         id
+//         HeroSection {
+//           id
+//           Title
+//           Image {
+//             localFile {
+//               childImageSharp {
+//                 gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//               }
+//             }
+//           }
+//           Description
+//         }
+//         CTATextForDisplay
+//         ShowcasePost
+//         Slug
+//         PortfolioTag
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
 
 export default AgencyPortfolio;
 

@@ -36,7 +36,7 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
   return (
     <main className="">
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} isImage />
+      {/* <HeroBanner heroBannerData={data[currentLang]?.HeroSection} isImage /> */}
       <About data={data[currentLang]?.AboutSection} />
       <TagSection data={data[currentLang]?.BannerWithTagSection} />
       <RelatedPortfolio
@@ -56,18 +56,6 @@ export const query = graphql`
   query DesignPortfolio($slug: String!) {
     en: strapiDesignPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
       id
-      HeroSection {
-        id
-        Title
-        Description
-        Image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED)
-            }
-          }
-        }
-      }
       AboutSection {
         id
         Title
@@ -176,6 +164,131 @@ export const query = graphql`
     }
   }
 `;
+
+// export const query = graphql`
+//   query DesignPortfolio($slug: String!) {
+//     en: strapiDesignPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
+//       id
+//       HeroSection {
+//         id
+//         Title
+//         Description
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//       }
+//       AboutSection {
+//         id
+//         Title
+//         Description {
+//           data {
+//             Description
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         ColumnOneTitle
+//         ColumnOneValue
+//         ColumnTwoTitle
+//         ColumnTwoValue
+//         ColumnThreeTitle
+//         ColumnThreeValue
+//         ColumnFourTitle
+//         ColumnFourLink
+//       }
+//       BannerWithTagSection {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//         Tags {
+//           id
+//           Label
+//         }
+//       }
+//       SectionFourTitle
+//       RelatedPortfolios {
+//         id
+//         Title
+//         Tag
+//         Description
+//         CTAText
+//         CTALink
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
 
 export default DesignPortfolioDetail;
 
