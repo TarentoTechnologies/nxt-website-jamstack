@@ -1,7 +1,7 @@
 import * as OGL from "ogl";
 import { useEffect } from "react";
 
-import mapEffectImage from "../../../static/images/home/bg-1.jpg";
+import mapEffectImage from "../../../static/images/home/bg-2.jpg";
 import {
   heroBannerStyles,
   logoHeadStyles,
@@ -15,8 +15,7 @@ interface HeroBannerFMEProps {
 
 export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
   const oglRender = () => {
-
-    const imgSize = [8860, 1800];
+    const imgSize = [8960, 1000];
 
     const vertex = `
 					attribute vec2 uv;
@@ -56,11 +55,8 @@ export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
 
     const gl = renderer.gl;
 
-
-    // document.body.appendChild(gl.canvas);
-    // document.body.prepend(gl.canvas);
     const bannerElem: any = document.getElementById("flowMapEffectBanner");
-    bannerElem.appendChild(gl.canvas)
+    bannerElem.appendChild(gl.canvas);
 
     // Variable inputs to control flowmap
     let aspect = 1;
@@ -68,7 +64,7 @@ export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
     const velocity: any = new OGL.Vec2();
     function resize() {
       let a1, a2;
-      var imageAspect = imgSize[1] / imgSize[0];
+      let imageAspect:any = imgSize[1] / imgSize[0];
       if (window.innerHeight / window.innerWidth < imageAspect) {
         a1 = 1;
         a2 = window.innerHeight / window.innerWidth / imageAspect;
@@ -105,7 +101,7 @@ export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
     img.src = mapEffectImage;
 
     let a1, a2;
-    var imageAspect = imgSize[1] / imgSize[0];
+    let imageAspect: any = imgSize[1] / imgSize[0];
     if (window.innerHeight / window.innerWidth < imageAspect) {
       a1 = 1;
       a2 = window.innerHeight / window.innerWidth / imageAspect;
@@ -147,7 +143,7 @@ export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
     const lastMouse: any = new OGL.Vec2();
     function updateMouse(e: any) {
       e.preventDefault();
-      if (e.changedTouches && e.changedTouches.length) {
+      if (e?.changedTouches?.length) {
         e.x = e.changedTouches[0].pageX;
         e.y = e.changedTouches[0].pageY;
       }
@@ -197,8 +193,6 @@ export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
       program.uniforms.uTime.value = t * 0.01;
       renderer.render({ scene: mesh });
     }
-
-    // return gl.canvas;
   };
 
   useEffect(() => {

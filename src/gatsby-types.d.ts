@@ -3866,10 +3866,14 @@ type Query_strapiTechnologyArgs = {
 
 
 type Query_strapiThorArgs = {
+  BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   Capabilities: InputMaybe<STRAPI__MEDIAFilterInput>;
   CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
   CaseStudiesTitle: InputMaybe<StringQueryOperatorInput>;
   HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
+  LiveExpDesc: InputMaybe<StringQueryOperatorInput>;
+  LiveExpTitle: InputMaybe<StringQueryOperatorInput>;
   MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELFilterInput>;
   TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARFilterInput>;
   UseCaseSubText: InputMaybe<StringQueryOperatorInput>;
@@ -7754,10 +7758,14 @@ type STRAPI_TECHNOLOGYSortInput = {
 };
 
 type STRAPI_THOR = Node & {
+  readonly BottomBanner: Maybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTA>;
   readonly Capabilities: Maybe<STRAPI__MEDIA>;
   readonly CaseStudiesList: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>>>;
   readonly CaseStudiesTitle: Maybe<Scalars['String']>;
   readonly HeroBanner: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
+  readonly LiveExpCards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARD>>>;
+  readonly LiveExpDesc: Maybe<Scalars['String']>;
+  readonly LiveExpTitle: Maybe<Scalars['String']>;
   readonly MultiChannelEngagement: Maybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNEL>;
   readonly TwoAvatars: Maybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATAR>;
   readonly UseCaseSubText: Maybe<Scalars['String']>;
@@ -7845,10 +7853,14 @@ type STRAPI_THOREdge = {
 };
 
 type STRAPI_THORFieldSelector = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFieldSelector>;
   readonly Capabilities: InputMaybe<STRAPI__MEDIAFieldSelector>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector>;
   readonly CaseStudiesTitle: InputMaybe<FieldSelectorEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector>;
+  readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFieldSelector>;
+  readonly LiveExpDesc: InputMaybe<FieldSelectorEnum>;
+  readonly LiveExpTitle: InputMaybe<FieldSelectorEnum>;
   readonly MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELFieldSelector>;
   readonly TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARFieldSelector>;
   readonly UseCaseSubText: InputMaybe<FieldSelectorEnum>;
@@ -7867,10 +7879,14 @@ type STRAPI_THORFieldSelector = {
 };
 
 type STRAPI_THORFilterInput = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   readonly Capabilities: InputMaybe<STRAPI__MEDIAFilterInput>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
   readonly CaseStudiesTitle: InputMaybe<StringQueryOperatorInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
+  readonly LiveExpDesc: InputMaybe<StringQueryOperatorInput>;
+  readonly LiveExpTitle: InputMaybe<StringQueryOperatorInput>;
   readonly MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELFilterInput>;
   readonly TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARFilterInput>;
   readonly UseCaseSubText: InputMaybe<StringQueryOperatorInput>;
@@ -7930,10 +7946,14 @@ type STRAPI_THORGroupConnection_sumArgs = {
 };
 
 type STRAPI_THORSortInput = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTASortInput>;
   readonly Capabilities: InputMaybe<STRAPI__MEDIASortInput>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDSortInput>;
   readonly CaseStudiesTitle: InputMaybe<SortOrderEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput>;
+  readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDSortInput>;
+  readonly LiveExpDesc: InputMaybe<SortOrderEnum>;
+  readonly LiveExpTitle: InputMaybe<SortOrderEnum>;
   readonly MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELSortInput>;
   readonly TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARSortInput>;
   readonly UseCaseSubText: InputMaybe<SortOrderEnum>;
