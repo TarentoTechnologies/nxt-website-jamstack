@@ -25,6 +25,7 @@ exports[`Test if the BannerWithTag component is working as expected <BannerWithT
         
         
         
+        
         "
           data-aos="fade-up"
           data-testid="primary-title"
@@ -152,14 +153,7 @@ exports[`Test if the BannerWithTag component is working as expected <BannerWithT
       </div>
       <div
         class="col-sm-12 col-md-12 col-lg-12 col-xl-6 overflow-hidden p-0 m-0"
-      >
-        <img
-          alt="Test Image"
-          class="img-fluid bannerImg float-end mt-0 mt-sm-0 mt-md-4 mt-lg-4 mt-xl-4"
-          data-aos="fade-up"
-          src="test-file-stub"
-        />
-      </div>
+      />
     </div>
   </div>
 </div>

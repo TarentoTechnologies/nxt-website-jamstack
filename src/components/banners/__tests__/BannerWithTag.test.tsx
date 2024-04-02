@@ -1,6 +1,6 @@
-import React from 'react';
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
+import React from "react";
 
 import { BannerWithTag } from "../BannerWithTag";
 
@@ -37,6 +37,7 @@ describe("Test if the BannerWithTag component is working as expected", () => {
         data-testid="banner-with-tag"
         title={data.title}
         tagsList={data.tagsList}
+        img={undefined}
       />
     );
     expect(component.container).toMatchSnapshot();
@@ -48,6 +49,7 @@ describe("Test if the BannerWithTag component is working as expected", () => {
         data-testid="banner-with-tag"
         title={data.title}
         tagsList={data.tagsList}
+        img={undefined}
       />
     );
     expect(component.getByTestId("banner-with-tag")).toBeInTheDocument();
