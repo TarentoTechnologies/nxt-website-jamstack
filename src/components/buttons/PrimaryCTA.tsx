@@ -37,6 +37,7 @@ export const PrimaryCTA = ({
           href={
             btnLink != null ? `${isMail && !isExternal ? `mailto:${btnLink};` : btnLink}` : ""
           }
+          aria-label="link to specific detail page to know more"
           target="_blank"
         >
           <div

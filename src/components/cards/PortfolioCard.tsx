@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ReactHtmlParser from "react-html-parser";
 
 import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
 import {
@@ -17,6 +18,7 @@ import {
 } from "../../styles/style-guide/Typography.module.css";
 import {
   ctaIcon,
+  customImgSize,
   customTag,
   heroImage,
   heroProgrammerImage,
@@ -29,12 +31,14 @@ interface PortfolioCardProps {
   imgAlt?: string;
   tag?: string;
   title: string;
-  description: string;
+  description: any;
   ctaText: string;
   ctaLink: any;
   tagVariant?: string;
   isProgramme?: boolean;
   isCTAExternal?: boolean;
+  bgGrey?: boolean;
+  descRichText?: boolean;
 }
 
 export const PortfolioCard = ({
@@ -48,20 +52,34 @@ export const PortfolioCard = ({
   tagVariant,
   isProgramme,
   isCTAExternal,
+  bgGrey = false,
+  descRichText = false,
 }: PortfolioCardProps) => {
   const image: any = getImage(imgSrc);
 
   return (
     <div className="container-fluid">
       {/* Image */}
-      <GatsbyImage
-        image={image}
-        alt={imgAlt ? imgAlt : ""}
-        className={`${
-          isProgramme ? heroProgrammerImage : heroImage
-        } ${bgGlaucousGreen} img-fluid ${!imgSrc ? "w-100" : ""}`}
-        data-aos="fade-up"
-      />
+      <div
+        className={`${isProgramme ? heroProgrammerImage : heroImage} ${
+          bgGrey ? "layoutBg" : "whiteBg"
+        } d-flex justify-content-center align-items-center`}
+      >
+        {/* <GatsbyImage
+          image={image}
+          alt={imgAlt ? imgAlt : ""}
+          className={`${
+            isProgramme ? heroProgrammerImage : heroImage
+          } ${bgGlaucousGreen} img-fluidlayoutBg ${!imgSrc ? "w-100" : ""}`}
+          data-aos="fade-up"
+        /> */}
+        <GatsbyImage
+          image={image}
+          alt={imgAlt ? imgAlt : ""}
+          className={`img-fluid ${isProgramme ? "w-100" : customImgSize}`}
+          data-aos="fade-up"
+        />
+      </div>
 
       {/* Tag */}
       {tag && tag !== null && (
@@ -85,14 +103,16 @@ export const PortfolioCard = ({
         className={`${subText2} ${black87} ${truncateDescription}`}
         data-aos="fade-up"
       >
-        {description}
+        {descRichText
+          ? ReactHtmlParser(description?.data?.childMarkdownRemark?.html)
+          : description}
       </div>
 
       {/* CTA */}
       <div className="mt-4" data-aos="fade-up">
         {!isCTAExternal ? (
           <Link to={ctaLink}>
-            <label className={`${cta1}`} role="button">
+            <label className={`${cta1} pe-auto cursorPointer`} role="link">
               {ctaText}
               <span className={`${ctaIconPos}`}>
                 <img
@@ -105,7 +125,7 @@ export const PortfolioCard = ({
           </Link>
         ) : (
           <a href={ctaLink} rel="external" target="_blank">
-            <label className={`${cta1}`} role="button">
+            <label className={`${cta1} pe-auto cursorPointer`} role="link">
               {ctaText}
               <span className={`${ctaIconPos}`}>
                 <img

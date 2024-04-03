@@ -6,11 +6,13 @@ import TarentoLogo from "../../static/images/company-logo.svg";
 import NXTlogo from "../../static/images/logo-inner.svg";
 import navbarImg from "../../static/images/logo-inner.svg";
 import techHero from "../../static/images/tech-hero.png";
+import { BannerWithCTA } from "../components";
 import { Navbar } from "../components/navbar/Navbar";
 import {
   KeyInfoLayout,
   ResultLayout,
 } from "../layouts/agency-portfolio-detail";
+import { About } from "../layouts/agency-portfolio-detail";
 import { FooterSection } from "../layouts/common";
 import {
   AllOtherClients,
@@ -18,7 +20,10 @@ import {
   HeroBanner,
   Showcase,
 } from "../layouts/design-portfolio";
-import { About, RelatedPortfolio } from "../layouts/design-portfolio-detail";
+import {
+  Highlight,
+  RelatedPortfolio,
+} from "../layouts/design-portfolio-detail";
 import { langSelected as langSelectedAtom } from "../states/atoms";
 
 interface AgencyPortfolioDetailProps {
@@ -32,12 +37,19 @@ const AgencyPortfolioDetail: React.FC<PageProps> = ({
 
   const currentFooterSection = currentLang + "FooterSection";
 
+  const currentBottomBanner = currentLang + "BottomBanner";
+
   return (
     <main className="">
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} isImage />
+      <HeroBanner heroBannerData={data[currentLang]?.HeroBanner} isImg />
       <About data={data[currentLang]?.AboutSection} />
       <KeyInfoLayout data={data[currentLang]?.KeyInformation} />
+      <Highlight
+        title={data[currentLang]?.HighlightSectionTitle}
+        desc={data[currentLang]?.HighlightSectionDescription}
+        carouselData={data[currentLang]?.HighlightCarousel?.Images}
+      />
       <ResultLayout
         sectionTitle={data[currentLang]?.ResultTitle}
         description={data[currentLang]?.ResultDescription}
@@ -46,6 +58,13 @@ const AgencyPortfolioDetail: React.FC<PageProps> = ({
         data={data[currentLang]?.RelatedPortfolios}
         sectionTitle={data[currentLang]?.SectionFourTitle}
         portfolioPath="/agency-portfolio/"
+      />
+      <BannerWithCTA
+        title={data[currentBottomBanner]?.BottomBanner?.Title}
+        bgImg={data[currentBottomBanner]?.BottomBanner?.BgImg?.localFile?.url}
+        CTAtext={data[currentBottomBanner]?.BottomBanner?.CTAButton?.Label}
+        CTAlink={data[currentBottomBanner]?.BottomBanner?.CTAButton?.Link}
+        isCTAExternal={data[currentBottomBanner]?.BottomBanner?.isCTAExternal}
       />
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -59,18 +78,6 @@ export const query = graphql`
   query AgencyPortfolio($slug: String!) {
     en: strapiAgencyPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
       id
-      HeroSection {
-        id
-        Title
-        Description
-        Image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED)
-            }
-          }
-        }
-      }
       AboutSection {
         id
         Title
@@ -191,6 +198,318 @@ export const query = graphql`
     }
   }
 `;
+
+// export const query = graphql`
+//   query AgencyPortfolio($slug: String!) {
+//     en: strapiAgencyPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
+//       id
+//       HeroBanner {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             url
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//           alternativeText
+//         }
+//         Desc {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         isAgencyDetail
+//         isListingPage
+//         withBreadCrumbs
+//         BreadCrumbLabel
+//         BreadCrumbLink
+//       }
+//       AboutSection {
+//         id
+//         Title
+//         Description {
+//           data {
+//             Description
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         ColumnOneTitle
+//         ColumnOneValue
+//         ColumnTwoTitle
+//         ColumnTwoValue
+//         ColumnThreeTitle
+//         ColumnThreeValue
+//         ColumnFourTitle
+//         ColumnFourLink
+//       }
+//       RelatedPortfolios {
+//         id
+//         Title
+//         Tag
+//         Description
+//         CTAText
+//         CTALink
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//       }
+//       SectionFourTitle
+//       ResultTitle
+//       ResultDescription {
+//         data {
+//           childMarkdownRemark {
+//             html
+//           }
+//         }
+//       }
+//       KeyInformation {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//         DescriptionAlignment
+//         Description {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//       }
+//       HighlightSectionTitle
+//       HighlightSectionDescription
+//       HighlightCarousel {
+//         Images {
+//           localFile {
+//             url
+//           }
+//           alternativeText
+//         }
+//       }
+//     }
+//     enBottomBanner: strapiAgencyPortfolioListing(locale: { eq: "en" }) {
+//       BottomBanner {
+//         Title
+//         CTAButton {
+//           Label
+//           Link
+//         }
+//         BgImg {
+//           localFile {
+//             url
+//           }
+//         }
+//         isCTAExternal
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
+
+// export const query = graphql`
+//   query AgencyPortfolio($slug: String!) {
+//     en: strapiAgencyPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
+//       id
+//       HeroSection {
+//         id
+//         Title
+//         Description
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//       }
+//       AboutSection {
+//         id
+//         Title
+//         Description {
+//           data {
+//             Description
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         ColumnOneTitle
+//         ColumnOneValue
+//         ColumnTwoTitle
+//         ColumnTwoValue
+//         ColumnThreeTitle
+//         ColumnThreeValue
+//         ColumnFourTitle
+//         ColumnFourLink
+//       }
+//       RelatedPortfolios {
+//         id
+//         Title
+//         Tag
+//         Description
+//         CTAText
+//         CTALink
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//       }
+//       SectionFourTitle
+//       ResultTitle
+//       ResultDescription {
+//         data {
+//           childMarkdownRemark {
+//             html
+//           }
+//         }
+//       }
+//       KeyInformation {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//         DescriptionAlignment
+//         Description {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
 
 export default AgencyPortfolioDetail;
 

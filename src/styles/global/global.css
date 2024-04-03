@@ -47,6 +47,10 @@ a:hover {
   padding: 3.75rem 0;
 }
 
+.paddingTopBottom80 {
+  padding: 5rem 0;
+}
+
 .paddingTopBottom100 {
   padding: 6.25rem 0;
 }
@@ -83,6 +87,10 @@ b {
   background-color: #ffffff;
 }
 
+.cursorPointer {
+  cursor: pointer;
+}
+
 /* Swiper styles starts here */
 
 .swiper-button-next,
@@ -100,8 +108,6 @@ b {
 .customMaringBtm1 {
   margin-bottom: 1rem;
 }
-
-/* Swiper styles ends here */
 
 /* Skip navigation links styles starts here */
 
@@ -135,11 +141,47 @@ b {
 
 /* Styles for demo app ends here */
 
+/* Splide styles starts here */
+
+.splide__pagination {
+  bottom: -3rem !important;
+}
+
+#portfolioCarousel .splide__pagination__page {
+  background-color: var(--white);
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 1.438rem;
+  margin-right: 0.5rem;
+}
+
+#portfolioCarousel .splide__pagination__page.is-active {
+  background-color: var(--cadmium-orange);
+  border-radius: 0.25rem;
+  width: 1rem;
+  height: 0.5rem;
+  margin-top: 1.438rem;
+  margin-right: 0.5rem;
+}
+
+/* Splide styles ends here */
+
+/* Mouse flowmap effect styles starts here */
+
+/* #flowMapEffectBanner canvas {
+  touch-action: pan-y;
+} */
+
+/* Mouse flowmap effect styles ends here */
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
   .rainDemoApp {
     width: 101vw;
+  }
+  .splide__pagination {
+    bottom: -2rem !important;
   }
 }
 
@@ -150,9 +192,13 @@ b {
   .containerService {
     width: 46.875rem;
   }
-  
+
   .rainDemoApp {
     width: 101vw;
+  }
+
+  .splide__pagination {
+    bottom: -2rem !important;
   }
 }
 
@@ -167,6 +213,7 @@ b {
     width: 73.125rem;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .containerRow {
     flex-direction: column;

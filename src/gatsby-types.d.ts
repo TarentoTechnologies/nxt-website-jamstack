@@ -1621,8 +1621,8 @@ type Query = {
   readonly allStrapiComponentPortfolioAboutPortfolioAbout: STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTConnection;
   readonly allStrapiComponentPortfolioAboutPortfolioAboutDescriptionTextnode: STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUT_DESCRIPTION_TEXTNODEConnection;
   readonly allStrapiComponentPortfolioCarouselPortfolioCarousel: STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELConnection;
-  readonly allStrapiComponentPortfolioHeroBannerPortfolioHeroBanner: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection;
-  readonly allStrapiComponentPortfolioHeroBannerPortfolioHeroBannerDescTextnode: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection;
+  readonly allStrapiComponentPortfolioHeroV2PortfolioHeroBannerV2: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Connection;
+  readonly allStrapiComponentPortfolioHeroV2PortfolioHeroBannerV2DescTextnode: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEConnection;
   readonly allStrapiComponentPortfolioListingCardPortfolioListingCard: STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDConnection;
   readonly allStrapiComponentPricingCardPricingCard: STRAPI__COMPONENT_PRICING_CARD_PRICING_CARDConnection;
   readonly allStrapiComponentPricingHeroTextPricingHeroText: STRAPI__COMPONENT_PRICING_HERO_TEXT_PRICING_HERO_TEXTConnection;
@@ -1710,8 +1710,8 @@ type Query = {
   readonly strapiComponentPortfolioAboutPortfolioAbout: Maybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUT>;
   readonly strapiComponentPortfolioAboutPortfolioAboutDescriptionTextnode: Maybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUT_DESCRIPTION_TEXTNODE>;
   readonly strapiComponentPortfolioCarouselPortfolioCarousel: Maybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSEL>;
-  readonly strapiComponentPortfolioHeroBannerPortfolioHeroBanner: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
-  readonly strapiComponentPortfolioHeroBannerPortfolioHeroBannerDescTextnode: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+  readonly strapiComponentPortfolioHeroV2PortfolioHeroBannerV2: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
+  readonly strapiComponentPortfolioHeroV2PortfolioHeroBannerV2DescTextnode: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODE>;
   readonly strapiComponentPortfolioListingCardPortfolioListingCard: Maybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARD>;
   readonly strapiComponentPricingCardPricingCard: Maybe<STRAPI__COMPONENT_PRICING_CARD_PRICING_CARD>;
   readonly strapiComponentPricingHeroTextPricingHeroText: Maybe<STRAPI__COMPONENT_PRICING_HERO_TEXT_PRICING_HERO_TEXT>;
@@ -2124,19 +2124,19 @@ type Query_allStrapiComponentPortfolioCarouselPortfolioCarouselArgs = {
 };
 
 
-type Query_allStrapiComponentPortfolioHeroBannerPortfolioHeroBannerArgs = {
-  filter: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
+type Query_allStrapiComponentPortfolioHeroV2PortfolioHeroBannerV2Args = {
+  filter: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput>>>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2SortInput>>>;
 };
 
 
-type Query_allStrapiComponentPortfolioHeroBannerPortfolioHeroBannerDescTextnodeArgs = {
-  filter: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFilterInput>;
+type Query_allStrapiComponentPortfolioHeroV2PortfolioHeroBannerV2DescTextnodeArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODESortInput>>>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODESortInput>>>;
 };
 
 
@@ -2659,7 +2659,7 @@ type Query_sitePluginArgs = {
 type Query_strapiAgencyPortfolioArgs = {
   AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTFilterInput>;
   CTATextForDisplay: InputMaybe<StringQueryOperatorInput>;
-  HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
+  HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
   HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
   HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
   HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
@@ -2688,7 +2688,7 @@ type Query_strapiAgencyPortfolioListingArgs = {
   BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFilterInput>;
   DynamicButtonText: InputMaybe<StringQueryOperatorInput>;
-  HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
+  HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
   SectionOneTitle: InputMaybe<StringQueryOperatorInput>;
   SectionTwoTitle: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -3167,16 +3167,16 @@ type Query_strapiComponentPortfolioCarouselPortfolioCarouselArgs = {
 };
 
 
-type Query_strapiComponentPortfolioHeroBannerPortfolioHeroBannerArgs = {
-  Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFilterInput>;
-  Description: InputMaybe<StringQueryOperatorInput>;
+type Query_strapiComponentPortfolioHeroV2PortfolioHeroBannerV2Args = {
+  BreadCrumbLabel: InputMaybe<StringQueryOperatorInput>;
+  BreadCrumbLink: InputMaybe<StringQueryOperatorInput>;
+  Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2DescFilterInput>;
   Image: InputMaybe<STRAPI__MEDIAFilterInput>;
   Title: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   isAgencyDetail: InputMaybe<BooleanQueryOperatorInput>;
-  isImage: InputMaybe<BooleanQueryOperatorInput>;
   isListingPage: InputMaybe<BooleanQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   strapi_id: InputMaybe<IntQueryOperatorInput>;
@@ -3184,7 +3184,7 @@ type Query_strapiComponentPortfolioHeroBannerPortfolioHeroBannerArgs = {
 };
 
 
-type Query_strapiComponentPortfolioHeroBannerPortfolioHeroBannerDescTextnodeArgs = {
+type Query_strapiComponentPortfolioHeroV2PortfolioHeroBannerV2DescTextnodeArgs = {
   Desc: InputMaybe<StringQueryOperatorInput>;
   childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -3570,7 +3570,7 @@ type Query_strapiDesignPortfolioArgs = {
   BannerWithTagSection: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGSFilterInput>;
   CTATextForDisplay: InputMaybe<StringQueryOperatorInput>;
   GallerySection: InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFilterInput>;
-  HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
+  HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
   HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
   HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
   HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
@@ -3596,7 +3596,7 @@ type Query_strapiDesignPortfolioListingArgs = {
   BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFilterInput>;
   DynamicButtonText: InputMaybe<StringQueryOperatorInput>;
-  HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
+  HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
   SectionOneTitle: InputMaybe<StringQueryOperatorInput>;
   SectionTwoTitle: InputMaybe<StringQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -3866,10 +3866,14 @@ type Query_strapiTechnologyArgs = {
 
 
 type Query_strapiThorArgs = {
+  BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   Capabilities: InputMaybe<STRAPI__MEDIAFilterInput>;
   CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
   CaseStudiesTitle: InputMaybe<StringQueryOperatorInput>;
   HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
+  LiveExpDesc: InputMaybe<StringQueryOperatorInput>;
+  LiveExpTitle: InputMaybe<StringQueryOperatorInput>;
   MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELFilterInput>;
   TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARFilterInput>;
   UseCaseSubText: InputMaybe<StringQueryOperatorInput>;
@@ -3890,7 +3894,7 @@ type Query_strapiThorArgs = {
 type STRAPI_AGENCY_PORTFOLIO = Node & {
   readonly AboutSection: Maybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUT>;
   readonly CTATextForDisplay: Maybe<Scalars['String']>;
-  readonly HeroSection: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
+  readonly HeroBanner: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
   readonly HighlightCarousel: Maybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSEL>;
   readonly HighlightSectionDescription: Maybe<Scalars['String']>;
   readonly HighlightSectionTitle: Maybe<Scalars['String']>;
@@ -3986,7 +3990,7 @@ type STRAPI_AGENCY_PORTFOLIOEdge = {
 type STRAPI_AGENCY_PORTFOLIOFieldSelector = {
   readonly AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTFieldSelector>;
   readonly CTATextForDisplay: InputMaybe<FieldSelectorEnum>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector>;
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFieldSelector>;
   readonly HighlightSectionDescription: InputMaybe<FieldSelectorEnum>;
   readonly HighlightSectionTitle: InputMaybe<FieldSelectorEnum>;
@@ -4013,7 +4017,7 @@ type STRAPI_AGENCY_PORTFOLIOFieldSelector = {
 type STRAPI_AGENCY_PORTFOLIOFilterInput = {
   readonly AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTFilterInput>;
   readonly CTATextForDisplay: InputMaybe<StringQueryOperatorInput>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
   readonly HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
   readonly HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
@@ -4097,7 +4101,7 @@ type STRAPI_AGENCY_PORTFOLIOResultDescriptionSortInput = {
 type STRAPI_AGENCY_PORTFOLIOSortInput = {
   readonly AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTSortInput>;
   readonly CTATextForDisplay: InputMaybe<SortOrderEnum>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2SortInput>;
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELSortInput>;
   readonly HighlightSectionDescription: InputMaybe<SortOrderEnum>;
   readonly HighlightSectionTitle: InputMaybe<SortOrderEnum>;
@@ -4125,7 +4129,7 @@ type STRAPI_AGENCY_PORTFOLIO_LISTING = Node & {
   readonly BottomBanner: Maybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTA>;
   readonly CTA: Maybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARY>;
   readonly DynamicButtonText: Maybe<Scalars['String']>;
-  readonly HeroSection: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
+  readonly HeroBanner: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
   readonly SectionOneTitle: Maybe<Scalars['String']>;
   readonly SectionTwoTitle: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
@@ -4212,7 +4216,7 @@ type STRAPI_AGENCY_PORTFOLIO_LISTINGFieldSelector = {
   readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFieldSelector>;
   readonly CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFieldSelector>;
   readonly DynamicButtonText: InputMaybe<FieldSelectorEnum>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector>;
   readonly SectionOneTitle: InputMaybe<FieldSelectorEnum>;
   readonly SectionTwoTitle: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
@@ -4230,7 +4234,7 @@ type STRAPI_AGENCY_PORTFOLIO_LISTINGFilterInput = {
   readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   readonly CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFilterInput>;
   readonly DynamicButtonText: InputMaybe<StringQueryOperatorInput>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
   readonly SectionOneTitle: InputMaybe<StringQueryOperatorInput>;
   readonly SectionTwoTitle: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
@@ -4289,7 +4293,7 @@ type STRAPI_AGENCY_PORTFOLIO_LISTINGSortInput = {
   readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTASortInput>;
   readonly CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYSortInput>;
   readonly DynamicButtonText: InputMaybe<SortOrderEnum>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2SortInput>;
   readonly SectionOneTitle: InputMaybe<SortOrderEnum>;
   readonly SectionTwoTitle: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
@@ -5378,7 +5382,7 @@ type STRAPI_DESIGN_PORTFOLIO = Node & {
   readonly BannerWithTagSection: Maybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGS>;
   readonly CTATextForDisplay: Maybe<Scalars['String']>;
   readonly GallerySection: Maybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY>;
-  readonly HeroSection: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
+  readonly HeroBanner: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
   readonly HighlightCarousel: Maybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSEL>;
   readonly HighlightSectionDescription: Maybe<Scalars['String']>;
   readonly HighlightSectionTitle: Maybe<Scalars['String']>;
@@ -5473,7 +5477,7 @@ type STRAPI_DESIGN_PORTFOLIOFieldSelector = {
   readonly BannerWithTagSection: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGSFieldSelector>;
   readonly CTATextForDisplay: InputMaybe<FieldSelectorEnum>;
   readonly GallerySection: InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFieldSelector>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector>;
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFieldSelector>;
   readonly HighlightSectionDescription: InputMaybe<FieldSelectorEnum>;
   readonly HighlightSectionTitle: InputMaybe<FieldSelectorEnum>;
@@ -5499,7 +5503,7 @@ type STRAPI_DESIGN_PORTFOLIOFilterInput = {
   readonly BannerWithTagSection: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGSFilterInput>;
   readonly CTATextForDisplay: InputMaybe<StringQueryOperatorInput>;
   readonly GallerySection: InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYFilterInput>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
   readonly HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
   readonly HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
@@ -5566,7 +5570,7 @@ type STRAPI_DESIGN_PORTFOLIOSortInput = {
   readonly BannerWithTagSection: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_TAG_BANNER_WITH_TAGSSortInput>;
   readonly CTATextForDisplay: InputMaybe<SortOrderEnum>;
   readonly GallerySection: InputMaybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYSortInput>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2SortInput>;
   readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELSortInput>;
   readonly HighlightSectionDescription: InputMaybe<SortOrderEnum>;
   readonly HighlightSectionTitle: InputMaybe<SortOrderEnum>;
@@ -5591,7 +5595,7 @@ type STRAPI_DESIGN_PORTFOLIO_LISTING = Node & {
   readonly BottomBanner: Maybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTA>;
   readonly CTA: Maybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARY>;
   readonly DynamicButtonText: Maybe<Scalars['String']>;
-  readonly HeroSection: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
+  readonly HeroBanner: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
   readonly SectionOneTitle: Maybe<Scalars['String']>;
   readonly SectionTwoTitle: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
@@ -5678,7 +5682,7 @@ type STRAPI_DESIGN_PORTFOLIO_LISTINGFieldSelector = {
   readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFieldSelector>;
   readonly CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFieldSelector>;
   readonly DynamicButtonText: InputMaybe<FieldSelectorEnum>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector>;
   readonly SectionOneTitle: InputMaybe<FieldSelectorEnum>;
   readonly SectionTwoTitle: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
@@ -5696,7 +5700,7 @@ type STRAPI_DESIGN_PORTFOLIO_LISTINGFilterInput = {
   readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   readonly CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFilterInput>;
   readonly DynamicButtonText: InputMaybe<StringQueryOperatorInput>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
   readonly SectionOneTitle: InputMaybe<StringQueryOperatorInput>;
   readonly SectionTwoTitle: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
@@ -5755,7 +5759,7 @@ type STRAPI_DESIGN_PORTFOLIO_LISTINGSortInput = {
   readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTASortInput>;
   readonly CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYSortInput>;
   readonly DynamicButtonText: InputMaybe<SortOrderEnum>;
-  readonly HeroSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2SortInput>;
   readonly SectionOneTitle: InputMaybe<SortOrderEnum>;
   readonly SectionTwoTitle: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
@@ -7754,10 +7758,14 @@ type STRAPI_TECHNOLOGYSortInput = {
 };
 
 type STRAPI_THOR = Node & {
+  readonly BottomBanner: Maybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTA>;
   readonly Capabilities: Maybe<STRAPI__MEDIA>;
   readonly CaseStudiesList: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>>>;
   readonly CaseStudiesTitle: Maybe<Scalars['String']>;
   readonly HeroBanner: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
+  readonly LiveExpCards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARD>>>;
+  readonly LiveExpDesc: Maybe<Scalars['String']>;
+  readonly LiveExpTitle: Maybe<Scalars['String']>;
   readonly MultiChannelEngagement: Maybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNEL>;
   readonly TwoAvatars: Maybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATAR>;
   readonly UseCaseSubText: Maybe<Scalars['String']>;
@@ -7845,10 +7853,14 @@ type STRAPI_THOREdge = {
 };
 
 type STRAPI_THORFieldSelector = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFieldSelector>;
   readonly Capabilities: InputMaybe<STRAPI__MEDIAFieldSelector>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector>;
   readonly CaseStudiesTitle: InputMaybe<FieldSelectorEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector>;
+  readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFieldSelector>;
+  readonly LiveExpDesc: InputMaybe<FieldSelectorEnum>;
+  readonly LiveExpTitle: InputMaybe<FieldSelectorEnum>;
   readonly MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELFieldSelector>;
   readonly TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARFieldSelector>;
   readonly UseCaseSubText: InputMaybe<FieldSelectorEnum>;
@@ -7867,10 +7879,14 @@ type STRAPI_THORFieldSelector = {
 };
 
 type STRAPI_THORFilterInput = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   readonly Capabilities: InputMaybe<STRAPI__MEDIAFilterInput>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
   readonly CaseStudiesTitle: InputMaybe<StringQueryOperatorInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
+  readonly LiveExpDesc: InputMaybe<StringQueryOperatorInput>;
+  readonly LiveExpTitle: InputMaybe<StringQueryOperatorInput>;
   readonly MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELFilterInput>;
   readonly TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARFilterInput>;
   readonly UseCaseSubText: InputMaybe<StringQueryOperatorInput>;
@@ -7930,10 +7946,14 @@ type STRAPI_THORGroupConnection_sumArgs = {
 };
 
 type STRAPI_THORSortInput = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTASortInput>;
   readonly Capabilities: InputMaybe<STRAPI__MEDIASortInput>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDSortInput>;
   readonly CaseStudiesTitle: InputMaybe<SortOrderEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput>;
+  readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDSortInput>;
+  readonly LiveExpDesc: InputMaybe<SortOrderEnum>;
+  readonly LiveExpTitle: InputMaybe<SortOrderEnum>;
   readonly MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELSortInput>;
   readonly TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARSortInput>;
   readonly UseCaseSubText: InputMaybe<SortOrderEnum>;
@@ -12539,173 +12559,173 @@ type STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELSortInput = {
   readonly strapi_id: InputMaybe<SortOrderEnum>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER = Node & {
-  readonly Desc: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDesc>;
-  readonly Description: Maybe<Scalars['String']>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2 = Node & {
+  readonly BreadCrumbLabel: Maybe<Scalars['String']>;
+  readonly BreadCrumbLink: Maybe<Scalars['String']>;
+  readonly Desc: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Desc>;
   readonly Image: Maybe<STRAPI__MEDIA>;
   readonly Title: Maybe<Scalars['String']>;
   readonly children: ReadonlyArray<Node>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   readonly isAgencyDetail: Maybe<Scalars['Boolean']>;
-  readonly isImage: Maybe<Scalars['Boolean']>;
   readonly isListingPage: Maybe<Scalars['Boolean']>;
   readonly parent: Maybe<Node>;
   readonly strapi_id: Maybe<Scalars['Int']>;
   readonly withBreadCrumbs: Maybe<Scalars['Boolean']>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection = {
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Connection = {
   readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNEREdge>;
-  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnection>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Edge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2GroupConnection>;
   readonly max: Maybe<Scalars['Float']>;
   readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
   readonly pageInfo: PageInfo;
   readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection_distinctArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Connection_distinctArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection_groupArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Connection_groupArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection_maxArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Connection_maxArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection_minArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Connection_minArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERConnection_sumArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Connection_sumArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDesc = {
-  readonly data: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Desc = {
+  readonly data: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODE>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFieldSelector = {
-  readonly data: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2DescFieldSelector = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFilterInput = {
-  readonly data: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFilterInput>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2DescFilterInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFilterInput>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescSortInput = {
-  readonly data: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODESortInput>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2DescSortInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODESortInput>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNEREdge = {
-  readonly next: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
-  readonly node: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER;
-  readonly previous: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Edge = {
+  readonly next: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
+  readonly node: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2;
+  readonly previous: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector = {
-  readonly Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFieldSelector>;
-  readonly Description: InputMaybe<FieldSelectorEnum>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector = {
+  readonly BreadCrumbLabel: InputMaybe<FieldSelectorEnum>;
+  readonly BreadCrumbLink: InputMaybe<FieldSelectorEnum>;
+  readonly Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2DescFieldSelector>;
   readonly Image: InputMaybe<STRAPI__MEDIAFieldSelector>;
   readonly Title: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
   readonly isAgencyDetail: InputMaybe<FieldSelectorEnum>;
-  readonly isImage: InputMaybe<FieldSelectorEnum>;
   readonly isListingPage: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly strapi_id: InputMaybe<FieldSelectorEnum>;
   readonly withBreadCrumbs: InputMaybe<FieldSelectorEnum>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFilterInput = {
-  readonly Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescFilterInput>;
-  readonly Description: InputMaybe<StringQueryOperatorInput>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput = {
+  readonly BreadCrumbLabel: InputMaybe<StringQueryOperatorInput>;
+  readonly BreadCrumbLink: InputMaybe<StringQueryOperatorInput>;
+  readonly Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2DescFilterInput>;
   readonly Image: InputMaybe<STRAPI__MEDIAFilterInput>;
   readonly Title: InputMaybe<StringQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
   readonly isAgencyDetail: InputMaybe<BooleanQueryOperatorInput>;
-  readonly isImage: InputMaybe<BooleanQueryOperatorInput>;
   readonly isListingPage: InputMaybe<BooleanQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
   readonly withBreadCrumbs: InputMaybe<BooleanQueryOperatorInput>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnection = {
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2GroupConnection = {
   readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNEREdge>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2Edge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnection>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2GroupConnection>;
   readonly max: Maybe<Scalars['Float']>;
   readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
   readonly pageInfo: PageInfo;
   readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnection_distinctArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2GroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnection_groupArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2GroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnection_maxArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2GroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnection_minArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2GroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERGroupConnection_sumArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2GroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERSortInput = {
-  readonly Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNERDescSortInput>;
-  readonly Description: InputMaybe<SortOrderEnum>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2SortInput = {
+  readonly BreadCrumbLabel: InputMaybe<SortOrderEnum>;
+  readonly BreadCrumbLink: InputMaybe<SortOrderEnum>;
+  readonly Desc: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2DescSortInput>;
   readonly Image: InputMaybe<STRAPI__MEDIASortInput>;
   readonly Title: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly isAgencyDetail: InputMaybe<SortOrderEnum>;
-  readonly isImage: InputMaybe<SortOrderEnum>;
   readonly isListingPage: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
   readonly withBreadCrumbs: InputMaybe<SortOrderEnum>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE = Node & {
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODE = Node & {
   readonly Desc: Maybe<Scalars['String']>;
   /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
   readonly childMarkdownRemark: Maybe<MarkdownRemark>;
@@ -12717,52 +12737,52 @@ type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE
   readonly parent: Maybe<Node>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection = {
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEConnection = {
   readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEEdge>;
-  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEGroupConnection>;
   readonly max: Maybe<Scalars['Float']>;
   readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODE>;
   readonly pageInfo: PageInfo;
   readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_distinctArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_groupArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEConnection_groupArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_maxArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEConnection_maxArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_minArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEConnection_minArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEConnection_sumArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEConnection_sumArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEEdge = {
-  readonly next: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
-  readonly node: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE;
-  readonly previous: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODE>;
+  readonly node: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODE;
+  readonly previous: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODE>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector = {
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector = {
   readonly Desc: InputMaybe<FieldSelectorEnum>;
   readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
@@ -12772,7 +12792,7 @@ type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE
   readonly parent: InputMaybe<NodeFieldSelector>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFilterInput = {
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFilterInput = {
   readonly Desc: InputMaybe<StringQueryOperatorInput>;
   readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
@@ -12782,48 +12802,48 @@ type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE
   readonly parent: InputMaybe<NodeFilterInput>;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection = {
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEGroupConnection = {
   readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEEdge>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEEdge>;
   readonly field: Scalars['String'];
   readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEGroupConnection>;
   readonly max: Maybe<Scalars['Float']>;
   readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODE>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODE>;
   readonly pageInfo: PageInfo;
   readonly sum: Maybe<Scalars['Float']>;
   readonly totalCount: Scalars['Int'];
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_distinctArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_groupArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_maxArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_minArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
 };
 
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEGroupConnection_sumArgs = {
-  field: STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODEFieldSelector;
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODEFieldSelector;
 };
 
-type STRAPI__COMPONENT_PORTFOLIO_HERO_BANNER_PORTFOLIO_HERO_BANNER_DESC_TEXTNODESortInput = {
+type STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2_DESC_TEXTNODESortInput = {
   readonly Desc: InputMaybe<SortOrderEnum>;
   readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
@@ -17206,7 +17226,7 @@ type AgencyPortfolioQueryVariables = Exact<{
 }>;
 
 
-type AgencyPortfolioQuery = { readonly en: { readonly id: string, readonly SectionFourTitle: string | null, readonly ResultTitle: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly AboutSection: { readonly id: string, readonly Title: string | null, readonly ColumnOneTitle: string | null, readonly ColumnOneValue: string | null, readonly ColumnTwoTitle: string | null, readonly ColumnTwoValue: string | null, readonly ColumnThreeTitle: string | null, readonly ColumnThreeValue: string | null, readonly ColumnFourTitle: string | null, readonly ColumnFourLink: string | null, readonly Description: { readonly data: { readonly Description: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly RelatedPortfolios: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Tag: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly ResultDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly KeyInformation: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null } | null, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
+type AgencyPortfolioQuery = { readonly en: { readonly id: string, readonly SectionFourTitle: string | null, readonly ResultTitle: string | null, readonly AboutSection: { readonly id: string, readonly Title: string | null, readonly ColumnOneTitle: string | null, readonly ColumnOneValue: string | null, readonly ColumnTwoTitle: string | null, readonly ColumnTwoValue: string | null, readonly ColumnThreeTitle: string | null, readonly ColumnThreeValue: string | null, readonly ColumnFourTitle: string | null, readonly ColumnFourLink: string | null, readonly Description: { readonly data: { readonly Description: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly RelatedPortfolios: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Tag: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly ResultDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly KeyInformation: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null> | null } | null, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
 
 type AppsPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -17238,12 +17258,12 @@ type DesignPortfolioQueryVariables = Exact<{
 }>;
 
 
-type DesignPortfolioQuery = { readonly en: { readonly id: string, readonly SectionFourTitle: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly AboutSection: { readonly id: string, readonly Title: string | null, readonly ColumnOneTitle: string | null, readonly ColumnOneValue: string | null, readonly ColumnTwoTitle: string | null, readonly ColumnTwoValue: string | null, readonly ColumnThreeTitle: string | null, readonly ColumnThreeValue: string | null, readonly ColumnFourTitle: string | null, readonly ColumnFourLink: string | null, readonly Description: { readonly data: { readonly Description: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly BannerWithTagSection: { readonly id: string, readonly Title: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Tags: ReadonlyArray<{ readonly id: string, readonly Label: string | null } | null> | null } | null, readonly RelatedPortfolios: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Tag: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null } | null, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
+type DesignPortfolioQuery = { readonly en: { readonly id: string, readonly SectionFourTitle: string | null, readonly AboutSection: { readonly id: string, readonly Title: string | null, readonly ColumnOneTitle: string | null, readonly ColumnOneValue: string | null, readonly ColumnTwoTitle: string | null, readonly ColumnTwoValue: string | null, readonly ColumnThreeTitle: string | null, readonly ColumnThreeValue: string | null, readonly ColumnFourTitle: string | null, readonly ColumnFourLink: string | null, readonly Description: { readonly data: { readonly Description: string | null, readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly BannerWithTagSection: { readonly id: string, readonly Title: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Tags: ReadonlyArray<{ readonly id: string, readonly Label: string | null } | null> | null } | null, readonly RelatedPortfolios: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Tag: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null } | null, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
 
 type DesignPortfolioListingQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type DesignPortfolioListingQuery = { readonly en: { readonly SectionOneTitle: string | null, readonly SectionTwoTitle: string | null, readonly DynamicButtonText: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly url: string | null } | null } | null } | null, readonly CTA: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null } | null } | null, readonly enDesignPortfolios: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly CTATextForDisplay: string | null, readonly ShowcasePost: boolean | null, readonly Slug: string | null, readonly PortfolioTag: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> }, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
+type DesignPortfolioListingQuery = { readonly en: { readonly SectionOneTitle: string | null, readonly SectionTwoTitle: string | null, readonly DynamicButtonText: string | null, readonly CTA: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null } | null } | null, readonly enDesignPortfolios: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly CTATextForDisplay: string | null, readonly ShowcasePost: boolean | null, readonly Slug: string | null, readonly PortfolioTag: string | null }> }, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
@@ -17279,7 +17299,7 @@ type GovTechPageQuery = { readonly en: { readonly DigitalPlatformsTitle: string 
 type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type HomePageQuery = { readonly en: { readonly PyramidTitle: string | null, readonly PyramidDescription: string | null, readonly PyramidCTAText: string | null, readonly PyramidCTALink: string | null, readonly ProgrammeSectionTitle: string | null, readonly HighlighterOneTitle: string | null, readonly HighlighterOneDescription: string | null, readonly HighlighterOneCTAText: string | null, readonly HighlighterOneCTALink: string | null, readonly HighlighterTwoTitle: string | null, readonly HighlighterTwoDescription: string | null, readonly HighlighterTwoCTAText: string | null, readonly HighlighterTwoCTALink: string | null, readonly HeroBanner: { readonly PrimaryImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly id: string, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly id: string, readonly localFile: { readonly url: string | null } | null } | null } | null, readonly TriCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly CTALink: string | null, readonly BackgroundColor: string | null, readonly Icon: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly PyramidImage: { readonly localFile: { readonly url: string | null } | null } | null, readonly AcceleratorCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Link: string | null, readonly customBgPosition: boolean | null, readonly Logo: { readonly localFile: { readonly url: string | null } | null } | null, readonly BackgroundImage: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly ProgrammeCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly isCTAExternal: boolean | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly CTA: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null } | null, readonly seo: { readonly metaTitle: string | null, readonly metaDescription: string | null, readonly canonicalURL: string | null, readonly metaViewport: string | null, readonly keywords: string | null, readonly metaImage: { readonly localFile: { readonly url: string | null } | null } | null } | null } | null, readonly enDesignPortfolios: { readonly nodes: ReadonlyArray<{ readonly PortfolioTag: string | null, readonly id: string, readonly Slug: string | null, readonly CTATextForDisplay: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> }, readonly enAgencyPortfolios: { readonly nodes: ReadonlyArray<{ readonly PortfolioTag: string | null, readonly id: string, readonly Slug: string | null, readonly CTATextForDisplay: string | null, readonly HeroSection: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> }, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
+type HomePageQuery = { readonly en: { readonly PyramidTitle: string | null, readonly PyramidDescription: string | null, readonly PyramidCTAText: string | null, readonly PyramidCTALink: string | null, readonly ProgrammeSectionTitle: string | null, readonly HighlighterOneTitle: string | null, readonly HighlighterOneDescription: string | null, readonly HighlighterOneCTAText: string | null, readonly HighlighterOneCTALink: string | null, readonly HighlighterTwoTitle: string | null, readonly HighlighterTwoDescription: string | null, readonly HighlighterTwoCTAText: string | null, readonly HighlighterTwoCTALink: string | null, readonly HeroBanner: { readonly PrimaryImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly id: string, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryImage: { readonly alternativeText: string | null, readonly caption: string | null, readonly id: string, readonly localFile: { readonly url: string | null } | null } | null } | null, readonly TriCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly CTALink: string | null, readonly BackgroundColor: string | null, readonly Icon: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly PyramidImage: { readonly localFile: { readonly url: string | null } | null } | null, readonly AcceleratorCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Link: string | null, readonly customBgPosition: boolean | null, readonly Logo: { readonly localFile: { readonly url: string | null } | null } | null, readonly BackgroundImage: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly ProgrammeCards: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly isCTAExternal: boolean | null, readonly Image: { readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly CTA: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null } | null, readonly seo: { readonly metaTitle: string | null, readonly metaDescription: string | null, readonly canonicalURL: string | null, readonly metaViewport: string | null, readonly keywords: string | null, readonly metaImage: { readonly localFile: { readonly url: string | null } | null } | null } | null } | null, readonly enDesignPortfolios: { readonly nodes: ReadonlyArray<{ readonly PortfolioTag: string | null, readonly id: string, readonly Slug: string | null, readonly CTATextForDisplay: string | null }> }, readonly enAgencyPortfolios: { readonly nodes: ReadonlyArray<{ readonly PortfolioTag: string | null, readonly id: string, readonly Slug: string | null, readonly CTATextForDisplay: string | null }> }, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
 
 type InnovationPageQueryVariables = Exact<{ [key: string]: never; }>;
 

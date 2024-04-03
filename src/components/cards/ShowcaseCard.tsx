@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ReactHtmlParser from "react-html-parser";
 
 import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
 import {
@@ -15,7 +16,7 @@ import {
 import { ctaIcon } from "../cards/PortfolioCard.module.css";
 import {
   ctaIconPos,
-  dummyImgArea,
+  imgContainer,
   showCaseCard,
   showCaseImg,
 } from "./ShowcaseCard.module.css";
@@ -24,7 +25,7 @@ interface ShowcaseCardProps {
   imgSrc: any;
   imgAlt: string;
   title: string;
-  description: string;
+  description: any;
   ctaText: string;
   ctaLink: any;
 }
@@ -45,7 +46,7 @@ export const ShowcaseCard = ({
         {/* Left side */}
         {imgSrc && imgSrc !== null ? (
           <div
-            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover`}
+            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover d-flex justify-content-center align-items-center ${imgContainer}`}
           >
             {/* <img
               src={imgSrc}
@@ -61,9 +62,15 @@ export const ShowcaseCard = ({
           </div>
         ) : (
           <div
-            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover ${bgGlaucousGreen} ${dummyImgArea}`}
+            className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover ${bgGlaucousGreen} ${imgContainer}`}
             data-aos="fade-up"
-          ></div>
+          >
+            <img
+              src={imgSrc}
+              alt={imgAlt}
+              className={`${showCaseImg} img-fluid`}
+            />
+          </div>
         )}
 
         {/* Right side */}
@@ -72,13 +79,18 @@ export const ShowcaseCard = ({
             <h2 className={`${heading700}`} data-aos="fade-up">
               {title}
             </h2>
-            <p className={`${subText2} ${black} py-3`} data-aos="fade-up">
-              {description}
-            </p>
+            <div className={`${subText2} ${black} py-3`} data-aos="fade-up">
+              {/* {description} */}
+              {ReactHtmlParser(description?.data?.childMarkdownRemark?.html)}
+            </div>
             {/* CTA */}
             <div className="mt-3">
               <Link to={ctaLink}>
-                <label className={`${cta1}`} role="button" data-aos="fade-up">
+                <label
+                  className={`${cta1} pe-auto cursorPointer`}
+                  role="link"
+                  data-aos="fade-up"
+                >
                   {ctaText}
                   <span className={`${ctaIconPos}`}>
                     <img

@@ -55,7 +55,7 @@ export const ProductCard = ({
                 src={isSecondary ? secLogo : logo}
                 alt={title}
                 title={title}
-                width={80}
+                width={120}
                 data-aos="fade-up"
               />
             </div>
