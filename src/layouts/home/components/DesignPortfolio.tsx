@@ -62,8 +62,8 @@ export const DesignPortfolio = ({
                 description={data?.HeroBanner?.Desc}
                 tag={data?.PortfolioTag}
                 title={data?.HeroBanner?.Title}
-                imgSrc={data?.Logo?.localFile}
-                imgAlt={data?.imgAlt}
+                imgSrc={data?.HeroBanner?.Image?.localFile}
+                imgAlt={data?.HeroBanner?.Image?.alternativeText}
                 descRichText
                 bgGrey
               />

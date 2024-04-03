@@ -4,8 +4,8 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 
 import backwardArrowSmall from "../../../static/icons/Chevron_forward_LightSmall.svg";
-import backwardArrow from "../../../static/icons/Chevron_left.svg";
-import forwardArrow from "../../../static/icons/Chevron_right.svg";
+import backwardArrow from "../../../static/icons/Left_arrow.svg";
+import forwardArrow from "../../../static/icons/Right_arrow.svg";
 import forwardArrowSmall from "../../../static/icons/rightForwardSmall.svg";
 import {
   customImgWidth,
@@ -102,7 +102,7 @@ export const PortfolioCarousel = ({ data }: PortfolioCarouselProps) => {
         </div>
 
         <SplideTrack>
-          {items.map((data: any, index: number) => {
+          {items?.map((data: any, index: number) => {
             return (
               <SplideSlide key={index} className={`${customImgWidth}`}>
                 {data}
