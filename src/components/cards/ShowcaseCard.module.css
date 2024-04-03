@@ -6,12 +6,14 @@
 }
 
 .showCaseImg {
-  height: 21.563rem;
-  width: 100%;
-  object-fit: cover;
+  /* height: 21.563rem; */
+  /* width: 100%; */
+  /* object-fit: cover; */
+  max-width: 23.875rem;
+  height: auto;
 }
 
-.dummyImgArea {
+.imgContainer {
   height: 21.563rem;
 }
 

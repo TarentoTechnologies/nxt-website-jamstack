@@ -2,7 +2,9 @@ import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import { useRecoilValue } from "recoil";
 
+import { BannerWithCTA } from "../components";
 import { HeroBanner } from "../components/banners/HeroBanner";
+import { HeroBannerFME } from "../components/banners/HeroBannerFME";
 import { PyramidBanner } from "../components/banners/PyramidBanner";
 import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
@@ -15,7 +17,6 @@ import {
 import { ProductCardLayout } from "../layouts/home/components/ProductCardLayout";
 import { TriCardLayout } from "../layouts/home/components/TriCardLayout";
 import { langSelected as langSelectedAtom } from "../states/atoms";
-import { HeroBannerFME } from "../components/banners/HeroBannerFME";
 
 interface IndexPageProps {
   data: any;
@@ -54,20 +55,27 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
           cards={data[currentLang]?.ProgrammeCards}
         />
         {/* <AgencyPortfolio
-        title={data[currentLang]?.HighlighterOneTitle}
-        description={data[currentLang]?.HighlighterOneDescription}
-        ctaText={data[currentLang]?.HighlighterOneCTAText}
-        ctaLink={data[currentLang]?.HighlighterOneCTALink}
-        agencyPortfolioData={data[currentAgencyPortfolio]?.nodes}
-      />
-      <DesignPortfolio
-        title={data[currentLang]?.HighlighterTwoTitle}
-        description={data[currentLang]?.HighlighterTwoDescription}
-        ctaText={data[currentLang]?.HighlighterTwoCTAText}
-        ctaLink={data[currentLang]?.HighlighterTwoCTALink}
-        designPortfolioData={data[currentDesignPortfolio]?.nodes}
-      /> */}
+          title={data[currentLang]?.HighlighterOneTitle}
+          description={data[currentLang]?.HighlighterOneDescription}
+          ctaText={data[currentLang]?.HighlighterOneCTAText}
+          ctaLink={data[currentLang]?.HighlighterOneCTALink}
+          agencyPortfolioData={data[currentAgencyPortfolio]?.nodes}
+        />
+        <DesignPortfolio
+          title={data[currentLang]?.HighlighterTwoTitle}
+          description={data[currentLang]?.HighlighterTwoDescription}
+          ctaText={data[currentLang]?.HighlighterTwoCTAText}
+          ctaLink={data[currentLang]?.HighlighterTwoCTALink}
+          designPortfolioData={data[currentDesignPortfolio]?.nodes}
+        /> */}
         <CTALayout data={data[currentLang]?.CTA} />
+        {/* <BannerWithCTA
+          title={data[currentLang]?.BottomBanner?.Title}
+          bgImg={data[currentLang]?.BottomBanner?.BgImg?.localFile?.url}
+          CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
+          CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
+          isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
+        /> */}
       </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -185,6 +193,7 @@ export const query = graphql`
     ) {
       nodes {
         PortfolioTag
+
         id
         Slug
         CTATextForDisplay
@@ -197,6 +206,7 @@ export const query = graphql`
     ) {
       nodes {
         PortfolioTag
+
         id
         Slug
         CTATextForDisplay
@@ -258,6 +268,236 @@ export const query = graphql`
     }
   }
 `;
+
+// export const query = graphql`
+//   query HomePage {
+//     en: strapiHome(locale: { eq: "en" }) {
+//       HeroBanner {
+//         PrimaryImage {
+//           alternativeText
+//           caption
+//           id
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryImage {
+//           alternativeText
+//           caption
+//           id
+//           localFile {
+//             url
+//           }
+//         }
+//       }
+//       TriCards {
+//         id
+//         Title
+//         Icon {
+//           localFile {
+//             url
+//           }
+//         }
+//         CTALink
+//         BackgroundColor
+//       }
+//       PyramidTitle
+//       PyramidDescription
+//       PyramidImage {
+//         localFile {
+//           url
+//         }
+//       }
+//       PyramidCTAText
+//       PyramidCTALink
+//       ProgrammeSectionTitle
+//       AcceleratorCards {
+//         id
+//         Title
+//         Link
+//         Logo {
+//           localFile {
+//             url
+//           }
+//         }
+//         BackgroundImage {
+//           localFile {
+//             url
+//           }
+//         }
+//         customBgPosition
+//       }
+//       ProgrammeCards {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//         Description
+//         CTAText
+//         CTALink
+//         isCTAExternal
+//       }
+//       HighlighterOneTitle
+//       HighlighterOneDescription
+//       HighlighterOneCTAText
+//       HighlighterOneCTALink
+//       HighlighterTwoTitle
+//       HighlighterTwoDescription
+//       HighlighterTwoCTAText
+//       HighlighterTwoCTALink
+//       CTA {
+//         id
+//         Title
+//         Description
+//         CTAText
+//         CTALink
+//       }
+//       seo {
+//         metaTitle
+//         metaDescription
+//         canonicalURL
+//         metaViewport
+//         keywords
+//         metaImage {
+//           localFile {
+//             url
+//           }
+//         }
+//       }
+//     }
+//     enDesignPortfolios: allStrapiDesignPortfolio(
+//       filter: { locale: { eq: "en" } }
+//       sort: { updatedAt: DESC }
+//       limit: 3
+//     ) {
+//       nodes {
+//         PortfolioTag
+//         HeroBanner {
+//           id
+//           Title
+//           Image {
+//             alternativeText
+//             localFile {
+//               childImageSharp {
+//                 gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//               }
+//             }
+//           }
+//           Desc {
+//             data {
+//               childMarkdownRemark {
+//                 html
+//               }
+//             }
+//           }
+//           BreadCrumbLink
+//           BreadCrumbLabel
+//           withBreadCrumbs
+//           isListingPage
+//           isAgencyDetail
+//         }
+//         id
+//         Slug
+//         CTATextForDisplay
+//       }
+//     }
+//     enAgencyPortfolios: allStrapiAgencyPortfolio(
+//       filter: { locale: { eq: "en" } }
+//       sort: { updatedAt: DESC }
+//       limit: 3
+//     ) {
+//       nodes {
+//         PortfolioTag
+//         HeroBanner {
+//           id
+//           Title
+//           Image {
+//             alternativeText
+//             localFile {
+//               childImageSharp {
+//                 gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//               }
+//             }
+//           }
+//           Desc {
+//             data {
+//               childMarkdownRemark {
+//                 html
+//               }
+//             }
+//           }
+//           BreadCrumbLink
+//           BreadCrumbLabel
+//           withBreadCrumbs
+//           isListingPage
+//           isAgencyDetail
+//         }
+//         id
+//         Slug
+//         CTATextForDisplay
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
 
 // export const query = graphql`
 //   query HomePage {
