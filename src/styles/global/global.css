@@ -166,6 +166,14 @@ b {
 
 /* Splide styles ends here */
 
+/* Mouse flowmap effect styles starts here */
+
+/* #flowMapEffectBanner canvas {
+  touch-action: pan-y;
+} */
+
+/* Mouse flowmap effect styles ends here */
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
@@ -184,7 +192,7 @@ b {
   .containerService {
     width: 46.875rem;
   }
-  
+
   .rainDemoApp {
     width: 101vw;
   }
