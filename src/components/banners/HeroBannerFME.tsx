@@ -64,7 +64,7 @@ export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
     const velocity: any = new OGL.Vec2();
     function resize() {
       let a1, a2;
-      let imageAspect:any = imgSize[1] / imgSize[0];
+      let imageAspect: any = imgSize[1] / imgSize[0];
       if (window.innerHeight / window.innerWidth < imageAspect) {
         a1 = 1;
         a2 = window.innerHeight / window.innerWidth / imageAspect;
@@ -134,8 +134,8 @@ export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
     // Create handlers to get mouse position and velocity
     const isTouchCapable = "ontouchstart" in window;
     if (isTouchCapable) {
-      window.addEventListener("touchstart", updateMouse, false);
-      window.addEventListener("touchmove", updateMouse, { passive: false });
+      window.addEventListener("touchstart", updateMouse, true);
+      window.addEventListener("touchmove", updateMouse, { passive: true });
     } else {
       window.addEventListener("mousemove", updateMouse, false);
     }
