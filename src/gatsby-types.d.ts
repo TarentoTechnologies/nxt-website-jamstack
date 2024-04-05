@@ -3866,10 +3866,14 @@ type Query_strapiTechnologyArgs = {
 
 
 type Query_strapiThorArgs = {
+  BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   Capabilities: InputMaybe<STRAPI__MEDIAFilterInput>;
   CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
   CaseStudiesTitle: InputMaybe<StringQueryOperatorInput>;
   HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
+  LiveExpDesc: InputMaybe<StringQueryOperatorInput>;
+  LiveExpTitle: InputMaybe<StringQueryOperatorInput>;
   MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELFilterInput>;
   TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARFilterInput>;
   UseCaseSubText: InputMaybe<StringQueryOperatorInput>;
@@ -7754,10 +7758,14 @@ type STRAPI_TECHNOLOGYSortInput = {
 };
 
 type STRAPI_THOR = Node & {
+  readonly BottomBanner: Maybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTA>;
   readonly Capabilities: Maybe<STRAPI__MEDIA>;
   readonly CaseStudiesList: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>>>;
   readonly CaseStudiesTitle: Maybe<Scalars['String']>;
   readonly HeroBanner: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
+  readonly LiveExpCards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARD>>>;
+  readonly LiveExpDesc: Maybe<Scalars['String']>;
+  readonly LiveExpTitle: Maybe<Scalars['String']>;
   readonly MultiChannelEngagement: Maybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNEL>;
   readonly TwoAvatars: Maybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATAR>;
   readonly UseCaseSubText: Maybe<Scalars['String']>;
@@ -7845,10 +7853,14 @@ type STRAPI_THOREdge = {
 };
 
 type STRAPI_THORFieldSelector = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFieldSelector>;
   readonly Capabilities: InputMaybe<STRAPI__MEDIAFieldSelector>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector>;
   readonly CaseStudiesTitle: InputMaybe<FieldSelectorEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector>;
+  readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFieldSelector>;
+  readonly LiveExpDesc: InputMaybe<FieldSelectorEnum>;
+  readonly LiveExpTitle: InputMaybe<FieldSelectorEnum>;
   readonly MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELFieldSelector>;
   readonly TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARFieldSelector>;
   readonly UseCaseSubText: InputMaybe<FieldSelectorEnum>;
@@ -7867,10 +7879,14 @@ type STRAPI_THORFieldSelector = {
 };
 
 type STRAPI_THORFilterInput = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   readonly Capabilities: InputMaybe<STRAPI__MEDIAFilterInput>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
   readonly CaseStudiesTitle: InputMaybe<StringQueryOperatorInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
+  readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
+  readonly LiveExpDesc: InputMaybe<StringQueryOperatorInput>;
+  readonly LiveExpTitle: InputMaybe<StringQueryOperatorInput>;
   readonly MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELFilterInput>;
   readonly TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARFilterInput>;
   readonly UseCaseSubText: InputMaybe<StringQueryOperatorInput>;
@@ -7930,10 +7946,14 @@ type STRAPI_THORGroupConnection_sumArgs = {
 };
 
 type STRAPI_THORSortInput = {
+  readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTASortInput>;
   readonly Capabilities: InputMaybe<STRAPI__MEDIASortInput>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDSortInput>;
   readonly CaseStudiesTitle: InputMaybe<SortOrderEnum>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput>;
+  readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDSortInput>;
+  readonly LiveExpDesc: InputMaybe<SortOrderEnum>;
+  readonly LiveExpTitle: InputMaybe<SortOrderEnum>;
   readonly MultiChannelEngagement: InputMaybe<STRAPI__COMPONENT_MULTI_CHANNEL_MULTI_CHANNELSortInput>;
   readonly TwoAvatars: InputMaybe<STRAPI__COMPONENT_TWO_AVATAR_TWO_AVATARSortInput>;
   readonly UseCaseSubText: InputMaybe<SortOrderEnum>;
@@ -17324,7 +17344,7 @@ type TechnologyPageQuery = { readonly en: { readonly PrincipleTitle: string | nu
 type ThorPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type ThorPageQuery = { readonly en: { readonly id: string, readonly CaseStudiesTitle: string | null, readonly UseCaseTitle: string | null, readonly UseCaseSubText: string | null, readonly HeroBanner: { readonly id: string, readonly isImage: boolean | null, readonly withLogo: boolean | null, readonly Title: string | null, readonly SubText: string | null, readonly Img: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly TwoAvatars: { readonly id: string, readonly PrimaryTitle: string | null, readonly PrimaryDescription: string | null, readonly AvatarList: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Logo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly Video: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null } | null, readonly Capabilities: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly CaseStudiesList: ReadonlyArray<{ readonly id: string, readonly Heading: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly MultiChannelEngagement: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly ChannelList: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Description: string | null } | null> | null } | null, readonly UseCasesList: ReadonlyArray<{ readonly id: string, readonly Caption: string | null, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly seo: { readonly metaTitle: string | null, readonly metaDescription: string | null, readonly canonicalURL: string | null, readonly metaViewport: string | null, readonly keywords: string | null, readonly metaImage: { readonly localFile: { readonly url: string | null } | null } | null } | null } | null, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
+type ThorPageQuery = { readonly en: { readonly id: string, readonly CaseStudiesTitle: string | null, readonly UseCaseTitle: string | null, readonly UseCaseSubText: string | null, readonly LiveExpTitle: string | null, readonly LiveExpDesc: string | null, readonly HeroBanner: { readonly id: string, readonly isImage: boolean | null, readonly withLogo: boolean | null, readonly Title: string | null, readonly SubText: string | null, readonly Img: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly TwoAvatars: { readonly id: string, readonly PrimaryTitle: string | null, readonly PrimaryDescription: string | null, readonly AvatarList: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Logo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly Video: { readonly localFile: { readonly url: string | null } | null } | null } | null> | null } | null, readonly Capabilities: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly CaseStudiesList: ReadonlyArray<{ readonly id: string, readonly Heading: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly MultiChannelEngagement: { readonly id: string, readonly Title: string | null, readonly Description: string | null, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly ChannelList: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly Description: string | null } | null> | null } | null, readonly UseCasesList: ReadonlyArray<{ readonly id: string, readonly Caption: string | null, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly LiveExpCards: ReadonlyArray<{ readonly Title: string | null, readonly Description: string | null, readonly CTAText: string | null, readonly CTALink: string | null, readonly isCTAExternal: boolean | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly BottomBanner: { readonly Title: string | null, readonly isCTAExternal: boolean | null, readonly CTAButton: { readonly Label: string | null, readonly Link: string | null } | null, readonly BgImg: { readonly localFile: { readonly url: string | null } | null } | null } | null, readonly seo: { readonly metaTitle: string | null, readonly metaDescription: string | null, readonly canonicalURL: string | null, readonly metaViewport: string | null, readonly keywords: string | null, readonly metaImage: { readonly localFile: { readonly url: string | null } | null } | null } | null } | null, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
 
 type PortfolioDetailsQueryVariables = Exact<{ [key: string]: never; }>;
 

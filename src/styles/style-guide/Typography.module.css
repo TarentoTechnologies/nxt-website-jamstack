@@ -316,6 +316,12 @@ h3 {
   font-size: 1rem;
 }
 
+.thorLogo {
+  font-family: "Orbitron-Medium";
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {

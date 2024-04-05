@@ -3,10 +3,12 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import navbarImg from "../../static/images/logo-inner.svg";
+import { BannerWithCTA } from "../components";
 import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
 import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
+import { LiveExpLayout } from "../layouts/rain";
 import {
   Avatars,
   CaseStudies,
@@ -57,6 +59,11 @@ const ThorPage: React.FC<PageProps> = ({ data }: ThorPageProps) => {
           imgSrc={data[currentLang]?.MultiChannelEngagement?.Image}
           list={data[currentLang]?.MultiChannelEngagement?.ChannelList}
         />
+        <LiveExpLayout
+          title={data[currentLang]?.LiveExpTitle}
+          description={data[currentLang]?.LiveExpDesc}
+          cardList={data[currentLang]?.LiveExpCards}
+        />
         <CaseStudies
           title={data[currentLang]?.CaseStudiesTitle}
           list={data[currentLang]?.CaseStudiesList}
@@ -65,6 +72,13 @@ const ThorPage: React.FC<PageProps> = ({ data }: ThorPageProps) => {
           title={data[currentLang]?.UseCaseTitle}
           list={data[currentLang]?.UseCasesList}
           subText={data[currentLang]?.UseCaseSubText}
+        />
+        <BannerWithCTA
+          title={data[currentLang]?.BottomBanner?.Title}
+          bgImg={data[currentLang]?.BottomBanner?.BgImg?.localFile?.url}
+          CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
+          CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
+          isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
         />
       </section>
       <FooterSection
@@ -184,6 +198,36 @@ export const query = graphql`
         Caption
       }
       UseCaseSubText
+      LiveExpTitle
+      LiveExpDesc
+      LiveExpCards {
+        Title
+        Description
+        Image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+          alternativeText
+        }
+        CTAText
+        CTALink
+        isCTAExternal
+      }
+      BottomBanner {
+        Title
+        CTAButton {
+          Label
+          Link
+        }
+        BgImg {
+          localFile {
+            url
+          }
+        }
+        isCTAExternal
+      }
       seo {
         metaTitle
         metaDescription

@@ -1,0 +1,34 @@
+@import url("../../../styles/global//colors.css");
+@import url("../../../styles/global/global.css");
+
+.egSectionDark {
+  background: linear-gradient(#0d0d0d, #09090b);
+  min-height: calc(100vh - 5rem);
+  padding: 1.5rem;
+  width: 25%;
+}
+
+.egSectionLight {
+  background-color: #efefef;
+  min-height: calc(100vh - 5rem);
+  padding: 1.5rem;
+  width: 25%;
+}
+
+.egCardDark {
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--black);
+  border-radius: 2rem 2rem 0 2rem;
+  cursor: pointer;
+}
+
+.egCardLight {
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 2rem 2rem 0 2rem;
+  cursor: pointer;
+}

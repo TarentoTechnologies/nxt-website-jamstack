@@ -1,0 +1,37 @@
+@import url("../../../styles/global//colors.css");
+@import url("../../../styles/global/global.css");
+
+.industrySectionDark {
+  background: linear-gradient(#0d0d0d, #09090b);
+  min-height: calc(100vh - 5rem);
+  padding: 1.5rem;
+  width: 25%;
+}
+
+.industrySectionLight {
+  background-color: #efefef;
+  min-height: calc(100vh - 5rem);
+  padding: 1.5rem;
+  width: 25%;
+}
+
+.industryCardDark {
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--black);
+  border-radius: 0.25rem;
+}
+
+.industryCardLight {
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 0.25rem;
+}
+
+.industryCardDark:hover,
+.industryCardLight:hover {
+  border: 2px solid #b355ff;
+}

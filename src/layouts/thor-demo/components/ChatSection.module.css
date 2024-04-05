@@ -1,0 +1,10 @@
+@import url("../../../styles/global//colors.css");
+@import url("../../../styles/global/global.css");
+
+.chatSectionDark {
+  background: radial-gradient(circle at 50% -100%, #5b258c, #000000);
+}
+
+.chatSectionLight {
+  background: radial-gradient(circle at 50% -100%, #c27eff, #ffffff);
+}

@@ -1,7 +1,13 @@
-import { atom } from 'recoil'
+import { atom } from "recoil";
 
 // Language
 export const langSelected = atom({
-  key: 'langSelected',
-  default: 'en',
-})
+  key: "langSelected",
+  default: "en",
+});
+
+//Theme
+export const themeState = atom({
+  key: "themeState",
+  default: "dark",
+});
