@@ -20,10 +20,10 @@ export const Showcase = ({ sectionTitle, data }: ShowcaseProps) => {
             return (
               <div className="my-4" key={listData?.id} data-aos="fade-up">
                 <ShowcaseCard
-                  title={listData?.HeroSection?.Title}
-                  description={listData?.HeroSection?.Description}
-                  imgSrc={listData?.HeroSection?.Image?.localFile}
-                  imgAlt={""}
+                  title={listData?.HeroBanner?.Title}
+                  description={listData?.HeroBanner?.Desc}
+                  imgSrc={listData?.HeroBanner?.Image?.localFile}
+                  imgAlt={listData?.HeroBanner?.Image?.alternativeText}
                   ctaText={listData?.CTATextForDisplay}
                   ctaLink={listData?.Slug}
                 />

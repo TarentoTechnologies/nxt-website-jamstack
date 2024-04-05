@@ -3,6 +3,7 @@ import * as React from "react";
 import { useRecoilValue } from "recoil";
 
 import navbarImg from "../../static/images/logo-inner.svg";
+import { BannerWithCTA } from "../components";
 import { Navbar } from "../components/navbar/Navbar";
 import { FooterSection } from "../layouts/common";
 import {
@@ -55,7 +56,8 @@ const DesignPortfolio: React.FC<PageProps> = ({
         </li>
       </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBanner heroBannerData={data[currentLang]?.HeroSection} />
+      {/* <HeroBanner heroBannerData={data[currentLang]?.HeroSection} /> */}
+      <HeroBanner heroBannerData={data[currentLang]?.HeroBanner} isImg />
       <section id="designPortfolioMain">
         <Showcase
           sectionTitle={data[currentLang]?.SectionOneTitle}
@@ -67,7 +69,13 @@ const DesignPortfolio: React.FC<PageProps> = ({
           ctaBtnText={data[currentLang]?.DynamicButtonText}
           portfolioPath="/design-portfolio/"
         />
-        <AreYouInterested data={data[currentLang]?.CTA} />
+        <BannerWithCTA
+          title={data[currentLang]?.BottomBanner?.Title}
+          bgImg={data[currentLang]?.BottomBanner?.BgImg?.localFile?.url}
+          CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
+          CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
+          isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
+        />
       </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -80,16 +88,6 @@ const DesignPortfolio: React.FC<PageProps> = ({
 export const query = graphql`
   query DesignPortfolioListing {
     en: strapiDesignPortfolioListing(locale: { eq: "en" }) {
-      HeroSection {
-        id
-        Title
-        Image {
-          localFile {
-            url
-          }
-        }
-        Description
-      }
       SectionOneTitle
       SectionTwoTitle
       CTA {
@@ -107,18 +105,7 @@ export const query = graphql`
     ) {
       nodes {
         id
-        HeroSection {
-          id
-          Title
-          Image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(formats: PNG, placeholder: BLURRED)
-              }
-            }
-          }
-          Description
-        }
+
         CTATextForDisplay
         ShowcasePost
         Slug
@@ -181,6 +168,257 @@ export const query = graphql`
     }
   }
 `;
+
+// export const query = graphql`
+//   query DesignPortfolioListing {
+//     en: strapiDesignPortfolioListing(locale: { eq: "en" }) {
+//       SectionOneTitle
+//       SectionTwoTitle
+//       CTA {
+//         id
+//         Title
+//         Description
+//         CTAText
+//         CTALink
+//       }
+//       DynamicButtonText
+//       HeroBanner {
+//         id
+//         Title
+//         Image {
+//           alternativeText
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//         Desc {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         BreadCrumbLink
+//         BreadCrumbLabel
+//         withBreadCrumbs
+//         isListingPage
+//         isAgencyDetail
+//       }
+//       BottomBanner {
+//         id
+//         Title
+//         CTAButton {
+//           Link
+//           Label
+//           id
+//         }
+//         BgImg {
+//           localFile {
+//             url
+//           }
+//         }
+//         isCTAExternal
+//       }
+//     }
+//     enDesignPortfolios: allStrapiDesignPortfolio(
+//       sort: { updatedAt: DESC }
+//       filter: { locale: { eq: "en" } }
+//     ) {
+//       nodes {
+//         id
+//         HeroBanner {
+//           id
+//           Title
+//           Image {
+//             alternativeText
+//             localFile {
+//               childImageSharp {
+//                 gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//               }
+//             }
+//           }
+//           Desc {
+//             data {
+//               childMarkdownRemark {
+//                 html
+//               }
+//             }
+//           }
+//           BreadCrumbLink
+//           BreadCrumbLabel
+//           withBreadCrumbs
+//           isListingPage
+//           isAgencyDetail
+//         }
+//         CTATextForDisplay
+//         ShowcasePost
+//         Slug
+//         PortfolioTag
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
+
+// export const query = graphql`
+//   query DesignPortfolioListing {
+//     en: strapiDesignPortfolioListing(locale: { eq: "en" }) {
+//       HeroSection {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             url
+//           }
+//         }
+//         Description
+//       }
+//       SectionOneTitle
+//       SectionTwoTitle
+//       CTA {
+//         id
+//         Title
+//         Description
+//         CTAText
+//         CTALink
+//       }
+//       DynamicButtonText
+//     }
+//     enDesignPortfolios: allStrapiDesignPortfolio(
+//       sort: { updatedAt: DESC }
+//       filter: { locale: { eq: "en" } }
+//     ) {
+//       nodes {
+//         id
+//         HeroSection {
+//           id
+//           Title
+//           Image {
+//             localFile {
+//               childImageSharp {
+//                 gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//               }
+//             }
+//           }
+//           Description
+//         }
+//         CTATextForDisplay
+//         ShowcasePost
+//         Slug
+//         PortfolioTag
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
 
 export default DesignPortfolio;
 
