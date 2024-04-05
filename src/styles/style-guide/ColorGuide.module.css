@@ -411,3 +411,11 @@
 .duskyViolet {
   color: var(--dusky-violet);
 }
+
+.bgVioletGray {
+  background-color: var(--violet-gray);
+}
+
+.violetGray {
+  color: var(--violet-gray);
+}
