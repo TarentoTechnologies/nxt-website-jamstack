@@ -9,10 +9,7 @@
 
 .whiteBox {
   background-color: #ffffff;
-  /* padding: 1rem; */
-  /* animation: fadeInUp 1s ease 0.6s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .whiteBox p {
@@ -25,12 +22,6 @@
   font-weight: 400;
   line-height: 2rem;
 }
-
-/* .whiteBox h3 {
-  font-size: 1.688rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-} */
 
 .subFont {
   font-size: 1.313rem;
@@ -46,9 +37,7 @@
 .titleStyles {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .subTitleStyles {
@@ -59,9 +48,7 @@
 
 .imgStyles {
   margin-bottom: 2rem;
-  /* animation: fadeInUp 1s ease 0.6s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .buttonStyles {
@@ -70,15 +57,6 @@
 
 /* Media queries starts here */
 
-@media only screen and (max-width: 600px) {
-}
-
-@media only screen and (min-width: 600px) {
-}
-
-@media only screen and (min-width: 768px) {
-}
-
 @media only screen and (min-width: 992px) {
   .techSolution {
     max-width: 28.625rem;
@@ -86,9 +64,6 @@
   .innovationStory {
     max-width: 34.688rem;
   }
-}
-
-@media only screen and (min-width: 1200px) {
 }
 
 /* Media queries ends here */

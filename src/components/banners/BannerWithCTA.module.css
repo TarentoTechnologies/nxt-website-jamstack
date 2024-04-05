@@ -2,7 +2,6 @@
 @import url("../../styles/global/global.css");
 
 .bannerWithCTA {
-  /* min-height: 25rem; */
   min-height: 30rem;
   background-repeat: no-repeat;
   background-size: cover;

@@ -7,15 +7,11 @@
 
 .imgStyles {
   padding-top: 2rem;
-  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .textStyles {
-  /* animation: fadeInUp 1s ease 800ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .customDescription p {
@@ -28,22 +24,3 @@
   line-height: 1.438rem;
   font-weight: 400;
 }
-
-/* Media queries starts here */
-
-@media only screen and (max-width: 600px) {
-}
-
-@media only screen and (min-width: 600px) {
-}
-
-@media only screen and (min-width: 768px) {
-}
-
-@media only screen and (min-width: 992px) {
-}
-
-@media only screen and (min-width: 1200px) {
-}
-
-/* Media queries ends here */
