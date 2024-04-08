@@ -2,11 +2,14 @@ import * as OGL from "ogl";
 import { useEffect } from "react";
 
 import mapEffectImage from "../../../static/images/home/bg-2.jpg";
+import { violetGray } from "../../styles/style-guide/ColorGuide.module.css";
+import { heroSecondaryTitle } from "../../styles/style-guide/Typography.module.css";
 import {
   heroBannerStyles,
   logoHeadStyles,
   logoMainStyles,
   logoSection,
+  secondaryTitleEffect,
 } from "./HeroBanner.module.css";
 
 interface HeroBannerFMEProps {
@@ -143,7 +146,7 @@ export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
     const lastMouse: any = new OGL.Vec2();
     function updateMouse(e: any) {
       e.preventDefault();
-      if (e?.changedTouches?.length) {
+      if (e.changedTouches && e.changedTouches.length) {
         e.x = e.changedTouches[0].pageX;
         e.y = e.changedTouches[0].pageY;
       }
@@ -214,12 +217,45 @@ export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
           />
         </div>
         <div className={`${logoHeadStyles}`}>
-          <img
+          <div className="d-flex">
+            <div className="">
+              <div className="d-flex flex-row">
+                <h1
+                  className={`${heroSecondaryTitle} ${violetGray} ${secondaryTitleEffect}`}
+                >
+                  TECHNOLOGY
+                </h1>
+                <h1 className={`${heroSecondaryTitle} ${violetGray} mx-2`}>
+                  .
+                </h1>
+              </div>
+            </div>
+            <div className="">
+              <div className="d-flex flex-row">
+                <h1
+                  className={`${heroSecondaryTitle} ${violetGray} ${secondaryTitleEffect}`}
+                >
+                  DESIGN
+                </h1>
+                <h1 className={`${heroSecondaryTitle} ${violetGray} mx-2`}>
+                  .
+                </h1>
+              </div>
+            </div>
+            <div className="">
+              <h1
+                className={`${heroSecondaryTitle} ${violetGray} ${secondaryTitleEffect}`}
+              >
+                INNOVATION
+              </h1>
+            </div>
+          </div>
+          {/* <img
             src={data.SecondaryImage?.localFile?.url}
             alt={data.SecondaryImage?.alternativeText}
             title={data.SecondaryImage?.caption}
             className="img-fluid"
-          />
+          /> */}
         </div>
       </div>
     </div>
