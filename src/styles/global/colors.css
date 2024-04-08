@@ -57,6 +57,7 @@ html {
   --hay-blue: RGBA(37, 41, 153, 0.6);
   --roslyns-blue: RGBA(79, 33, 134, 0.6);
   --dusky-violet: #380a65;
+  --violet-gray: #7E7E7E;
 }
 
 html[data-theme="dark"] {
@@ -111,4 +112,5 @@ html[data-theme="dark"] {
   --hay-blue: RGBA(37, 41, 153, 0.6);
   --roslyns-blue: RGBA(79, 33, 134, 0.6);
   --dusky-violet: #380a65;
+  --violet-gray: #7E7E7E;
 }
