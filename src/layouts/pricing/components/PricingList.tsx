@@ -28,6 +28,7 @@ export const PricingList = ({
         <div className={`row`}>
           {pricingData?.map((item: any, index: any) => (
             <PricingCard
+              key={index}
               title={item?.Title}
               logo={item?.Logo?.localFile?.url}
               description={item?.Description}

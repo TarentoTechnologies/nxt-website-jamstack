@@ -9,9 +9,7 @@
 .subtextStyles {
   color: rgba(255, 255, 255, 0.7);
   margin-left: 0;
-  /* animation: fadeInUp 1s ease 0.5s 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 .contactUsLayout {
   padding-top: 5rem;
@@ -50,7 +48,6 @@
 .layout {
   padding: 5rem 0;
 }
-/* Media queries starts here */
 
 .listMoveLeft {
   margin-left: 6em;
@@ -66,6 +63,8 @@
 .w40 {
   width: 40%;
 }
+
+/* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
   .bannerStyles {

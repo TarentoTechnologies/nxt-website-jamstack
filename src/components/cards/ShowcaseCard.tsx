@@ -48,11 +48,6 @@ export const ShowcaseCard = ({
           <div
             className={`col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover d-flex justify-content-center align-items-center ${imgContainer}`}
           >
-            {/* <img
-              src={imgSrc}
-              alt={imgAlt}
-              className={`${showCaseImg} img-fluid`}
-            /> */}
             <GatsbyImage
               image={image}
               alt={imgAlt ? imgAlt : ""}
@@ -80,7 +75,6 @@ export const ShowcaseCard = ({
               {title}
             </h2>
             <div className={`${subText2} ${black} py-3`} data-aos="fade-up">
-              {/* {description} */}
               {ReactHtmlParser(description?.data?.childMarkdownRemark?.html)}
             </div>
             {/* CTA */}

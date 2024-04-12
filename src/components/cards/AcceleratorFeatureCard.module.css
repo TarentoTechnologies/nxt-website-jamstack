@@ -4,7 +4,7 @@
 .featureCard {
   text-align: center;
   font-size: 1.313rem;
-  background: #fff;
+  background-color: var(--white);
   padding: 3.125rem;
 }
 
@@ -12,22 +12,3 @@
   width: 5rem;
   height: 5rem;
 }
-
-/* Media queries starts here */
-
-@media only screen and (max-width: 600px) {
-}
-
-@media only screen and (min-width: 600px) {
-}
-
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-}
-
-@media only screen and (min-width: 992px) {
-}
-
-@media only screen and (min-width: 1200px) {
-}
-
-/* Media queries ends here */

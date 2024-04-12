@@ -67,10 +67,6 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
-  
-}
-
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
   .proCard {
     min-height: 15.3125rem;
@@ -107,10 +103,6 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
-  
-}
-
 @media only screen and (min-width: 2500px) {
   .customBgStyle {
     background-size: 41.9375rem 20.5rem;
@@ -118,7 +110,7 @@
   }
 }
 
-@media only screen and (min-width: 1500px) and (max-width: 1600px){
+@media only screen and (min-width: 1500px) and (max-width: 1600px) {
   .customBgStyle {
     background-size: 35.9375rem 22rem;
     background-position: left 0.05rem;

@@ -60,7 +60,7 @@ export const PricingCard = ({
             <PrimaryCTA label={CTAlabel} btnLink={CTAlink} size="large" />
           </div>
           {baseList?.map((item: any, index) => (
-            <div className="d-flex mt-3 mb-4 ps-3">
+            <div key={index} className="d-flex mt-3 mb-4 ps-3">
               <div className="me-3">
                 <img src={checkIcon} className={tickStyle} data-aos="fade-up" />
               </div>
@@ -93,7 +93,7 @@ export const PricingCard = ({
             {basePrice}
           </div>
           {baseList?.map((item: any, index) => (
-            <div className="d-flex mt-3 mb-4 ps-3">
+            <div key={index} className="d-flex mt-3 mb-4 ps-3">
               <div className="me-3">
                 <img src={checkIcon} className={tickStyle} data-aos="fade-up" />
               </div>
@@ -111,7 +111,7 @@ export const PricingCard = ({
             </span>
           </div>
           {supportList?.map((item: any, index) => (
-            <div className="d-flex mt-3 mb-4 ps-3">
+            <div key={index} className="d-flex mt-3 mb-4 ps-3">
               <div className="me-3">
                 <img src={checkIcon} className={tickStyle} data-aos="fade-up" />
               </div>

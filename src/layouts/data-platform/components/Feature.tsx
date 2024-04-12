@@ -23,7 +23,6 @@ export const Feature = ({ sectionTitle, featureCardData }: FeaturesProps) => {
                   <AcceleratorFeatureCard
                     title={item?.Caption}
                     logo={item?.Image?.localFile}
-                    bgColor={"white"}
                     isImage
                   />
                 </div>

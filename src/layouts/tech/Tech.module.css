@@ -2,25 +2,19 @@
 @import url("../../styles/global/global.css");
 
 .techPrinciples .titleStyles {
-  /* animation: fadeInUp 1s ease-in-out 300ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .techPrinciples .descStyles {
   margin-top: 2rem;
-  /* animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .techPrinciples .subHeadingStyles {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 1.3125rem;
-  /* animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .techStack {
@@ -30,9 +24,7 @@
 }
 
 .techStack .titleStyles {
-  /* animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .techStack .gridLayout {
@@ -45,9 +37,7 @@
 .techStack .logoStyles {
   border: 1px solid var(--plumbago-gray);
   height: 7.5rem;
-  /* animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .techStack .logoStyles img {
@@ -62,16 +52,12 @@
 .acceleratorsLayout .titleStyles {
   margin-top: 1.25rem;
   margin-bottom: 0.625rem;
-  /* animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .acceleratorsLayout .cardStyles {
   padding: 2rem 0 0 0;
-  /* animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .contactUsLayout {
@@ -82,16 +68,12 @@
 
 .contactUsLayout .titleStyles {
   padding-bottom: 2rem;
-  /* animation: fadeInUp 1s ease-in-out 400ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 .contactUsLayout .btnStyles {
   padding-top: 2.625rem;
-  /* animation: fadeInUp 1s ease-in-out 500ms 1 normal forwards; */
   visibility: visible;
-  /* opacity: 0; */
 }
 
 /* Media queries starts here */
@@ -116,17 +98,11 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
-}
-
 @media only screen and (min-width: 992px) {
   .techStack .gridLayout {
     grid-template-columns: repeat(6, 1fr);
     padding: 3.75rem 2.813rem;
   }
-}
-
-@media only screen and (min-width: 1200px) {
 }
 
 /* Media queries ends here */

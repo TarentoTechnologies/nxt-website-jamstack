@@ -22,20 +22,10 @@ interface StoryBannerProps {
   cardData: any;
   subTitle?: string;
   bgImg?: any;
-  // image?: any;
-  // // subText: {
-  // //   LevelOneHeading?: string;
-  // //   LevelTwoHeading?: string;
-  // //   LevelOneDesc?: string;
-  // //   LevelTwoDesc?: string;
-  // //   LevelThreeDesc?: string;
-  // // };
   variant?: string;
   withCTA?: boolean;
   isImage?: boolean;
   spaceAboveCTA?: boolean;
-  // CTAlabel?: string;
-  // CTAlink?: any;
 }
 
 export const StoryBanner = ({
@@ -46,10 +36,8 @@ export const StoryBanner = ({
   subTitle,
   withCTA,
   isImage,
-  spaceAboveCTA
+  spaceAboveCTA,
 }: StoryBannerProps) => {
-  const col1 = variant === "tech" ? "col-lg-6" : "col-lg-6";
-  const col2 = variant === "tech" ? "col-lg-6" : "col-lg-6";
   const image: any = getImage(cardData?.Image?.localFile);
 
   return (
@@ -69,10 +57,12 @@ export const StoryBanner = ({
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-12 ${titleStyles} px-lg-0`}>
           <PrimaryTitle title={primaryTitle} variant="h1700" color="white" />
-          <h3 className={`${subTitleStyles}`} data-aos="fade-up">{subTitle}</h3>
+          <h3 className={`${subTitleStyles}`} data-aos="fade-up">
+            {subTitle}
+          </h3>
         </div>
         <div
-          className={`${col1} ${imgStyles} d-flex justify-content-center align-items-center`}
+          className={`col-lg-6 ${imgStyles} d-flex justify-content-center align-items-center`}
         >
           {!isImage ? (
             <img
@@ -100,7 +90,7 @@ export const StoryBanner = ({
           )}
         </div>
         <div
-          className={`${col2} d-flex justify-content-center align-items-center`}
+          className={`col-lg-6 d-flex justify-content-center align-items-center`}
         >
           <div
             className={`${whiteBox} ${carbon} p-5
@@ -108,22 +98,21 @@ export const StoryBanner = ({
             ${variant === "innovation" ? innovationStory : ""}`}
           >
             {cardData?.PrimaryTitle && (
-              <h3 className={`${customH3} customMaringBtm1 pt-4 pb-3`} data-aos="fade-up">
+              <h3
+                className={`${customH3} customMaringBtm1 pt-4 pb-3`}
+                data-aos="fade-up"
+              >
                 {cardData?.PrimaryTitle}
               </h3>
             )}
-
-            {/* <div className={`${subFont}`}>{cardData?.PrimaryTitle}</div> */}
-            <div className={`${spaceAboveCTA ? "pb-4" : ""}`} data-aos="fade-up">
+            <div
+              className={`${spaceAboveCTA ? "pb-4" : ""}`}
+              data-aos="fade-up"
+            >
               {ReactHtmlParser(
                 cardData?.Description.data.childMarkdownRemark.html
               )}
             </div>
-            {/* <h3>{data?.subText?.LevelOneHeading}</h3>
-            <div className={`${subFont}`}>{data?.subText?.LevelTwoHeading}</div>
-            <p>{data?.subText?.LevelOneDesc}</p>
-            <p>{data?.subText?.LevelTwoDesc}</p>
-            <p>{data?.subText?.LevelThreeDesc}</p> */}
             {withCTA && (
               <div className={`${variant === "lead" ? buttonStyles : ""}`}>
                 <PrimaryCTA
