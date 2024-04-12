@@ -32,6 +32,15 @@
   opacity: 0;
 }
 
+.secondaryTitleEffect {
+  transition: transform 0.5s;
+}
+
+.secondaryTitleEffect:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
