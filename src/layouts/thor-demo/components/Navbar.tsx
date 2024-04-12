@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 import { useRecoilState } from "recoil";
 
@@ -14,7 +15,7 @@ import {
   sliderOn,
   sunIcon,
   toggleButton,
-} from "./Navbar.module.css";
+} from "../ThorDemo.module.css";
 
 export const Navbar = () => {
   const [theme, setTheme] = useRecoilState(themeState);
@@ -24,16 +25,18 @@ export const Navbar = () => {
   };
 
   return (
-    <div className={`${theme === "dark" ? navbarDark : navbarLight}`}>
-      <div className={`ms-5 d-flex align-items-center`}>
-        <img src={ThorLogo} alt="Thor Logo" className="pe-2" />
-        <span className={`${thorLogo} ${theme === "dark" ? "text-white" : ""}`}>
-          THOR
-        </span>
-      </div>
-      <label
-        className={`${toggleButton} ${theme === "dark" ? dark : light} me-5`}
-      >
+    <div className={`${theme === "dark" ? navbarDark : navbarLight} px-5`}>
+      <Link to="/thor">
+        <div className={`d-flex align-items-center`}>
+          <img src={ThorLogo} alt="Thor Logo" className="pe-2" />
+          <span
+            className={`${thorLogo} ${theme === "dark" ? "text-white" : ""}`}
+          >
+            THOR
+          </span>
+        </div>
+      </Link>
+      <label className={`${toggleButton} ${theme === "dark" ? dark : light}`}>
         <input
           type="checkbox"
           checked={theme === "dark"}

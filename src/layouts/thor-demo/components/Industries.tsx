@@ -1,23 +1,20 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 
-import industryIcon from "../../../../static/icons/Group 28.png";
 import { themeState } from "../../../states/atoms";
+import { thorSubtext } from "../../../styles/style-guide/Typography.module.css";
 import {
   industryCardDark,
   industryCardLight,
   industrySectionDark,
   industrySectionLight,
-} from "./Industries.module.css";
+} from "../ThorDemo.module.css";
 
-const data = [
-  "THOR for Manufacturing",
-  "THOR for Retail",
-  "THOR for Banking",
-  "THOR for Education",
-];
+interface IndustriesProps {
+  data: any;
+}
 
-export const Industries = () => {
+export const Industries = ({ data }: IndustriesProps) => {
   const [theme, setTheme] = useRecoilState(themeState);
 
   return (
@@ -33,9 +30,13 @@ export const Industries = () => {
             theme === "dark" ? industryCardDark : industryCardLight
           } mb-3`}
         >
-          <img src={industryIcon} alt="Industry Icon" />
-          <div className={`${theme === "dark" ? "text-white" : ""} ps-3`}>
-            {item}
+          <img src={item?.Logo} alt="Industry Icon" height={40} width={40} />
+          <div
+            className={`${
+              theme === "dark" ? "text-white" : ""
+            } ps-3 ${thorSubtext}`}
+          >
+            {item?.Title}
           </div>
         </div>
       ))}

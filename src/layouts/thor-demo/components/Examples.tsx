@@ -3,33 +3,40 @@ import { useRecoilState } from "recoil";
 
 import { themeState } from "../../../states/atoms";
 import {
+  thorSubTitle,
+  thorSubtext,
+} from "../../../styles/style-guide/Typography.module.css";
+import {
   egCardDark,
   egCardLight,
   egSectionDark,
   egSectionLight,
-} from "./Examples.module.css";
+} from "../ThorDemo.module.css";
 
-const data = [
-  "What is our most popular product?",
-  "Which store is having the most sales today?",
-  "Contact information of the area manager",
-  "Store wise sales comparison for last one week",
-];
+interface ExamplesProps {
+  data: any;
+}
 
-export const Examples = () => {
+export const Examples = ({ data }: ExamplesProps) => {
   const [theme, setTheme] = useRecoilState(themeState);
 
   return (
     <div className={`${theme === "dark" ? egSectionDark : egSectionLight}`}>
-      <h5 className={`${theme === "dark" ? "text-white" : ""} p-3`}>
-        Here are some examples that you can try
-      </h5>
-      {data?.map((item: any, index: number) => (
+      <div
+        className={`${
+          theme === "dark" ? "text-white" : ""
+        } ${thorSubTitle} pb-4`}
+      >
+        {data?.Title}
+      </div>
+      {data?.Examples?.map((item: any, index: number) => (
         <div
           key={index}
-          className={`${theme === "dark" ? egCardDark : egCardLight} mb-3`}
+          className={`${theme === "dark" ? egCardDark : egCardLight} mb-4`}
         >
-          <div className={`${theme === "dark" ? "text-white" : ""}`}>
+          <div
+            className={`${theme === "dark" ? "text-white" : ""} ${thorSubtext}`}
+          >
             {item}
           </div>
         </div>

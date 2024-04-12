@@ -322,6 +322,25 @@ h3 {
   font-size: 1.25rem;
 }
 
+.thorSubtext {
+  font-family: "Lato-Regular", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.thorSubTitle {
+  font-family: "Lato-Regular", sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.thorFeatureCard {
+  font-family: "Lato-Regular", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 /* Media queries starts here */
 
 @media only screen and (max-width: 600px) {
