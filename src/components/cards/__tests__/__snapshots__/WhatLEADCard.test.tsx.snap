@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the WhatLEADCard component is working as expected <WhatLEADCard /> matches snapshot 1`] = `
+<div>
+  <div
+    class="leadCard bgNeutralGray2"
+    data-aos="fade-up"
+    data-testid="what-lead-card"
+  >
+    <div
+      class="leadCardImg pt-3"
+    />
+    <h4
+      class="black87 leadCardTitle cardHeader"
+      data-aos="fade-up"
+    >
+      Time Boxed Accelerated Execution
+    </h4>
+    <p
+      class="black60 leadCardSubText"
+      data-aos="fade-up"
+    >
+      In our experience, it’s not always important to protect an idea. It’s important to protect the time it takes to make it real.
+    </p>
+  </div>
+</div>
+`;

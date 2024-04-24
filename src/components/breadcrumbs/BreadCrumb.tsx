@@ -15,7 +15,10 @@ interface BreadcrumbsProps {
 
 export const BreadCrumb = ({ items }: BreadcrumbsProps) => {
   return (
-    <div className={`${breadcrumbStyles} ${breadCrumbLabel}`}>
+    <div
+      className={`${breadcrumbStyles} ${breadCrumbLabel}`}
+      data-testid="bread-crumb"
+    >
       {items.map((item, index) => (
         <React.Fragment key={item.label}>
           {index > 0 && <span>|</span>}

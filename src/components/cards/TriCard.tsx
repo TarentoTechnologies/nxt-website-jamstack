@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 
 import {
   bgDarkViridianGreen,
@@ -59,6 +60,7 @@ export const TriCard = ({
       onClick={clickHandler}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      data-testid="tri-card"
     >
       <div className={`${imgStyles}`}>
         <img

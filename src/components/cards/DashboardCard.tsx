@@ -32,7 +32,10 @@ export const DashboardCard = ({
   isCTAExternal,
 }: DashboardCardProps) => {
   return (
-    <div className={`${dashboardCard} whiteBg position-relative`}>
+    <div
+      className={`${dashboardCard} whiteBg position-relative`}
+      data-testid="dashboard-card"
+    >
       <div data-aos="fade-up">
         <GatsbyImage
           image={

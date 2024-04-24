@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
@@ -58,7 +59,7 @@ export const PortfolioCard = ({
   const image: any = getImage(imgSrc);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" data-testid="portfolio-card">
       {/* Image */}
       <div
         className={`${isProgramme ? heroProgrammerImage : heroImage} ${

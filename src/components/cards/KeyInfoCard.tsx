@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 import { black75 } from "../../styles/style-guide/ColorGuide.module.css";
@@ -10,7 +11,7 @@ interface KeyInfoCardProps {
 
 export const KeyInfoCard = ({ data }: KeyInfoCardProps) => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" data-testid="key-info-card">
       {data.map((listData: any, index: number) => {
         return (
           <div className="px-3 px-sm-3 px-md-0 px-lg-0" key={listData.id}>

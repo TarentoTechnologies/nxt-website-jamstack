@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 
 import {
   bgCadiumOrange,
@@ -48,6 +49,7 @@ export const KeyFeatureCard = ({
     <div
       className={`container-fluid col-sm-12 col-md-6 col-lg-4 ${cardStyles} ${bgColour}`}
       onClick={clickHandler}
+      data-testid="key-feature-card"
     >
       <div className={`${imgStyles}`}>
         <GatsbyImage

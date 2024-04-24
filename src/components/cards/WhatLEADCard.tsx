@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 
 import {
   bgNeutralGray2,
@@ -23,7 +24,11 @@ export const WhatLEADCard = ({ img, title, subText }: WhatLEADCardProps) => {
   const image: any = getImage(img);
 
   return (
-    <div className={`${leadCard} ${bgNeutralGray2}`} data-aos="fade-up">
+    <div
+      className={`${leadCard} ${bgNeutralGray2}`}
+      data-aos="fade-up"
+      data-testid="what-lead-card"
+    >
       <div className={`${leadCardImg} pt-3`}>
         <GatsbyImage
           image={image}

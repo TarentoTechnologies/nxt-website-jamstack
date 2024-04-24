@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the BreadCrumb component is working as expected <BreadCrumb /> matches snapshot 1`] = `
+<div>
+  <div
+    class="breadcrumbStyles breadCrumbLabel"
+    data-testid="bread-crumb"
+  >
+    <a
+      href="/agency-portfolio"
+    >
+      AgencyPortfolio
+    </a>
+    <span>
+      |
+    </span>
+    <a
+      href="/agency-portfolio/bihar-museum"
+    >
+      Bihar Museum
+    </a>
+  </div>
+</div>
+`;

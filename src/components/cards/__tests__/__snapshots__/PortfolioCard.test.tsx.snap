@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the PortfolioCard component is working as expected <PortfolioCard /> matches snapshot 1`] = `
+<div>
+  <div
+    class="container-fluid"
+    data-testid="portfolio-card"
+  >
+    <div
+      class="heroImage whiteBg d-flex justify-content-center align-items-center"
+    />
+    <div
+      class="customTag bgCadiumOrange  mt-4"
+      data-aos="fade-up"
+    >
+      <label
+        class="tagLabel white87 px-3"
+      >
+        Gov
+      </label>
+    </div>
+    <div
+      class="mt-3"
+      data-aos="fade-up"
+    >
+      <h2
+        class="heading700 black87"
+      >
+        Spinverse
+      </h2>
+    </div>
+    <div
+      class="subText2 black87 truncateDescription"
+      data-aos="fade-up"
+    >
+      CIBoost is a collective intelligence platform.  A team efficiency enhancement tool that will revolutionize team performance as we know it! Built on a methodology that has been proved to increase performance by up to 2x.
+    </div>
+    <div
+      class="mt-4"
+      data-aos="fade-up"
+    >
+      <a
+        href="https://www.google.com"
+      >
+        <label
+          class="cta1 pe-auto cursorPointer"
+          role="link"
+        >
+          Read More
+          <span
+            class="ctaIconPos"
+          >
+            <img
+              alt="Read More"
+              class="ctaIcon ps-2"
+              src="test-file-stub"
+            />
+          </span>
+        </label>
+      </a>
+    </div>
+  </div>
+</div>
+`;

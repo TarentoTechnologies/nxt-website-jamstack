@@ -1,9 +1,17 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
-import { black60, black87 } from "../../styles/style-guide/ColorGuide.module.css";
-import { customPosLeft, customPosRight, customBorderRadius } from "./ImageOverlapCard.module.css";
-import {infoSectionH3} from "../../styles/style-guide/Typography.module.css"
+import {
+  black60,
+  black87,
+} from "../../styles/style-guide/ColorGuide.module.css";
+import { infoSectionH3 } from "../../styles/style-guide/Typography.module.css";
+import {
+  customBorderRadius,
+  customPosLeft,
+  customPosRight,
+} from "./ImageOverlapCard.module.css";
 
 interface ImageOverlapCardProps {
   img: any;
@@ -21,7 +29,7 @@ export const ImageOverlapCard = ({
   const image: any = getImage(img?.localFile);
 
   return (
-    <div className="">
+    <div className="" data-testid="image-overlap-card">
       <div className="row position-relative my-5">
         <div
           className={`col-lg-6 ${textPos === "right" ? "order-2" : "order-1"}`}

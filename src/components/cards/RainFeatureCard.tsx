@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 
 import { carbon } from "../../styles/style-guide/ColorGuide.module.css";
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
@@ -22,7 +23,7 @@ export const RainFeatureCard = ({
   isImage,
 }: RainFeatureCardProps) => {
   return (
-    <div>
+    <div data-testid="rain-feature-card">
       <div className={`${imgStyles}`}>
         {!isImage ? (
           <GatsbyImage

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the AcceleratorFeatureCard component is working as expected <AcceleratorFeatureCard /> matches snapshot 1`] = `
+<div>
+  <div
+    class="featureCard white"
+    data-testid="accelerator-feature-card"
+  >
+    <p
+      class="carbon"
+      data-aos="fade-up"
+    >
+      Ingest
+    </p>
+  </div>
+</div>
+`;
