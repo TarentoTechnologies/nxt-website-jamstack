@@ -26,9 +26,9 @@ export const PricingList = ({
           {heading}
         </div>
         <div className={`row`}>
-          {pricingData?.map((item: any, index: any) => (
+          {pricingData?.map((item: any) => (
             <PricingCard
-              key={index}
+              key={item?.id}
               title={item?.Title}
               logo={item?.Logo?.localFile?.url}
               description={item?.Description}

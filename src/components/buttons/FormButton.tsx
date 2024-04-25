@@ -23,8 +23,19 @@ export const FormButton = ({
 }: FormButtonProps) => {
   const bgColor = isPulse ? bgDuskyViolet : bgHaysBlue;
 
+  let link;
+  if (btnLink != null) {
+    if (isEmail) {
+      link = `mailto:${btnLink}`;
+    } else {
+      link = btnLink;
+    }
+  } else {
+    link = "";
+  }
+
   return (
-    <a href={btnLink != null ? (isEmail ? `mailto:${btnLink}` : btnLink) : ""}>
+    <a href={link}>
       <div
         className={`text-center d-flex align-items-center justify-content-center 
       ${buttonClass} ${bgColor} ${isPulse ? pulseBg : ""}`}

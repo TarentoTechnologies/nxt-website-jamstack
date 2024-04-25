@@ -25,8 +25,9 @@ export const DigitalPlatform = ({
             {desc}
           </p>
         </div>
-        {list?.map((item: any, index: number) => (
+        {list?.map((item: any) => (
           <AcceleratorCard
+            key={item?.id}
             id={item?.id}
             bgImg={item?.BackgroundImage?.localFile?.url}
             title={item?.Title}

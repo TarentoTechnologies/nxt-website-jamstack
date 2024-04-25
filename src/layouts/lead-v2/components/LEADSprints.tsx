@@ -9,7 +9,6 @@ export const LEADSprints = ({
   sectionTitle,
   sectionList,
 }: LEADSprintsProps) => {
-
   return (
     <div className="container-fluid d-flex justify-content-center paddingTopBottom60">
       <div className={`containerService paddingLeftRight15`}>
@@ -18,9 +17,10 @@ export const LEADSprints = ({
         </div>
 
         <div className="my-3">
-          {sectionList?.map((data: any, index: number) => {
+          {sectionList?.map((data: any) => {
             return (
               <ImageOverlapCard
+                key={data?.id}
                 img={data?.Image}
                 content={data?.Description}
                 textPos={data?.DescriptionAlignment}

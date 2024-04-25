@@ -18,8 +18,8 @@ export const KeyInsights = ({ heading, cardList }: KeyInsightsProps) => {
           <PrimaryTitle title={heading} variant="infoSectionH2" color="white" />
         </div>
         <div className={`${keyFeature}`}>
-          {cardList.map((item, index) => (
-            <div key={index} className={`${keyImg}`} data-aos="fade-up">
+          {cardList.map((item) => (
+            <div key={item?.id} className={`${keyImg}`} data-aos="fade-up">
               {item?.isImage ? (
                 <GatsbyImage
                   image={

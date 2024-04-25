@@ -29,9 +29,9 @@ export const HeroSection = ({
           </div>
         </div>
         <div className={`${leadCardSection} pt-2`}>
-          {cardList.map((item, index) => (
+          {cardList.map((item) => (
             <LeadCard
-              key={index}
+              key={item?.id}
               title={item?.Title}
               img={item?.Img?.localFile?.url}
               subText={item?.SubText}

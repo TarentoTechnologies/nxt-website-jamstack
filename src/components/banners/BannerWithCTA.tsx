@@ -40,7 +40,7 @@ export const BannerWithCTA = ({
             <Link to={CTAlink}>
               <label
                 className={`${bannerCTAtext} pe-auto cursorPointer`}
-                role="link"
+                // role="link"
               >
                 {CTAtext}
               </label>
@@ -49,7 +49,7 @@ export const BannerWithCTA = ({
             <a href={CTAlink} rel="external" target="_blank">
               <label
                 className={`${bannerCTAtext} pe-auto cursorPointer`}
-                role="link"
+                // role="link"
               >
                 {CTAtext}
               </label>
@@ -70,7 +70,7 @@ export const BannerWithCTA = ({
             <Link to={CTAlink}>
               <label
                 className={`${bannerCTAtext} pe-auto cursorPointer`}
-                role="link"
+                // role="link"
               >
                 {CTAtext}
               </label>
@@ -79,7 +79,7 @@ export const BannerWithCTA = ({
             <a href={CTAlink} rel="external" target="_blank">
               <label
                 className={`${bannerCTAtext} pe-auto cursorPointer`}
-                role="link"
+                // role="link"
               >
                 {CTAtext}
               </label>

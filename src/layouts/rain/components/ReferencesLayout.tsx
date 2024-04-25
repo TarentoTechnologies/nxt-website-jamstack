@@ -32,9 +32,9 @@ export const ReferencesLayout = ({
           />
         </div>
         <div className={`${referenceCardSection}`}>
-          {cardsData?.map((item: any, index: number) => (
+          {cardsData?.map((item: any) => (
             <div
-              key={index}
+              key={item?.id}
               className={`${referenceCard} layoutBg mb-5`}
               data-aos="fade-up"
             >

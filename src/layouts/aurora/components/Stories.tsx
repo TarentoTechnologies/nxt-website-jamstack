@@ -18,8 +18,8 @@ export const Stories = ({ title, cardsData }: StoriesProps) => {
           <PrimaryTitle title={title} variant="infoSectionH2" />
         </div>
         <div className={`row`}>
-          {cardsData.map((item, index) => (
-            <div key={index} className={`col-lg-6 mt-5`}>
+          {cardsData.map((item) => (
+            <div key={item?.id} className={`col-lg-6 mt-5`}>
               <div
                 className={`d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start`}
               >

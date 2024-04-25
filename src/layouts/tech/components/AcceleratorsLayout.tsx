@@ -24,9 +24,9 @@ export const AcceleratorsLayout = ({
           <PrimaryTitle title={sectionTitle} variant="infoSectionH2" />
         </div>
         <div className={`row ${cardStyles}`}>
-          {cardData?.map((item: any, index: number) => (
+          {cardData?.map((item: any) => (
             <div
-              key={index}
+              key={item?.id}
               className={`col-sm-6 col-lg-3 mb-3`}
               data-aos="fade-up"
             >

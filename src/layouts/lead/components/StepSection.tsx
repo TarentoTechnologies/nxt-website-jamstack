@@ -51,8 +51,8 @@ export const StepSection = ({
               </h4>
               <div className={`${cardList}`} data-aos="fade-up">
                 <ul>
-                  {keyPoints.map((item: any, index) => (
-                    <li key={index} data-aos="fade-up">
+                  {keyPoints.map((item: any) => (
+                    <li key={item?.id} data-aos="fade-up">
                       {item?.ListItem}
                     </li>
                   ))}

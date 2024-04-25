@@ -15,8 +15,8 @@ export const LeadSprints = ({ title, cardData }: LeadSprintsProps) => {
       <div className={`containerService paddingLeftRight15`}>
         <PrimaryTitle title={title} variant="infoSectionH2" />
         <div className={`row mt-5`}>
-          {cardData.map((item, index) => (
-            <div className={`col-lg-6`} key={index} data-aos="fade-up">
+          {cardData.map((item) => (
+            <div className={`col-lg-6`} key={item?.id} data-aos="fade-up">
               <div className={`layoutBg ${sprintCard}`}>
                 <h4 className={`${cardHeader}`} data-aos="fade-up">
                   {item?.Heading}

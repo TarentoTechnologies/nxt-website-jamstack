@@ -24,9 +24,9 @@ export const LiveExpLayout = ({
         <PrimaryTitle title={title} variant="h1700" color="white" />
         <p className="text-white pt-3">{description}</p>
         <div className={`${dashboardGrid} pt-3`}>
-          {cardList.map((card: any, index: number) => (
+          {cardList.map((card: any) => (
             <DashboardCard
-              key={index}
+              key={card?.id}
               title={card?.Title}
               description={card?.Description}
               imgSrc={card?.Image}

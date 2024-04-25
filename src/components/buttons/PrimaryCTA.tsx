@@ -26,17 +26,26 @@ export const PrimaryCTA = ({
   customClasses,
   btnLink,
   isMail,
-  isExternal
+  isExternal,
 }: PrimaryCTAProps) => {
   const mode = primary ? `${primaryBtn}` : `${secondaryBtn}`;
+
+  let link;
+  if (btnLink != null) {
+    if (isMail && !isExternal) {
+      link = `mailto:${btnLink}`;
+    } else {
+      link = btnLink;
+    }
+  } else {
+    link = "";
+  }
 
   return (
     <>
       {isMail || isExternal ? (
         <a
-          href={
-            btnLink != null ? `${isMail && !isExternal ? `mailto:${btnLink};` : btnLink}` : ""
-          }
+          href={link}
           aria-label="link to specific detail page to know more"
           target="_blank"
         >

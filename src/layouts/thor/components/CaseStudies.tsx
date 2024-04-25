@@ -22,8 +22,12 @@ export const CaseStudies = ({ title, list }: CaseStudiesProps) => {
               {title}
             </h1>
             <div className="row mt-5">
-              {list?.map((item: any, index: number) => (
-                <div className="col-md-6 mt-2" key={index} data-aos="fade-up">
+              {list?.map((item: any) => (
+                <div
+                  className="col-md-6 mt-2"
+                  key={item?.id}
+                  data-aos="fade-up"
+                >
                   <center>
                     <GatsbyImage
                       image={

@@ -21,11 +21,6 @@ export const DesignPortfolio = ({
   ctaLink,
   designPortfolioData,
 }: DesignPortfolioProps) => {
-  const navigateTo = (e: any) => {
-    e.preventDefault();
-    navigate(ctaLink);
-  };
-
   return (
     <div className={`container-fluid ${productCardLayoutStyles}`}>
       {/* Header */}
@@ -50,11 +45,11 @@ export const DesignPortfolio = ({
 
       {/* Portfolio cards */}
       <div className={`row`}>
-        {designPortfolioData?.map((data: any, index: number) => {
+        {designPortfolioData?.map((data: any) => {
           return (
             <div
               className={`col-sm-12 col-md-6 col-lg-6 col-xl-4 p-0 m-0 mb-3 mb-sm-3 mb-md-3 mb-lg-3 mb-xl-0`}
-              key={data.id}
+              key={data?.id}
             >
               <PortfolioCard
                 ctaLink={`/design-portfolio/${data?.Slug}`}

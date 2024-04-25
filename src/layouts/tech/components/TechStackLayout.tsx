@@ -17,7 +17,6 @@ export const TechStackLayout = ({
   sectionTitle,
   data,
 }: TechStackLayoutProps) => {
-
   return (
     <div className={`d-flex justify-content-center ${techStack}`}>
       <div className={`containerService paddingLeftRight15`}>
@@ -25,9 +24,9 @@ export const TechStackLayout = ({
           <PrimaryTitle title={sectionTitle} variant="infoSectionH2" />
         </div>
         <div className={`${gridLayout}`}>
-          {data?.map((item: any, index: number) => (
+          {data?.map((item: any) => (
             <div
-              key={index}
+              key={item?.id}
               className={`${logoStyles} d-flex justify-content-center align-items-center`}
             >
               {item?.isImage ? (

@@ -47,8 +47,8 @@ export const VideoSection = ({
               </h2>
               <div className={`${listStyles}`}>
                 <ul>
-                  {listData.map((item: any, index) => (
-                    <li key={index} data-aos="fade-up">
+                  {listData.map((item: any) => (
+                    <li key={item?.id} data-aos="fade-up">
                       {item?.ListItem}
                     </li>
                   ))}

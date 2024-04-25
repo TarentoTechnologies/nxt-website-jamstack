@@ -58,9 +58,10 @@ const CustomerExperiencePage: React.FC<PageProps> = ({
           imgSrc={data[currentLang]?.CXAIImage?.localFile?.url}
         />
         {data[currentLang]?.CXList.length > 0 &&
-          data[currentLang]?.CXList?.map((item: any, index: number) => {
+          data[currentLang]?.CXList?.map((item: any) => {
             return (
               <UserEngagement
+                key={item?.id}
                 id={item?.id}
                 title={item?.Title}
                 imgSrc={item?.Image?.localFile?.url}

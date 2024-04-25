@@ -39,8 +39,8 @@ export const LeadCountries = ({
               <div className={`${cardList} row`}>
                 <div className={`col-lg-6 ps-4`}>
                   <ul>
-                    {keyPoints.slice(0, len / 2).map((item: any, index) => (
-                      <li key={index} data-aos="fade-up">
+                    {keyPoints.slice(0, len / 2).map((item: any) => (
+                      <li key={item?.id} data-aos="fade-up">
                         {item?.ListItem}
                       </li>
                     ))}
@@ -48,8 +48,8 @@ export const LeadCountries = ({
                 </div>
                 <div className={`col-lg-6 ps-4`}>
                   <ul>
-                    {keyPoints.slice(len / 2, len).map((item: any, index) => (
-                      <li key={index} data-aos="fade-up">
+                    {keyPoints.slice(len / 2, len).map((item: any) => (
+                      <li key={item?.id} data-aos="fade-up">
                         {item?.ListItem}
                       </li>
                     ))}

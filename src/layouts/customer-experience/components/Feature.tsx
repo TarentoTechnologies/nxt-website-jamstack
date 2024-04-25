@@ -18,9 +18,10 @@ export const Feature = ({ title, list }: FeaturesProps) => {
           {title}
         </h3>
         <div className={`row`}>
-          {list.map((item: any, index: number) => {
+          {list.map((item: any) => {
             return (
               <CustomerExpCard
+                key={item?.id}
                 id={item?.id}
                 title={item?.Heading}
                 description={item?.SubText}
