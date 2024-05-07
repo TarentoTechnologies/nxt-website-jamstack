@@ -39,8 +39,22 @@ interface ChatSectionProps {
 }
 
 interface ChatMessage {
-  text: string;
+  text: any;
   isUser?: boolean;
+  showAvatar?: boolean;
+  isClickable?: boolean;
+  isInitialMsg?: boolean;
+}
+
+interface APIResponse {
+  res: {
+    data: any[];
+    entities: any[];
+    intent: string;
+    statusCode: number;
+    text: string[];
+    type: string;
+  }[];
 }
 
 export const ChatSection = ({ data }: ChatSectionProps) => {
@@ -48,6 +62,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   const [userInput, setUserInput] = useState("");
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [showInitialChat, setShowInitialChat] = useState(true);
+  const [isBotTyping, setIsBotTyping] = useState(false);
 
   useEffect(() => {
     const terminalResultsDiv: HTMLElement | null =
@@ -102,6 +117,70 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     handleScrollToBottom();
 
     // showBotTyping();
+  };
+
+  const handleMessageSend = async (message: string, industry: string) => {
+    const requestBody = {
+      jwt: "jwt",
+      uid: "0000",
+      username: "tarento@website.com",
+      text: message,
+      endpoint: industry,
+    };
+
+    const newMessage: ChatMessage = {
+      text: message,
+      isUser: true,
+      showAvatar: true,
+    };
+
+    setChatMessages([...chatMessages, newMessage]);
+
+    setIsBotTyping(true);
+
+    setUserInput("");
+
+    try {
+      const response = await fetch(
+        "https://thor-console.tarento.com/interactiverouter/user",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to send message!");
+      }
+
+      const responseData: APIResponse = await response.json();
+      if (responseData.res.length > 0) {
+        const botMessage: ChatMessage = {
+          text: responseData.res[0].text[0],
+          isUser: false,
+          showAvatar: true,
+          isClickable: false,
+        };
+
+        // Check if the response contains HTML markup
+        const htmlContent = responseData.res[0].text[0];
+        const containsHtml = /<[a-z][\s\S]*>/i.test(htmlContent);
+
+        if (containsHtml) {
+          botMessage.text = (
+            <span dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          );
+        }
+        setChatMessages((prevMessages) => [...prevMessages, botMessage]);
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+    } finally {
+      setIsBotTyping(false);
+    }
   };
 
   return (

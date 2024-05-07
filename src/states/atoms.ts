@@ -11,3 +11,8 @@ export const themeState = atom({
   key: "themeState",
   default: "dark",
 });
+
+export const industrySelected = atom({
+  key: "industrySelected",
+  default: "",
+});
