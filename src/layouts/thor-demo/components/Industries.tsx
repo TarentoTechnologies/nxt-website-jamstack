@@ -1,9 +1,10 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 
-import { themeState } from "../../../states/atoms";
+import { industrySelected, themeState } from "../../../states/atoms";
 import { thorSubtext } from "../../../styles/style-guide/Typography.module.css";
 import {
+  activeIndustry,
   industryCardDark,
   industryCardLight,
   industrySectionDark,
@@ -16,6 +17,8 @@ interface IndustriesProps {
 
 export const Industries = ({ data }: IndustriesProps) => {
   const [theme, setTheme] = useRecoilState(themeState);
+  const [selectedIndustry, setSelectedIndustry] =
+    useRecoilState(industrySelected);
 
   return (
     <div
@@ -28,7 +31,8 @@ export const Industries = ({ data }: IndustriesProps) => {
           key={index}
           className={`${
             theme === "dark" ? industryCardDark : industryCardLight
-          } mb-3`}
+          } mb-3 ${selectedIndustry === item.Title ? activeIndustry : ""}`}
+          onClick={() => setSelectedIndustry(item.Title)}
         >
           <img src={item?.Logo} alt="Industry Icon" height={40} width={40} />
           <div

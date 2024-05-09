@@ -12,7 +12,8 @@ export const themeState = atom({
   default: "dark",
 });
 
+//For Thor interactive page
 export const industrySelected = atom({
   key: "industrySelected",
-  default: "",
+  default: "THOR for Manufacturing",
 });

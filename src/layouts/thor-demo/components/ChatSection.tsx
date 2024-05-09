@@ -77,13 +77,13 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     }
   }, [chatMessages]);
 
-  const handleScrollToBottom = () => {
-    const terminalResultsDiv: HTMLElement | null =
-      document.getElementById("chats");
-    if (terminalResultsDiv) {
-      terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
-    }
-  };
+  // const handleScrollToBottom = () => {
+  //   const terminalResultsDiv: HTMLElement | null =
+  //     document.getElementById("chats");
+  //   if (terminalResultsDiv) {
+  //     terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+  //   }
+  // };
 
   const handleInputChange = (event: any) => {
     setUserInput(event.target.value);
@@ -95,6 +95,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
 
       setUserResponse(text);
       // sendMessage(text);
+      handleMessageSend(text, "Thor-Retail");
 
       // Clear user input
       setUserInput("");
@@ -114,7 +115,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     // Clear user input
     setUserInput("");
 
-    handleScrollToBottom();
+    // handleScrollToBottom();
 
     // showBotTyping();
   };
@@ -159,11 +160,12 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
       const responseData: APIResponse = await response.json();
       if (responseData.res.length > 0) {
         const botMessage: ChatMessage = {
-          text: responseData.res[0].text[0],
+          text: responseData.res[0].text,
           isUser: false,
           showAvatar: true,
           isClickable: false,
         };
+        console.log("Response data: ", responseData);
 
         // Check if the response contains HTML markup
         const htmlContent = responseData.res[0].text[0];

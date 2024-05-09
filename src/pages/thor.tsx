@@ -63,6 +63,7 @@ const ThorPage: React.FC<PageProps> = ({ data }: ThorPageProps) => {
           title={data[currentLang]?.LiveExpTitle}
           description={data[currentLang]?.LiveExpDesc}
           cardList={data[currentLang]?.LiveExpCards}
+          isThorPage={true}
         />
         <CaseStudies
           title={data[currentLang]?.CaseStudiesTitle}

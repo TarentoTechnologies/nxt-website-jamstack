@@ -122,8 +122,12 @@
   cursor: pointer;
 }
 
-.industryCardDark:hover,
+/* .industryCardDark:hover,
 .industryCardLight:hover {
+  border: 1px solid #b355ff;
+} */
+
+.activeIndustry {
   border: 1px solid #b355ff;
 }
 
@@ -173,6 +177,7 @@
   height: calc(100vh - 5rem);
   scroll-behavior: smooth;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .chatSectionLight {
@@ -181,12 +186,15 @@
   height: calc(100vh - 5rem);
   scroll-behavior: smooth;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .thorLogo {
   position: absolute;
   top: 2.5rem;
   left: 2.5rem;
+  /* width: 100%;
+  z-index: 1000; */
 }
 
 .initialChat {
@@ -287,11 +295,6 @@
   width: 55%;
 }
 
-.chatAreaMain {
-  padding-top: 6rem;
-  padding-bottom: 5rem;
-}
-
 .chatArea {
   /* margin: 8rem 0 10rem 0; */
   scroll-behavior: smooth;
@@ -338,7 +341,7 @@
 
 /* Media queries starts here */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 }
 
 @media only screen and (min-width: 600px) {
@@ -351,6 +354,10 @@
 }
 
 @media only screen and (min-width: 1200px) {
+  .chatAreaMain {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
 }
 
 /* Media queries ends here */
