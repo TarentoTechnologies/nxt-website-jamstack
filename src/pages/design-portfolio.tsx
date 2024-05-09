@@ -99,19 +99,6 @@ export const query = graphql`
       }
       DynamicButtonText
     }
-    enDesignPortfolios: allStrapiDesignPortfolio(
-      sort: { updatedAt: DESC }
-      filter: { locale: { eq: "en" } }
-    ) {
-      nodes {
-        id
-
-        CTATextForDisplay
-        ShowcasePost
-        Slug
-        PortfolioTag
-      }
-    }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
       id
       Footer {
@@ -168,6 +155,90 @@ export const query = graphql`
     }
   }
 `;
+
+// export const query = graphql`
+//   query DesignPortfolioListing {
+//     en: strapiDesignPortfolioListing(locale: { eq: "en" }) {
+//       SectionOneTitle
+//       SectionTwoTitle
+//       CTA {
+//         id
+//         Title
+//         Description
+//         CTAText
+//         CTALink
+//       }
+//       DynamicButtonText
+//     }
+//     enDesignPortfolios: allStrapiDesignPortfolio(
+//       sort: { updatedAt: DESC }
+//       filter: { locale: { eq: "en" } }
+//     ) {
+//       nodes {
+//         id
+
+//         CTATextForDisplay
+//         ShowcasePost
+//         Slug
+//         PortfolioTag
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
 
 // export const query = graphql`
 //   query DesignPortfolioListing {
