@@ -19,7 +19,7 @@ export const BreadCrumb = ({ items }: BreadcrumbsProps) => {
       className={`${breadcrumbStyles} ${breadCrumbLabel}`}
       data-testid="bread-crumb"
     >
-      {items.map((item, index) => (
+      {items?.map((item, index) => (
         <React.Fragment key={item.label}>
           {index > 0 && <span>|</span>}
           {item.url ? (

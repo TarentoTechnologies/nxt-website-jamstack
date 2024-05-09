@@ -55,8 +55,8 @@ export const AllOtherClients = ({
                       ctaText={listData?.CTATextForDisplay}
                       description={listData?.HeroBanner?.Desc}
                       tag={listData?.PortfolioTag}
-                      imgSrc={listData?.Logo?.localFile}
-                      imgAlt={listData?.Slug}
+                      imgSrc={listData?.HeroBanner?.Image?.localFile}
+                      imgAlt={listData?.HeroBanner?.Image?.alternativeText}
                       tagVariant={"blue"}
                       descRichText
                       bgGrey

@@ -29,6 +29,7 @@ import {
   bgRoslynBlue,
   bgSpectrumViolet,
   bgUraniaBlue,
+  bgVioletGray,
   bgVioletUltramarine,
   bgViridianGreen,
   bgWhite,
@@ -279,6 +280,12 @@ export const ColorGuide = (): any => {
         >
           <h5>bgNeutralGray2</h5>
           <h6>#f5f5f5</h6>
+        </div>
+        <div
+          className={`col-sm-12 col-md-6 col-lg-2 ${colorBox} ${bgVioletGray} p-3`}
+        >
+          <h5>bgVioletGray</h5>
+          <h6>#7E7E7E</h6>
         </div>
       </div>
     </div>
