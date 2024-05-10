@@ -29,7 +29,11 @@ const industryData = [
     Logo: industryIcon,
   },
   {
-    Title: "THOR for Education",
+    Title: "THOR for Healthcare",
+    Logo: industryIcon,
+  },
+  {
+    Title: "THOR for CX",
     Logo: industryIcon,
   },
 ];

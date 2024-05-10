@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import audioBtn from "../../../../static/icons/mic.png";
 import sendBtn from "../../../../static/icons/send.png";
 import ThorLogo from "../../../../static/images/Thor-i-logo.png";
 import ThorBg from "../../../../static/images/ThorBg.png";
-import { themeState } from "../../../states/atoms";
+import {
+  industrySelected,
+  questionSelected,
+  themeState,
+} from "../../../states/atoms";
 import {
   thorFeatureCard,
   thorSubtext,
@@ -16,11 +20,16 @@ import {
   botMsg,
   botMsgDark,
   botMsgLight,
+  botTyping,
+  bounce1,
+  bounce2,
+  bounce3,
   chatArea,
   chatAreaMain,
   chatSectionContainer,
   chatSectionDark,
   chatSectionLight,
+  fadeIn1,
   featureCardDark,
   featureCardGrid,
   featureCardLight,
@@ -63,6 +72,9 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [showInitialChat, setShowInitialChat] = useState(true);
   const [isBotTyping, setIsBotTyping] = useState(false);
+  const selectedQuestion = useRecoilValue(questionSelected);
+  // const [selectedIndustry, setSelectedIndustry] =
+  //   useRecoilState(industrySelected);
 
   useEffect(() => {
     const terminalResultsDiv: HTMLElement | null =
@@ -95,7 +107,8 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
 
       setUserResponse(text);
       // sendMessage(text);
-      handleMessageSend(text, "Thor-Retail");
+      // handleMessageSend(text, selectedIndustry);
+      handleMessageSend(text, "Thor-Manufacture");
 
       // Clear user input
       setUserInput("");
@@ -185,6 +198,34 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     }
   };
 
+  // useEffect(() => {
+  //   if (selectedQuestion !== "") {
+  //     handleMessageSend(selectedQuestion, selectedIndustry);
+  //   }
+  // }, [questionSelected]);
+  // useEffect(() => {
+  //   const setSampleQuestions = () => {
+  //     switch (selectedIndustry) {
+  //       case "THOR for Manufacturing":
+  //         setSelectedIndustry("Thor-Manufacture");
+  //         break;
+  //       case "THOR for Retail":
+  //         setSelectedIndustry("Thor-Retail");
+  //         break;
+  //       case "THOR for Banking":
+  //         setSelectedIndustry("Thor-Banking");
+  //         break;
+  //       case "THOR for Healthcare":
+  //         setSelectedIndustry("Thor-Healthcare");
+  //         break;
+  //       default:
+  //         setSelectedIndustry("Thor-Manufacture");
+  //         break;
+  //     }
+  //   };
+  //   setSampleQuestions();
+  // }, [selectedIndustry]);
+
   return (
     <div className={`${chatSectionContainer}`}>
       <div
@@ -206,46 +247,48 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
         <div className={`${chatAreaMain}`}>
           {/* Initial Chat */}
           {showInitialChat && (
-            <div className={`${initialChat}`}>
-              <div className={`mb-4`}>
-                <img src={ThorBg} alt="Thor" />
-              </div>
-              <div
-                className={`${thorSubtext} ${
-                  theme === "dark" ? "text-white" : ""
-                } pb-2`}
-              >
-                {data?.text1}
-              </div>
-              <div
-                className={`${thorSubtext} ${
-                  theme === "dark" ? "text-white" : ""
-                }`}
-              >
-                {data?.text2}
-              </div>
-              <div className={`${featureCardGrid} pt-3`}>
-                {data?.cardData?.map((item: any, index: number) => (
-                  <div
-                    key={index}
-                    className={`${
-                      theme === "dark" ? featureCardDark : featureCardLight
-                    }`}
-                  >
-                    <div className={`d-flex justify-content-center pb-2`}>
-                      <img src={item?.ImgSrc} alt={item?.Title} />
-                    </div>
+            <>
+              <div className={`${initialChat}`}>
+                <div className={`mb-4`}>
+                  <img src={ThorBg} alt="Thor" />
+                </div>
+                <div
+                  className={`${thorSubtext} ${
+                    theme === "dark" ? "text-white" : ""
+                  } pb-2`}
+                >
+                  {data?.text1}
+                </div>
+                <div
+                  className={`${thorSubtext} ${
+                    theme === "dark" ? "text-white" : ""
+                  }`}
+                >
+                  {data?.text2}
+                </div>
+                <div className={`${featureCardGrid} pt-3`}>
+                  {data?.cardData?.map((item: any, index: number) => (
                     <div
-                      className={`${thorFeatureCard} text-center ${
-                        theme === "dark" ? "text-white" : ""
+                      key={index}
+                      className={`${
+                        theme === "dark" ? featureCardDark : featureCardLight
                       }`}
                     >
-                      {item?.Title}
+                      <div className={`d-flex justify-content-center pb-2`}>
+                        <img src={item?.ImgSrc} alt={item?.Title} />
+                      </div>
+                      <div
+                        className={`${thorFeatureCard} text-center ${
+                          theme === "dark" ? "text-white" : ""
+                        }`}
+                      >
+                        {item?.Title}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </>
           )}
 
           {/* Chat Area */}
@@ -274,6 +317,18 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                 )}
               </div>
             ))}
+            {isBotTyping && (
+              <div className={`d-flex ${fadeIn1}`}>
+                {/* <div>
+                  <img src={botavatar} alt="Bot avatar" className="ms-3" />
+                </div> */}
+                <div className={`${botTyping} px-4 ms-5 mt-0`}>
+                  <div className={`${bounce1}`}></div>
+                  <div className={`${bounce2}`}></div>
+                  <div className={`${bounce3}`}></div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
