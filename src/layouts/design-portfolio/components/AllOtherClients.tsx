@@ -17,7 +17,7 @@ export const AllOtherClients = ({
   ctaBtnText,
   portfolioPath,
 }: AllOtherClientsProps) => {
-  const itemsPerPage = 6;
+  const itemsPerPage = 3;
 
   const [displayCount, setDisplayCount] = useState(itemsPerPage);
 
@@ -55,7 +55,8 @@ export const AllOtherClients = ({
                       ctaText={listData?.CTATextForDisplay}
                       description={listData?.HeroBanner?.Desc}
                       tag={listData?.PortfolioTag}
-                      imgSrc={listData?.HeroBanner?.Image?.localFile}
+                      // imgSrc={listData?.HeroBanner?.Image?.localFile}
+                      imgSrc={listData?.Logo?.localFile}
                       imgAlt={listData?.HeroBanner?.Image?.alternativeText}
                       tagVariant={"blue"}
                       descRichText
