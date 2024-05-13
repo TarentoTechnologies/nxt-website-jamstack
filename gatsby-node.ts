@@ -55,42 +55,32 @@ export const createPages = async function ({ actions, graphql }: any) {
     `./src/templates/AgencyPortfolioDetail.tsx`
   );
 
-  // const { data } = await graphql(`
-  //   query PortfolioDetails {
-  //     allStrapiDesignPortfolio {
-  //       nodes {
-  //         Slug
-  //       }
-  //     }
-  //     allStrapiAgencyPortfolio {
-  //       nodes {
-  //         Slug
-  //       }
-  //     }
-  //   }
-  // `);
-
   const { data } = await graphql(`
-  query PortfolioDetails {
-    allStrapiAgencyPortfolio {
-      nodes {
-        Slug
+    query PortfolioDetails {
+      allStrapiDesignPortfolio {
+        nodes {
+          Slug
+        }
+      }
+      allStrapiAgencyPortfolio {
+        nodes {
+          Slug
+        }
       }
     }
-  }
-`);
+  `);
 
   // For design portfolio details
-  // data.allStrapiDesignPortfolio.nodes.forEach((node: any) => {
-  //   const slug = node.Slug;
-  //   if (slug !== null) {
-  //     actions.createPage({
-  //       path: `/design-portfolio/${slug}`,
-  //       component: path.resolve(designPortfolioDetail),
-  //       context: { slug: slug },
-  //     });
-  //   }
-  // });
+  data.allStrapiDesignPortfolio.nodes.forEach((node: any) => {
+    const slug = node.Slug;
+    if (slug !== null) {
+      actions.createPage({
+        path: `/design-portfolio/${slug}`,
+        component: path.resolve(designPortfolioDetail),
+        context: { slug: slug },
+      });
+    }
+  });
 
   // For agency portfolio details
   data.allStrapiAgencyPortfolio.nodes.forEach((node: any) => {
