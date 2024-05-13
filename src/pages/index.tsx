@@ -54,13 +54,13 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
           sectionTitle={data[currentLang]?.ProgrammeSectionTitle}
           cards={data[currentLang]?.ProgrammeCards}
         />
-        <AgencyPortfolio
+        {/* <AgencyPortfolio
           title={data[currentLang]?.HighlighterOneTitle}
           description={data[currentLang]?.HighlighterOneDescription}
           ctaText={data[currentLang]?.HighlighterOneCTAText}
           ctaLink={data[currentLang]?.HighlighterOneCTALink}
           agencyPortfolioData={data[currentAgencyPortfolio]?.nodes}
-        />
+        /> */}
         <DesignPortfolio
           title={data[currentLang]?.HighlighterTwoTitle}
           description={data[currentLang]?.HighlighterTwoDescription}
