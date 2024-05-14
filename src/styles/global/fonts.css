@@ -3,38 +3,32 @@
 @font-face {
   font-family: "Lato-Black";
   font-weight: 900;
-  src: url("../../../static/fonts/Lato/woff2/Lato-Black.woff2")
-  format("woff2");
-  
+  src: url("../../../static/fonts/Lato/woff2/Lato-Black.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Lato-Bold";
   font-weight: 700;
-  src: url("../../../static/fonts/Lato/woff2/Lato-Bold.woff2")
-  format("woff2");
+  src: url("../../../static/fonts/Lato/woff2/Lato-Bold.woff2") format("woff2");
 }
-
 
 @font-face {
   font-family: "Lato-Light";
   font-weight: 300;
-  src: url("../../../static/fonts/Lato/woff2/Lato-Light.woff2")
-  format("woff2");
+  src: url("../../../static/fonts/Lato/woff2/Lato-Light.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Lato-Regular";
   font-weight: 400;
   src: url("../../../static/fonts/Lato/woff2/Lato-Regular.woff2")
-  format("woff2");
+    format("woff2");
 }
 
 @font-face {
   font-family: "Lato-Thin";
   font-weight: 100;
-  src: url("../../../static/fonts/Lato/woff2/Lato-Thin.woff2")
-  format("woff2");
+  src: url("../../../static/fonts/Lato/woff2/Lato-Thin.woff2") format("woff2");
 }
 
 /* Lato fonts ends here */
@@ -105,3 +99,9 @@
 }
 
 /* Roboto Slab fonts ends here */
+
+@font-face {
+  font-family: "Orbitron-Medium";
+  font-weight: 500;
+  src: url("../../../static/fonts/Orbitron/Orbitron-Medium.woff") format("woff");
+}
