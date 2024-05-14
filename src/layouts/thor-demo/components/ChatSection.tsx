@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
 import audioBtn from "../../../../static/icons/mic.png";
@@ -29,6 +29,7 @@ import {
   chatSectionContainer,
   chatSectionDark,
   chatSectionLight,
+  customCard,
   fadeIn1,
   featureCardDark,
   featureCardGrid,
@@ -86,7 +87,8 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [showInitialChat, setShowInitialChat] = useState(true);
   const [isBotTyping, setIsBotTyping] = useState(false);
-  const selectedQuestion = useRecoilValue(questionSelected);
+  const [selectedQuestion, setSelectedQuestion] =
+    useRecoilState(questionSelected);
   const [selectedIndustry, setSelectedIndustry] =
     useRecoilState(industrySelected);
   const [formattedIndustry, setFormattedIndustry] = useState("");
@@ -225,6 +227,8 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
 
             if (responseData.res[0].data !== null) {
               botMessage.data = responseData.res[0].data;
+              console.log("Res Data: ", responseData.res[0].data);
+              console.log("Res Data type: ", typeof responseData.res[0].data);
             }
           }
 
@@ -241,7 +245,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   useEffect(() => {
     if (selectedQuestion !== "") {
       handleMessageSend(selectedQuestion);
-      // console.log("from eg msg send");
+      setSelectedQuestion("");
     }
   }, [selectedQuestion]);
 
@@ -319,8 +323,8 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                   message.isUser ? "justify-content-end" : ""
                 } ${
                   index === chatMessages.length - 1 && !message.isUser
-                    ? "mb-5"
-                    : ""
+                    ? "customMarginBtm4"
+                    : "mb-3"
                 }`}
               >
                 {message.isUser ? (
@@ -333,56 +337,62 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                   </p>
                 ) : (
                   <>
-                    <p
+                    <div
                       className={`${
                         theme === "dark" ? botMsgDark : botMsgLight
                       }`}
                     >
-                      {message.text}
+                      <span>{message.text}</span>
                       {message.data !== null && (
-                        <div>
-                          {/* Check if message.data is not null and is an array */}
-                          {Array.isArray(message.data) && (
+                        <span>
+                          {Array.isArray(message.data) ? (
                             <div>
-                              <ul>
-                                {message.data.map((item, index) => (
-                                  <li key={index}>{JSON.stringify(item)}</li>
-                                ))}
-                              </ul>
+                              {message.data.slice(0, 5).map((item, index) => (
+                                <div
+                                  key={index}
+                                  className={`${customCard} mb-3`}
+                                >
+                                  <div>
+                                    {Object.entries(item).map(
+                                      ([key, value]) => (
+                                        <p key={key}>
+                                          {key}: {value as ReactNode}
+                                        </p>
+                                      )
+                                    )}
+                                  </div>
+                                </div>
+                              ))}
+                              {/* {displayedItems.length <
+                                (message?.data || []).length && (
+                                <button onClick={handleViewMore}>
+                                  View More
+                                </button>
+                              )} */}
                             </div>
+                          ) : typeof message.data === "object" ? (
+                            <div>
+                              {Object.entries(message.data).map(
+                                ([key, value]) => (
+                                  <p key={key} className="card-text">
+                                    {key}: {value as ReactNode}
+                                  </p>
+                                )
+                              )}
+                            </div>
+                          ) : (
+                            // Render message.data as a string or number
+                            <div>{message.data}</div>
                           )}
-                          {/* Check if message.data is not null and is an object */}
-                          {typeof message.data === "object" &&
-                            !Array.isArray(message.data) && (
-                              <div>
-                                <ul>
-                                  {Object.entries(message.data).map(
-                                    ([key, value]) => (
-                                      <li key={key}>{`${key}: ${JSON.stringify(
-                                        value
-                                      )}`}</li>
-                                    )
-                                  )}
-                                </ul>
-                              </div>
-                            )}
-                          {/* Check if message.data is not null and is a string or number */}
-                          {(typeof message.data === "string" ||
-                            typeof message.data === "number") && (
-                            <span>{message.data}</span>
-                          )}
-                        </div>
+                        </span>
                       )}
-                    </p>
+                    </div>
                   </>
                 )}
               </div>
             ))}
             {isBotTyping && (
               <div className={`d-flex ${fadeIn1}`}>
-                {/* <div>
-                  <img src={botavatar} alt="Bot avatar" className="ms-3" />
-                </div> */}
                 <div className={`${botTyping} px-4 ms-4 mt-0`}>
                   <div className={`${bounce1}`}></div>
                   <div className={`${bounce2}`}></div>
