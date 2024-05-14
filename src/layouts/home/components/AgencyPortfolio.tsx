@@ -61,7 +61,8 @@ export const AgencyPortfolio = ({
                 description={data?.HeroBanner?.Desc}
                 tag={data?.PortfolioTag}
                 title={data?.HeroBanner?.Title}
-                imgSrc={data?.HeroBanner?.Image?.localFile}
+                // imgSrc={data?.HeroBanner?.Image?.localFile}
+                imgSrc={data?.Logo?.localFile}
                 imgAlt={data?.imgAlt}
                 descRichText
               />
