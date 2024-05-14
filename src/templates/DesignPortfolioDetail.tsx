@@ -40,7 +40,7 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
   return (
     <main className="">
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
-      <HeroBanner
+      {/* <HeroBanner
         heroBannerData={data[currentLang]?.HeroBanner}
         aboutSectionData={data[currentLang]?.AboutSection}
         isImg
@@ -70,182 +70,354 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
-      />
+      /> */}
     </main>
   );
 };
 
-export const query = graphql`
-  query DesignPortfolio($slug: String!) {
-    en: strapiDesignPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
-      id
-      HeroBanner {
-        id
-        Title
-        Image {
-          localFile {
-            url
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED)
-            }
-          }
-          alternativeText
-        }
-        Desc {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-        isAgencyDetail
-        isListingPage
-        withBreadCrumbs
-        BreadCrumbLabel
-        BreadCrumbLink
-      }
-      AboutSection {
-        id
-        Title
-        Description {
-          data {
-            Description
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-        ColumnOneTitle
-        ColumnOneValue
-        ColumnTwoTitle
-        ColumnTwoValue
-        ColumnThreeTitle
-        ColumnThreeValue
-        ColumnFourTitle
-        ColumnFourLink
-      }
-      BannerWithTagSection {
-        id
-        Title
-        Image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED)
-            }
-          }
-        }
-        Tags {
-          id
-          Label
-        }
-      }
-      SectionFourTitle
-      RelatedPortfolios {
-        id
-        Title
-        Tag
-        Description
-        CTAText
-        CTALink
-        Image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED)
-            }
-          }
-        }
-      }
-      GallerySection {
-        SliderLeftImg {
-          localFile {
-            url
-          }
-        }
-        SliderRightImg {
-          localFile {
-            url
-          }
-        }
-        ImageList {
-          Image {
-            localFile {
-              url
-            }
-          }
-        }
-      }
-    }
-    enBottomBanner: strapiDesignPortfolioListing(locale: { eq: "en" }) {
-      BottomBanner {
-        Title
-        CTAButton {
-          Label
-          Link
-        }
-        BgImg {
-          localFile {
-            url
-          }
-        }
-        isCTAExternal
-      }
-    }
-    enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
-      id
-      Footer {
-        id
-        PrimaryLogo {
-          alternativeText
-          caption
-          localFile {
-            url
-          }
-        }
-        SecondaryLogo {
-          alternativeText
-          caption
-          localFile {
-            url
-          }
-        }
-        PrimaryDescription {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-        PrimaryLevelOneHeading
-        PrimaryLevelOneList {
-          id
-          Label
-          Link
-        }
-        PrimaryLevelTwoHeading
-        PrimaryLevelTwoList {
-          id
-          Link
-          Label
-        }
-        SecondaryLevelOneHeading
-        SecondaryLevelOneList {
-          id
-          Link
-          Label
-        }
-        SecondaryLevelTwoHeading
-        SecondaryLevelTwoList {
-          id
-          Link
-          Label
-        }
-        Copyright
-        PrimaryLogoLink
-        SecondaryLogoLink
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query DesignPortfolio($slug: String!) {
+//     en: strapiDesignPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
+//       id
+//       HeroBanner {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             url
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//           alternativeText
+//         }
+//         Desc {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         isAgencyDetail
+//         isListingPage
+//         withBreadCrumbs
+//         BreadCrumbLabel
+//         BreadCrumbLink
+//       }
+//       AboutSection {
+//         id
+//         Title
+//         Description {
+//           data {
+//             Description
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         ColumnOneTitle
+//         ColumnOneValue
+//         ColumnTwoTitle
+//         ColumnTwoValue
+//         ColumnThreeTitle
+//         ColumnThreeValue
+//         ColumnFourTitle
+//         ColumnFourLink
+//       }
+//       BannerWithTagSection {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//         Tags {
+//           id
+//           Label
+//         }
+//       }
+//       SectionFourTitle
+//       RelatedPortfolios {
+//         id
+//         Title
+//         Tag
+//         Description
+//         CTAText
+//         CTALink
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//       }
+//       GallerySection {
+//         SliderLeftImg {
+//           localFile {
+//             url
+//           }
+//         }
+//         SliderRightImg {
+//           localFile {
+//             url
+//           }
+//         }
+//         ImageList {
+//           Image {
+//             localFile {
+//               url
+//             }
+//           }
+//         }
+//       }
+//     }
+//     enBottomBanner: strapiDesignPortfolioListing(locale: { eq: "en" }) {
+//       BottomBanner {
+//         Title
+//         CTAButton {
+//           Label
+//           Link
+//         }
+//         BgImg {
+//           localFile {
+//             url
+//           }
+//         }
+//         isCTAExternal
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
+
+// export const query = graphql`
+//   query DesignPortfolio($slug: String!) {
+//     en: strapiDesignPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
+//       id
+//       HeroBanner {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             url
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//           alternativeText
+//         }
+//         Desc {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         isAgencyDetail
+//         isListingPage
+//         withBreadCrumbs
+//         BreadCrumbLabel
+//         BreadCrumbLink
+//       }
+//       AboutSection {
+//         id
+//         Title
+//         Description {
+//           data {
+//             Description
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         ColumnOneTitle
+//         ColumnOneValue
+//         ColumnTwoTitle
+//         ColumnTwoValue
+//         ColumnThreeTitle
+//         ColumnThreeValue
+//         ColumnFourTitle
+//         ColumnFourLink
+//       }
+//       BannerWithTagSection {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//         Tags {
+//           id
+//           Label
+//         }
+//       }
+//       SectionFourTitle
+//       RelatedPortfolios {
+//         id
+//         Title
+//         Tag
+//         Description
+//         CTAText
+//         CTALink
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//       }
+//       GallerySection {
+//         SliderLeftImg {
+//           localFile {
+//             url
+//           }
+//         }
+//         SliderRightImg {
+//           localFile {
+//             url
+//           }
+//         }
+//         ImageList {
+//           Image {
+//             localFile {
+//               url
+//             }
+//           }
+//         }
+//       }
+//     }
+//     enBottomBanner: strapiDesignPortfolioListing(locale: { eq: "en" }) {
+//       BottomBanner {
+//         Title
+//         CTAButton {
+//           Label
+//           Link
+//         }
+//         BgImg {
+//           localFile {
+//             url
+//           }
+//         }
+//         isCTAExternal
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
 
 export default DesignPortfolioDetail;
 
