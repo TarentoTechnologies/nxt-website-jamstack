@@ -21,29 +21,6 @@ export const Industries = ({ data }: IndustriesProps) => {
     useRecoilState(industrySelected);
   const setIndustrySelected = useSetRecoilState(industrySelected);
 
-  // useEffect(() => {
-  //   const setSampleQuestions = () => {
-  //     switch (selectedIndustry) {
-  //       case "THOR for Manufacturing":
-  //         setSelectedIndustry("Thor-Manufacture");
-  //         break;
-  //       case "THOR for Retail":
-  //         setSelectedIndustry("Thor-Retail");
-  //         break;
-  //       case "THOR for Banking":
-  //         setSelectedIndustry("Thor-Banking");
-  //         break;
-  //       case "THOR for Healthcare":
-  //         setSelectedIndustry("Thor-Healthcare");
-  //         break;
-  //       default:
-  //         setSelectedIndustry("Thor-Manufacture");
-  //         break;
-  //     }
-  //   };
-  //   setSampleQuestions();
-  // }, [selectedIndustry]);
-
   return (
     <div
       className={`${

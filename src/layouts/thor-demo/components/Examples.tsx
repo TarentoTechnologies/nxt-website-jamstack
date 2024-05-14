@@ -40,9 +40,9 @@ export const Examples = ({ data }: ExamplesProps) => {
       switch (selectedIndustry) {
         case "THOR for Manufacturing":
           setQuestions([
-            "Car models with rate less than 99999",
+            "Car models with rate less than 9999",
             "Get me the models within the price range of 16000 and 17000",
-            "Get me the details of BMW",
+            "Cars with price more than 20000",
           ]);
           break;
         case "THOR for Retail":
@@ -69,6 +69,15 @@ export const Examples = ({ data }: ExamplesProps) => {
             "New covid cases in Asia for the year 2021",
           ]);
           break;
+        case "THOR for CX":
+          setQuestions([
+            "What is your return policy?",
+            "How can I leave a product review?",
+            "I want to raise a ticket/complaint",
+            "I want to get order status for order id 1004",
+            "I want to speak with an agent",
+          ]);
+          break;
         default:
           setQuestions([]);
           break;
@@ -90,7 +99,7 @@ export const Examples = ({ data }: ExamplesProps) => {
       {questions?.map((item: any, index: number) => (
         <div
           key={index}
-          className={`${theme === "dark" ? egCardDark : egCardLight} mb-4`}
+          className={`${theme === "dark" ? egCardDark : egCardLight} mb-3`}
           onClick={() => handleExampleClick(item)}
         >
           <div

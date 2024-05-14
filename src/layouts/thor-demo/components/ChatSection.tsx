@@ -35,6 +35,7 @@ import {
   featureCardLight,
   initialChat,
   inputArea,
+  pullUp1,
   sendButton,
   thorLogo,
   userInputBoxDark,
@@ -67,6 +68,18 @@ interface APIResponse {
   }[];
 }
 
+interface ThorCXResponse {
+  Confidence: number;
+  Context: string;
+  text: string;
+  type: {
+    text: string;
+    type: string;
+  };
+}
+
+interface APIResponse extends Array<ThorCXResponse> {}
+
 export const ChatSection = ({ data }: ChatSectionProps) => {
   const [theme, setTheme] = useRecoilState(themeState);
   const [userInput, setUserInput] = useState("");
@@ -76,8 +89,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   const selectedQuestion = useRecoilValue(questionSelected);
   const [selectedIndustry, setSelectedIndustry] =
     useRecoilState(industrySelected);
-  const [formattedIndustry, setFormattedIndustry] =
-    useState("Thor-Manufacture");
+  const [formattedIndustry, setFormattedIndustry] = useState("");
 
   useEffect(() => {
     const terminalResultsDiv: HTMLElement | null =
@@ -91,16 +103,6 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     }
   }, [chatMessages]);
 
-  // useEffect(() => {
-  //   const terminalResultsDiv = document.getElementById("chats");
-  //   if (terminalResultsDiv) {
-  //     const lastMessage = terminalResultsDiv.lastElementChild;
-  //     if (lastMessage) {
-  //       lastMessage.scrollIntoView();
-  //     }
-  //   }
-  // }, [chatMessages]);
-
   const handleInputChange = (event: any) => {
     setUserInput(event.target.value);
   };
@@ -108,33 +110,35 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   const handleUserInputSubmission = (text = userInput.trim()) => {
     if (text !== "") {
       // setShowInitialChat(false);
-      handleMessageSend(text, selectedIndustry);
-      // handleMessageSend(text, "Thor-Manufacture");
+      handleMessageSend(text);
     }
   };
 
-  const handleMessageSend = async (message: string, industry: string) => {
-    const setSampleQuestions = () => {
-      switch (industry) {
-        case "THOR for Manufacturing":
-          // setSelectedIndustry("Thor-Manufacture");
-          setFormattedIndustry("Thor-Manufacture");
-          break;
-        case "THOR for Retail":
-          setFormattedIndustry("Thor-Retail");
-          break;
-        case "THOR for Banking":
-          setFormattedIndustry("Thor-Banking");
-          break;
-        case "THOR for Healthcare":
-          setFormattedIndustry("Thor-Healthcare");
-          break;
-        default:
-          setFormattedIndustry("Thor-Manufacture");
-          break;
-      }
-    };
-    setSampleQuestions();
+  useEffect(() => {
+    switch (selectedIndustry) {
+      case "THOR for Manufacturing":
+        // setSelectedIndustry("Thor-Manufacture");
+        setFormattedIndustry("Thor-Manufacture");
+        break;
+      case "THOR for Retail":
+        setFormattedIndustry("Thor-Retail");
+        break;
+      case "THOR for Banking":
+        setFormattedIndustry("Thor-Banking");
+        break;
+      case "THOR for Healthcare":
+        setFormattedIndustry("Thor-Healthcare");
+        break;
+      case "THOR for CX":
+        setFormattedIndustry("Thor-CX");
+        break;
+      default:
+        setFormattedIndustry("Thor-CX");
+        break;
+    }
+  }, [selectedIndustry]);
+
+  const handleMessageSend = async (message: string) => {
     setShowInitialChat(false);
     const requestBody = {
       jwt: "jwt",
@@ -142,6 +146,10 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
       username: "tarento@website.com",
       text: message,
       endpoint: formattedIndustry,
+    };
+
+    const requestBodyCX = {
+      Question: message,
     };
 
     const newMessage: ChatMessage = {
@@ -156,58 +164,83 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
 
     setUserInput("");
 
-    try {
-      const response = await fetch(
-        "https://thor-console.tarento.com/interactiverouter/user",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestBody),
-        }
-      );
+    setTimeout(async () => {
+      try {
+        const response = await fetch(
+          formattedIndustry === "Thor-CX"
+            ? "https://9cf0-36-255-86-45.ngrok-free.app/faq"
+            : "https://thor-console.tarento.com/interactiverouter/user",
+          formattedIndustry === "Thor-CX"
+            ? {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(requestBodyCX),
+              }
+            : {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(requestBody),
+              }
+        );
 
-      if (!response.ok) {
-        throw new Error("Failed to send message!");
+        if (!response.ok) {
+          throw new Error("Failed to send message!");
+        }
+
+        const responseData: APIResponse = await response.json();
+        if (responseData !== null) {
+          let botMessage: ChatMessage;
+          if (formattedIndustry === "Thor-CX") {
+            botMessage = {
+              text: responseData[0].text,
+              isUser: false,
+              showAvatar: true,
+              isClickable: false,
+            };
+          } else {
+            botMessage = {
+              text: responseData.res[0].text,
+              isUser: false,
+              showAvatar: true,
+              isClickable: false,
+            };
+          }
+          // console.log("Response data: ", responseData);
+          // console.log("Current Industry: ", formattedIndustry);
+
+          if (formattedIndustry !== "Thor-CX") {
+            // Check if the response contains HTML markup
+            const htmlContent = responseData.res[0].text[0];
+            const containsHtml = /<[a-z][\s\S]*>/i.test(htmlContent);
+
+            if (containsHtml) {
+              botMessage.text = (
+                <span dangerouslySetInnerHTML={{ __html: htmlContent }} />
+              );
+            }
+
+            if (responseData.res[0].data !== null) {
+              botMessage.data = responseData.res[0].data;
+            }
+          }
+
+          setChatMessages((prevMessages) => [...prevMessages, botMessage]);
+        }
+      } catch (error) {
+        console.error("Error sending message:", error);
+      } finally {
+        setIsBotTyping(false);
       }
-
-      const responseData: APIResponse = await response.json();
-      if (responseData.res.length > 0) {
-        const botMessage: ChatMessage = {
-          text: responseData.res[0].text,
-          isUser: false,
-          showAvatar: true,
-          isClickable: false,
-        };
-        console.log("Response data: ", responseData);
-
-        // Check if the response contains HTML markup
-        const htmlContent = responseData.res[0].text[0];
-        const containsHtml = /<[a-z][\s\S]*>/i.test(htmlContent);
-
-        if (containsHtml) {
-          botMessage.text = (
-            <span dangerouslySetInnerHTML={{ __html: htmlContent }} />
-          );
-        }
-
-        if (responseData.res[0].data !== null) {
-          botMessage.data = responseData.res[0].data;
-        }
-
-        setChatMessages((prevMessages) => [...prevMessages, botMessage]);
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-    } finally {
-      setIsBotTyping(false);
-    }
+    }, 650);
   };
 
   useEffect(() => {
     if (selectedQuestion !== "") {
-      handleMessageSend(selectedQuestion, selectedIndustry);
+      handleMessageSend(selectedQuestion);
       // console.log("from eg msg send");
     }
   }, [selectedQuestion]);
@@ -222,7 +255,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
           {/* Initial Chat */}
           {showInitialChat && (
             <>
-              <div className={`${initialChat}`}>
+              <div className={`${initialChat} ${fadeIn1}`}>
                 <div className={`d-flex align-items-center ${thorLogo}`}>
                   <img
                     src={ThorLogo}
@@ -282,7 +315,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
             {chatMessages.map((message, index) => (
               <div
                 key={index}
-                className={`d-flex ${
+                className={`d-flex ${pullUp1} ${
                   message.isUser ? "justify-content-end" : ""
                 } ${
                   index === chatMessages.length - 1 && !message.isUser

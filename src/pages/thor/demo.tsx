@@ -2,7 +2,9 @@ import { type HeadFC, PageProps, graphql } from "gatsby";
 import * as React from "react";
 import { useRecoilValue } from "recoil";
 
-import industryIcon from "../../../static/icons/Group 28.png";
+import industryIcon1 from "../../../static/icons/Group 28.png";
+import industryIcon2 from "../../../static/icons/Group 427319126.png";
+import industryIcon3 from "../../../static/icons/Group 427319136.png";
 import fCard from "../../../static/images/Group 39.png";
 import { Seo } from "../../components/seo/Seo";
 import { hideForSmallScreens } from "../../layouts/thor-demo/ThorDemo.module.css";
@@ -19,24 +21,24 @@ interface THORDemoPageProps {
 const industryData = [
   {
     Title: "THOR for Manufacturing",
-    Logo: industryIcon,
+    Logo: industryIcon1,
   },
   {
     Title: "THOR for Retail",
-    Logo: industryIcon,
+    Logo: industryIcon3,
   },
   {
     Title: "THOR for Banking",
-    Logo: industryIcon,
+    Logo: industryIcon2,
   },
   {
     Title: "THOR for Healthcare",
-    Logo: industryIcon,
+    Logo: industryIcon3,
   },
-  // {
-  //   Title: "THOR for CX",
-  //   Logo: industryIcon,
-  // },
+  {
+    Title: "THOR for CX",
+    Logo: industryIcon3,
+  },
 ];
 
 const chatSectionData = {

@@ -401,6 +401,53 @@
   animation-delay: -0.16s;
 }
 
+@-webkit-keyframes pullUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pullUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.pullUp1 {
+  animation: pullUp ease 0.85s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.fadeIn1 {
+  animation: fadeIn ease 1.15s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
 @-webkit-keyframes sk-bouncedelay {
   0%,
   80%,
