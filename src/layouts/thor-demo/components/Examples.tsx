@@ -26,10 +26,13 @@ export const Examples = ({ data }: ExamplesProps) => {
   const [theme, setTheme] = useRecoilState(themeState);
   const [selectedIndustry] = useRecoilState(industrySelected);
   const [questions, setQuestions] = useRecoilState(exampleQuestions);
-  const setQuestionSelected = useSetRecoilState(questionSelected);
+  // const setQuestionSelected = useSetRecoilState(questionSelected);
+  const [selectedQuestion, setSelectedQuestion] =
+    useRecoilState(questionSelected);
 
   const handleExampleClick = (question: string) => {
-    setQuestionSelected(question);
+    // setQuestionSelected(question);
+    setSelectedQuestion(question);
   };
 
   useEffect(() => {
@@ -38,7 +41,7 @@ export const Examples = ({ data }: ExamplesProps) => {
         case "THOR for Manufacturing":
           setQuestions([
             "Car models with rate less than 99999",
-            "Get me the models within the price range of 16000 and 20000",
+            "Get me the models within the price range of 16000 and 17000",
             "Get me the details of BMW",
           ]);
           break;
@@ -47,7 +50,7 @@ export const Examples = ({ data }: ExamplesProps) => {
             "Give me the sales and profit for Office Supplies",
             "Profit for Furniture purchases",
             "Give me the number of purchases for Technology category",
-            "Items with profit less than 100",
+            "Items with profit less than 1000",
           ]);
           break;
         case "THOR for Banking":
@@ -73,7 +76,7 @@ export const Examples = ({ data }: ExamplesProps) => {
     };
     setSampleQuestions();
   }, [selectedIndustry, setQuestions]);
-  console.log(questions);
+  // console.log(questions);
 
   return (
     <div className={`${theme === "dark" ? egSectionDark : egSectionLight}`}>

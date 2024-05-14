@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil";
 import industryIcon from "../../../static/icons/Group 28.png";
 import fCard from "../../../static/images/Group 39.png";
 import { Seo } from "../../components/seo/Seo";
+import { hideForSmallScreens } from "../../layouts/thor-demo/ThorDemo.module.css";
 import { ChatSection } from "../../layouts/thor-demo/components/ChatSection";
 import { Examples } from "../../layouts/thor-demo/components/Examples";
 import { Industries } from "../../layouts/thor-demo/components/Industries";
@@ -32,10 +33,10 @@ const industryData = [
     Title: "THOR for Healthcare",
     Logo: industryIcon,
   },
-  {
-    Title: "THOR for CX",
-    Logo: industryIcon,
-  },
+  // {
+  //   Title: "THOR for CX",
+  //   Logo: industryIcon,
+  // },
 ];
 
 const chatSectionData = {
@@ -76,9 +77,15 @@ const THORDemoPage: React.FC<PageProps> = ({ data }: THORDemoPageProps) => {
     <main className="">
       <Navbar />
       <div className="d-flex">
-        <Industries data={industryData} />
-        <ChatSection data={chatSectionData} />
-        <Examples data={examplesData} />
+        <div className={`w-25`}>
+          <Industries data={industryData} />
+        </div>
+        <div className={`w-50`}>
+          <ChatSection data={chatSectionData} />
+        </div>
+        <div className={`w-25`}>
+          <Examples data={examplesData} />
+        </div>
       </div>
     </main>
   );
