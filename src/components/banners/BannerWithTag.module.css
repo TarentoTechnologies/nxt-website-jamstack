@@ -9,6 +9,7 @@
 .tag {
   border-radius: 1.281rem;
   min-height: 2.563rem;
+  width: fit-content;
 }
 
 .tagPos {
@@ -17,8 +18,8 @@
 
 .bannerImg {
   max-width: 26.813rem;
-  max-height: 19.5rem;
-  margin-right: -4rem;
+  max-height: 21.5rem;
+  /* margin-right: -4rem; */
 }
 
 /* Media queries starts here */
@@ -30,9 +31,15 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .tagPos {
+    max-width: 20rem;
+  }
 }
 
 @media only screen and (min-width: 992px) {
+  .tagPos {
+    max-width: 31rem;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
