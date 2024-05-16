@@ -30,6 +30,8 @@ import {
   chatSectionDark,
   chatSectionLight,
   customCard,
+  customCardDark,
+  customCardLight,
   fadeIn1,
   featureCardDark,
   featureCardGrid,
@@ -43,6 +45,8 @@ import {
   userInputBoxLight,
   userMsgDark,
   userMsgLight,
+  viewMoreBtnDark,
+  viewMoreBtnLight,
 } from "../ThorDemo.module.css";
 
 interface ChatSectionProps {
@@ -92,6 +96,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   const [selectedIndustry, setSelectedIndustry] =
     useRecoilState(industrySelected);
   const [formattedIndustry, setFormattedIndustry] = useState("");
+  const [displayedItems, setDisplayedItems] = useState<number>(5);
 
   useEffect(() => {
     const terminalResultsDiv: HTMLElement | null =
@@ -103,7 +108,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     if (userInput) {
       userInput.focus();
     }
-  }, [chatMessages]);
+  }, [chatMessages, displayedItems]);
 
   const handleInputChange = (event: any) => {
     setUserInput(event.target.value);
@@ -135,7 +140,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
         setFormattedIndustry("Thor-CX");
         break;
       default:
-        setFormattedIndustry("Thor-CX");
+        setFormattedIndustry("Thor-Manufacture");
         break;
     }
   }, [selectedIndustry]);
@@ -227,8 +232,8 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
 
             if (responseData.res[0].data !== null) {
               botMessage.data = responseData.res[0].data;
-              console.log("Res Data: ", responseData.res[0].data);
-              console.log("Res Data type: ", typeof responseData.res[0].data);
+              // console.log("Res Data: ", responseData.res[0].data);
+              // console.log("Res Data type: ", typeof responseData.res[0].data);
             }
           }
 
@@ -246,8 +251,13 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     if (selectedQuestion !== "") {
       handleMessageSend(selectedQuestion);
       setSelectedQuestion("");
+      setDisplayedItems(5);
     }
   }, [selectedQuestion]);
+
+  const handleViewMore = () => {
+    setDisplayedItems((prevItems) => prevItems + 5);
+  };
 
   return (
     <div className={`${chatSectionContainer}`}>
@@ -347,34 +357,48 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                         <span>
                           {Array.isArray(message.data) ? (
                             <div>
-                              {message.data.slice(0, 5).map((item, index) => (
-                                <div
-                                  key={index}
-                                  className={`${customCard} mb-3`}
-                                >
-                                  <div>
-                                    {Object.entries(item).map(
-                                      ([key, value]) => (
-                                        <p key={key}>
-                                          {key}: {value as ReactNode}
-                                        </p>
-                                      )
-                                    )}
+                              {message.data
+                                .slice(0, displayedItems)
+                                .map((item, index) => (
+                                  <div
+                                    key={index}
+                                    className={`${
+                                      theme === "dark"
+                                        ? customCardDark
+                                        : customCardLight
+                                    } mb-3`}
+                                  >
+                                    <div>
+                                      {Object.entries(item).map(
+                                        ([key, value]) => (
+                                          <p key={key}>
+                                            {key}: {value as ReactNode}
+                                          </p>
+                                        )
+                                      )}
+                                    </div>
                                   </div>
-                                </div>
-                              ))}
-                              {/* {displayedItems.length <
+                                ))}
+                              {displayedItems <
                                 (message?.data || []).length && (
-                                <button onClick={handleViewMore}>
+                                <div
+                                  className={`${
+                                    theme === "dark"
+                                      ? viewMoreBtnDark
+                                      : viewMoreBtnLight
+                                  }`}
+                                  role="button"
+                                  onClick={handleViewMore}
+                                >
                                   View More
-                                </button>
-                              )} */}
+                                </div>
+                              )}
                             </div>
                           ) : typeof message.data === "object" ? (
                             <div>
                               {Object.entries(message.data).map(
                                 ([key, value]) => (
-                                  <p key={key} className="card-text">
+                                  <p key={key} className="pt-3 mb-0">
                                     {key}: {value as ReactNode}
                                   </p>
                                 )

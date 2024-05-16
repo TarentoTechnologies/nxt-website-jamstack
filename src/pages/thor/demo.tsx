@@ -35,10 +35,10 @@ const industryData = [
     Title: "THOR for Healthcare",
     Logo: industryIcon3,
   },
-  {
-    Title: "THOR for CX",
-    Logo: industryIcon3,
-  },
+  // {
+  //   Title: "THOR for CX",
+  //   Logo: industryIcon3,
+  // },
 ];
 
 const chatSectionData = {
