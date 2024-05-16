@@ -19,6 +19,7 @@ import {
 import {
   About,
   GallerySection,
+  Highlight,
   RelatedPortfolio,
   TagSection,
 } from "../layouts/design-portfolio-detail";
@@ -53,6 +54,11 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
         sliderRightImg={
           data[currentLang]?.GallerySection?.SliderRightImg?.localFile?.url
         }
+        showSlider={data[currentLang]?.showSlider}
+      />
+      <Highlight
+        title={data[currentLang]?.HighlightSectionTitle}
+        carouselData={data[currentLang]?.HighlightCarousel?.Images}
       />
       <TagSection data={data[currentLang]?.BannerWithTagSection} />
       <RelatedPortfolio
@@ -174,6 +180,17 @@ export const query = graphql`
           }
         }
       }
+      HighlightSectionTitle
+      HighlightSectionDescription
+      HighlightCarousel {
+        Images {
+          localFile {
+            url
+          }
+          alternativeText
+        }
+      }
+      showSlider
     }
     enBottomBanner: strapiDesignPortfolioListing(locale: { eq: "en" }) {
       BottomBanner {

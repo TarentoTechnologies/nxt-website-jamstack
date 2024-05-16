@@ -4,14 +4,16 @@ import { SplitSlider } from "./SplitSlider";
 
 interface GallerySectionProps {
   imageList: any;
-  sliderLeftImg: any;
-  sliderRightImg: any;
+  sliderLeftImg?: any;
+  sliderRightImg?: any;
+  showSlider?: boolean;
 }
 
 export const GallerySection = ({
   imageList,
   sliderLeftImg,
   sliderRightImg,
+  showSlider = false,
 }: GallerySectionProps) => {
   //   const image: any = getImage(imageList);
 
@@ -38,12 +40,14 @@ export const GallerySection = ({
               </div>
             );
           })}
-          <div className="col-12 mt-4 mb-5">
-            <SplitSlider leftImg={sliderLeftImg} rightImg={sliderRightImg} />
-          </div>
+          {showSlider && (
+            <div className="col-12 mt-4 mb-5">
+              <SplitSlider leftImg={sliderLeftImg} rightImg={sliderRightImg} />
+            </div>
+          )}
           {imageList?.slice(2, 4)?.map((listData: any, index: number) => {
             return (
-              <div key={index} className={`col-sm-12 col-lg-6 pb-4`}>
+              <div key={index} className={`col-sm-12 col-lg-6 pb-5 mb-4`}>
                 {/* <GatsbyImage
                   image={listData?.Image?.localFile?.url}
                   alt={listData?.alternativeText}
