@@ -9,7 +9,7 @@ import {
 
 interface HighlightProps {
   title: string;
-  desc: string;
+  desc?: string;
   carouselData: any[];
 }
 
