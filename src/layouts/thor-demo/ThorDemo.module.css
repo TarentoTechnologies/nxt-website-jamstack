@@ -330,6 +330,7 @@
   font-size: 1rem;
   max-width: 70%;
   word-break: break-word;
+  margin-bottom: 0;
 }
 
 .userMsgLight {
@@ -342,6 +343,7 @@
   font-size: 1rem;
   max-width: 70%;
   word-break: break-word;
+  margin-bottom: 0;
 }
 
 .botMsgDark {
@@ -399,6 +401,45 @@
 .botTyping .bounce2 {
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
+}
+
+.customCardDark {
+  background-color: #2c1b3a;
+  border: 1px solid #542879;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 0.5rem;
+}
+
+.customCardLight {
+  background-color: #efefef;
+  border: 1px solid #d1cfd3;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 0.5rem;
+}
+
+.viewMoreBtnDark {
+  background-color: #633d81;
+  border: 1px solid #542879;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: fit-content;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.viewMoreBtnLight {
+  background-color: #a56ee7;
+  border: 1px solid #b87aeb;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: fit-content;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1rem;
 }
 
 @-webkit-keyframes pullUp {
