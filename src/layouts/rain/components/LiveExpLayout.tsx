@@ -9,12 +9,14 @@ interface LiveExpLayoutProps {
   title: string;
   description: string;
   cardList: any;
+  isThorPage?: boolean;
 }
 
 export const LiveExpLayout = ({
   title,
   description,
   cardList,
+  isThorPage = false,
 }: LiveExpLayoutProps) => {
   return (
     <div
@@ -34,6 +36,7 @@ export const LiveExpLayout = ({
               ctaLabel={card?.CTAText}
               ctaLink={card?.CTALink}
               isCTAExternal={card?.isCTAExternal}
+              isThorPage={isThorPage}
             />
           ))}
         </div>
