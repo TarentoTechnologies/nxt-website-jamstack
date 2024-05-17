@@ -244,50 +244,6 @@ export const query = graphql`
         }
       }
     }
-    enAgencyPortfolios: allStrapiAgencyPortfolio(
-      filter: { locale: { eq: "en" } }
-      sort: { updatedAt: DESC }
-      limit: 3
-    ) {
-      nodes {
-        PortfolioTag
-        HeroBanner {
-          id
-          Title
-          Image {
-            alternativeText
-            localFile {
-              childImageSharp {
-                gatsbyImageData(formats: PNG, placeholder: BLURRED)
-              }
-            }
-          }
-          Desc {
-            data {
-              childMarkdownRemark {
-                html
-              }
-            }
-          }
-          BreadCrumbLink
-          BreadCrumbLabel
-          withBreadCrumbs
-          isListingPage
-          isAgencyDetail
-        }
-        id
-        Slug
-        CTATextForDisplay
-        Logo {
-          alternativeText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(formats: PNG, placeholder: BLURRED)
-            }
-          }
-        }
-      }
-    }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
       id
       Footer {
@@ -344,6 +300,266 @@ export const query = graphql`
     }
   }
 `;
+
+// export const query = graphql`
+//   query HomePage {
+//     en: strapiHome(locale: { eq: "en" }) {
+//       HeroBanner {
+//         PrimaryImage {
+//           alternativeText
+//           caption
+//           id
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryImage {
+//           alternativeText
+//           caption
+//           id
+//           localFile {
+//             url
+//           }
+//         }
+//       }
+//       TriCards {
+//         id
+//         Title
+//         Icon {
+//           localFile {
+//             url
+//           }
+//         }
+//         CTALink
+//         BackgroundColor
+//       }
+//       PyramidTitle
+//       PyramidDescription
+//       PyramidImage {
+//         localFile {
+//           url
+//         }
+//       }
+//       PyramidCTAText
+//       PyramidCTALink
+//       ProgrammeSectionTitle
+//       AcceleratorCards {
+//         id
+//         Title
+//         Link
+//         Logo {
+//           localFile {
+//             url
+//           }
+//         }
+//         BackgroundImage {
+//           localFile {
+//             url
+//           }
+//         }
+//         customBgPosition
+//       }
+//       ProgrammeCards {
+//         id
+//         Title
+//         Image {
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//         Description
+//         CTAText
+//         CTALink
+//         isCTAExternal
+//       }
+//       HighlighterOneTitle
+//       HighlighterOneDescription
+//       HighlighterOneCTAText
+//       HighlighterOneCTALink
+//       HighlighterTwoTitle
+//       HighlighterTwoDescription
+//       HighlighterTwoCTAText
+//       HighlighterTwoCTALink
+//       CTA {
+//         id
+//         Title
+//         Description
+//         CTAText
+//         CTALink
+//       }
+//       BottomBanner {
+//         id
+//         Title
+//         BgImg {
+//           localFile {
+//             url
+//           }
+//         }
+//         CTAButton {
+//           Label
+//           Link
+//         }
+//         isCTAExternal
+//       }
+//       seo {
+//         metaTitle
+//         metaDescription
+//         canonicalURL
+//         metaViewport
+//         keywords
+//         metaImage {
+//           localFile {
+//             url
+//           }
+//         }
+//       }
+//     }
+//     enDesignPortfolios: allStrapiDesignPortfolio(
+//       filter: { locale: { eq: "en" } }
+//       sort: { updatedAt: DESC }
+//       limit: 3
+//     ) {
+//       nodes {
+//         PortfolioTag
+//         HeroBanner {
+//           id
+//           Title
+//           Image {
+//             alternativeText
+//             localFile {
+//               childImageSharp {
+//                 gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//               }
+//             }
+//           }
+//           Desc {
+//             data {
+//               childMarkdownRemark {
+//                 html
+//               }
+//             }
+//           }
+//           BreadCrumbLink
+//           BreadCrumbLabel
+//           withBreadCrumbs
+//           isListingPage
+//           isAgencyDetail
+//         }
+//         id
+//         Slug
+//         CTATextForDisplay
+//         Logo {
+//           alternativeText
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//       }
+//     }
+//     enAgencyPortfolios: allStrapiAgencyPortfolio(
+//       filter: { locale: { eq: "en" } }
+//       sort: { updatedAt: DESC }
+//       limit: 3
+//     ) {
+//       nodes {
+//         PortfolioTag
+//         HeroBanner {
+//           id
+//           Title
+//           Image {
+//             alternativeText
+//             localFile {
+//               childImageSharp {
+//                 gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//               }
+//             }
+//           }
+//           Desc {
+//             data {
+//               childMarkdownRemark {
+//                 html
+//               }
+//             }
+//           }
+//           BreadCrumbLink
+//           BreadCrumbLabel
+//           withBreadCrumbs
+//           isListingPage
+//           isAgencyDetail
+//         }
+//         id
+//         Slug
+//         CTATextForDisplay
+//         Logo {
+//           alternativeText
+//           localFile {
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
+//             }
+//           }
+//         }
+//       }
+//     }
+//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
+//       id
+//       Footer {
+//         id
+//         PrimaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         SecondaryLogo {
+//           alternativeText
+//           caption
+//           localFile {
+//             url
+//           }
+//         }
+//         PrimaryDescription {
+//           data {
+//             childMarkdownRemark {
+//               html
+//             }
+//           }
+//         }
+//         PrimaryLevelOneHeading
+//         PrimaryLevelOneList {
+//           id
+//           Label
+//           Link
+//         }
+//         PrimaryLevelTwoHeading
+//         PrimaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelOneHeading
+//         SecondaryLevelOneList {
+//           id
+//           Link
+//           Label
+//         }
+//         SecondaryLevelTwoHeading
+//         SecondaryLevelTwoList {
+//           id
+//           Link
+//           Label
+//         }
+//         Copyright
+//         PrimaryLogoLink
+//         SecondaryLogoLink
+//       }
+//     }
+//   }
+// `;
 
 export default IndexPage;
 
