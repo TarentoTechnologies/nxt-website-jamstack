@@ -80,7 +80,7 @@ export const createPages = async function ({ actions, graphql }: any) {
   //   }
   // `);
 
-  // For design portfolio details
+//   // For design portfolio details
   data.allStrapiDesignPortfolio.nodes.forEach((node: any) => {
     const slug = node.Slug;
     if (slug !== null) {
