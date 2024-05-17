@@ -3587,6 +3587,7 @@ type Query_strapiDesignPortfolioArgs = {
   locale: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   publishedAt: InputMaybe<DateQueryOperatorInput>;
+  showSlider: InputMaybe<BooleanQueryOperatorInput>;
   strapi_id: InputMaybe<IntQueryOperatorInput>;
   updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
@@ -5399,6 +5400,7 @@ type STRAPI_DESIGN_PORTFOLIO = Node & {
   readonly locale: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
   readonly publishedAt: Maybe<Scalars['Date']>;
+  readonly showSlider: Maybe<Scalars['Boolean']>;
   readonly strapi_id: Maybe<Scalars['Int']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
 };
@@ -5494,6 +5496,7 @@ type STRAPI_DESIGN_PORTFOLIOFieldSelector = {
   readonly locale: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly publishedAt: InputMaybe<FieldSelectorEnum>;
+  readonly showSlider: InputMaybe<FieldSelectorEnum>;
   readonly strapi_id: InputMaybe<FieldSelectorEnum>;
   readonly updatedAt: InputMaybe<FieldSelectorEnum>;
 };
@@ -5520,6 +5523,7 @@ type STRAPI_DESIGN_PORTFOLIOFilterInput = {
   readonly locale: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly showSlider: InputMaybe<BooleanQueryOperatorInput>;
   readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
   readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
@@ -5587,6 +5591,7 @@ type STRAPI_DESIGN_PORTFOLIOSortInput = {
   readonly locale: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly publishedAt: InputMaybe<SortOrderEnum>;
+  readonly showSlider: InputMaybe<SortOrderEnum>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
   readonly updatedAt: InputMaybe<SortOrderEnum>;
 };
