@@ -51,9 +51,9 @@ export const createPages = async function ({ actions, graphql }: any) {
   const designPortfolioDetail = path.resolve(
     `./src/templates/DesignPortfolioDetail.tsx`
   );
-  const agencyPortfolioDetail = path.resolve(
-    `./src/templates/AgencyPortfolioDetail.tsx`
-  );
+  // const agencyPortfolioDetail = path.resolve(
+  //   `./src/templates/AgencyPortfolioDetail.tsx`
+  // );
 
   const { data } = await graphql(`
     query PortfolioDetails {
@@ -62,13 +62,23 @@ export const createPages = async function ({ actions, graphql }: any) {
           Slug
         }
       }
-      allStrapiAgencyPortfolio {
-        nodes {
-          Slug
-        }
-      }
     }
   `);
+
+  // const { data } = await graphql(`
+  //   query PortfolioDetails {
+  //     allStrapiDesignPortfolio {
+  //       nodes {
+  //         Slug
+  //       }
+  //     }
+  //     allStrapiAgencyPortfolio {
+  //       nodes {
+  //         Slug
+  //       }
+  //     }
+  //   }
+  // `);
 
   // For design portfolio details
   data.allStrapiDesignPortfolio.nodes.forEach((node: any) => {
@@ -83,14 +93,14 @@ export const createPages = async function ({ actions, graphql }: any) {
   });
 
   // For agency portfolio details
-  data.allStrapiAgencyPortfolio.nodes.forEach((node: any) => {
-    const slug = node.Slug;
-    if (slug !== null) {
-      actions.createPage({
-        path: `/agency-portfolio/${slug}`,
-        component: path.resolve(agencyPortfolioDetail),
-        context: { slug: slug },
-      });
-    }
-  });
+  // data.allStrapiAgencyPortfolio.nodes.forEach((node: any) => {
+  //   const slug = node.Slug;
+  //   if (slug !== null) {
+  //     actions.createPage({
+  //       path: `/agency-portfolio/${slug}`,
+  //       component: path.resolve(agencyPortfolioDetail),
+  //       context: { slug: slug },
+  //     });
+  //   }
+  // });
 };
