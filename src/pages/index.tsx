@@ -61,21 +61,21 @@ const IndexPage: React.FC<PageProps> = ({ data }: IndexPageProps) => {
           ctaLink={data[currentLang]?.HighlighterOneCTALink}
           agencyPortfolioData={data[currentAgencyPortfolio]?.nodes}
         /> */}
-        {/* <DesignPortfolio
+        <DesignPortfolio
           title={data[currentLang]?.HighlighterTwoTitle}
           description={data[currentLang]?.HighlighterTwoDescription}
           ctaText={data[currentLang]?.HighlighterTwoCTAText}
           ctaLink={data[currentLang]?.HighlighterTwoCTALink}
           designPortfolioData={data[currentDesignPortfolio]?.nodes}
-        /> */}
-        <CTALayout data={data[currentLang]?.CTA} />
-        {/* <BannerWithCTA
+        />
+        {/* <CTALayout data={data[currentLang]?.CTA} /> */}
+        <BannerWithCTA
           title={data[currentLang]?.BottomBanner?.Title}
           bgImg={data[currentLang]?.BottomBanner?.BgImg?.localFile?.url}
           CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
           CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
           isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
-        /> */}
+        />
       </section>
       <FooterSection
         id={data[currentFooterSection]?.id}
@@ -173,6 +173,20 @@ export const query = graphql`
         CTAText
         CTALink
       }
+      BottomBanner {
+        id
+        Title
+        BgImg {
+          localFile {
+            url
+          }
+        }
+        CTAButton {
+          Label
+          Link
+        }
+        isCTAExternal
+      }
       seo {
         metaTitle
         metaDescription
@@ -182,6 +196,50 @@ export const query = graphql`
         metaImage {
           localFile {
             url
+          }
+        }
+      }
+    }
+    enDesignPortfolios: allStrapiDesignPortfolio(
+      filter: { locale: { eq: "en" } }
+      sort: { updatedAt: DESC }
+      limit: 3
+    ) {
+      nodes {
+        PortfolioTag
+        HeroBanner {
+          id
+          Title
+          Image {
+            alternativeText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(formats: PNG, placeholder: BLURRED)
+              }
+            }
+          }
+          Desc {
+            data {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
+          BreadCrumbLink
+          BreadCrumbLabel
+          withBreadCrumbs
+          isListingPage
+          isAgencyDetail
+        }
+        id
+        Slug
+        CTATextForDisplay
+        Logo {
+          alternativeText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
           }
         }
       }

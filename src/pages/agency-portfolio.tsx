@@ -57,7 +57,7 @@ const AgencyPortfolio: React.FC<PageProps> = ({
       </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       {/* <HeroBanner heroBannerData={data[currentLang]?.HeroBanner} /> */}
-      {/* <HeroBanner heroBannerData={data[currentLang]?.HeroBanner} isImg />
+      {/*<HeroBanner heroBannerData={data[currentLang]?.HeroBanner} isImg />
       <section id="agencyPortfolioMain">
         <Showcase
           sectionTitle={data[currentLang]?.SectionOneTitle}
@@ -80,7 +80,7 @@ const AgencyPortfolio: React.FC<PageProps> = ({
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
-      /> */}
+  />*/}
     </main>
   );
 };
