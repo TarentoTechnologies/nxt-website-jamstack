@@ -93,27 +93,27 @@ const THORDemoPage: React.FC<PageProps> = ({ data }: THORDemoPageProps) => {
   );
 };
 
-// export const query = graphql`
-//   query RAINDemoApp {
-//     en: strapiDemoApp(locale: { eq: "en" }, Slug: { eq: "RAIN-demo" }) {
-//       id
-//       Slug
-//       AppURL
-//       seo {
-//         metaTitle
-//         metaDescription
-//         canonicalURL
-//         metaViewport
-//         keywords
-//         metaImage {
-//           localFile {
-//             url
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query THORDemoApp {
+    en: strapiDemoApp(locale: { eq: "en" }, Slug: { eq: "THOR-demo" }) {
+      id
+      Slug
+      AppURL
+      seo {
+        metaTitle
+        metaDescription
+        canonicalURL
+        metaViewport
+        keywords
+        metaImage {
+          localFile {
+            url
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default THORDemoPage;
 

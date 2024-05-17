@@ -175,8 +175,8 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
       try {
         const response = await fetch(
           formattedIndustry === "Thor-CX"
-            ? "https://9cf0-36-255-86-45.ngrok-free.app/faq"
-            : "https://thor-console.tarento.com/interactiverouter/user",
+            ? `${process.env.GATSBY_THOR_NGROK_URL}`
+            : `${process.env.GATSBY_THOR_URL}`,
           formattedIndustry === "Thor-CX"
             ? {
                 method: "POST",
