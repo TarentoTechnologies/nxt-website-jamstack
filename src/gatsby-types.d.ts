@@ -1584,7 +1584,9 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
+  readonly allStrapiAgencyPortfolio: STRAPI_AGENCY_PORTFOLIOConnection;
   readonly allStrapiAgencyPortfolioListing: STRAPI_AGENCY_PORTFOLIO_LISTINGConnection;
+  readonly allStrapiAgencyPortfolioResultdescriptionTextnode: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEConnection;
   readonly allStrapiAurora: STRAPI_AURORAConnection;
   readonly allStrapiComponentAcceleratorCardAcceleratorCard: STRAPI__COMPONENT_ACCELERATOR_CARD_ACCELERATOR_CARDConnection;
   readonly allStrapiComponentAcceleratorHeroBannerAcceleratorHeroBanner: STRAPI__COMPONENT_ACCELERATOR_HERO_BANNER_ACCELERATOR_HERO_BANNERConnection;
@@ -1671,7 +1673,9 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
+  readonly strapiAgencyPortfolio: Maybe<STRAPI_AGENCY_PORTFOLIO>;
   readonly strapiAgencyPortfolioListing: Maybe<STRAPI_AGENCY_PORTFOLIO_LISTING>;
+  readonly strapiAgencyPortfolioResultdescriptionTextnode: Maybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODE>;
   readonly strapiAurora: Maybe<STRAPI_AURORA>;
   readonly strapiComponentAcceleratorCardAcceleratorCard: Maybe<STRAPI__COMPONENT_ACCELERATOR_CARD_ACCELERATOR_CARD>;
   readonly strapiComponentAcceleratorHeroBannerAcceleratorHeroBanner: Maybe<STRAPI__COMPONENT_ACCELERATOR_HERO_BANNER_ACCELERATOR_HERO_BANNER>;
@@ -1824,11 +1828,27 @@ type Query_allSitePluginArgs = {
 };
 
 
+type Query_allStrapiAgencyPortfolioArgs = {
+  filter: InputMaybe<STRAPI_AGENCY_PORTFOLIOFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_AGENCY_PORTFOLIOSortInput>>>;
+};
+
+
 type Query_allStrapiAgencyPortfolioListingArgs = {
   filter: InputMaybe<STRAPI_AGENCY_PORTFOLIO_LISTINGFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_AGENCY_PORTFOLIO_LISTINGSortInput>>>;
+};
+
+
+type Query_allStrapiAgencyPortfolioResultdescriptionTextnodeArgs = {
+  filter: InputMaybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODESortInput>>>;
 };
 
 
@@ -2636,6 +2656,34 @@ type Query_sitePluginArgs = {
 };
 
 
+type Query_strapiAgencyPortfolioArgs = {
+  AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTFilterInput>;
+  CTATextForDisplay: InputMaybe<StringQueryOperatorInput>;
+  HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
+  HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
+  HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
+  HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterListInput>;
+  Logo: InputMaybe<STRAPI__MEDIAFilterInput>;
+  PortfolioTag: InputMaybe<StringQueryOperatorInput>;
+  RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFilterListInput>;
+  ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionFilterInput>;
+  ResultTitle: InputMaybe<StringQueryOperatorInput>;
+  SectionFourTitle: InputMaybe<StringQueryOperatorInput>;
+  ShowcasePost: InputMaybe<BooleanQueryOperatorInput>;
+  Slug: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  createdAt: InputMaybe<DateQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  locale: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  publishedAt: InputMaybe<DateQueryOperatorInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
+  updatedAt: InputMaybe<DateQueryOperatorInput>;
+};
+
+
 type Query_strapiAgencyPortfolioListingArgs = {
   BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   CTA: InputMaybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARYFilterInput>;
@@ -2652,6 +2700,17 @@ type Query_strapiAgencyPortfolioListingArgs = {
   publishedAt: InputMaybe<DateQueryOperatorInput>;
   strapi_id: InputMaybe<IntQueryOperatorInput>;
   updatedAt: InputMaybe<DateQueryOperatorInput>;
+};
+
+
+type Query_strapiAgencyPortfolioResultdescriptionTextnodeArgs = {
+  ResultDescription: InputMaybe<StringQueryOperatorInput>;
+  childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
 };
 
 
@@ -3833,6 +3892,240 @@ type Query_strapiThorArgs = {
   updatedAt: InputMaybe<DateQueryOperatorInput>;
 };
 
+type STRAPI_AGENCY_PORTFOLIO = Node & {
+  readonly AboutSection: Maybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUT>;
+  readonly CTATextForDisplay: Maybe<Scalars['String']>;
+  readonly HeroBanner: Maybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2>;
+  readonly HighlightCarousel: Maybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSEL>;
+  readonly HighlightSectionDescription: Maybe<Scalars['String']>;
+  readonly HighlightSectionTitle: Maybe<Scalars['String']>;
+  readonly KeyInformation: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARD>>>;
+  readonly Logo: Maybe<STRAPI__MEDIA>;
+  readonly PortfolioTag: Maybe<Scalars['String']>;
+  readonly RelatedPortfolios: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARD>>>;
+  readonly ResultDescription: Maybe<STRAPI_AGENCY_PORTFOLIOResultDescription>;
+  readonly ResultTitle: Maybe<Scalars['String']>;
+  readonly SectionFourTitle: Maybe<Scalars['String']>;
+  readonly ShowcasePost: Maybe<Scalars['Boolean']>;
+  readonly Slug: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly createdAt: Maybe<Scalars['Date']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly locale: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly publishedAt: Maybe<Scalars['Date']>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+  readonly updatedAt: Maybe<Scalars['Date']>;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_createdAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_publishedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_updatedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type STRAPI_AGENCY_PORTFOLIOConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_AGENCY_PORTFOLIOEdge>;
+  readonly group: ReadonlyArray<STRAPI_AGENCY_PORTFOLIOGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_AGENCY_PORTFOLIO>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOConnection_distinctArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOConnection_groupArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOConnection_maxArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOConnection_minArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOConnection_sumArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+};
+
+type STRAPI_AGENCY_PORTFOLIOEdge = {
+  readonly next: Maybe<STRAPI_AGENCY_PORTFOLIO>;
+  readonly node: STRAPI_AGENCY_PORTFOLIO;
+  readonly previous: Maybe<STRAPI_AGENCY_PORTFOLIO>;
+};
+
+type STRAPI_AGENCY_PORTFOLIOFieldSelector = {
+  readonly AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTFieldSelector>;
+  readonly CTATextForDisplay: InputMaybe<FieldSelectorEnum>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FieldSelector>;
+  readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFieldSelector>;
+  readonly HighlightSectionDescription: InputMaybe<FieldSelectorEnum>;
+  readonly HighlightSectionTitle: InputMaybe<FieldSelectorEnum>;
+  readonly KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFieldSelector>;
+  readonly Logo: InputMaybe<STRAPI__MEDIAFieldSelector>;
+  readonly PortfolioTag: InputMaybe<FieldSelectorEnum>;
+  readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFieldSelector>;
+  readonly ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionFieldSelector>;
+  readonly ResultTitle: InputMaybe<FieldSelectorEnum>;
+  readonly SectionFourTitle: InputMaybe<FieldSelectorEnum>;
+  readonly ShowcasePost: InputMaybe<FieldSelectorEnum>;
+  readonly Slug: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly createdAt: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly locale: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly publishedAt: InputMaybe<FieldSelectorEnum>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+  readonly updatedAt: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI_AGENCY_PORTFOLIOFilterInput = {
+  readonly AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTFilterInput>;
+  readonly CTATextForDisplay: InputMaybe<StringQueryOperatorInput>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2FilterInput>;
+  readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELFilterInput>;
+  readonly HighlightSectionDescription: InputMaybe<StringQueryOperatorInput>;
+  readonly HighlightSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDFilterListInput>;
+  readonly Logo: InputMaybe<STRAPI__MEDIAFilterInput>;
+  readonly PortfolioTag: InputMaybe<StringQueryOperatorInput>;
+  readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDFilterListInput>;
+  readonly ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionFilterInput>;
+  readonly ResultTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly SectionFourTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly ShowcasePost: InputMaybe<BooleanQueryOperatorInput>;
+  readonly Slug: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly createdAt: InputMaybe<DateQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly locale: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+  readonly updatedAt: InputMaybe<DateQueryOperatorInput>;
+};
+
+type STRAPI_AGENCY_PORTFOLIOGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_AGENCY_PORTFOLIOEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI_AGENCY_PORTFOLIOGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_AGENCY_PORTFOLIO>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOGroupConnection_distinctArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOGroupConnection_groupArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOGroupConnection_maxArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOGroupConnection_minArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIOGroupConnection_sumArgs = {
+  field: STRAPI_AGENCY_PORTFOLIOFieldSelector;
+};
+
+type STRAPI_AGENCY_PORTFOLIOResultDescription = {
+  readonly data: Maybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI_AGENCY_PORTFOLIOResultDescriptionFieldSelector = {
+  readonly data: InputMaybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector>;
+};
+
+type STRAPI_AGENCY_PORTFOLIOResultDescriptionFilterInput = {
+  readonly data: InputMaybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFilterInput>;
+};
+
+type STRAPI_AGENCY_PORTFOLIOResultDescriptionSortInput = {
+  readonly data: InputMaybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODESortInput>;
+};
+
+type STRAPI_AGENCY_PORTFOLIOSortInput = {
+  readonly AboutSection: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_ABOUT_PORTFOLIO_ABOUTSortInput>;
+  readonly CTATextForDisplay: InputMaybe<SortOrderEnum>;
+  readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_HERO_V_2_PORTFOLIO_HERO_BANNER_V_2SortInput>;
+  readonly HighlightCarousel: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_CAROUSEL_PORTFOLIO_CAROUSELSortInput>;
+  readonly HighlightSectionDescription: InputMaybe<SortOrderEnum>;
+  readonly HighlightSectionTitle: InputMaybe<SortOrderEnum>;
+  readonly KeyInformation: InputMaybe<STRAPI__COMPONENT_KEY_INFORMATION_CARD_KEY_INFORMATION_CARDSortInput>;
+  readonly Logo: InputMaybe<STRAPI__MEDIASortInput>;
+  readonly PortfolioTag: InputMaybe<SortOrderEnum>;
+  readonly RelatedPortfolios: InputMaybe<STRAPI__COMPONENT_PORTFOLIO_LISTING_CARD_PORTFOLIO_LISTING_CARDSortInput>;
+  readonly ResultDescription: InputMaybe<STRAPI_AGENCY_PORTFOLIOResultDescriptionSortInput>;
+  readonly ResultTitle: InputMaybe<SortOrderEnum>;
+  readonly SectionFourTitle: InputMaybe<SortOrderEnum>;
+  readonly ShowcasePost: InputMaybe<SortOrderEnum>;
+  readonly Slug: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly createdAt: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly locale: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly publishedAt: InputMaybe<SortOrderEnum>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
+  readonly updatedAt: InputMaybe<SortOrderEnum>;
+};
+
 type STRAPI_AGENCY_PORTFOLIO_LISTING = Node & {
   readonly BottomBanner: Maybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTA>;
   readonly CTA: Maybe<STRAPI__COMPONENT_CTA_CARD_PRIMARY_CTA_CARD_PRIMARY>;
@@ -4013,6 +4306,134 @@ type STRAPI_AGENCY_PORTFOLIO_LISTINGSortInput = {
   readonly publishedAt: InputMaybe<SortOrderEnum>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
   readonly updatedAt: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODE = Node & {
+  readonly ResultDescription: Maybe<Scalars['String']>;
+  /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
+  readonly childMarkdownRemark: Maybe<MarkdownRemark>;
+  readonly children: ReadonlyArray<Node>;
+  /** Returns all children nodes filtered by type MarkdownRemark */
+  readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+};
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEEdge>;
+  readonly group: ReadonlyArray<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEConnection_distinctArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEConnection_groupArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEConnection_maxArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEConnection_minArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEConnection_sumArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+};
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEEdge = {
+  readonly next: Maybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODE>;
+  readonly node: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODE;
+  readonly previous: Maybe<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector = {
+  readonly ResultDescription: InputMaybe<FieldSelectorEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+};
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFilterInput = {
+  readonly ResultDescription: InputMaybe<StringQueryOperatorInput>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEGroupConnection_distinctArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEGroupConnection_groupArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEGroupConnection_maxArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEGroupConnection_minArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEGroupConnection_sumArgs = {
+  field: STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODEFieldSelector;
+};
+
+type STRAPI_AGENCY_PORTFOLIO_RESULTDESCRIPTION_TEXTNODESortInput = {
+  readonly ResultDescription: InputMaybe<SortOrderEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
 };
 
 type STRAPI_AURORA = Node & {
@@ -16828,7 +17249,7 @@ type DataPlatformQuery = { readonly en: { readonly InsightSectionTitle: string |
 type DesignPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type DesignPageQuery = { readonly en: { readonly ProcessTitle: string | null, readonly ProcessDescription: string | null, readonly HeroBanner: { readonly id: string, readonly withLogo: boolean | null, readonly isImage: boolean | null, readonly Title: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Img: { readonly localFile: { readonly url: string | null, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly DesignProcess: ReadonlyArray<{ readonly Title: string | null, readonly id: string, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly KeyInformation: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Image: { readonly alternativeText: string | null, readonly id: string, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly seo: { readonly metaTitle: string | null, readonly metaDescription: string | null, readonly canonicalURL: string | null, readonly metaViewport: string | null, readonly keywords: string | null, readonly metaImage: { readonly localFile: { readonly url: string | null } | null } | null } | null } | null, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
+type DesignPageQuery = { readonly en: { readonly ProcessTitle: string | null, readonly ProcessDescription: string | null, readonly HeroBanner: { readonly id: string, readonly withLogo: boolean | null, readonly isImage: boolean | null, readonly Title: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Img: { readonly localFile: { readonly url: string | null, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly DesignProcess: ReadonlyArray<{ readonly Title: string | null, readonly id: string, readonly Image: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null } | null> | null, readonly KeyInformation: ReadonlyArray<{ readonly id: string, readonly Title: string | null, readonly DescriptionAlignment: string | null, readonly Description: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly Image: { readonly alternativeText: string | null, readonly id: string, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null> | null, readonly seo: { readonly metaTitle: string | null, readonly metaDescription: string | null, readonly canonicalURL: string | null, readonly metaViewport: string | null, readonly keywords: string | null, readonly metaImage: { readonly localFile: { readonly url: string | null } | null } | null } | null } | null, readonly enHome: { readonly HighlighterTwoTitle: string | null, readonly HighlighterTwoDescription: string | null, readonly HighlighterTwoCTAText: string | null, readonly HighlighterTwoCTALink: string | null } | null, readonly enDesignPortfolios: { readonly nodes: ReadonlyArray<{ readonly PortfolioTag: string | null, readonly id: string, readonly Slug: string | null, readonly CTATextForDisplay: string | null, readonly HeroBanner: { readonly id: string, readonly Title: string | null, readonly BreadCrumbLink: string | null, readonly BreadCrumbLabel: string | null, readonly withBreadCrumbs: boolean | null, readonly isListingPage: boolean | null, readonly isAgencyDetail: boolean | null, readonly Image: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly Desc: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null } | null, readonly Logo: { readonly alternativeText: string | null, readonly localFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null }> }, readonly enFooterSection: { readonly id: string, readonly Footer: { readonly id: string, readonly PrimaryLevelOneHeading: string | null, readonly PrimaryLevelTwoHeading: string | null, readonly SecondaryLevelOneHeading: string | null, readonly SecondaryLevelTwoHeading: string | null, readonly Copyright: string | null, readonly PrimaryLogoLink: string | null, readonly SecondaryLogoLink: string | null, readonly PrimaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly SecondaryLogo: { readonly alternativeText: string | null, readonly caption: string | null, readonly localFile: { readonly url: string | null } | null } | null, readonly PrimaryDescription: { readonly data: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null } | null, readonly PrimaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Label: string | null, readonly Link: string | null } | null> | null, readonly PrimaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelOneList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null, readonly SecondaryLevelTwoList: ReadonlyArray<{ readonly id: string, readonly Link: string | null, readonly Label: string | null } | null> | null } | null } | null };
 
 type DesignPortfolioQueryVariables = Exact<{
   slug: Scalars['String'];
