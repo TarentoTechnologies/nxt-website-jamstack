@@ -25,7 +25,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div className={`${theme === "dark" ? navbarDark : navbarLight} px-5`}>
+    <div className={`${theme === "dark" ? navbarDark : navbarLight}`}>
       <Link to="/thor">
         <div className={`d-flex align-items-center`}>
           <img src={ThorLogo} alt="Thor Logo" className="pe-2" />

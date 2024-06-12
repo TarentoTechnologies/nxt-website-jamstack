@@ -6,6 +6,7 @@ import sendBtn from "../../../../static/icons/send.png";
 import ThorLogo from "../../../../static/images/Thor-i-logo.png";
 import ThorBg from "../../../../static/images/ThorBg.png";
 import {
+  exampleQuestions,
   industrySelected,
   questionSelected,
   themeState,
@@ -29,6 +30,8 @@ import {
   chatSectionContainer,
   chatSectionDark,
   chatSectionLight,
+  clickableMsgDark,
+  clickableMsgLight,
   customCard,
   customCardDark,
   customCardLight,
@@ -36,11 +39,13 @@ import {
   featureCardDark,
   featureCardGrid,
   featureCardLight,
+  hamburgerMenu,
   initialChat,
   inputArea,
   pullUp1,
   sendButton,
   thorLogo,
+  thorLogoBg,
   userInputBoxDark,
   userInputBoxLight,
   userMsgDark,
@@ -97,6 +102,36 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     useRecoilState(industrySelected);
   const [formattedIndustry, setFormattedIndustry] = useState("");
   const [displayedItems, setDisplayedItems] = useState<number>(5);
+  const examples = useRecoilValue(exampleQuestions);
+
+  const isMobile = window.innerWidth <= 768;
+
+  useEffect(() => {
+    const storedMessages = sessionStorage.getItem(
+      `chatMessages-${formattedIndustry}`
+    );
+    if (storedMessages) {
+      setChatMessages(JSON.parse(storedMessages));
+      setShowInitialChat(false);
+    } else {
+      setChatMessages([]);
+      setShowInitialChat(true);
+    }
+  }, [formattedIndustry]);
+
+  useEffect(() => {
+    if (!showInitialChat) {
+      sessionStorage.setItem(
+        `chatMessages-${formattedIndustry}`,
+        JSON.stringify(chatMessages)
+      );
+    }
+    // sessionStorage.clear();
+  }, [chatMessages, showInitialChat]);
+
+  useEffect(() => {
+    sessionStorage.clear();
+  }, []);
 
   useEffect(() => {
     const terminalResultsDiv: HTMLElement | null =
@@ -109,6 +144,22 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
       userInput.focus();
     }
   }, [chatMessages, displayedItems]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (showInitialChat) {
+        const terminalResultsDiv: HTMLElement | null =
+          document.getElementById("initial-chat");
+        if (terminalResultsDiv) {
+          terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+        }
+      }
+    }, 650);
+  }, [selectedIndustry]);
+
+  // useEffect(() => {
+  //   setIsBotTyping(false);
+  // }, [selectedIndustry]);
 
   const handleInputChange = (event: any) => {
     setUserInput(event.target.value);
@@ -216,8 +267,6 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
               isClickable: false,
             };
           }
-          // console.log("Response data: ", responseData);
-          // console.log("Current Industry: ", formattedIndustry);
 
           if (formattedIndustry !== "Thor-CX") {
             // Check if the response contains HTML markup
@@ -232,8 +281,6 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
 
             if (responseData.res[0].data !== null) {
               botMessage.data = responseData.res[0].data;
-              // console.log("Res Data: ", responseData.res[0].data);
-              // console.log("Res Data type: ", typeof responseData.res[0].data);
             }
           }
 
@@ -269,7 +316,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
           {/* Initial Chat */}
           {showInitialChat && (
             <>
-              <div className={`${initialChat} ${fadeIn1}`}>
+              <div className={`${initialChat} ${fadeIn1}`} id="initial-chat">
                 <div className={`d-flex align-items-center ${thorLogo}`}>
                   <img
                     src={ThorLogo}
@@ -282,7 +329,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                     THOR
                   </span>
                 </div>
-                <div className={`my-4`}>
+                <div className={`${thorLogoBg} my-4`}>
                   <img src={ThorBg} alt="Thor" width={120} height={120} />
                 </div>
                 <div
@@ -299,27 +346,27 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                 >
                   {data?.text2}
                 </div>
-                {/* <div className={`${featureCardGrid} pt-3`}>
-                  {data?.cardData?.map((item: any, index: number) => (
-                    <div
-                      key={index}
-                      className={`${
-                        theme === "dark" ? featureCardDark : featureCardLight
-                      }`}
-                    >
-                      <div className={`d-flex justify-content-center pb-2`}>
-                        <img src={item?.ImgSrc} alt={item?.Title} />
-                      </div>
+                {isMobile && examples && (
+                  <div className={`mt-4 ${pullUp1}`}>
+                    {examples.map((example, index) => (
                       <div
-                        className={`${thorFeatureCard} text-center ${
-                          theme === "dark" ? "text-white" : ""
-                        }`}
+                        key={index}
+                        className={`mb-2`}
+                        onClick={() => handleMessageSend(example)}
                       >
-                        {item?.Title}
+                        <p
+                          className={`${
+                            theme === "dark"
+                              ? clickableMsgDark
+                              : clickableMsgLight
+                          }`}
+                        >
+                          {example}
+                        </p>
                       </div>
-                    </div>
-                  ))}
-                </div> */}
+                    ))}
+                  </div>
+                )}
               </div>
             </>
           )}
@@ -351,6 +398,11 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                       className={`${
                         theme === "dark" ? botMsgDark : botMsgLight
                       }`}
+                      // onClick={() => {
+                      //   if (message.isClickable) {
+                      //     handleMessageSend(message.text);
+                      //   }
+                      // }}
                     >
                       <span>{message.text}</span>
                       {message.data !== null && (
@@ -453,7 +505,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
             role="button"
             onClick={() => handleUserInputSubmission()}
           >
-            <img src={sendBtn} alt="send" />
+            <img src={sendBtn} alt="Send button" />
           </div>
         </div>
         <div
@@ -462,7 +514,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
           } ms-2`}
           role="button"
         >
-          <img src={audioBtn} alt="send" />
+          <img src={audioBtn} alt="Audio input button" />
         </div>
       </div>
     </div>
