@@ -182,7 +182,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
         }
       }
     }, 650);
-  }, [selectedIndustry]);
+  }, [selectedIndustry, chatMessages]);
 
   const handleInputChange = (event: any) => {
     setUserInput(event.target.value);
