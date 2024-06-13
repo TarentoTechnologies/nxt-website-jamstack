@@ -11,14 +11,11 @@ import {
   questionSelected,
   themeState,
 } from "../../../states/atoms";
+import { thorSubtext } from "../../../styles/style-guide/Typography.module.css";
 import {
-  thorFeatureCard,
-  thorSubtext,
-} from "../../../styles/style-guide/Typography.module.css";
-import {
+  activeBtn,
   audioButtonDark,
   audioButtonLight,
-  botMsg,
   botMsgDark,
   botMsgLight,
   botTyping,
@@ -32,17 +29,13 @@ import {
   chatSectionLight,
   clickableMsgDark,
   clickableMsgLight,
-  customCard,
   customCardDark,
   customCardLight,
   fadeIn1,
-  featureCardDark,
-  featureCardGrid,
-  featureCardLight,
-  hamburgerMenu,
   initialChat,
   inputArea,
   pullUp1,
+  recording,
   sendButton,
   thorLogo,
   thorLogoBg,
@@ -102,9 +95,44 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     useRecoilState(industrySelected);
   const [formattedIndustry, setFormattedIndustry] = useState("");
   const [displayedItems, setDisplayedItems] = useState<number>(5);
+  const [isRecording, setIsRecording] = useState(false);
   const examples = useRecoilValue(exampleQuestions);
 
   const isMobile = window.innerWidth <= 768;
+
+  let recognition: any;
+
+  if (typeof window !== "undefined") {
+    const SpeechRecognition =
+      (window as any).SpeechRecognition ||
+      (window as any).webkitSpeechRecognition;
+    recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+    recognition.lang = "en-US";
+  }
+
+  const startRecording = () => {
+    setIsRecording(true);
+    recognition.start();
+
+    recognition.onresult = (event: any) => {
+      const isFinal = event.results[0].isFinal;
+      if (isFinal) {
+        const speechToText = event.results[0][0].transcript;
+        handleMessageSend(speechToText);
+        setIsRecording(false);
+      }
+    };
+
+    recognition.onerror = (event: any) => {
+      console.error("Speech recognition error:", event.error);
+      setIsRecording(false);
+    };
+
+    recognition.onend = () => {
+      setIsRecording(false);
+    };
+  };
 
   useEffect(() => {
     const storedMessages = sessionStorage.getItem(
@@ -126,7 +154,6 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
         JSON.stringify(chatMessages)
       );
     }
-    // sessionStorage.clear();
   }, [chatMessages, showInitialChat]);
 
   useEffect(() => {
@@ -157,17 +184,12 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     }, 650);
   }, [selectedIndustry]);
 
-  // useEffect(() => {
-  //   setIsBotTyping(false);
-  // }, [selectedIndustry]);
-
   const handleInputChange = (event: any) => {
     setUserInput(event.target.value);
   };
 
   const handleUserInputSubmission = (text = userInput.trim()) => {
     if (text !== "") {
-      // setShowInitialChat(false);
       handleMessageSend(text);
     }
   };
@@ -175,7 +197,6 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   useEffect(() => {
     switch (selectedIndustry) {
       case "THOR for Manufacturing":
-        // setSelectedIndustry("Thor-Manufacture");
         setFormattedIndustry("Thor-Manufacture");
         break;
       case "THOR for Retail":
@@ -398,11 +419,6 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                       className={`${
                         theme === "dark" ? botMsgDark : botMsgLight
                       }`}
-                      // onClick={() => {
-                      //   if (message.isClickable) {
-                      //     handleMessageSend(message.text);
-                      //   }
-                      // }}
                     >
                       <span>{message.text}</span>
                       {message.data !== null && (
@@ -511,12 +527,14 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
         <div
           className={`${
             theme === "dark" ? audioButtonDark : audioButtonLight
-          } ms-2`}
+          } ${isRecording ? activeBtn : ""} ms-2`}
           role="button"
+          onClick={startRecording}
         >
           <img src={audioBtn} alt="Audio input button" />
         </div>
       </div>
+      {isRecording && <div className={`${recording}`}>Recording...</div>}
     </div>
   );
 };

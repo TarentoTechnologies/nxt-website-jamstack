@@ -566,6 +566,23 @@
   word-break: break-word;
 }
 
+.recording {
+  position: fixed;
+  bottom: 6.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.313rem;
+  z-index: 9999;
+  animation: fadeInOut 2s infinite;
+}
+
+.activeBtn {
+  background-color: #181bf5 !important;
+}
+
 /* ThorInteractive styles ends here  */
 
 /* Media queries starts here */
