@@ -1,7 +1,7 @@
 import * as OGL from "ogl";
 import { useEffect } from "react";
 
-import mapEffectImage from "../../../static/images/home/bg-2.jpg";
+import mapEffectImage from "../../../static/images/home/bg-3.jpg";
 import { violetGray } from "../../styles/style-guide/ColorGuide.module.css";
 import { heroSecondaryTitle } from "../../styles/style-guide/Typography.module.css";
 import {
@@ -18,7 +18,7 @@ interface HeroBannerFMEProps {
 
 export const HeroBannerFME = ({ data }: HeroBannerFMEProps) => {
   const oglRender = () => {
-    const imgSize = [8960, 1000];
+    const imgSize = [1160, 1000];
 
     const vertex = `
 					attribute vec2 uv;
