@@ -580,7 +580,8 @@
 }
 
 .activeBtn {
-  background-color: #181bf5 !important;
+  /* background-color: #181bf5 !important; */
+  background-color: red !important;
 }
 
 /* ThorInteractive styles ends here  */

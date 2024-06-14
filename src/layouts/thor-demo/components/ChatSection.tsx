@@ -96,9 +96,14 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   const [formattedIndustry, setFormattedIndustry] = useState("");
   const [displayedItems, setDisplayedItems] = useState<number>(5);
   const [isRecording, setIsRecording] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const examples = useRecoilValue(exampleQuestions);
 
-  const isMobile = window.innerWidth <= 768;
+  if (typeof window !== "undefined") {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    }
+  }
 
   let recognition: any;
 
