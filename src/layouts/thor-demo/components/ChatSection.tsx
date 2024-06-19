@@ -3,6 +3,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 
 import audioBtn from "../../../../static/icons/mic.png";
 import sendBtn from "../../../../static/icons/send.png";
+import stopBtn from "../../../../static/icons/stop_circle.png";
 import ThorLogo from "../../../../static/images/Thor-i-logo.png";
 import ThorBg from "../../../../static/images/ThorBg.png";
 import {
@@ -13,7 +14,6 @@ import {
 } from "../../../states/atoms";
 import { thorSubtext } from "../../../styles/style-guide/Typography.module.css";
 import {
-  activeBtn,
   audioButtonDark,
   audioButtonLight,
   botMsgDark,
@@ -99,11 +99,11 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   const [isMobile, setIsMobile] = useState(false);
   const examples = useRecoilValue(exampleQuestions);
 
-  if (typeof window !== "undefined") {
-    if (window.innerWidth <= 768) {
-      setIsMobile(true);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 768);
     }
-  }
+  }, []);
 
   let recognition: any;
 
@@ -112,8 +112,9 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
       (window as any).SpeechRecognition ||
       (window as any).webkitSpeechRecognition;
     recognition = new SpeechRecognition();
-    recognition.interimResults = true;
     recognition.lang = "en-US";
+    // recognition.interimResults = false;
+    // recognition.continous = true;
   }
 
   const startRecording = () => {
@@ -137,6 +138,20 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     recognition.onend = () => {
       setIsRecording(false);
     };
+  };
+
+  const cancelRecording = () => {
+    recognition.abort();
+    // recognition.stop();
+    setIsRecording(false);
+  };
+
+  const toggleRecording = () => {
+    if (!isRecording) {
+      startRecording();
+    } else {
+      cancelRecording();
+    }
   };
 
   useEffect(() => {
@@ -532,11 +547,15 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
         <div
           className={`${
             theme === "dark" ? audioButtonDark : audioButtonLight
-          } ${isRecording ? activeBtn : ""} ms-2`}
+          } ms-2`}
           role="button"
-          onClick={startRecording}
+          onClick={toggleRecording}
         >
-          <img src={audioBtn} alt="Audio input button" />
+          {isRecording ? (
+            <img src={stopBtn} alt="Audio stop button" />
+          ) : (
+            <img src={audioBtn} alt="Audio input button" />
+          )}
         </div>
       </div>
       {isRecording && <div className={`${recording}`}>Recording...</div>}

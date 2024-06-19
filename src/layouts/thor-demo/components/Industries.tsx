@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import React, { useState } from "react";
+import { useRecoilState } from "recoil";
 
 import menuDark from "../../../../static/icons/hamburger-dark.png";
 import menuLight from "../../../../static/icons/hamburger-light.png";
@@ -7,7 +7,6 @@ import { industrySelected, themeState } from "../../../states/atoms";
 import { thorSubtext } from "../../../styles/style-guide/Typography.module.css";
 import {
   activeIndustry,
-  closeButton,
   hamburgerMenu,
   hamburgerMenuOpen,
   industryCardDark,
@@ -31,7 +30,6 @@ export const Industries = ({ data }: IndustriesProps) => {
   const [theme, setTheme] = useRecoilState(themeState);
   const [selectedIndustry, setSelectedIndustry] =
     useRecoilState(industrySelected);
-  const setIndustrySelected = useSetRecoilState(industrySelected);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
@@ -118,9 +116,6 @@ export const Industries = ({ data }: IndustriesProps) => {
               theme === "dark" ? industryDropdownDark : industryDropdownLight
             } ${isClosing ? slideOut1 : slideIn1}`}
           >
-            {/* <div className={`${closeButton}`} onClick={handleMenuToggle}>
-              <img src={close} alt="Close Menu" height={15} width={15} />
-            </div> */}
             <div className={`${hamburgerMenuOpen}`} onClick={handleMenuToggle}>
               <center>
                 {theme === "dark" ? (
@@ -150,7 +145,6 @@ export const Industries = ({ data }: IndustriesProps) => {
                 }`}
                 onClick={() => {
                   setSelectedIndustry(item.Title);
-                  // setIsMenuOpen(false);
                   setIsClosing(true);
                 }}
               >

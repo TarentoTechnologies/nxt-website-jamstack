@@ -250,7 +250,7 @@
 
 .inputArea {
   position: absolute;
-  bottom: 0;
+  bottom: 1%;
 }
 
 .userInputBoxDark {
@@ -577,11 +577,6 @@
   border-radius: 0.313rem;
   z-index: 9999;
   animation: fadeInOut 2s infinite;
-}
-
-.activeBtn {
-  /* background-color: #181bf5 !important; */
-  background-color: red !important;
 }
 
 /* ThorInteractive styles ends here  */
