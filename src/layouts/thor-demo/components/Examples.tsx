@@ -84,8 +84,7 @@ export const Examples = ({ data }: ExamplesProps) => {
       }
     };
     setSampleQuestions();
-  }, [selectedIndustry, setQuestions]);
-  // console.log(questions);
+  }, [selectedIndustry]);
 
   return (
     <div className={`${theme === "dark" ? egSectionDark : egSectionLight}`}>
