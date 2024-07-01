@@ -1,3 +1,5 @@
+import React from "react";
+
 import { PrimaryCTA } from "../buttons/PrimaryCTA";
 import { PrimaryTitle } from "../titles/PrimaryTitle";
 import {
@@ -23,7 +25,10 @@ export const PyramidBanner = ({
   btnLink,
 }: PyramidBannerProps) => {
   return (
-    <div className={`container-fluid ${bannerStyles}`}>
+    <div
+      className={`container-fluid ${bannerStyles}`}
+      data-testid="pyramid-banner"
+    >
       <div className={`row`}>
         <div className={`col-md-12 col-lg-4 offset-lg-2`}>
           <div className={`d-flex justify-content-center align-items-center`}>

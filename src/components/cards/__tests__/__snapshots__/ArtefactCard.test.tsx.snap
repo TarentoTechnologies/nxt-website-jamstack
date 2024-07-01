@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the ArtefactCard component is working as expected <ArtefactCard /> matches snapshot 1`] = `
+<div>
+  <div
+    class="bgNeutralGray2 card p-4 border border-0 h-100 customBorderRadius"
+    data-testid="artefact-card"
+  >
+    <div
+      class=""
+    >
+      <center
+        class="pt-1 pb-2"
+      />
+      <div
+        class="pt-3"
+      >
+        <h5
+          class="text-center pb-2 infoSectionH3 black87"
+        >
+          Test title
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+`;

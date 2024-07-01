@@ -1,9 +1,7 @@
-import {
-  secondaryBtn,
-  large,
-  labelStyles,
-} from "./SecondaryCTA.module.css";
 import { Link } from "gatsby";
+import React from "react";
+
+import { labelStyles, large, secondaryBtn } from "./SecondaryCTA.module.css";
 
 interface SecondaryCTAProps {
   label: any;
@@ -21,7 +19,7 @@ export const SecondaryCTA = ({
   btnLink,
 }: SecondaryCTAProps) => {
   return (
-    <Link to={btnLink != null ? btnLink : ""}>
+    <Link to={btnLink != null ? btnLink : ""} data-testid="secondary-cta">
       <div
         className={`text-center d-flex align-items-center justify-content-center 
         ${size === "large" ? large : ""} ${customClasses} ${secondaryBtn}`}

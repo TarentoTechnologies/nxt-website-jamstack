@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 import { carbon } from "../../styles/style-guide/ColorGuide.module.css";
@@ -53,6 +54,7 @@ export const StoryBanner = ({
           : {}
       }
       id={cardData?.id}
+      data-testid="story-banner"
     >
       <div className={`row containerService paddingLeftRight15`}>
         <div className={`col-12 ${titleStyles} px-lg-0`}>

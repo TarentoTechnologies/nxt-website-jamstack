@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the PyramidBanner component is working as expected <PyramidBanner /> matches snapshot 1`] = `
+<div>
+  <div
+    class="container-fluid bannerStyles"
+    data-testid="pyramid-banner"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-md-12 col-lg-4 offset-lg-2"
+      >
+        <div
+          class="d-flex justify-content-center align-items-center"
+        >
+          <img
+            alt="Data Pyramid"
+            class="imgPadding img-fluid"
+            data-aos="fade-up"
+            src="https://strapi-stage-nxt.tarento.com/uploads/pyramid_52b15649a1.svg"
+            title="Data Pyramid"
+          />
+        </div>
+      </div>
+      <div
+        class="col-md-12 col-lg-6 col-xl-4"
+      >
+        <div
+          class="infoSectionPadding retailInfo"
+          data-aos="fade-up"
+        >
+          <div
+            class="
+      undefined
+        h1One
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        white"
+            data-aos="fade-up"
+            data-testid="primary-title"
+          >
+            Data Pyramid
+          </div>
+          <p>
+            Modern businesses are run on information & knowledge. To improve your bottom line and expand your business, you need to have the right information available on time. Fundamentals of good data management is of paramount importance. Make reliable, data driven decisions. Take your business to the next level with our data-platform.
+          </p>
+          <a
+            data-testid="primary-cta"
+            href="/data-platform"
+          >
+            <div
+              class="text-center d-flex align-items-center justify-content-center 
+      primaryBtn  undefined"
+              data-aos="fade-up"
+            >
+              <label
+                class="labelStyles"
+              >
+                Read More
+              </label>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

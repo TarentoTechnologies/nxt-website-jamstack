@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 
 import {
   bgNeutralGray2,
@@ -20,6 +21,7 @@ export const ArtefactCard = ({ id, image, title }: ArtefactCardProps) => {
     <div
       className={`${bgNeutralGray2} card p-4 border border-0 h-100 ${customBorderRadius}`}
       key={id}
+      data-testid="artefact-card"
     >
       <div className="">
         <center className="pt-1 pb-2">

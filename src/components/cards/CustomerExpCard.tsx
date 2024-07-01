@@ -1,3 +1,5 @@
+import React from "react";
+
 import { h4400 } from "../../styles/style-guide/Typography.module.css";
 import { cxCard } from "./CustomerExpCard.module.css";
 
@@ -27,6 +29,7 @@ export const CustomerExpCard = ({
         target="_blank"
         rel="noreferrer"
         id={id}
+        data-testid="customer-exp-card"
       >
         <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1">
           <div className="" data-aos="fade-up">
@@ -52,7 +55,11 @@ export const CustomerExpCard = ({
     );
   } else {
     return (
-      <div className="col-lg-3 col-md-6 col-sm-12 marginBtm1" id={id}>
+      <div
+        className="col-lg-3 col-md-6 col-sm-12 marginBtm1"
+        id={id}
+        data-testid="customer-exp-card"
+      >
         <div className="" data-aos="fade-up">
           <div className={cxCard}>
             <img

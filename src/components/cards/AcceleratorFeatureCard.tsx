@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 
 import {
   bgWhite,
@@ -23,7 +24,10 @@ export const AcceleratorFeatureCard = ({
   const image: any = getImage(logo);
 
   return (
-    <div className={`${featureCard}`}>
+    <div
+      className={`${featureCard}`}
+      data-testid="accelerator-feature-card"
+    >
       {isImage ? (
         <GatsbyImage
           image={image}

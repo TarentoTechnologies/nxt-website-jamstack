@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the PrimaryCTACard component is working as expected <PrimaryCTACard /> matches snapshot 1`] = `
+<div>
+  <div
+    class="container-fluid"
+    data-testid="primary-cta-card"
+  >
+    <div
+      class=""
+    >
+      <h1
+        class="h1One"
+        data-aos="fade-up"
+      >
+        Are you interested ?
+      </h1>
+      <p
+        class="col-sm-10 col-md-10 col-lg-10 col-xl-6 mt-4 mb-5 black75 ctaDescription"
+        data-aos="fade-up"
+      >
+        Do these accelerators look interesting to you? Get in touch with us to know how to buy any of them. Click on the button below to send us a mail.
+      </p>
+      <span
+        data-aos="fade-up"
+      >
+        <a
+          data-testid="primary-cta"
+          href="/"
+        >
+          <div
+            class="text-center d-flex align-items-center justify-content-center 
+      secondaryBtn  undefined"
+            data-aos="fade-up"
+          >
+            <label
+              class="labelStyles"
+            >
+              Contact us
+            </label>
+          </div>
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+`;

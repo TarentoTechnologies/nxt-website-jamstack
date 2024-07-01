@@ -1,4 +1,5 @@
 import { Link } from "gatsby";
+import React from "react";
 
 import {
   labelStyles,
@@ -48,6 +49,7 @@ export const PrimaryCTA = ({
           href={link}
           aria-label="link to specific detail page to know more"
           target="_blank"
+          data-testid="primary-cta"
         >
           <div
             className={`text-center d-flex align-items-center justify-content-center 
@@ -59,7 +61,7 @@ export const PrimaryCTA = ({
           </div>
         </a>
       ) : (
-        <Link to={btnLink != null ? btnLink : ""}>
+        <Link to={btnLink != null ? btnLink : ""} data-testid="primary-cta">
           <div
             className={`text-center d-flex align-items-center justify-content-center 
       ${mode} ${size === "large" ? large : ""} ${customClasses}`}

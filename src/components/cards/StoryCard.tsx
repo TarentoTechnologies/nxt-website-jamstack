@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 
 import {
   bgWhite,
@@ -27,6 +28,7 @@ export const StoryCard = ({
     <div
       className={`${bgWhite} card p-4 border border-0 h-100 ${customBorderRadius}`}
       key={id}
+      data-testid="story-card"
     >
       <div className="">
         <center className="pt-1 pb-2">

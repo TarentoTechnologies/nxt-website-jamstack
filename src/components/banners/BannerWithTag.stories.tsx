@@ -22,23 +22,23 @@ export const Primary: Story = {
     tagsList: [
       {
         id: 0,
-        value: "Sketch",
+        Label: "Sketch",
       },
       {
         id: 1,
-        value: "Photoshop",
+        Label: "Photoshop",
       },
       {
         id: 2,
-        value: "HTML",
+        Label: "HTML",
       },
       {
         id: 3,
-        value: "React",
+        Label: "React",
       },
       {
         id: 4,
-        value: "PHP",
+        Label: "PHP",
       },
     ],
   },

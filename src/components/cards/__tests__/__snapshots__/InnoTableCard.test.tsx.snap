@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the InnoTableCard component is working as expected <InnoTableCard /> matches snapshot 1`] = `
+<div>
+  <div
+    class="col-md-4 bgSpectrumBlue cardStyles"
+    data-aos="fade-up"
+    data-testid="inno-table-card"
+  >
+    <h2
+      class="titleStyles innoTitle"
+      data-aos="fade-up"
+    >
+      TECHNOLOGY
+    </h2>
+    <p
+      data-aos="fade-up"
+    >
+      Our tech stack is crafted compact to abide by our technology serving principles to build for the future!
+    </p>
+  </div>
+</div>
+`;

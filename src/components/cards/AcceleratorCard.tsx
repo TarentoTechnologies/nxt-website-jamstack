@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 
 import {
   black,
@@ -44,6 +45,7 @@ export const AcceleratorCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       id={id}
+      data-testid="accelerator-card"
     >
       {hovered ? (
         <div className={`${cardSize} ${cardHover}`} data-aos="fade-up">

@@ -1,4 +1,5 @@
 import { Link } from "gatsby";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 import {
@@ -28,7 +29,7 @@ interface FooterProps {
 
 export const Footer = ({ data }: FooterProps) => {
   return (
-    <div className={`container-fluid ${footer}`}>
+    <div className={`container-fluid ${footer}`} data-testid="footer">
       <div className={`row`}>
         {/* Column one */}
         <div className={`col-sm-12 col-md-12 col-xl-8`}>
@@ -179,9 +180,7 @@ export const Footer = ({ data }: FooterProps) => {
           </div>
         </div>
         <div className={`col-xs-12 col-sm-12 col-md-12 col-lg-12`}>
-          <p className={`${footerHeading} ${rights}`}>
-            {data?.Copyright}
-          </p>
+          <p className={`${footerHeading} ${rights}`}>{data?.Copyright}</p>
         </div>
       </div>
     </div>

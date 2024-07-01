@@ -1,12 +1,17 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 
-import { black50, blue, black } from "../../styles/style-guide/ColorGuide.module.css";
+import {
+  black,
+  black50,
+  blue,
+} from "../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorDescription,
   acceleratorSubTitle,
   acceleratorTitle,
   acceleratorTitleV2,
-  h3500Lato
+  h3500Lato,
 } from "../../styles/style-guide/Typography.module.css";
 import { bannerStyles } from "./HeroBannerForAccelerators.module.css";
 
@@ -25,9 +30,11 @@ export const HeroBannerForAccelerators = ({
   description,
   logosrc,
 }: HeroBannerForAcceleratorsProps) => {
-  
   return (
-    <div className={`${bannerStyles} d-flex justify-content-center`}>
+    <div
+      className={`${bannerStyles} d-flex justify-content-center`}
+      data-testid="hero-banner-for-accelerators"
+    >
       <div className="containerService paddingLeftRight15">
         <div className="row microHeading justify-content-between align-items-center">
           <div className="col-lg-6 col-md-12">

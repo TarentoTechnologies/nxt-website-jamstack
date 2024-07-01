@@ -1,3 +1,5 @@
+import React from "react";
+
 import checkIcon from "../../../static/images/green-check.svg";
 import { bgWhite } from "../../styles/style-guide/ColorGuide.module.css";
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
@@ -45,7 +47,10 @@ export const PricingCard = ({
 }: PricingCardProps) => {
   if (withBtn) {
     return (
-      <div className={`col-sm-12 col-md-6 col-lg-5 col-xl-4`}>
+      <div
+        className={`col-sm-12 col-md-6 col-lg-5 col-xl-4`}
+        data-testid="pricing-card"
+      >
         <div className={`${pricingBox} ${bgWhite} p-4`}>
           <div className={`d-flex align-items-center ps-3 ${levelTwoBox}`}>
             <img src={logo} alt={title} data-aos="fade-up" />
@@ -72,7 +77,10 @@ export const PricingCard = ({
     );
   } else {
     return (
-      <div className={`col-sm-12 col-md-6 col-lg-5 col-xl-4`}>
+      <div
+        className={`col-sm-12 col-md-6 col-lg-5 col-xl-4`}
+        data-testid="pricing-card"
+      >
         <div className={`${pricingBox} ${bgWhite} p-4`}>
           <div className={`${description ? levelOneBox : ""}`}>
             <div

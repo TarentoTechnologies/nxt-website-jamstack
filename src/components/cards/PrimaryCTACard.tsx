@@ -1,4 +1,5 @@
 import { Link } from "gatsby";
+import React from "react";
 
 import { black75 } from "../../styles/style-guide/ColorGuide.module.css";
 import {
@@ -25,7 +26,7 @@ export const PrimaryCTACard = ({
   isCTAExternal,
 }: PrimaryCTACardProps) => {
   return (
-    <div className={`container-fluid`}>
+    <div className={`container-fluid`} data-testid="primary-cta-card">
       <div className="">
         <h1 className={`${h1One}`} data-aos="fade-up">
           {title}

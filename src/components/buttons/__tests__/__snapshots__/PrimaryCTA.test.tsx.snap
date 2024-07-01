@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the PrimaryCTA component is working as expected <PrimaryCTA /> matches snapshot 1`] = `
+<div>
+  <a
+    data-testid="primary-cta"
+    href=""
+  >
+    <div
+      class="text-center d-flex align-items-center justify-content-center 
+      primaryBtn  undefined"
+      data-aos="fade-up"
+    >
+      <label
+        class="labelStyles"
+      >
+        Register Now
+      </label>
+    </div>
+  </a>
+</div>
+`;

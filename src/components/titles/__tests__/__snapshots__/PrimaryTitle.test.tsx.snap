@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the PrimaryTitle component is working as expected <PrimaryTitle /> matches snapshot 1`] = `
+<div>
+  <div
+    class="
+      undefined
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        "
+    data-aos="fade-up"
+    data-testid="primary-title"
+  >
+    Case Studies
+  </div>
+</div>
+`;

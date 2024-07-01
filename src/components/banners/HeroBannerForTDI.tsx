@@ -1,4 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 import {
@@ -64,6 +65,7 @@ export const HeroBannerForTDI = ({
         <div
           className={`container-fluid ${bannerStyles} d-flex justify-content-center`}
           id={id}
+          data-testid="hero-banner-for-tdi"
         >
           <div
             className={`row d-flex containerService paddingLeftRight15 justify-content-between`}
@@ -119,6 +121,7 @@ export const HeroBannerForTDI = ({
         <div
           className={`container-fluid ${bannerStyles} d-flex justify-content-center`}
           id={id}
+          data-testid="hero-banner-for-tdi"
         >
           <div className={`row containerService paddingLeftRight15`}>
             <div

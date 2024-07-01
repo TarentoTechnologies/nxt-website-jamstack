@@ -1,4 +1,5 @@
 import { Link } from "gatsby";
+import React from "react";
 
 import { bgUraniaBlue } from "../../styles/style-guide/ColorGuide.module.css";
 import { cardHeader } from "../../styles/style-guide/Typography.module.css";
@@ -32,10 +33,9 @@ export const ProductCard = ({
   isLink,
   customBgPosition,
 }: ProductCardProps) => {
-
   if (isLink) {
     return (
-      <Link to={link != null ? link : ""}>
+      <Link to={link != null ? link : ""} data-testid="product-card">
         <div
           className={`container-fluid ${
             isSecondary ? proCardSecondary : proCard
@@ -70,6 +70,7 @@ export const ProductCard = ({
           isSecondary ? proCardSecondary : proCard
         } ${customBgPosition ? `${bgUraniaBlue} ${customBgStyle}` : ""}`}
         style={{ backgroundImage: `url(${bgImg})` }}
+        data-testid="product-card"
       >
         <div
           className={`${titleStyles} ${cardHeader} ${

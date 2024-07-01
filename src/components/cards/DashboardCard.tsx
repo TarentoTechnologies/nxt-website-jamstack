@@ -45,7 +45,10 @@ export const DashboardCard = ({
   };
 
   return (
-    <div className={`${dashboardCard} whiteBg position-relative`}>
+    <div
+      className={`${dashboardCard} whiteBg position-relative`}
+      data-testid="dashboard-card"
+    >
       <div data-aos="fade-up">
         <GatsbyImage
           image={

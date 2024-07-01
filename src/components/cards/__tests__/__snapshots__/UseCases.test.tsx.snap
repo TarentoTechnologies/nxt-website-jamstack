@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the UseCases component is working as expected <UseCases /> matches snapshot 1`] = `
+<div>
+  <div
+    class="layoutDetails d-feature useCases"
+    data-testid="use-cases"
+  >
+    <div
+      class="col-md-4 col-sm-6 col-xs-12 d-flex align-items-center"
+    >
+      <div
+        class=""
+      >
+        <img
+          alt="Usecase1"
+          src="https://strapi-stage-nxt.tarento.com/uploads/tech_bolt_2f3dc77aa7.png"
+          title="Usecase1"
+        />
+      </div>
+      <div
+        class=""
+      >
+        <div
+          class="useCasesSubTitle"
+        >
+          Usecase1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,3 +1,5 @@
+import React from "react";
+
 import { white } from "../../styles/style-guide/ColorGuide.module.css";
 import {
   acceleratorTitle,
@@ -43,6 +45,7 @@ export const PrimaryTitle = ({
         ${variant === "h1700V4" ? h1700V4 : ""}
         ${color === "white" ? white : ""}`}
       data-aos="fade-up"
+      data-testid="primary-title"
     >
       {title}
     </div>

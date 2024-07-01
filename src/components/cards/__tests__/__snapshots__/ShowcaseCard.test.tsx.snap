@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the ShowcaseCard component is working as expected <ShowcaseCard /> matches snapshot 1`] = `
+<div>
+  <div
+    class="container-fluid"
+    data-testid="showcase-card"
+  >
+    <div
+      class="row showCaseCard bgWhite"
+    >
+      <div
+        class="col-sm-12 col-md-12 col-lg-12 col-xl-6 p-0 m-0 object-fit-cover d-flex justify-content-center align-items-center imgContainer"
+      />
+      <div
+        class="col-sm-12 col-md-12 col-lg-12 col-xl-6 d-flex align-items-center"
+      >
+        <div
+          class="my-4 my-sm-4 my-md-4 my-lg-4 my-xl-0 mx-4"
+        >
+          <h2
+            class="heading700"
+            data-aos="fade-up"
+          >
+            Bihar Museum
+          </h2>
+          <div
+            class="subText2 black py-3"
+            data-aos="fade-up"
+          />
+          <div
+            class="mt-3"
+          >
+            <a
+              href="/"
+            >
+              <label
+                class="cta1 pe-auto cursorPointer"
+                data-aos="fade-up"
+                role="link"
+              >
+                Read More
+                <span
+                  class="ctaIconPos"
+                >
+                  <img
+                    alt="Read More"
+                    class="ctaIcon ps-2"
+                    data-aos="fade-up"
+                    src="test-file-stub"
+                  />
+                </span>
+              </label>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

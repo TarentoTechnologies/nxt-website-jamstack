@@ -1,3 +1,5 @@
+import React from "react";
+
 import { carbon } from "../../styles/style-guide/ColorGuide.module.css";
 import { h4500 } from "../../styles/style-guide/Typography.module.css";
 import {
@@ -13,7 +15,10 @@ interface DesignProcessCardProps {
 
 export const DesignProcessCard = ({ title, icon }: DesignProcessCardProps) => {
   return (
-    <div className={`col-6 col-md-3 ${cardStyles}`}>
+    <div
+      className={`col-6 col-md-3 ${cardStyles}`}
+      data-testid="design-process-card"
+    >
       <div className={`${imgStyles}`}>
         <img
           src={icon}

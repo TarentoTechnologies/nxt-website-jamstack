@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   bgRhodaminePurple,
   bgSpectrumBlue,
@@ -37,6 +39,7 @@ export const InnoTableCard = ({
       className={`col-md-4 ${bgColour} ${cardStyles}`}
       onClick={clickHandler}
       data-aos="fade-up"
+      data-testid="inno-table-card"
     >
       <h2 className={`${titleStyles} ${innoTitle}`} data-aos="fade-up">
         {title}

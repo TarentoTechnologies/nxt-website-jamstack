@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the ClientCard component is working as expected <ClientCard /> matches snapshot 1`] = `
+<div>
+  <div
+    class="bgWhite card border border-0 p-5 clientCard"
+    data-testid="client-card"
+  >
+    <div
+      class="d-flex align-items-center h-100 justify-content-center"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the RainFeatureCard component is working as expected <RainFeatureCard /> matches snapshot 1`] = `
+<div>
+  <div
+    data-testid="rain-feature-card"
+  >
+    <div
+      class="imgStyles"
+    >
+      <div
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained"
+        data-gatsby-image-wrapper=""
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+      >
+        <div
+          style="max-width: 772px; display: block;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='354'%20width='772'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+            style="max-width: 100%; display: block; position: static;"
+          />
+        </div>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHLWq1MoH//xAAZEAACAwEAAAAAAAAAAAAAAAAAEQEQITH/2gAIAQEAAQUCWaIjlf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABsQAAEEAwAAAAAAAAAAAAAAAAABEBFxMUFR/9oACAEBAAE/IdiTNC2JcMNP/9oADAMBAAIAAwAAABAwD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABcRAQADAAAAAAAAAAAAAAAAAAABESH/2gAIAQIBAT8QnVP/xAAcEAEAAQQDAAAAAAAAAAAAAAABEQAQITFhkbH/2gAIAQEAAT8QJlFDUvaDwnauVbHdv//Z"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
+        <img
+          alt=""
+          data-aos="fade-up"
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/c5ab777b81ede6691c6b6d65988b39cb/02c3d/features_1_6765d2890b.png"
+          data-srcset="/static/c5ab777b81ede6691c6b6d65988b39cb/07064/features_1_6765d2890b.png 193w,/static/c5ab777b81ede6691c6b6d65988b39cb/35e06/features_1_6765d2890b.png 386w,/static/c5ab777b81ede6691c6b6d65988b39cb/02c3d/features_1_6765d2890b.png 772w"
+          decoding="async"
+          loading="lazy"
+          sizes="(min-width: 772px) 772px, 100vw"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+        <noscript />
+        <script
+          type="module"
+        >
+          const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+        </script>
+      </div>
+    </div>
+    <div
+      class="headingStyles cardHeader carbon"
+      data-aos="fade-up"
+    >
+      Create your own dashboards with your favourite visualization
+    </div>
+    <p
+      class="subTextStyles carbon"
+      data-aos="fade-up"
+    >
+      Visualizations ranging from a simple bar chart to map visualizations. User has the freedom to create multiple dashboards with different collections of visulizations.
+    </p>
+  </div>
+</div>
+`;

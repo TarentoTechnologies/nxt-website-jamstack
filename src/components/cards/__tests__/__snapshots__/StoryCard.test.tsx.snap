@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the StoryCard component is working as expected <StoryCard /> matches snapshot 1`] = `
+<div>
+  <div
+    class="bgWhite card p-4 border border-0 h-100 customBorderRadius"
+    data-testid="story-card"
+  >
+    <div
+      class=""
+    >
+      <center
+        class="pt-1 pb-2"
+      />
+      <div
+        class="pt-3"
+      >
+        <h5
+          class="text-center cardTitleV1 black87 pb-2"
+        >
+          2016
+        </h5>
+        <p
+          class="black60"
+        >
+          We first drafted our approach to combine lean, agile & design thinking for a discovery phase.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,3 +1,4 @@
+import React from 'react';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import transparentPNG from "../../../static/images/pngimg.com - laptop_PNG101775.png";
@@ -33,6 +34,7 @@ export const BannerWithTag = ({
   return (
     <div
       className={`container-fluid ${bgPallidBlueViolet2} ${bannerWithTag} h-100 position-relative`}
+      data-testid="banner-with-tag"
     >
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-12 col-xl-6 p-5">
