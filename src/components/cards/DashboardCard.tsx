@@ -1,8 +1,10 @@
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
+import { useRecoilState } from "recoil";
 
 import forwardArrow from "../../../static/icons/arrow_forward_black.svg";
+import { industrySelected } from "../../states/atoms";
 import {
   cta1,
   planHeading,
@@ -20,6 +22,7 @@ interface DashboardCardProps {
   ctaLabel: string;
   ctaLink: string;
   isCTAExternal: boolean;
+  isThorPage?: boolean;
 }
 
 export const DashboardCard = ({
@@ -30,7 +33,17 @@ export const DashboardCard = ({
   ctaLabel,
   ctaLink,
   isCTAExternal,
+  isThorPage = false,
 }: DashboardCardProps) => {
+  const [selectedIndustry, setSelectedIndustry] =
+    useRecoilState(industrySelected);
+
+  const handleCTAClick = () => {
+    {
+      isThorPage && setSelectedIndustry("THOR for " + title);
+    }
+  };
+
   return (
     <div className={`${dashboardCard} whiteBg position-relative`}>
       <div data-aos="fade-up">
@@ -54,11 +67,8 @@ export const DashboardCard = ({
       </div>
       <div className="position-absolute bottom-0 pb-3" data-aos="fade-up">
         {!isCTAExternal ? (
-          <Link to={ctaLink}>
-            <label
-              className={`${cta1} pe-auto cursorPointer`}
-              // role="link"
-            >
+          <Link to={ctaLink} onClick={handleCTAClick}>
+            <label className={`${cta1} pe-auto cursorPointer`} role="link">
               {ctaLabel}
               <span className={`${ctaIconPos}`}>
                 <img
@@ -70,11 +80,13 @@ export const DashboardCard = ({
             </label>
           </Link>
         ) : (
-          <a href={ctaLink} rel="external" target="_blank">
-            <label
-              className={`${cta1} pe-auto cursorPointer`}
-              // role="link"
-            >
+          <a
+            href={ctaLink}
+            rel="external"
+            target="_blank"
+            onClick={handleCTAClick}
+          >
+            <label className={`${cta1} pe-auto cursorPointer`} role="link">
               {ctaLabel}
               <span className={`${ctaIconPos}`}>
                 <img

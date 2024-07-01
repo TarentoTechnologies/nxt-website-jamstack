@@ -17,3 +17,14 @@
 .ctaIconPos {
   vertical-align: 0.05rem;
 }
+
+.truncateDescription {
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.75rem;
+}

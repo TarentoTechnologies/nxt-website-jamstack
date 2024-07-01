@@ -19,6 +19,7 @@ import {
 import {
   About,
   GallerySection,
+  Highlight,
   RelatedPortfolio,
   TagSection,
 } from "../layouts/design-portfolio-detail";
@@ -53,6 +54,11 @@ const DesignPortfolioDetail: React.FC<PageProps> = ({
         sliderRightImg={
           data[currentLang]?.GallerySection?.SliderRightImg?.localFile?.url
         }
+        showSlider={data[currentLang]?.showSlider}
+      />
+      <Highlight
+        title={data[currentLang]?.HighlightSectionTitle}
+        carouselData={data[currentLang]?.HighlightCarousel?.Images}
       />
       <TagSection data={data[currentLang]?.BannerWithTagSection} />
       <RelatedPortfolio
@@ -79,6 +85,31 @@ export const query = graphql`
   query DesignPortfolio($slug: String!) {
     en: strapiDesignPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
       id
+      HeroBanner {
+        id
+        Title
+        Image {
+          localFile {
+            url
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+          alternativeText
+        }
+        Desc {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        isAgencyDetail
+        isListingPage
+        withBreadCrumbs
+        BreadCrumbLabel
+        BreadCrumbLink
+      }
       AboutSection {
         id
         Title
@@ -129,6 +160,51 @@ export const query = graphql`
             }
           }
         }
+      }
+      GallerySection {
+        SliderLeftImg {
+          localFile {
+            url
+          }
+        }
+        SliderRightImg {
+          localFile {
+            url
+          }
+        }
+        ImageList {
+          Image {
+            localFile {
+              url
+            }
+          }
+        }
+      }
+      HighlightSectionTitle
+      HighlightSectionDescription
+      HighlightCarousel {
+        Images {
+          localFile {
+            url
+          }
+          alternativeText
+        }
+      }
+      showSlider
+    }
+    enBottomBanner: strapiDesignPortfolioListing(locale: { eq: "en" }) {
+      BottomBanner {
+        Title
+        CTAButton {
+          Label
+          Link
+        }
+        BgImg {
+          localFile {
+            url
+          }
+        }
+        isCTAExternal
       }
     }
     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
@@ -187,303 +263,6 @@ export const query = graphql`
     }
   }
 `;
-
-// export const query = graphql`
-//   query DesignPortfolio($slug: String!) {
-//     en: strapiDesignPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
-//       id
-//       HeroBanner {
-//         id
-//         Title
-//         Image {
-//           localFile {
-//             url
-//             childImageSharp {
-//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
-//             }
-//           }
-//           alternativeText
-//         }
-//         Desc {
-//           data {
-//             childMarkdownRemark {
-//               html
-//             }
-//           }
-//         }
-//         isAgencyDetail
-//         isListingPage
-//         withBreadCrumbs
-//         BreadCrumbLabel
-//         BreadCrumbLink
-//       }
-//       AboutSection {
-//         id
-//         Title
-//         Description {
-//           data {
-//             Description
-//             childMarkdownRemark {
-//               html
-//             }
-//           }
-//         }
-//         ColumnOneTitle
-//         ColumnOneValue
-//         ColumnTwoTitle
-//         ColumnTwoValue
-//         ColumnThreeTitle
-//         ColumnThreeValue
-//         ColumnFourTitle
-//         ColumnFourLink
-//       }
-//       BannerWithTagSection {
-//         id
-//         Title
-//         Image {
-//           localFile {
-//             childImageSharp {
-//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
-//             }
-//           }
-//         }
-//         Tags {
-//           id
-//           Label
-//         }
-//       }
-//       SectionFourTitle
-//       RelatedPortfolios {
-//         id
-//         Title
-//         Tag
-//         Description
-//         CTAText
-//         CTALink
-//         Image {
-//           localFile {
-//             childImageSharp {
-//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
-//             }
-//           }
-//         }
-//       }
-//       GallerySection {
-//         SliderLeftImg {
-//           localFile {
-//             url
-//           }
-//         }
-//         SliderRightImg {
-//           localFile {
-//             url
-//           }
-//         }
-//         ImageList {
-//           Image {
-//             localFile {
-//               url
-//             }
-//           }
-//         }
-//       }
-//     }
-//     enBottomBanner: strapiDesignPortfolioListing(locale: { eq: "en" }) {
-//       BottomBanner {
-//         Title
-//         CTAButton {
-//           Label
-//           Link
-//         }
-//         BgImg {
-//           localFile {
-//             url
-//           }
-//         }
-//         isCTAExternal
-//       }
-//     }
-//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
-//       id
-//       Footer {
-//         id
-//         PrimaryLogo {
-//           alternativeText
-//           caption
-//           localFile {
-//             url
-//           }
-//         }
-//         SecondaryLogo {
-//           alternativeText
-//           caption
-//           localFile {
-//             url
-//           }
-//         }
-//         PrimaryDescription {
-//           data {
-//             childMarkdownRemark {
-//               html
-//             }
-//           }
-//         }
-//         PrimaryLevelOneHeading
-//         PrimaryLevelOneList {
-//           id
-//           Label
-//           Link
-//         }
-//         PrimaryLevelTwoHeading
-//         PrimaryLevelTwoList {
-//           id
-//           Link
-//           Label
-//         }
-//         SecondaryLevelOneHeading
-//         SecondaryLevelOneList {
-//           id
-//           Link
-//           Label
-//         }
-//         SecondaryLevelTwoHeading
-//         SecondaryLevelTwoList {
-//           id
-//           Link
-//           Label
-//         }
-//         Copyright
-//         PrimaryLogoLink
-//         SecondaryLogoLink
-//       }
-//     }
-//   }
-// `;
-
-// export const query = graphql`
-//   query DesignPortfolio($slug: String!) {
-//     en: strapiDesignPortfolio(Slug: { eq: $slug }, locale: { eq: "en" }) {
-//       id
-//       HeroSection {
-//         id
-//         Title
-//         Description
-//         Image {
-//           localFile {
-//             childImageSharp {
-//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
-//             }
-//           }
-//         }
-//       }
-//       AboutSection {
-//         id
-//         Title
-//         Description {
-//           data {
-//             Description
-//             childMarkdownRemark {
-//               html
-//             }
-//           }
-//         }
-//         ColumnOneTitle
-//         ColumnOneValue
-//         ColumnTwoTitle
-//         ColumnTwoValue
-//         ColumnThreeTitle
-//         ColumnThreeValue
-//         ColumnFourTitle
-//         ColumnFourLink
-//       }
-//       BannerWithTagSection {
-//         id
-//         Title
-//         Image {
-//           localFile {
-//             childImageSharp {
-//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
-//             }
-//           }
-//         }
-//         Tags {
-//           id
-//           Label
-//         }
-//       }
-//       SectionFourTitle
-//       RelatedPortfolios {
-//         id
-//         Title
-//         Tag
-//         Description
-//         CTAText
-//         CTALink
-//         Image {
-//           localFile {
-//             childImageSharp {
-//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
-//             }
-//           }
-//         }
-//       }
-//     }
-//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
-//       id
-//       Footer {
-//         id
-//         PrimaryLogo {
-//           alternativeText
-//           caption
-//           localFile {
-//             url
-//           }
-//         }
-//         SecondaryLogo {
-//           alternativeText
-//           caption
-//           localFile {
-//             url
-//           }
-//         }
-//         PrimaryDescription {
-//           data {
-//             childMarkdownRemark {
-//               html
-//             }
-//           }
-//         }
-//         PrimaryLevelOneHeading
-//         PrimaryLevelOneList {
-//           id
-//           Label
-//           Link
-//         }
-//         PrimaryLevelTwoHeading
-//         PrimaryLevelTwoList {
-//           id
-//           Link
-//           Label
-//         }
-//         SecondaryLevelOneHeading
-//         SecondaryLevelOneList {
-//           id
-//           Link
-//           Label
-//         }
-//         SecondaryLevelTwoHeading
-//         SecondaryLevelTwoList {
-//           id
-//           Link
-//           Label
-//         }
-//         Copyright
-//         PrimaryLogoLink
-//         SecondaryLogoLink
-//       }
-//     }
-//   }
-// `;
 
 export default DesignPortfolioDetail;
 

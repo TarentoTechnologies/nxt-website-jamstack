@@ -19,6 +19,7 @@ import {
   imgContainer,
   showCaseCard,
   showCaseImg,
+  truncateDescription,
 } from "./ShowcaseCard.module.css";
 
 interface ShowcaseCardProps {
@@ -74,7 +75,11 @@ export const ShowcaseCard = ({
             <h2 className={`${heading700}`} data-aos="fade-up">
               {title}
             </h2>
-            <div className={`${subText2} ${black} py-3`} data-aos="fade-up">
+            <div
+              className={`${subText2} ${black} ${truncateDescription} py-3`}
+              data-aos="fade-up"
+            >
+              {/* {description} */}
               {ReactHtmlParser(description?.data?.childMarkdownRemark?.html)}
             </div>
             {/* CTA */}

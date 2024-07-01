@@ -42,9 +42,9 @@ const AgencyPortfolio: React.FC<PageProps> = ({
     setCurrentPostsForShowcase(tempArray);
   };
 
-  React.useEffect(() => {
-    getShowCaseData();
-  }, [data[currentAgencyPortfolioList]]);
+  // React.useEffect(() => {
+  //   getShowCaseData();
+  // }, [data[currentAgencyPortfolioList]]);
 
   return (
     <main className="">
@@ -57,7 +57,7 @@ const AgencyPortfolio: React.FC<PageProps> = ({
       </ul>
       <Navbar imgSrc={navbarImg} imgAltText={"NXT logo"} link={"/"} />
       {/* <HeroBanner heroBannerData={data[currentLang]?.HeroBanner} /> */}
-      <HeroBanner heroBannerData={data[currentLang]?.HeroBanner} isImg />
+      {/*<HeroBanner heroBannerData={data[currentLang]?.HeroBanner} isImg />
       <section id="agencyPortfolioMain">
         <Showcase
           sectionTitle={data[currentLang]?.SectionOneTitle}
@@ -80,94 +80,10 @@ const AgencyPortfolio: React.FC<PageProps> = ({
       <FooterSection
         id={data[currentFooterSection]?.id}
         footerData={data[currentFooterSection]?.Footer}
-      />
+  />*/}
     </main>
   );
 };
-
-export const query = graphql`
-  query DesignPortfolioListing {
-    en: strapiAgencyPortfolioListing(locale: { eq: "en" }) {
-      SectionOneTitle
-      SectionTwoTitle
-      CTA {
-        id
-        Title
-        Description
-        CTAText
-        CTALink
-      }
-      DynamicButtonText
-    }
-    enAgencyPortfolios: allStrapiAgencyPortfolio(
-      sort: { updatedAt: DESC }
-      filter: { locale: { eq: "en" } }
-    ) {
-      nodes {
-        id
-
-        CTATextForDisplay
-        ShowcasePost
-        Slug
-        PortfolioTag
-      }
-    }
-    enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
-      id
-      Footer {
-        id
-        PrimaryLogo {
-          alternativeText
-          caption
-          localFile {
-            url
-          }
-        }
-        SecondaryLogo {
-          alternativeText
-          caption
-          localFile {
-            url
-          }
-        }
-        PrimaryDescription {
-          data {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-        PrimaryLevelOneHeading
-        PrimaryLevelOneList {
-          id
-          Label
-          Link
-        }
-        PrimaryLevelTwoHeading
-        PrimaryLevelTwoList {
-          id
-          Link
-          Label
-        }
-        SecondaryLevelOneHeading
-        SecondaryLevelOneList {
-          id
-          Link
-          Label
-        }
-        SecondaryLevelTwoHeading
-        SecondaryLevelTwoList {
-          id
-          Link
-          Label
-        }
-        Copyright
-        PrimaryLogoLink
-        SecondaryLogoLink
-      }
-    }
-  }
-`;
 
 // export const query = graphql`
 //   query AgencyPortfolioListing {
@@ -256,111 +172,14 @@ export const query = graphql`
 //         ShowcasePost
 //         Slug
 //         PortfolioTag
-//       }
-//     }
-//     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
-//       id
-//       Footer {
-//         id
-//         PrimaryLogo {
+//         Logo {
 //           alternativeText
-//           caption
 //           localFile {
-//             url
-//           }
-//         }
-//         SecondaryLogo {
-//           alternativeText
-//           caption
-//           localFile {
-//             url
-//           }
-//         }
-//         PrimaryDescription {
-//           data {
-//             childMarkdownRemark {
-//               html
+//             childImageSharp {
+//               gatsbyImageData(formats: PNG, placeholder: BLURRED)
 //             }
 //           }
 //         }
-//         PrimaryLevelOneHeading
-//         PrimaryLevelOneList {
-//           id
-//           Label
-//           Link
-//         }
-//         PrimaryLevelTwoHeading
-//         PrimaryLevelTwoList {
-//           id
-//           Link
-//           Label
-//         }
-//         SecondaryLevelOneHeading
-//         SecondaryLevelOneList {
-//           id
-//           Link
-//           Label
-//         }
-//         SecondaryLevelTwoHeading
-//         SecondaryLevelTwoList {
-//           id
-//           Link
-//           Label
-//         }
-//         Copyright
-//         PrimaryLogoLink
-//         SecondaryLogoLink
-//       }
-//     }
-//   }
-// `;
-
-// export const query = graphql`
-//   query DesignPortfolioListing {
-//     en: strapiAgencyPortfolioListing(locale: { eq: "en" }) {
-//       HeroSection {
-//         id
-//         Title
-//         Image {
-//           localFile {
-//             url
-//           }
-//         }
-//         Description
-//       }
-//       SectionOneTitle
-//       SectionTwoTitle
-//       CTA {
-//         id
-//         Title
-//         Description
-//         CTAText
-//         CTALink
-//       }
-//       DynamicButtonText
-//     }
-//     enAgencyPortfolios: allStrapiAgencyPortfolio(
-//       sort: { updatedAt: DESC }
-//       filter: { locale: { eq: "en" } }
-//     ) {
-//       nodes {
-//         id
-//         HeroSection {
-//           id
-//           Title
-//           Image {
-//             localFile {
-//               childImageSharp {
-//                 gatsbyImageData(formats: PNG, placeholder: BLURRED)
-//               }
-//             }
-//           }
-//           Description
-//         }
-//         CTATextForDisplay
-//         ShowcasePost
-//         Slug
-//         PortfolioTag
 //       }
 //     }
 //     enFooterSection: strapiFooterSection(locale: { eq: "en" }) {
