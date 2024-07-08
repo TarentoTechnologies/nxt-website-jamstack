@@ -8,6 +8,7 @@ import { HeroBannerForTDI } from "../components/banners/HeroBannerForTDI";
 import { Navbar } from "../components/navbar/Navbar";
 import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
+import { GetInTouch } from "../layouts/pulse";
 import { LiveExpLayout } from "../layouts/rain";
 import {
   Avatars,
@@ -80,6 +81,13 @@ const ThorPage: React.FC<PageProps> = ({ data }: ThorPageProps) => {
           CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
           CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
           isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
+        />
+        <GetInTouch
+          heading={data[currentLang]?.GetInTouch?.Title}
+          subText={data[currentLang]?.GetInTouch?.Description}
+          btnLabel={data[currentLang]?.GetInTouch?.Tag?.Label}
+          btnLink={data[currentLang]?.GetInTouch?.Tag?.Link}
+          imgSrc={data[currentLang]?.GetInTouch?.ImgSrc}
         />
       </section>
       <FooterSection
@@ -228,6 +236,29 @@ export const query = graphql`
           }
         }
         isCTAExternal
+      }
+      GetInTouch {
+        Title
+        Description {
+          data {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        ImgSrc {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(formats: PNG, placeholder: BLURRED)
+            }
+          }
+          alternativeText
+          caption
+        }
+        Tag {
+          Label
+          Link
+        }
       }
       seo {
         metaTitle
