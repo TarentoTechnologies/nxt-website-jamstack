@@ -74,6 +74,10 @@ a:hover {
   margin: 0;
 }
 
+.layout {
+  padding: 5rem 0;
+}
+
 .layoutBg {
   background-color: #f7f7f7;
 }

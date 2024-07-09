@@ -10,6 +10,7 @@ import { Seo } from "../components/seo/Seo";
 import { FooterSection } from "../layouts/common";
 import {
   FeaturesLayout,
+  Form,
   LiveExpLayout,
   ReferencesLayout,
   WorkingLayout,
@@ -73,6 +74,10 @@ const RainPage: React.FC<PageProps> = ({ data }: RainPageProps) => {
           CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
           CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
           isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
+        />
+        <Form
+          sectionTitle={data[currentLang]?.Form?.Title}
+          sectionDescription={data[currentLang]?.Form?.Description}
         />
       </section>
       <FooterSection
@@ -185,6 +190,16 @@ export const query = graphql`
           }
         }
         isCTAExternal
+      }
+      Form {
+        id
+        Title
+        Description {
+          data {
+            Description
+            id
+          }
+        }
       }
       seo {
         metaTitle
