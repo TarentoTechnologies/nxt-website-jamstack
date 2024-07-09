@@ -1607,6 +1607,8 @@ type Query = {
   readonly allStrapiComponentHeroBannerForTdiHeroBannerForTdi: STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIConnection;
   readonly allStrapiComponentHeroBannerForTdiHeroBannerForTdiDescriptionTextnode: STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI_DESCRIPTION_TEXTNODEConnection;
   readonly allStrapiComponentHowItWorksHowItWorks: STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSConnection;
+  readonly allStrapiComponentHubspotFormHubSpotForm: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMConnection;
+  readonly allStrapiComponentHubspotFormHubSpotFormDescriptionTextnode: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEConnection;
   readonly allStrapiComponentImageStackImageStack: STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACKConnection;
   readonly allStrapiComponentImageWithCaptionImageWithCaption: STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTIONConnection;
   readonly allStrapiComponentImgGalleryImgGallery: STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERYConnection;
@@ -1696,6 +1698,8 @@ type Query = {
   readonly strapiComponentHeroBannerForTdiHeroBannerForTdi: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
   readonly strapiComponentHeroBannerForTdiHeroBannerForTdiDescriptionTextnode: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI_DESCRIPTION_TEXTNODE>;
   readonly strapiComponentHowItWorksHowItWorks: Maybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKS>;
+  readonly strapiComponentHubspotFormHubSpotForm: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM>;
+  readonly strapiComponentHubspotFormHubSpotFormDescriptionTextnode: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODE>;
   readonly strapiComponentImageStackImageStack: Maybe<STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACK>;
   readonly strapiComponentImageWithCaptionImageWithCaption: Maybe<STRAPI__COMPONENT_IMAGE_WITH_CAPTION_IMAGE_WITH_CAPTION>;
   readonly strapiComponentImgGalleryImgGallery: Maybe<STRAPI__COMPONENT_IMG_GALLERY_IMG_GALLERY>;
@@ -2009,6 +2013,22 @@ type Query_allStrapiComponentHowItWorksHowItWorksArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSSortInput>>>;
+};
+
+
+type Query_allStrapiComponentHubspotFormHubSpotFormArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMSortInput>>>;
+};
+
+
+type Query_allStrapiComponentHubspotFormHubSpotFormDescriptionTextnodeArgs = {
+  filter: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODESortInput>>>;
 };
 
 
@@ -2996,6 +3016,28 @@ type Query_strapiComponentHowItWorksHowItWorksArgs = {
 };
 
 
+type Query_strapiComponentHubspotFormHubSpotFormArgs = {
+  Description: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMDescriptionFilterInput>;
+  Title: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+
+type Query_strapiComponentHubspotFormHubSpotFormDescriptionTextnodeArgs = {
+  Description: InputMaybe<StringQueryOperatorInput>;
+  childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+};
+
+
 type Query_strapiComponentImageStackImageStackArgs = {
   Image: InputMaybe<STRAPI__MEDIAFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -3820,6 +3862,7 @@ type Query_strapiRainArgs = {
   BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   FeatureListCard: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterListInput>;
   FeatureSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  Form: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFilterInput>;
   HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
   HowItWorks: InputMaybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSFilterInput>;
   LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
@@ -3871,6 +3914,7 @@ type Query_strapiThorArgs = {
   Capabilities: InputMaybe<STRAPI__MEDIAFilterInput>;
   CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
   CaseStudiesTitle: InputMaybe<StringQueryOperatorInput>;
+  Form: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFilterInput>;
   HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
   LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
   LiveExpDesc: InputMaybe<StringQueryOperatorInput>;
@@ -7354,6 +7398,7 @@ type STRAPI_RAIN = Node & {
   readonly BottomBanner: Maybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTA>;
   readonly FeatureListCard: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARD>>>;
   readonly FeatureSectionTitle: Maybe<Scalars['String']>;
+  readonly Form: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM>;
   readonly HeroBanner: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
   readonly HowItWorks: Maybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKS>;
   readonly LiveExpCards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARD>>>;
@@ -7446,6 +7491,7 @@ type STRAPI_RAINFieldSelector = {
   readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFieldSelector>;
   readonly FeatureListCard: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFieldSelector>;
   readonly FeatureSectionTitle: InputMaybe<FieldSelectorEnum>;
+  readonly Form: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector>;
   readonly HowItWorks: InputMaybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSFieldSelector>;
   readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFieldSelector>;
@@ -7469,6 +7515,7 @@ type STRAPI_RAINFilterInput = {
   readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTAFilterInput>;
   readonly FeatureListCard: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDFilterListInput>;
   readonly FeatureSectionTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly Form: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFilterInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
   readonly HowItWorks: InputMaybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSFilterInput>;
   readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
@@ -7533,6 +7580,7 @@ type STRAPI_RAINSortInput = {
   readonly BottomBanner: InputMaybe<STRAPI__COMPONENT_BANNER_WITH_CTA_BANNER_WITH_CTASortInput>;
   readonly FeatureListCard: InputMaybe<STRAPI__COMPONENT_RAIN_FEATURE_CARD_RAIN_FEATURE_CARDSortInput>;
   readonly FeatureSectionTitle: InputMaybe<SortOrderEnum>;
+  readonly Form: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMSortInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput>;
   readonly HowItWorks: InputMaybe<STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSSortInput>;
   readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDSortInput>;
@@ -7767,6 +7815,7 @@ type STRAPI_THOR = Node & {
   readonly Capabilities: Maybe<STRAPI__MEDIA>;
   readonly CaseStudiesList: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARD>>>;
   readonly CaseStudiesTitle: Maybe<Scalars['String']>;
+  readonly Form: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM>;
   readonly HeroBanner: Maybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDI>;
   readonly LiveExpCards: Maybe<ReadonlyArray<Maybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARD>>>;
   readonly LiveExpDesc: Maybe<Scalars['String']>;
@@ -7862,6 +7911,7 @@ type STRAPI_THORFieldSelector = {
   readonly Capabilities: InputMaybe<STRAPI__MEDIAFieldSelector>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFieldSelector>;
   readonly CaseStudiesTitle: InputMaybe<FieldSelectorEnum>;
+  readonly Form: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFieldSelector>;
   readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFieldSelector>;
   readonly LiveExpDesc: InputMaybe<FieldSelectorEnum>;
@@ -7888,6 +7938,7 @@ type STRAPI_THORFilterInput = {
   readonly Capabilities: InputMaybe<STRAPI__MEDIAFilterInput>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDFilterListInput>;
   readonly CaseStudiesTitle: InputMaybe<StringQueryOperatorInput>;
+  readonly Form: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFilterInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDIFilterInput>;
   readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDFilterListInput>;
   readonly LiveExpDesc: InputMaybe<StringQueryOperatorInput>;
@@ -7955,6 +8006,7 @@ type STRAPI_THORSortInput = {
   readonly Capabilities: InputMaybe<STRAPI__MEDIASortInput>;
   readonly CaseStudiesList: InputMaybe<STRAPI__COMPONENT_REFERENCE_CARD_REFERENCE_CARDSortInput>;
   readonly CaseStudiesTitle: InputMaybe<SortOrderEnum>;
+  readonly Form: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMSortInput>;
   readonly HeroBanner: InputMaybe<STRAPI__COMPONENT_HERO_BANNER_FOR_TDI_HERO_BANNER_FOR_TDISortInput>;
   readonly LiveExpCards: InputMaybe<STRAPI__COMPONENT_PROGRAMME_CARD_PROGRAMME_CARDSortInput>;
   readonly LiveExpDesc: InputMaybe<SortOrderEnum>;
@@ -10660,6 +10712,276 @@ type STRAPI__COMPONENT_HOW_IT_WORKS_HOW_IT_WORKSSortInput = {
   readonly internal: InputMaybe<InternalSortInput>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly strapi_id: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM = Node & {
+  readonly Description: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMDescription>;
+  readonly Title: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly strapi_id: Maybe<Scalars['Int']>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMConnection_groupArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMConnection_maxArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMConnection_minArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMConnection_sumArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMDescription = {
+  readonly data: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMDescriptionFieldSelector = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMDescriptionFilterInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFilterInput>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMDescriptionSortInput = {
+  readonly data: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODESortInput>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM>;
+  readonly node: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM;
+  readonly previous: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector = {
+  readonly Description: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMDescriptionFieldSelector>;
+  readonly Title: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly strapi_id: InputMaybe<FieldSelectorEnum>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFilterInput = {
+  readonly Description: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMDescriptionFilterInput>;
+  readonly Title: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly strapi_id: InputMaybe<IntQueryOperatorInput>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMFieldSelector;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMSortInput = {
+  readonly Description: InputMaybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORMDescriptionSortInput>;
+  readonly Title: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly strapi_id: InputMaybe<SortOrderEnum>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODE = Node & {
+  readonly Description: Maybe<Scalars['String']>;
+  /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
+  readonly childMarkdownRemark: Maybe<MarkdownRemark>;
+  readonly children: ReadonlyArray<Node>;
+  /** Returns all children nodes filtered by type MarkdownRemark */
+  readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEEdge>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEConnection_groupArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEConnection_maxArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEConnection_minArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEConnection_sumArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEEdge = {
+  readonly next: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODE>;
+  readonly node: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODE;
+  readonly previous: Maybe<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODE>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector = {
+  readonly Description: InputMaybe<FieldSelectorEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFilterInput = {
+  readonly Description: InputMaybe<StringQueryOperatorInput>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODE>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEGroupConnection_distinctArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEGroupConnection_groupArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEGroupConnection_maxArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEGroupConnection_minArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEGroupConnection_sumArgs = {
+  field: STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODEFieldSelector;
+};
+
+type STRAPI__COMPONENT_HUBSPOT_FORM_HUB_SPOT_FORM_DESCRIPTION_TEXTNODESortInput = {
+  readonly Description: InputMaybe<SortOrderEnum>;
+  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
 };
 
 type STRAPI__COMPONENT_IMAGE_STACK_IMAGE_STACK = Node & {
