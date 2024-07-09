@@ -13,6 +13,7 @@ import {
   Avatars,
   CaseStudies,
   Features,
+  Form,
   MultiChannel,
   UseCases,
 } from "../layouts/thor";
@@ -80,6 +81,10 @@ const ThorPage: React.FC<PageProps> = ({ data }: ThorPageProps) => {
           CTAtext={data[currentLang]?.BottomBanner?.CTAButton?.Label}
           CTAlink={data[currentLang]?.BottomBanner?.CTAButton?.Link}
           isCTAExternal={data[currentLang]?.BottomBanner?.isCTAExternal}
+        />
+        <Form
+          sectionTitle={data[currentLang]?.Form?.Title}
+          sectionDescription={data[currentLang]?.Form?.Description}
         />
       </section>
       <FooterSection
@@ -228,6 +233,16 @@ export const query = graphql`
           }
         }
         isCTAExternal
+      }
+      Form {
+        id
+        Title
+        Description {
+          data {
+            Description
+            id
+          }
+        }
       }
       seo {
         metaTitle

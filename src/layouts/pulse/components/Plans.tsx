@@ -11,7 +11,7 @@ interface PlansProps {
 export const Plans = ({ heading, subText, cardData }: PlansProps) => {
   return (
     <div
-      className={`container-fluid d-flex justify-content-center paddingTopBottom60`}
+      className={`container-fluid d-flex justify-content-center paddingTopBottom60 pb-0`}
     >
       <div className={`containerService paddingLeftRight15`}>
         <div className={`mb-2`}>
