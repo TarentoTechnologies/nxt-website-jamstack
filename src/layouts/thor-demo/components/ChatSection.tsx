@@ -3,21 +3,19 @@ import { useRecoilState, useRecoilValue } from "recoil";
 
 import audioBtn from "../../../../static/icons/mic.png";
 import sendBtn from "../../../../static/icons/send.png";
+import stopBtn from "../../../../static/icons/stop_circle.png";
 import ThorLogo from "../../../../static/images/Thor-i-logo.png";
 import ThorBg from "../../../../static/images/ThorBg.png";
 import {
+  exampleQuestions,
   industrySelected,
   questionSelected,
   themeState,
 } from "../../../states/atoms";
-import {
-  thorFeatureCard,
-  thorSubtext,
-} from "../../../styles/style-guide/Typography.module.css";
+import { thorSubtext } from "../../../styles/style-guide/Typography.module.css";
 import {
   audioButtonDark,
   audioButtonLight,
-  botMsg,
   botMsgDark,
   botMsgLight,
   botTyping,
@@ -29,18 +27,18 @@ import {
   chatSectionContainer,
   chatSectionDark,
   chatSectionLight,
-  customCard,
+  clickableMsgDark,
+  clickableMsgLight,
   customCardDark,
   customCardLight,
   fadeIn1,
-  featureCardDark,
-  featureCardGrid,
-  featureCardLight,
   initialChat,
   inputArea,
   pullUp1,
+  recording,
   sendButton,
   thorLogo,
+  thorLogoBg,
   userInputBoxDark,
   userInputBoxLight,
   userMsgDark,
@@ -97,6 +95,90 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     useRecoilState(industrySelected);
   const [formattedIndustry, setFormattedIndustry] = useState("");
   const [displayedItems, setDisplayedItems] = useState<number>(5);
+  const [isRecording, setIsRecording] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const examples = useRecoilValue(exampleQuestions);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth <= 768);
+    }
+  }, []);
+
+  let recognition: any;
+
+  if (typeof window !== "undefined") {
+    const SpeechRecognition =
+      (window as any).SpeechRecognition ||
+      (window as any).webkitSpeechRecognition;
+    recognition = new SpeechRecognition();
+    recognition.lang = "en-US";
+    // recognition.interimResults = false;
+    // recognition.continous = true;
+  }
+
+  const startRecording = () => {
+    setIsRecording(true);
+    recognition.start();
+
+    recognition.onresult = (event: any) => {
+      const isFinal = event.results[0].isFinal;
+      if (isFinal) {
+        const speechToText = event.results[0][0].transcript;
+        handleMessageSend(speechToText);
+        setIsRecording(false);
+      }
+    };
+
+    recognition.onerror = (event: any) => {
+      console.error("Speech recognition error:", event.error);
+      setIsRecording(false);
+    };
+
+    recognition.onend = () => {
+      setIsRecording(false);
+    };
+  };
+
+  const cancelRecording = () => {
+    recognition.abort();
+    // recognition.stop();
+    setIsRecording(false);
+  };
+
+  const toggleRecording = () => {
+    if (!isRecording) {
+      startRecording();
+    } else {
+      cancelRecording();
+    }
+  };
+
+  useEffect(() => {
+    const storedMessages = sessionStorage.getItem(
+      `chatMessages-${formattedIndustry}`
+    );
+    if (storedMessages) {
+      setChatMessages(JSON.parse(storedMessages));
+      setShowInitialChat(false);
+    } else {
+      setChatMessages([]);
+      setShowInitialChat(true);
+    }
+  }, [formattedIndustry]);
+
+  useEffect(() => {
+    if (!showInitialChat) {
+      sessionStorage.setItem(
+        `chatMessages-${formattedIndustry}`,
+        JSON.stringify(chatMessages)
+      );
+    }
+  }, [chatMessages, showInitialChat]);
+
+  useEffect(() => {
+    sessionStorage.clear();
+  }, []);
 
   useEffect(() => {
     const terminalResultsDiv: HTMLElement | null =
@@ -110,13 +192,24 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
     }
   }, [chatMessages, displayedItems]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (showInitialChat) {
+        const terminalResultsDiv: HTMLElement | null =
+          document.getElementById("initial-chat");
+        if (terminalResultsDiv) {
+          terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
+        }
+      }
+    }, 650);
+  }, [selectedIndustry, chatMessages]);
+
   const handleInputChange = (event: any) => {
     setUserInput(event.target.value);
   };
 
   const handleUserInputSubmission = (text = userInput.trim()) => {
     if (text !== "") {
-      // setShowInitialChat(false);
       handleMessageSend(text);
     }
   };
@@ -124,7 +217,6 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
   useEffect(() => {
     switch (selectedIndustry) {
       case "THOR for Manufacturing":
-        // setSelectedIndustry("Thor-Manufacture");
         setFormattedIndustry("Thor-Manufacture");
         break;
       case "THOR for Retail":
@@ -216,8 +308,6 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
               isClickable: false,
             };
           }
-          // console.log("Response data: ", responseData);
-          // console.log("Current Industry: ", formattedIndustry);
 
           if (formattedIndustry !== "Thor-CX") {
             // Check if the response contains HTML markup
@@ -232,8 +322,6 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
 
             if (responseData.res[0].data !== null) {
               botMessage.data = responseData.res[0].data;
-              // console.log("Res Data: ", responseData.res[0].data);
-              // console.log("Res Data type: ", typeof responseData.res[0].data);
             }
           }
 
@@ -269,7 +357,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
           {/* Initial Chat */}
           {showInitialChat && (
             <>
-              <div className={`${initialChat} ${fadeIn1}`}>
+              <div className={`${initialChat} ${fadeIn1}`} id="initial-chat">
                 <div className={`d-flex align-items-center ${thorLogo}`}>
                   <img
                     src={ThorLogo}
@@ -282,7 +370,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                     THOR
                   </span>
                 </div>
-                <div className={`my-4`}>
+                <div className={`${thorLogoBg} my-4`}>
                   <img src={ThorBg} alt="Thor" width={120} height={120} />
                 </div>
                 <div
@@ -299,27 +387,27 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
                 >
                   {data?.text2}
                 </div>
-                {/* <div className={`${featureCardGrid} pt-3`}>
-                  {data?.cardData?.map((item: any, index: number) => (
-                    <div
-                      key={index}
-                      className={`${
-                        theme === "dark" ? featureCardDark : featureCardLight
-                      }`}
-                    >
-                      <div className={`d-flex justify-content-center pb-2`}>
-                        <img src={item?.ImgSrc} alt={item?.Title} />
-                      </div>
+                {isMobile && examples && (
+                  <div className={`mt-4 ${pullUp1}`}>
+                    {examples.map((example, index) => (
                       <div
-                        className={`${thorFeatureCard} text-center ${
-                          theme === "dark" ? "text-white" : ""
-                        }`}
+                        key={index}
+                        className={`mb-2`}
+                        onClick={() => handleMessageSend(example)}
                       >
-                        {item?.Title}
+                        <p
+                          className={`${
+                            theme === "dark"
+                              ? clickableMsgDark
+                              : clickableMsgLight
+                          }`}
+                        >
+                          {example}
+                        </p>
                       </div>
-                    </div>
-                  ))}
-                </div> */}
+                    ))}
+                  </div>
+                )}
               </div>
             </>
           )}
@@ -453,7 +541,7 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
             role="button"
             onClick={() => handleUserInputSubmission()}
           >
-            <img src={sendBtn} alt="send" />
+            <img src={sendBtn} alt="Send button" />
           </div>
         </div>
         <div
@@ -461,10 +549,16 @@ export const ChatSection = ({ data }: ChatSectionProps) => {
             theme === "dark" ? audioButtonDark : audioButtonLight
           } ms-2`}
           role="button"
+          onClick={toggleRecording}
         >
-          <img src={audioBtn} alt="send" />
+          {isRecording ? (
+            <img src={stopBtn} alt="Audio stop button" />
+          ) : (
+            <img src={audioBtn} alt="Audio input button" />
+          )}
         </div>
       </div>
+      {isRecording && <div className={`${recording}`}>Recording...</div>}
     </div>
   );
 };
